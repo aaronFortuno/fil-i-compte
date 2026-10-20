@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fil i compte · Banc de problemes</title>
+  <meta name="description" content="Tria problemes de matemàtiques, prepara fitxes de dues pàgines i imprimeix solucionaris amb estratègies visuals.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232b594b'/%3E%3Ctext x='20' y='29' text-anchor='middle' fill='white' font-size='30'%3E%2B%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="catalog-data.js"></script><script defer src="core.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#catalogue">Salta al banc de problemes</a>
+  <div class="app-shell">
+    <header class="masthead"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">÷<br>+</span><span>fil i compte<small>Un problema. Moltes maneres de pensar.</small></span></a><span class="edition">BLOC 01 <span>·</span> 12 problemes originals</span><button class="quiet" id="help-toggle" aria-expanded="false" aria-controls="help">Com funciona <span aria-hidden="true">↗</span></button></header>
+    <aside id="help" class="help-panel" hidden><strong>Del banc al paper.</strong> Tria els continguts, compon una fitxa i revisa-la abans d’imprimir. «Obligatori» pot aplicar-se a cada problema o al conjunt del full. «Exclòs» sempre s’aplica a tots els problemes. Pots fixar una tria i canviar la resta. Els nivells són orientatius. Els parèntesis corresponen a l’expressió de resolució prevista; altres estratègies també són vàlides. <strong>Bloc inicial pendent de revisió docent.</strong> Les comprovacions numèriques no substitueixen aquesta revisió.</aside>
+    <section class="intro"><div><p class="eyebrow">EL TEU TALLER DE MATEMÀTIQUES</p><h1>Problemes que<br>fan pensar<span>.</span></h1><p class="intro-copy">Tria què vols treballar. Dona espai al raonament.<br>Prepara una fitxa a la mida del teu grup.</p></div><div class="intro-note"><span class="note-symbol" aria-hidden="true">⅔ <span>↗</span></span><p>Amb nombres,<br>amb dibuixos,<br><em>a la seva manera.</em></p><span class="note-foot">Solucionaris amb estratègies diverses</span></div></section>
+    <main class="workspace">
+      <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la fitxa</h2><button id="reset" class="text-button">Neteja filtres</button></div>
+        <div class="field"><label for="count">Problemes al full</label><select id="count"><option value="4">4 · més espai per pensar</option><option value="5">5 · espai equilibrat</option><option value="6">6 · tres per pàgina</option></select></div>
+        <div class="two-fields"><div class="field"><label for="level">Nivell orientatiu</label><select id="level"><option value="">Tots</option><option value="mitja">Cicle mitjà</option><option value="superior">Cicle superior</option><option value="eso">Inici d’ESO</option></select></div><div class="field"><label for="difficulty">Dificultat</label><select id="difficulty"><option value="">Totes</option><option value="1">Accessible</option><option value="2">Intermedi</option><option value="3">Repte</option></select></div></div>
+        <div class="filter-divider"></div><h3>Continguts</h3><p class="hint">Permet, demana o exclou cada contingut.</p><div id="feature-filters"></div>
+        <div class="field scope-field"><label for="scope">Continguts obligatoris…</label><select id="scope"><option value="sheet">Al conjunt del full</option><option value="each">En cada problema</option></select><p class="hint">Les exclusions afecten tot el full, també els càlculs intermedis.</p></div>
+        <button class="primary compose-button" id="compose"><span aria-hidden="true">↻</span> Proposa una fitxa</button><p class="hint last-hint">Els problemes fixats es conserven.</p>
+      </aside>
+      <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
+        <div class="catalogue-heading"><div><p class="eyebrow">EXPLORA I TRIA</p><h2 id="catalogue-title">El banc de problemes <span id="match-count">12</span></h2></div><div class="search"><label class="sr-only" for="search">Cerca al banc</label><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Cerca un tema o un enunciat…"></div></div>
+        <div class="catalogue-notice"><span class="status-dot"></span> Primer bloc · càlculs comprovats, revisió docent pendent <button class="text-button" id="export-catalog">Descarrega el catàleg JSON</button></div>
+        <div id="message" role="status" aria-live="polite"></div><div class="cards" id="cards"></div><div id="empty" class="empty" hidden><span aria-hidden="true">∅</span><h3>Encara no tenim aquesta combinació.</h3><p>Amplia els filtres. El bloc inicial conté 12 problemes i anirà creixent amb nous paquets.</p></div>
+      </section>
+    </main>
+    <section class="selection-bar" aria-label="La fitxa seleccionada"><div><span class="selection-icon" aria-hidden="true">▤</span><div><strong id="selection-count">4 de 4 problemes</strong><small id="selection-caption">Dues pàgines A4, amb espai per resoldre.</small></div></div><div class="selection-actions"><button id="save" class="quiet">Desa la tria</button><label class="quiet file-label">Recupera-la<input id="load" type="file" accept="application/json,.json" class="sr-only"></label><button id="preview-button" class="primary">Revisa la fitxa <span aria-hidden="true">→</span></button></div></section>
+    <section id="preview" class="preview" hidden aria-labelledby="preview-title"><div class="preview-toolbar"><div><p class="eyebrow">A PUNT PER AL PAPER</p><h2 id="preview-title">La teva fitxa</h2></div><button id="close-preview" class="quiet">Torna al banc ↑</button></div><div class="preview-settings"><div class="field"><label for="sheet-title">Títol de la fitxa</label><input id="sheet-title" maxlength="65" value="Problemes per pensar"></div><div class="field"><label for="sheet-group">Grup (opcional)</label><input id="sheet-group" maxlength="30" placeholder="Per exemple, 6è A"></div><div class="view-tabs" role="group" aria-label="Previsualització"><button id="view-exercises" aria-pressed="true">Exercicis</button><button id="view-solutions" aria-pressed="false">Solucionari</button></div></div><div id="preview-issues" role="status"></div><div class="print-actions"><button id="print-exercises" class="primary">Imprimeix exercicis / PDF</button><button id="print-solutions" class="secondary">Imprimeix solucionari / PDF</button><p>A4 · escala 100 % · sense capçaleres del navegador.<br>Per als exercicis: doble cara, gir per la vora llarga.</p></div><p class="answer-note" id="answer-note" hidden>Una possible resolució. Els dibuixos, els esquemes i altres procediments correctes també són vàlids.</p><div id="pages" class="pages"></div></section>
+    <footer class="footer"><span>fil i compte <span aria-hidden="true">✳</span> Aprendre també és trobar el teu camí.</span><span>Prototip local · sense comptes ni connexions externes</span></footer>
+  </div>
+  <div id="print-root"></div>
+  <noscript>Aquest compositor necessita JavaScript activat. El catàleg original és a data/catalog.json.</noscript>
+</body>
+</html>
