@@ -1,5 +1,7 @@
 # Comprovació local · 20 d'octubre de 2026
 
+## Prototip original · 0.1
+
 - 12 grups de comprovacions automàtiques superats: esquema del catàleg, identificadors, 12 respostes amb aritmètica exacta, etiquetes, intermedis, dibuixos, sincronització de dades, exclusions, obligatoris per problema o per full, seleccions impossibles, problemes fixats i distribució en dues pàgines.
 - Provat al navegador amb servidor local: càrrega del banc, filtres, proposta de fitxa, fixació, selecció manual, previsualització i canvi entre exercicis i solucionaris.
 - Provat el desament a fitxer i la recuperació: mateixos identificadors, continguts, filtres i problema fixat.
@@ -11,3 +13,15 @@
 - Pendent: revisió docent del contingut, adequació al grup i prova d'impressió/PDF al navegador habitual de l'usuari.
 
 No s'ha publicat ni s'han fet comprovacions remotes.
+
+## Compositor compacte · 0.2
+
+- Superats els 12 grups de comprovacions actualitzats. Només s'accepten propostes de 4 o 6 exercicis; una nova proposta substitueix la selecció anterior.
+- Comprovades les caselles natives, la selecció des del títol de la targeta i l'avís quan s'intenta superar el nombre de places. El banc no inclou resolucions ni botons de fixació.
+- Comprovada la recuperació real d'un fitxer antic de cinc exercicis: es conserven els cinc identificadors i s'ofereixen sis places, amb avís que en falta un.
+- A 1264 × 720, capçalera de 62 px, configuració a la dreta i dues zones amb desplaçament intern independent. La configuració i el botó de proposta conserven la posició quan es desplaça el banc.
+- A 1264 × 600, el botó de proposta continua dins del panell visible; el document manté l'alçada de la finestra i tots dos panells es poden desplaçar.
+- A 390 px d'amplada, sense desbordament horitzontal del banc; la configuració passa a la part superior amb desplaçament intern i el banc queda a sota.
+- Comprovades la previsualització de 4 i 6 exercicis, l'accés al solucionari i la tornada al banc. Els sis solucionaris de la tria de prova no desborden les seves caixes A4.
+- Repositori Git local inicialitzat: es conserva el prototip original abans d'aquesta iteració. El remot de GitHub queda pendent per indicació de l'usuari.
+- Les proves d'aquesta iteració s'han fet només en local. Continua pendent la prova final d'impressió/PDF al navegador habitual.

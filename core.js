@@ -68,13 +68,11 @@
   }
   // Bounded exhaustive search: the small initial catalogue makes coverage exact.
   // Larger packs use early pruning and stop at the first valid combination.
-  function compose(catalog,filters,count,pinned=[],previous=[]) {
+  function compose(catalog,filters,count,previous=[]) {
+    if(![4,6].includes(count))return {error:'Tria 4 o 6 problemes per preparar dues pàgines equilibrades.'};
     const candidates=catalog.filter(e=>eligible(e,filters));
-    const fixed=catalog.filter(e=>pinned.includes(e.id));
-    if(fixed.length>count) return {error:'Hi ha més problemes fixats que places al full.'};
-    if(fixed.some(e=>!eligible(e,filters))) return {error:'Un problema fixat no compleix els filtres. Allibera’l o ajusta els filtres.'};
     if(candidates.length<count) return {error:`Només hi ha ${candidates.length} problemes compatibles per a ${count} places. Amplia els filtres o redueix la quantitat.`};
-    const pool=candidates.filter(e=>!pinned.includes(e.id)).map(e=>({e,r:Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.e);
+    const pool=candidates.map(e=>({e,r:Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.e);
     const required=Object.entries(filters.features||{}).filter(([,m])=>m==='require').map(([f])=>f);
     if(required.some(f=>!candidates.some(e=>e.features.includes(f)))) return {error:'El catàleg no cobreix tots els continguts obligatoris amb aquests filtres.'};
     let attempts=0;
@@ -94,8 +92,8 @@
       }
       return null;
     }
-    let found=search(0,fixed,true); attempts=0;
-    if(!found)found=search(0,fixed,false);
+    let found=search(0,[],true); attempts=0;
+    if(!found)found=search(0,[],false);
     return found?{ids:found.map(e=>e.id)}:{error:'No es poden cobrir tots els continguts obligatoris en aquest nombre de problemes. Amplia els filtres o tria més places.'};
   }
   function pageGroups(exercises) {const middle=Math.ceil(exercises.length/2);return [exercises.slice(0,middle),exercises.slice(middle)];}

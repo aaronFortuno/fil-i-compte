@@ -8,15 +8,17 @@ Obre **index.html** fent-hi doble clic. El web funciona sense servidor ni connex
 
 Per revisar el contingut seguit, obre **BLOC-01.md**: inclou els 12 enunciats, les solucions, les etiquetes i la descripció dels suports visuals.
 
-1. Tria 4, 5 o 6 problemes, nivell orientatiu i dificultat.
+1. Tria 4 o 6 problemes, nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Per a cada contingut, indica **Permès**, **Obligatori** o **Exclòs**. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
-3. Prem **Proposa una fitxa**, o treu i afegeix problemes manualment. **Fixa** conserva un problema quan proposes una altra fitxa. La cerca només ajuda a explorar el banc; no restringeix la proposta automàtica.
+3. Marca les caselles dels problemes que vols incloure o prem **Proposa una fitxa** per substituir la selecció per una altra proposta. Quan el full és ple, desmarca un problema abans d'afegir-ne un altre. La cerca només ajuda a explorar el banc; no restringeix la proposta automàtica. Els nivells de les targetes s'abreugen com a **CM**, **CS** i **ESO**; el nom complet es manté al desplegable i al text d'ajuda de l'abreviatura.
 4. Prem **Revisa la fitxa**. Pots canviar el títol i el grup i veure els exercicis o el solucionari.
 5. Imprimeix cada document per separat o tria **Desa com a PDF** al diàleg del navegador. Paper A4, escala 100 %, sense capçaleres ni peus del navegador; el disseny ja inclou marges. Exercicis a doble cara, gir per la vora llarga. Cada document té dues pàgines.
 
 Els exercicis deixen espai per a dibuixos, esquemes, operacions i una resposta amb unitats. El solucionari mostra una possible resolució breu, sense imposar un únic procediment. Els gràfics tenen explicació textual i trames o ratllats que funcionen també en blanc i negre.
 
 La tria es conserva en aquest navegador quan l'emmagatzematge local està disponible. **Desa la tria** descarrega un fitxer que es pot recuperar amb **Recupera-la**. Inclou el contingut dels problemes per detectar canvis de versió: es rebutja la recuperació si el catàleg actual no coincideix amb els exercicis desats. No s'importa contingut executable.
+
+Les tries antigues de cinc problemes es recuperen en un full amb sis places; es conserven els cinc problemes i s'indica que falta completar la selecció. Els antics problemes fixats es tracten com a seleccionats normals. Les targetes del banc només mostren l'enunciat; les resolucions es consulten al solucionari.
 
 ## Què conté el primer bloc
 
@@ -60,4 +62,10 @@ node tools/check.cjs
 
 El comprovador actual també fixa les respostes dels 12 exercicis del bloc inicial. Quan s'afegeixi un nou paquet caldrà ampliar aquesta referència independent i adaptar la comprovació de mida; no només acceptar el resultat de l'arbre de càlcul.
 
-Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local dels fulls de 4, 5 i 6 exercicis. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
+Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local dels fulls de 4 i 6 exercicis. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
+
+## Versions
+
+El projecte té repositori Git propi dins d'aquesta carpeta. La branca principal és `main`. El prototip original es conserva al primer commit i les iteracions posteriors es documenten a **CHANGELOG.md**.
+
+El repositori remot de GitHub amb el nom `fil-i-compte` queda pendent per indicació de l'usuari; encara no hi ha cap remot configurat ni publicació.

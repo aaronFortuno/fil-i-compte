@@ -2,23 +2,24 @@
 (() => {
   'use strict';
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
-  const STORAGE='fil-i-compte-v1', openSolutions=new Set();
-  const initial=()=>({count:4,ids:['P001','P003','P005','P009'],pinned:[],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:''});
+  const STORAGE='fil-i-compte-v1';
+  const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
+  const initial=()=>({count:4,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:''});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
   const persist=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{}};
   function validateState(s) {
+    // Keep older five-problem selections: migrate to six places without losing a problem.
     if(!s||![4,5,6].includes(s.count)||!Array.isArray(s.ids)||new Set(s.ids).size!==s.ids.length||s.ids.length>s.count||s.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Tria no vàlida.');
-    if(!Array.isArray(s.pinned)||s.pinned.some(id=>!s.ids.includes(id)))throw Error('Problemes fixats no vàlids.');
     if(!s.filters||!['sheet','each'].includes(s.filters.scope)||!s.filters.features||Array.isArray(s.filters.features)||typeof s.filters.features!=='object')throw Error('Filtres no vàlids.');
     for(const [f,m] of Object.entries(s.filters.features))if(!C.FEATURES[f]||!['allow','require','exclude'].includes(m))throw Error('Contingut de filtre desconegut.');
     if(!['',...Object.keys(C.LEVELS)].includes(s.filters.level)||!['','1','2','3'].includes(s.filters.difficulty))throw Error('Nivell o dificultat desconeguts.');
     if(typeof s.title!=='string'||typeof s.group!=='string'||s.title.length>65||s.group.length>30)throw Error('Títol o grup no vàlids.');
-    return {count:s.count,ids:[...s.ids],pinned:[...new Set(s.pinned)],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group};
+    return {count:s.count===5?6:s.count,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group};
   }
-  function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;}
+  function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
     $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<div class="feature-row"><label for="feature-${id}">${escape(label)}</label><select id="feature-${id}" data-feature="${id}"><option value="allow">Permès</option><option value="require">Obligatori</option><option value="exclude">Exclòs</option></select></div>`).join('');
     syncControls();
@@ -68,16 +69,17 @@
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
     $('match-count').textContent=matches.length;$('empty').hidden=matches.length>0;
     $('cards').innerHTML=matches.map(e=>{
-      const isSelected=state.ids.includes(e.id),pinned=state.pinned.includes(e.id),incompatible=!C.eligible(e,state.filters);
-      return `<article class="exercise-card ${isSelected?'is-selected':''}" data-id="${e.id}"><div class="card-meta"><span class="exercise-code">${e.id}</span><span>${escape(C.LEVELS[e.level])}</span><span class="difficulty"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span> ${C.DIFFICULTIES[e.difficulty]}</span></div><h3>${escape(e.title)}</h3><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p><div class="tags">${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><details class="solution-details" ${openSolutions.has(e.id)?'open':''}><summary>Una possible resolució</summary><div class="solution-content">${solutionHTML(e)}</div></details><div class="card-actions"><button class="text-button pin" data-action="pin" ${!isSelected?'disabled':''} aria-pressed="${pinned}" aria-label="${pinned?'Allibera':'Fixa'} ${e.id}">${pinned?'◆ Fixat':'◇ Fixa'}</button><button class="${isSelected?'selected-button':'secondary'}" data-action="select" aria-pressed="${isSelected}" aria-label="${isSelected?'Treu':'Afegeix'} ${e.id}" ${!isSelected&&state.ids.length>=state.count?'disabled':''}>${isSelected?'✓ Seleccionat':'+ Afegeix'}</button></div>${incompatible?'<p class="hint">No compatible amb els filtres.</p>':''}</article>`;
+      const isSelected=state.ids.includes(e.id);
+      return `<article class="exercise-card ${isSelected?'is-selected':''}" data-id="${e.id}"><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''}><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p></article>`;
     }).join('');
+    document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
   }
   function issues() {return C.selectionIssues(selected(),state.filters,state.count);}
   function update() {
     persist();renderCards();
     const problems=issues();
     $('selection-count').textContent=`${state.ids.length} de ${state.count} problemes`;
-    $('selection-caption').textContent=problems.length?problems[0]:'Dues pàgines A4, amb espai per resoldre.';
+    $('selection-caption').textContent=problems.length?problems[0]:'Per canviar un problema, desmarca’l i tria’n un altre.';
     $('selection-caption').classList.toggle('has-issues',problems.length>0);
     $('preview-button').disabled=state.ids.length===0;
     if(!$('preview').hidden)renderPreview();
@@ -110,30 +112,26 @@
   for(const id of ['level','difficulty','scope'])$(id).addEventListener('change',()=>{state.filters[id]=$(id).value;message('');update();});
   $('count').addEventListener('change',()=>{
     const count=Number($('count').value);
-    if(state.pinned.length>count){$('count').value=state.count;message('Allibera algun problema fixat abans de reduir la quantitat.','error');return;}
     state.count=count;
-    state.ids=[...state.ids.filter(id=>state.pinned.includes(id)),...state.ids.filter(id=>!state.pinned.includes(id))].slice(0,count);
+    state.ids=state.ids.slice(0,count);
     message('');update();
   });
   $('search').addEventListener('input',()=>{query=$('search').value;renderCards();});
   $('reset').addEventListener('click',()=>{state.filters=initial().filters;query='';$('search').value='';syncControls();message('Filtres netejats. La teva selecció es conserva.');update();});
   $('compose').addEventListener('click',()=>{
-    const result=C.compose(catalogue,state.filters,state.count,state.pinned,state.ids);
+    const result=C.compose(catalogue,state.filters,state.count,state.ids);
     if(result.error){message(result.error,'error');return;}
-    state.ids=result.ids;query='';$('search').value='';message('Fitxa proposada. Revisa els enunciats i fixa els que vulguis conservar.','success');update();
+    state.ids=result.ids;query='';$('search').value='';message('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.','success');update();
   });
-  $('cards').addEventListener('toggle',event=>{if(event.target.matches('details')){const id=event.target.closest('[data-id]').dataset.id;event.target.open?openSolutions.add(id):openSolutions.delete(id);}},true);
-  $('cards').addEventListener('click',event=>{
-    const button=event.target.closest('button[data-action]');if(!button)return;
-    const id=button.closest('[data-id]').dataset.id,action=button.dataset.action;
-    if(action==='select') {
-      if(state.ids.includes(id)){state.ids=state.ids.filter(x=>x!==id);state.pinned=state.pinned.filter(x=>x!==id);}
-      else if(state.ids.length<state.count)state.ids.push(id);
-    } else if(state.ids.includes(id))state.pinned=state.pinned.includes(id)?state.pinned.filter(x=>x!==id):[...state.pinned,id];
-    message('');update();document.querySelector(`[data-id="${id}"] [data-action="${action}"]`)?.focus({preventScroll:true});
+  $('cards').addEventListener('change',event=>{
+    const input=event.target.closest('input[data-select]');if(!input)return;
+    const id=input.dataset.select;
+    if(input.checked && state.ids.length>=state.count){input.checked=false;message(`Ja tens ${state.count} problemes. Desmarca’n un abans d’afegir-ne un altre.`,'error');return;}
+    if(input.checked)state.ids.push(id);else state.ids=state.ids.filter(x=>x!==id);
+    message('');update();document.querySelector(`[data-select="${id}"]`)?.focus({preventScroll:true});
   });
-  $('preview-button').addEventListener('click',()=>{$('preview').hidden=false;renderPreview();$('preview').scrollIntoView({behavior:'smooth',block:'start'});});
-  $('close-preview').addEventListener('click',()=>{$('preview').hidden=true;$('catalogue').scrollIntoView({behavior:'smooth'});$('preview-button').focus({preventScroll:true});});
+  $('preview-button').addEventListener('click',()=>{$('preview').hidden=false;document.querySelector('.app-shell').classList.add('show-preview');renderPreview();$('close-preview').focus();});
+  $('close-preview').addEventListener('click',()=>{$('preview').hidden=true;document.querySelector('.app-shell').classList.remove('show-preview');$('preview-button').focus({preventScroll:true});});
   $('view-exercises').addEventListener('click',()=>{solutionView=false;renderPreview();});$('view-solutions').addEventListener('click',()=>{solutionView=true;renderPreview();});
   for(const [id,key] of [['sheet-title','title'],['sheet-group','group']])$(id).addEventListener('input',()=>{state[key]=$(id).value;persist();renderPreview();});
   $('print-exercises').addEventListener('click',()=>print(false));$('print-solutions').addEventListener('click',()=>print(true));
