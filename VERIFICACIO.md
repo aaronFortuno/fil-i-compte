@@ -91,3 +91,14 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Columnes dels quatre camps superiors d'amplada igual. Filtres circulars de 22 px dins d'àrees de selecció de 30 × 28 px; clic i fletxes del teclat provats amb els estats d'exclusió i permès.
 - Lema i recompte del catàleg visibles en escriptori i mòbil. Revisió de les mides de 1280, 1024, 768, 390 i 320 px, sense desbordament horitzontal.
 - Revisió local de la mateixa estructura HTML i CSS que utilitza la impressió; no s'ha obert el diàleg d'impressió ni exportat un PDF en aquesta iteració. Cap comprovació del web remot.
+
+## Comparació d'etiquetes de filtratge · 0.8.0 · 21 d'octubre de 2026
+
+- Superades les 15 comprovacions existents i la sintaxi de JavaScript. La lògica de filtratge i les dades dels problemes es mantenen.
+- Cinc etiquetes de rotació a la columna esquerra i cinc grups de selecció directa a la dreta. Color i símbol es corresponen amb l'estat actual.
+- Comprovat el cicle complet de fraccions amb clic i espai: permès → obligatori → exclòs → permès. L'exclusió elimina P005 i P006 del banc. Provades també les fletxes i Enter sense perdre el focus del botó.
+- Selecció directa de potències com a excloses des de permès, sense passar per obligatori. El banc elimina P011. Un segon clic a l'opció activa conserva l'estat; la fletxa esquerra selecciona obligatori i una recàrrega conserva tant el valor com la icona ressaltada.
+- «Neteja filtres» restaura els deu continguts a permès i marca correctament els cinc selectors directes. Les proves acaben amb els filtres inicials i la mateixa tria de quatre problemes.
+- Dues columnes a 1280, 768, 390 i 320 px, sense desbordament horitzontal dels controls. En els espais estrets el selector directe queda sota el nom per no tallar les paraules.
+- Noms accessibles, instruccions de teclat i anunci dels canvis d'estat. Sense errors ni avisos a la consola local.
+- Captura de comparació a `vista-previa-v08.jpg` (no versionada), amb exemples dels tres estats. No s'ha comprovat el web remot.

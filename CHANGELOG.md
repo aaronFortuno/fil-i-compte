@@ -1,5 +1,12 @@
 # Historial de canvis
 
+## 0.8.0 · Comparació de filtres en etiquetes
+
+- Substituïts els cercles separats per etiquetes amb nom, fons i símbol coherents amb l'estat: punt per a permès, marca per a obligatori i aspa per a exclòs.
+- A l'esquerra, botons amb rotació permès → obligatori → exclòs → permès. A la dreta, selector intern de tres icones per triar l'estat directament, sense rotació en clicar l'etiqueta.
+- Dues columnes conservades. En espais estrets el selector directe passa sota el nom per evitar partir les paraules.
+- Accés amb teclat, noms accessibles amb l'estat actual, anunci dels canvis i desament dels mateixos valors de filtratge. Retirats els estils dels selectors anteriors.
+
 ## 0.7.0 · Pàgines i distribució configurables
 
 - Separats el nombre de pàgines (1, 2, 4 o 6) i els problemes per pàgina (2 o 3 en columna, 4 en quadrícula 2 × 2), en una fila amb columnes iguals. Mateix equilibri per a nivell i dificultat.

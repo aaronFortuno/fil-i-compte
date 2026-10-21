@@ -4,6 +4,7 @@
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
+  const FEATURE_MODES=[{id:'allow',label:'Permès',icon:'·'},{id:'require',label:'Obligatori',icon:'✓'},{id:'exclude',label:'Exclòs',icon:'×'}];
   const initial=()=>({pageCount:2,perPage:2,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
@@ -24,13 +25,35 @@
   }
   function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
-    const modes=[['exclude','Exclòs','−'],['allow','Permès','○'],['require','Obligatori','+']];
-    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<fieldset class="feature-control" id="feature-${id}"><legend>${escape(label)}</legend><div class="feature-segments">${modes.map(([mode,name,symbol])=>`<label title="${escape(label)}: ${name}"><input type="radio" name="feature-${id}" value="${mode}" data-feature="${id}"><span class="segment-symbol" aria-hidden="true">${symbol}</span><span class="sr-only">${name}</span></label>`).join('')}</div></fieldset>`).join('');
+    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label],index)=>index%2===0
+      ?`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`
+      :`<div class="feature-chip feature-direct" id="feature-${id}" data-feature="${id}" role="radiogroup" aria-labelledby="feature-label-${id}" aria-describedby="feature-direct-instructions"><span class="feature-name" id="feature-label-${id}">${escape(label)}</span><div class="feature-options">${FEATURE_MODES.map(mode=>`<label title="${escape(label)}: ${mode.label}"><input type="radio" name="feature-${id}" data-feature="${id}" value="${mode.id}"><span aria-hidden="true">${mode.icon}</span><span class="sr-only">${mode.label}</span></label>`).join('')}</div></div>`).join('');
     syncControls();
+  }
+  function syncFeatures() {
+    Object.entries(C.FEATURES).forEach(([id,label])=>{
+      const mode=state.filters.features[id]||'allow',index=FEATURE_MODES.findIndex(item=>item.id===mode),current=FEATURE_MODES[index],next=FEATURE_MODES[(index+1)%FEATURE_MODES.length],control=$('feature-'+id);
+      control.dataset.mode=mode;
+      if(control.matches('button')){
+        control.querySelector('.feature-state').textContent=current.icon;
+        control.setAttribute('aria-label',label+': '+current.label.toLocaleLowerCase('ca'));
+        control.title=current.label+' · Clica per canviar a '+next.label.toLocaleLowerCase('ca');
+      }else control.querySelectorAll('input').forEach(input=>input.checked=input.value===mode);
+    });
+  }
+  function setFeature(id,mode) {
+    state.filters.features[id]=mode;syncFeatures();message('');update();
+    $('feature-status').textContent=C.FEATURES[id]+': '+FEATURE_MODES.find(item=>item.id===mode).label.toLocaleLowerCase('ca')+'.';
+  }
+  function cycleFeature(id,direction=1) {
+    const index=FEATURE_MODES.findIndex(mode=>mode.id===(state.filters.features[id]||'allow'));
+    const next=FEATURE_MODES[(index+direction+FEATURE_MODES.length)%FEATURE_MODES.length];
+    setFeature(id,next.id);
   }
   function syncControls() {
     $('page-count').value=state.pageCount;$('per-page').value=state.perPage;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
-    Object.keys(C.FEATURES).forEach(f=>{const mode=state.filters.features[f]||'allow';$('feature-'+f).querySelectorAll('input').forEach(input=>input.checked=input.value===mode);});
+    syncFeatures();
+    $('feature-status').textContent='';
     $('sheet-title').value=state.title;$('sheet-group').value=state.group;$('show-brand').checked=state.showBrand;
   }
   function visual(v,id) {
@@ -211,7 +234,12 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
     window.print();
   }
-  $('feature-filters').addEventListener('change',event=>{const el=event.target;if(!el.matches('input[data-feature]'))return;state.filters.features[el.dataset.feature]=el.value;message('');update();});
+  $('feature-filters').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
+  $('feature-filters').addEventListener('change',event=>{const input=event.target;if(input.matches('input[data-feature]'))setFeature(input.dataset.feature,input.value);});
+  $('feature-filters').addEventListener('keydown',event=>{
+    const button=event.target.closest('button[data-feature]');if(!button||!['ArrowLeft','ArrowRight'].includes(event.key))return;
+    event.preventDefault();cycleFeature(button.dataset.feature,event.key==='ArrowLeft'?-1:1);
+  });
   for(const id of ['level','difficulty','scope'])$(id).addEventListener('change',()=>{state.filters[id]=$(id).value;message('');update();});
   for(const [id,key] of [['page-count','pageCount'],['per-page','perPage']])$(id).addEventListener('change',()=>{
     state[key]=Number($(id).value);state.ids=state.ids.slice(0,capacity());

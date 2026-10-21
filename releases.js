@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.8.0',title:'Dues maneres de triar els continguts',
+    changes:[
+      'Filtres en etiquetes compactes amb color i símbol per a cada estat.',
+      'Columna esquerra: un clic fa rotar entre permès, obligatori i exclòs.',
+      'Columna dreta: tres icones internes per seleccionar directament l’estat i comparar les dues variants.'
+    ]
+  },
+  {
     version:'0.7.0',title:'La fitxa, a la teva mida',
     changes:[
       'Tria 1, 2, 4 o 6 pàgines i, per separat, 2, 3 o 4 problemes per pàgina.',
