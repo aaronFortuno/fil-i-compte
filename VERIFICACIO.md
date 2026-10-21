@@ -121,3 +121,9 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Observat el pas automàtic del filtre d'exemple de permès a obligatori. Comprovats la casella i el canvi manual d'estat; els filtres reals i els quatre problemes seleccionats es conserven. L'animació es cancel·la en interactuar o tancar; s'omet amb moviment reduït.
 - Ajuda comprovada a 1280 × 900, 390 × 844 i 320 × 640. Sense desbordament horitzontal; a 320 px hi ha desplaçament intern i es pot arribar al filtre d'exemple amb teclat.
 - Captures locals a `vista-previa-v081-validacio.jpg` i `vista-previa-v081-ajuda.jpg` (no versionades). Cap comprovació remota. Es conserva la numeració 0.8.1 i s'afegeix un commit sense moure l'etiqueta ja publicada.
+
+## Vora de les targetes · 0.8.2 · 21 d'octubre de 2026
+
+- Comprovació local de les quatre targetes seleccionades: gruix de vora idèntic als quatre costats i cap ombra interior. Es conserva la mateixa ombra exterior subtil de les targetes normals.
+- Comprovada la sintaxi del registre de versions i el diff. Canvi només visual: no s'han repetit les proves matemàtiques ni modificat la gestió de selecció i avisos.
+- Captura a `vista-previa-v082.jpg` (no versionada). Sense comprovacions remotes.

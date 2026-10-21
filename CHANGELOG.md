@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.8.2 · Vora uniforme a les targetes
+
+- Eliminat el ressalt interior de 3 px a l'esquerra de les targetes seleccionades del banc. La vora verda conserva el mateix gruix als quatre costats, coherent amb l'exemple de l'ajuda.
+
 ## 0.8.1 · Selecció vàlida i ajuda visual
 
 - Adoptat el botó de canvi rotatiu a les dues columnes, amb el nom complet i una sola icona d'estat. Es manté l'amplada del lateral.

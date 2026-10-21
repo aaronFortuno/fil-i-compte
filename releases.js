@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.8.2',title:'Targetes amb una vora uniforme',
+    changes:['Les targetes seleccionades del banc tenen una vora verda uniforme, coherent amb l’exemple de l’ajuda.']
+  },
+  {
     version:'0.8.1',title:'Una tria a punt per imprimir',
     changes:[
       'Botons rotatius més compactes a les dues columnes.',
