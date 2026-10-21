@@ -110,3 +110,14 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Provat el canvi de potències amb clic, espai i fletxes: l'exclusió elimina P011 i es conserva després de recarregar. Comprovats també els botons de l'esquerra i restaurats els filtres inicials després de les proves.
 - Dues columnes i noms sense desbordaments a 768, 390 i 320 px. Sense errors ni avisos a la consola local.
 - Captura a `vista-previa-v081.jpg` (no versionada). Sense comprovació remota.
+
+### Ampliació de la mateixa 0.8.1 · Revisió vàlida i ajuda visual
+
+- Superades les 15 comprovacions existents i la sintaxi. Provat al navegador el cas d'excloure operacions combinades: zero candidats, només l'estat buit al banc, revisió i proposta inhabilitades. El lateral manté 615 px de contingut en 615 px disponibles, igual que abans d'excloure.
+- Provat el bloqueig de revisió per selecció incompleta, candidats insuficients, problemes seleccionats incompatibles i continguts obligatoris absents. Els avisos del banc són neutres i no mostren identificadors de problemes. En completar una tria vàlida s'entra a la revisió i les dues impressions estan disponibles.
+- La cerca del banc continua sent només exploratòria: una cerca sense resultats no invalida una tria completa que compleix els filtres.
+- Eliminats els avisos del sidebar i de la previsualització. Es manté una comprovació interna d'impressió amb text genèric per a una impressió directa del navegador sobre una tria invàlida.
+- Ajuda centrada comprovada amb X, Esc i clic exterior, amb retorn del focus al botó d'ajuda. Reprovat també l'historial després de compartir el comportament dels diàlegs.
+- Observat el pas automàtic del filtre d'exemple de permès a obligatori. Comprovats la casella i el canvi manual d'estat; els filtres reals i els quatre problemes seleccionats es conserven. L'animació es cancel·la en interactuar o tancar; s'omet amb moviment reduït.
+- Ajuda comprovada a 1280 × 900, 390 × 844 i 320 × 640. Sense desbordament horitzontal; a 320 px hi ha desplaçament intern i es pot arribar al filtre d'exemple amb teclat.
+- Captures locals a `vista-previa-v081-validacio.jpg` i `vista-previa-v081-ajuda.jpg` (no versionades). Cap comprovació remota. Es conserva la numeració 0.8.1 i s'afegeix un commit sense moure l'etiqueta ja publicada.

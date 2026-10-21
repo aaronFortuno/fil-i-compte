@@ -1,10 +1,15 @@
 # Historial de canvis
 
-## 0.8.1 · Etiquetes rotatives més compactes
+## 0.8.1 · Selecció vàlida i ajuda visual
 
 - Adoptat el botó de canvi rotatiu a les dues columnes, amb el nom complet i una sola icona d'estat. Es manté l'amplada del lateral.
 - Padding vertical reduït de 8 a 4 px i alçada mínima de 34 px per equilibrar les etiquetes i recuperar espai.
 - Retirats el selector directe de comparació, els seus estils i les instruccions associades. Els estats desats continuen funcionant.
+- «Revisa la fitxa» només s'activa per a una selecció completa que compleix tots els filtres i continguts obligatoris. La navegació també comprova aquesta condició abans d'entrar a la revisió.
+- Eliminats els avisos amb identificadors del lateral i de la previsualització. Sense candidats només es mostra l'estat buit del banc; els altres casos mostren una indicació neutra al banc. La proposta automàtica s'inhabilita quan no hi ha prou candidats.
+- Impressió disponible des de la revisió vàlida, amb comprovació interna conservada. No s'introdueixen avisos ni desplaçaments addicionals al sidebar.
+- «Com funciona» passa a un diàleg centrat, amb el mateix comportament que l'historial: X, clic exterior, Esc, focus i animació compartits.
+- Exemple real de problema amb casella destacada i filtre demostratiu amb animació de clic, estats explicats i interacció manual. Els exemples són independents de la tria; l'animació s'atura en interactuar o tancar i respecta el moviment reduït.
 
 ## 0.8.0 · Comparació de filtres en etiquetes
 

@@ -1,10 +1,12 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
-    version:'0.8.1',title:'Etiquetes més equilibrades',
+    version:'0.8.1',title:'Una tria a punt per imprimir',
     changes:[
-      'Canvi rotatiu d’estat a les dues columnes, amb més espai per als noms.',
-      'Menys padding vertical a les etiquetes, mantenint l’amplada del lateral.'
+      'Botons rotatius més compactes a les dues columnes.',
+      'La revisió només s’activa amb una tria completa que compleix els filtres.',
+      'Avisos clars al banc, sense codis ni salts al lateral.',
+      'Ajuda centrada amb un exemple de selecció i un filtre animat.'
     ]
   },
   {
