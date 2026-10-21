@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.3.1 · Focus estable durant les transicions
+
+- El contenidor dels passos retalla el contingut sense convertir-se en una zona desplaçable: el focus i la navegació ràpida no poden moure'l ni retallar la part superior del visor.
+
 ## 0.3 · Navegació per passos i revisió en paral·lel
 
 - Capçalera i peu comuns als dos passos, amb tornada al banc i impressió al peu.

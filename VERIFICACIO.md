@@ -38,3 +38,9 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Els dos botons d'impressió són al peu i el pas inactiu queda marcat com a inert. Navegació interna amb focus al pas actiu i enllaç de salt adaptat al pas.
 - Sense errors ni avisos a la consola durant les proves. No s'ha completat una impressió física ni una exportació PDF en aquesta iteració.
 - Totes les comprovacions s'han fet en local. GitHub continua pendent.
+
+### Correcció 0.3.1
+
+- Detectat i corregit un desplaçament del contenidor dels passos provocat pel focus o per l'entrada ràpida als controls durant la transició. El contenidor utilitza `overflow: clip`; els panells interns i el visor mantenen els seus propis desplaçaments.
+- Reprovada la seqüència ràpida revisió → zoom màxim → reajust → banc → revisió: el contenidor conserva `scrollTop = 0` i no retalla les pàgines.
+- Reprovat l'accés al control de reajust en mòbil: la capçalera del pas es manté a la seva posició i el peu continua dins de la finestra.
