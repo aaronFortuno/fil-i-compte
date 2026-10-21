@@ -1,6 +1,6 @@
 # Bloc 01 · Dotze maneres de pensar
 
-12 problemes estàtics amb una possible resolució. Càlculs comprovats; revisió docent pendent. Els dibuixos es poden veure al web.
+12 problemes estàtics amb una possible resolució. Càlculs comprovats i problemes validats en la revisió del projecte. Els dibuixos es poden veure al web.
 
 Aquest document es genera a partir de data/catalog.json; les correccions es fan al catàleg original.
 

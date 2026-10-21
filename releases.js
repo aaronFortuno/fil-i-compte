@@ -1,6 +1,15 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.6.0',title:'Més banc, menys soroll',
+    changes:[
+      'Banc de tres columnes en escriptori i capçalera sense indicacions repetides.',
+      'Filtres de tres posicions, en dues columnes i amb selecció directa.',
+      'Navegació estable al centre del peu, versions a l’esquerra i eines JSON a la dreta.',
+      'Catàleg marcat com a validat després de la revisió del projecte.'
+    ]
+  },
+  {
     version:'0.5.0',title:'Versions a la vista',
     changes:[
       'Versió visible al peu, tant al banc com a la revisió.',

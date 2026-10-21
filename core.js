@@ -97,5 +97,11 @@
     return found?{ids:found.map(e=>e.id)}:{error:'No es poden cobrir tots els continguts obligatoris en aquest nombre de problemes. Amplia els filtres o tria més places.'};
   }
   function pageGroups(exercises) {const middle=Math.ceil(exercises.length/2);return [exercises.slice(0,middle),exercises.slice(middle)];}
-  return {FEATURES,LEVELS,DIFFICULTIES,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups};
+  function sameExerciseContent(saved,current) {
+    if(!saved||!current||Array.isArray(saved)||typeof saved!=='object')return false;
+    // Editorial status alone does not invalidate an exported selection.
+    const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
+    return JSON.stringify(ordered({...saved,status:undefined}))===JSON.stringify(ordered({...current,status:undefined}));
+  }
+  return {FEATURES,LEVELS,DIFFICULTIES,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
 });

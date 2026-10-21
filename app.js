@@ -23,12 +23,13 @@
   }
   function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
-    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<div class="feature-row"><label for="feature-${id}">${escape(label)}</label><select id="feature-${id}" data-feature="${id}"><option value="allow">Permès</option><option value="require">Obligatori</option><option value="exclude">Exclòs</option></select></div>`).join('');
+    const modes=[['exclude','Exclòs','−'],['allow','Permès','○'],['require','Obligatori','+']];
+    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<fieldset class="feature-control" id="feature-${id}"><legend>${escape(label)}</legend><div class="feature-segments">${modes.map(([mode,name,symbol])=>`<label title="${escape(label)}: ${name}"><input type="radio" name="feature-${id}" value="${mode}" data-feature="${id}"><span class="segment-symbol" aria-hidden="true">${symbol}</span><span class="sr-only">${name}</span></label>`).join('')}</div></fieldset>`).join('');
     syncControls();
   }
   function syncControls() {
     $('count').value=state.count;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
-    Object.keys(C.FEATURES).forEach(f=>{const el=$('feature-'+f);el.value=state.filters.features[f]||'allow';el.dataset.mode=el.value;});
+    Object.keys(C.FEATURES).forEach(f=>{const mode=state.filters.features[f]||'allow';$('feature-'+f).querySelectorAll('input').forEach(input=>input.checked=input.value===mode);});
     $('sheet-title').value=state.title;$('sheet-group').value=state.group;$('show-brand').checked=state.showBrand;
   }
   function visual(v,id) {
@@ -69,7 +70,7 @@
   }
   function renderCards() {
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
-    $('match-count').textContent=matches.length;$('empty').hidden=matches.length>0;
+    $('empty').hidden=matches.length>0;
     const existing=[...$('cards').children];
     if(existing.length===matches.length&&existing.every((el,i)=>el.dataset.id===matches[i].id)){
       existing.forEach(el=>{const checked=state.ids.includes(el.dataset.id);el.classList.toggle('is-selected',checked);el.querySelector('input').checked=checked;});
@@ -86,9 +87,7 @@
   function update(animatePreview=false) {
     persist();renderCards();
     const problems=issues();
-    $('selection-count').textContent=`${state.ids.length} de ${state.count} problemes`;
-    $('selection-caption').textContent=problems.length?problems[0]:reviewStep?`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`:'Pas 1 de 2 · Tria els problemes.';
-    $('selection-caption').classList.toggle('has-issues',problems.length>0);
+    $('selection-issues').hidden=!problems.length;$('selection-issues').textContent=problems.join(' ');
     $('preview-button').disabled=state.ids.length===0;
     if(reviewStep)renderPreview(animatePreview);
   }
@@ -111,21 +110,22 @@
     $('preview-issues').className=problems.length?'message error':'';
     $('preview-issues').textContent=problems.join(' ');
     $('print-exercises').disabled=problems.length>0;$('print-solutions').disabled=problems.length>0;
-    if(!problems.length)$('selection-caption').textContent=`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`;
     if(animate)animateElements([...$('pages').children],[{opacity:.35},{opacity:1}]);
     requestAnimationFrame(()=>resizePreview());
   }
   function setStep(review) {
+    if(review===reviewStep)return;
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
     $('bank-step').inert=review;$('bank-step').setAttribute('aria-hidden',String(review));
     $('preview').inert=!review;$('preview').setAttribute('aria-hidden',String(!review));
-    $('bank-actions').hidden=review;$('review-actions').hidden=!review;$('close-preview').hidden=!review;
-    $('step-icon').textContent=review?'02':'01';
+    $('bank-actions').hidden=review;$('review-actions').hidden=!review;
+    $('close-preview').toggleAttribute('aria-current',!review);$('preview-button').toggleAttribute('aria-current',review);
+    (review?$('preview-button'):$('close-preview')).setAttribute('aria-current','step');
     const skip=document.querySelector('.skip');skip.href=review?'#preview-title':'#catalogue';skip.textContent=review?'Salta a la revisió de la fitxa':'Salta al banc de problemes';
     update();
-    (review?$('preview-title'):$('preview-button')).focus({preventScroll:true});
+    (review?$('preview-title'):$('catalogue-title')).focus({preventScroll:true});
   }
   function motionDuration(){return matchMedia('(prefers-reduced-motion: reduce)').matches?0:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motion-duration'))||220;}
   function animateElements(elements,keyframes){const duration=motionDuration();if(duration)elements.forEach(el=>el.animate(keyframes,{duration,easing:'cubic-bezier(.22,.68,.25,1)'}));}
@@ -208,7 +208,7 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
     window.print();
   }
-  $('feature-filters').addEventListener('change',event=>{const el=event.target;state.filters.features[el.dataset.feature]=el.value;el.dataset.mode=el.value;message('');update();});
+  $('feature-filters').addEventListener('change',event=>{const el=event.target;if(!el.matches('input[data-feature]'))return;state.filters.features[el.dataset.feature]=el.value;message('');update();});
   for(const id of ['level','difficulty','scope'])$(id).addEventListener('change',()=>{state.filters[id]=$(id).value;message('');update();});
   $('count').addEventListener('change',()=>{
     const count=Number($('count').value);
@@ -262,7 +262,7 @@
       const saved=JSON.parse(await file.text());
       if(saved.format!=='fil-i-compte-selection'||saved.version!==1)throw Error('Aquest fitxer no és una tria de Fil i compte.');
       const next=validateState(saved.state);
-      if(!Array.isArray(saved.exercises)||saved.exercises.length!==next.ids.length||next.ids.some((id,index)=>JSON.stringify(saved.exercises[index])!==JSON.stringify(catalogue.find(e=>e.id===id))))throw Error('El contingut desat no coincideix amb aquesta versió del catàleg. Conserva el fitxer per revisar-lo.');
+      if(!Array.isArray(saved.exercises)||saved.exercises.length!==next.ids.length||next.ids.some((id,index)=>!C.sameExerciseContent(saved.exercises[index],catalogue.find(e=>e.id===id))))throw Error('El contingut desat no coincideix amb aquesta versió del catàleg. Conserva el fitxer per revisar-lo.');
       state=next;query='';$('search').value='';syncControls();message('Tria recuperada amb els mateixos problemes.','success');update();
     }catch(error){message('No s’ha pogut recuperar la tria. '+error.message,'error');}
     event.target.value='';

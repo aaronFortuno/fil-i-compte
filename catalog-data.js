@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "primer-bloc",
     "title": "Dotze maneres de pensar",
     "language": "ca",
-    "version": 1,
+    "version": 2,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "Càlculs comprovables automàticament. Revisió docent pendent."
+    "review": "Càlculs comprovats i problemes validats en la revisió del projecte."
   },
   "exercises": [
     {
@@ -18,7 +18,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "canvis",
       "level": "mitja",
       "difficulty": 1,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "A l'hort de l'escola han omplert 4 cistells amb 6 pomes cadascun. Per preparar el berenar, n'agafen 7 en total.",
       "question": "Quantes pomes queden als cistells?",
       "features": [
@@ -67,7 +67,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "canvis",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "La biblioteca té 168 llibres disponibles. Rep 4 paquets de 18 llibres cadascun i després en deixa 57 en préstec.",
       "question": "Quants llibres hi queden disponibles?",
       "features": [
@@ -113,7 +113,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "repartiment",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "A una sortida s'hi han apuntat 156 alumnes. Finalment, 24 no hi poden anar. La resta es reparteix a parts iguals entre 6 autocars. El trajecte dura 45 minuts.",
       "question": "Quants alumnes viatgen en cada autocar?",
       "features": [
@@ -157,7 +157,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "repartiment",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Una cooperativa prepara 18 caixes amb 24 pots de melmelada cadascuna. Reserva 36 pots per a una fira i reparteix tots els altres, a parts iguals, entre 6 botigues.",
       "question": "Quants pots rep cada botiga?",
       "features": [
@@ -205,7 +205,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "part-total",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Per al berenar hi ha 32 entrepans. Durant el primer torn es mengen tres quartes parts (3/4) dels entrepans.",
       "question": "Quants entrepans queden per al segon torn?",
       "features": [
@@ -259,7 +259,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "part-total",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Un dipòsit té una capacitat de 150 litres i està ple fins a dues cinquenes parts (2/5) de la seva capacitat. Hi afegim 45 litres d'aigua.",
       "question": "Quants litres d'aigua hi ha ara al dipòsit?",
       "features": [
@@ -314,7 +314,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "descompte",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Una motxilla costa 80 €. La botiga hi aplica un descompte del 25 %. Si la comprem per internet, el transport costa 6 € i no té descompte.",
       "question": "Quant pagarem en total per la motxilla i el transport?",
       "features": [
@@ -373,7 +373,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "augment",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "L'any passat al casal hi havia 240 infants inscrits. Aquest any el nombre d'inscripcions ha augmentat un 15 % respecte de l'any passat.",
       "question": "Quants infants hi ha inscrits aquest any?",
       "features": [
@@ -420,7 +420,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "compra-canvi",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Al mercat comprem 2,4 kg de pomes a 3,50 €/kg i 1,5 kg de peres a 2,20 €/kg. Paguem amb un bitllet de 20 €.",
       "question": "Quin canvi ens han de tornar?",
       "features": [
@@ -473,7 +473,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "mesura",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Un circuit té forma de rectangle: fa 12,5 metres de llarg i 7,5 metres d'ample. La Jana hi fa una volta completa amb passes de 0,8 metres, totes de la mateixa llargada.",
       "question": "Quantes passes necessita per fer una volta completa?",
       "features": [
@@ -527,7 +527,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "quadrats",
       "level": "eso",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Un mosaic quadrat està format per 8 files de 8 rajoles cadascuna. Durant una reparació es retiren 12 rajoles.",
       "question": "Quantes rajoles queden col·locades? Escriu el nombre inicial de rajoles amb una potència.",
       "features": [
@@ -575,7 +575,7 @@ globalThis.EXERCISE_CATALOG = {
       "structure": "mesura",
       "level": "eso",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Un hort quadrat té una superfície de 144 m². Volem posar una tanca a tot el voltant, excepte en una obertura de 3 metres per a la porta.",
       "question": "Quants metres de tanca necessitem?",
       "features": [

@@ -67,3 +67,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - L'historial està exclòs de la impressió per la regla de mitjà corresponent; les plantilles dels fulls es mantenen iguals. No s'ha exportat un PDF nou en aquesta iteració.
 - Sense errors ni avisos a la consola del navegador local. Captura de revisió local a `vista-previa-v05.jpg` (no versionada).
 - Cap comprovació del web remot: la validació de la publicació de GitHub Pages correspon a l'usuari.
+
+## Banc i navegació compactes · 0.6.0 · 21 d'octubre de 2026
+
+- Superats 14 grups de comprovacions: els 12 anteriors, validació de l'estat editorial del catàleg publicat i compatibilitat de tries amb canvis només d'estat. Aquesta última comprova també que es rebutgin canvis d'enunciat, resposta o versió del problema.
+- Comprovada la sintaxi de JavaScript i la regeneració del catàleg a partir del JSON original. Els 12 problemes tenen estat `validat` i el paquet passa a la versió 2 sense modificar els enunciats ni les solucions.
+- A 1280 × 900: tres columnes de problemes, filtres de dos en dos i totes les opcions del lateral visibles sense desplaçament quan no hi ha incidències (615 px de contingut en 615 px disponibles).
+- Comprovats els tres estats dels filtres amb clic i fletxes del teclat. Excloure fraccions elimina P005 i P006 del banc i avisa si encara formen part de la selecció. Fer-les obligatòries en cada problema deixa precisament aquests dos candidats. Estat dels controls i àmbit conservats després d'una recàrrega.
+- Comprovada la cerca, la recuperació dels 12 problemes en buidar-la i l'avís de selecció incompleta en passar de quatre a sis places. La impressió continua bloquejada fins a completar una selecció vàlida.
+- Mesurada la mateixa posició i mida de la navegació abans i després de canviar de pas en escriptori i en mòbils de 390 i 320 px. El focus passa al títol de la pantalla activa i el pas actual queda indicat amb `aria-current="step"`.
+- Comprovats els peus a 1280, 1024, 768, 390 i 320 px, sense desbordament horitzontal. Les eines i els botons d'impressió comparteixen una alçada reservada per evitar salts en canviar de pantalla.
+- Sense errors ni avisos a la consola durant la revisió local. Captura a `vista-previa-v06.jpg` (no versionada). Les plantilles d'impressió no s'han modificat en aquesta iteració.
+- Sense comprovacions remotes; la revisió de la publicació correspon a l'usuari.

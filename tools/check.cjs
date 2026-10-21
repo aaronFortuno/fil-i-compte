@@ -16,6 +16,15 @@ function validate(value,rule,location='$') {
   else if(value&&typeof value==='object'){for(const key of rule.required||[])assert(Object.hasOwn(value,key),location+' missing '+key);for(const [key,item]of Object.entries(value)){if(rule.additionalProperties===false)assert(Object.hasOwn(rule.properties,key),location+' unknown '+key);if(rule.properties?.[key])validate(item,rule.properties[key],location+'.'+key);}}
 }
 check('El catàleg compleix l’esquema i té 12 identificadors únics',()=>{validate(data,schema);assert.equal(all.length,12);assert.equal(new Set(all.map(e=>e.id)).size,12);});
+check('El catàleg publicat només conté problemes validats',()=>all.forEach(e=>assert.equal(e.status,'validat',e.id)));
+check('Les tries antigues admeten canvis editorials però rebutgen enunciats o solucions diferents',()=>{
+  const current=all[0],legacy=JSON.parse(JSON.stringify(current));legacy.status='pendent-docent';
+  assert(C.sameExerciseContent(legacy,current));
+  assert(!C.sameExerciseContent({...legacy,statement:legacy.statement+' Modificat.'},current));
+  assert(!C.sameExerciseContent({...legacy,solution:{...legacy.solution,answer:99}},current));
+  assert(!C.sameExerciseContent({...legacy,version:legacy.version+1},current));
+  assert(!C.sameExerciseContent(null,current));
+});
 const expected=[17,183,22,66,8,105,66,276,8.3,50,52,45];
 check('Les 12 respostes coincideixen amb els càlculs exactes i els resultats revisats',()=>all.forEach((e,i)=>{const r=C.evaluate(e.solution.calculation),a=C.numberRatio(e.solution.answer);assert.deepEqual(r,a,e.id);assert.equal(e.solution.answer,expected[i],e.id);}));
 check('L’aritmètica evita errors de decimals i detecta divisions o arrels invàlides',()=>{assert.deepEqual(C.evaluate(['add',0.1,0.2]),{n:3,d:10});assert.deepEqual(C.evaluate(['div',23,7]),{n:23,d:7});assert.throws(()=>C.evaluate(['div',2,0]));assert.throws(()=>C.evaluate(['sqrt',23]));});
@@ -35,4 +44,4 @@ check('Obligatori en cada problema i filtres incompatibles no es relaxen',()=>{c
 check('Una nova proposta canvia la selecció si hi ha alternatives compatibles',()=>{const previous=['P001','P002','P003','P004'];const r=C.compose(all,base,4,previous);assert(!r.error);assert.equal(new Set(r.ids).size,4);assert(r.ids.some(id=>!previous.includes(id)));});
 check('Només es proposen 4 o 6 problemes, distribuïts en 2+2 o 3+3',()=>{for(const count of [4,6]){const r=C.compose(all,base,count);assert.equal(new Set(r.ids).size,count);assert.deepEqual(C.pageGroups(all.slice(0,count)).map(g=>g.length),count===4?[2,2]:[3,3]);}assert(C.compose(all,base,5).error);assert(C.compose(all,base,8).error);});
 check('La selecció detecta problemes incompatibles i continguts obligatoris absents',()=>{assert(C.selectionIssues(all.slice(0,4),{...base,features:{decimals:'require'}},4).some(x=>x.includes('Falta')));assert(C.selectionIssues([all[8],...all.slice(0,3)],{...base,features:{decimals:'exclude'}},4).some(x=>x.includes('P009')));});
-console.log(`\n${checks} grups de comprovacions superats. Revisió docent encara pendent.`);
+console.log(`\n${checks} grups de comprovacions superats.`);

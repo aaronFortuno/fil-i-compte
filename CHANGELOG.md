@@ -1,5 +1,15 @@
 # Historial de canvis
 
+## 0.6.0 · Banc compacte, filtres directes i navegació estable
+
+- Eliminades la indicació de marcar problemes, el recompte duplicat i la fila d'avís i descàrrega del catàleg. El recompte general es manté a la capçalera.
+- Tres columnes de problemes en escriptori; dues en pantalles mitjanes i una en pantalles estretes.
+- Filtres distribuïts en dues columnes amb controls de tres posicions: exclòs, permès i obligatori. Selecció amb un clic, fletxes del teclat i noms accessibles.
+- Peu amb versió a l'esquerra, passos 01/02 connectats al centre i eines JSON a la dreta. La navegació conserva la posició entre passos i la revisió manté els botons d'impressió al peu.
+- Eliminats els resums redundants del peu. Els problemes de selecció es comuniquen al lateral, només quan n'hi ha.
+- Eines reanomenades per explicitar l'exportació o importació JSON. «Proposa una fitxa nova» sense text auxiliar.
+- Els 12 problemes passen a l'estat editorial validat per indicació de l'usuari. Les tries anteriors continuen admetent-se si només ha canviat aquest estat; els canvis d'enunciat o solució continuen rebutjant-se.
+
 ## 0.5.0 · Versions visibles i publicació a GitHub Pages
 
 - Número de versió al peu compartit del banc i la revisió, amb un diàleg d'historial resumit de totes les iteracions.
