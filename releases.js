@@ -1,6 +1,13 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.8.1',title:'Etiquetes més equilibrades',
+    changes:[
+      'Canvi rotatiu d’estat a les dues columnes, amb més espai per als noms.',
+      'Menys padding vertical a les etiquetes, mantenint l’amplada del lateral.'
+    ]
+  },
+  {
     version:'0.8.0',title:'Dues maneres de triar els continguts',
     changes:[
       'Filtres en etiquetes compactes amb color i símbol per a cada estat.',

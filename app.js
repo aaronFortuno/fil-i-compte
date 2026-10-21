@@ -25,20 +25,16 @@
   }
   function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
-    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label],index)=>index%2===0
-      ?`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`
-      :`<div class="feature-chip feature-direct" id="feature-${id}" data-feature="${id}" role="radiogroup" aria-labelledby="feature-label-${id}" aria-describedby="feature-direct-instructions"><span class="feature-name" id="feature-label-${id}">${escape(label)}</span><div class="feature-options">${FEATURE_MODES.map(mode=>`<label title="${escape(label)}: ${mode.label}"><input type="radio" name="feature-${id}" data-feature="${id}" value="${mode.id}"><span aria-hidden="true">${mode.icon}</span><span class="sr-only">${mode.label}</span></label>`).join('')}</div></div>`).join('');
+    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
     syncControls();
   }
   function syncFeatures() {
     Object.entries(C.FEATURES).forEach(([id,label])=>{
       const mode=state.filters.features[id]||'allow',index=FEATURE_MODES.findIndex(item=>item.id===mode),current=FEATURE_MODES[index],next=FEATURE_MODES[(index+1)%FEATURE_MODES.length],control=$('feature-'+id);
       control.dataset.mode=mode;
-      if(control.matches('button')){
-        control.querySelector('.feature-state').textContent=current.icon;
-        control.setAttribute('aria-label',label+': '+current.label.toLocaleLowerCase('ca'));
-        control.title=current.label+' · Clica per canviar a '+next.label.toLocaleLowerCase('ca');
-      }else control.querySelectorAll('input').forEach(input=>input.checked=input.value===mode);
+      control.querySelector('.feature-state').textContent=current.icon;
+      control.setAttribute('aria-label',label+': '+current.label.toLocaleLowerCase('ca'));
+      control.title=current.label+' · Clica per canviar a '+next.label.toLocaleLowerCase('ca');
     });
   }
   function setFeature(id,mode) {
@@ -235,7 +231,6 @@
     window.print();
   }
   $('feature-filters').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
-  $('feature-filters').addEventListener('change',event=>{const input=event.target;if(input.matches('input[data-feature]'))setFeature(input.dataset.feature,input.value);});
   $('feature-filters').addEventListener('keydown',event=>{
     const button=event.target.closest('button[data-feature]');if(!button||!['ArrowLeft','ArrowRight'].includes(event.key))return;
     event.preventDefault();cycleFeature(button.dataset.feature,event.key==='ArrowLeft'?-1:1);

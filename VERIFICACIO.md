@@ -102,3 +102,11 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Dues columnes a 1280, 768, 390 i 320 px, sense desbordament horitzontal dels controls. En els espais estrets el selector directe queda sota el nom per no tallar les paraules.
 - Noms accessibles, instruccions de teclat i anunci dels canvis d'estat. Sense errors ni avisos a la consola local.
 - Captura de comparació a `vista-previa-v08.jpg` (no versionada), amb exemples dels tres estats. No s'ha comprovat el web remot.
+
+## Etiquetes rotatives compactes · 0.8.1 · 21 d'octubre de 2026
+
+- Superades les 15 comprovacions existents i la comprovació de sintaxi. Deu botons rotatius i cap selector directe al banc.
+- Padding vertical de 4 px i alçada mínima de 34 px. A 1280 × 900, el bloc de filtres ocupa 205 px, davant dels 268 px de la comparació anterior, sense ampliar el lateral.
+- Provat el canvi de potències amb clic, espai i fletxes: l'exclusió elimina P011 i es conserva després de recarregar. Comprovats també els botons de l'esquerra i restaurats els filtres inicials després de les proves.
+- Dues columnes i noms sense desbordaments a 768, 390 i 320 px. Sense errors ni avisos a la consola local.
+- Captura a `vista-previa-v081.jpg` (no versionada). Sense comprovació remota.

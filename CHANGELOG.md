@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.8.1 · Etiquetes rotatives més compactes
+
+- Adoptat el botó de canvi rotatiu a les dues columnes, amb el nom complet i una sola icona d'estat. Es manté l'amplada del lateral.
+- Padding vertical reduït de 8 a 4 px i alçada mínima de 34 px per equilibrar les etiquetes i recuperar espai.
+- Retirats el selector directe de comparació, els seus estils i les instruccions associades. Els estats desats continuen funcionant.
+
 ## 0.8.0 · Comparació de filtres en etiquetes
 
 - Substituïts els cercles separats per etiquetes amb nom, fons i símbol coherents amb l'estat: punt per a permès, marca per a obligatori i aspa per a exclòs.
