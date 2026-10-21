@@ -79,3 +79,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Comprovats els peus a 1280, 1024, 768, 390 i 320 px, sense desbordament horitzontal. Les eines i els botons d'impressió comparteixen una alçada reservada per evitar salts en canviar de pantalla.
 - Sense errors ni avisos a la consola durant la revisió local. Captura a `vista-previa-v06.jpg` (no versionada). Les plantilles d'impressió no s'han modificat en aquesta iteració.
 - Sense comprovacions remotes; la revisió de la publicació correspon a l'usuari.
+
+## Pàgines i distribució · 0.7.0 · 21 d'octubre de 2026
+
+- Superats 15 grups de comprovacions. Les 12 combinacions de pàgines i distribució es proven amb un catàleg de mostra prou ampli: nombre exacte, problemes únics i ordre conservat entre pàgines. També es comproven els límits del catàleg real, les configuracions invàlides i la migració de les tries antigues.
+- Recuperada en el navegador una tria anterior de quatre problemes com a dues pàgines de dos; comprovada després la persistència de quatre pàgines de tres problemes en recarregar.
+- Comprovats una pàgina de tres problemes, una pàgina en quadrícula de quatre, dues pàgines en quadrícula, quatre pàgines de tres i sis pàgines de dos. Numeració i quantitat de pàgines correctes; impressió habilitada quan la tria és completa.
+- Comprovats els 12 solucionaris en quadrícula, amb títol i marca, sense desbordaments. Comprovada també la maquetació dels 12 solucionaris en columna. En les quadrícules d'exercicis revisades, els espais de treball fan entre 256 i 293 píxels CSS a mida nativa A4.
+- Sis pàgines de quatre problemes demanen 24 places: el compositor informa que només hi ha 12 problemes compatibles i no en repeteix cap per omplir-les.
+- El visor disposa quatre pàgines en dues files i sis en tres, amb dues columnes; l'ajust automàtic respecta el conjunt. Una sola pàgina es centra i s'ajusta a l'alçada disponible.
+- Columnes dels quatre camps superiors d'amplada igual. Filtres circulars de 22 px dins d'àrees de selecció de 30 × 28 px; clic i fletxes del teclat provats amb els estats d'exclusió i permès.
+- Lema i recompte del catàleg visibles en escriptori i mòbil. Revisió de les mides de 1280, 1024, 768, 390 i 320 px, sense desbordament horitzontal.
+- Revisió local de la mateixa estructura HTML i CSS que utilitza la impressió; no s'ha obert el diàleg d'impressió ni exportat un PDF en aquesta iteració. Cap comprovació del web remot.

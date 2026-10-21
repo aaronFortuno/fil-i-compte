@@ -1,6 +1,15 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.7.0',title:'La fitxa, a la teva mida',
+    changes:[
+      'Tria 1, 2, 4 o 6 pàgines i, per separat, 2, 3 o 4 problemes per pàgina.',
+      'Nova quadrícula de quatre problemes, amb previsualització i solucionari adaptats.',
+      'Filtres circulars més compactes i passos simplificats a 1 i 2.',
+      'Nou lema amb el recompte real de problemes del catàleg.'
+    ]
+  },
+  {
     version:'0.6.0',title:'Més banc, menys soroll',
     changes:[
       'Banc de tres columnes en escriptori i capçalera sense indicacions repetides.',

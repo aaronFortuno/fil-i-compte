@@ -12,6 +12,14 @@
   };
   const LEVELS = {mitja:'Cicle mitjà', superior:'Cicle superior', eso:'Inici d’ESO'};
   const DIFFICULTIES = {1:'Accessible',2:'Intermedi',3:'Repte'};
+  const PAGE_COUNTS=[1,2,4,6],PER_PAGE=[2,3,4];
+  function sheetLayout(settings) {
+    if(!settings||typeof settings!=='object')throw Error('Configuració de pàgines no vàlida.');
+    // Migrate the original two-page worksheets without losing selected problems.
+    if(settings.pageCount===undefined&&settings.perPage===undefined&&[4,5,6].includes(settings.count))return {pageCount:2,perPage:settings.count===4?2:3};
+    if(!PAGE_COUNTS.includes(settings.pageCount)||!PER_PAGE.includes(settings.perPage))throw Error('Configuració de pàgines no vàlida.');
+    return {pageCount:settings.pageCount,perPage:settings.perPage};
+  }
   const gcd = (a,b) => { a = Math.abs(a); b = Math.abs(b); while(b) [a,b]=[b,a%b]; return a || 1; };
   function rational(n,d=1) {
     if (!Number.isSafeInteger(n) || !Number.isSafeInteger(d) || !d) throw Error('Nombre fora del rang segur o divisió per zero');
@@ -69,7 +77,7 @@
   // Bounded exhaustive search: the small initial catalogue makes coverage exact.
   // Larger packs use early pruning and stop at the first valid combination.
   function compose(catalog,filters,count,previous=[]) {
-    if(![4,6].includes(count))return {error:'Tria 4 o 6 problemes per preparar dues pàgines equilibrades.'};
+    if(!PAGE_COUNTS.some(pages=>PER_PAGE.some(perPage=>pages*perPage===count)))return {error:'Tria un nombre de pàgines i una distribució vàlids.'};
     const candidates=catalog.filter(e=>eligible(e,filters));
     if(candidates.length<count) return {error:`Només hi ha ${candidates.length} problemes compatibles per a ${count} places. Amplia els filtres o redueix la quantitat.`};
     const pool=candidates.map(e=>({e,r:Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.e);
@@ -96,12 +104,16 @@
     if(!found)found=search(0,[],false);
     return found?{ids:found.map(e=>e.id)}:{error:'No es poden cobrir tots els continguts obligatoris en aquest nombre de problemes. Amplia els filtres o tria més places.'};
   }
-  function pageGroups(exercises) {const middle=Math.ceil(exercises.length/2);return [exercises.slice(0,middle),exercises.slice(middle)];}
+  function pageGroups(exercises,pageCount,perPage) {
+    sheetLayout({pageCount,perPage});
+    if(exercises.length>pageCount*perPage)throw Error('La selecció supera les places disponibles.');
+    return Array.from({length:pageCount},(_,page)=>exercises.slice(page*perPage,(page+1)*perPage));
+  }
   function sameExerciseContent(saved,current) {
     if(!saved||!current||Array.isArray(saved)||typeof saved!=='object')return false;
     // Editorial status alone does not invalidate an exported selection.
     const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
     return JSON.stringify(ordered({...saved,status:undefined}))===JSON.stringify(ordered({...current,status:undefined}));
   }
-  return {FEATURES,LEVELS,DIFFICULTIES,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
+  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
 });

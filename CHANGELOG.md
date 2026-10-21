@@ -1,5 +1,15 @@
 # Historial de canvis
 
+## 0.7.0 · Pàgines i distribució configurables
+
+- Separats el nombre de pàgines (1, 2, 4 o 6) i els problemes per pàgina (2 o 3 en columna, 4 en quadrícula 2 × 2), en una fila amb columnes iguals. Mateix equilibri per a nivell i dificultat.
+- Composició sense problemes repetits per a totes les quantitats admeses. Les configuracions que superen els candidats disponibles mostren el límit del catàleg.
+- Paginació, numeració, espais de treball i solucionaris adaptats. El visor organitza les pàgines en un màxim de dues columnes i les ajusta en conjunt.
+- Tries exportades en format 2 amb la nova configuració; migració de les tries antigues de 4, 5 i 6 problemes, també en l'emmagatzematge del navegador.
+- Filtres de tres estats en una línia amb controls circulars més baixos; es conserva el funcionament amb teclat i els noms accessibles.
+- Passos 1 i 2 al peu; eliminada la xifra duplicada del lateral de revisió.
+- «BLOC 01» substituït per un lema en cursiva amb el recompte calculat a partir del catàleg, també visible en mòbil.
+
 ## 0.6.0 · Banc compacte, filtres directes i navegació estable
 
 - Eliminades la indicació de marcar problemes, el recompte duplicat i la fila d'avís i descàrrega del catàleg. El recompte general es manté a la capçalera.

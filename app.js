@@ -4,22 +4,23 @@
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
-  const initial=()=>({count:4,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
+  const initial=()=>({pageCount:2,perPage:2,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
+  const capacity=()=>state.pageCount*state.perPage;
   const persist=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{}};
   function validateState(s) {
-    // Keep older five-problem selections: migrate to six places without losing a problem.
-    if(!s||![4,5,6].includes(s.count)||!Array.isArray(s.ids)||new Set(s.ids).size!==s.ids.length||s.ids.length>s.count||s.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Tria no vàlida.');
+    const layout=C.sheetLayout(s);
+    if(!Array.isArray(s.ids)||new Set(s.ids).size!==s.ids.length||s.ids.length>layout.pageCount*layout.perPage||s.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Tria no vàlida.');
     if(!s.filters||!['sheet','each'].includes(s.filters.scope)||!s.filters.features||Array.isArray(s.filters.features)||typeof s.filters.features!=='object')throw Error('Filtres no vàlids.');
     for(const [f,m] of Object.entries(s.filters.features))if(!C.FEATURES[f]||!['allow','require','exclude'].includes(m))throw Error('Contingut de filtre desconegut.');
     if(!['',...Object.keys(C.LEVELS)].includes(s.filters.level)||!['','1','2','3'].includes(s.filters.difficulty))throw Error('Nivell o dificultat desconeguts.');
     if(typeof s.title!=='string'||typeof s.group!=='string'||s.title.length>65||s.group.length>30)throw Error('Títol o grup no vàlids.');
     if(s.showBrand!==undefined&&typeof s.showBrand!=='boolean')throw Error('Opció de marca no vàlida.');
-    return {count:s.count===5?6:s.count,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
+    return {...layout,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
   }
   function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
@@ -28,7 +29,7 @@
     syncControls();
   }
   function syncControls() {
-    $('count').value=state.count;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
+    $('page-count').value=state.pageCount;$('per-page').value=state.perPage;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
     Object.keys(C.FEATURES).forEach(f=>{const mode=state.filters.features[f]||'allow';$('feature-'+f).querySelectorAll('input').forEach(input=>input.checked=input.value===mode);});
     $('sheet-title').value=state.title;$('sheet-group').value=state.group;$('show-brand').checked=state.showBrand;
   }
@@ -83,7 +84,7 @@
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
-  function issues() {return C.selectionIssues(selected(),state.filters,state.count);}
+  function issues() {return C.selectionIssues(selected(),state.filters,capacity());}
   function update(animatePreview=false) {
     persist();renderCards();
     const problems=issues();
@@ -92,18 +93,19 @@
     if(reviewStep)renderPreview(animatePreview);
   }
   function pagesHTML(solutions=false,screen=false) {
-    const chosen=selected(),groups=C.pageGroups(chosen);
+    const chosen=selected(),groups=C.pageGroups(chosen,state.pageCount,state.perPage);
     let number=0;
     return groups.map((group,index)=>{
       const title=state.title.trim();
-      const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / 2</span></header>`:'';
-      const sheet=`<section class="sheet ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div></section>`;
-      return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de 2">${sheet}</div>`:sheet;
+      const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / ${state.pageCount}</span></header>`:'';
+      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div></section>`;
+      return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${sheet}</div>`:sheet;
     }).join('');
   }
   function renderPreview(animate=false) {
     stopZoom();
     renderOrder();
+    $('pages').style.setProperty('--preview-columns',Math.min(2,state.pageCount));
     $('pages').innerHTML=pagesHTML(solutionView,true);
     $('view-exercises').setAttribute('aria-pressed',String(!solutionView));$('view-solutions').setAttribute('aria-pressed',String(solutionView));$('answer-note').hidden=!solutionView;
     const problems=issues();
@@ -175,8 +177,9 @@
     const availableWidth=box.width-parseFloat(canvasCSS.borderLeftWidth)-parseFloat(canvasCSS.borderRightWidth);
     const availableHeight=box.height-parseFloat(canvasCSS.borderTopWidth)-parseFloat(canvasCSS.borderBottomWidth);
     const gap=parseFloat(container.getPropertyValue('--page-gap'))||20;
-    const width=(availableWidth-paddingX-2)/(2*parseFloat(css.width)+gap);
-    const height=(availableHeight-paddingY-2)/parseFloat(css.height);
+    const columns=Math.min(2,state.pageCount),rows=Math.ceil(state.pageCount/columns);
+    const width=(availableWidth-paddingX-2)/(columns*parseFloat(css.width)+(columns-1)*gap);
+    const height=(availableHeight-paddingY-2)/(rows*parseFloat(css.height)+(rows-1)*gap);
     const scale=Math.floor(Math.min(width,height,1.5)*1000)/1000;
     if(animate)startZoom(scale,null,true);else{stopZoom();zoomTarget=Math.max(.05,Math.min(2,scale));applyPreviewScale(scale,null,true);}
   }
@@ -210,23 +213,21 @@
   }
   $('feature-filters').addEventListener('change',event=>{const el=event.target;if(!el.matches('input[data-feature]'))return;state.filters.features[el.dataset.feature]=el.value;message('');update();});
   for(const id of ['level','difficulty','scope'])$(id).addEventListener('change',()=>{state.filters[id]=$(id).value;message('');update();});
-  $('count').addEventListener('change',()=>{
-    const count=Number($('count').value);
-    state.count=count;
-    state.ids=state.ids.slice(0,count);
-    message('');update();
+  for(const [id,key] of [['page-count','pageCount'],['per-page','perPage']])$(id).addEventListener('change',()=>{
+    state[key]=Number($(id).value);state.ids=state.ids.slice(0,capacity());
+    fitPreview=true;message('');update();
   });
   $('search').addEventListener('input',()=>{query=$('search').value;renderCards();});
   $('reset').addEventListener('click',()=>{state.filters=initial().filters;query='';$('search').value='';syncControls();message('Filtres netejats. La teva selecció es conserva.');update();});
   $('compose').addEventListener('click',()=>{
-    const result=C.compose(catalogue,state.filters,state.count,state.ids);
+    const result=C.compose(catalogue,state.filters,capacity(),state.ids);
     if(result.error){message(result.error,'error');return;}
     state.ids=result.ids;query='';$('search').value='';message('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.','success');update();
   });
   $('cards').addEventListener('change',event=>{
     const input=event.target.closest('input[data-select]');if(!input)return;
     const id=input.dataset.select;
-    if(input.checked && state.ids.length>=state.count){input.checked=false;message(`Ja tens ${state.count} problemes. Desmarca’n un abans d’afegir-ne un altre.`,'error');return;}
+    if(input.checked && state.ids.length>=capacity()){input.checked=false;message(`Ja tens ${capacity()} problemes. Desmarca’n un abans d’afegir-ne un altre.`,'error');return;}
     if(input.checked)state.ids.push(id);else state.ids=state.ids.filter(x=>x!==id);
     message('');update();document.querySelector(`[data-select="${id}"]`)?.focus({preventScroll:true});
   });
@@ -254,13 +255,13 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title='Fil i compte · Banc de problemes';});
-  $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:1,state,exercises:selected()}));
+  $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:2,state,exercises:selected()}));
   $('load').addEventListener('change',async event=>{
     const file=event.target.files[0];if(!file)return;
     try {
       if(file.size>1000000)throw Error('El fitxer és massa gran.');
       const saved=JSON.parse(await file.text());
-      if(saved.format!=='fil-i-compte-selection'||saved.version!==1)throw Error('Aquest fitxer no és una tria de Fil i compte.');
+      if(saved.format!=='fil-i-compte-selection'||![1,2].includes(saved.version))throw Error('Aquest fitxer no és una tria de Fil i compte.');
       const next=validateState(saved.state);
       if(!Array.isArray(saved.exercises)||saved.exercises.length!==next.ids.length||next.ids.some((id,index)=>!C.sameExerciseContent(saved.exercises[index],catalogue.find(e=>e.id===id))))throw Error('El contingut desat no coincideix amb aquesta versió del catàleg. Conserva el fitxer per revisar-lo.');
       state=next;query='';$('search').value='';syncControls();message('Tria recuperada amb els mateixos problemes.','success');update();
@@ -293,5 +294,6 @@
       if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))close();
     });
   }
+  $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes per pensar, practicar i aprendre';
   setupHistory();makeFilters();update();
 })();

@@ -42,6 +42,22 @@ check('Les exclusions eliminen tots els problemes que treballen els continguts v
 check('Obligatori al full cobreix fraccions i percentatges sense exigir-los en cada problema',()=>{const filters={...base,features:{fraccions:'require',percentatges:'require',decimals:'exclude'}};for(let i=0;i<20;i++){const r=C.compose(all,filters,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),filters,4).length,0);}});
 check('Obligatori en cada problema i filtres incompatibles no es relaxen',()=>{const filters={scope:'each',features:{fraccions:'require',percentatges:'require'}};assert.equal(all.filter(e=>C.eligible(e,filters)).length,0);assert(C.compose(all,filters,4).error);assert(C.compose(all,{...base,level:'mitja'},4).error);});
 check('Una nova proposta canvia la selecció si hi ha alternatives compatibles',()=>{const previous=['P001','P002','P003','P004'];const r=C.compose(all,base,4,previous);assert(!r.error);assert.equal(new Set(r.ids).size,4);assert(r.ids.some(id=>!previous.includes(id)));});
-check('Només es proposen 4 o 6 problemes, distribuïts en 2+2 o 3+3',()=>{for(const count of [4,6]){const r=C.compose(all,base,count);assert.equal(new Set(r.ids).size,count);assert.deepEqual(C.pageGroups(all.slice(0,count)).map(g=>g.length),count===4?[2,2]:[3,3]);}assert(C.compose(all,base,5).error);assert(C.compose(all,base,8).error);});
+check('Les 12 combinacions de pàgines i distribució conserven l’ordre i no repeteixen problemes',()=>{
+  const large=Array.from({length:24},(_,i)=>({...all[i%all.length],id:'T'+i}));
+  for(const pageCount of [1,2,4,6])for(const perPage of [2,3,4]){
+    const count=pageCount*perPage,result=C.compose(large,base,count);assert(!result.error);assert.equal(new Set(result.ids).size,count);
+    const chosen=result.ids.map(id=>large.find(e=>e.id===id)),groups=C.pageGroups(chosen,pageCount,perPage);
+    assert.equal(groups.length,pageCount);assert(groups.every(group=>group.length===perPage));assert.deepEqual(groups.flat(),chosen);
+  }
+  assert(C.compose(all,base,5).error);assert(C.compose(all,base,24).error.includes('12'));
+  assert.throws(()=>C.pageGroups(all,1,2));assert.throws(()=>C.pageGroups([],3,2));
+});
+check('Les tries antigues migren a dues pàgines i es rebutgen configuracions no admeses',()=>{
+  assert.deepEqual(C.sheetLayout({count:4}),{pageCount:2,perPage:2});
+  for(const count of [5,6])assert.deepEqual(C.sheetLayout({count}),{pageCount:2,perPage:3});
+  assert.deepEqual(C.pageGroups(all.slice(0,5),2,3).map(g=>g.length),[3,2]);
+  assert.deepEqual(C.pageGroups([],6,4).map(g=>g.length),[0,0,0,0,0,0]);
+  for(const settings of [{count:8},{pageCount:3,perPage:2},{pageCount:2,perPage:5},{pageCount:'2',perPage:2},null])assert.throws(()=>C.sheetLayout(settings));
+});
 check('La selecció detecta problemes incompatibles i continguts obligatoris absents',()=>{assert(C.selectionIssues(all.slice(0,4),{...base,features:{decimals:'require'}},4).some(x=>x.includes('Falta')));assert(C.selectionIssues([all[8],...all.slice(0,3)],{...base,features:{decimals:'exclude'}},4).some(x=>x.includes('P009')));});
 console.log(`\n${checks} grups de comprovacions superats.`);
