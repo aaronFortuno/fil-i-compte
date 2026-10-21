@@ -1,5 +1,15 @@
 # Historial de canvis
 
+## 0.4 · Visor directe i fulls configurables
+
+- Arrossegament per moure el document i roda per fer zoom al voltant del punter, amb controls flotants de més/menys i ajust a baix a la dreta.
+- Icona d'ajust original de Lucide inclosa localment amb la llicència; suport SVG al servidor de previsualització.
+- Títol i marca impresa opcionals. Sense títol no es dibuixa el seu separador; sense tots dos, s'elimina tota la capçalera.
+- Eliminats la línia, el text i la llista de codis del peu imprès. Es manté el codi al costat de cada problema.
+- Problemes reordenables al lateral amb controls de pujar/baixar, amb animació de posició i actualització de les dues pàgines i del solucionari.
+- Desament de l'ordre i l'opció de marca, compatible amb tries anteriors.
+- Animacions unificades a 220 ms i respectuoses amb moviment reduït. Eliminades les anotacions d'impressió i de zoom del lateral.
+
 ## 0.3.1 · Focus estable durant les transicions
 
 - El contenidor dels passos retalla el contingut sense convertir-se en una zona desplaçable: el focus i la navegació ràpida no poden moure'l ni retallar la part superior del visor.

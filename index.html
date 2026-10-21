@@ -32,20 +32,25 @@
       <aside class="filters preview-sidebar" aria-label="Configuració de la fitxa">
         <div class="panel-heading"><h2 id="preview-title" tabindex="-1">Revisa la fitxa</h2><span class="step-badge">02</span></div>
         <div class="filter-scroll" tabindex="0" role="region" aria-label="Opcions de la fitxa">
-          <div class="field"><label for="sheet-title">Títol de la fitxa</label><input id="sheet-title" maxlength="65" value="Problemes per pensar"></div>
+          <div class="field"><label for="sheet-title">Títol (opcional)</label><input id="sheet-title" maxlength="65" value="Problemes per pensar" placeholder="Sense títol"></div>
+          <label class="brand-option"><input id="show-brand" type="checkbox" checked> Inclou «fil i compte»</label>
           <div class="field"><label for="sheet-group">Grup (opcional)</label><input id="sheet-group" maxlength="30" placeholder="Per exemple, 6è A"></div>
           <h3>Document</h3><div class="view-tabs" role="group" aria-label="Previsualització"><button id="view-exercises" aria-pressed="true">Exercicis</button><button id="view-solutions" aria-pressed="false">Solucionari</button></div>
-          <div class="filter-divider"></div><h3>Vista del document</h3>
-          <div class="zoom-controls"><button id="zoom-out" class="secondary" aria-label="Allunya el document">−</button><output id="zoom-value" aria-live="polite">100 %</output><button id="zoom-in" class="secondary" aria-label="Amplia el document">+</button></div>
-          <label class="sr-only" for="zoom-range">Zoom del document</label><input id="zoom-range" class="zoom-range" type="range" min="5" max="200" step="1" value="100">
-          <button id="zoom-fit" class="secondary fit-button">Ajusta les dues pàgines</button>
-          <p class="hint zoom-hint">El zoom només canvia la vista de pantalla.</p>
+          <div class="filter-divider"></div><h3>Ordre dels problemes</h3>
+          <ol id="problem-order" class="problem-order" aria-label="Ordre dels problemes"></ol>
           <div id="preview-issues" role="status"></div>
           <p class="hint answer-note" id="answer-note" hidden>Una possible resolució. Els dibuixos, els esquemes i altres procediments correctes també són vàlids.</p>
         </div>
-        <div class="filter-actions print-guidance"><strong>A4 · dues pàgines</strong><p class="hint">Imprimeix des dels botons del peu. Escala 100 %, sense capçaleres del navegador. Doble cara: gir per la vora llarga.</p></div>
       </aside>
-      <div id="preview-canvas" class="preview-canvas" role="region" aria-label="Vista de les dues pàgines" tabindex="0"><div id="pages" class="pages"></div></div>
+      <div class="preview-viewer">
+        <div id="preview-canvas" class="preview-canvas" role="region" aria-label="Vista de les dues pàgines" tabindex="0"><div id="pages" class="pages"></div></div>
+        <div class="viewer-controls" role="group" aria-label="Controls del visor">
+          <button id="zoom-in" aria-label="Amplia el document" title="Amplia">+</button>
+          <output id="zoom-value" aria-live="polite">100 %</output>
+          <button id="zoom-out" aria-label="Allunya el document" title="Allunya">−</button>
+          <button id="zoom-fit" aria-label="Ajusta les dues pàgines" title="Ajusta les dues pàgines"><img src="assets/lucide/scan.svg" width="20" height="20" alt="" aria-hidden="true"></button>
+        </div>
+      </div>
     </section>
     </div></div>
     <footer class="selection-bar" aria-label="Navegació i accions de la fitxa">

@@ -44,3 +44,16 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Detectat i corregit un desplaçament del contenidor dels passos provocat pel focus o per l'entrada ràpida als controls durant la transició. El contenidor utilitza `overflow: clip`; els panells interns i el visor mantenen els seus propis desplaçaments.
 - Reprovada la seqüència ràpida revisió → zoom màxim → reajust → banc → revisió: el contenidor conserva `scrollTop = 0` i no retalla les pàgines.
 - Reprovat l'accés al control de reajust en mòbil: la capçalera del pas es manté a la seva posició i el peu continua dins de la finestra.
+
+## Visor i configuració del full · 0.4 · 21 d'octubre de 2026
+
+- Superats els 12 grups de comprovacions existents i la comprovació de sintaxi.
+- Comprovat el zoom amb la roda dins del visor, el límit del 200 % i el reajust. Controls flotants amb icona Lucide carregada correctament des del projecte (24 × 24).
+- Comprovat l'arrossegament real del document ampliat: un moviment del punter de 130 × 70 px desplaça el document aproximadament 130 × 70 px, en sentit contrari als valors de desplaçament del visor. El cursor torna a l'estat normal en deixar anar el ratolí.
+- Sense títol: cap títol substitutiu i cap línia de separació. Sense títol ni marca: zero capçaleres impreses, zero peus i codis només al costat de cada problema. En la tria de quatre problemes, treure la capçalera incrementa 39 px (aproximadament 10 mm) cada espai de treball.
+- Comprovat el moviment d'un problema entre la primera i la segona pàgina. Una recàrrega conserva l'ordre escollit, el títol buit i la marca desactivada. Restaurada després la selecció inicial de quatre problemes.
+- Comprovats els fulls de sis problemes sense capçalera ni peu: 3 + 3, sense desbordament, i els sis solucionaris corresponents també sense desbordament.
+- A 390 × 844, controls dins de la cantonada inferior dreta del visor, peu dins de la finestra i document sense desbordament horitzontal.
+- Transició entre passos de 0,22 s observada al navegador. Controls, zoom, aparició de targetes i reordenació comparteixen la durada de 220 ms; la configuració de moviment reduït continua prevista.
+- Sense errors ni avisos de consola en la comprovació final. La disposició comprovada és la mateixa que utilitza el generador d'impressió; no s'ha completat una impressió física ni s'ha exportat un PDF final.
+- Totes les comprovacions del projecte són locals. Cap publicació ni comprovació remota.

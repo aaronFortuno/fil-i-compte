@@ -4,9 +4,9 @@
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
-  const initial=()=>({count:4,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:''});
+  const initial=()=>({count:4,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
-  let reviewStep=false, previewScale=1, fitPreview=true;
+  let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
@@ -18,7 +18,8 @@
     for(const [f,m] of Object.entries(s.filters.features))if(!C.FEATURES[f]||!['allow','require','exclude'].includes(m))throw Error('Contingut de filtre desconegut.');
     if(!['',...Object.keys(C.LEVELS)].includes(s.filters.level)||!['','1','2','3'].includes(s.filters.difficulty))throw Error('Nivell o dificultat desconeguts.');
     if(typeof s.title!=='string'||typeof s.group!=='string'||s.title.length>65||s.group.length>30)throw Error('Títol o grup no vàlids.');
-    return {count:s.count===5?6:s.count,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group};
+    if(s.showBrand!==undefined&&typeof s.showBrand!=='boolean')throw Error('Opció de marca no vàlida.');
+    return {count:s.count===5?6:s.count,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
   }
   function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
   function makeFilters() {
@@ -28,7 +29,7 @@
   function syncControls() {
     $('count').value=state.count;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
     Object.keys(C.FEATURES).forEach(f=>{const el=$('feature-'+f);el.value=state.filters.features[f]||'allow';el.dataset.mode=el.value;});
-    $('sheet-title').value=state.title;$('sheet-group').value=state.group;
+    $('sheet-title').value=state.title;$('sheet-group').value=state.group;$('show-brand').checked=state.showBrand;
   }
   function visual(v,id) {
     if(!v)return '';
@@ -69,31 +70,41 @@
   function renderCards() {
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
     $('match-count').textContent=matches.length;$('empty').hidden=matches.length>0;
+    const existing=[...$('cards').children];
+    if(existing.length===matches.length&&existing.every((el,i)=>el.dataset.id===matches[i].id)){
+      existing.forEach(el=>{const checked=state.ids.includes(el.dataset.id);el.classList.toggle('is-selected',checked);el.querySelector('input').checked=checked;});
+      return;
+    }
     $('cards').innerHTML=matches.map(e=>{
       const isSelected=state.ids.includes(e.id);
       return `<article class="exercise-card ${isSelected?'is-selected':''}" data-id="${e.id}"><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''}><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p></article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
+    animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
   function issues() {return C.selectionIssues(selected(),state.filters,state.count);}
-  function update() {
+  function update(animatePreview=false) {
     persist();renderCards();
     const problems=issues();
     $('selection-count').textContent=`${state.ids.length} de ${state.count} problemes`;
     $('selection-caption').textContent=problems.length?problems[0]:reviewStep?`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`:'Pas 1 de 2 · Tria els problemes.';
     $('selection-caption').classList.toggle('has-issues',problems.length>0);
     $('preview-button').disabled=state.ids.length===0;
-    if(reviewStep)renderPreview();
+    if(reviewStep)renderPreview(animatePreview);
   }
   function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen);
     let number=0;
     return groups.map((group,index)=>{
-      const sheet=`<section class="sheet ${solutions?'solution-sheet':'exercise-sheet'}"><header class="sheet-header"><div><span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span><h2>${escape(state.title.trim()||'Problemes per pensar')}</h2></div><span class="sheet-number">${index+1} / 2</span></header>${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div><footer class="sheet-footer"><span>${solutions?'Bloc 01 · Referència per a l’autocorrecció':'Explica el teu camí. Un dibuix també és una manera de pensar.'}</span><span>${chosen.map(e=>e.id).join(' · ')}</span></footer></section>`;
+      const title=state.title.trim();
+      const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / 2</span></header>`:'';
+      const sheet=`<section class="sheet ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div></section>`;
       return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de 2">${sheet}</div>`:sheet;
     }).join('');
   }
-  function renderPreview() {
+  function renderPreview(animate=false) {
+    stopZoom();
+    renderOrder();
     $('pages').innerHTML=pagesHTML(solutionView,true);
     $('view-exercises').setAttribute('aria-pressed',String(!solutionView));$('view-solutions').setAttribute('aria-pressed',String(solutionView));$('answer-note').hidden=!solutionView;
     const problems=issues();
@@ -101,9 +112,11 @@
     $('preview-issues').textContent=problems.join(' ');
     $('print-exercises').disabled=problems.length>0;$('print-solutions').disabled=problems.length>0;
     if(!problems.length)$('selection-caption').textContent=`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`;
-    requestAnimationFrame(resizePreview);
+    if(animate)animateElements([...$('pages').children],[{opacity:.35},{opacity:1}]);
+    requestAnimationFrame(()=>resizePreview());
   }
   function setStep(review) {
+    stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
     $('bank-step').inert=review;$('bank-step').setAttribute('aria-hidden',String(review));
@@ -114,20 +127,43 @@
     update();
     (review?$('preview-title'):$('preview-button')).focus({preventScroll:true});
   }
-  function applyPreviewScale(scale,reset=false) {
+  function motionDuration(){return matchMedia('(prefers-reduced-motion: reduce)').matches?0:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motion-duration'))||220;}
+  function animateElements(elements,keyframes){const duration=motionDuration();if(duration)elements.forEach(el=>el.animate(keyframes,{duration,easing:'cubic-bezier(.22,.68,.25,1)'}));}
+  function renderOrder(){
+    const list=$('problem-order'),before=new Map([...list.children].map(el=>[el.dataset.orderRow,el.getBoundingClientRect().top]));
+    list.innerHTML=selected().map((e,index)=>`<li data-order-row="${e.id}"><span class="order-index">${index+1}</span><span class="order-title"><small>${e.id}</small>${escape(e.title)}</span><div class="order-actions"><button data-order="${e.id}" data-shift="-1" aria-label="Puja ${e.id}" title="Puja" ${index===0?'disabled':''}>↑</button><button data-order="${e.id}" data-shift="1" aria-label="Baixa ${e.id}" title="Baixa" ${index===state.ids.length-1?'disabled':''}>↓</button></div></li>`).join('');
+    for(const el of list.children){const old=before.get(el.dataset.orderRow),dy=old===undefined?0:old-el.getBoundingClientRect().top;if(Math.abs(dy)>1)animateElements([el],[{transform:`translateY(${dy}px)`},{transform:'translateY(0)'}]);}
+  }
+  function stopZoom(){if(zoomFrame)cancelAnimationFrame(zoomFrame);zoomFrame=0;zoomTarget=previewScale;$('zoom-out').disabled=previewScale<=.05;$('zoom-in').disabled=previewScale>=2;}
+  function zoomAnchor(point){
+    const canvas=$('preview-canvas'),paper=$('pages').querySelector('.page-frame');if(!paper)return null;
+    const box=canvas.getBoundingClientRect(),frame=paper.getBoundingClientRect();
+    const x=point?point.clientX-box.left-canvas.clientLeft:canvas.clientWidth/2;
+    const y=point?point.clientY-box.top-canvas.clientTop:canvas.clientHeight/2;
+    return {x,y,docX:(x-frame.left+box.left+canvas.clientLeft)/previewScale,docY:(y-frame.top+box.top+canvas.clientTop)/previewScale};
+  }
+  function applyPreviewScale(scale,anchor=null,reset=false) {
     const canvas=$('preview-canvas');
-    const centerX=(canvas.scrollLeft+canvas.clientWidth/2)/Math.max(1,canvas.scrollWidth);
-    const centerY=(canvas.scrollTop+canvas.clientHeight/2)/Math.max(1,canvas.scrollHeight);
     previewScale=Math.max(.05,Math.min(2,scale));
     $('pages').style.setProperty('--page-scale',previewScale);
-    $('zoom-value').textContent=Math.round(previewScale*100)+' %';
-    $('zoom-range').value=Math.round(previewScale*100);
-    $('zoom-out').disabled=previewScale<=.05;$('zoom-in').disabled=previewScale>=2;
+    const percentage=Math.round(previewScale*100)+' %';if($('zoom-value').textContent!==percentage)$('zoom-value').textContent=percentage;
+    $('zoom-out').disabled=zoomTarget<=.05;$('zoom-in').disabled=zoomTarget>=2;
     $('zoom-fit').setAttribute('aria-pressed',String(fitPreview));
-    canvas.scrollLeft=reset?0:centerX*canvas.scrollWidth-canvas.clientWidth/2;
-    canvas.scrollTop=reset?0:centerY*canvas.scrollHeight-canvas.clientHeight/2;
+    if(reset){canvas.scrollLeft=0;canvas.scrollTop=0;}
+    else if(anchor){
+      const frame=$('pages').querySelector('.page-frame').getBoundingClientRect(),box=canvas.getBoundingClientRect();
+      canvas.scrollLeft+=frame.left-box.left-canvas.clientLeft+anchor.docX*previewScale-anchor.x;
+      canvas.scrollTop+=frame.top-box.top-canvas.clientTop+anchor.docY*previewScale-anchor.y;
+    }
   }
-  function resizePreview() {
+  function startZoom(scale,point=null,reset=false){
+    stopZoom();zoomTarget=Math.max(.05,Math.min(2,scale));
+    const from=previewScale,to=zoomTarget,anchor=zoomAnchor(point),duration=motionDuration(),start=performance.now();
+    if(!duration||Math.abs(to-from)<.0001){applyPreviewScale(to,anchor,reset);return;}
+    const tick=time=>{const t=Math.min(1,(time-start)/duration);applyPreviewScale(from+(to-from)*(1-(1-t)**3),anchor);if(t<1)zoomFrame=requestAnimationFrame(tick);else{zoomFrame=0;if(reset){$('preview-canvas').scrollLeft=0;$('preview-canvas').scrollTop=0;}}};
+    zoomFrame=requestAnimationFrame(tick);
+  }
+  function resizePreview(animate=false) {
     if(!reviewStep)return;
     const canvas=$('preview-canvas'),paper=$('pages').querySelector('.sheet');
     if(!paper||!canvas.clientWidth||!canvas.clientHeight)return;
@@ -138,12 +174,29 @@
     // Use the canvas interior without transient scrollbars left over from a larger zoom.
     const availableWidth=box.width-parseFloat(canvasCSS.borderLeftWidth)-parseFloat(canvasCSS.borderRightWidth);
     const availableHeight=box.height-parseFloat(canvasCSS.borderTopWidth)-parseFloat(canvasCSS.borderBottomWidth);
-    const width=(availableWidth-paddingX-parseFloat(container.columnGap)-2)/(2*parseFloat(css.width));
+    const gap=parseFloat(container.getPropertyValue('--page-gap'))||20;
+    const width=(availableWidth-paddingX-2)/(2*parseFloat(css.width)+gap);
     const height=(availableHeight-paddingY-2)/parseFloat(css.height);
-    applyPreviewScale(Math.floor(Math.min(width,height,1.5)*1000)/1000,true);
+    const scale=Math.floor(Math.min(width,height,1.5)*1000)/1000;
+    if(animate)startZoom(scale,null,true);else{stopZoom();zoomTarget=Math.max(.05,Math.min(2,scale));applyPreviewScale(scale,null,true);}
   }
-  function manualZoom(scale) {fitPreview=false;applyPreviewScale(scale);}
-  new ResizeObserver(()=>{if(fitPreview)requestAnimationFrame(resizePreview);}).observe($('preview-canvas'));
+  function manualZoom(scale,point=null) {fitPreview=false;startZoom(scale,point);}
+  new ResizeObserver(()=>{if(fitPreview)requestAnimationFrame(()=>resizePreview());}).observe($('preview-canvas'),{box:'border-box'});
+  const canvas=$('preview-canvas');
+  canvas.addEventListener('wheel',event=>{
+    if(!reviewStep||pan)return;event.preventDefault();
+    const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?canvas.clientHeight:1);
+    manualZoom(zoomTarget*Math.exp(-delta*.0015),event);
+  },{passive:false});
+  canvas.addEventListener('pointerdown',event=>{
+    if(pan||event.button!==0)return;stopZoom();
+    pan={id:event.pointerId,x:event.clientX,y:event.clientY,left:canvas.scrollLeft,top:canvas.scrollTop};
+    canvas.setPointerCapture(event.pointerId);canvas.classList.add('is-panning');event.preventDefault();
+  });
+  canvas.addEventListener('pointermove',event=>{if(pan&&pan.id===event.pointerId){canvas.scrollLeft=pan.left-event.clientX+pan.x;canvas.scrollTop=pan.top-event.clientY+pan.y;}});
+  function endPan(event){if(!pan||pan.id!==event.pointerId)return;pan=null;canvas.classList.remove('is-panning');if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);}
+  canvas.addEventListener('pointerup',endPan);canvas.addEventListener('pointercancel',endPan);canvas.addEventListener('lostpointercapture',endPan);
+  canvas.addEventListener('dragstart',event=>event.preventDefault());
   function download(name,content) {
     const url=URL.createObjectURL(new Blob([JSON.stringify(content,null,2)],{type:'application/json;charset=utf-8'}));
     const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
@@ -152,7 +205,7 @@
     if(issues().length)return;
     printMode=solutions;
     $('print-root').innerHTML=pagesHTML(solutions);
-    document.title=(state.title.trim()||'Problemes per pensar')+(solutions?' — solucionari':' — exercicis');
+    document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
     window.print();
   }
   $('feature-filters').addEventListener('change',event=>{const el=event.target;state.filters.features[el.dataset.feature]=el.value;el.dataset.mode=el.value;message('');update();});
@@ -179,18 +232,26 @@
   });
   $('preview-button').addEventListener('click',()=>setStep(true));
   $('close-preview').addEventListener('click',()=>setStep(false));
-  $('zoom-in').addEventListener('click',()=>manualZoom((Math.round(previewScale*100)+10)/100));
-  $('zoom-out').addEventListener('click',()=>manualZoom((Math.round(previewScale*100)-10)/100));
-  $('zoom-range').addEventListener('input',()=>manualZoom(Number($('zoom-range').value)/100));
-  $('zoom-fit').addEventListener('click',()=>{fitPreview=true;resizePreview();});
-  $('view-exercises').addEventListener('click',()=>{solutionView=false;renderPreview();});$('view-solutions').addEventListener('click',()=>{solutionView=true;renderPreview();});
+  $('zoom-in').addEventListener('click',()=>manualZoom(zoomTarget+.1));
+  $('zoom-out').addEventListener('click',()=>manualZoom(zoomTarget-.1));
+  $('zoom-fit').addEventListener('click',()=>{fitPreview=true;resizePreview(true);});
+  $('view-exercises').addEventListener('click',()=>{solutionView=false;renderPreview(true);});$('view-solutions').addEventListener('click',()=>{solutionView=true;renderPreview(true);});
+  $('show-brand').addEventListener('change',()=>{state.showBrand=$('show-brand').checked;persist();renderPreview(true);});
+  $('problem-order').addEventListener('click',event=>{
+    const button=event.target.closest('button[data-order]');if(!button)return;
+    const index=state.ids.indexOf(button.dataset.order),target=index+Number(button.dataset.shift);
+    if(index<0||target<0||target>=state.ids.length)return;
+    [state.ids[index],state.ids[target]]=[state.ids[target],state.ids[index]];update(true);
+    const row=$('problem-order').querySelector(`[data-order-row="${button.dataset.order}"]`);
+    const same=row.querySelector(`[data-shift="${button.dataset.shift}"]`);(same.disabled?row.querySelector('button:not(:disabled)'):same).focus({preventScroll:true});
+  });
   for(const [id,key] of [['sheet-title','title'],['sheet-group','group']])$(id).addEventListener('input',()=>{state[key]=$(id).value;persist();renderPreview();});
   $('print-exercises').addEventListener('click',()=>print(false));$('print-solutions').addEventListener('click',()=>print(true));
   window.addEventListener('beforeprint',()=>{
     if(issues().length){$('print-root').innerHTML='<section class="sheet"><h2>Revisa la selecció abans d’imprimir</h2><p>'+escape(issues().join(' '))+'</p></section>';return;}
     const solutions=printMode===null?(reviewStep&&solutionView):printMode;
     $('print-root').innerHTML=pagesHTML(solutions);
-    document.title=(state.title.trim()||'Problemes per pensar')+(solutions?' — solucionari':' — exercicis');
+    document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title='Fil i compte · Banc de problemes';});
   $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:1,state,exercises:selected()}));
