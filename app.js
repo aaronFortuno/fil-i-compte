@@ -6,6 +6,7 @@
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const initial=()=>({count:4,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:''});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
+  let reviewStep=false, previewScale=1, fitPreview=true;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
@@ -79,24 +80,70 @@
     persist();renderCards();
     const problems=issues();
     $('selection-count').textContent=`${state.ids.length} de ${state.count} problemes`;
-    $('selection-caption').textContent=problems.length?problems[0]:'Per canviar un problema, desmarca’l i tria’n un altre.';
+    $('selection-caption').textContent=problems.length?problems[0]:reviewStep?`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`:'Pas 1 de 2 · Tria els problemes.';
     $('selection-caption').classList.toggle('has-issues',problems.length>0);
     $('preview-button').disabled=state.ids.length===0;
-    if(!$('preview').hidden)renderPreview();
+    if(reviewStep)renderPreview();
   }
-  function pagesHTML(solutions=false) {
+  function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen);
     let number=0;
-    return groups.map((group,index)=>`<section class="sheet ${solutions?'solution-sheet':'exercise-sheet'}"><header class="sheet-header"><div><span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span><h2>${escape(state.title.trim()||'Problemes per pensar')}</h2></div><span class="sheet-number">${index+1} / 2</span></header>${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div><footer class="sheet-footer"><span>${solutions?'Bloc 01 · Referència per a l’autocorrecció':'Explica el teu camí. Un dibuix també és una manera de pensar.'}</span><span>${chosen.map(e=>e.id).join(' · ')}</span></footer></section>`).join('');
+    return groups.map((group,index)=>{
+      const sheet=`<section class="sheet ${solutions?'solution-sheet':'exercise-sheet'}"><header class="sheet-header"><div><span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span><h2>${escape(state.title.trim()||'Problemes per pensar')}</h2></div><span class="sheet-number">${index+1} / 2</span></header>${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div><footer class="sheet-footer"><span>${solutions?'Bloc 01 · Referència per a l’autocorrecció':'Explica el teu camí. Un dibuix també és una manera de pensar.'}</span><span>${chosen.map(e=>e.id).join(' · ')}</span></footer></section>`;
+      return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de 2">${sheet}</div>`:sheet;
+    }).join('');
   }
   function renderPreview() {
-    $('pages').innerHTML=pagesHTML(solutionView);
+    $('pages').innerHTML=pagesHTML(solutionView,true);
     $('view-exercises').setAttribute('aria-pressed',String(!solutionView));$('view-solutions').setAttribute('aria-pressed',String(solutionView));$('answer-note').hidden=!solutionView;
     const problems=issues();
     $('preview-issues').className=problems.length?'message error':'';
     $('preview-issues').textContent=problems.join(' ');
     $('print-exercises').disabled=problems.length>0;$('print-solutions').disabled=problems.length>0;
+    if(!problems.length)$('selection-caption').textContent=`Pas 2 de 2 · ${solutionView?'Solucionari':'Exercicis'} · dues pàgines A4`;
+    requestAnimationFrame(resizePreview);
   }
+  function setStep(review) {
+    reviewStep=review;
+    document.querySelector('.app-shell').classList.toggle('show-preview',review);
+    $('bank-step').inert=review;$('bank-step').setAttribute('aria-hidden',String(review));
+    $('preview').inert=!review;$('preview').setAttribute('aria-hidden',String(!review));
+    $('bank-actions').hidden=review;$('review-actions').hidden=!review;$('close-preview').hidden=!review;
+    $('step-icon').textContent=review?'02':'01';
+    const skip=document.querySelector('.skip');skip.href=review?'#preview-title':'#catalogue';skip.textContent=review?'Salta a la revisió de la fitxa':'Salta al banc de problemes';
+    update();
+    (review?$('preview-title'):$('preview-button')).focus({preventScroll:true});
+  }
+  function applyPreviewScale(scale,reset=false) {
+    const canvas=$('preview-canvas');
+    const centerX=(canvas.scrollLeft+canvas.clientWidth/2)/Math.max(1,canvas.scrollWidth);
+    const centerY=(canvas.scrollTop+canvas.clientHeight/2)/Math.max(1,canvas.scrollHeight);
+    previewScale=Math.max(.05,Math.min(2,scale));
+    $('pages').style.setProperty('--page-scale',previewScale);
+    $('zoom-value').textContent=Math.round(previewScale*100)+' %';
+    $('zoom-range').value=Math.round(previewScale*100);
+    $('zoom-out').disabled=previewScale<=.05;$('zoom-in').disabled=previewScale>=2;
+    $('zoom-fit').setAttribute('aria-pressed',String(fitPreview));
+    canvas.scrollLeft=reset?0:centerX*canvas.scrollWidth-canvas.clientWidth/2;
+    canvas.scrollTop=reset?0:centerY*canvas.scrollHeight-canvas.clientHeight/2;
+  }
+  function resizePreview() {
+    if(!reviewStep)return;
+    const canvas=$('preview-canvas'),paper=$('pages').querySelector('.sheet');
+    if(!paper||!canvas.clientWidth||!canvas.clientHeight)return;
+    if(!fitPreview){applyPreviewScale(previewScale);return;}
+    const css=getComputedStyle(paper),container=getComputedStyle($('pages')),box=canvas.getBoundingClientRect(),canvasCSS=getComputedStyle(canvas);
+    const paddingX=parseFloat(container.paddingLeft)+parseFloat(container.paddingRight);
+    const paddingY=parseFloat(container.paddingTop)+parseFloat(container.paddingBottom);
+    // Use the canvas interior without transient scrollbars left over from a larger zoom.
+    const availableWidth=box.width-parseFloat(canvasCSS.borderLeftWidth)-parseFloat(canvasCSS.borderRightWidth);
+    const availableHeight=box.height-parseFloat(canvasCSS.borderTopWidth)-parseFloat(canvasCSS.borderBottomWidth);
+    const width=(availableWidth-paddingX-parseFloat(container.columnGap)-2)/(2*parseFloat(css.width));
+    const height=(availableHeight-paddingY-2)/parseFloat(css.height);
+    applyPreviewScale(Math.floor(Math.min(width,height,1.5)*1000)/1000,true);
+  }
+  function manualZoom(scale) {fitPreview=false;applyPreviewScale(scale);}
+  new ResizeObserver(()=>{if(fitPreview)requestAnimationFrame(resizePreview);}).observe($('preview-canvas'));
   function download(name,content) {
     const url=URL.createObjectURL(new Blob([JSON.stringify(content,null,2)],{type:'application/json;charset=utf-8'}));
     const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
@@ -130,14 +177,18 @@
     if(input.checked)state.ids.push(id);else state.ids=state.ids.filter(x=>x!==id);
     message('');update();document.querySelector(`[data-select="${id}"]`)?.focus({preventScroll:true});
   });
-  $('preview-button').addEventListener('click',()=>{$('preview').hidden=false;document.querySelector('.app-shell').classList.add('show-preview');renderPreview();$('close-preview').focus();});
-  $('close-preview').addEventListener('click',()=>{$('preview').hidden=true;document.querySelector('.app-shell').classList.remove('show-preview');$('preview-button').focus({preventScroll:true});});
+  $('preview-button').addEventListener('click',()=>setStep(true));
+  $('close-preview').addEventListener('click',()=>setStep(false));
+  $('zoom-in').addEventListener('click',()=>manualZoom((Math.round(previewScale*100)+10)/100));
+  $('zoom-out').addEventListener('click',()=>manualZoom((Math.round(previewScale*100)-10)/100));
+  $('zoom-range').addEventListener('input',()=>manualZoom(Number($('zoom-range').value)/100));
+  $('zoom-fit').addEventListener('click',()=>{fitPreview=true;resizePreview();});
   $('view-exercises').addEventListener('click',()=>{solutionView=false;renderPreview();});$('view-solutions').addEventListener('click',()=>{solutionView=true;renderPreview();});
   for(const [id,key] of [['sheet-title','title'],['sheet-group','group']])$(id).addEventListener('input',()=>{state[key]=$(id).value;persist();renderPreview();});
   $('print-exercises').addEventListener('click',()=>print(false));$('print-solutions').addEventListener('click',()=>print(true));
   window.addEventListener('beforeprint',()=>{
     if(issues().length){$('print-root').innerHTML='<section class="sheet"><h2>Revisa la selecció abans d’imprimir</h2><p>'+escape(issues().join(' '))+'</p></section>';return;}
-    const solutions=printMode===null?solutionView:printMode;
+    const solutions=printMode===null?(reviewStep&&solutionView):printMode;
     $('print-root').innerHTML=pagesHTML(solutions);
     document.title=(state.title.trim()||'Problemes per pensar')+(solutions?' — solucionari':' — exercicis');
   });

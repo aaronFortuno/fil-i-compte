@@ -25,3 +25,16 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Comprovades la previsualització de 4 i 6 exercicis, l'accés al solucionari i la tornada al banc. Els sis solucionaris de la tria de prova no desborden les seves caixes A4.
 - Repositori Git local inicialitzat: es conserva el prototip original abans d'aquesta iteració. El remot de GitHub queda pendent per indicació de l'usuari.
 - Les proves d'aquesta iteració s'han fet només en local. Continua pendent la prova final d'impressió/PDF al navegador habitual.
+
+## Navegació i revisió · 0.3 · 21 d'octubre de 2026
+
+- Superats els 12 grups de comprovacions existents i la comprovació de sintaxi.
+- Comprovat el pas al preview i la tornada: capçalera i peu compartits, transició horitzontal de 380 ms i mateixos identificadors seleccionats després de tornar al banc.
+- A 1264 × 720, les dues pàgines caben en paral·lel, sense desbordament del visor en mode ajustat. A 1264 × 600, es reajusten automàticament i el peu queda dins de la finestra.
+- A 390 × 844, sense desbordament horitzontal del document: controls a dalt, visor amb dues pàgines i navegació/impressió visibles al peu.
+- Comprovats els controls de zoom: augment/disminució, lliscador al mínim del 5 % i màxim del 200 %, desactivació dels botons als límits i reajust posterior sense barres de desplaçament sobrants.
+- Les pàgines mantenen les dimensions natives A4, aproximadament 794 × 1123 píxels CSS, independentment del zoom. La transformació de pantalla queda limitada als embolcalls del visor; la impressió genera fulls sense aquests embolcalls.
+- Canvis de títol i grup reflectits a les dues pàgines. Comprovats els solucionaris de quatre i sis exercicis, sense desbordament a les caixes de resolució.
+- Els dos botons d'impressió són al peu i el pas inactiu queda marcat com a inert. Navegació interna amb focus al pas actiu i enllaç de salt adaptat al pas.
+- Sense errors ni avisos a la consola durant les proves. No s'ha completat una impressió física ni una exportació PDF en aquesta iteració.
+- Totes les comprovacions s'han fet en local. GitHub continua pendent.

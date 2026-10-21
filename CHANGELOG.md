@@ -1,5 +1,14 @@
 # Historial de canvis
 
+## 0.3 · Navegació per passos i revisió en paral·lel
+
+- Capçalera i peu comuns als dos passos, amb tornada al banc i impressió al peu.
+- Transició horitzontal entre selecció i revisió; la selecció i els filtres es conserven. El pas inactiu no rep focus ni interaccions i es respecta la preferència de moviment reduït.
+- Configuració de la revisió en un panell a l'esquerra, amb el mateix estil que el panell del banc.
+- Dues pàgines A4 en paral·lel, ajustades automàticament a la finestra, amb zoom del 5 % al 200 %, controls de més/menys i botó de reajust.
+- El zoom només transforma la previsualització: els documents d'impressió mantenen la mida A4 original.
+- En pantalles estretes, la configuració passa a la part superior i el peu continua visible.
+
 ## 0.2 · Compositor compacte
 
 - Capçalera de 62 px i eliminació del banner inicial.
