@@ -269,5 +269,29 @@
   });
   $('export-catalog').addEventListener('click',()=>download('fil-i-compte-cataleg.json',EXERCISE_CATALOG));
   $('help-toggle').addEventListener('click',()=>{const show=$('help').hidden;$('help').hidden=!show;$('help-toggle').setAttribute('aria-expanded',String(show));});
-  makeFilters();update();
+  function setupHistory() {
+    const releases=FIL_I_COMPTE_RELEASES,dialog=$('history-dialog'),trigger=$('version-history');
+    trigger.textContent='v'+releases[0].version+' · Novetats';
+    trigger.setAttribute('aria-label','Versió '+releases[0].version+'. Obre l’historial de canvis');
+    $('release-list').innerHTML=releases.map((release,index)=>`<li><div class="release-meta"><span class="release-version">v${escape(release.version)}</span>${index===0?'<span class="release-current">Versió actual</span>':''}</div><h3>${escape(release.title)}</h3><ul>${release.changes.map(change=>`<li>${escape(change)}</li>`).join('')}</ul></li>`).join('');
+    let closing=false;
+    const close=async()=>{
+      if(closing||!dialog.open)return;
+      closing=true;
+      if(motionDuration())await dialog.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(8px)'}],{duration:motionDuration(),easing:'cubic-bezier(.22,.68,.25,1)'}).finished.catch(()=>{});
+      dialog.close();closing=false;
+    };
+    trigger.addEventListener('click',()=>{
+      if(dialog.open)return;
+      dialog.showModal();dialog.querySelector('.history-scroll').scrollTop=0;
+      animateElements([dialog],[{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}]);
+    });
+    $('close-history').addEventListener('click',close);
+    dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+    dialog.addEventListener('click',event=>{
+      const r=dialog.getBoundingClientRect();
+      if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))close();
+    });
+  }
+  setupHistory();makeFilters();update();
 })();

@@ -1,6 +1,6 @@
 # Fil i compte
 
-Banc inicial de 12 problemes estàtics en català i compositor de fitxes de dues pàgines A4. Prototip local, sense dependències, comptes, API, analítica ni recursos externs. Encara no s'ha publicat.
+Banc inicial de 12 problemes estàtics en català i compositor de fitxes de dues pàgines A4. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
 ## Obrir i utilitzar
 
@@ -72,4 +72,12 @@ Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, r
 
 El projecte té repositori Git propi dins d'aquesta carpeta. La branca principal és `main`. El prototip original es conserva al primer commit i les iteracions posteriors es documenten a **CHANGELOG.md**.
 
-El repositori remot de GitHub amb el nom `fil-i-compte` queda pendent per indicació de l'usuari; encara no hi ha cap remot configurat ni publicació.
+El número de versió es mostra al peu dels dos passos. En prémer-lo s'obre l'historial resumit de novetats. **releases.js** és la font d'aquest número: la primera entrada correspon a la versió actual. En cada iteració cal afegir-hi el resum, actualitzar **CHANGELOG.md** i crear l'etiqueta Git `vX.Y.Z` corresponent. La versió indica el contingut carregat al navegador.
+
+## Publicació a GitHub Pages
+
+Repositori: [aaronFortuno/fil-i-compte](https://github.com/aaronFortuno/fil-i-compte). Adreça del web: [aaronfortuno.github.io/fil-i-compte](https://aaronfortuno.github.io/fil-i-compte/).
+
+GitHub Pages publica la branca **main**, carpeta **/ (root)**. El fitxer **.nojekyll** permet servir els fitxers estàtics directament. Els enllaços i els recursos són relatius perquè funcionin també dins de `/fil-i-compte/` i obrint **index.html** en local. No cal cap procés de compilació ni secrets de publicació.
+
+Abans de pujar una iteració, comprova-la en local amb `node tools/check.cjs` i revisa la interfície. Després puja el commit de `main` i la seva etiqueta de versió a `origin`; GitHub Pages iniciarà la publicació automàticament. La comprovació del web remot la fa l'usuari. Si el navegador encara mostra la versió anterior, recarrega la pàgina després que GitHub hagi acabat de publicar.

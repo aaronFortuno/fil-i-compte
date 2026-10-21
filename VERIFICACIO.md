@@ -57,3 +57,13 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Transició entre passos de 0,22 s observada al navegador. Controls, zoom, aparició de targetes i reordenació comparteixen la durada de 220 ms; la configuració de moviment reduït continua prevista.
 - Sense errors ni avisos de consola en la comprovació final. La disposició comprovada és la mateixa que utilitza el generador d'impressió; no s'ha completat una impressió física ni s'ha exportat un PDF final.
 - Totes les comprovacions del projecte són locals. Cap publicació ni comprovació remota.
+
+## Historial de versions · 0.5.0 · 21 d'octubre de 2026
+
+- Superats els 12 grups de comprovacions del catàleg i compositor, sintaxi de JavaScript i consistència bàsica de les sis entrades de l'historial.
+- Número `v0.5.0` visible al peu del banc i de la revisió. El diàleg mostra les versions en ordre descendent i destaca l'actual.
+- Comprovades l'obertura des dels dos passos, el tancament amb botó, Esc i clic a fora, el focus inicial al botó de tancament i el retorn del focus al botó de versió. La tecla Tab permet arribar a l'àrea de desplaçament.
+- Comprovat el diàleg a 1280 × 900 i 390 × 844, amb capçalera fixa i contingut desplaçable; el peu mòbil queda dins de la finestra i no hi ha desbordament horitzontal. Comprovada també la vista estreta de 320 px.
+- L'historial està exclòs de la impressió per la regla de mitjà corresponent; les plantilles dels fulls es mantenen iguals. No s'ha exportat un PDF nou en aquesta iteració.
+- Sense errors ni avisos a la consola del navegador local. Captura de revisió local a `vista-previa-v05.jpg` (no versionada).
+- Cap comprovació del web remot: la validació de la publicació de GitHub Pages correspon a l'usuari.

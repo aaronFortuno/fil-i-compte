@@ -6,7 +6,7 @@
   <meta name="description" content="Tria problemes de matemàtiques, prepara fitxes de dues pàgines i imprimeix solucionaris amb estratègies visuals.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232b594b'/%3E%3Ctext x='20' y='29' text-anchor='middle' fill='white' font-size='30'%3E%2B%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="catalog-data.js"></script><script defer src="core.js"></script><script defer src="app.js"></script>
+  <script defer src="catalog-data.js"></script><script defer src="core.js"></script><script defer src="releases.js"></script><script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip" href="#catalogue">Salta al banc de problemes</a>
@@ -54,11 +54,15 @@
     </section>
     </div></div>
     <footer class="selection-bar" aria-label="Navegació i accions de la fitxa">
-      <div class="footer-context"><button id="close-preview" class="secondary" hidden><span aria-hidden="true">←</span> Torna al banc</button><span class="selection-icon" id="step-icon" aria-hidden="true">01</span><div><strong id="selection-count">4 de 4 problemes</strong><small id="selection-caption">Pas 1 de 2 · Tria els problemes.</small></div></div>
+      <div class="footer-context"><button id="close-preview" class="secondary" hidden><span aria-hidden="true">←</span> Torna al banc</button><span class="selection-icon" id="step-icon" aria-hidden="true">01</span><div><strong id="selection-count">4 de 4 problemes</strong><small id="selection-caption">Pas 1 de 2 · Tria els problemes.</small><button id="version-history" class="version-button" aria-haspopup="dialog" aria-controls="history-dialog" aria-label="Historial de versions">Historial de versions</button></div></div>
       <div id="bank-actions" class="selection-actions"><button id="save" class="quiet">Desa la tria</button><label class="quiet file-label">Recupera-la<input id="load" type="file" accept="application/json,.json" class="sr-only"></label><button id="preview-button" class="primary">Revisa la fitxa <span aria-hidden="true">→</span></button></div>
       <div id="review-actions" class="selection-actions" hidden><button id="print-exercises" class="primary">Imprimeix fitxa / PDF</button><button id="print-solutions" class="secondary">Imprimeix solucionari / PDF</button></div>
     </footer>
   </div>
+  <dialog id="history-dialog" class="history-dialog" aria-labelledby="history-title">
+    <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="history-title">Historial de versions</h2></div><button id="close-history" class="history-close" aria-label="Tanca l’historial" autofocus>×</button></header>
+    <div class="history-scroll" tabindex="0" role="region" aria-label="Canvis de cada versió"><ol id="release-list" class="release-list"></ol></div>
+  </dialog>
   <div id="print-root"></div>
   <noscript>Aquest compositor necessita JavaScript activat. El catàleg original és a data/catalog.json.</noscript>
 </body>

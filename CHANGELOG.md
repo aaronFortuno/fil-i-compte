@@ -1,5 +1,12 @@
 # Historial de canvis
 
+## 0.5.0 · Versions visibles i publicació a GitHub Pages
+
+- Número de versió al peu compartit del banc i la revisió, amb un diàleg d'historial resumit de totes les iteracions.
+- Historial accessible amb teclat, tancament amb Esc o clic a fora, desplaçament intern i animació de 220 ms; exclòs de la impressió.
+- `releases.js` és la font del número de versió i dels resums que mostra el web.
+- Remot `aaronFortuno/fil-i-compte` i publicació estàtica des de `main` amb `.nojekyll`, sense dependències ni compilació.
+
 ## 0.4 · Visor directe i fulls configurables
 
 - Arrossegament per moure el document i roda per fer zoom al voltant del punter, amb controls flotants de més/menys i ajust a baix a la dreta.
