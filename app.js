@@ -7,6 +7,7 @@
   const FEATURE_MODES=[{id:'allow',label:'Permès',icon:'·'},{id:'require',label:'Obligatori',icon:'✓'},{id:'exclude',label:'Exclòs',icon:'×'}];
   const initial=()=>({pageCount:2,perPage:2,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
+  let notice='',noticeKind='info';
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -23,7 +24,7 @@
     if(s.showBrand!==undefined&&typeof s.showBrand!=='boolean')throw Error('Opció de marca no vàlida.');
     return {...layout,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
   }
-  function message(text,kind='info') {$('message').className=text?'message '+kind:'';$('message').textContent=text;if(text)$('catalogue-scroll').scrollTop=0;}
+  function message(text,kind='info') {notice=text;noticeKind=kind;renderFooterStatus();}
   function makeFilters() {
     $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
     syncControls();
@@ -93,24 +94,37 @@
     $('empty').hidden=matches.length>0;
     const existing=[...$('cards').children];
     if(existing.length===matches.length&&existing.every((el,i)=>el.dataset.id===matches[i].id)){
-      existing.forEach(el=>{const checked=state.ids.includes(el.dataset.id);el.classList.toggle('is-selected',checked);el.querySelector('input').checked=checked;});
+      existing.forEach(el=>{
+        const checked=state.ids.includes(el.dataset.id),blocked=!checked&&state.ids.length>=capacity(),input=el.querySelector('input');
+        el.classList.toggle('is-selected',checked);el.classList.toggle('is-unavailable',blocked);input.checked=checked;input.disabled=blocked;
+        el.title=blocked?'Desmarca un problema de la tria per afegir-ne un altre.':'';
+      });
       return;
     }
     $('cards').innerHTML=matches.map(e=>{
-      const isSelected=state.ids.includes(e.id);
-      return `<article class="exercise-card ${isSelected?'is-selected':''}" data-id="${e.id}"><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''}><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p></article>`;
+      const isSelected=state.ids.includes(e.id),blocked=!isSelected&&state.ids.length>=capacity();
+      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p></article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
   function issues() {return C.selectionIssues(selected(),state.filters,capacity());}
   function selectionHint(candidates) {
-    if(!issues().length||!$('empty').hidden||!candidates)return '';
-    if(candidates<capacity())return `Hi ha ${candidates} problemes compatibles per a ${capacity()} places. Amplia els filtres o redueix les places.`;
-    if(selected().some(e=>!C.eligible(e,state.filters)))return 'Actualitza la tria amb els filtres actuals o prem «Proposa una fitxa nova».';
+    if(!issues().length)return {short:'Tria completa',detail:'Desmarca un problema de la tria per canviar-lo.'};
+    if(!candidates)return {short:'Sense candidats',detail:'Canvia els filtres per trobar problemes compatibles.'};
+    if(candidates<capacity())return {short:'No hi ha prou candidats',detail:`Hi ha ${candidates} problemes compatibles per a ${capacity()} places. Amplia els filtres o redueix les places.`};
+    if(selected().some(e=>!C.eligible(e,state.filters)))return {short:'Revisa la tria',detail:'Obre «Veure la tria» per treure els problemes que no compleixen els filtres o proposa una fitxa nova.'};
     const missing=capacity()-state.ids.length;
-    if(missing>0)return missing===1?'Tria un problema més per completar la fitxa.':`Tria ${missing} problemes més per completar la fitxa.`;
-    return 'Inclou els continguts obligatoris: '+C.missingCoverage(selected(),state.filters).map(f=>C.FEATURES[f]).join(', ')+'.';
+    if(missing>0)return {short:missing===1?'Falta un problema':`Falten ${missing} problemes`,detail:`Selecciona ${missing} ${missing===1?'problema més':'problemes més'} per completar la fitxa.`};
+    return {short:'Falten continguts',detail:'Inclou els continguts obligatoris: '+C.missingCoverage(selected(),state.filters).map(f=>C.FEATURES[f]).join(', ')+'.'};
+  }
+  function renderFooterStatus() {
+    const feedback=selectionHint(catalogue.filter(e=>C.eligible(e,state.filters)).length),ready=!issues().length&&!(notice&&noticeKind==='error');
+    $('selection-count').textContent=`${state.ids.length}/${capacity()} triats`;
+    $('selection-hint').textContent=ready?feedback.short:(notice||feedback.short);
+    $('selection-status').title=notice||feedback.detail;
+    $('selection-status').classList.toggle('is-ready',ready);
+    $('selection-status').classList.toggle('has-error',!!notice&&noticeKind==='error');
   }
   function update(animatePreview=false) {
     persist();renderCards();
@@ -118,9 +132,50 @@
     $('preview-button').disabled=problems.length>0;
     $('preview-button').title=problems.length?'Completa una tria que compleixi els filtres per revisar la fitxa.':'';
     $('compose').disabled=candidates<capacity();
-    const hint=selectionHint(candidates);$('selection-status').hidden=!hint;$('selection-status').textContent=hint;
+    renderFooterStatus();
+    $('selection-badge').textContent=state.ids.length;
+    $('selection-toggle').setAttribute('aria-label',`Veure la tria: ${state.ids.length} problemes seleccionats`);
+    if($('selection-popover').matches(':popover-open'))renderSelectionList();
     if(reviewStep&&problems.length){setStep(false);return;}
     if(reviewStep)renderPreview(animatePreview);
+  }
+  function renderSelectionList() {
+    const chosen=selected();
+    $('selection-total').textContent=`${chosen.length} de ${capacity()} problemes`;
+    $('selection-empty').hidden=chosen.length>0;
+    $('selection-list').hidden=!chosen.length;
+    $('selection-list').innerHTML=chosen.map((e,index)=>`<li><span class="selection-index">${index+1}</span><div class="selection-item-title">${escape(e.title)}${C.eligible(e,state.filters)?'':'<small>Fora dels filtres</small>'}</div><button class="selection-remove" data-remove-selection="${e.id}" aria-label="Treu de la tria: ${escape(e.title)}" title="Treu de la tria">×</button></li>`).join('');
+  }
+  function positionSelectionPopover() {
+    const popup=$('selection-popover'),anchor=$('selection-toggle').getBoundingClientRect(),width=popup.offsetWidth,height=popup.offsetHeight;
+    popup.style.left=Math.max(12,Math.min(anchor.right-width,innerWidth-width-12))+'px';
+    const below=anchor.bottom+8;
+    popup.style.top=Math.max(12,Math.min(below+height<=innerHeight-12?below:anchor.top-height-8,innerHeight-height-12))+'px';
+  }
+  function setupSelectionPopover() {
+    const popup=$('selection-popover');
+    popup.addEventListener('beforetoggle',event=>{
+      if(event.newState!=='open')return;
+      renderSelectionList();
+      const anchor=$('selection-toggle').getBoundingClientRect();
+      popup.style.left=Math.max(12,anchor.left)+'px';popup.style.top=anchor.bottom+8+'px';
+    });
+    popup.addEventListener('toggle',event=>{
+      if(event.newState==='open'){
+        positionSelectionPopover();$('close-selection').focus({preventScroll:true});
+        animateElements([popup],[{opacity:0,transform:'translateY(-4px)'},{opacity:1,transform:'translateY(0)'}]);
+      }
+    });
+    $('selection-list').addEventListener('click',event=>{
+      const button=event.target.closest('[data-remove-selection]');if(!button)return;
+      const index=state.ids.indexOf(button.dataset.removeSelection);
+      state.ids=state.ids.filter(id=>id!==button.dataset.removeSelection);message('');update();
+      const buttons=popup.querySelectorAll('[data-remove-selection]');
+      (buttons[Math.min(index,buttons.length-1)]||$('close-selection')).focus({preventScroll:true});
+      positionSelectionPopover();
+    });
+    window.addEventListener('resize',()=>{if(popup.matches(':popover-open'))positionSelectionPopover();});
+    document.addEventListener('scroll',event=>{if(popup.matches(':popover-open')&&!popup.contains(event.target))positionSelectionPopover();},true);
   }
   function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen,state.pageCount,state.perPage);
@@ -144,6 +199,7 @@
   function setStep(review) {
     if(review&&issues().length)return;
     if(review===reviewStep)return;
+    if($('selection-popover').matches(':popover-open'))$('selection-popover').hidePopover();
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
@@ -358,5 +414,5 @@
     render();
   }
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes per pensar, practicar i aprendre';
-  setupHistory();setupHelp();makeFilters();update();
+  setupHistory();setupHelp();setupSelectionPopover();makeFilters();update();
 })();

@@ -127,3 +127,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Comprovació local de les quatre targetes seleccionades: gruix de vora idèntic als quatre costats i cap ombra interior. Es conserva la mateixa ombra exterior subtil de les targetes normals.
 - Comprovada la sintaxi del registre de versions i el diff. Canvi només visual: no s'han repetit les proves matemàtiques ni modificat la gestió de selecció i avisos.
 - Captura a `vista-previa-v082.jpg` (no versionada). Sense comprovacions remotes.
+
+## Estat fix i consulta de la tria · 0.8.3 · 21 d'octubre de 2026
+
+- Superats els 15 grups de comprovacions, la sintaxi de JavaScript i la revisió del diff. Cap error ni avís a la consola local.
+- Amb quatre problemes seleccionats, les altres vuit caselles estan inhabilitades i les targetes tenen un fons apagat, mantenint la llegibilitat. Desmarcar-ne un activa les altres caselles i desactiva la revisió; completar la tria fa el canvi invers i atenua l'estat del peu.
+- A 1280 × 900, comparades les coordenades del banc, del títol, del botó de revisió i de l'estat entre tres i quatre seleccionats: cap desplaçament. No hi ha missatges inserits sobre la matriu.
+- La llista superposada mostra els títols en ordre de selecció. Treure un problema conserva la llista oberta i situa el focus en el botó següent o anterior; buidar-la mostra l'estat buit i el focus passa a X. Provats X, Esc amb retorn al botó i clic exterior.
+- Excloses les fraccions: el problema seleccionat que desapareix del banc continua a la tria, indicat com a incompatible, i es pot treure. Una cerca de «mosaic» conserva els quatre seleccionats a la llista sense marcar-los com a incompatibles; la cerca continua sent exploratòria.
+- Excloses les operacions combinades: zero candidats, estat buit al banc i proposta i revisió inhabilitades. Configurades 24 places amb 12 candidats: estat fix de candidats insuficients i proposta inhabilitada.
+- Tria completa de 12 problemes amb desplaçament intern a la llista, comprovada en escriptori i mòbil. Revisades les amplades de 1280, 1024, 768, 390 i 320 px; sense desbordament horitzontal dels controls nous. A 320 px el botó es redueix a «Tria» per conservar el títol visible.
+- Entrada a revisió amb dues pàgines i les dues impressions disponibles; la navegació conserva la posició i reserva l'espai de l'estat ocult. Reprovats els diàlegs d'ajuda i historial, amb la 0.8.3 visible. Restaurades les opcions de dues pàgines de dos i la tria de mostra.
+- Captura a `vista-previa-v083.jpg` (no versionada). No s'ha obert el diàleg d'impressió ni fet cap comprovació remota.

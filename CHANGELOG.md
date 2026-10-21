@@ -1,5 +1,12 @@
 # Historial de canvis
 
+## 0.8.3 · La tria, sempre a mà
+
+- Estat fix al peu, al costat de «Revisa la fitxa», amb recompte i indicació breu. Es manté l'espai reservat: completar la tria, desmarcar o netejar filtres no desplaça la matriu. Quan la selecció és vàlida, la indicació queda atenuada i s'activa la revisió.
+- En arribar al màxim, les caselles no seleccionades queden inhabilitades i les seves targetes adopten un fons lleugerament més apagat, mantenint el text llegible. Desmarcar un problema les torna a activar.
+- «Veure la tria» al subheader obre una llista superposada, amb títols i botons per treure problemes. Mostra també els seleccionats que els filtres o la cerca oculten, i identifica els incompatibles. Es tanca amb X, Esc o clic exterior.
+- Els avisos de les accions es mostren al mateix espai fix del peu. La llista de selecció no ocupa espai permanent al banc i queda fora de la impressió.
+
 ## 0.8.2 · Vora uniforme a les targetes
 
 - Eliminat el ressalt interior de 3 px a l'esquerra de les targetes seleccionades del banc. La vora verda conserva el mateix gruix als quatre costats, coherent amb l'exemple de l'ajuda.

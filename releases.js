@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.8.3',title:'La tria, sempre a mà',
+    changes:[
+      'Estat de la tria fix al costat de la revisió, sense desplaçar les targetes.',
+      'Quan la tria és plena, les altres caselles es desactiven i les targetes canvien lleugerament de fons.',
+      '«Veure la tria» permet consultar i treure problemes, encara que els filtres els amaguin.'
+    ]
+  },
+  {
     version:'0.8.2',title:'Targetes amb una vora uniforme',
     changes:['Les targetes seleccionades del banc tenen una vora verda uniforme, coherent amb l’exemple de l’ajuda.']
   },
