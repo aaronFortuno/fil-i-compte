@@ -1,12 +1,12 @@
 # Fil i compte
 
-Banc de 48 problemes estàtics en català, organitzats en quatre blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
+Banc de 60 problemes estàtics en català, organitzats en cinc blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
 ## Obrir i utilitzar
 
 Obre **index.html** fent-hi doble clic. El web funciona sense servidor ni connexió. També es pot previsualitzar amb `node tools/serve.cjs` a l'adreça que mostra el servidor.
 
-Per revisar el contingut seguit, obre **BLOC-01.md**, **BLOC-02.md**, **BLOC-03.md** o **BLOC-04.md**: cada document inclou 12 enunciats, totes les preguntes i solucions, les etiquetes i la descripció dels suports visuals. Escriu `37-` al cercador del web per revisar directament el quart bloc.
+Per revisar el contingut seguit, obre **BLOC-01.md**, **BLOC-02.md**, **BLOC-03.md**, **BLOC-04.md** o **BLOC-05.md**: cada document inclou 12 enunciats, totes les preguntes i solucions, les etiquetes i la descripció dels suports visuals. Escriu `49-` al cercador del web per revisar el cinquè bloc, o `37-48` per veure el quart bloc revisat.
 
 1. Tria **Nombre de pàgines** (1, 2, 4 o 6) i **Problemes per pàgina** (2 o 3 en columna, o 4 en quadrícula 2 × 2). El total és el producte dels dos camps. A sota, tria nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Els continguts es mostren de dos en dos, en etiquetes amb fons i símbol: **· Permès**, **✓ Obligatori** i **× Exclòs**. Un clic a qualsevol etiqueta fa rotar l’estat entre permès, obligatori i exclòs. Els botons admeten Enter, espai i les fletxes esquerra i dreta. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
@@ -96,7 +96,9 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 
 El tercer bloc, **Calcula, compara i justifica**, afegeix P0025–P0036: set problemes dobles i cinc de triples, amb 29 apartats. Les preguntes numèriques tenen resultat i càlcul propi; les justificacions tenen una resposta textual breu i evidències numèriques. Hi ha una barra de quarts i una quadrícula de rajoles noves. **Tercer bloc: validat**, incorporant la revisió docent i les correccions de la 0.11.1.
 
-El quart bloc, **Connecta les dades**, afegeix P0037–P0048: nou problemes dobles i tres de triples, amb 27 apartats. Tots combinen operacions; cinc incorporen dades per despistar. Treballen també fraccions del restant, descomptes successius, potències, arrels i diferència d'àrees, amb dues barres de fraccions. **Quart bloc: càlculs i coherència comprovats, validació docent pendent**, amb publicació autoritzada per revisar-lo directament al web.
+El quart bloc, **Connecta les dades**, inclou P0037–P0048: nou preguntes úniques a CS i ESO i tres problemes amb apartats a CM, amb 16 preguntes en total. Tots combinen operacions; cinc incorporen dades per despistar. Treballen també fraccions del restant, descomptes successius, potències, arrels i diferència d'àrees, amb dues barres de fraccions. **Quart bloc: validat**, amb les correccions de la revisió de l'usuari incorporades a la 0.13.0.
+
+El cinquè bloc, **Quin és el tot?**, afegeix P0049–P0060: onze problemes de pregunta única i un de doble, amb 13 preguntes en total. Tots treballen fraccions, amb totals diferents, quantitats restants, recuperació del total i una combinació amb percentatges. Dos problemes conviden a reconèixer una referència ambigua o unes dades insuficients, i el solucionari raona les interpretacions amb exemples numèrics. **Cinquè bloc: càlculs i coherència comprovats, validació docent pendent**, amb publicació autoritzada per revisar-lo al web.
 
 Els apartats apareixen com a), b), c) al banc i al paper. La fitxa conserva una zona de treball comuna i una resposta per apartat; les justificacions disposen de dues línies. El solucionari separa les resolucions amb les mateixes lletres. Cada problema continua comptant com una sola plaça de la fitxa.
 
@@ -127,6 +129,8 @@ La preparació agrega els blocs, comprova identificadors duplicats i genera el c
 Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local de les distribucions de 2, 3 i 4 problemes per pàgina. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
 
 **Criteris d'autoria acordats.** Les preguntes posteriors no han d'avançar les respostes anteriors; cal evitar repetir dades que ja es poden recuperar de l'enunciat o donar per fet si una quantitat serà suficient quan això és el que es pregunta. En mesures estàndard, farem servir unitats habituals en el context: mm, cm, m o km; mm², cm² o m²; litres, etc. Evitarem dm, dam, hm i les seves variants d'àrea quan no tinguin un ús quotidià rellevant. L'objectiu d'aquests problemes és raonar sobre situacions recognoscibles; el coneixement d'altres unitats es pot treballar en activitats específiques.
+
+A CS i ESO, els apartats addicionals han de suposar un aprofundiment o un nou enfocament, no simplement explicitar els passos necessaris per respondre l'última pregunta. A CM es pot conservar aquest guiatge. En productes envasats utilitzarem capacitats comercials habituals (per exemple, pots d'1, 2, 2,5, 5 o 10 litres), encara que la quantitat consumida tingui altres decimals. Quan l'ambigüitat sigui expressa, el solucionari ha de mostrar les interpretacions possibles o explicar amb exemples per què les dades no determinen una única resposta; no donarà per bona una suposició oculta sobre el «tot».
 
 ## Versions
 

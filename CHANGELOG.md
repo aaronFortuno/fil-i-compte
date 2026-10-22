@@ -1,5 +1,14 @@
 # Historial de canvis
 
+## 0.13.0 · Quin és el tot?
+
+- Revisió del quart bloc: nou problemes de CS i ESO passen a pregunta única, sense demanar els càlculs intermedis com a apartats. Es conserva el guiatge de CM: el bloc té ara 16 preguntes.
+- P0040 compara directament les ofertes; P0041 demana el resultat final amb potències; P0045 integra els intercanvis en la mateixa resolució. P0043 compara dues persones que reben els descomptes del 10 % i del 25 % en ordre invers: totes dues paguen 54 €.
+- P0047 utilitza quatre pots de 2,5 litres, tres vuitens per al fons i 1,25 litres per als detalls; en repartir el sobrant en quatre recipients, corresponen 1,25 litres a cadascun. Versions dels nou exercicis revisats incrementades i revisió docent incorporada al bloc.
+- Nou bloc P0049–P0060, «Quin és el tot?»: dotze problemes, onze de pregunta única i un de doble amb un canvi d'enfocament. Fraccions de quantitats, fraccions del restant, recuperació del total, percentatges de grups desiguals, canvi d'ordre, ambigüitat expressa i dades insuficients.
+- Solucions amb justificacions, exemples de les diferents interpretacions i dues barres de fraccions. Les justificacions úniques tenen dues línies de resposta, com les dels problemes amb apartats. El catàleg arriba a 60 problemes.
+- Criteris d'autoria ampliats: apartats addicionals amb un nou enfocament a CS i ESO, capacitats comercials habituals i ambigüitats amb interpretacions raonades al solucionari.
+
 ## 0.12.0 · Connecta les dades
 
 - Quart bloc de 12 problemes, P0037–P0048: nou de dobles i tres de triples, amb 27 apartats. El catàleg arriba als 48 problemes.

@@ -99,7 +99,7 @@
     return C.exerciseParts(e).map(({solution:s},index)=>`${e.parts?`<section class="solution-part"><span class="part-label">${String.fromCharCode(97+index)})</span>`:''}${s.expression?`<p class="solution-expression">${escape(s.expression)}</p>`:''}<ol class="solution-steps">${s.steps.map(x=>`<li>${escape(x)}</li>`).join('')}</ol>${visual(s.visual,e.id)}<p class="solution-answer">${escape(s.response)}</p>${s.note?`<p class="solution-note">${escape(s.note)}</p>`:''}${e.parts?'</section>':''}`).join('');
   }
   function responseHTML(e) {
-    if(!e.parts)return '<div class="response-space">Resposta: <span></span></div>';
+    if(!e.parts)return `<div class="response-space ${e.solution.kind==='justification'?'reasoning-response':''}">Resposta: <span class="response-line"></span></div>`;
     return `<div class="part-responses">${e.parts.map((part,index)=>`<div class="response-space ${part.solution.kind==='justification'?'reasoning-response':''}"><span class="response-label">${String.fromCharCode(97+index)})</span><span class="response-line"></span></div>`).join('')}</div>`;
   }
   function renderCards() {

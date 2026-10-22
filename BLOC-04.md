@@ -1,6 +1,6 @@
 # Bloc 04 · Connecta les dades
 
-12 problemes estàtics amb una possible resolució. Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent.
+12 problemes estàtics amb una possible resolució. Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats.
 
 Aquest document es genera a partir de data/packs/bloc-04.json; les correccions es fan al bloc original.
 
@@ -46,30 +46,16 @@ Cicle superior · Repte · Estructura: suficiencia
 
 Al refugi hi ha 18 gossos. Cadascun menja 0,35 kg de pinso al dia. Cal preparar el menjar per a 3 dies. Al magatzem queden 2,1 kg i volen comprar 5 sacs de 3 kg cadascun.
 
-**a) Quants quilograms de pinso necessiten per a tots tres dies?**
+**Amb la compra prevista, tindran prou pinso per a tots tres dies? Justifica-ho.**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
 
 **Una possible resolució**
 
-1. Cada dia necessiten 6,3 kg; per a tres dies, 18,9 kg.
+1. Els gossos necessiten 18 × 0,35 × 3 = 18,9 kg.
+2. El magatzem i els sacs aporten 2,1 + 5 × 3 = 17,1 kg; falten 1,8 kg.
 
-Expressió: 18 × 0,35 × 3 = 18,9
-
-**Necessiten 18,9 kg de pinso.**
-
-
-
-**b) Amb la compra prevista, tindran prou pinso? Justifica-ho.**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
-
-**Una possible resolució**
-
-1. Els cinc sacs aporten 15 kg; amb els 2,1 kg del magatzem sumen 17,1 kg.
-2. Comparem amb els 18,9 kg necessaris.
-
-**No: tindran 17,1 kg i els en faltaran 1,8 kg.**
+**No: necessiten 18,9 kg i tindran 17,1 kg. Els en faltaran 1,8 kg.**
 
 
 
@@ -81,35 +67,22 @@ Cicle superior · Repte · Estructura: fraccio-del-restant
 
 Un grup de 14 músics disposa de 90 minuts d'assaig. Dedica un terç (1/3) del temps a escalfar i, després, dues cinquenes parts (2/5) del temps que queda a treballar la tècnica. La resta és per tocar les peces.
 
-**a) Quants minuts dediquen a escalfar?**
+**Quants minuts poden dedicar a tocar les peces?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar.
 
 **Una possible resolució**
 
-1. Dividim el temps total en tres parts iguals.
+1. Escalfar ocupa 30 minuts; en queden 60.
+2. La tècnica ocupa dos cinquens del temps restant; els altres tres cinquens són 36 minuts.
 
-Expressió: 90 ÷ 3 = 30
-
-**Dediquen 30 minuts a escalfar.**
-
-
-
-**b) Quants minuts poden dedicar a tocar les peces?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar.
-
-**Una possible resolució**
-
-1. Després d’escalfar queden 60 minuts. La tècnica n’ocupa 2/5, és a dir, 24; en resten 36.
-
-Expressió: (90 − 30) − (90 − 30) ÷ 5 × 2 = 36
+Expressió: (90 − 90 ÷ 3) ÷ 5 × 3 = 36
 
 **Poden tocar les peces durant 36 minuts.**
 
 Representació visual: Cinquens de 12 minuts: dos per a tècnica i tres per a peces.
 
-Els 2/5 són del temps restant.
+Els 2/5 són del temps restant. Els 14 músics no intervenen en el càlcul.
 
 ---
 
@@ -119,30 +92,16 @@ Cicle superior · Intermedi · Estructura: comparacio
 
 Una botiga ven un recanvi de bicicleta per 120 €, amb un descompte del 20 %. El muntatge costa 18 € més i no té descompte. Una altra botiga ofereix el mateix recanvi, amb el muntatge inclòs, per 108 €.
 
-**a) Quant costa el recanvi amb muntatge a la primera botiga?**
+**Quina oferta és més barata i quants diners estalviem si la triem?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges.
 
 **Una possible resolució**
 
-1. El descompte és de 24 €; el recanvi queda en 96 €.
-2. Hi afegim els 18 € de muntatge.
+1. La primera botiga cobra 96 € pel recanvi i 18 € pel muntatge: 114 €.
+2. La segona cobra 108 € amb muntatge; la diferència és de 6 €.
 
-Expressió: 120 − 120 × 20 ÷ 100 + 18 = 114
-
-**A la primera botiga costa 114 € amb muntatge.**
-
-
-
-**b) Quina oferta és més barata i quants diners estalviem si la triem?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges.
-
-**Una possible resolució**
-
-1. Comparem els dos preus amb el mateix servei inclòs.
-
-Expressió: 114 − 108 = 6
+Expressió: 120 − 120 × 20 ÷ 100 + 18 − 108 = 6
 
 **La segona botiga és més barata: estalviem 6 €.**
 
@@ -156,33 +115,20 @@ Cicle superior · Intermedi · Estructura: agrupacions-successives
 
 Un arxiu té 4 àlbums, cadascun amb 4 pàgines i 4 fotografies per pàgina. Hi ha 7 còpies repetides que s'han de retirar. Després s'hi incorporen 17 fotografies noves, totes diferents de les que ja hi havia.
 
-**a) Quantes fotografies hi ha inicialment? Expressa-ho amb una potència.**
+**Quantes fotografies tindrà l'arxiu després dels canvis? Expressa el càlcul amb una potència.**
 
 Continguts: Suma i resta, Operacions combinades, Potències.
 
 **Una possible resolució**
 
-1. Hi ha tres agrupacions successives de quatre: àlbums, pàgines i fotografies.
-
-Expressió: 4³ = 64
-
-**Inicialment hi ha 4³ = 64 fotografies.**
-
-
-
-**b) Quantes fotografies tindrà l'arxiu després de retirar les còpies repetides i incorporar les noves?**
-
-Continguts: Suma i resta, Operacions combinades, Potències.
-
-**Una possible resolució**
-
-1. Després de retirar set còpies en queden 57; en sumar-hi les noves, n'hi ha 74.
+1. Les tres agrupacions de quatre donen 4³ = 64 fotografies.
+2. Retirem set còpies i incorporem disset fotografies: 64 − 7 + 17 = 74.
 
 Expressió: 4³ − 7 + 17 = 74
 
 **L'arxiu tindrà 74 fotografies.**
 
-No es demana si les fotografies noves caben als mateixos àlbums.
+
 
 ---
 
@@ -192,21 +138,7 @@ Inici d’ESO · Intermedi · Estructura: diferencia-arees
 
 Un jardí quadrat de gespa té una superfície de 64 m². Al seu voltant es construeix un camí d'1 m d'amplada per fora, també a les cantonades. El contorn exterior del conjunt és quadrat.
 
-**a) Quant mesura cada costat de la zona de gespa?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Potències, Arrels.
-
-**Una possible resolució**
-
-1. Busquem el nombre que, multiplicat per si mateix, dona 64.
-
-Expressió: √64 = 8
-
-**Cada costat de la gespa mesura 8 m.**
-
-
-
-**b) Quina superfície ocupa només el camí?**
+**Quina superfície ocupa només el camí?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Potències, Arrels.
 
@@ -227,49 +159,20 @@ Un dibuix de dos quadrats, un dins de l'altre, ajuda a comptar també les canton
 
 Inici d’ESO · Intermedi · Estructura: descomptes-successius
 
-Una jaqueta costa 80 €. Primer li apliquen una rebaixa del 25 % i, sobre el preu ja rebaixat, un descompte addicional del 10 %.
+La Jana i en Nil compren la mateixa jaqueta, de 80 €. A la Jana li apliquen un 10 % de descompte i després un 25 %; a en Nil, primer un 25 % i després un 10 %. Cada descompte s'aplica al preu ja rebaixat.
 
-**a) Quin és el preu final de la jaqueta?**
+**Qui ha pagat més per la jaqueta? Justifica la resposta.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Decimals.
-
-**Una possible resolució**
-
-1. La primera rebaixa deixa el preu en 60 €.
-2. El segon descompte és el 10 % de 60 €, és a dir, 6 €; el preu final és de 54 €.
-
-Expressió: (80 − 80 × 25 ÷ 100) × 90 ÷ 100 = 54
-
-**El preu final és de 54 €.**
-
-
-
-**b) Quin percentatge del preu inicial ens hem estalviat en total?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges.
 
 **Una possible resolució**
 
-1. L'estalvi és de 26 €; el comparem amb els 80 € inicials.
+1. Jana: després del 10 % paga 72 €; el 25 % de 72 € són 18 €, i queda en 54 €.
+2. Nil: després del 25 % paga 60 €; el 10 % de 60 € són 6 €, i queda en 54 €.
 
-Expressió: (80 − 54) × 100 ÷ 80 = 32,5
+**Han pagat el mateix: 54 € cadascun.**
 
-**Ens hem estalviat el 32,5 % del preu inicial.**
-
-
-
-**c) Podríem obtenir el mateix preu aplicant de cop la suma dels dos percentatges? Justifica-ho.**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Decimals.
-
-**Una possible resolució**
-
-1. El segon descompte s'aplica a 60 €, no als 80 € inicials.
-2. Calculem el preu amb un únic 35 % per contrastar-lo amb els 54 €.
-
-**No: una rebaixa única del 35 % deixaria el preu en 52 €, dos euros menys.**
-
-
+Canviar l'ordre dels dos descomptes no canvia el preu final.
 
 ---
 
@@ -279,33 +182,20 @@ Cicle superior · Accessible · Estructura: recorregut
 
 Un circuit de bicicleta té un primer tram de 3,6 km i un segon de 2,4 km, que torna al punt de sortida. La Jana fa 3 voltes completes. Entre volta i volta s'atura 8 minuts. El seu objectiu és recórrer 20 km.
 
-**a) Quants quilòmetres recorre amb les voltes que ha fet?**
+**Ha assolit l'objectiu? Indica quants quilòmetres li falten o de quant l'ha superat.**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals, Dades per despistar.
 
 **Una possible resolució**
 
-1. Una volta fa 6 km; multipliquem aquesta distància per tres.
+1. Cada volta fa 6 km; amb tres voltes recorre 18 km.
+2. Comparem aquesta distància amb els 20 km de l’objectiu.
 
-Expressió: (3,6 + 2,4) × 3 = 18
-
-**Ha recorregut 18 km.**
-
-Les pauses no afegeixen distància al recorregut.
-
-**b) Ha assolit l'objectiu? Indica quants quilòmetres li falten o de quant l'ha superat.**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals, Dades per despistar.
-
-**Una possible resolució**
-
-1. Comparem els 18 km recorreguts amb els 20 km de l'objectiu.
-
-Expressió: 20 − 18 = 2
+Expressió: 20 − (3,6 + 2,4) × 3 = 2
 
 **Encara no ha assolit l'objectiu: li falten 2 km.**
 
-
+Les pauses no afegeixen distància al recorregut.
 
 ---
 
@@ -315,33 +205,20 @@ Cicle superior · Repte · Estructura: intercanvi
 
 En Pol té 156 cromos: un quart (1/4) són còpies repetides i els altres són tots diferents. Va a una trobada de 90 minuts on pot canviar cada grup de 3 còpies repetides per 2 cromos que no té. Tots els cromos que rep són diferents entre si.
 
-**a) Quants cromos diferents té abans de la trobada?**
+**Quants cromos diferents tindrà després de fer tots els intercanvis possibles?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Dades per despistar.
 
 **Una possible resolució**
 
-1. Hi ha 39 còpies repetides; les restem del total.
+1. Les 39 còpies repetides deixen 117 cromos diferents a la col·lecció.
+2. Pot fer 13 intercanvis i rebre 26 cromos nous: 117 + 26 = 143.
 
-Expressió: 156 − 156 ÷ 4 = 117
-
-**Abans de la trobada té 117 cromos diferents.**
-
-Representació visual: Cada quart són 39 cromos; els tres quarts sense ratllar són els 117 diferents.
-
-
-
-**b) Quants cromos diferents tindrà després de fer tots els intercanvis possibles?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Dades per despistar.
-
-**Una possible resolució**
-
-1. 39 ÷ 3 = 13 intercanvis: rep 26 cromos nous i els afegeix als 117 que ja tenia.
-
-Expressió: 117 + 39 ÷ 3 × 2 = 143
+Expressió: 156 − 156 ÷ 4 + 156 ÷ 4 ÷ 3 × 2 = 143
 
 **Després dels intercanvis tindrà 143 cromos diferents.**
+
+Representació visual: Un quart són 39 còpies repetides; els altres 117 cromos es conserven.
 
 Els 90 minuts no intervenen en el càlcul.
 
@@ -387,47 +264,20 @@ Expressió: 75 − 42 − 24 = 9
 
 Cicle superior · Repte · Estructura: consum-repartiment
 
-Tenim 5 pots d'1,6 litres de pintura cadascun. Per pintar el fons d'un mural gastem tres vuitens (3/8) de tota la pintura. Per als detalls en gastem 1,8 litres més. Repartirem el que quedi en 4 recipients iguals.
+Tenim 4 pots de 2,5 litres de pintura cadascun. Per pintar el fons d'un mural gastem tres vuitens (3/8) de tota la pintura. Per als detalls en gastem 1,25 litres més. Repartirem el que quedi en 4 recipients iguals.
 
-**a) Quants litres gastem per pintar el fons?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Decimals.
-
-**Una possible resolució**
-
-1. En total tenim 8 litres; cada vuitè és 1 litre i en fem servir tres.
-
-Expressió: 5 × 1,6 ÷ 8 × 3 = 3
-
-**Per al fons gastem 3 litres.**
-
-
-
-**b) Quants litres queden després de pintar el fons i els detalls?**
+**Quants litres de pintura posarem a cada recipient?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Decimals.
 
 **Una possible resolució**
 
-1. Hem gastat 4,8 litres entre el fons i els detalls; els restem dels 8 inicials.
+1. Tenim 10 litres; els 3/8 del fons són 3,75 litres.
+2. Amb els detalls gastem 5 litres i en queden 5; repartits entre quatre, són 1,25 litres per recipient.
 
-Expressió: 5 × 1,6 − (3 + 1,8) = 3,2
+Expressió: (4 × 2,5 − (4 × 2,5 ÷ 8 × 3 + 1,25)) ÷ 4 = 1,25
 
-**Queden 3,2 litres de pintura.**
-
-
-
-**c) Quanta pintura posarem a cada recipient?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Decimals.
-
-**Una possible resolució**
-
-1. Dividim la pintura sobrant en quatre parts iguals.
-
-Expressió: 3,2 ÷ 4 = 0,8
-
-**Posarem 0,8 litres a cada recipient.**
+**Posarem 1,25 litres a cada recipient.**
 
 
 

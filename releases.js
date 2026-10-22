@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.13.0',title:'Quin és el tot?',
+    changes:[
+      'Dotze problemes nous, P0049–P0060: fraccions de quantitats, totals diferents i referents que cal interpretar.',
+      'Quart bloc revisat: preguntes directes a CS i ESO, comparació de descomptes en ordre invers i pots de pintura de 2,5 litres.',
+      'Les justificacions d’una sola pregunta també tenen dues línies de resposta.'
+    ]
+  },
+  {
     version:'0.12.0',title:'48 problemes -i sumant-',
     changes:[
       'Dotze problemes nous, P0037–P0048, amb 27 preguntes de càlcul, comparació i justificació.',

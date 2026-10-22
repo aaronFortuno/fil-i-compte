@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "cinque-bloc",
+    "title": "Quin és el tot?",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0049",
+      "version": 1,
+      "title": "Dues caixes de retoladors",
+      "context": "material-escolar",
+      "structure": "comparacio-de-totals",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La capsa A té 24 retoladors i un terç (1/3) són vermells. La capsa B en té 36 i una quarta part (1/4) són vermells.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quina capsa té més retoladors vermells i quants més?",
+      "solution": {
+        "expression": "36 ÷ 4 − 24 ÷ 3 = 1",
+        "calculation": [
+          "sub",
+          [
+            "div",
+            36,
+            4
+          ],
+          [
+            "div",
+            24,
+            3
+          ]
+        ],
+        "answer": 1,
+        "unit": "retolador vermell de diferència",
+        "response": "La capsa B té un retolador vermell més: nou, davant dels vuit de l’A.",
+        "steps": [
+          "Calculem cada fracció sobre la seva capsa: 1/3 de 24 són 8 i 1/4 de 36 són 9."
+        ],
+        "note": "Una fracció més petita pot correspondre a una quantitat més gran si el total és diferent."
+      }
+    },
+    {
+      "id": "P0050",
+      "version": 1,
+      "title": "El dipòsit del pati",
+      "context": "aigua",
+      "structure": "canvi-de-referencia",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un dipòsit de 240 litres de capacitat està ple fins a tres quartes parts (3/4). Per regar, en traiem un terç (1/3) de l'aigua que conté.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quina fracció de la capacitat del dipòsit queda ocupada per aigua? Justifica-ho.",
+      "solution": {
+        "expression": "(180 − 180 ÷ 3) ÷ 240 = 1/2",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "mul",
+              [
+                "div",
+                240,
+                4
+              ],
+              3
+            ],
+            [
+              "div",
+              [
+                "mul",
+                [
+                  "div",
+                  240,
+                  4
+                ],
+                3
+              ],
+              3
+            ]
+          ],
+          240
+        ],
+        "answer": 0.5,
+        "unit": "de la capacitat",
+        "response": "Queda ocupada la meitat (1/2) de la capacitat: 120 litres.",
+        "steps": [
+          "Hi havia 180 litres; en traiem un terç, que són 60 litres.",
+          "Els 120 litres restants són la meitat dels 240 litres de capacitat."
+        ],
+        "note": "El terç es refereix a l’aigua que hi havia; la resposta es refereix a la capacitat.",
+        "visual": {
+          "type": "fraction",
+          "parts": 2,
+          "filled": 1,
+          "total": 240,
+          "caption": "El tot és la capacitat de 240 litres; cada meitat representa 120 litres."
+        }
+      }
+    },
+    {
+      "id": "P0051",
+      "version": 1,
+      "title": "La meitat de les entrades",
+      "context": "concert",
+      "structure": "afirmacio-referencia",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un auditori té 180 localitats. Un terç (1/3) es reserva per a invitacions. Es ven la meitat de les entrades que quedaven disponibles. Un organitzador diu: «Hem venut la meitat de l'aforament».",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Té raó l’organitzador? Justifica la resposta.",
+      "solution": {
+        "kind": "justification",
+        "response": "No: s’han venut 60 entrades, un terç de l’aforament. La meitat de l’aforament serien 90.",
+        "steps": [
+          "Es reserven 60 localitats i en queden 120 disponibles; la meitat són 60.",
+          "La meitat de 180 són 90, una quantitat diferent."
+        ],
+        "note": "Cal distingir totes les localitats de les entrades disponibles per vendre.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              [
+                "sub",
+                180,
+                [
+                  "div",
+                  180,
+                  3
+                ]
+              ],
+              2
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "div",
+              180,
+              2
+            ],
+            "answer": 90
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0052",
+      "version": 1,
+      "title": "Talls de pizza",
+      "context": "alimentacio",
+      "structure": "unitats-diferents",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Dues pizzes són de la mateixa mida. Una es talla en 8 porcions iguals i l'altra, en 12. En Jan menja 3 porcions de la primera i la Laia, 4 de la segona.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Qui ha menjat més pizza? Justifica-ho amb un dibuix o amb nombres.",
+      "solution": {
+        "kind": "justification",
+        "response": "En Jan ha menjat més: 3/8 són 9/24, mentre que 4/12 són 8/24.",
+        "steps": [
+          "Dividim cada pizza en 24 parts: cada vuitè equival a 3 parts i cada dotzè, a 2.",
+          "En Jan en menja 9 i la Laia, 8. La diferència és 1/24 de pizza."
+        ],
+        "note": "Dibuixa dues pizzes iguals; els talls de la primera són més grans.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              [
+                "div",
+                24,
+                8
+              ]
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "mul",
+              4,
+              [
+                "div",
+                24,
+                12
+              ]
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0053",
+      "version": 1,
+      "title": "La collita que queda",
+      "context": "hort",
+      "structure": "fraccio-del-restant",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una collita de tres hores s'han recollit 120 kg de tomàquets. Se'n dona un quart (1/4) a un menjador i es venen dues cinquenes parts (2/5) del que queda. La resta es guarda.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants quilograms de tomàquets es guarden?",
+      "solution": {
+        "expression": "(120 − 120 ÷ 4) ÷ 5 × 3 = 54",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "sub",
+              120,
+              [
+                "div",
+                120,
+                4
+              ]
+            ],
+            5
+          ],
+          3
+        ],
+        "answer": 54,
+        "unit": "quilograms",
+        "response": "Es guarden 54 kg de tomàquets.",
+        "steps": [
+          "Després de donar-ne 30 kg, en queden 90.",
+          "Es venen dos cinquens de 90; els altres tres cinquens són 54 kg."
+        ],
+        "note": "Els 2/5 es refereixen als 90 kg restants. Les tres hores no intervenen en el càlcul."
+      }
+    },
+    {
+      "id": "P0054",
+      "version": 1,
+      "title": "El llibre començat",
+      "context": "lectura",
+      "structure": "recuperar-el-total",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Dilluns, l'Àlex llegeix tres cinquenes parts (3/5) d'un llibre. Dimarts llegeix la meitat de les pàgines que li quedaven. Encara té 24 pàgines per llegir.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes pàgines té el llibre?",
+      "solution": {
+        "expression": "24 × 2 ÷ (5 − 3) × 5 = 120",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "mul",
+              24,
+              2
+            ],
+            [
+              "sub",
+              5,
+              3
+            ]
+          ],
+          5
+        ],
+        "answer": 120,
+        "unit": "pàgines",
+        "response": "El llibre té 120 pàgines.",
+        "steps": [
+          "Abans de llegir dimarts quedaven 48 pàgines: el doble de les 24 finals.",
+          "Aquestes 48 pàgines són 2/5 del llibre; un cinquè són 24 i cinc cinquens, 120."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0055",
+      "version": 1,
+      "title": "Les classes que van en bicicleta",
+      "context": "mobilitat",
+      "structure": "ponderacio-de-totals",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "A la classe A hi ha 20 alumnes i tres cinquenes parts (3/5) venen en bicicleta. A la classe B n'hi ha 30 i dues cinquenes parts (2/5) venen en bicicleta.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin percentatge del conjunt de les dues classes ve en bicicleta?",
+      "solution": {
+        "expression": "(20 ÷ 5 × 3 + 30 ÷ 5 × 2) × 100 ÷ (20 + 30) = 48",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "div",
+                  20,
+                  5
+                ],
+                3
+              ],
+              [
+                "mul",
+                [
+                  "div",
+                  30,
+                  5
+                ],
+                2
+              ]
+            ],
+            100
+          ],
+          [
+            "add",
+            20,
+            30
+          ]
+        ],
+        "answer": 48,
+        "unit": "percentatge",
+        "response": "El 48 % de l’alumnat de les dues classes ve en bicicleta.",
+        "steps": [
+          "A cada classe hi venen 12 alumnes en bicicleta: 24 d’un total de 50.",
+          "24 × 100 ÷ 50 = 48 %."
+        ],
+        "note": "Les classes tenen mides diferents; no es pot fer la mitjana simple de les fraccions."
+      }
+    },
+    {
+      "id": "P0056",
+      "version": 1,
+      "title": "La nota del taller",
+      "context": "taller",
+      "structure": "ambiguitat-explicita",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En un taller hi ha una corda de 18 m. Primer se'n talla un terç (1/3). La nota de la tasca següent només diu: «Talla'n una quarta part (1/4)», sense precisar de quina longitud.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Podem saber exactament quanta corda quedarà? Calcula i explica les dues interpretacions.",
+      "solution": {
+        "kind": "justification",
+        "response": "Falta precisar el referent: quedarien 7,5 m si el quart és de la corda inicial, o 9 m si és de la que queda.",
+        "steps": [
+          "Després del primer tall queden 12 m.",
+          "Un quart de 18 m són 4,5 m: quedarien 7,5 m. Un quart de 12 m són 3 m: quedarien 9 m."
+        ],
+        "note": "L’ambigüitat és part de la pregunta: les dues lectures s’han de justificar.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                18,
+                [
+                  "div",
+                  18,
+                  3
+                ]
+              ],
+              [
+                "div",
+                18,
+                4
+              ]
+            ],
+            "answer": 7.5
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                18,
+                [
+                  "div",
+                  18,
+                  3
+                ]
+              ],
+              [
+                "div",
+                [
+                  "sub",
+                  18,
+                  [
+                    "div",
+                    18,
+                    3
+                  ]
+                ],
+                4
+              ]
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0057",
+      "version": 1,
+      "title": "La capsa de peces",
+      "context": "construccio",
+      "structure": "recuperar-el-total",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "D'una capsa de peces de construcció en retirem una quarta part (1/4) i després hi afegim 9 peces. Ara la capsa en conté 45.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes peces hi havia al començament?",
+      "solution": {
+        "expression": "(45 − 9) ÷ 3 × 4 = 48",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "sub",
+              45,
+              9
+            ],
+            3
+          ],
+          4
+        ],
+        "answer": 48,
+        "unit": "peces",
+        "response": "Al començament hi havia 48 peces.",
+        "steps": [
+          "Abans d’afegir les nou peces n’hi havia 36: són els tres quarts que havien quedat.",
+          "Cada quart són 12 peces; els quatre quarts són 48."
+        ],
+        "note": "",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 3,
+          "total": 48,
+          "caption": "Els tres quarts ratllats són les 36 peces que quedaven abans d’afegir-ne nou."
+        }
+      }
+    },
+    {
+      "id": "P0058",
+      "version": 1,
+      "title": "La recepta ampliada",
+      "context": "cuina",
+      "structure": "proporcionalitat-fraccionaria",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una recepta per a 6 persones necessita 3/4 de litre de llet. La preparem per a 10 persones mantenint les proporcions. Tenim dues ampolles plenes d'1 litre cadascuna.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quanta llet quedarà després de preparar la recepta?",
+      "solution": {
+        "expression": "2 − (3/4 ÷ 6 × 10) = 3/4",
+        "calculation": [
+          "sub",
+          2,
+          [
+            "mul",
+            [
+              "div",
+              [
+                "div",
+                3,
+                4
+              ],
+              6
+            ],
+            10
+          ]
+        ],
+        "answer": 0.75,
+        "unit": "litres",
+        "response": "Quedaran 3/4 de litre de llet.",
+        "steps": [
+          "Per persona cal 1/8 de litre; per a deu persones, 10/8, és a dir, 5/4 de litre.",
+          "Tenim 2 litres, que són 8/4; en restar-ne 5/4, queden 3/4."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0059",
+      "version": 1,
+      "title": "La terrassa compartida",
+      "context": "espais",
+      "structure": "ordre-i-referencia",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una terrassa de 96 m² es reserva un terç (1/3) per a plantes i una quarta part (1/4) de la superfície que queda per a un camí. La resta és per a taules.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quina superfície queda per a les taules?",
+          "solution": {
+            "expression": "(96 − 96 ÷ 3) − (96 − 96 ÷ 3) ÷ 4 = 48",
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                96,
+                [
+                  "div",
+                  96,
+                  3
+                ]
+              ],
+              [
+                "div",
+                [
+                  "sub",
+                  96,
+                  [
+                    "div",
+                    96,
+                    3
+                  ]
+                ],
+                4
+              ]
+            ],
+            "answer": 48,
+            "unit": "metres quadrats",
+            "response": "Queden 48 m² per a les taules.",
+            "steps": [
+              "Les plantes ocupen 32 m²; dels 64 restants, el camí n’ocupa 16. Queden 48 m²."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Si reservéssim primer 1/4 de tota la terrassa per al camí i després 1/3 del que queda per a plantes, el repartiment seria el mateix? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: plantes i camí ocuparien 24 m² cadascun, en lloc de 32 i 16. Les taules conservarien els 48 m².",
+            "steps": [
+              "El camí ocuparia 96 ÷ 4 = 24 m²; les plantes, un terç dels 72 restants: 24 m².",
+              "L’espai per a taules seria igual, però canviarien els espais de plantes i camí."
+            ],
+            "note": "",
+            "evidence": [
+              {
+                "calculation": [
+                  "div",
+                  [
+                    "sub",
+                    96,
+                    [
+                      "div",
+                      96,
+                      4
+                    ]
+                  ],
+                  3
+                ],
+                "answer": 24
+              },
+              {
+                "calculation": [
+                  "div",
+                  96,
+                  4
+                ],
+                "answer": 24
+              },
+              {
+                "calculation": [
+                  "sub",
+                  [
+                    "sub",
+                    96,
+                    [
+                      "div",
+                      96,
+                      4
+                    ]
+                  ],
+                  [
+                    "div",
+                    [
+                      "sub",
+                      96,
+                      [
+                        "div",
+                        96,
+                        4
+                      ]
+                    ],
+                    3
+                  ]
+                ],
+                "answer": 48
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0060",
+      "version": 1,
+      "title": "Les dues campanyes",
+      "context": "solidaritat",
+      "structure": "dades-insuficients",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La campanya A ha recollit tres quartes parts (3/4) del seu objectiu econòmic. La campanya B n'ha recollit dues terceres parts (2/3) del seu. Els objectius de les dues campanyes són diferents i no en sabem els imports.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Podem saber quina campanya ha recollit més euros? Justifica-ho amb exemples.",
+      "solution": {
+        "kind": "justification",
+        "response": "No es pot saber només amb les fraccions: cal conèixer els objectius en euros.",
+        "steps": [
+          "Si els objectius fossin 100 € per a A i 180 € per a B, haurien recollit 75 € i 120 €: guanyaria B.",
+          "Si fossin 200 € per a A i 180 € per a B, serien 150 € i 120 €: guanyaria A."
+        ],
+        "note": "Els imports dels exemples són possibles objectius, no dades conegudes de l’enunciat.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                100,
+                4
+              ],
+              3
+            ],
+            "answer": 75
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                180,
+                3
+              ],
+              2
+            ],
+            "answer": 120
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                200,
+                4
+              ],
+              3
+            ],
+            "answer": 150
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                180,
+                3
+              ],
+              2
+            ],
+            "answer": 120
+          }
+        ]
+      }
+    }
+  ]
+}

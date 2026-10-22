@@ -212,3 +212,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Revisades visualment dues pàgines de solucionari amb els tres problemes triples i les dues barres. El problema llarg de cromos també es mostra a 320 × 640 sense desbordament. Lema amb 48 problemes i versió 0.12.0 visibles; cap error ni avís a la consola local.
 - Captures a `vista-previa-v0120.jpg` i `vista-previa-v0120-solucionari.jpg` (no versionades). Estat final amb cercador buit, filtres oberts a tot el catàleg i dues pàgines de dos problemes. No s'ha obert el diàleg d'impressió ni comprovat el web remot.
 - Quart bloc publicat amb `pendent-docent`, seguint la validació posterior al web autoritzada per l'usuari.
+
+## Revisió del quart bloc i «Quin és el tot?» · 0.13.0 · 22 d'octubre de 2026
+
+- Nou problemes de CS i ESO del quart bloc convertits a pregunta única: P0038–P0045 i P0047. Versions incrementades a 2; els tres problemes de CM conserven els apartats. Quart bloc amb 16 preguntes i revisió de l'usuari incorporada com a validat.
+- P0043 comprovat en els dos ordres de descompte: 80 → 72 → 54 i 80 → 60 → 54. P0047 comprovat amb quatre pots de 2,5 litres: 10 litres inicials, 3,75 per al fons, 1,25 per als detalls i 5 litres restants; 1,25 litres a cada recipient.
+- Cinquè bloc P0049–P0060: dotze problemes amb fraccions, onze de pregunta única i un de doble, amb 13 preguntes. Dues barres noves. L'ambigüitat de P0056 té dues interpretacions comprovades (7,5 m o 9 m), i P0060 presenta contraexemples amb objectius diferents per justificar que no es pot decidir sense imports.
+- Superats els 22 grups de comprovacions ampliats amb 60 identificadors, les noves respostes i les evidències independents. Revisades les etiquetes: P0055 treballa conjuntament fraccions i percentatges; les exclusions continuen aplicant-se a tots els càlculs. Arrels, potències, fraccions i decimals amb aritmètica racional exacta.
+- Cinquè bloc en quatre pàgines de tres problemes: exercicis i solucionaris sense desbordament; espai de treball mínim de 62 px CSS. Les quatre justificacions úniques tenen línies de resposta de 33 px CSS. En sis pàgines de dos, espai mínim de 219 px CSS, també sense desbordament.
+- Quart bloc corregit comprovat amb dos i tres problemes per pàgina, exercicis i solucionaris sense desbordament. Sis pàgines en quadrícula amb els 24 problemes dels blocs quart i cinquè: cap desbordament vertical ni horitzontal, quatre representacions gràfiques i espai mínim de treball de 150 px CSS.
+- Revisades visualment les jaquetes, la pintura, les interpretacions de la corda, els contraexemples i les dues barres noves en dues pàgines de solucionari. P0059, el problema doble més llarg, també es mostra a 320 × 640 sense desbordament horitzontal.
+- Captures a `vista-previa-v0130.jpg` i `vista-previa-v0130-solucionari.jpg` (no versionades). Cap error ni avís a la consola. Estat final amb cercador buit, filtres sense restriccions i dues pàgines de dos problemes.
+- Cinquè bloc publicat amb `pendent-docent` per revisar-lo al web. No s'ha obert el diàleg d'impressió ni fet cap comprovació remota.
