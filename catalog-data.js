@@ -5,13 +5,13 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 3,
+    "version": 5,
     "authorship": "Contingut original creat per a aquest projecte",
     "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació."
   },
   "exercises": [
     {
-      "id": "P001",
+      "id": "P0001",
       "version": 1,
       "title": "Les pomes de l'hort",
       "context": "hort",
@@ -60,7 +60,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P002",
+      "id": "P0002",
       "version": 1,
       "title": "Llibres que van i venen",
       "context": "biblioteca",
@@ -106,7 +106,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P003",
+      "id": "P0003",
       "version": 1,
       "title": "Autocars per a la sortida",
       "context": "sortida",
@@ -150,7 +150,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P004",
+      "id": "P0004",
       "version": 1,
       "title": "Els pots de la cooperativa",
       "context": "cooperativa",
@@ -198,7 +198,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P005",
+      "id": "P0005",
       "version": 1,
       "title": "El berenar compartit",
       "context": "berenar",
@@ -252,7 +252,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P006",
+      "id": "P0006",
       "version": 1,
       "title": "Aigua per al planter",
       "context": "hort",
@@ -307,7 +307,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P007",
+      "id": "P0007",
       "version": 1,
       "title": "La motxilla rebaixada",
       "context": "compres",
@@ -366,7 +366,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P008",
+      "id": "P0008",
       "version": 1,
       "title": "Més inscripcions al casal",
       "context": "casal",
@@ -413,7 +413,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P009",
+      "id": "P0009",
       "version": 1,
       "title": "El canvi del mercat",
       "context": "compres",
@@ -466,7 +466,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P010",
+      "id": "P0010",
       "version": 1,
       "title": "Una volta al circuit",
       "context": "esport",
@@ -520,7 +520,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P011",
+      "id": "P0011",
       "version": 1,
       "title": "El mosaic del passadís",
       "context": "escola",
@@ -568,7 +568,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P012",
+      "id": "P0012",
       "version": 1,
       "title": "La tanca de l'hort quadrat",
       "context": "hort",
@@ -622,7 +622,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P013",
+      "id": "P0013",
       "version": 1,
       "title": "Dos dies de teatre",
       "context": "teatre",
@@ -657,7 +657,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P014",
+      "id": "P0014",
       "version": 1,
       "title": "Places lliures al concert",
       "context": "concert",
@@ -692,7 +692,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P015",
+      "id": "P0015",
       "version": 1,
       "title": "Cartells per a les escoles",
       "context": "impremta",
@@ -727,7 +727,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P016",
+      "id": "P0016",
       "version": 1,
       "title": "Sobres de llavors",
       "context": "jardineria",
@@ -763,7 +763,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P017",
+      "id": "P0017",
       "version": 1,
       "title": "El camí fins al mirador",
       "context": "excursio",
@@ -799,7 +799,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P018",
+      "id": "P0018",
       "version": 1,
       "title": "Cintes per a les medalles",
       "context": "esport",
@@ -835,7 +835,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P019",
+      "id": "P0019",
       "version": 1,
       "title": "Anar a l'escola amb bicicleta",
       "context": "mobilitat",
@@ -884,7 +884,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P020",
+      "id": "P0020",
       "version": 1,
       "title": "Els abonaments del museu",
       "context": "museu",
@@ -932,7 +932,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P021",
+      "id": "P0021",
       "version": 1,
       "title": "Entrades per a les associacions",
       "context": "teatre",
@@ -980,7 +980,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P022",
+      "id": "P0022",
       "version": 1,
       "title": "Material per al taller",
       "context": "compres",
@@ -1034,7 +1034,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P023",
+      "id": "P0023",
       "version": 1,
       "title": "Una clau de colors",
       "context": "codis",
@@ -1069,7 +1069,7 @@ globalThis.EXERCISE_CATALOG = {
       }
     },
     {
-      "id": "P024",
+      "id": "P0024",
       "version": 1,
       "title": "El costat de la vela",
       "context": "navegacio",

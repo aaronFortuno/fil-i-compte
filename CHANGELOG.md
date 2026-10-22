@@ -1,5 +1,13 @@
 # Historial de canvis
 
+## 0.10.0 · Codis de quatre xifres i rangs d'impressió
+
+- Cerca de codis exactes i de rangs inclusius: `-4`, `5-7,9-10`, `13-`, amb P opcional i espais admesos. S'admeten unions, superposicions i codis de més de quatre xifres; els límits es comparen numèricament.
+- Els codis i rangs limiten el banc, la proposta automàtica i la compatibilitat de la tria. Es conserven al navegador i a les exportacions. La cerca textual continua sent exploratòria i substitueix el rang en editar el cercador.
+- Ajuda superposada al botó ? amb exemples clicables, més explicació a «Com funciona». Els errors de sintaxi es mostren a l'estat buit i al peu fix; impedeixen proposar i revisar sense moure la matriu amb banners.
+- Migració a P0001–P0024 en fonts, catàleg, targetes, documents i impressió. Els identificadors de tres xifres es normalitzen en recuperar tries, mantenint-ne l'ordre i detectant duplicats després de normalitzar.
+- Exportacions en format 3 amb rangs; importació compatible amb formats 1, 2 i 3. La comparació dels exercicis admet el canvi de farciment amb zeros i continua rebutjant canvis reals de contingut o versió.
+
 ## 0.9.1 · Equivalències entre nivell i dificultat
 
 - Nivell i dificultat es combinen en una matriu orientativa de cinc franges. Avançar un cicle equival a avançar un grau de dificultat: CM repte = CS intermedi = inici d'ESO accessible; CS repte = inici d'ESO intermedi.

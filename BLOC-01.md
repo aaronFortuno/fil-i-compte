@@ -4,7 +4,7 @@
 
 Aquest document es genera a partir de data/packs/bloc-01.json; les correccions es fan al bloc original.
 
-## P001 · Les pomes de l'hort
+## P0001 · Les pomes de l'hort
 
 Cicle mitjà · Accessible · Estructura: canvis
 
@@ -29,7 +29,7 @@ També pots dibuixar les pomes i comptar les que queden.
 
 ---
 
-## P002 · Llibres que van i venen
+## P0002 · Llibres que van i venen
 
 Cicle superior · Intermedi · Estructura: canvis
 
@@ -52,7 +52,7 @@ Una línia amb els canvis +72 i −57 també ajuda a seguir el recompte.
 
 ---
 
-## P003 · Autocars per a la sortida
+## P0003 · Autocars per a la sortida
 
 Cicle superior · Intermedi · Estructura: repartiment
 
@@ -75,7 +75,7 @@ Els 45 minuts no intervenen en el repartiment. Els parèntesis indiquen què cal
 
 ---
 
-## P004 · Els pots de la cooperativa
+## P0004 · Els pots de la cooperativa
 
 Cicle superior · Repte · Estructura: repartiment
 
@@ -99,7 +99,7 @@ Comprovació: 6 × 66 + 36 = 432 pots.
 
 ---
 
-## P005 · El berenar compartit
+## P0005 · El berenar compartit
 
 Cicle superior · Intermedi · Estructura: part-total
 
@@ -124,7 +124,7 @@ També pots calcular directament el quart que queda: 32 ÷ 4 = 8.
 
 ---
 
-## P006 · Aigua per al planter
+## P0006 · Aigua per al planter
 
 Cicle superior · Intermedi · Estructura: part-total
 
@@ -150,7 +150,7 @@ Representació visual: Situació inicial: 2 parts plenes, de 30 litres cadascuna
 
 ---
 
-## P007 · La motxilla rebaixada
+## P0007 · La motxilla rebaixada
 
 Cicle superior · Intermedi · Estructura: descompte
 
@@ -176,7 +176,7 @@ La barra és una estratègia alternativa; també es pot resoldre amb el càlcul 
 
 ---
 
-## P008 · Més inscripcions al casal
+## P0008 · Més inscripcions al casal
 
 Cicle superior · Intermedi · Estructura: augment
 
@@ -199,7 +199,7 @@ També pots trobar el 10 % (24 infants) i el 5 % (12 infants): l'augment és 24 
 
 ---
 
-## P009 · El canvi del mercat
+## P0009 · El canvi del mercat
 
 Cicle superior · Repte · Estructura: compra-canvi
 
@@ -223,7 +223,7 @@ En euros, expressem la resposta amb dues xifres decimals.
 
 ---
 
-## P010 · Una volta al circuit
+## P0010 · Una volta al circuit
 
 Cicle superior · Repte · Estructura: mesura
 
@@ -248,7 +248,7 @@ Comprovació: 50 passes de 0,8 m fan 40 m.
 
 ---
 
-## P011 · El mosaic del passadís
+## P0011 · El mosaic del passadís
 
 Inici d’ESO · Intermedi · Estructura: quadrats
 
@@ -273,7 +273,7 @@ La potència expressa les 8 files de 8 rajoles; després fem la resta.
 
 ---
 
-## P012 · La tanca de l'hort quadrat
+## P0012 · La tanca de l'hort quadrat
 
 Inici d’ESO · Repte · Estructura: mesura
 

@@ -4,6 +4,7 @@ const files=fs.readdirSync(directory).filter(name=>/^bloc-\d+\.json$/.test(name)
 assert(files.length,'Cal almenys un bloc de problemes.');
 const packs=files.map(file=>({file,data:JSON.parse(fs.readFileSync(path.join(directory,file),'utf8'))}));
 const exercises=packs.flatMap(({data})=>data.exercises);
+exercises.forEach(e=>assert.equal(e.id,core.normalizeId(e.id),'Cal un codi canònic positiu de quatre xifres o més: '+e.id));
 assert.equal(new Set(exercises.map(e=>e.id)).size,exercises.length,'Hi ha identificadors repetits entre blocs.');
 const data={schemaVersion:1,pack:{id:'fil-i-compte',title:'Banc de problemes contextualitzats',language:'ca',version:packs.reduce((sum,p)=>sum+p.data.pack.version,0),authorship:'Contingut original creat per a aquest projecte',review:packs.map(({file,data})=>`${file}: ${data.pack.review}`).join(' ')},exercises};
 fs.writeFileSync(path.join(root,'data','catalog.json'),JSON.stringify(data,null,2)+'\n','utf8');

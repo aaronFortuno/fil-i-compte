@@ -16,6 +16,48 @@
   // Each cycle advances one step: CM repte = CS intermedi = ESO accessible.
   const LEVEL_OFFSET = {mitja:0,superior:1,eso:2};
   const PAGE_COUNTS=[1,2,4,6],PER_PAGE=[2,3,4];
+  function normalizeId(id) {
+    if(typeof id!=='string'||!/^p\d+$/i.test(id))return null;
+    const number=Number(id.slice(1));
+    return Number.isSafeInteger(number)&&number>0?'P'+String(number).padStart(4,'0'):null;
+  }
+  function normalizeSelectionIds(ids) {
+    if(!Array.isArray(ids))throw Error('Tria no vàlida.');
+    const normalized=ids.map(normalizeId);
+    if(normalized.includes(null)||new Set(normalized).size!==normalized.length)throw Error('Codis de la tria no vàlids o repetits.');
+    return normalized;
+  }
+  function parseSearch(value='') {
+    const text=String(value).trim();
+    const codeLike=text&&(/^[p\d\s,+-]+$/i.test(text)||/^p\d/i.test(text)||/^\d+\s*-/.test(text));
+    if(!codeLike)return {kind:'text',text:text.toLocaleLowerCase('ca')};
+    const invalid=error=>({kind:'invalid',error});
+    if(text.length>2000)return invalid('El rang és massa llarg.');
+    const ranges=[];
+    for(const part of text.split(',')){
+      const token=part.trim(),single=/^p?(\d+)$/i.exec(token),range=/^(?:p?(\d+))?\s*-\s*(?:p?(\d+))?$/i.exec(token);
+      if(!single&&(!range||(!range[1]&&!range[2])))return invalid('Fes servir codis o rangs com -4, 5-7,9-10 o 13-.');
+      const from=Number(single?single[1]:(range[1]||1)),to=single?from:range[2]?Number(range[2]):null;
+      if(!Number.isSafeInteger(from)||from<1||(to!==null&&(!Number.isSafeInteger(to)||to<1)))return invalid('Els codis han de ser nombres enters positius.');
+      if(to!==null&&from>to)return invalid('El codi inicial no pot ser més gran que el final.');
+      ranges.push({from,to});
+    }
+    ranges.sort((a,b)=>a.from-b.from);
+    const merged=[];
+    for(const range of ranges){
+      const last=merged[merged.length-1];
+      if(last&&(last.to===null||range.from<=last.to+1))last.to=last.to===null||range.to===null?null:Math.max(last.to,range.to);
+      else merged.push({...range});
+    }
+    const code=n=>'P'+String(n).padStart(4,'0');
+    const canonical=merged.map(({from,to})=>to===from?code(from):to===null?code(from)+'-':code(from)+'-'+code(to)).join(',');
+    return canonical.length<=2000?{kind:'codes',ranges:merged,canonical}:invalid('El rang és massa llarg.');
+  }
+  function matchesCodes(id,search) {
+    const normalized=normalizeId(id);if(!normalized||search.kind!=='codes')return false;
+    const number=Number(normalized.slice(1));
+    return search.ranges.some(({from,to})=>number>=from&&(to===null||number<=to));
+  }
   function sheetLayout(settings) {
     if(!settings||typeof settings!=='object')throw Error('Configuració de pàgines no vàlida.');
     // Migrate the original two-page worksheets without losing selected problems.
@@ -63,8 +105,10 @@
   }
   function eligible(exercise, filters={}) {
     if(!matchesOrientation(exercise,filters))return false;
-    const query=(filters.query||'').toLocaleLowerCase('ca').trim();
-    if(query && ![exercise.id,exercise.title,exercise.statement,exercise.question].join(' ').toLocaleLowerCase('ca').includes(query)) return false;
+    if(filters.codes&&!matchesCodes(exercise.id,parseSearch(filters.codes)))return false;
+    const search=parseSearch(filters.query||'');
+    if(search.kind==='invalid'||(search.kind==='codes'&&!matchesCodes(exercise.id,search)))return false;
+    if(search.kind==='text'&&search.text&&![exercise.title,exercise.statement,exercise.question].join(' ').toLocaleLowerCase('ca').includes(search.text))return false;
     for(const [feature,mode] of Object.entries(filters.features||{})) {
       if(mode==='exclude' && exercise.features.includes(feature)) return false;
       if(mode==='require' && filters.scope!=='sheet' && !exercise.features.includes(feature)) return false;
@@ -120,9 +164,11 @@
   }
   function sameExerciseContent(saved,current) {
     if(!saved||!current||Array.isArray(saved)||typeof saved!=='object')return false;
-    // Editorial status alone does not invalidate an exported selection.
+    const id=normalizeId(saved.id);
+    if(!id||id!==normalizeId(current.id))return false;
+    // Editorial status and code padding alone do not invalidate a selection.
     const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
-    return JSON.stringify(ordered({...saved,status:undefined}))===JSON.stringify(ordered({...current,status:undefined}));
+    return JSON.stringify(ordered({...saved,id,status:undefined}))===JSON.stringify(ordered({...current,id,status:undefined}));
   }
-  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
+  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,normalizeId,normalizeSelectionIds,parseSearch,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
 });

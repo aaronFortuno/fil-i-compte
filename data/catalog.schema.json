@@ -23,7 +23,7 @@
       "type":"object","additionalProperties":false,
       "required":["id","version","title","context","structure","level","difficulty","status","statement","question","features","numeric","solution"],
       "properties":{
-        "id":{"type":"string","pattern":"^P[0-9]{3,}$"},"version":{"type":"integer","minimum":1},
+        "id":{"type":"string","pattern":"^P[0-9]{4,}$"},"version":{"type":"integer","minimum":1},
         "title":{"$ref":"#/$defs/text"},"context":{"$ref":"#/$defs/text"},"structure":{"$ref":"#/$defs/text"},
         "level":{"enum":["mitja","superior","eso"]},"difficulty":{"enum":[1,2,3]},"status":{"enum":["esborrany","pendent-docent","validat"]},
         "statement":{"$ref":"#/$defs/text"},"question":{"$ref":"#/$defs/text"},

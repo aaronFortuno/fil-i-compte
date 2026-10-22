@@ -10,7 +10,7 @@ Per revisar el contingut seguit, obre **BLOC-01.md** o **BLOC-02.md**: cada docu
 
 1. Tria **Nombre de pàgines** (1, 2, 4 o 6) i **Problemes per pàgina** (2 o 3 en columna, o 4 en quadrícula 2 × 2). El total és el producte dels dos camps. A sota, tria nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Els continguts es mostren de dos en dos, en etiquetes amb fons i símbol: **· Permès**, **✓ Obligatori** i **× Exclòs**. Un clic a qualsevol etiqueta fa rotar l’estat entre permès, obligatori i exclòs. Els botons admeten Enter, espai i les fletxes esquerra i dreta. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
-3. Marca les caselles dels problemes que vols incloure o prem **Proposa una fitxa nova** per substituir la selecció per una altra proposta. Quan el full és ple, desmarca un problema abans d'afegir-ne un altre. La cerca només ajuda a explorar el banc; no restringeix la proposta automàtica. Els nivells de les targetes s'abreugen com a **CM**, **CS** i **ESO**; el nom complet es manté al desplegable i al text d'ajuda de l'abreviatura.
+3. Marca les caselles dels problemes que vols incloure o prem **Proposa una fitxa nova** per substituir la selecció per una altra proposta. Quan el full és ple, desmarca un problema abans d'afegir-ne un altre. La cerca textual explora el banc; els codis i rangs també restringeixen la proposta automàtica. Els nivells de les targetes s'abreugen com a **CM**, **CS** i **ESO**; el nom complet es manté al desplegable i al text d'ajuda de l'abreviatura.
 4. El pas **2 · Revisa la fitxa**, al centre del peu, només s’activa quan la tria és completa i compleix els filtres i els continguts obligatoris. A l'esquerra pots canviar el títol, la marca impresa, el grup, el document (exercicis o solucionari) i l'ordre dels problemes amb les fletxes de pujar/baixar. Les pàgines es mostren en una o dues columnes, segons la quantitat configurada. **Arrossega** per desplaçar el document i fes servir la **roda del ratolí** per ampliar o allunyar al voltant del punter. Els botons de més, menys i ajust estan flotant a la cantonada inferior dreta del visor. La icona de quatre cantonades torna a ajustar totes les pàgines. El zoom de pantalla no modifica la mida d'impressió.
 5. El peu es manté visible durant els dos passos. El pas **1 · Banc** conserva la selecció i els filtres; **Imprimeix fitxa / PDF** i **Imprimeix solucionari / PDF** obren el diàleg del navegador per al document corresponent. Paper A4, escala 100 %, sense capçaleres ni peus del navegador; el disseny ja inclou marges. Cada document té el nombre de pàgines configurat. Per imprimir a doble cara, fes servir el gir per la vora llarga.
 
@@ -28,7 +28,19 @@ Si no hi ha candidats, el banc mostra el missatge de combinació no disponible. 
 
 Per exemple, **CS intermedi** admet també **CM repte** i **inici d'ESO accessible**; **CS repte** admet **inici d'ESO intermedi**. Quan es deixa un camp a Tots/Totes, s'inclou la unió de les seves franges: CS amb totes les dificultats admet les franges 2, 3 i 4; tots els nivells amb dificultat intermèdia també admeten aquestes tres franges. Sense cap dels dos camps, s'admeten totes. Les etiquetes originals de les targetes es conserven. El banc, la proposta, la tria i la revisió fan servir el mateix criteri. Les exclusions de continguts i els obligatoris es mantenen, també quan s'inclou un problema d'un altre cicle.
 
-**Com funciona** obre un popup centrat amb un problema d’exemple i la casella de selecció destacada, un filtre animat que també es pot provar manualment i una explicació breu de les equivalències. Els exemples no modifiquen la tria. Es tanca amb X, clic exterior o Esc; l’animació s’atura en interactuar o tancar i respecta el moviment reduït.
+**Cerca per codi o rang.** El botó **?** del cercador mostra exemples que es poden aplicar amb un clic. La sintaxi és la dels rangs d'impressió, amb límits inclusius i P opcional:
+
+| Cerca | Resultat |
+| --- | --- |
+| `P0013` o `13` | Només P0013; també s'admet l'antic `P013`. |
+| `-4` | P0001–P0004. |
+| `5-7,9-10` | P0005, P0006, P0007, P0009 i P0010. |
+| `13-` o `P0013-` | Des de P0013 fins a l'últim disponible. |
+| `P0013-P0024` | Del P0013 al P0024. |
+
+Els rangs es combinen amb els filtres de continguts i orientació, i s'apliquen també a la proposta i revisió. Per evitar repetir els primers cent problemes, escriu `101-`. Els seleccionats que en quedin fora es poden treure des de «Veure la tria» o substituir amb una proposta nova. Esborrar el cercador o escriure text elimina el rang; «Neteja filtres» també el buida. La cerca de text no limita la proposta. El rang es conserva en recarregar i en exportar la tria. Els rangs invertits o incomplets, com `7-5` o `5,,7`, mostren una indicació i bloquegen la proposta i revisió fins a corregir-los.
+
+**Com funciona** obre un popup centrat amb un problema d’exemple i la casella de selecció destacada, un filtre animat que també es pot provar manualment, les equivalències i els rangs de cerca. Els exemples de selecció i continguts no modifiquen la tria. Es tanca amb X, clic exterior o Esc; l’animació s’atura en interactuar o tancar i respecta el moviment reduït.
 
 Els exercicis deixen espai per a dibuixos, esquemes, operacions i una resposta amb unitats. El solucionari mostra una possible resolució breu, sense imposar un únic procediment. Els gràfics tenen explicació textual i trames o ratllats que funcionen també en blanc i negre.
 
@@ -38,7 +50,7 @@ Les animacions comparteixen una durada de **220 ms** i respecten la preferència
 
 La tria es conserva en aquest navegador quan l'emmagatzematge local està disponible. **Exporta tria JSON** descarrega un fitxer que es pot recuperar amb **Importa tria JSON**. **Exporta catàleg JSON** descarrega tots els problemes del catàleg. Aquestes eines són a la dreta del peu del banc; la versió queda a l’esquerra i els passos de navegació al centre. Inclou el contingut dels problemes per detectar canvis de versió: es rebutja la recuperació si el contingut actual no coincideix amb els exercicis desats. Un canvi únicament de l’estat editorial no invalida una tria. No s'importa contingut executable.
 
-Les noves exportacions fan servir el format 2, amb `pageCount` i `perPage`. Les tries anteriors de quatre problemes es recuperen amb dues pàgines de dos problemes; les de sis, amb dues de tres. Les tries antigues de cinc problemes es recuperen en dues pàgines de tres places; es conserven els cinc problemes i s'indica que falta completar la selecció. Els antics problemes fixats es tracten com a seleccionats normals. Les targetes del banc només mostren l'enunciat; les resolucions es consulten al solucionari.
+Les noves exportacions fan servir el format 3, amb `pageCount`, `perPage` i el rang opcional `filters.codes`; s'importen també els formats 1 i 2. Les tries anteriors de quatre problemes es recuperen amb dues pàgines de dos problemes; les de sis, amb dues de tres. Les tries antigues de cinc problemes es recuperen en dues pàgines de tres places; es conserven els cinc problemes i s'indica que falta completar la selecció. Els antics problemes fixats es tracten com a seleccionats normals. Els codis antics, com `P013`, es converteixen a `P0013` sense canviar el contingut ni la versió de l'exercici. Es rebutgen els duplicats encara que facin servir dos farciments del mateix codi. Les targetes del banc només mostren l'enunciat; les resolucions es consulten al solucionari.
 
 La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i sumant-». El compositor mai no repeteix problemes per omplir places: si una configuració en demana més dels que hi ha disponibles amb els filtres actuals, ho indica i conserva la tria. Amb els 24 problemes actuals, es poden omplir les 24 places màximes sense filtres. Excloent les operacions combinades hi ha 8 candidats.
 
@@ -46,18 +58,18 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 
 | ID | Problema | Contingut destacat | Resposta |
 | --- | --- | --- | --- |
-| P001 | Les pomes de l'hort | Agrupació i resta; dibuix simbòlic | 17 pomes |
-| P002 | Llibres que van i venen | Multiplicació, suma i resta | 183 llibres |
-| P003 | Autocars per a la sortida | Repartiment, parèntesis i dada irrellevant | 22 alumnes/autocar |
-| P004 | Els pots de la cooperativa | Repartiment en tres passos | 66 pots/botiga |
-| P005 | El berenar compartit | Fracció d'una quantitat; barra de quarts | 8 entrepans |
-| P006 | Aigua per al planter | Fracció i augment; barra de cinquens | 105 litres |
-| P007 | La motxilla rebaixada | Descompte i despesa addicional; barra | 66 € |
-| P008 | Més inscripcions al casal | Augment percentual | 276 infants |
-| P009 | El canvi del mercat | Productes amb decimals i canvi | 8,30 € |
-| P010 | Una volta al circuit | Perímetre i divisió decimal; esquema | 50 passes |
-| P011 | El mosaic del passadís | Potència i resta; quadrícula | 52 rajoles |
-| P012 | La tanca de l'hort quadrat | Arrel quadrada, perímetre i porta; esquema | 45 m de tanca |
+| P0001 | Les pomes de l'hort | Agrupació i resta; dibuix simbòlic | 17 pomes |
+| P0002 | Llibres que van i venen | Multiplicació, suma i resta | 183 llibres |
+| P0003 | Autocars per a la sortida | Repartiment, parèntesis i dada irrellevant | 22 alumnes/autocar |
+| P0004 | Els pots de la cooperativa | Repartiment en tres passos | 66 pots/botiga |
+| P0005 | El berenar compartit | Fracció d'una quantitat; barra de quarts | 8 entrepans |
+| P0006 | Aigua per al planter | Fracció i augment; barra de cinquens | 105 litres |
+| P0007 | La motxilla rebaixada | Descompte i despesa addicional; barra | 66 € |
+| P0008 | Més inscripcions al casal | Augment percentual | 276 infants |
+| P0009 | El canvi del mercat | Productes amb decimals i canvi | 8,30 € |
+| P0010 | Una volta al circuit | Perímetre i divisió decimal; esquema | 50 passes |
+| P0011 | El mosaic del passadís | Potència i resta; quadrícula | 52 rajoles |
+| P0012 | La tanca de l'hort quadrat | Arrel quadrada, perímetre i porta; esquema | 45 m de tanca |
 
 **Primer bloc: validat.** Els nivells i la dificultat són orientatius. Algunes combinacions de filtres encara no tenen prou candidats: el compositor explica aquestes limitacions i no relaxa filtres silenciosament.
 
@@ -65,18 +77,18 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 
 | ID | Problema | Contingut destacat | Resposta |
 | --- | --- | --- | --- |
-| P013 | Dos dies de teatre | Suma | 433 entrades |
-| P014 | Places lliures al concert | Resta | 147 seients |
-| P015 | Cartells per a les escoles | Multiplicació | 432 cartells |
-| P016 | Sobres de llavors | Divisió i dada irrellevant | 42 llavors/sobre |
-| P017 | El camí fins al mirador | Suma decimal | 4,35 km |
-| P018 | Cintes per a les medalles | Divisió decimal exacta | 36 trossos |
-| P019 | Anar a l'escola amb bicicleta | Fracció d'una quantitat; barra | 144 alumnes |
-| P020 | Els abonaments del museu | Percentatge; barra | 45 persones |
-| P021 | Entrades per a les associacions | Agrupació, parèntesis i repartiment | 39 entrades/associació |
-| P022 | Material per al taller | Compra i canvi amb decimals | 12,95 € |
-| P023 | Una clau de colors | Potència i combinacions | 81 claus |
-| P024 | El costat de la vela | Arrel quadrada exacta | 14 cm |
+| P0013 | Dos dies de teatre | Suma | 433 entrades |
+| P0014 | Places lliures al concert | Resta | 147 seients |
+| P0015 | Cartells per a les escoles | Multiplicació | 432 cartells |
+| P0016 | Sobres de llavors | Divisió i dada irrellevant | 42 llavors/sobre |
+| P0017 | El camí fins al mirador | Suma decimal | 4,35 km |
+| P0018 | Cintes per a les medalles | Divisió decimal exacta | 36 trossos |
+| P0019 | Anar a l'escola amb bicicleta | Fracció d'una quantitat; barra | 144 alumnes |
+| P0020 | Els abonaments del museu | Percentatge; barra | 45 persones |
+| P0021 | Entrades per a les associacions | Agrupació, parèntesis i repartiment | 39 entrades/associació |
+| P0022 | Material per al taller | Compra i canvi amb decimals | 12,95 € |
+| P0023 | Una clau de colors | Potència i combinacions | 81 claus |
+| P0024 | El costat de la vela | Arrel quadrada exacta | 14 cm |
 
 **Segon bloc: càlculs i coherència comprovats, validació docent pendent.** L'usuari ha autoritzat publicar-lo per validar-lo directament al web. Els registres conserven `pendent-docent` fins a aquesta revisió, sense afegir avisos a la interfície. Els dos blocs passen les comprovacions numèriques i d'etiquetes abans de publicar.
 

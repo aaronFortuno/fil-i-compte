@@ -4,7 +4,7 @@
 
 Aquest document es genera a partir de data/packs/bloc-02.json; les correccions es fan al bloc original.
 
-## P013 · Dos dies de teatre
+## P0013 · Dos dies de teatre
 
 Cicle mitjà · Accessible · Estructura: composicio
 
@@ -26,7 +26,7 @@ Pots representar els dos dies amb dues barres i buscar-ne el total.
 
 ---
 
-## P014 · Places lliures al concert
+## P0014 · Places lliures al concert
 
 Cicle mitjà · Accessible · Estructura: complement
 
@@ -48,7 +48,7 @@ També pots comptar quant falta de 378 fins a 525 amb una recta numèrica.
 
 ---
 
-## P015 · Cartells per a les escoles
+## P0015 · Cartells per a les escoles
 
 Cicle mitjà · Intermedi · Estructura: grups-iguals
 
@@ -70,7 +70,7 @@ Un esquema amb 24 grups iguals ajuda a identificar la multiplicació.
 
 ---
 
-## P016 · Sobres de llavors
+## P0016 · Sobres de llavors
 
 Cicle mitjà · Intermedi · Estructura: repartiment
 
@@ -92,7 +92,7 @@ El preu de 12 € no intervé en el repartiment de les llavors.
 
 ---
 
-## P017 · El camí fins al mirador
+## P0017 · El camí fins al mirador
 
 Cicle superior · Accessible · Estructura: composicio
 
@@ -114,7 +114,7 @@ En una suma vertical, alinea les comes i les xifres que tenen el mateix valor po
 
 ---
 
-## P018 · Cintes per a les medalles
+## P0018 · Cintes per a les medalles
 
 Cicle superior · Repte · Estructura: mesura
 
@@ -136,7 +136,7 @@ També pots passar-ho a centímetres: repartir 1.260 cm en trossos de 35 cm dona
 
 ---
 
-## P019 · Anar a l'escola amb bicicleta
+## P0019 · Anar a l'escola amb bicicleta
 
 Cicle superior · Intermedi · Estructura: part-total
 
@@ -161,7 +161,7 @@ Divideix una barra en cinc parts iguals i assenyala'n tres.
 
 ---
 
-## P020 · Els abonaments del museu
+## P0020 · Els abonaments del museu
 
 Cicle superior · Intermedi · Estructura: part-total
 
@@ -185,7 +185,7 @@ Una altra via és trobar el 10 % (15 persones) i multiplicar-lo per 3. La barra 
 
 ---
 
-## P021 · Entrades per a les associacions
+## P0021 · Entrades per a les associacions
 
 Cicle superior · Repte · Estructura: repartiment
 
@@ -209,7 +209,7 @@ Un esquema amb tres grups de 96 places permet separar les 18 reservades de cada 
 
 ---
 
-## P022 · Material per al taller
+## P0022 · Material per al taller
 
 Cicle superior · Repte · Estructura: compra-canvi
 
@@ -234,7 +234,7 @@ Pots organitzar la compra en una taula amb el producte, la quantitat, el preu un
 
 ---
 
-## P023 · Una clau de colors
+## P0023 · Una clau de colors
 
 Inici d’ESO · Intermedi · Estructura: combinacions
 
@@ -256,7 +256,7 @@ Un arbre de possibilitats amb quatre nivells i tres branques a cada pas represen
 
 ---
 
-## P024 · El costat de la vela
+## P0024 · El costat de la vela
 
 Inici d’ESO · Accessible · Estructura: mesura
 

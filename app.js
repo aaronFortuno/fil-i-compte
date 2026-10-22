@@ -5,24 +5,28 @@
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const FEATURE_MODES=[{id:'allow',label:'Permès',icon:'·'},{id:'require',label:'Obligatori',icon:'✓'},{id:'exclude',label:'Exclòs',icon:'×'}];
-  const initial=()=>({pageCount:2,perPage:2,ids:['P001','P003','P005','P009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
+  const initial=()=>({pageCount:2,perPage:2,ids:['P0001','P0003','P0005','P0009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
   let notice='',noticeKind='info';
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
+  query=state.filters.codes||'';
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
   const capacity=()=>state.pageCount*state.perPage;
   const persist=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{}};
   function validateState(s) {
     const layout=C.sheetLayout(s);
-    if(!Array.isArray(s.ids)||new Set(s.ids).size!==s.ids.length||s.ids.length>layout.pageCount*layout.perPage||s.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Tria no vàlida.');
+    const ids=C.normalizeSelectionIds(s.ids);
+    if(ids.length>layout.pageCount*layout.perPage||ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Tria no vàlida.');
     if(!s.filters||!['sheet','each'].includes(s.filters.scope)||!s.filters.features||Array.isArray(s.filters.features)||typeof s.filters.features!=='object')throw Error('Filtres no vàlids.');
     for(const [f,m] of Object.entries(s.filters.features))if(!C.FEATURES[f]||!['allow','require','exclude'].includes(m))throw Error('Contingut de filtre desconegut.');
     if(!['',...Object.keys(C.LEVELS)].includes(s.filters.level)||!['','1','2','3'].includes(s.filters.difficulty))throw Error('Nivell o dificultat desconeguts.');
     if(typeof s.title!=='string'||typeof s.group!=='string'||s.title.length>65||s.group.length>30)throw Error('Títol o grup no vàlids.');
     if(s.showBrand!==undefined&&typeof s.showBrand!=='boolean')throw Error('Opció de marca no vàlida.');
-    return {...layout,ids:[...s.ids],filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features}},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
+    const codes=s.filters.codes===undefined?'':s.filters.codes;
+    if(typeof codes!=='string'||(codes&&C.parseSearch(codes).kind!=='codes'))throw Error('Rang de codis no vàlid.');
+    return {...layout,ids,filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features},...(codes?{codes:C.parseSearch(codes).canonical}:{})},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
   }
   function message(text,kind='info') {notice=text;noticeKind=kind;renderFooterStatus();}
   function makeFilters() {
@@ -48,6 +52,7 @@
     setFeature(id,next.id);
   }
   function syncControls() {
+    $('search').value=query;
     $('page-count').value=state.pageCount;$('per-page').value=state.perPage;$('level').value=state.filters.level;$('difficulty').value=state.filters.difficulty;$('scope').value=state.filters.scope;
     syncFeatures();
     $('feature-status').textContent='';
@@ -91,6 +96,12 @@
   }
   function renderCards() {
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
+    const search=C.parseSearch(query),invalid=search.kind==='invalid';
+    $('search').setAttribute('aria-invalid',String(invalid));
+    $('search-error').textContent=invalid?search.error:'';$('search-error').hidden=!invalid;
+    $('search-status').textContent=invalid?search.error:`${matches.length} problemes trobats.`;
+    $('empty').querySelector('h2').textContent=invalid?'Revisa el rang de codis.':search.kind==='codes'?'No hi ha problemes amb aquests codis.':search.text?'No hem trobat cap problema.':'Encara no tenim aquesta combinació.';
+    $('empty').querySelector('p').textContent=invalid?search.error:search.kind==='codes'?'Prova un altre rang o amplia els filtres.':search.text?'Prova un altre text o amplia els filtres.':'Amplia els filtres per trobar més problemes del catàleg.';
     $('empty').hidden=matches.length>0;
     const existing=[...$('cards').children];
     if(existing.length===matches.length&&existing.every((el,i)=>el.dataset.id===matches[i].id)){
@@ -108,8 +119,9 @@
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
-  function issues() {return C.selectionIssues(selected(),state.filters,capacity());}
+  function issues() {const problems=C.selectionIssues(selected(),state.filters,capacity());if(C.parseSearch(query).kind==='invalid')problems.push('Revisa el rang de codis.');return problems;}
   function selectionHint(candidates) {
+    const search=C.parseSearch(query);if(search.kind==='invalid')return {short:'Rang no vàlid',detail:search.error};
     if(!issues().length)return {short:'Tria completa',detail:'Desmarca un problema de la tria per canviar-lo.'};
     if(!candidates)return {short:'Sense candidats',detail:'Canvia els filtres per trobar problemes compatibles.'};
     if(candidates<capacity())return {short:'No hi ha prou candidats',detail:`Hi ha ${candidates} problemes compatibles per a ${capacity()} places. Amplia els filtres o redueix les places.`};
@@ -131,7 +143,7 @@
     const problems=issues(),candidates=catalogue.filter(e=>C.eligible(e,state.filters)).length;
     $('preview-button').disabled=problems.length>0;
     $('preview-button').title=problems.length?'Completa una tria que compleixi els filtres per revisar la fitxa.':'';
-    $('compose').disabled=candidates<capacity();
+    $('compose').disabled=candidates<capacity()||C.parseSearch(query).kind==='invalid';
     renderFooterStatus();
     $('selection-badge').textContent=state.ids.length;
     $('selection-toggle').setAttribute('aria-label',`Veure la tria: ${state.ids.length} problemes seleccionats`);
@@ -147,10 +159,29 @@
     $('selection-list').innerHTML=chosen.map((e,index)=>`<li><span class="selection-index">${index+1}</span><div class="selection-item-title">${escape(e.title)}${C.eligible(e,state.filters)?'':'<small>Fora dels filtres</small>'}</div><button class="selection-remove" data-remove-selection="${e.id}" aria-label="Treu de la tria: ${escape(e.title)}" title="Treu de la tria">×</button></li>`).join('');
   }
   function positionSelectionPopover() {
-    const popup=$('selection-popover'),anchor=$('selection-toggle').getBoundingClientRect(),width=popup.offsetWidth,height=popup.offsetHeight;
+    positionPopover($('selection-popover'),$('selection-toggle'));
+  }
+  function positionPopover(popup,trigger) {
+    const anchor=trigger.getBoundingClientRect(),width=popup.offsetWidth,height=popup.offsetHeight;
     popup.style.left=Math.max(12,Math.min(anchor.right-width,innerWidth-width-12))+'px';
     const below=anchor.bottom+8;
     popup.style.top=Math.max(12,Math.min(below+height<=innerHeight-12?below:anchor.top-height-8,innerHeight-height-12))+'px';
+  }
+  function applySearch(value) {
+    query=value;$('search').value=value;
+    const search=C.parseSearch(query);
+    if(search.kind==='codes')state.filters.codes=search.canonical;else delete state.filters.codes;
+    message('');update();$('catalogue-scroll').scrollTop=0;
+  }
+  function setupSearchHelp() {
+    const popup=$('search-help'),trigger=$('search-help-toggle');
+    popup.addEventListener('toggle',event=>{if(event.newState==='open'){positionPopover(popup,trigger);animateElements([popup],[{opacity:0,transform:'translateY(-4px)'},{opacity:1,transform:'translateY(0)'}]);}});
+    popup.addEventListener('click',event=>{
+      const button=event.target.closest('[data-search-example]');if(!button)return;
+      applySearch(button.dataset.searchExample);popup.hidePopover();$('search').focus({preventScroll:true});
+    });
+    window.addEventListener('resize',()=>{if(popup.matches(':popover-open'))positionPopover(popup,trigger);});
+    document.addEventListener('scroll',event=>{if(popup.matches(':popover-open')&&!popup.contains(event.target))positionPopover(popup,trigger);},true);
   }
   function setupSelectionPopover() {
     const popup=$('selection-popover');
@@ -200,6 +231,7 @@
     if(review&&issues().length)return;
     if(review===reviewStep)return;
     if($('selection-popover').matches(':popover-open'))$('selection-popover').hidePopover();
+    if($('search-help').matches(':popover-open'))$('search-help').hidePopover();
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
@@ -304,12 +336,12 @@
     state[key]=Number($(id).value);state.ids=state.ids.slice(0,capacity());
     fitPreview=true;message('');update();
   });
-  $('search').addEventListener('input',()=>{query=$('search').value;update();});
+  $('search').addEventListener('input',()=>applySearch($('search').value));
   $('reset').addEventListener('click',()=>{state.filters=initial().filters;query='';$('search').value='';syncControls();message('Filtres netejats. La teva selecció es conserva.');update();});
   $('compose').addEventListener('click',()=>{
     const result=C.compose(catalogue,state.filters,capacity(),state.ids);
     if(result.error){message(result.error);return;}
-    state.ids=result.ids;query='';$('search').value='';message('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.','success');update();
+    state.ids=result.ids;query=state.filters.codes||'';$('search').value=query;message('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.','success');update();
   });
   $('cards').addEventListener('change',event=>{
     const input=event.target.closest('input[data-select]');if(!input)return;
@@ -342,16 +374,16 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title='Fil i compte · Banc de problemes';});
-  $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:2,state,exercises:selected()}));
+  $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:3,state,exercises:selected()}));
   $('load').addEventListener('change',async event=>{
     const file=event.target.files[0];if(!file)return;
     try {
       if(file.size>1000000)throw Error('El fitxer és massa gran.');
       const saved=JSON.parse(await file.text());
-      if(saved.format!=='fil-i-compte-selection'||![1,2].includes(saved.version))throw Error('Aquest fitxer no és una tria de Fil i compte.');
+      if(saved.format!=='fil-i-compte-selection'||![1,2,3].includes(saved.version))throw Error('Aquest fitxer no és una tria de Fil i compte.');
       const next=validateState(saved.state);
       if(!Array.isArray(saved.exercises)||saved.exercises.length!==next.ids.length||next.ids.some((id,index)=>!C.sameExerciseContent(saved.exercises[index],catalogue.find(e=>e.id===id))))throw Error('El contingut desat no coincideix amb aquesta versió del catàleg. Conserva el fitxer per revisar-lo.');
-      state=next;query='';$('search').value='';syncControls();message('Tria recuperada amb els mateixos problemes.','success');update();
+      state=next;query=state.filters.codes||'';syncControls();message('Tria recuperada amb els mateixos problemes.','success');update();
     }catch(error){message('No s’ha pogut recuperar la tria. '+error.message,'error');}
     event.target.value='';
   });
@@ -414,5 +446,5 @@
     render();
   }
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
-  setupHistory();setupHelp();setupSelectionPopover();makeFilters();update();
+  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();makeFilters();update();
 })();

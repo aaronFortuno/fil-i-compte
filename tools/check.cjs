@@ -20,7 +20,7 @@ check('Els blocs i el catàleg compleixen l’esquema i tenen 24 identificadors 
   const packs=fs.readdirSync(path.join(root,'data/packs')).filter(file=>/^bloc-\d+\.json$/.test(file)).sort().map(file=>JSON.parse(fs.readFileSync(path.join(root,'data/packs',file),'utf8')));
   packs.forEach(pack=>validate(pack,schema));
   assert.equal(new Set(packs.map(pack=>pack.pack.id)).size,packs.length);
-  assert.deepEqual(all,packs.flatMap(pack=>pack.exercises));assert.equal(all.length,24);assert.equal(new Set(all.map(e=>e.id)).size,all.length);
+  assert.deepEqual(all,packs.flatMap(pack=>pack.exercises));assert.equal(all.length,24);assert.equal(new Set(all.map(e=>e.id)).size,all.length);all.forEach(e=>assert.equal(e.id,C.normalizeId(e.id)));
 });
 check('Els blocs publicats respecten el seu estat de revisió i no inclouen esborranys',()=>all.forEach((e,i)=>assert.equal(e.status,i<12?'validat':'pendent-docent',e.id)));
 check('Les tries antigues admeten canvis editorials però rebutgen enunciats o solucions diferents',()=>{
@@ -30,6 +30,34 @@ check('Les tries antigues admeten canvis editorials però rebutgen enunciats o s
   assert(!C.sameExerciseContent({...legacy,solution:{...legacy.solution,answer:99}},current));
   assert(!C.sameExerciseContent({...legacy,version:legacy.version+1},current));
   assert(!C.sameExerciseContent(null,current));
+});
+check('Els codis de quatre xifres migren tries antigues sense perdre contingut ni acceptar duplicats',()=>{
+  assert.deepEqual(C.normalizeSelectionIds(['P001','P013','P100','P9999','P10000']),['P0001','P0013','P0100','P9999','P10000']);
+  assert.throws(()=>C.normalizeSelectionIds(['P013','P0013']));assert.throws(()=>C.normalizeSelectionIds(['P0']));assert.throws(()=>C.normalizeSelectionIds(['P9007199254740992']));
+  for(const current of all){const legacy={...current,id:'P'+String(Number(current.id.slice(1))).padStart(3,'0')};assert(C.sameExerciseContent(legacy,current));assert(!C.sameExerciseContent({...legacy,question:legacy.question+' Canvi'},current));}
+  assert(!C.sameExerciseContent({...all[0],id:'P002'},all[0]));
+});
+check('La cerca admet codis i rangs d’impressió inclusius, combinats i oberts',()=>{
+  const ids=query=>all.filter(e=>C.eligible(e,{...base,query})).map(e=>e.id);
+  assert.deepEqual(ids('-4'),['P0001','P0002','P0003','P0004']);
+  assert.deepEqual(ids('5-7,9-10'),['P0005','P0006','P0007','P0009','P0010']);
+  assert.deepEqual(ids('p0013-'),all.slice(12).map(e=>e.id));
+  assert.deepEqual(ids('P013'),['P0013']);assert.deepEqual(ids('13'),['P0013']);assert.deepEqual(ids('P0013-P0015'),['P0013','P0014','P0015']);
+  assert.deepEqual(ids('5-7,6-9,5'),['P0005','P0006','P0007','P0008','P0009']);
+  assert.deepEqual(ids(' 5 - 7 , 9 - 10 '),ids('5-7,9-10'));
+  assert.deepEqual(ids('25-'),[]);assert(ids('pomes').includes('P0001'));assert.equal(C.parseSearch('25 %').kind,'text');
+  const many=C.parseSearch(Array.from({length:50},(_,i)=>i*2+1).join(','));assert.equal(many.kind,'codes');assert(many.canonical.length>200);assert.deepEqual(C.parseSearch(many.canonical),many);
+  const large=[999,1000,9999,10000].map(n=>({...all[0],id:C.normalizeId('P'+n)}));
+  assert.deepEqual(large.filter(e=>C.eligible(e,{query:'1000-9999'})).map(e=>e.id),['P1000','P9999']);
+  for(const query of ['7-5','-','0-4','5,,7','P13-abc','1-2-3','P9007199254740992-']){assert.equal(C.parseSearch(query).kind,'invalid',query);assert.deepEqual(ids(query),[],query);}
+});
+check('Els rangs restringeixen proposta i revisió i es combinen amb els altres filtres',()=>{
+  const filters={...base,codes:C.parseSearch('13-').canonical,features:{combinades:'exclude'}};
+  const result=C.compose(all,filters,8);assert(!result.error);assert(result.ids.every(id=>Number(id.slice(1))>=13));
+  assert.deepEqual(C.selectionIssues(result.ids.map(id=>all.find(e=>e.id===id)),filters,8),[]);
+  assert(!C.eligible(all[0],filters));assert(C.selectionIssues([all[0]],filters,1).some(issue=>issue.includes('P0001')));
+  assert(C.compose(all,{...base,codes:'7-5'},4).error);
+  assert.deepEqual(all.filter(e=>C.eligible(e,{...filters,level:'superior',difficulty:'2'})).map(e=>e.id),['P0024']);
 });
 const expected=[17,183,22,66,8,105,66,276,8.3,50,52,45,433,147,432,42,4.35,36,144,45,39,12.95,81,14];
 check('Les 24 respostes coincideixen amb els càlculs exactes i les referències independents',()=>all.forEach((e,i)=>{const r=C.evaluate(e.solution.calculation),a=C.numberRatio(e.solution.answer);assert.deepEqual(r,a,e.id);assert.equal(e.solution.answer,expected[i],e.id);}));
@@ -44,10 +72,10 @@ check('Les etiquetes reflecteixen les operacions de la resolució i els intermed
 check('Els dibuixos corresponen a les quantitats i les parts indicades',()=>all.forEach(e=>{const v=e.solution.visual;if(!v)return;if(v.type==='fraction'){assert(v.filled<=v.parts);assert.equal(v.total%v.parts,0);}if(v.type==='objects'){assert(v.removed<=v.groups*v.perGroup);assert.equal(v.groups*v.perGroup-v.removed,e.solution.answer);}if(v.type==='grid'){assert(v.removed<=v.side**2);assert.equal(v.side**2-v.removed,e.solution.answer);}}));
 check('La còpia per obrir el web sense servidor coincideix amb el JSON original',()=>{const context={};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(root,'catalog-data.js'),'utf8'),context);assert.equal(JSON.stringify(context.EXERCISE_CATALOG),JSON.stringify(data));});
 const excluded={...base,features:{fraccions:'exclude',decimals:'exclude',potencies:'exclude',arrels:'exclude'}};
-check('Les exclusions eliminen tots els problemes que treballen els continguts vetats',()=>{assert.deepEqual(all.filter(e=>C.eligible(e,excluded)).map(e=>e.id),['P001','P002','P003','P004','P007','P008','P013','P014','P015','P016','P020','P021']);const r=C.compose(all,excluded,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),excluded,4).length,0);});
+check('Les exclusions eliminen tots els problemes que treballen els continguts vetats',()=>{assert.deepEqual(all.filter(e=>C.eligible(e,excluded)).map(e=>e.id),['P0001','P0002','P0003','P0004','P0007','P0008','P0013','P0014','P0015','P0016','P0020','P0021']);const r=C.compose(all,excluded,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),excluded,4).length,0);});
 check('Vuit problemes d’una sola operació permeten compondre fitxes sense combinades',()=>{
   const filters={...base,features:{combinades:'exclude'}};
-  assert.deepEqual(all.filter(e=>C.eligible(e,filters)).map(e=>e.id),['P013','P014','P015','P016','P017','P018','P023','P024']);
+  assert.deepEqual(all.filter(e=>C.eligible(e,filters)).map(e=>e.id),['P0013','P0014','P0015','P0016','P0017','P0018','P0023','P0024']);
   const r=C.compose(all,filters,8);assert(!r.error);assert.equal(C.selectionIssues(r.ids.map(id=>all.find(e=>e.id===id)),filters,8).length,0);
 });
 check('Obligatori al full cobreix fraccions i percentatges sense exigir-los en cada problema',()=>{const filters={...base,features:{fraccions:'require',percentatges:'require',decimals:'exclude'}};for(let i=0;i<20;i++){const r=C.compose(all,filters,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),filters,4).length,0);}});
@@ -84,7 +112,7 @@ check('La proposta i la revisió comparteixen les equivalències i respecten els
   assert.deepEqual(all.filter(e=>C.eligible(e,equivalent)),all.filter(e=>C.eligible(e,target)));
   const real=C.compose(all,target,4);assert(!real.error);assert.deepEqual(C.selectionIssues(real.ids.map(id=>all.find(e=>e.id===id)),target,4),[]);
 });
-check('Una nova proposta canvia la selecció si hi ha alternatives compatibles',()=>{const previous=['P001','P002','P003','P004'];const r=C.compose(all,base,4,previous);assert(!r.error);assert.equal(new Set(r.ids).size,4);assert(r.ids.some(id=>!previous.includes(id)));});
+check('Una nova proposta canvia la selecció si hi ha alternatives compatibles',()=>{const previous=['P0001','P0002','P0003','P0004'];const r=C.compose(all,base,4,previous);assert(!r.error);assert.equal(new Set(r.ids).size,4);assert(r.ids.some(id=>!previous.includes(id)));});
 check('Les 12 combinacions de pàgines i distribució conserven l’ordre i no repeteixen problemes',()=>{
   const large=Array.from({length:24},(_,i)=>({...all[i%all.length],id:'T'+i}));
   for(const pageCount of [1,2,4,6])for(const perPage of [2,3,4]){
@@ -102,5 +130,5 @@ check('Les tries antigues migren a dues pàgines i es rebutgen configuracions no
   assert.deepEqual(C.pageGroups([],6,4).map(g=>g.length),[0,0,0,0,0,0]);
   for(const settings of [{count:8},{pageCount:3,perPage:2},{pageCount:2,perPage:5},{pageCount:'2',perPage:2},null])assert.throws(()=>C.sheetLayout(settings));
 });
-check('La selecció detecta problemes incompatibles i continguts obligatoris absents',()=>{assert(C.selectionIssues(all.slice(0,4),{...base,features:{decimals:'require'}},4).some(x=>x.includes('Falta')));assert(C.selectionIssues([all[8],...all.slice(0,3)],{...base,features:{decimals:'exclude'}},4).some(x=>x.includes('P009')));});
+check('La selecció detecta problemes incompatibles i continguts obligatoris absents',()=>{assert(C.selectionIssues(all.slice(0,4),{...base,features:{decimals:'require'}},4).some(x=>x.includes('Falta')));assert(C.selectionIssues([all[8],...all.slice(0,3)],{...base,features:{decimals:'exclude'}},4).some(x=>x.includes('P0009')));});
 console.log(`\n${checks} grups de comprovacions superats.`);

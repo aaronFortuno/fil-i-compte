@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.10.0',title:'Cerca per codis i rangs',
+    changes:[
+      'Rangs com a la impressió: -4, 5-7,9-10 o 13-. També limiten la proposta automàtica.',
+      'Exemples clicables al botó ? del cercador i explicació a «Com funciona».',
+      'Codis de quatre xifres, amb compatibilitat per a les tries antigues.'
+    ]
+  },
+  {
     version:'0.9.1',title:'Nivell i dificultat amb equivalències',
     changes:[
       'CS intermedi també inclou CM repte i inici d’ESO accessible; CS repte inclou inici d’ESO intermedi.',
