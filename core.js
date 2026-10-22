@@ -12,6 +12,9 @@
   };
   const LEVELS = {mitja:'Cicle mitjà', superior:'Cicle superior', eso:'Inici d’ESO'};
   const DIFFICULTIES = {1:'Accessible',2:'Intermedi',3:'Repte'};
+  // Editorial orientation, not a calibrated measure of student ability.
+  // Each cycle advances one step: CM repte = CS intermedi = ESO accessible.
+  const LEVEL_OFFSET = {mitja:0,superior:1,eso:2};
   const PAGE_COUNTS=[1,2,4,6],PER_PAGE=[2,3,4];
   function sheetLayout(settings) {
     if(!settings||typeof settings!=='object')throw Error('Configuració de pàgines no vàlida.');
@@ -51,9 +54,15 @@
       default:throw Error('Operació desconeguda: '+op);
     }
   }
+  function matchesOrientation(exercise,filters) {
+    const score=LEVEL_OFFSET[exercise.level]+Number(exercise.difficulty);
+    const levels=filters.level?[filters.level]:Object.keys(LEVELS);
+    const difficulties=filters.difficulty?[Number(filters.difficulty)]:[1,2,3];
+    // An unspecified field accepts the union of its cells in the matrix.
+    return levels.some(level=>Object.hasOwn(LEVEL_OFFSET,level)&&difficulties.some(difficulty=>Object.hasOwn(DIFFICULTIES,difficulty)&&score===LEVEL_OFFSET[level]+difficulty));
+  }
   function eligible(exercise, filters={}) {
-    if(filters.level && exercise.level!==filters.level) return false;
-    if(filters.difficulty && exercise.difficulty!==Number(filters.difficulty)) return false;
+    if(!matchesOrientation(exercise,filters))return false;
     const query=(filters.query||'').toLocaleLowerCase('ca').trim();
     if(query && ![exercise.id,exercise.title,exercise.statement,exercise.question].join(' ').toLocaleLowerCase('ca').includes(query)) return false;
     for(const [feature,mode] of Object.entries(filters.features||{})) {

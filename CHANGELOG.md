@@ -1,5 +1,13 @@
 # Historial de canvis
 
+## 0.9.1 · Equivalències entre nivell i dificultat
+
+- Nivell i dificultat es combinen en una matriu orientativa de cinc franges. Avançar un cicle equival a avançar un grau de dificultat: CM repte = CS intermedi = inici d'ESO accessible; CS repte = inici d'ESO intermedi.
+- Si només es concreta un camp, s'admet la unió de les franges corresponents a les opcions de l'altre. Sense cap dels dos camps, no es limita l'orientació. Les etiquetes originals dels problemes es conserven.
+- Mateixa compatibilitat al banc, la proposta automàtica, els seleccionats i l'accés a la revisió. Es mantenen les exclusions i els obligatoris, tant al conjunt com a cada problema.
+- Dificultat identificada com a orientativa al selector i equivalències explicades a l'ajuda, sense afegir controls ni alçada al sidebar.
+- Proves de les nou caselles contra les setze combinacions dels selectors, equivalències, límits de franja, proposta amb candidats d'altres cicles i respecte dels continguts.
+
 ## 0.9.0 · Segona bateria: 24 problemes -i sumant-
 
 - Afegits P013–P024: suma, resta, multiplicació, divisió, decimals, fraccions, percentatges, parèntesis, potències i arrels. Vuit són d'una sola operació i quatre de diversos passos; dos solucionaris incorporen barres de parts iguals.

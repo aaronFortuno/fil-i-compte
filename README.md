@@ -18,7 +18,17 @@ L'estat de la tria ocupa un espai fix al peu, al costat de **Revisa la fitxa**, 
 
 Si no hi ha candidats, el banc mostra el missatge de combinació no disponible. La proposta automàtica queda inhabilitada quan no hi ha prou candidats. A la revisió només s’hi arriba amb una selecció vàlida i els botons d’impressió estan disponibles.
 
-**Com funciona** obre un popup centrat amb un problema d’exemple i la casella de selecció destacada, i un filtre animat que també es pot provar manualment. Els exemples no modifiquen la tria. Es tanca amb X, clic exterior o Esc; l’animació s’atura en interactuar o tancar i respecta el moviment reduït.
+**Nivell i dificultat orientatius.** Els dos selectors es combinen segons aquesta matriu. Les caselles amb el mateix número formen una franja equivalent; és una convenció editorial inicial, no una mesura calibrada del rendiment de l'alumnat.
+
+| Nivell | Accessible | Intermedi | Repte |
+| --- | ---: | ---: | ---: |
+| Cicle mitjà | 1 | 2 | 3 |
+| Cicle superior | 2 | 3 | 4 |
+| Inici d'ESO | 3 | 4 | 5 |
+
+Per exemple, **CS intermedi** admet també **CM repte** i **inici d'ESO accessible**; **CS repte** admet **inici d'ESO intermedi**. Quan es deixa un camp a Tots/Totes, s'inclou la unió de les seves franges: CS amb totes les dificultats admet les franges 2, 3 i 4; tots els nivells amb dificultat intermèdia també admeten aquestes tres franges. Sense cap dels dos camps, s'admeten totes. Les etiquetes originals de les targetes es conserven. El banc, la proposta, la tria i la revisió fan servir el mateix criteri. Les exclusions de continguts i els obligatoris es mantenen, també quan s'inclou un problema d'un altre cicle.
+
+**Com funciona** obre un popup centrat amb un problema d’exemple i la casella de selecció destacada, un filtre animat que també es pot provar manualment i una explicació breu de les equivalències. Els exemples no modifiquen la tria. Es tanca amb X, clic exterior o Esc; l’animació s’atura en interactuar o tancar i respecta el moviment reduït.
 
 Els exercicis deixen espai per a dibuixos, esquemes, operacions i una resposta amb unitats. El solucionari mostra una possible resolució breu, sense imposar un únic procediment. Els gràfics tenen explicació textual i trames o ratllats que funcionen també en blanc i negre.
 

@@ -150,3 +150,13 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Cerca de P019 amb un únic resultat correcte. Lema «24 problemes -i sumant- per pensar, practicar i aprendre» amb guions curts, revisat a 1280 i 320 px; en mòbil ocupa dues línies dins de la capçalera, sense desbordament horitzontal.
 - Cap error ni avís a la consola local. Sintaxi de JavaScript i diff comprovats. Captura a `vista-previa-v090.jpg` (no versionada). No s'ha obert el diàleg d'impressió ni comprovat el web remot.
 - Segon bloc publicat amb `pendent-docent` per autorització expressa de l'usuari, que el validarà després de publicar. La comprovació numèrica i de coherència s'ha fet abans; no es declara una validació docent ja completada.
+
+## Nivell i dificultat orientatius · 0.9.1 · 22 d'octubre de 2026
+
+- Superats 18 grups de comprovacions. Provades les nou caselles de la matriu contra les setze combinacions dels selectors (inclosos Tots/Totes), amb una taula explícita de les franges esperades. Comprovats els límits: CS intermedi inclou CM repte i ESO accessible, però no CM accessible ni ESO intermedi.
+- Amb un catàleg de prova, la proposta completa una fitxa a partir de CM repte i CS intermedi mantenint un contingut obligatori i excloent les fraccions. Comprovat també que l'obligatori en cada problema continua descartant candidats que no el treballen.
+- Al navegador local, CS intermedi mostra nou candidats: P002, P003, P005, P006, P007, P008, P019, P020 i P024. CM repte mostra els mateixos. Una fitxa amb P002 i P024 entra a revisió i té la impressió disponible; excloure arrels amaga P024 i inhabilita la revisió.
+- CS repte mostra vuit candidats, inclosos els dos d'ESO intermedi P011 i P023. La proposta de dues pàgines en quadrícula selecciona els vuit i accedeix a la revisió amb tots els problemes.
+- Només CS, amb totes les dificultats, ofereix 20 candidats; tots els nivells amb dificultat intermèdia també en mostren 20. Netejar els filtres torna als 24 problemes.
+- Explicació d'equivalències comprovada al diàleg d'ajuda en escriptori i a 320 × 640. El contingut nou és accessible amb el desplaçament intern. El selector de dificultat conserva els 27 px de la seva etiqueta i no es modifica l'alçada dels controls del lateral. Sense desbordament horitzontal ni errors o avisos de consola.
+- Captura a `vista-previa-v091.jpg` (no versionada), amb CS intermedi i el problema P024 d'ESO accessible compatible. No s'han modificat els exercicis ni la maquetació impresa. Comprovacions exclusivament locals.

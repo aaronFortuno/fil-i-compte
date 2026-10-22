@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.9.1',title:'Nivell i dificultat amb equivalències',
+    changes:[
+      'CS intermedi també inclou CM repte i inici d’ESO accessible; CS repte inclou inici d’ESO intermedi.',
+      'El banc, la proposta i la revisió comparteixen el mateix criteri orientatiu.',
+      'Les exclusions i els continguts obligatoris es continuen respectant.'
+    ]
+  },
+  {
     version:'0.9.0',title:'24 problemes -i sumant-',
     changes:[
       'Dotze problemes nous amb solucions, del P013 al P024.',

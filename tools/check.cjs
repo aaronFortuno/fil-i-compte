@@ -51,7 +51,39 @@ check('Vuit problemes d’una sola operació permeten compondre fitxes sense com
   const r=C.compose(all,filters,8);assert(!r.error);assert.equal(C.selectionIssues(r.ids.map(id=>all.find(e=>e.id===id)),filters,8).length,0);
 });
 check('Obligatori al full cobreix fraccions i percentatges sense exigir-los en cada problema',()=>{const filters={...base,features:{fraccions:'require',percentatges:'require',decimals:'exclude'}};for(let i=0;i<20;i++){const r=C.compose(all,filters,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),filters,4).length,0);}});
-check('Obligatori en cada problema i filtres incompatibles no es relaxen',()=>{const filters={scope:'each',features:{fraccions:'require',percentatges:'require'}};assert.equal(all.filter(e=>C.eligible(e,filters)).length,0);assert(C.compose(all,filters,4).error);assert(C.compose(all,{...base,level:'mitja',difficulty:'3'},4).error);});
+check('Obligatori en cada problema i filtres incompatibles no es relaxen',()=>{const filters={scope:'each',features:{fraccions:'require',percentatges:'require'}};assert.equal(all.filter(e=>C.eligible(e,filters)).length,0);assert(C.compose(all,filters,4).error);assert(C.compose(all,{...base,level:'mitja',difficulty:'1'},4).error);});
+check('Nivell i dificultat admeten exactament les diagonals equivalents de la matriu',()=>{
+  const cells=[
+    {level:'mitja',difficulty:1,band:1},{level:'mitja',difficulty:2,band:2},{level:'mitja',difficulty:3,band:3},
+    {level:'superior',difficulty:1,band:2},{level:'superior',difficulty:2,band:3},{level:'superior',difficulty:3,band:4},
+    {level:'eso',difficulty:1,band:3},{level:'eso',difficulty:2,band:4},{level:'eso',difficulty:3,band:5}
+  ];
+  for(const level of ['',...Object.keys(C.LEVELS)])for(const difficulty of ['','1','2','3']){
+    const filters={...base,level,difficulty},bands=new Set(cells.filter(cell=>(!level||cell.level===level)&&(!difficulty||cell.difficulty===Number(difficulty))).map(cell=>cell.band));
+    for(const cell of cells)assert.equal(C.eligible({...all[0],level:cell.level,difficulty:cell.difficulty},filters),bands.has(cell.band),JSON.stringify({filters,cell}));
+  }
+  const intermediate={...base,level:'superior',difficulty:'2'};
+  assert(C.eligible({...all[0],level:'mitja',difficulty:3},intermediate));
+  assert(C.eligible({...all[0],level:'eso',difficulty:1},intermediate));
+  assert(!C.eligible({...all[0],level:'eso',difficulty:2},intermediate));
+  assert(!C.eligible({...all[0],level:'mitja',difficulty:1},intermediate));
+});
+check('La proposta i la revisió comparteixen les equivalències i respecten els continguts',()=>{
+  const sample=[
+    {...all[0],id:'M3',level:'mitja',difficulty:3,features:['suma-resta']},
+    {...all[0],id:'S2',level:'superior',difficulty:2,features:['multiplicacio-divisio']},
+    {...all[0],id:'E1',level:'eso',difficulty:1,features:['fraccions']},
+    {...all[0],id:'E2',level:'eso',difficulty:2,features:['fraccions']}
+  ];
+  const filters={...base,level:'superior',difficulty:'2',features:{fraccions:'exclude', 'suma-resta':'require'}};
+  const result=C.compose(sample,filters,2);assert(!result.error);assert.deepEqual([...result.ids].sort(),['M3','S2']);
+  assert.deepEqual(C.selectionIssues(result.ids.map(id=>sample.find(e=>e.id===id)),filters,2),[]);
+  assert(!C.eligible(sample[2],filters));
+  assert(!C.eligible(sample[1],{...filters,scope:'each'}));
+  const equivalent={...base,level:'mitja',difficulty:'3'},target={...base,level:'superior',difficulty:'2'};
+  assert.deepEqual(all.filter(e=>C.eligible(e,equivalent)),all.filter(e=>C.eligible(e,target)));
+  const real=C.compose(all,target,4);assert(!real.error);assert.deepEqual(C.selectionIssues(real.ids.map(id=>all.find(e=>e.id===id)),target,4),[]);
+});
 check('Una nova proposta canvia la selecció si hi ha alternatives compatibles',()=>{const previous=['P001','P002','P003','P004'];const r=C.compose(all,base,4,previous);assert(!r.error);assert.equal(new Set(r.ids).size,4);assert(r.ids.some(id=>!previous.includes(id)));});
 check('Les 12 combinacions de pàgines i distribució conserven l’ordre i no repeteixen problemes',()=>{
   const large=Array.from({length:24},(_,i)=>({...all[i%all.length],id:'T'+i}));
