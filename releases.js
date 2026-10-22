@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.11.0',title:'Calcula, compara i justifica',
+    changes:[
+      'Dotze problemes nous, P0025–P0036: el catàleg arriba als 36.',
+      'Apartats dobles i triples amb respostes i justificacions diferenciades.',
+      'Solucionaris per apartats, amb dues representacions gràfiques noves.'
+    ]
+  },
+  {
     version:'0.10.0',title:'Cerca per codis i rangs',
     changes:[
       'Rangs com a la impressió: -4, 5-7,9-10 o 13-. També limiten la proposta automàtica.',

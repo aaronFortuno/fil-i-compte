@@ -171,3 +171,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Ajuda superposada amb exemples, X i Esc, amb retorn de focus; aplicació d'exemple amb retorn al cercador. Comprovada a 1280 × 900 i 320 × 640: popup dins del viewport, sense desbordament horitzontal. El cercador conserva l'alçada i el botó d'ajuda no afegeix files al banc.
 - Revisats els 24 problemes en sis pàgines de quadrícules: els codis de quatre xifres apareixen correctament i no hi ha desbordaments en exercicis ni solucionaris. Cap error ni avís de consola.
 - Captura a `vista-previa-v0100.jpg` (no versionada). Restaurada la tria inicial amb els codis nous i cercador buit. Cap comprovació remota ni obertura del diàleg d'impressió.
+
+## Tercer bloc i diversos apartats · 0.11.0 · 22 d'octubre de 2026
+
+- Superats 22 grups de comprovacions. Esquemes 1 i 2 compatibles, 36 identificadors únics, 29 apartats nous (set problemes dobles i cinc de triples), resultats numèrics i evidències de justificació contrastats amb referències independents. El validador rebutja barrejar el model d'una pregunta amb `parts`, preguntes sense solució i codis invàlids.
+- Comprovats etiquetes i tipus numèrics de tots els càlculs i evidències, no només del primer apartat. L'etiqueta de combinades s'aplica si una resolució conté diverses operacions, sense inferir-la només del nombre de preguntes. Els dibuixos nous corresponen a 3/4 de 12 km i a 49 rajoles amb 12 retirades.
+- Comparats els 24 exercicis anteriors amb la versió 0.10.0: són idèntics. La preparació repetida produeix exactament els mateixos fitxers del catàleg i els tres documents de revisió.
+- Rang `25-`: dotze problemes, 29 preguntes i 29 zones de resposta. Set justificacions amb dues línies. Quatre pàgines de tres problemes: cap desbordament en exercicis ni solucionaris; espais de treball de 46 a 126 px CSS a mida nativa.
+- Rang mixt `1-4,25-`: quatre pàgines en quadrícula amb els dotze problemes nous i quatre dels anteriors. Cap desbordament; 29 resolucions d'apartat, i espais de treball dels problemes nous de 151 a 263 px CSS. Els problemes antics conserven la pregunta i resposta úniques.
+- Sis pàgines de dos problemes amb tot el bloc nou: espai de treball mínim de 201 px CSS. Revisada visualment també una fitxa de dues pàgines amb quatre problemes triples: dotze apartats i dotze respostes, lletres a), b), c) coherents, línies de justificació de 33 px CSS i solucionari separat per lletres.
+- Cerca «70 %» troba P0036 pel tercer apartat. Excloure percentatges dins del tercer bloc elimina P0029 i P0036. La pregunta triple es llegeix a 320 × 640 sense desbordament horitzontal.
+- Cap error ni avís a la consola local. Sintaxi de JavaScript i diff comprovats. Captura a `vista-previa-v0110.jpg` (no versionada). Restaurats dos problemes per pàgina, dues pàgines, la tria inicial i els filtres buits.
+- Tercer bloc publicat amb `pendent-docent`, seguint la validació posterior a la publicació autoritzada per l'usuari. No s'ha obert el diàleg d'impressió ni fet cap comprovació remota.

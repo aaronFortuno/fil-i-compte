@@ -90,9 +90,16 @@
     }
     return `<figure class="solution-visual">${head+shapes}</svg><figcaption>${escape(v.caption)}</figcaption></figure>`;
   }
+  function questionsHTML(e,paper=false) {
+    if(!e.parts)return `<p class="${paper?'paper-question':'question'}">${escape(e.question)}</p>`;
+    return `<ol class="part-questions ${paper?'paper-questions':'card-questions'}" type="a">${e.parts.map(part=>`<li>${escape(part.question)}</li>`).join('')}</ol>`;
+  }
   function solutionHTML(e) {
-    const s=e.solution;
-    return `<p class="solution-expression">${escape(s.expression)}</p><ol class="solution-steps">${s.steps.map(x=>`<li>${escape(x)}</li>`).join('')}</ol>${visual(s.visual,e.id)}<p class="solution-answer">${escape(s.response)}</p>${s.note?`<p class="solution-note">${escape(s.note)}</p>`:''}`;
+    return C.exerciseParts(e).map(({solution:s},index)=>`${e.parts?`<section class="solution-part"><span class="part-label">${String.fromCharCode(97+index)})</span>`:''}${s.expression?`<p class="solution-expression">${escape(s.expression)}</p>`:''}<ol class="solution-steps">${s.steps.map(x=>`<li>${escape(x)}</li>`).join('')}</ol>${visual(s.visual,e.id)}<p class="solution-answer">${escape(s.response)}</p>${s.note?`<p class="solution-note">${escape(s.note)}</p>`:''}${e.parts?'</section>':''}`).join('');
+  }
+  function responseHTML(e) {
+    if(!e.parts)return '<div class="response-space">Resposta: <span></span></div>';
+    return `<div class="part-responses">${e.parts.map((part,index)=>`<div class="response-space ${part.solution.kind==='justification'?'reasoning-response':''}"><span class="response-label">${String.fromCharCode(97+index)})</span><span class="response-line"></span></div>`).join('')}</div>`;
   }
   function renderCards() {
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
@@ -114,7 +121,7 @@
     }
     $('cards').innerHTML=matches.map(e=>{
       const isSelected=state.ids.includes(e.id),blocked=!isSelected&&state.ids.length>=capacity();
-      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p><p class="question">${escape(e.question)}</p></article>`;
+      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
@@ -214,7 +221,7 @@
     return groups.map((group,index)=>{
       const title=state.title.trim();
       const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / ${state.pageCount}</span></header>`:'';
-      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p><p class="paper-question">${escape(e.question)}</p><div class="working-space"><span>Pensa, dibuixa, calcula…</span></div><div class="response-space">Resposta: <span></span></div>`}</article>`;}).join('')}</div></section>`;
+      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
       return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${sheet}</div>`:sheet;
     }).join('');
   }

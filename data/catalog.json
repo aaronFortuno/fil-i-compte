@@ -1,12 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "pack": {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 5,
+    "version": 6,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Càlculs i coherència comprovats abans de publicar. Validació docent de l'usuari prevista després de la publicació."
   },
   "exercises": [
     {
@@ -1100,6 +1100,978 @@
         ],
         "note": "Dibuixa un quadrat i busca el nombre que, multiplicat per ell mateix, dona 196: 14 × 14 = 196. La superfície és en cm² i el costat en cm."
       }
+    },
+    {
+      "id": "P0025",
+      "version": 1,
+      "title": "Gots per a la festa",
+      "context": "festa",
+      "structure": "suficiencia",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per a una festa hi ha 6 paquets de 12 gots reutilitzables. Hi participaran 65 persones i cadascuna necessitarà un got.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants gots tenim en total?",
+          "solution": {
+            "expression": "6 × 12 = 72",
+            "calculation": [
+              "mul",
+              6,
+              12
+            ],
+            "answer": 72,
+            "unit": "gots",
+            "response": "Tenim 72 gots.",
+            "steps": [
+              "Hi ha 6 grups de 12 gots: 6 × 12 = 72."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Cal comprar més gots? Justifica la resposta.",
+          "solution": {
+            "kind": "justification",
+            "response": "No cal comprar-ne més: hi ha un got per a cada persona i en sobren 7.",
+            "steps": [
+              "Comparem els gots amb les persones: 72 − 65 = 7 gots sobrants."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "sub",
+                  [
+                    "mul",
+                    6,
+                    12
+                  ],
+                  65
+                ],
+                "answer": 7
+              }
+            ],
+            "note": "També pots representar les persones i els gots amb dues barres."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0026",
+      "version": 1,
+      "title": "Minibusos per a la trobada",
+      "context": "transport",
+      "structure": "suficiencia",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A una trobada hi aniran 87 alumnes i 9 adults. Cada minibús té 24 places per a passatgers, a més de la del conductor.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants minibusos necessiten inicialment?",
+          "solution": {
+            "expression": "(87 + 9) ÷ 24 = 4",
+            "calculation": [
+              "div",
+              [
+                "add",
+                87,
+                9
+              ],
+              24
+            ],
+            "answer": 4,
+            "unit": "minibusos",
+            "response": "Inicialment necessiten 4 minibusos.",
+            "steps": [
+              "Hi van 87 + 9 = 96 persones; 96 ÷ 24 = 4 minibusos."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Si s'hi afegeixen 6 alumnes, quatre minibusos continuen sent suficients? Explica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: hi hauria 102 passatgers i només 96 places. Caldria un cinquè minibús.",
+            "steps": [
+              "Amb els nous alumnes són 96 + 6 = 102 persones; quatre minibusos ofereixen 4 × 24 = 96 places."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "add",
+                  [
+                    "add",
+                    87,
+                    9
+                  ],
+                  6
+                ],
+                "answer": 102
+              },
+              {
+                "calculation": [
+                  "mul",
+                  4,
+                  24
+                ],
+                "answer": 96
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0027",
+      "version": 1,
+      "title": "Dues ofertes de llibretes",
+      "context": "compres",
+      "structure": "comparacio",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €. No hi ha altres despeses.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quant costen les 12 llibretes a la botiga A?",
+          "solution": {
+            "expression": "12 ÷ 4 × 6,80 = 20,40",
+            "calculation": [
+              "mul",
+              [
+                "div",
+                12,
+                4
+              ],
+              6.8
+            ],
+            "answer": 20.4,
+            "unit": "euros",
+            "response": "A la botiga A costen 20,40 €.",
+            "steps": [
+              "Calen 3 paquets: 3 × 6,80 = 20,40 €."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quant costen a la botiga B?",
+          "solution": {
+            "expression": "12 × 1,90 = 22,80",
+            "calculation": [
+              "mul",
+              12,
+              1.9
+            ],
+            "answer": 22.8,
+            "unit": "euros",
+            "response": "A la botiga B costen 22,80 €.",
+            "steps": [
+              "Multipliquem el preu unitari per 12."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quina botiga convé més i quants diners estalviem?",
+          "solution": {
+            "expression": "22,80 − 20,40 = 2,40",
+            "calculation": [
+              "sub",
+              22.8,
+              20.4
+            ],
+            "answer": 2.4,
+            "unit": "euros d'estalvi",
+            "response": "Convé la botiga A: estalviem 2,40 €.",
+            "steps": [
+              "Comparem els dos costos totals, no els preus del paquet i de la unitat."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0028",
+      "version": 1,
+      "title": "El tram de la cursa",
+      "context": "esport",
+      "structure": "part-total",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una cursa té un recorregut de 12 km. La Laia ja ha completat tres quartes parts (3/4) del recorregut.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants quilòmetres ha recorregut?",
+          "solution": {
+            "expression": "12 ÷ 4 × 3 = 9",
+            "calculation": [
+              "mul",
+              [
+                "div",
+                12,
+                4
+              ],
+              3
+            ],
+            "answer": 9,
+            "unit": "quilòmetres",
+            "response": "Ha recorregut 9 km.",
+            "steps": [
+              "Cada quart fa 3 km; tres quarts fan 9 km."
+            ],
+            "visual": {
+              "type": "fraction",
+              "parts": 4,
+              "filled": 3,
+              "total": 12,
+              "caption": "Cada part representa 3 km; les tres parts ratllades són els 9 km recorreguts."
+            },
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants quilòmetres li falten per acabar?",
+          "solution": {
+            "expression": "12 − 9 = 3",
+            "calculation": [
+              "sub",
+              12,
+              9
+            ],
+            "answer": 3,
+            "unit": "quilòmetres",
+            "response": "Li falten 3 km.",
+            "steps": [
+              "Queda un quart del recorregut: 3 km."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0029",
+      "version": 1,
+      "title": "Entrades amb descompte",
+      "context": "cinema",
+      "structure": "descompte",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una entrada de cinema costa 18 €. Avui totes les entrades tenen un descompte del 25 %. Un grup vol comprar-ne 3 i disposa de 40 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quin descompte, en euros, té cada entrada?",
+          "solution": {
+            "expression": "18 × 25 ÷ 100 = 4,50",
+            "calculation": [
+              "div",
+              [
+                "mul",
+                18,
+                25
+              ],
+              100
+            ],
+            "answer": 4.5,
+            "unit": "euros",
+            "response": "Cada entrada té 4,50 € de descompte.",
+            "steps": [
+              "Calculem el 25 % de 18 €."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quant costa una entrada rebaixada?",
+          "solution": {
+            "expression": "18 − 4,50 = 13,50",
+            "calculation": [
+              "sub",
+              18,
+              4.5
+            ],
+            "answer": 13.5,
+            "unit": "euros",
+            "response": "Una entrada rebaixada costa 13,50 €.",
+            "steps": [
+              "Restem el descompte al preu inicial."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Amb 40 € poden comprar les 3 entrades? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: les tres entrades costen 40,50 € i els falten 0,50 €.",
+            "steps": [
+              "3 × 13,50 = 40,50 €; és més que els 40 € disponibles."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "mul",
+                  3,
+                  13.5
+                ],
+                "answer": 40.5
+              },
+              {
+                "calculation": [
+                  "sub",
+                  40.5,
+                  40
+                ],
+                "answer": 0.5
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0030",
+      "version": 1,
+      "title": "El pressupost de la biblioteca",
+      "context": "biblioteca",
+      "structure": "pressupost",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La biblioteca té 450 € per comprar material. Compra 6 llibres a 32 € cadascun i 8 còmics a 18 € cadascun.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quant ha gastat en total?",
+          "solution": {
+            "expression": "6 × 32 + 8 × 18 = 336",
+            "calculation": [
+              "add",
+              [
+                "mul",
+                6,
+                32
+              ],
+              [
+                "mul",
+                8,
+                18
+              ]
+            ],
+            "answer": 336,
+            "unit": "euros",
+            "response": "Ha gastat 336 €.",
+            "steps": [
+              "Els llibres costen 192 € i els còmics, 144 €; junts, 336 €."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants diners li queden?",
+          "solution": {
+            "expression": "450 − (6 × 32 + 8 × 18) = 114",
+            "calculation": [
+              "sub",
+              450,
+              [
+                "add",
+                [
+                  "mul",
+                  6,
+                  32
+                ],
+                [
+                  "mul",
+                  8,
+                  18
+                ]
+              ]
+            ],
+            "answer": 114,
+            "unit": "euros",
+            "response": "Li queden 114 €.",
+            "steps": [
+              "Restem la despesa total al pressupost."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Pot comprar també 4 jocs de 28 € cadascun sense superar el pressupost? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "Sí: els jocs costen 112 € i encara sobraran 2 €.",
+            "steps": [
+              "4 × 28 = 112 €; amb els 114 € que queden, n'hi ha prou."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "mul",
+                  4,
+                  28
+                ],
+                "answer": 112
+              },
+              {
+                "calculation": [
+                  "sub",
+                  114,
+                  112
+                ],
+                "answer": 2
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0031",
+      "version": 1,
+      "title": "El mural de rajoles",
+      "context": "art",
+      "structure": "quadrats",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un mural quadrat té 7 files de 7 rajoles. Durant una reparació es retiren 12 rajoles.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "potencies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quantes rajoles tenia inicialment? Escriu-ho amb una potència.",
+          "solution": {
+            "expression": "7² = 49",
+            "calculation": [
+              "pow",
+              7,
+              2
+            ],
+            "answer": 49,
+            "unit": "rajoles",
+            "response": "Inicialment tenia 7² = 49 rajoles.",
+            "steps": [
+              "La potència representa les 7 files de 7 rajoles."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quantes rajoles queden col·locades?",
+          "solution": {
+            "expression": "7² − 12 = 37",
+            "calculation": [
+              "sub",
+              [
+                "pow",
+                7,
+                2
+              ],
+              12
+            ],
+            "answer": 37,
+            "unit": "rajoles",
+            "response": "Queden 37 rajoles col·locades.",
+            "steps": [
+              "Restem les 12 rajoles retirades de les 49 inicials."
+            ],
+            "visual": {
+              "type": "grid",
+              "side": 7,
+              "removed": 12,
+              "caption": "De les 49 rajoles, en ratllem 12; en queden 37."
+            },
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0032",
+      "version": 1,
+      "title": "La catifa quadrada",
+      "context": "decoracio",
+      "structure": "mesura",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una catifa quadrada té una superfície de 225 dm². Volem cosir una cinta al llarg de tota la vora, sense afegir-ne per a unions.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "arrels"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quant mesura cada costat?",
+          "solution": {
+            "expression": "√225 = 15",
+            "calculation": [
+              "sqrt",
+              225
+            ],
+            "answer": 15,
+            "unit": "decímetres",
+            "response": "Cada costat mesura 15 dm.",
+            "steps": [
+              "15 × 15 = 225; per tant, √225 = 15 dm."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants decímetres de cinta necessitem?",
+          "solution": {
+            "expression": "4 × √225 = 60",
+            "calculation": [
+              "mul",
+              4,
+              [
+                "sqrt",
+                225
+              ]
+            ],
+            "answer": 60,
+            "unit": "decímetres",
+            "response": "Necessitem 60 dm de cinta.",
+            "steps": [
+              "Sumem els quatre costats iguals: 4 × 15 = 60 dm."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Un rotlle de 55 dm és suficient? Explica per què.",
+          "solution": {
+            "kind": "justification",
+            "response": "No és suficient: falten 5 dm de cinta.",
+            "steps": [
+              "Calen 60 dm i només en tenim 55: 60 − 55 = 5 dm."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "sub",
+                  60,
+                  55
+                ],
+                "answer": 5
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0033",
+      "version": 1,
+      "title": "Les boles de colors",
+      "context": "joc",
+      "structure": "part-total",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una piscina de joc hi ha 240 boles. D'aquest total, 2/5 són vermelles i 3/8 són blaves. La resta són d'altres colors.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quantes boles vermelles hi ha?",
+          "solution": {
+            "expression": "240 ÷ 5 × 2 = 96",
+            "calculation": [
+              "mul",
+              [
+                "div",
+                240,
+                5
+              ],
+              2
+            ],
+            "answer": 96,
+            "unit": "boles",
+            "response": "Hi ha 96 boles vermelles.",
+            "steps": [
+              "Cada cinquena part són 48 boles; dues parts són 96."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quantes boles no són ni vermelles ni blaves?",
+          "solution": {
+            "expression": "240 − (96 + 240 ÷ 8 × 3) = 54",
+            "calculation": [
+              "sub",
+              240,
+              [
+                "add",
+                96,
+                [
+                  "mul",
+                  [
+                    "div",
+                    240,
+                    8
+                  ],
+                  3
+                ]
+              ]
+            ],
+            "answer": 54,
+            "unit": "boles",
+            "response": "Hi ha 54 boles d'altres colors.",
+            "steps": [
+              "Hi ha 240 ÷ 8 × 3 = 90 boles blaves.",
+              "Traiem les vermelles i les blaves: 240 − 186 = 54."
+            ],
+            "note": "Les dues fraccions es refereixen al total de 240 boles."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0034",
+      "version": 1,
+      "title": "Les fotografies del taller",
+      "context": "fotografia",
+      "structure": "suficiencia",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotografies.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quantes pàgines omplim amb les 156 fotografies?",
+          "solution": {
+            "expression": "156 ÷ 12 = 13",
+            "calculation": [
+              "div",
+              156,
+              12
+            ],
+            "answer": 13,
+            "unit": "pàgines",
+            "response": "Omplim 13 pàgines.",
+            "steps": [
+              "Repartim les 156 fotografies en grups de 12."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Si ens arriben 18 fotografies més, cabran totes en 14 pàgines? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: sis fotografies quedarien sense lloc. Necessitem una quinzena pàgina.",
+            "steps": [
+              "Tindrem 174 fotografies i 14 pàgines només n'admeten 168; la diferència és 6."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "sub",
+                  [
+                    "add",
+                    156,
+                    18
+                  ],
+                  [
+                    "mul",
+                    14,
+                    12
+                  ]
+                ],
+                "answer": 6
+              }
+            ],
+            "note": "Pots dibuixar les pàgines com a grups de 12 espais."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0035",
+      "version": 1,
+      "title": "L'aigua de les cantimplores",
+      "context": "excursio",
+      "structure": "mesura",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim 7,2 litres d'aigua i omplim completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quants litres posem en total a les cantimplores?",
+          "solution": {
+            "expression": "8 × 0,75 = 6",
+            "calculation": [
+              "mul",
+              8,
+              0.75
+            ],
+            "answer": 6,
+            "unit": "litres",
+            "response": "Hi posem 6 litres en total.",
+            "steps": [
+              "Multipliquem la capacitat d'una cantimplora per 8."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants litres d'aigua ens queden sense repartir?",
+          "solution": {
+            "expression": "7,2 − 8 × 0,75 = 1,2",
+            "calculation": [
+              "sub",
+              7.2,
+              [
+                "mul",
+                8,
+                0.75
+              ]
+            ],
+            "answer": 1.2,
+            "unit": "litres",
+            "response": "Ens queden 1,2 litres sense repartir.",
+            "steps": [
+              "Restem els 6 litres repartits dels 7,2 litres inicials."
+            ],
+            "note": "Els 5 km de la ruta no intervenen en aquests càlculs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0036",
+      "version": 1,
+      "title": "La venda de samarretes",
+      "context": "venda",
+      "structure": "percentatge-acumulat",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 150 samarretes per vendre. El primer dia venem el 40 % del total inicial i el segon dia en venem 30 més.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quantes samarretes venem el primer dia?",
+          "solution": {
+            "expression": "150 × 40 ÷ 100 = 60",
+            "calculation": [
+              "div",
+              [
+                "mul",
+                150,
+                40
+              ],
+              100
+            ],
+            "answer": 60,
+            "unit": "samarretes",
+            "response": "El primer dia venem 60 samarretes.",
+            "steps": [
+              "Calculem el 40 % de les 150 samarretes inicials."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quin percentatge del total inicial hem venut entre els dos dies?",
+          "solution": {
+            "expression": "(60 + 30) × 100 ÷ 150 = 60",
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "add",
+                  60,
+                  30
+                ],
+                100
+              ],
+              150
+            ],
+            "answer": 60,
+            "unit": "percentatge",
+            "response": "Hem venut el 60 % del total inicial.",
+            "steps": [
+              "En total venem 90 samarretes; 90 de 150 representen el 60 %."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "És correcte sumar 40 % + 30 % i dir que hem venut el 70 %? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: 30 són samarretes, no un percentatge. Representen el 20 % del total; 40 % + 20 % = 60 %.",
+            "steps": [
+              "Convertim les 30 samarretes en percentatge: 30 × 100 ÷ 150 = 20 %."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "div",
+                  [
+                    "mul",
+                    30,
+                    100
+                  ],
+                  150
+                ],
+                "answer": 20
+              },
+              {
+                "calculation": [
+                  "add",
+                  40,
+                  20
+                ],
+                "answer": 60
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
     }
   ]
 }

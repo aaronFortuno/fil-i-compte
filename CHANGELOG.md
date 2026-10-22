@@ -1,5 +1,13 @@
 # Historial de canvis
 
+## 0.11.0 · Problemes amb diversos apartats
+
+- Tercer bloc de 12 problemes, P0025–P0036: set amb dues preguntes i cinc amb tres, amb 29 apartats en total. Inclou comparació de compres, pressupostos, capacitats, fraccions, percentatges, potències, arrels i justificacions.
+- Model de catàleg 2 amb `parts`: cada apartat conté pregunta i solució. Es conserven els blocs i els 24 exercicis anteriors sense modificar el seu contingut. El lector i l'esquema admeten també el model 1.
+- Les justificacions tenen una resposta textual i evidències numèriques comprovables. La cerca i els filtres tenen en compte totes les preguntes i els continguts necessaris en qualsevol apartat.
+- Apartats a), b), c) al banc, a les fitxes i al solucionari. Espai de treball compartit i respostes separades, amb dues línies quan cal justificar.
+- Documents de revisió generats per apartats i proves ampliades a totes les respostes, evidències i esquemes, incloent-hi la prohibició de barrejar els dos models en un mateix exercici.
+
 ## 0.10.0 · Codis de quatre xifres i rangs d'impressió
 
 - Cerca de codis exactes i de rangs inclusius: `-4`, `5-7,9-10`, `13-`, amb P opcional i espais admesos. S'admeten unions, superposicions i codis de més de quatre xifres; els límits es comparen numèricament.

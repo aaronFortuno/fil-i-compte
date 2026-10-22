@@ -16,6 +16,7 @@
   // Each cycle advances one step: CM repte = CS intermedi = ESO accessible.
   const LEVEL_OFFSET = {mitja:0,superior:1,eso:2};
   const PAGE_COUNTS=[1,2,4,6],PER_PAGE=[2,3,4];
+  const exerciseParts=exercise=>exercise.parts||[{question:exercise.question,solution:exercise.solution}];
   function normalizeId(id) {
     if(typeof id!=='string'||!/^p\d+$/i.test(id))return null;
     const number=Number(id.slice(1));
@@ -108,7 +109,7 @@
     if(filters.codes&&!matchesCodes(exercise.id,parseSearch(filters.codes)))return false;
     const search=parseSearch(filters.query||'');
     if(search.kind==='invalid'||(search.kind==='codes'&&!matchesCodes(exercise.id,search)))return false;
-    if(search.kind==='text'&&search.text&&![exercise.title,exercise.statement,exercise.question].join(' ').toLocaleLowerCase('ca').includes(search.text))return false;
+    if(search.kind==='text'&&search.text&&![exercise.title,exercise.statement,...exerciseParts(exercise).map(part=>part.question)].join(' ').toLocaleLowerCase('ca').includes(search.text))return false;
     for(const [feature,mode] of Object.entries(filters.features||{})) {
       if(mode==='exclude' && exercise.features.includes(feature)) return false;
       if(mode==='require' && filters.scope!=='sheet' && !exercise.features.includes(feature)) return false;
@@ -170,5 +171,5 @@
     const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
     return JSON.stringify(ordered({...saved,id,status:undefined}))===JSON.stringify(ordered({...current,id,status:undefined}));
   }
-  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,normalizeId,normalizeSelectionIds,parseSearch,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
+  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,exerciseParts,normalizeId,normalizeSelectionIds,parseSearch,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
 });

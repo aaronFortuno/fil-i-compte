@@ -1,12 +1,12 @@
 # Fil i compte
 
-Banc de 24 problemes estàtics en català, organitzats en dos blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
+Banc de 36 problemes estàtics en català, organitzats en tres blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
 ## Obrir i utilitzar
 
 Obre **index.html** fent-hi doble clic. El web funciona sense servidor ni connexió. També es pot previsualitzar amb `node tools/serve.cjs` a l'adreça que mostra el servidor.
 
-Per revisar el contingut seguit, obre **BLOC-01.md** o **BLOC-02.md**: cada document inclou 12 enunciats, les solucions, les etiquetes i la descripció dels suports visuals.
+Per revisar el contingut seguit, obre **BLOC-01.md**, **BLOC-02.md** o **BLOC-03.md**: cada document inclou 12 enunciats, totes les preguntes i solucions, les etiquetes i la descripció dels suports visuals. Escriu `25-` al cercador del web per revisar directament el tercer bloc.
 
 1. Tria **Nombre de pàgines** (1, 2, 4 o 6) i **Problemes per pàgina** (2 o 3 en columna, o 4 en quadrícula 2 × 2). El total és el producte dels dos camps. A sota, tria nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Els continguts es mostren de dos en dos, en etiquetes amb fons i símbol: **· Permès**, **✓ Obligatori** i **× Exclòs**. Un clic a qualsevol etiqueta fa rotar l’estat entre permès, obligatori i exclòs. Els botons admeten Enter, espai i les fletxes esquerra i dreta. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
@@ -52,7 +52,7 @@ La tria es conserva en aquest navegador quan l'emmagatzematge local està dispon
 
 Les noves exportacions fan servir el format 3, amb `pageCount`, `perPage` i el rang opcional `filters.codes`; s'importen també els formats 1 i 2. Les tries anteriors de quatre problemes es recuperen amb dues pàgines de dos problemes; les de sis, amb dues de tres. Les tries antigues de cinc problemes es recuperen en dues pàgines de tres places; es conserven els cinc problemes i s'indica que falta completar la selecció. Els antics problemes fixats es tracten com a seleccionats normals. Els codis antics, com `P013`, es converteixen a `P0013` sense canviar el contingut ni la versió de l'exercici. Es rebutgen els duplicats encara que facin servir dos farciments del mateix codi. Les targetes del banc només mostren l'enunciat; les resolucions es consulten al solucionari.
 
-La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i sumant-». El compositor mai no repeteix problemes per omplir places: si una configuració en demana més dels que hi ha disponibles amb els filtres actuals, ho indica i conserva la tria. Amb els 24 problemes actuals, es poden omplir les 24 places màximes sense filtres. Excloent les operacions combinades hi ha 8 candidats.
+La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i sumant-». El compositor mai no repeteix problemes per omplir places: si una configuració en demana més dels que hi ha disponibles amb els filtres actuals, ho indica i conserva la tria. Amb els 36 problemes actuals, es poden omplir les 24 places màximes sense filtres. Excloent les operacions combinades hi ha 8 candidats.
 
 ## Què conté el primer bloc
 
@@ -94,6 +94,10 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 
 ## Model i ampliació
 
+El tercer bloc, **Calcula, compara i justifica**, afegeix P0025–P0036: set problemes dobles i cinc de triples, amb 29 apartats. Les preguntes numèriques tenen resultat i càlcul propi; les justificacions tenen una resposta textual breu i evidències numèriques. Hi ha una barra de quarts i una quadrícula de rajoles noves. Com en el segon bloc, els càlculs es comproven abans de publicar i la validació docent de l'usuari és posterior.
+
+Els apartats apareixen com a), b), c) al banc i al paper. La fitxa conserva una zona de treball comuna i una resposta per apartat; les justificacions disposen de dues línies. El solucionari separa les resolucions amb les mateixes lletres. Cada problema continua comptant com una sola plaça de la fitxa.
+
 - **data/packs/bloc-XX.json**: fonts de veritat, un fitxer per bateria. Contenen les metadades, els enunciats fixos, etiquetes, resolucions i representacions.
 - **data/catalog.json**: catàleg únic generat a partir dels blocs; no s'edita manualment.
 - **data/catalog.schema.json**: esquema versionat del format. El comprovador inclòs valida els termes de JSON Schema que utilitza aquest esquema.
@@ -102,6 +106,8 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 - **app.js / styles.css**: interfície, dibuixos SVG, emmagatzematge i impressió.
 
 Cada exercici té identificador i versió; enunciat i pregunta; context i estructura matemàtica; nivell i dificultat; estat editorial; continguts; tipus numèrics de dades, intermedis i resultat; i solució amb expressió llegible, càlcul estructurat, resposta, unitats, passos, nota i dibuix opcional.
+
+El model 2 afegeix l'alternativa `parts`, amb dos o tres elements `{question, solution}`. No es barreja amb els camps únics `question` i `solution` del model 1, que es continuen admetent. Una solució numèrica conserva els camps anteriors; una justificació fa servir `kind: "justification"`, `response`, `steps`, `note` i `evidence`, amb càlcul i resultat per a cada evidència. Els tipus numèrics i les etiquetes del problema cobreixen tots els apartats: una exclusió descarta el problema si qualsevol apartat necessita aquell contingut. Diverses preguntes independents d'una sola operació no impliquen, per si soles, l'etiqueta d'operacions combinades.
 
 `solution.calculation` és un arbre de càlcul amb `add`, `sub`, `mul`, `div`, `pow` i `sqrt`, sense executar expressions de text. Serveix per comprovar un exercici fix, no per generar variants. Les etiquetes pedagògiques continuen necessitant revisió humana: el codi no pot deduir si un enunciat és ambigu ni totes les estratègies que pot emprar un alumne. En particular, «Parèntesis» indica que formen part de l'expressió prevista, sense impedir una resolució per passos; una barra de fraccions usada com a suport opcional per a un percentatge no converteix l'exercici en obligatòriament fraccionari.
 
@@ -114,7 +120,7 @@ node tools/build-data.cjs
 node tools/check.cjs
 ```
 
-La preparació agrega els blocs, comprova identificadors duplicats i genera el catàleg del web, la còpia per a ús sense servidor i un document BLOC-XX.md per cada bateria. El comprovador valida l'esquema de tots els blocs i la coincidència del catàleg generat. També fixa les 24 respostes de referència. Quan s'afegeixi un nou paquet caldrà ampliar aquesta referència independent, el recompte i l'estat editorial esperat; no només acceptar el resultat de l'arbre de càlcul.
+La preparació agrega els blocs, comprova identificadors duplicats i genera el catàleg del web, la còpia per a ús sense servidor i un document BLOC-XX.md per cada bateria. El comprovador valida l'esquema de tots els blocs i la coincidència del catàleg generat. També contrasta els resultats de tots els apartats i les evidències de les justificacions amb referències independents. Quan s'afegeixi un nou paquet caldrà ampliar aquestes referències, el recompte i l'estat editorial esperat; no només acceptar el resultat de l'arbre de càlcul.
 
 Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local de les distribucions de 2, 3 i 4 problemes per pàgina. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
 
