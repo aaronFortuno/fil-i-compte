@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.12.0',title:'48 problemes -i sumant-',
+    changes:[
+      'Dotze problemes nous, P0037–P0048, amb 27 preguntes de càlcul, comparació i justificació.',
+      'Operacions combinades, dades per despistar, fraccions del restant i descomptes successius.',
+      'Potències, arrels i dues barres de fraccions noves als solucionaris.'
+    ]
+  },
+  {
     version:'0.11.2',title:'El fil que emmarca',
     changes:[
       'Nova marca: un fil dibuixa el quadrat inclinat i emmarca una suma.',

@@ -1,12 +1,12 @@
 # Fil i compte
 
-Banc de 36 problemes estàtics en català, organitzats en tres blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
+Banc de 48 problemes estàtics en català, organitzats en quatre blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
 ## Obrir i utilitzar
 
 Obre **index.html** fent-hi doble clic. El web funciona sense servidor ni connexió. També es pot previsualitzar amb `node tools/serve.cjs` a l'adreça que mostra el servidor.
 
-Per revisar el contingut seguit, obre **BLOC-01.md**, **BLOC-02.md** o **BLOC-03.md**: cada document inclou 12 enunciats, totes les preguntes i solucions, les etiquetes i la descripció dels suports visuals. Escriu `25-` al cercador del web per revisar directament el tercer bloc.
+Per revisar el contingut seguit, obre **BLOC-01.md**, **BLOC-02.md**, **BLOC-03.md** o **BLOC-04.md**: cada document inclou 12 enunciats, totes les preguntes i solucions, les etiquetes i la descripció dels suports visuals. Escriu `37-` al cercador del web per revisar directament el quart bloc.
 
 1. Tria **Nombre de pàgines** (1, 2, 4 o 6) i **Problemes per pàgina** (2 o 3 en columna, o 4 en quadrícula 2 × 2). El total és el producte dels dos camps. A sota, tria nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Els continguts es mostren de dos en dos, en etiquetes amb fons i símbol: **· Permès**, **✓ Obligatori** i **× Exclòs**. Un clic a qualsevol etiqueta fa rotar l’estat entre permès, obligatori i exclòs. Els botons admeten Enter, espai i les fletxes esquerra i dreta. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
@@ -95,6 +95,8 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i
 ## Model i ampliació
 
 El tercer bloc, **Calcula, compara i justifica**, afegeix P0025–P0036: set problemes dobles i cinc de triples, amb 29 apartats. Les preguntes numèriques tenen resultat i càlcul propi; les justificacions tenen una resposta textual breu i evidències numèriques. Hi ha una barra de quarts i una quadrícula de rajoles noves. **Tercer bloc: validat**, incorporant la revisió docent i les correccions de la 0.11.1.
+
+El quart bloc, **Connecta les dades**, afegeix P0037–P0048: nou problemes dobles i tres de triples, amb 27 apartats. Tots combinen operacions; cinc incorporen dades per despistar. Treballen també fraccions del restant, descomptes successius, potències, arrels i diferència d'àrees, amb dues barres de fraccions. **Quart bloc: càlculs i coherència comprovats, validació docent pendent**, amb publicació autoritzada per revisar-lo directament al web.
 
 Els apartats apareixen com a), b), c) al banc i al paper. La fitxa conserva una zona de treball comuna i una resposta per apartat; les justificacions disposen de dues línies. El solucionari separa les resolucions amb les mateixes lletres. Cada problema continua comptant com una sola plaça de la fitxa.
 

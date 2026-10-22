@@ -1,5 +1,12 @@
 # Historial de canvis
 
+## 0.12.0 · Connecta les dades
+
+- Quart bloc de 12 problemes, P0037–P0048: nou de dobles i tres de triples, amb 27 apartats. El catàleg arriba als 48 problemes.
+- Contextos de ràdio, refugi d'animals, música, bicicleta, arxiu fotogràfic, jardineria, compres, cromos, cinema, pintura i lliga esportiva. Operacions combinades en tot el bloc i cinc problemes amb dades per despistar.
+- Fraccions d'una quantitat restant, intercanvis, comparació d'ofertes, descomptes successius, agrupacions amb potències i diferència d'àrees amb arrels. Dues representacions de fraccions noves.
+- Solucions numèriques i justificacions comprovades amb referències independents. Publicació per a la validació docent posterior al web, sense modificar els primers 36 exercicis.
+
 ## 0.11.2 · El fil que emmarca
 
 - Nova marca vectorial pròpia: el fil forma el contorn obert d'un quadrat inclinat −12°, amb un petit bucle i una suma al centre.

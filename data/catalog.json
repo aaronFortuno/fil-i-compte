@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 7,
+    "version": 8,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent."
   },
   "exercises": [
     {
@@ -2068,6 +2068,1004 @@
                 ],
                 "answer": 60
               }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0037",
+      "version": 1,
+      "title": "El programa de ràdio",
+      "context": "radio",
+      "structure": "durada",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una classe de 24 alumnes prepara un programa de ràdio d'una hora. Hi volen incloure 5 entrevistes de 6 minuts, 4 peces musicals de 3 minuts i una presentació de 8 minuts.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants minuts ocupen els continguts previstos?",
+          "solution": {
+            "expression": "5 × 6 + 4 × 3 + 8 = 50",
+            "calculation": [
+              "add",
+              [
+                "add",
+                [
+                  "mul",
+                  5,
+                  6
+                ],
+                [
+                  "mul",
+                  4,
+                  3
+                ]
+              ],
+              8
+            ],
+            "answer": 50,
+            "unit": "minuts",
+            "response": "Els continguts ocupen 50 minuts.",
+            "steps": [
+              "Les entrevistes ocupen 30 minuts i la música, 12; afegim els 8 de presentació."
+            ],
+            "note": "El nombre d'alumnes no determina la durada del programa."
+          }
+        },
+        {
+          "question": "Quants minuts queden per afegir altres continguts?",
+          "solution": {
+            "expression": "60 − (5 × 6 + 4 × 3 + 8) = 10",
+            "calculation": [
+              "sub",
+              60,
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    5,
+                    6
+                  ],
+                  [
+                    "mul",
+                    4,
+                    3
+                  ]
+                ],
+                8
+              ]
+            ],
+            "answer": 10,
+            "unit": "minuts",
+            "response": "Queden 10 minuts disponibles.",
+            "steps": [
+              "Una hora són 60 minuts; en restem els 50 ja previstos."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0038",
+      "version": 1,
+      "title": "El menjar del refugi",
+      "context": "animals",
+      "structure": "suficiencia",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al refugi hi ha 18 gossos. Cadascun menja 0,35 kg de pinso al dia. Cal preparar el menjar per a 3 dies. Al magatzem queden 2,1 kg i volen comprar 5 sacs de 3 kg cadascun.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quants quilograms de pinso necessiten per a tots tres dies?",
+          "solution": {
+            "expression": "18 × 0,35 × 3 = 18,9",
+            "calculation": [
+              "mul",
+              [
+                "mul",
+                18,
+                0.35
+              ],
+              3
+            ],
+            "answer": 18.9,
+            "unit": "quilograms",
+            "response": "Necessiten 18,9 kg de pinso.",
+            "steps": [
+              "Cada dia necessiten 6,3 kg; per a tres dies, 18,9 kg."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Amb la compra prevista, tindran prou pinso? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: tindran 17,1 kg i els en faltaran 1,8 kg.",
+            "steps": [
+              "Els cinc sacs aporten 15 kg; amb els 2,1 kg del magatzem sumen 17,1 kg.",
+              "Comparem amb els 18,9 kg necessaris."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "add",
+                  2.1,
+                  [
+                    "mul",
+                    5,
+                    3
+                  ]
+                ],
+                "answer": 17.1
+              },
+              {
+                "calculation": [
+                  "sub",
+                  18.9,
+                  17.1
+                ],
+                "answer": 1.8
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0039",
+      "version": 1,
+      "title": "L'assaig del grup",
+      "context": "musica",
+      "structure": "fraccio-del-restant",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un grup de 14 músics disposa de 90 minuts d'assaig. Dedica un terç (1/3) del temps a escalfar i, després, dues cinquenes parts (2/5) del temps que queda a treballar la tècnica. La resta és per tocar les peces.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants minuts dediquen a escalfar?",
+          "solution": {
+            "expression": "90 ÷ 3 = 30",
+            "calculation": [
+              "div",
+              90,
+              3
+            ],
+            "answer": 30,
+            "unit": "minuts",
+            "response": "Dediquen 30 minuts a escalfar.",
+            "steps": [
+              "Dividim el temps total en tres parts iguals."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants minuts poden dedicar a tocar les peces?",
+          "solution": {
+            "expression": "(90 − 30) − (90 − 30) ÷ 5 × 2 = 36",
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                90,
+                30
+              ],
+              [
+                "mul",
+                [
+                  "div",
+                  [
+                    "sub",
+                    90,
+                    30
+                  ],
+                  5
+                ],
+                2
+              ]
+            ],
+            "answer": 36,
+            "unit": "minuts",
+            "response": "Poden tocar les peces durant 36 minuts.",
+            "steps": [
+              "Després d’escalfar queden 60 minuts. La tècnica n’ocupa 2/5, és a dir, 24; en resten 36."
+            ],
+            "visual": {
+              "type": "fraction",
+              "parts": 5,
+              "filled": 2,
+              "total": 60,
+              "caption": "Cinquens de 12 minuts: dos per a tècnica i tres per a peces."
+            },
+            "note": "Els 2/5 són del temps restant."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0040",
+      "version": 1,
+      "title": "El recanvi de la bicicleta",
+      "context": "compres",
+      "structure": "comparacio",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una botiga ven un recanvi de bicicleta per 120 €, amb un descompte del 20 %. El muntatge costa 18 € més i no té descompte. Una altra botiga ofereix el mateix recanvi, amb el muntatge inclòs, per 108 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quant costa el recanvi amb muntatge a la primera botiga?",
+          "solution": {
+            "expression": "120 − 120 × 20 ÷ 100 + 18 = 114",
+            "calculation": [
+              "add",
+              [
+                "sub",
+                120,
+                [
+                  "div",
+                  [
+                    "mul",
+                    120,
+                    20
+                  ],
+                  100
+                ]
+              ],
+              18
+            ],
+            "answer": 114,
+            "unit": "euros",
+            "response": "A la primera botiga costa 114 € amb muntatge.",
+            "steps": [
+              "El descompte és de 24 €; el recanvi queda en 96 €.",
+              "Hi afegim els 18 € de muntatge."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quina oferta és més barata i quants diners estalviem si la triem?",
+          "solution": {
+            "expression": "114 − 108 = 6",
+            "calculation": [
+              "sub",
+              114,
+              108
+            ],
+            "answer": 6,
+            "unit": "euros d'estalvi",
+            "response": "La segona botiga és més barata: estalviem 6 €.",
+            "steps": [
+              "Comparem els dos preus amb el mateix servei inclòs."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0041",
+      "version": 1,
+      "title": "L'arxiu de fotografies",
+      "context": "fotografia",
+      "structure": "agrupacions-successives",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un arxiu té 4 àlbums, cadascun amb 4 pàgines i 4 fotografies per pàgina. Hi ha 7 còpies repetides que s'han de retirar. Després s'hi incorporen 17 fotografies noves, totes diferents de les que ja hi havia.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "potencies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quantes fotografies hi ha inicialment? Expressa-ho amb una potència.",
+          "solution": {
+            "expression": "4³ = 64",
+            "calculation": [
+              "pow",
+              4,
+              3
+            ],
+            "answer": 64,
+            "unit": "fotografies",
+            "response": "Inicialment hi ha 4³ = 64 fotografies.",
+            "steps": [
+              "Hi ha tres agrupacions successives de quatre: àlbums, pàgines i fotografies."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quantes fotografies tindrà l'arxiu després de retirar les còpies repetides i incorporar les noves?",
+          "solution": {
+            "expression": "4³ − 7 + 17 = 74",
+            "calculation": [
+              "add",
+              [
+                "sub",
+                [
+                  "pow",
+                  4,
+                  3
+                ],
+                7
+              ],
+              17
+            ],
+            "answer": 74,
+            "unit": "fotografies",
+            "response": "L'arxiu tindrà 74 fotografies.",
+            "steps": [
+              "Després de retirar set còpies en queden 57; en sumar-hi les noves, n'hi ha 74."
+            ],
+            "note": "No es demana si les fotografies noves caben als mateixos àlbums."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0042",
+      "version": 1,
+      "title": "El camí del jardí",
+      "context": "jardineria",
+      "structure": "diferencia-arees",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un jardí quadrat de gespa té una superfície de 64 m². Al seu voltant es construeix un camí d'1 m d'amplada per fora, també a les cantonades. El contorn exterior del conjunt és quadrat.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "potencies",
+        "arrels"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quant mesura cada costat de la zona de gespa?",
+          "solution": {
+            "expression": "√64 = 8",
+            "calculation": [
+              "sqrt",
+              64
+            ],
+            "answer": 8,
+            "unit": "metres",
+            "response": "Cada costat de la gespa mesura 8 m.",
+            "steps": [
+              "Busquem el nombre que, multiplicat per si mateix, dona 64."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quina superfície ocupa només el camí?",
+          "solution": {
+            "expression": "(√64 + 2 × 1)² − 64 = 36",
+            "calculation": [
+              "sub",
+              [
+                "pow",
+                [
+                  "add",
+                  [
+                    "sqrt",
+                    64
+                  ],
+                  [
+                    "mul",
+                    2,
+                    1
+                  ]
+                ],
+                2
+              ],
+              64
+            ],
+            "answer": 36,
+            "unit": "metres quadrats",
+            "response": "El camí ocupa 36 m².",
+            "steps": [
+              "El costat exterior fa 8 + 1 + 1 = 10 m: afegim camí als dos extrems.",
+              "El conjunt ocupa 100 m²; en restem els 64 m² de gespa."
+            ],
+            "note": "Un dibuix de dos quadrats, un dins de l'altre, ajuda a comptar també les cantonades."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0043",
+      "version": 1,
+      "title": "Les dues rebaixes",
+      "context": "compres",
+      "structure": "descomptes-successius",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una jaqueta costa 80 €. Primer li apliquen una rebaixa del 25 % i, sobre el preu ja rebaixat, un descompte addicional del 10 %.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quin és el preu final de la jaqueta?",
+          "solution": {
+            "expression": "(80 − 80 × 25 ÷ 100) × 90 ÷ 100 = 54",
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "sub",
+                  80,
+                  [
+                    "div",
+                    [
+                      "mul",
+                      80,
+                      25
+                    ],
+                    100
+                  ]
+                ],
+                90
+              ],
+              100
+            ],
+            "answer": 54,
+            "unit": "euros",
+            "response": "El preu final és de 54 €.",
+            "steps": [
+              "La primera rebaixa deixa el preu en 60 €.",
+              "El segon descompte és el 10 % de 60 €, és a dir, 6 €; el preu final és de 54 €."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quin percentatge del preu inicial ens hem estalviat en total?",
+          "solution": {
+            "expression": "(80 − 54) × 100 ÷ 80 = 32,5",
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "sub",
+                  80,
+                  54
+                ],
+                100
+              ],
+              80
+            ],
+            "answer": 32.5,
+            "unit": "percentatge",
+            "response": "Ens hem estalviat el 32,5 % del preu inicial.",
+            "steps": [
+              "L'estalvi és de 26 €; el comparem amb els 80 € inicials."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Podríem obtenir el mateix preu aplicant de cop la suma dels dos percentatges? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "No: una rebaixa única del 35 % deixaria el preu en 52 €, dos euros menys.",
+            "steps": [
+              "El segon descompte s'aplica a 60 €, no als 80 € inicials.",
+              "Calculem el preu amb un únic 35 % per contrastar-lo amb els 54 €."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "sub",
+                  80,
+                  [
+                    "div",
+                    [
+                      "mul",
+                      80,
+                      [
+                        "add",
+                        25,
+                        10
+                      ]
+                    ],
+                    100
+                  ]
+                ],
+                "answer": 52
+              },
+              {
+                "calculation": [
+                  "sub",
+                  54,
+                  52
+                ],
+                "answer": 2
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0044",
+      "version": 1,
+      "title": "Les voltes al parc",
+      "context": "esport",
+      "structure": "recorregut",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Un circuit de bicicleta té un primer tram de 3,6 km i un segon de 2,4 km, que torna al punt de sortida. La Jana fa 3 voltes completes. Entre volta i volta s'atura 8 minuts. El seu objectiu és recórrer 20 km.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "decimals",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants quilòmetres recorre amb les voltes que ha fet?",
+          "solution": {
+            "expression": "(3,6 + 2,4) × 3 = 18",
+            "calculation": [
+              "mul",
+              [
+                "add",
+                3.6,
+                2.4
+              ],
+              3
+            ],
+            "answer": 18,
+            "unit": "quilòmetres",
+            "response": "Ha recorregut 18 km.",
+            "steps": [
+              "Una volta fa 6 km; multipliquem aquesta distància per tres."
+            ],
+            "note": "Les pauses no afegeixen distància al recorregut."
+          }
+        },
+        {
+          "question": "Ha assolit l'objectiu? Indica quants quilòmetres li falten o de quant l'ha superat.",
+          "solution": {
+            "expression": "20 − 18 = 2",
+            "calculation": [
+              "sub",
+              20,
+              18
+            ],
+            "answer": 2,
+            "unit": "quilòmetres",
+            "response": "Encara no ha assolit l'objectiu: li falten 2 km.",
+            "steps": [
+              "Comparem els 18 km recorreguts amb els 20 km de l'objectiu."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0045",
+      "version": 1,
+      "title": "L'intercanvi de cromos",
+      "context": "colleccionisme",
+      "structure": "intercanvi",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En Pol té 156 cromos: un quart (1/4) són còpies repetides i els altres són tots diferents. Va a una trobada de 90 minuts on pot canviar cada grup de 3 còpies repetides per 2 cromos que no té. Tots els cromos que rep són diferents entre si.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants cromos diferents té abans de la trobada?",
+          "solution": {
+            "expression": "156 − 156 ÷ 4 = 117",
+            "calculation": [
+              "sub",
+              156,
+              [
+                "div",
+                156,
+                4
+              ]
+            ],
+            "answer": 117,
+            "unit": "cromos diferents",
+            "response": "Abans de la trobada té 117 cromos diferents.",
+            "steps": [
+              "Hi ha 39 còpies repetides; les restem del total."
+            ],
+            "note": "",
+            "visual": {
+              "type": "fraction",
+              "parts": 4,
+              "filled": 1,
+              "total": 156,
+              "caption": "Cada quart són 39 cromos; els tres quarts sense ratllar són els 117 diferents."
+            }
+          }
+        },
+        {
+          "question": "Quants cromos diferents tindrà després de fer tots els intercanvis possibles?",
+          "solution": {
+            "expression": "117 + 39 ÷ 3 × 2 = 143",
+            "calculation": [
+              "add",
+              117,
+              [
+                "mul",
+                [
+                  "div",
+                  39,
+                  3
+                ],
+                2
+              ]
+            ],
+            "answer": 143,
+            "unit": "cromos diferents",
+            "response": "Després dels intercanvis tindrà 143 cromos diferents.",
+            "steps": [
+              "39 ÷ 3 = 13 intercanvis: rep 26 cromos nous i els afegeix als 117 que ja tenia."
+            ],
+            "note": "Els 90 minuts no intervenen en el càlcul."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0046",
+      "version": 1,
+      "title": "La sala de projeccions",
+      "context": "cinema",
+      "structure": "suficiencia",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una sala té 7 files de 12 seients. En reserven 9 per a l'organització i la resta són per al públic. Hi volen entrar 42 infants i 24 adults. La pel·lícula dura 52 minuts.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants seients hi ha disponibles per al públic?",
+          "solution": {
+            "expression": "7 × 12 − 9 = 75",
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                7,
+                12
+              ],
+              9
+            ],
+            "answer": 75,
+            "unit": "seients",
+            "response": "Hi ha 75 seients disponibles per al públic.",
+            "steps": [
+              "La sala té 84 seients; en traiem els nou reservats."
+            ],
+            "note": "La durada de la pel·lícula no canvia el nombre de seients."
+          }
+        },
+        {
+          "question": "Hi cabrà tot el públic? Indica si sobren o falten seients i quants.",
+          "solution": {
+            "expression": "75 − 42 − 24 = 9",
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                75,
+                42
+              ],
+              24
+            ],
+            "answer": 9,
+            "unit": "seients",
+            "response": "Hi caben les 66 persones del públic i sobren 9 seients disponibles.",
+            "steps": [
+              "Comparem els 75 llocs disponibles amb els 42 infants i 24 adults."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0047",
+      "version": 1,
+      "title": "La pintura del mural",
+      "context": "art",
+      "structure": "consum-repartiment",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 5 pots d'1,6 litres de pintura cadascun. Per pintar el fons d'un mural gastem tres vuitens (3/8) de tota la pintura. Per als detalls en gastem 1,8 litres més. Repartirem el que quedi en 4 recipients iguals.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quants litres gastem per pintar el fons?",
+          "solution": {
+            "expression": "5 × 1,6 ÷ 8 × 3 = 3",
+            "calculation": [
+              "mul",
+              [
+                "div",
+                [
+                  "mul",
+                  5,
+                  1.6
+                ],
+                8
+              ],
+              3
+            ],
+            "answer": 3,
+            "unit": "litres",
+            "response": "Per al fons gastem 3 litres.",
+            "steps": [
+              "En total tenim 8 litres; cada vuitè és 1 litre i en fem servir tres."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quants litres queden després de pintar el fons i els detalls?",
+          "solution": {
+            "expression": "5 × 1,6 − (3 + 1,8) = 3,2",
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                5,
+                1.6
+              ],
+              [
+                "add",
+                3,
+                1.8
+              ]
+            ],
+            "answer": 3.2,
+            "unit": "litres",
+            "response": "Queden 3,2 litres de pintura.",
+            "steps": [
+              "Hem gastat 4,8 litres entre el fons i els detalls; els restem dels 8 inicials."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quanta pintura posarem a cada recipient?",
+          "solution": {
+            "expression": "3,2 ÷ 4 = 0,8",
+            "calculation": [
+              "div",
+              3.2,
+              4
+            ],
+            "answer": 0.8,
+            "unit": "litres per recipient",
+            "response": "Posarem 0,8 litres a cada recipient.",
+            "steps": [
+              "Dividim la pintura sobrant en quatre parts iguals."
+            ],
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0048",
+      "version": 1,
+      "title": "La lliga del barri",
+      "context": "esport",
+      "structure": "puntuacio",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una lliga es donen 3 punts per victòria, 1 per empat i cap per derrota. Després de 12 partits, l'equip A té 7 victòries, 3 empats i 2 derrotes. L'equip B té 8 victòries, cap empat i 4 derrotes.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "parts": [
+        {
+          "question": "Quants punts té l'equip A?",
+          "solution": {
+            "expression": "7 × 3 + 3 = 24",
+            "calculation": [
+              "add",
+              [
+                "mul",
+                7,
+                3
+              ],
+              3
+            ],
+            "answer": 24,
+            "unit": "punts",
+            "response": "L'equip A té 24 punts.",
+            "steps": [
+              "Les victòries aporten 21 punts i els empats, 3; les derrotes no en sumen."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quin dels dos equips té més punts? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "Cap dels dos: estan empatats a 24 punts, tot i tenir diferent nombre de victòries.",
+            "steps": [
+              "L'equip B suma 8 × 3 = 24 punts; és la mateixa puntuació que l'A."
+            ],
+            "evidence": [
+              {
+                "calculation": [
+                  "mul",
+                  8,
+                  3
+                ],
+                "answer": 24
+              }
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Si l'equip A hagués guanyat un dels partits que va empatar, quants punts tindria?",
+          "solution": {
+            "expression": "24 − 1 + 3 = 26",
+            "calculation": [
+              "add",
+              [
+                "sub",
+                24,
+                1
+              ],
+              3
+            ],
+            "answer": 26,
+            "unit": "punts",
+            "response": "Tindria 26 punts.",
+            "steps": [
+              "Retirem el punt de l'empat i afegim els tres de la victòria: guanya dos punts, no tres."
             ],
             "note": ""
           }

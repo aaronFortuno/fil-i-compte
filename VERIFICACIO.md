@@ -202,3 +202,13 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Capçalera comprovada a 1280 × 720 i 320 × 640: recurs carregat correctament, mida de 36 px en escriptori i 30 px en mòbil, sense desbordament horitzontal. El cercador es manté buit i la versió visible és 0.11.2.
 - Superats els 22 grups de comprovacions existents. Cap error ni avís a la consola local. Captura a `vista-previa-v0112.jpg` (no versionada).
 - Comprovacions exclusivament locals; el web remot el revisarà l'usuari.
+
+## Quart bloc · 0.12.0 · 22 d'octubre de 2026
+
+- Afegits P0037–P0048: dotze problemes amb 27 apartats (nou dobles i tres triples), cinc amb dades per despistar i tots amb operacions combinades. Dues barres noves: temps restant a l'assaig i cromos repetits.
+- Superats els 22 grups de comprovacions, ampliats amb els resultats i les evidències numèriques independents del quart bloc, el recompte de 48 registres i els nous candidats dels filtres. Esquema, etiquetes, decimals, fraccions, potències i arrels comprovats. Els primers 36 exercicis són idèntics a la versió 0.11.2.
+- Rang `37-`: dotze problemes i 27 preguntes. Proposta completa de quatre pàgines de tres problemes i revisió accessible. Exercicis i solucionaris sense desbordament; espai de treball mínim de 46 px CSS. Escurçades les explicacions de l'assaig i traslladada la segona barra als cromos per mantenir el solucionari llegible.
+- Sis pàgines de dos problemes: cap desbordament en exercicis ni solucionaris, amb almenys 201 px CSS per treballar. Rang mixt `1-4,37-`: setze problemes en quatre pàgines de quadrícules, sense desbordament vertical ni horitzontal i espai mínim de treball de 150 px CSS.
+- Revisades visualment dues pàgines de solucionari amb els tres problemes triples i les dues barres. El problema llarg de cromos també es mostra a 320 × 640 sense desbordament. Lema amb 48 problemes i versió 0.12.0 visibles; cap error ni avís a la consola local.
+- Captures a `vista-previa-v0120.jpg` i `vista-previa-v0120-solucionari.jpg` (no versionades). Estat final amb cercador buit, filtres oberts a tot el catàleg i dues pàgines de dos problemes. No s'ha obert el diàleg d'impressió ni comprovat el web remot.
+- Quart bloc publicat amb `pendent-docent`, seguint la validació posterior al web autoritzada per l'usuari.
