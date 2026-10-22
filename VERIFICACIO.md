@@ -195,3 +195,10 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Revisat tot el tercer bloc en quatre pàgines de tres problemes, exercicis i solucionaris sense desbordament. Zona de treball mínima de 46 px CSS. Solució de P0032 llegida al preview amb totes les unitats en metres.
 - Captures locals a `vista-previa-v0111-tablet.jpg` i `vista-previa-v0111-mobil.jpg` (no versionades). Cap error ni avís de consola. Sintaxi i diff comprovats; HTML sense identificadors duplicats. Estat final amb cercador i filtres buits, dues pàgines de dos problemes i la tria inicial.
 - Comprovacions exclusivament locals; la comprovació del web publicat correspon a l'usuari.
+
+## Marca Fil que emmarca · 0.11.2 · 22 d'octubre de 2026
+
+- Marca vectorial aplicada a la capçalera i al favicon, amb la mateixa geometria i inclinació de −12°. Contorn del favicon reforçat per a mides petites i color adaptatiu al tema del navegador.
+- Capçalera comprovada a 1280 × 720 i 320 × 640: recurs carregat correctament, mida de 36 px en escriptori i 30 px en mòbil, sense desbordament horitzontal. El cercador es manté buit i la versió visible és 0.11.2.
+- Superats els 22 grups de comprovacions existents. Cap error ni avís a la consola local. Captura a `vista-previa-v0112.jpg` (no versionada).
+- Comprovacions exclusivament locals; el web remot el revisarà l'usuari.

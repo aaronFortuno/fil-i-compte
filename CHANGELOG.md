@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.11.2 · El fil que emmarca
+
+- Nova marca vectorial pròpia: el fil forma el contorn obert d'un quadrat inclinat −12°, amb un petit bucle i una suma al centre.
+- Logo de capçalera i favicon unificats. El favicon conserva la geometria amb un contorn lleugerament més gruixut per llegir-lo a 16 px i un verd més clar en tema fosc.
+- Recursos locals a `assets/brand/`, sense dependències ni fonts externes.
+
 ## 0.11.1 · Revisió docent i peu adaptable
 
 - P0026 b) remet als minibusos previstos sense avançar la resposta d'a). P0027 elimina l'afegit d'altres despeses i P0029 c) evita repetir el pressupost.

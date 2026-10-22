@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.11.2',title:'El fil que emmarca',
+    changes:[
+      'Nova marca: un fil dibuixa el quadrat inclinat i emmarca una suma.',
+      'Logo i favicon comparteixen el mateix dibuix, amb el traç adaptat a cada mida.',
+      'El favicon s’aclareix a les pestanyes amb tema fosc.'
+    ]
+  },
+  {
     version:'0.11.1',title:'Problemes revisats i peu compacte',
     changes:[
       'Correccions de preguntes, nivells i mesures al tercer bloc, incorporant la revisió docent.',
