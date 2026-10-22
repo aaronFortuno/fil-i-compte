@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.11.1',title:'Problemes revisats i peu compacte',
+    changes:[
+      'Correccions de preguntes, nivells i mesures al tercer bloc, incorporant la revisió docent.',
+      'Peu en una sola fila: passos apilats en mòbil i eines JSON en un menú.',
+      'El cercador s’obre buit, sense rangs aplicats d’una sessió anterior.'
+    ]
+  },
+  {
     version:'0.11.0',title:'Calcula, compara i justifica',
     changes:[
       'Dotze problemes nous, P0025–P0036: el catàleg arriba als 36.',

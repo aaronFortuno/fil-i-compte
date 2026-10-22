@@ -24,7 +24,7 @@ check('Els blocs i el catàleg compleixen l’esquema i tenen 36 identificadors 
   assert.deepEqual(all,packs.flatMap(pack=>pack.exercises));assert.equal(all.length,36);assert.equal(new Set(all.map(e=>e.id)).size,all.length);all.forEach(e=>assert.equal(e.id,C.normalizeId(e.id)));
   assert.equal(data.schemaVersion,2);packs.filter(pack=>pack.exercises.some(e=>e.parts)).forEach(pack=>assert.equal(pack.schemaVersion,2));
 });
-check('Els blocs publicats respecten el seu estat de revisió i no inclouen esborranys',()=>all.forEach((e,i)=>assert.equal(e.status,i<12?'validat':'pendent-docent',e.id)));
+check('Els blocs publicats respecten el seu estat de revisió i no inclouen esborranys',()=>all.forEach((e,i)=>assert.equal(e.status,i<12||i>=24?'validat':'pendent-docent',e.id)));
 check('Les tries antigues admeten canvis editorials però rebutgen enunciats o solucions diferents',()=>{
   const current=all[0],legacy=JSON.parse(JSON.stringify(current));legacy.status='pendent-docent';
   assert(C.sameExerciseContent(legacy,current));
@@ -62,7 +62,7 @@ check('Els rangs restringeixen proposta i revisió i es combinen amb els altres 
   assert.deepEqual(all.filter(e=>C.eligible(e,{...filters,level:'superior',difficulty:'2'})).map(e=>e.id),['P0024']);
 });
 const expected=[17,183,22,66,8,105,66,276,8.3,50,52,45,433,147,432,42,4.35,36,144,45,39,12.95,81,14];
-const expectedParts={P0025:[72,[7]],P0026:[4,[102,96]],P0027:[20.4,22.8,2.4],P0028:[9,3],P0029:[4.5,13.5,[40.5,0.5]],P0030:[336,114,[112,2]],P0031:[49,37],P0032:[15,60,[5]],P0033:[96,54],P0034:[13,[6]],P0035:[6,1.2],P0036:[60,60,[20,60]]};
+const expectedParts={P0025:[72,[7]],P0026:[4,[102,96]],P0027:[20.4,22.8,2.4],P0028:[9,3],P0029:[4.5,13.5,[40.5,0.5]],P0030:[336,114,[112,2]],P0031:[49,37],P0032:[1.5,6,[0.5]],P0033:[96,54],P0034:[13,[6]],P0035:[6,1.2],P0036:[60,60,[20,60]]};
 const numericChecks=s=>s.kind==='justification'?s.evidence:[s];
 check('Totes les respostes i les evidències de justificació coincideixen amb referències independents',()=>all.forEach((e,i)=>C.exerciseParts(e).forEach(({solution:s},index)=>{
   numericChecks(s).forEach(item=>assert.deepEqual(C.evaluate(item.calculation),C.numberRatio(item.answer),e.id+' '+index));

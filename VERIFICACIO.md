@@ -183,3 +183,15 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Cerca «70 %» troba P0036 pel tercer apartat. Excloure percentatges dins del tercer bloc elimina P0029 i P0036. La pregunta triple es llegeix a 320 × 640 sense desbordament horitzontal.
 - Cap error ni avís a la consola local. Sintaxi de JavaScript i diff comprovats. Captura a `vista-previa-v0110.jpg` (no versionada). Restaurats dos problemes per pàgina, dues pàgines, la tria inicial i els filtres buits.
 - Tercer bloc publicat amb `pendent-docent`, seguint la validació posterior a la publicació autoritzada per l'usuari. No s'ha obert el diàleg d'impressió ni fet cap comprovació remota.
+
+## Revisió docent i peu compacte · 0.11.1 · 22 d'octubre de 2026
+
+- Superats els 22 grups de comprovacions. P0032 comprovat amb aritmètica exacta: √2,25 = 1,5 m, perímetre de 6 m i manca de 0,5 m respecte d'un rotlle de 5,5 m. Etiquetes i tipus numèrics actualitzats.
+- Contrastades les revisions amb el catàleg anterior: només P0026, P0027, P0029, P0031, P0032 i P0035 canvien de contingut o orientació, tots amb versió 2. Els 24 registres dels primers dos blocs són idèntics; els altres sis del tercer bloc només canvien d'estat editorial. Revisió docent del tercer bloc incorporada.
+- Peu comprovat en amplades de 1280, 1120, 1024, 768, 562, 390 i 320 px. Una sola fila de quadrícula en tots els casos; navegació amb cercles damunt dels textos en mòbil i cap desbordament horitzontal. També comprovat al pas de revisió: alçada estable de 66 px CSS en tauleta i de 86 px en mòbil.
+- Menú JSON amb les tres accions disponibles; X i Esc funcionen amb retorn del focus al botó. Camp d'importació únic i connectat a la seva etiqueta. Menú d'impressió amb les dues opcions en mòbil i tauleta; botons directes visibles en escriptori. No s'ha obert el diàleg natiu d'importació ni el d'impressió.
+- Corregit el cas de 1120 px en què els dos botons d'impressió s'apilaven: també fa servir el menú compacte. Historial accessible des de «v0.11.1», sense text afegit al peu.
+- Aplicat el rang `25-` i recarregada la pàgina: el cercador queda buit, es mostren els 36 problemes i es conserven els quatre seleccionats. El rang continua funcionant quan s'introdueix explícitament durant la sessió.
+- Revisat tot el tercer bloc en quatre pàgines de tres problemes, exercicis i solucionaris sense desbordament. Zona de treball mínima de 46 px CSS. Solució de P0032 llegida al preview amb totes les unitats en metres.
+- Captures locals a `vista-previa-v0111-tablet.jpg` i `vista-previa-v0111-mobil.jpg` (no versionades). Cap error ni avís de consola. Sintaxi i diff comprovats; HTML sense identificadors duplicats. Estat final amb cercador i filtres buits, dues pàgines de dos problemes i la tria inicial.
+- Comprovacions exclusivament locals; la comprovació del web publicat correspon a l'usuari.

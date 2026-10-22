@@ -1,5 +1,15 @@
 # Historial de canvis
 
+## 0.11.1 · Revisió docent i peu adaptable
+
+- P0026 b) remet als minibusos previstos sense avançar la resposta d'a). P0027 elimina l'afegit d'altres despeses i P0029 c) evita repetir el pressupost.
+- P0031 passa a CS intermedi. P0032 utilitza 2,25 m², costats d'1,5 m, 6 m de cinta i un rotlle de 5,5 m; etiqueta i comprovacions de decimals actualitzades.
+- P0035 passa a CS repte i planteja si l'aigua sobra o falta, sense donar per feta la suficiència a l'enunciat. Solució i pregunta a) coherents amb aquesta reformulació.
+- Versions dels sis exercicis modificats incrementades. Revisió docent del tercer bloc incorporada; els dotze registres passen a validats.
+- Versió breu al peu, sense «Novetats». Una sola fila també en tauleta; en mòbil, cercles damunt dels textos de navegació. Menú JSON amb icona a totes les mides i menú d'impressió compacte en tauleta i mòbil.
+- El cercador s'obre buit en visitar o recarregar, encara que la sessió anterior tingui un rang desat. Els rangs continuen funcionant durant la sessió i en importar explícitament una tria.
+- Criteri d'autoria documentat: unitats de mesura habituals en el context, evitant submúltiples o múltiples intermedis sense ús quotidià.
+
 ## 0.11.0 · Problemes amb diversos apartats
 
 - Tercer bloc de 12 problemes, P0025–P0036: set amb dues preguntes i cinc amb tres, amb 29 apartats en total. Inclou comparació de compres, pressupostos, capacitats, fraccions, percentatges, potències, arrels i justificacions.

@@ -1,6 +1,6 @@
 # Bloc 03 · Calcula, compara i justifica
 
-12 problemes estàtics amb una possible resolució. Càlculs i coherència comprovats abans de publicar. Validació docent de l'usuari prevista després de la publicació.
+12 problemes estàtics amb una possible resolució. Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats.
 
 Aquest document es genera a partir de data/packs/bloc-03.json; les correccions es fan al bloc original.
 
@@ -58,7 +58,7 @@ Expressió: (87 + 9) ÷ 24 = 4
 
 
 
-**b) Si s'hi afegeixen 6 alumnes, quatre minibusos continuen sent suficients? Explica-ho.**
+**b) Si s'hi afegeixen 6 alumnes, els minibusos previstos continuen sent suficients? Explica-ho.**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis.
 
@@ -76,7 +76,7 @@ Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Par�
 
 Cicle superior · Repte · Estructura: comparacio
 
-Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €. No hi ha altres despeses.
+Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €.
 
 **a) Quant costen les 12 llibretes a la botiga A?**
 
@@ -194,7 +194,7 @@ Expressió: 18 − 4,50 = 13,50
 
 
 
-**c) Amb 40 € poden comprar les 3 entrades? Justifica-ho.**
+**c) Poden comprar les 3 entrades? Justifica-ho.**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Decimals.
 
@@ -258,7 +258,7 @@ Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Par�
 
 ## P0031 · El mural de rajoles
 
-Inici d’ESO · Intermedi · Estructura: quadrats
+Cicle superior · Intermedi · Estructura: quadrats
 
 Un mural quadrat té 7 files de 7 rajoles. Durant una reparació es retiren 12 rajoles.
 
@@ -298,45 +298,45 @@ Representació visual: De les 49 rajoles, en ratllem 12; en queden 37.
 
 Inici d’ESO · Intermedi · Estructura: mesura
 
-Una catifa quadrada té una superfície de 225 dm². Volem cosir una cinta al llarg de tota la vora, sense afegir-ne per a unions.
+Una catifa quadrada té una superfície de 2,25 m². Volem cosir una cinta al llarg de tota la vora, sense afegir-ne per a unions.
 
 **a) Quant mesura cada costat?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels, Decimals.
 
 **Una possible resolució**
 
-1. 15 × 15 = 225; per tant, √225 = 15 dm.
+1. 1,5 × 1,5 = 2,25; per tant, √2,25 = 1,5 m.
 
-Expressió: √225 = 15
+Expressió: √2,25 = 1,5
 
-**Cada costat mesura 15 dm.**
-
-
-
-**b) Quants decímetres de cinta necessitem?**
-
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels.
-
-**Una possible resolució**
-
-1. Sumem els quatre costats iguals: 4 × 15 = 60 dm.
-
-Expressió: 4 × √225 = 60
-
-**Necessitem 60 dm de cinta.**
+**Cada costat mesura 1,5 m.**
 
 
 
-**c) Un rotlle de 55 dm és suficient? Explica per què.**
+**b) Quants metres de cinta necessitem?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels, Decimals.
 
 **Una possible resolució**
 
-1. Calen 60 dm i només en tenim 55: 60 − 55 = 5 dm.
+1. Sumem els quatre costats iguals: 4 × 1,5 = 6 m.
 
-**No és suficient: falten 5 dm de cinta.**
+Expressió: 4 × √2,25 = 6
+
+**Necessitem 6 m de cinta.**
+
+
+
+**c) Un rotlle de 5,5 m és suficient? Explica per què.**
+
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Arrels, Decimals.
+
+**Una possible resolució**
+
+1. Calen 6 m i només en tenim 5,5: 6 − 5,5 = 0,5 m.
+
+**No és suficient: falten 0,5 m de cinta.**
 
 
 
@@ -415,11 +415,11 @@ Pots dibuixar les pàgines com a grups de 12 espais.
 
 ## P0035 · L'aigua de les cantimplores
 
-Cicle superior · Intermedi · Estructura: mesura
+Cicle superior · Repte · Estructura: mesura
 
-Tenim 7,2 litres d'aigua i omplim completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.
+Tenim 7,2 litres d'aigua i volem omplir completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.
 
-**a) Quants litres posem en total a les cantimplores?**
+**a) Quants litres necessitem per omplir totes les cantimplores?**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar.
 
@@ -429,21 +429,21 @@ Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Deci
 
 Expressió: 8 × 0,75 = 6
 
-**Hi posem 6 litres en total.**
+**Necessitem 6 litres en total.**
 
 
 
-**b) Quants litres d'aigua ens queden sense repartir?**
+**b) Sobrarà o faltarà aigua? Quants litres? Justifica-ho amb un càlcul.**
 
 Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar.
 
 **Una possible resolució**
 
-1. Restem els 6 litres repartits dels 7,2 litres inicials.
+1. Restem els 6 litres necessaris dels 7,2 litres disponibles: el resultat positiu indica que sobra aigua.
 
 Expressió: 7,2 − 8 × 0,75 = 1,2
 
-**Ens queden 1,2 litres sense repartir.**
+**L'aigua és suficient i en sobren 1,2 litres.**
 
 Els 5 km de la ruta no intervenen en aquests càlculs.
 

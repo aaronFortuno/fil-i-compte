@@ -10,7 +10,8 @@
   let notice='',noticeKind='info';
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
-  query=state.filters.codes||'';
+  // Each visit starts with an empty search; saved/exported selections keep their IDs.
+  delete state.filters.codes;
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
   const capacity=()=>state.pageCount*state.perPage;
@@ -190,6 +191,20 @@
     window.addEventListener('resize',()=>{if(popup.matches(':popover-open'))positionPopover(popup,trigger);});
     document.addEventListener('scroll',event=>{if(popup.matches(':popover-open')&&!popup.contains(event.target))positionPopover(popup,trigger);},true);
   }
+  function setupFooterTools() {
+    const menus=[[$('files-popover'),$('files-toggle')],[$('print-popover'),$('print-toggle')]];
+    for(const [popup,trigger] of menus){
+      popup.addEventListener('toggle',event=>{if(event.newState==='open'){positionPopover(popup,trigger);animateElements([popup],[{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}]);}});
+    }
+    $('files-popover').addEventListener('click',event=>{if(event.target.closest('#save,#export-catalog'))$('files-popover').hidePopover();});
+    $('print-popover').addEventListener('click',event=>{
+      const button=event.target.closest('[data-print]');if(!button)return;
+      $('print-popover').hidePopover();print(button.dataset.print==='solutions');
+    });
+    const reposition=()=>{for(const [popup,trigger] of menus)if(popup.matches(':popover-open')){if(trigger.getClientRects().length)positionPopover(popup,trigger);else popup.hidePopover();}};
+    window.addEventListener('resize',reposition);
+    document.addEventListener('scroll',event=>{if(!menus.some(([popup])=>popup.contains(event.target)))reposition();},true);
+  }
   function setupSelectionPopover() {
     const popup=$('selection-popover');
     popup.addEventListener('beforetoggle',event=>{
@@ -239,6 +254,7 @@
     if(review===reviewStep)return;
     if($('selection-popover').matches(':popover-open'))$('selection-popover').hidePopover();
     if($('search-help').matches(':popover-open'))$('search-help').hidePopover();
+    for(const id of ['files-popover','print-popover'])if($(id).matches(':popover-open'))$(id).hidePopover();
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
@@ -384,6 +400,7 @@
   $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:3,state,exercises:selected()}));
   $('load').addEventListener('change',async event=>{
     const file=event.target.files[0];if(!file)return;
+    if($('files-popover').matches(':popover-open'))$('files-popover').hidePopover();
     try {
       if(file.size>1000000)throw Error('El fitxer és massa gran.');
       const saved=JSON.parse(await file.text());
@@ -397,7 +414,7 @@
   $('export-catalog').addEventListener('click',()=>download('fil-i-compte-cataleg.json',EXERCISE_CATALOG));
   function setupHistory() {
     const releases=FIL_I_COMPTE_RELEASES,dialog=$('history-dialog'),trigger=$('version-history');
-    trigger.textContent='v'+releases[0].version+' · Novetats';
+    trigger.textContent='v'+releases[0].version;trigger.title='Historial de versions';
     trigger.setAttribute('aria-label','Versió '+releases[0].version+'. Obre l’historial de canvis');
     $('release-list').innerHTML=releases.map((release,index)=>`<li><div class="release-meta"><span class="release-version">v${escape(release.version)}</span>${index===0?'<span class="release-current">Versió actual</span>':''}</div><h3>${escape(release.title)}</h3><ul>${release.changes.map(change=>`<li>${escape(change)}</li>`).join('')}</ul></li>`).join('');
     bindDialog(dialog,trigger,$('close-history'));
@@ -453,5 +470,5 @@
     render();
   }
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
-  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();makeFilters();update();
+  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();setupFooterTools();makeFilters();update();
 })();

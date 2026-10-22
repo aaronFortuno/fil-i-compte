@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 6,
+    "version": 7,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Càlculs i coherència comprovats abans de publicar. Validació docent de l'usuari prevista després de la publicació."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats."
   },
   "exercises": [
     {
@@ -1109,7 +1109,7 @@
       "structure": "suficiencia",
       "level": "mitja",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Per a una festa hi ha 6 paquets de 12 gots reutilitzables. Hi participaran 65 persones i cadascuna necessitarà un got.",
       "features": [
         "suma-resta",
@@ -1169,13 +1169,13 @@
     },
     {
       "id": "P0026",
-      "version": 1,
+      "version": 2,
       "title": "Minibusos per a la trobada",
       "context": "transport",
       "structure": "suficiencia",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "A una trobada hi aniran 87 alumnes i 9 adults. Cada minibús té 24 places per a passatgers, a més de la del conductor.",
       "features": [
         "suma-resta",
@@ -1212,7 +1212,7 @@
           }
         },
         {
-          "question": "Si s'hi afegeixen 6 alumnes, quatre minibusos continuen sent suficients? Explica-ho.",
+          "question": "Si s'hi afegeixen 6 alumnes, els minibusos previstos continuen sent suficients? Explica-ho.",
           "solution": {
             "kind": "justification",
             "response": "No: hi hauria 102 passatgers i només 96 places. Caldria un cinquè minibús.",
@@ -1248,14 +1248,14 @@
     },
     {
       "id": "P0027",
-      "version": 1,
+      "version": 2,
       "title": "Dues ofertes de llibretes",
       "context": "compres",
       "structure": "comparacio",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
-      "statement": "Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €. No hi ha altres despeses.",
+      "status": "validat",
+      "statement": "Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €.",
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
@@ -1336,7 +1336,7 @@
       "structure": "part-total",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Una cursa té un recorregut de 12 km. La Laia ja ha completat tres quartes parts (3/4) del recorregut.",
       "features": [
         "suma-resta",
@@ -1401,13 +1401,13 @@
     },
     {
       "id": "P0029",
-      "version": 1,
+      "version": 2,
       "title": "Entrades amb descompte",
       "context": "cinema",
       "structure": "descompte",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Una entrada de cinema costa 18 €. Avui totes les entrades tenen un descompte del 25 %. Un grup vol comprar-ne 3 i disposa de 40 €.",
       "features": [
         "suma-resta",
@@ -1463,7 +1463,7 @@
           }
         },
         {
-          "question": "Amb 40 € poden comprar les 3 entrades? Justifica-ho.",
+          "question": "Poden comprar les 3 entrades? Justifica-ho.",
           "solution": {
             "kind": "justification",
             "response": "No: les tres entrades costen 40,50 € i els falten 0,50 €.",
@@ -1501,7 +1501,7 @@
       "structure": "pressupost",
       "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "La biblioteca té 450 € per comprar material. Compra 6 llibres a 32 € cadascun i 8 còmics a 18 € cadascun.",
       "features": [
         "suma-resta",
@@ -1604,13 +1604,13 @@
     },
     {
       "id": "P0031",
-      "version": 1,
+      "version": 2,
       "title": "El mural de rajoles",
       "context": "art",
       "structure": "quadrats",
-      "level": "eso",
+      "level": "superior",
       "difficulty": 2,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Un mural quadrat té 7 files de 7 rajoles. Durant una reparació es retiren 12 rajoles.",
       "features": [
         "suma-resta",
@@ -1673,80 +1673,81 @@
     },
     {
       "id": "P0032",
-      "version": 1,
+      "version": 2,
       "title": "La catifa quadrada",
       "context": "decoracio",
       "structure": "mesura",
       "level": "eso",
       "difficulty": 2,
-      "status": "pendent-docent",
-      "statement": "Una catifa quadrada té una superfície de 225 dm². Volem cosir una cinta al llarg de tota la vora, sense afegir-ne per a unions.",
+      "status": "validat",
+      "statement": "Una catifa quadrada té una superfície de 2,25 m². Volem cosir una cinta al llarg de tota la vora, sense afegir-ne per a unions.",
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "arrels"
+        "arrels",
+        "decimals"
       ],
       "numeric": {
-        "data": "naturals",
-        "intermediate": "naturals",
-        "result": "naturals"
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
       },
       "parts": [
         {
           "question": "Quant mesura cada costat?",
           "solution": {
-            "expression": "√225 = 15",
+            "expression": "√2,25 = 1,5",
             "calculation": [
               "sqrt",
-              225
+              2.25
             ],
-            "answer": 15,
-            "unit": "decímetres",
-            "response": "Cada costat mesura 15 dm.",
+            "answer": 1.5,
+            "unit": "metres",
+            "response": "Cada costat mesura 1,5 m.",
             "steps": [
-              "15 × 15 = 225; per tant, √225 = 15 dm."
+              "1,5 × 1,5 = 2,25; per tant, √2,25 = 1,5 m."
             ],
             "note": ""
           }
         },
         {
-          "question": "Quants decímetres de cinta necessitem?",
+          "question": "Quants metres de cinta necessitem?",
           "solution": {
-            "expression": "4 × √225 = 60",
+            "expression": "4 × √2,25 = 6",
             "calculation": [
               "mul",
               4,
               [
                 "sqrt",
-                225
+                2.25
               ]
             ],
-            "answer": 60,
-            "unit": "decímetres",
-            "response": "Necessitem 60 dm de cinta.",
+            "answer": 6,
+            "unit": "metres",
+            "response": "Necessitem 6 m de cinta.",
             "steps": [
-              "Sumem els quatre costats iguals: 4 × 15 = 60 dm."
+              "Sumem els quatre costats iguals: 4 × 1,5 = 6 m."
             ],
             "note": ""
           }
         },
         {
-          "question": "Un rotlle de 55 dm és suficient? Explica per què.",
+          "question": "Un rotlle de 5,5 m és suficient? Explica per què.",
           "solution": {
             "kind": "justification",
-            "response": "No és suficient: falten 5 dm de cinta.",
+            "response": "No és suficient: falten 0,5 m de cinta.",
             "steps": [
-              "Calen 60 dm i només en tenim 55: 60 − 55 = 5 dm."
+              "Calen 6 m i només en tenim 5,5: 6 − 5,5 = 0,5 m."
             ],
             "evidence": [
               {
                 "calculation": [
                   "sub",
-                  60,
-                  55
+                  6,
+                  5.5
                 ],
-                "answer": 5
+                "answer": 0.5
               }
             ],
             "note": ""
@@ -1762,7 +1763,7 @@
       "structure": "part-total",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "En una piscina de joc hi ha 240 boles. D'aquest total, 2/5 són vermelles i 3/8 són blaves. La resta són d'altres colors.",
       "features": [
         "suma-resta",
@@ -1840,7 +1841,7 @@
       "structure": "suficiencia",
       "level": "mitja",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotografies.",
       "features": [
         "suma-resta",
@@ -1904,14 +1905,14 @@
     },
     {
       "id": "P0035",
-      "version": 1,
+      "version": 2,
       "title": "L'aigua de les cantimplores",
       "context": "excursio",
       "structure": "mesura",
       "level": "superior",
-      "difficulty": 2,
-      "status": "pendent-docent",
-      "statement": "Tenim 7,2 litres d'aigua i omplim completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.",
+      "difficulty": 3,
+      "status": "validat",
+      "statement": "Tenim 7,2 litres d'aigua i volem omplir completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.",
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
@@ -1926,7 +1927,7 @@
       },
       "parts": [
         {
-          "question": "Quants litres posem en total a les cantimplores?",
+          "question": "Quants litres necessitem per omplir totes les cantimplores?",
           "solution": {
             "expression": "8 × 0,75 = 6",
             "calculation": [
@@ -1936,7 +1937,7 @@
             ],
             "answer": 6,
             "unit": "litres",
-            "response": "Hi posem 6 litres en total.",
+            "response": "Necessitem 6 litres en total.",
             "steps": [
               "Multipliquem la capacitat d'una cantimplora per 8."
             ],
@@ -1944,7 +1945,7 @@
           }
         },
         {
-          "question": "Quants litres d'aigua ens queden sense repartir?",
+          "question": "Sobrarà o faltarà aigua? Quants litres? Justifica-ho amb un càlcul.",
           "solution": {
             "expression": "7,2 − 8 × 0,75 = 1,2",
             "calculation": [
@@ -1958,9 +1959,9 @@
             ],
             "answer": 1.2,
             "unit": "litres",
-            "response": "Ens queden 1,2 litres sense repartir.",
+            "response": "L'aigua és suficient i en sobren 1,2 litres.",
             "steps": [
-              "Restem els 6 litres repartits dels 7,2 litres inicials."
+              "Restem els 6 litres necessaris dels 7,2 litres disponibles: el resultat positiu indica que sobra aigua."
             ],
             "note": "Els 5 km de la ruta no intervenen en aquests càlculs."
           }
@@ -1975,7 +1976,7 @@
       "structure": "percentatge-acumulat",
       "level": "superior",
       "difficulty": 3,
-      "status": "pendent-docent",
+      "status": "validat",
       "statement": "Tenim 150 samarretes per vendre. El primer dia venem el 40 % del total inicial i el segon dia en venem 30 més.",
       "features": [
         "suma-resta",
