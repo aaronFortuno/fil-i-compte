@@ -1,6 +1,14 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.9.0',title:'24 problemes -i sumant-',
+    changes:[
+      'Dotze problemes nous amb solucions, del P013 al P024.',
+      'Vuit problemes d’una sola operació amplien les tries sense operacions combinades.',
+      'Catàleg organitzat en blocs JSON i documents de revisió per a cada bateria.'
+    ]
+  },
+  {
     version:'0.8.3',title:'La tria, sempre a mà',
     changes:[
       'Estat de la tria fix al costat de la revisió, sense desplaçar les targetes.',

@@ -413,6 +413,6 @@
     });
     render();
   }
-  $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes per pensar, practicar i aprendre';
+  $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
   setupHistory();setupHelp();setupSelectionPopover();makeFilters();update();
 })();

@@ -1,13 +1,13 @@
-/* Generat des de data/catalog.json amb node tools/build-data.cjs. */
+/* Generat des de data/packs/ amb node tools/build-data.cjs. */
 globalThis.EXERCISE_CATALOG = {
   "schemaVersion": 1,
   "pack": {
-    "id": "primer-bloc",
-    "title": "Dotze maneres de pensar",
+    "id": "fil-i-compte",
+    "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 2,
+    "version": 3,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "Càlculs comprovats i problemes validats en la revisió del projecte."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació."
   },
   "exercises": [
     {
@@ -619,6 +619,487 @@ globalThis.EXERCISE_CATALOG = {
           "caption": "Primer trobem el costat del quadrat i després el seu contorn. La porta queda sense tanca."
         },
         "note": "La superfície és en m²; el costat i la tanca es mesuren en metres."
+      }
+    },
+    {
+      "id": "P013",
+      "version": 1,
+      "title": "Dos dies de teatre",
+      "context": "teatre",
+      "structure": "composicio",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per a l'obra de teatre de l'escola s'han venut 186 entrades per a divendres i 247 per a dissabte.",
+      "question": "Quantes entrades s'han venut entre els dos dies?",
+      "features": [
+        "suma-resta"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "186 + 247 = 433",
+        "calculation": [
+          "add",
+          186,
+          247
+        ],
+        "answer": 433,
+        "unit": "entrades",
+        "response": "S'han venut 433 entrades en total.",
+        "steps": [
+          "Ajuntem les vendes dels dos dies: 186 + 247 = 433 entrades."
+        ],
+        "note": "Pots representar els dos dies amb dues barres i buscar-ne el total."
+      }
+    },
+    {
+      "id": "P014",
+      "version": 1,
+      "title": "Places lliures al concert",
+      "context": "concert",
+      "structure": "complement",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Una sala de concerts té 525 seients. Quan comença el concert hi ha 378 seients ocupats.",
+      "question": "Quants seients queden lliures?",
+      "features": [
+        "suma-resta"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "525 − 378 = 147",
+        "calculation": [
+          "sub",
+          525,
+          378
+        ],
+        "answer": 147,
+        "unit": "seients",
+        "response": "Queden 147 seients lliures.",
+        "steps": [
+          "Restem els seients ocupats dels que té la sala: 525 − 378 = 147."
+        ],
+        "note": "També pots comptar quant falta de 378 fins a 525 amb una recta numèrica."
+      }
+    },
+    {
+      "id": "P015",
+      "version": 1,
+      "title": "Cartells per a les escoles",
+      "context": "impremta",
+      "structure": "grups-iguals",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una impremta prepara 18 cartells per a cadascuna de les 24 escoles que participen en una campanya.",
+      "question": "Quants cartells ha de preparar en total?",
+      "features": [
+        "multiplicacio-divisio"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "24 × 18 = 432",
+        "calculation": [
+          "mul",
+          24,
+          18
+        ],
+        "answer": 432,
+        "unit": "cartells",
+        "response": "Ha de preparar 432 cartells.",
+        "steps": [
+          "Hi ha 24 grups de 18 cartells: 24 × 18 = 432 cartells."
+        ],
+        "note": "Un esquema amb 24 grups iguals ajuda a identificar la multiplicació."
+      }
+    },
+    {
+      "id": "P016",
+      "version": 1,
+      "title": "Sobres de llavors",
+      "context": "jardineria",
+      "structure": "repartiment",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim 336 llavors i les repartim a parts iguals entre 8 sobres, sense que en sobri cap. El paquet de llavors ha costat 12 €.",
+      "question": "Quantes llavors posem a cada sobre?",
+      "features": [
+        "multiplicacio-divisio",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "336 ÷ 8 = 42",
+        "calculation": [
+          "div",
+          336,
+          8
+        ],
+        "answer": 42,
+        "unit": "llavors per sobre",
+        "response": "Posem 42 llavors a cada sobre.",
+        "steps": [
+          "Repartim les 336 llavors entre els 8 sobres: 336 ÷ 8 = 42."
+        ],
+        "note": "El preu de 12 € no intervé en el repartiment de les llavors."
+      }
+    },
+    {
+      "id": "P017",
+      "version": 1,
+      "title": "El camí fins al mirador",
+      "context": "excursio",
+      "structure": "composicio",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Una ruta va de l'escola a la font i després de la font al mirador. El primer tram fa 2,75 km i el segon fa 1,6 km.",
+      "question": "Quants quilòmetres fa la ruta de l'escola al mirador?",
+      "features": [
+        "suma-resta",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "expression": "2,75 + 1,6 = 4,35",
+        "calculation": [
+          "add",
+          2.75,
+          1.6
+        ],
+        "answer": 4.35,
+        "unit": "quilòmetres",
+        "response": "La ruta fa 4,35 km.",
+        "steps": [
+          "Sumem els dos trams: 2,75 + 1,60 = 4,35 km."
+        ],
+        "note": "En una suma vertical, alinea les comes i les xifres que tenen el mateix valor posicional."
+      }
+    },
+    {
+      "id": "P018",
+      "version": 1,
+      "title": "Cintes per a les medalles",
+      "context": "esport",
+      "structure": "mesura",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Disposem d'una cinta de 12,6 metres. Per a cada medalla tallem un tros de 0,35 metres, sense perdre cinta en els talls.",
+      "question": "Quants trossos complets de 0,35 metres podem obtenir?",
+      "features": [
+        "multiplicacio-divisio",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "12,6 ÷ 0,35 = 36",
+        "calculation": [
+          "div",
+          12.6,
+          0.35
+        ],
+        "answer": 36,
+        "unit": "trossos",
+        "response": "Podem obtenir 36 trossos, sense que sobri cinta.",
+        "steps": [
+          "Busquem quants trossos de 0,35 m caben en 12,6 m: 12,6 ÷ 0,35 = 36."
+        ],
+        "note": "També pots passar-ho a centímetres: repartir 1.260 cm en trossos de 35 cm dona el mateix nombre de trossos."
+      }
+    },
+    {
+      "id": "P019",
+      "version": 1,
+      "title": "Anar a l'escola amb bicicleta",
+      "context": "mobilitat",
+      "structure": "part-total",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una enquesta han participat 240 alumnes. Tres cinquenes parts (3/5) diuen que van a l'escola amb bicicleta.",
+      "question": "Quants dels alumnes enquestats van a l'escola amb bicicleta?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "240 ÷ 5 × 3 = 144",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            240,
+            5
+          ],
+          3
+        ],
+        "answer": 144,
+        "unit": "alumnes",
+        "response": "144 dels alumnes enquestats van a l'escola amb bicicleta.",
+        "steps": [
+          "Una cinquena part són 240 ÷ 5 = 48 alumnes.",
+          "Tres cinquenes parts són 48 × 3 = 144 alumnes."
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 5,
+          "filled": 3,
+          "total": 240,
+          "caption": "La barra representa els 240 alumnes. Cada part són 48 alumnes; les 3 parts ratllades en representen 144."
+        },
+        "note": "Divideix una barra en cinc parts iguals i assenyala'n tres."
+      }
+    },
+    {
+      "id": "P020",
+      "version": 1,
+      "title": "Els abonaments del museu",
+      "context": "museu",
+      "structure": "part-total",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Aquest matí han entrat 150 persones al museu. El 30 % d'aquestes persones tenen abonament anual.",
+      "question": "Quantes persones de les que han entrat aquest matí tenen abonament anual?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "150 × 30 ÷ 100 = 45",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            150,
+            30
+          ],
+          100
+        ],
+        "answer": 45,
+        "unit": "persones",
+        "response": "45 persones tenen abonament anual.",
+        "steps": [
+          "Calculem el 30 % de 150: 150 × 30 ÷ 100 = 45 persones."
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 10,
+          "filled": 3,
+          "total": 150,
+          "caption": "Cada desena part representa el 10 %: 15 persones. Tres parts, el 30 %, representen 45 persones."
+        },
+        "note": "Una altra via és trobar el 10 % (15 persones) i multiplicar-lo per 3. La barra és un suport opcional."
+      }
+    },
+    {
+      "id": "P021",
+      "version": 1,
+      "title": "Entrades per a les associacions",
+      "context": "teatre",
+      "structure": "repartiment",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un teatre ofereix 3 funcions de 96 places cadascuna. A cada funció reserva 18 places per als intèrprets i les seves famílies. Totes les entrades restants de les tres funcions es reparteixen a parts iguals entre 6 associacions.",
+      "question": "Quantes entrades rep cada associació en total?",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "3 × (96 − 18) ÷ 6 = 39",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            3,
+            [
+              "sub",
+              96,
+              18
+            ]
+          ],
+          6
+        ],
+        "answer": 39,
+        "unit": "entrades per associació",
+        "response": "Cada associació rep 39 entrades en total.",
+        "steps": [
+          "De cada funció es poden repartir 96 − 18 = 78 entrades.",
+          "De les tres funcions: 3 × 78 = 234 entrades.",
+          "Cada associació rep 234 ÷ 6 = 39 entrades."
+        ],
+        "note": "Un esquema amb tres grups de 96 places permet separar les 18 reservades de cada funció."
+      }
+    },
+    {
+      "id": "P022",
+      "version": 1,
+      "title": "Material per al taller",
+      "context": "compres",
+      "structure": "compra-canvi",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per a un taller comprem 3 carpetes a 4,75 € cadascuna i 2 capses de retoladors a 6,40 € cadascuna. Paguem amb 40 €.",
+      "question": "Quin canvi ens han de tornar?",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "expression": "40 − (3 × 4,75 + 2 × 6,40) = 12,95",
+        "calculation": [
+          "sub",
+          40,
+          [
+            "add",
+            [
+              "mul",
+              3,
+              4.75
+            ],
+            [
+              "mul",
+              2,
+              6.4
+            ]
+          ]
+        ],
+        "answer": 12.95,
+        "unit": "euros",
+        "response": "Ens han de tornar 12,95 €.",
+        "steps": [
+          "Les carpetes costen 3 × 4,75 = 14,25 €.",
+          "Els retoladors costen 2 × 6,40 = 12,80 €.",
+          "La compra costa 14,25 + 12,80 = 27,05 €.",
+          "El canvi és 40 − 27,05 = 12,95 €."
+        ],
+        "note": "Pots organitzar la compra en una taula amb el producte, la quantitat, el preu unitari i el subtotal."
+      }
+    },
+    {
+      "id": "P023",
+      "version": 1,
+      "title": "Una clau de colors",
+      "context": "codis",
+      "structure": "combinacions",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una clau té 4 caselles ordenades. A cada casella podem posar vermell, blau o groc. Un mateix color es pot repetir, i canviar els colors de posició pot donar una clau diferent.",
+      "question": "Quantes claus diferents podem formar? Expressa el càlcul amb una potència.",
+      "features": [
+        "potencies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "3⁴ = 81",
+        "calculation": [
+          "pow",
+          3,
+          4
+        ],
+        "answer": 81,
+        "unit": "claus",
+        "response": "Podem formar 81 claus diferents: 3⁴ = 81.",
+        "steps": [
+          "Cada una de les 4 caselles té 3 opcions independents: 3⁴ = 81 claus."
+        ],
+        "note": "Un arbre de possibilitats amb quatre nivells i tres branques a cada pas representa totes les claus."
+      }
+    },
+    {
+      "id": "P024",
+      "version": 1,
+      "title": "El costat de la vela",
+      "context": "navegacio",
+      "structure": "mesura",
+      "level": "eso",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En una maqueta de vaixell, una vela és quadrada i té una superfície de 196 cm².",
+      "question": "Quants centímetres mesura cada costat de la vela?",
+      "features": [
+        "arrels"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "√196 = 14",
+        "calculation": [
+          "sqrt",
+          196
+        ],
+        "answer": 14,
+        "unit": "centímetres",
+        "response": "Cada costat de la vela mesura 14 cm.",
+        "steps": [
+          "El costat del quadrat és l'arrel quadrada de la superfície: √196 = 14 cm."
+        ],
+        "note": "Dibuixa un quadrat i busca el nombre que, multiplicat per ell mateix, dona 196: 14 × 14 = 196. La superfície és en cm² i el costat en cm."
       }
     }
   ]

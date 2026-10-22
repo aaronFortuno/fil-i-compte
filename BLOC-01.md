@@ -1,8 +1,8 @@
 # Bloc 01 · Dotze maneres de pensar
 
-12 problemes estàtics amb una possible resolució. Càlculs comprovats i problemes validats en la revisió del projecte. Els dibuixos es poden veure al web.
+12 problemes estàtics amb una possible resolució. Càlculs comprovats i problemes validats en la revisió del projecte.
 
-Aquest document es genera a partir de data/catalog.json; les correccions es fan al catàleg original.
+Aquest document es genera a partir de data/packs/bloc-01.json; les correccions es fan al bloc original.
 
 ## P001 · Les pomes de l'hort
 

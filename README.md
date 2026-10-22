@@ -1,12 +1,12 @@
 # Fil i compte
 
-Banc inicial de 12 problemes estàtics en català i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
+Banc de 24 problemes estàtics en català, organitzats en dos blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
 ## Obrir i utilitzar
 
 Obre **index.html** fent-hi doble clic. El web funciona sense servidor ni connexió. També es pot previsualitzar amb `node tools/serve.cjs` a l'adreça que mostra el servidor.
 
-Per revisar el contingut seguit, obre **BLOC-01.md**: inclou els 12 enunciats, les solucions, les etiquetes i la descripció dels suports visuals.
+Per revisar el contingut seguit, obre **BLOC-01.md** o **BLOC-02.md**: cada document inclou 12 enunciats, les solucions, les etiquetes i la descripció dels suports visuals.
 
 1. Tria **Nombre de pàgines** (1, 2, 4 o 6) i **Problemes per pàgina** (2 o 3 en columna, o 4 en quadrícula 2 × 2). El total és el producte dels dos camps. A sota, tria nivell orientatiu i dificultat. La configuració queda a la dreta i es pot desplaçar independentment del banc central en pantalles d'escriptori.
 2. Els continguts es mostren de dos en dos, en etiquetes amb fons i símbol: **· Permès**, **✓ Obligatori** i **× Exclòs**. Un clic a qualsevol etiqueta fa rotar l’estat entre permès, obligatori i exclòs. Els botons admeten Enter, espai i les fletxes esquerra i dreta. Els obligatoris poden aplicar-se al conjunt del full o a cada problema; les exclusions sempre afecten tots els problemes.
@@ -30,7 +30,7 @@ La tria es conserva en aquest navegador quan l'emmagatzematge local està dispon
 
 Les noves exportacions fan servir el format 2, amb `pageCount` i `perPage`. Les tries anteriors de quatre problemes es recuperen amb dues pàgines de dos problemes; les de sis, amb dues de tres. Les tries antigues de cinc problemes es recuperen en dues pàgines de tres places; es conserven els cinc problemes i s'indica que falta completar la selecció. Els antics problemes fixats es tracten com a seleccionats normals. Les targetes del banc només mostren l'enunciat; les resolucions es consulten al solucionari.
 
-La capçalera mostra un lema amb el nombre real de problemes del catàleg. El compositor mai no repeteix problemes per omplir places: si una configuració en demana més dels que hi ha disponibles amb els filtres actuals, ho indica i conserva la tria. Amb els 12 problemes actuals, les configuracions de més de 12 places requereixen ampliar el catàleg.
+La capçalera mostra un lema amb el nombre real de problemes del catàleg i «-i sumant-». El compositor mai no repeteix problemes per omplir places: si una configuració en demana més dels que hi ha disponibles amb els filtres actuals, ho indica i conserva la tria. Amb els 24 problemes actuals, es poden omplir les 24 places màximes sense filtres. Excloent les operacions combinades hi ha 8 candidats.
 
 ## Què conté el primer bloc
 
@@ -49,11 +49,31 @@ La capçalera mostra un lema amb el nombre real de problemes del catàleg. El co
 | P011 | El mosaic del passadís | Potència i resta; quadrícula | 52 rajoles |
 | P012 | La tanca de l'hort quadrat | Arrel quadrada, perímetre i porta; esquema | 45 m de tanca |
 
-**Estat editorial: validat.** Els problemes publicats al JSON s’han revisat en el projecte i les respostes es contrasten amb càlculs exactes. Els nivells i la dificultat són orientatius. El bloc és deliberadament divers i algunes combinacions de filtres encara no tenen 4 candidats: el compositor explica aquestes limitacions i no relaxa filtres silenciosament. Els nous blocs es preparen i validen abans d’incorporar-los al catàleg publicat.
+**Primer bloc: validat.** Els nivells i la dificultat són orientatius. Algunes combinacions de filtres encara no tenen prou candidats: el compositor explica aquestes limitacions i no relaxa filtres silenciosament.
+
+## Què conté el segon bloc
+
+| ID | Problema | Contingut destacat | Resposta |
+| --- | --- | --- | --- |
+| P013 | Dos dies de teatre | Suma | 433 entrades |
+| P014 | Places lliures al concert | Resta | 147 seients |
+| P015 | Cartells per a les escoles | Multiplicació | 432 cartells |
+| P016 | Sobres de llavors | Divisió i dada irrellevant | 42 llavors/sobre |
+| P017 | El camí fins al mirador | Suma decimal | 4,35 km |
+| P018 | Cintes per a les medalles | Divisió decimal exacta | 36 trossos |
+| P019 | Anar a l'escola amb bicicleta | Fracció d'una quantitat; barra | 144 alumnes |
+| P020 | Els abonaments del museu | Percentatge; barra | 45 persones |
+| P021 | Entrades per a les associacions | Agrupació, parèntesis i repartiment | 39 entrades/associació |
+| P022 | Material per al taller | Compra i canvi amb decimals | 12,95 € |
+| P023 | Una clau de colors | Potència i combinacions | 81 claus |
+| P024 | El costat de la vela | Arrel quadrada exacta | 14 cm |
+
+**Segon bloc: càlculs i coherència comprovats, validació docent pendent.** L'usuari ha autoritzat publicar-lo per validar-lo directament al web. Els registres conserven `pendent-docent` fins a aquesta revisió, sense afegir avisos a la interfície. Els dos blocs passen les comprovacions numèriques i d'etiquetes abans de publicar.
 
 ## Model i ampliació
 
-- **data/catalog.json**: font de veritat. Conté el paquet, els 12 enunciats fixos, etiquetes, resolucions i representacions.
+- **data/packs/bloc-XX.json**: fonts de veritat, un fitxer per bateria. Contenen les metadades, els enunciats fixos, etiquetes, resolucions i representacions.
+- **data/catalog.json**: catàleg únic generat a partir dels blocs; no s'edita manualment.
 - **data/catalog.schema.json**: esquema versionat del format. El comprovador inclòs valida els termes de JSON Schema que utilitza aquest esquema.
 - **catalog-data.js**: còpia generada perquè el web pugui obrir-se amb doble clic sense les restriccions de càrrega local de JSON. No s'edita manualment.
 - **core.js**: filtres, cobertura de continguts, selecció i aritmètica racional exacta per comprovar les respostes.
@@ -65,14 +85,14 @@ Cada exercici té identificador i versió; enunciat i pregunta; context i estruc
 
 Representacions inicials: `objects` (grups de cercles i elements ratllats), `fraction` (barra de parts iguals), `grid` (quadrat de rajoles), `rectangle` i `square` (amb obertura per a una porta). Els límits de mida estan explicitats a l'esquema per mantenir la llegibilitat. Es poden afegir nous tipus quan un problema concret ho demani.
 
-Per ampliar: redacta un bloc de 10–15 problemes amb solucions, revisa'l i incorpora els registres al catàleg amb identificadors nous. Incrementa la versió d'un exercici quan canviïs el contingut. Després executa:
+Per ampliar: redacta un bloc de 10–15 problemes amb solucions en un fitxer nou `data/packs/bloc-XX.json`, amb identificadors nous. Revisa'l i registra'n l'estat editorial; publica abans de la validació docent només si l'usuari ho autoritza. Incrementa la versió d'un exercici i la del seu bloc quan canviïs el contingut. Després executa:
 
 ```text
 node tools/build-data.cjs
 node tools/check.cjs
 ```
 
-El comprovador actual també fixa les respostes dels 12 exercicis del bloc inicial. Quan s'afegeixi un nou paquet caldrà ampliar aquesta referència independent i adaptar la comprovació de mida; no només acceptar el resultat de l'arbre de càlcul.
+La preparació agrega els blocs, comprova identificadors duplicats i genera el catàleg del web, la còpia per a ús sense servidor i un document BLOC-XX.md per cada bateria. El comprovador valida l'esquema de tots els blocs i la coincidència del catàleg generat. També fixa les 24 respostes de referència. Quan s'afegeixi un nou paquet caldrà ampliar aquesta referència independent, el recompte i l'estat editorial esperat; no només acceptar el resultat de l'arbre de càlcul.
 
 Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local de les distribucions de 2, 3 i 4 problemes per pàgina. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
 

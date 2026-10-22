@@ -1,10 +1,18 @@
-const fs=require('node:fs'),path=require('node:path');
-const root=path.resolve(__dirname,'..');
-const data=JSON.parse(fs.readFileSync(path.join(root,'data','catalog.json'),'utf8'));
-fs.writeFileSync(path.join(root,'catalog-data.js'),'/* Generat des de data/catalog.json amb node tools/build-data.cjs. */\nglobalThis.EXERCISE_CATALOG = '+JSON.stringify(data,null,2)+';\n','utf8');
-const core=require('../core.js');
-const review=['# Bloc 01 · Dotze maneres de pensar','', '12 problemes estàtics amb una possible resolució. Càlculs comprovats i problemes validats en la revisió del projecte. Els dibuixos es poden veure al web.','','Aquest document es genera a partir de data/catalog.json; les correccions es fan al catàleg original.','',...data.exercises.flatMap(e=>[
-  `## ${e.id} · ${e.title}`,'',`${core.LEVELS[e.level]} · ${core.DIFFICULTIES[e.difficulty]} · Estructura: ${e.structure}`,'',e.statement,'',`**${e.question}**`,'',`Continguts: ${e.features.map(f=>core.FEATURES[f]).join(', ')}.`,'','**Una possible resolució**','',...e.solution.steps.map((s,i)=>`${i+1}. ${s}`),'',`Expressió: ${e.solution.expression}`,'',`**${e.solution.response}**`,'',...(e.solution.visual?[`Representació visual: ${e.solution.visual.caption}`,'']:[]),e.solution.note,'','---',''
-])].join('\n');
-fs.writeFileSync(path.join(root,'BLOC-01.md'),review,'utf8');
-console.log(`Catàleg preparat: ${data.exercises.length} problemes. El web també es pot obrir sense servidor.`);
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),core=require('../core.js'),directory=path.join(root,'data','packs');
+const files=fs.readdirSync(directory).filter(name=>/^bloc-\d+\.json$/.test(name)).sort();
+assert(files.length,'Cal almenys un bloc de problemes.');
+const packs=files.map(file=>({file,data:JSON.parse(fs.readFileSync(path.join(directory,file),'utf8'))}));
+const exercises=packs.flatMap(({data})=>data.exercises);
+assert.equal(new Set(exercises.map(e=>e.id)).size,exercises.length,'Hi ha identificadors repetits entre blocs.');
+const data={schemaVersion:1,pack:{id:'fil-i-compte',title:'Banc de problemes contextualitzats',language:'ca',version:packs.reduce((sum,p)=>sum+p.data.pack.version,0),authorship:'Contingut original creat per a aquest projecte',review:packs.map(({file,data})=>`${file}: ${data.pack.review}`).join(' ')},exercises};
+fs.writeFileSync(path.join(root,'data','catalog.json'),JSON.stringify(data,null,2)+'\n','utf8');
+fs.writeFileSync(path.join(root,'catalog-data.js'),'/* Generat des de data/packs/ amb node tools/build-data.cjs. */\nglobalThis.EXERCISE_CATALOG = '+JSON.stringify(data,null,2)+';\n','utf8');
+for(const {file,data:pack} of packs){
+  const number=file.match(/\d+/)[0];
+  const review=[`# Bloc ${number} · ${pack.pack.title}`,'',`${pack.exercises.length} problemes estàtics amb una possible resolució. ${pack.pack.review}`,'',`Aquest document es genera a partir de data/packs/${file}; les correccions es fan al bloc original.`,'',...pack.exercises.flatMap(e=>[
+    `## ${e.id} · ${e.title}`,'',`${core.LEVELS[e.level]} · ${core.DIFFICULTIES[e.difficulty]} · Estructura: ${e.structure}`,'',e.statement,'',`**${e.question}**`,'',`Continguts: ${e.features.map(f=>core.FEATURES[f]).join(', ')}.`,'','**Una possible resolució**','',...e.solution.steps.map((s,i)=>`${i+1}. ${s}`),'',`Expressió: ${e.solution.expression}`,'',`**${e.solution.response}**`,'',...(e.solution.visual?[`Representació visual: ${e.solution.visual.caption}`,'']:[]),e.solution.note,'','---',''
+  ])].join('\n');
+  fs.writeFileSync(path.join(root,`BLOC-${number}.md`),review,'utf8');
+}
+console.log(`Catàleg preparat: ${exercises.length} problemes en ${packs.length} blocs. El web també es pot obrir sense servidor.`);

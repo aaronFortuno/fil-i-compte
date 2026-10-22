@@ -139,3 +139,14 @@ No s'ha publicat ni s'han fet comprovacions remotes.
 - Tria completa de 12 problemes amb desplaçament intern a la llista, comprovada en escriptori i mòbil. Revisades les amplades de 1280, 1024, 768, 390 i 320 px; sense desbordament horitzontal dels controls nous. A 320 px el botó es redueix a «Tria» per conservar el títol visible.
 - Entrada a revisió amb dues pàgines i les dues impressions disponibles; la navegació conserva la posició i reserva l'espai de l'estat ocult. Reprovats els diàlegs d'ajuda i historial, amb la 0.8.3 visible. Restaurades les opcions de dues pàgines de dos i la tria de mostra.
 - Captura a `vista-previa-v083.jpg` (no versionada). No s'ha obert el diàleg d'impressió ni fet cap comprovació remota.
+
+## Segon bloc · 0.9.0 · 22 d'octubre de 2026
+
+- Superats 16 grups de comprovacions: esquemes dels dos blocs i del catàleg, 24 identificadors únics, coincidència entre fonts i fitxers generats, 24 respostes contrastades amb referències numèriques, càlculs exactes, etiquetes, representacions, filtres, migració de tries i distribució de pàgines.
+- Comparats els primers dotze registres amb el catàleg de la 0.8.3: són idèntics. Repetida la preparació dels blocs sense modificar fonts: els hashes dels quatre fitxers generats no canvien.
+- P013–P024 seleccionats manualment i comprovats en quatre pàgines de tres problemes. Tots els enunciats i solucionaris hi caben; els espais d'escriptura mesuren entre 102 i 144 px CSS a mida nativa. Les dues barres noves es mostren amb el total, les parts i els valors corresponents.
+- Generades sis pàgines en quadrícula amb els 24 problemes, sense repeticions. Comprovats exercicis i solucionaris: cap problema desborda el seu espai; espai d'escriptura mínim de 237 px CSS. Els solucionaris mostren les nou representacions del catàleg.
+- Excloses les operacions combinades: vuit candidats (P013–P018, P023 i P024). Proposta completa de dues pàgines de quatre problemes i accés al solucionari, amb els vuit resultats.
+- Cerca de P019 amb un únic resultat correcte. Lema «24 problemes -i sumant- per pensar, practicar i aprendre» amb guions curts, revisat a 1280 i 320 px; en mòbil ocupa dues línies dins de la capçalera, sense desbordament horitzontal.
+- Cap error ni avís a la consola local. Sintaxi de JavaScript i diff comprovats. Captura a `vista-previa-v090.jpg` (no versionada). No s'ha obert el diàleg d'impressió ni comprovat el web remot.
+- Segon bloc publicat amb `pendent-docent` per autorització expressa de l'usuari, que el validarà després de publicar. La comprovació numèrica i de coherència s'ha fet abans; no es declara una validació docent ja completada.

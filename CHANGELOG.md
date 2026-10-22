@@ -1,5 +1,13 @@
 # Historial de canvis
 
+## 0.9.0 · Segona bateria: 24 problemes -i sumant-
+
+- Afegits P013–P024: suma, resta, multiplicació, divisió, decimals, fraccions, percentatges, parèntesis, potències i arrels. Vuit són d'una sola operació i quatre de diversos passos; dos solucionaris incorporen barres de parts iguals.
+- Càlculs exactes i etiquetes comprovats abans de publicar. El segon bloc queda internament com a `pendent-docent`, d'acord amb la validació posterior a la publicació autoritzada per l'usuari. El banc no afegeix avisos editorials a les targetes.
+- Fonts separades en `data/packs/bloc-01.json` i `bloc-02.json`. La preparació genera el catàleg únic del web i els documents BLOC-01.md i BLOC-02.md. Es conserven els dotze problemes anteriors sense canvis de contingut.
+- Comprovacions ampliades als 24 resultats, coherència entre blocs i catàleg, absència d'identificadors duplicats i composició sense operacions combinades.
+- Lema amb recompte dinàmic i «-i sumant-», amb guions curts.
+
 ## 0.8.3 · La tria, sempre a mà
 
 - Estat fix al peu, al costat de «Revisa la fitxa», amb recompte i indicació breu. Es manté l'espai reservat: completar la tria, desmarcar o netejar filtres no desplaça la matriu. Quan la selecció és vàlida, la indicació queda atenuada i s'activa la revisió.
