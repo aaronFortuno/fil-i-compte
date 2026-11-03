@@ -1,6 +1,6 @@
 # Fil i compte
 
-**Plantilles locals.** Al calaix «Plantilles», que s’obre amb el tirador de la dreta, desa una tria completa amb un nom. La plantilla conserva el codi exacte del lot, els filtres, el títol, el grup, la pauta i les opcions de capçalera. En obrir-la recuperes els mateixos exercicis i el mateix ordre amb els enunciats del catàleg actual. Les plantilles només es desen al navegador.
+**Plantilles locals.** Al calaix «Plantilles», que s’obre amb el tirador de la dreta, desa una tria completa amb un nom. La plantilla conserva el codi exacte del lot, els filtres, el títol, el grup, la pauta i les opcions de capçalera. En obrir-la recuperes els mateixos exercicis i el mateix ordre amb els enunciats del catàleg actual. També pots canviar-li el nom o actualitzar-la amb la tria i la configuració de la fitxa actual. Les plantilles només es desen al navegador.
 
 **Capçalera del lot.** El títol, la marca i els camps de nom, data i grup es mostren a la primera pàgina per defecte. A «Revisa la fitxa» pots activar «Repeteix la capçalera a cada pàgina». La numeració és al peu i el codi del lot, a dalt a la dreta de cada pàgina.
 

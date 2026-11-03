@@ -501,6 +501,12 @@
     const templateKey='fil-i-compte-templates-v1';
     const readTemplates=()=>JSON.parse(localStorage.getItem(templateKey)||'[]');
     const saveTemplates=templates=>localStorage.setItem(templateKey,JSON.stringify(templates));
+    const snapshotTemplate=name=>{
+      const {ids,...configuration}=state;
+      return {name,code:LotCode.encode(state),configuration};
+    };
+    const sameName=(a,b)=>a.toLocaleLowerCase('ca')===b.toLocaleLowerCase('ca');
+    const templateList=$('template-list');
     const templateSummary=({code,configuration})=>{
       let size='';
       try{
@@ -514,13 +520,34 @@
       };
       return size+summary('require','Obligatoris')+summary('exclude','Exclosos');
     };
-    const renderTemplates=()=>{
+    const renderTemplates=(editingName,action)=>{
       const templates=readTemplates();
+      const ready=!issues().length;
       $('template-empty').hidden=templates.length>0;
-      $('template-list').innerHTML=templates.map(template=>{
+      templateList.innerHTML=templates.map(template=>{
         const name=escape(template.name);
-        return `<li><div class="template-summary"><strong>${name}</strong><code>${escape(template.code)}</code>${templateSummary(template)}</div><div class="utility-actions"><button type="button" class="secondary" data-template-open="${name}" aria-label="Obre ${name}">Obre</button><button type="button" class="secondary" data-template-delete="${name}" aria-label="Elimina ${name}">Elimina</button></div></li>`;
+        const actions=`<div class="utility-actions">
+          <button type="button" class="secondary" data-template-action="open" aria-label="Obre ${name}">Obre</button>
+          <button type="button" class="secondary" data-template-action="rename" aria-label="Canvia el nom de ${name}">Canvia el nom</button>
+          <button type="button" class="secondary" data-template-action="replace" aria-label="Actualitza ${name} amb la fitxa actual" ${ready?'':'disabled'}>Actualitza amb la fitxa actual</button>
+          <button type="button" class="secondary" data-template-action="delete" aria-label="Elimina ${name}">Elimina</button>
+        </div>`;
+        const editor=editingName===template.name?`<form class="template-save template-editor" data-template-edit="${action}">
+          ${action==='rename'
+            ?`<label for="template-rename">Nom nou</label><input id="template-rename" value="${name}" maxlength="80" required>`
+            :`<p>Vols substituir els exercicis i la configuració de «${name}» pels de la fitxa actual?</p>`}
+          <div class="utility-actions">
+            <button type="submit" class="primary">${action==='rename'?'Desa el nom':'Confirma l’actualització'}</button>
+            <button type="button" class="secondary" data-template-action="cancel">Cancel·la</button>
+          </div>
+          <p class="template-error" role="alert"></p>
+        </form>`:'';
+        return `<li data-template-name="${name}"><div class="template-summary"><strong>${name}</strong><code>${escape(template.code)}</code>${templateSummary(template)}</div>${editor||actions}</li>`;
       }).join('');
+    };
+    const focusTemplateAction=(name,action)=>{
+      const row=Array.from(templateList.children).find(row=>row.dataset.templateName===name);
+      row?.querySelector(`[data-template-action="${action}"]`)?.focus();
     };
     const refresh=()=>{
       const ready=!issues().length;
@@ -543,29 +570,61 @@
       if(!name||issues().length){status.textContent='Posa un nom i completa la tria abans de desar-la.';return;}
       try{
         const templates=readTemplates();
-        if(templates.some(t=>t.name.toLocaleLowerCase('ca')===name.toLocaleLowerCase('ca'))){
+        if(templates.some(t=>sameName(t.name,name))){
           status.textContent='Ja tens una plantilla amb aquest nom. Tria’n un altre.';return;
         }
-        const {ids,...configuration}=state;
-        saveTemplates([...templates,{name,code:LotCode.encode(state),configuration}]);
+        saveTemplates([...templates,snapshotTemplate(name)]);
         $('template-name').value='';renderTemplates();status.textContent='Plantilla desada.';
         $('template-name').focus({preventScroll:true});
       }catch{status.textContent='No s’ha pogut desar la plantilla en aquest navegador.';}
     });
-    $('template-list').addEventListener('click',event=>{
-      const button=event.target.closest('[data-template-open],[data-template-delete]');
+    templateList.addEventListener('click',event=>{
+      const button=event.target.closest('[data-template-action]');
       if(!button)return;
+      const name=button.closest('li').dataset.templateName;
+      const action=button.dataset.templateAction;
       try{
-        const templates=readTemplates(),i=templates.findIndex(t=>t.name===(button.dataset.templateOpen??button.dataset.templateDelete));
+        const templates=readTemplates(),i=templates.findIndex(t=>t.name===name);
         const template=templates[i];if(!template)return;
-        if(button.hasAttribute('data-template-open')){
+        if(action==='open'){
           restore(template.code,template.configuration);
           dialog.close();$('preview-title').focus();
+        }else if(action==='rename'||action==='replace'){
+          status.textContent='';
+          renderTemplates(name,action);
+          (action==='rename'?$('template-rename'):templateList.querySelector('[data-template-action="cancel"]')).focus();
+        }else if(action==='cancel'){
+          const edit=button.form.dataset.templateEdit;
+          renderTemplates();focusTemplateAction(name,edit);
         }else if(confirm(`Vols eliminar la plantilla «${template.name}»?`)){
           saveTemplates(templates.filter((_,index)=>index!==i));renderTemplates();
           $('template-title').focus();status.textContent='Plantilla eliminada.';
         }
       }catch(error){status.textContent='No s’ha pogut completar l’acció. '+error.message;}
+    });
+    templateList.addEventListener('submit',event=>{
+      event.preventDefault();
+      const form=event.target;
+      const error=form.querySelector('.template-error');
+      const previousName=form.closest('li').dataset.templateName;
+      const action=form.dataset.templateEdit;
+      const rename=action==='rename';
+      const field=form.querySelector('input');
+      const name=rename?field.value.trim():previousName;
+      try{
+        const templates=readTemplates(),index=templates.findIndex(t=>t.name===previousName);
+        if(index<0)throw Error('Aquesta plantilla ja no està disponible.');
+        if(rename&&(!name||templates.some((t,i)=>i!==index&&sameName(t.name,name)))){
+          error.textContent=name?'Ja tens una plantilla amb aquest nom. Tria’n un altre.':'Escriu un nom per a la plantilla.';
+          field.focus();
+          return;
+        }
+        if(!rename&&issues().length)throw Error('Completa la tria abans d’actualitzar la plantilla.');
+        templates[index]=rename?{...templates[index],name}:snapshotTemplate(name);
+        saveTemplates(templates);
+        renderTemplates();focusTemplateAction(name,action);
+        status.textContent=rename?'Nom actualitzat.':'Plantilla actualitzada amb la fitxa actual.';
+      }catch(cause){error.textContent='No s’ha pogut modificar la plantilla. '+cause.message;}
     });
     const codeError=error=>{input.setAttribute('aria-invalid','true');codeStatus.textContent=error.message;input.focus();};
     input.addEventListener('input',()=>{input.removeAttribute('aria-invalid');codeStatus.textContent='';});

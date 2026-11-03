@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.17.2 · Plantilles editables
+
+- Canvia el nom d’una plantilla o actualitza-la amb els exercicis i la configuració de la fitxa actual.
+
 ## 0.17.1 · Plantilles més clares i un tirador estable
 
 - El tirador queda fix en prémer-lo i el calaix apareix sense desplaçar els controls. Desar una plantilla manté el calaix obert, el focus al camp de nom i el pas actual.

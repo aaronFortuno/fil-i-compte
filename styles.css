@@ -126,6 +126,8 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .template-summary{flex:1 0 100%;font-size:12px}
 .template-summary p{margin-top:3px}
 .template-size{color:var(--muted)}
+.template-editor{width:100%;min-width:0}
+.template-error:empty{display:none}
 .preview-order{position:absolute}
 .preview-order-actions{
   position:absolute;top:2px;right:2px;display:flex;gap:2px;padding:2px;
