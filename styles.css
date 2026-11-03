@@ -106,7 +106,10 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 #lot-form button{justify-self:start}
 #lot-status:empty,#v4v-status:empty{display:none}
 .sheet:has(.sheet-lot){padding-bottom:5mm}
-.sheet-lot{flex:none;padding-top:2mm;font-size:7.5pt;line-height:1.2;color:#394c38}
+.sheet:not(.sheet-grid)>.sheet-problems{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(var(--problem-rows),minmax(0,1fr))}
+.sheet-bottom{display:flex;flex:none;align-items:baseline;justify-content:space-between;gap:3mm;padding-top:2mm}
+.sheet-bottom .sheet-number{margin-inline-start:auto;flex:none}
+.sheet-lot{min-width:0;font-size:7.5pt;line-height:1.2;color:#394c38}
 .sheet-lot code{overflow-wrap:anywhere}
 .preview-order{position:absolute}
 .preview-order-actions{

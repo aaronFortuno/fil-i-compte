@@ -1,5 +1,7 @@
 # Fil i compte
 
+**Capçalera del lot.** El títol, la marca i els camps de nom, data i grup es mostren a la primera pàgina per defecte. A «Revisa la fitxa» pots activar «Repeteix la capçalera a cada pàgina». La numeració i el codi del lot es mantenen al peu de totes les pàgines.
+
 **Ordre dels exercicis.** A «Revisa la fitxa», passa per sobre d’un exercici i fes servir les fletxes per moure’l una posició, fins i tot entre pàgines. També hi pots arribar amb el teclat; en pantalles tàctils les fletxes són visibles directament.
 
 **Zona de treball.** A «Revisa la fitxa» pots triar puntejat (per defecte), quadrícula de 6 mm, línies suaus o espai en blanc. La pauta s’aplica a tots els exercicis de la fitxa i es desa al navegador. El codi del lot continua desant només la tria, l’ordre i la paginació.

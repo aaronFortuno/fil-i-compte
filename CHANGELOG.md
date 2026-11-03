@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.15.2 · Més espai per als exercicis
+
+- La capçalera del lot i els camps de nom, data i grup només apareixen a la primera pàgina per defecte. Es poden repetir des de la revisió.
+- La numeració passa al peu. Els exercicis es reparteixen l’espai disponible a parts iguals: dos blocs del 50 %, tres terços o una quadrícula 2 × 2.
+
 ## 0.15.1 · Reordena sobre la fitxa
 
 - Les fletxes per reordenar els exercicis passen de la barra lateral a la previsualització. El codi del lot s’actualitza amb l’ordre nou i els controls no s’imprimeixen.
