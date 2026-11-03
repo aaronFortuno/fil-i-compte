@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.19.0 · La mateixa part, tres maneres
+
+- Dotze problemes nous, de P0073 a P0084, que relacionen fraccions, decimals i percentatges.
+- El bloc inclou equivalències exactes, arrodoniment, percentatges per sota de l’1 % i per sobre del 100 %, i la diferència entre punts percentuals i variació relativa.
+
 ## 0.18.0 · De quina quantitat parlem?
 
 - Dotze problemes nous, de P0061 a P0072, amb fraccions sobre totals diferents, percentatges, decimals, potències, arrels i dades per despistar.

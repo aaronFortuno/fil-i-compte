@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 11,
+    "version": 12,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -4329,6 +4329,644 @@
           "Dividim l’augment (12) pel cabal actual (48) i multipliquem per 100 per obtenir el percentatge."
         ],
         "note": "L’augment es calcula a partir del cabal actual. Els mateixos 12 litres per hora serien el 20 % del cabal inicial."
+      }
+    },
+    {
+      "id": "P0073",
+      "version": 1,
+      "title": "El mural del passadís",
+      "context": "art",
+      "structure": "equivalencia-tres-registres",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "La classe ha pintat 3/8 del mural. Al full de seguiment una alumna hi anota 0,375 del mural i al tauler del passadís un altre alumne hi escriu «37,5 % pintat».",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Les dues anotacions coincideixen amb la part que s’ha pintat? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Les tres expressions indiquen la mateixa part del mural.",
+        "steps": [
+          "Dividim 3 entre 8 i obtenim 0,375.",
+          "Multipliquem 0,375 per 100 i obtenim 37,5 %."
+        ],
+        "note": "Totes les anotacions prenen el mural complet com a unitat.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              3,
+              8
+            ],
+            "answer": 0.375
+          },
+          {
+            "calculation": [
+              "mul",
+              0.375,
+              100
+            ],
+            "answer": 37.5
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 3,
+          "total": 1000,
+          "caption": "Les tres parts pintades representen 375 mil·lèsimes del mural, és a dir, 0,375 o 37,5 %."
+        }
+      }
+    },
+    {
+      "id": "P0074",
+      "version": 1,
+      "title": "Quan s’encén el testimoni",
+      "context": "energia",
+      "structure": "llindar-inclusiu",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En un aparell s’encén un testimoni quan queda un 15 % de bateria o menys. En tres comprovacions s’ha anotat la part de càrrega que quedava: dilluns 0,16; dimarts 3/20; dimecres 0,14.",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "En quines comprovacions havia d’estar encès el testimoni? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Dimarts i dimecres.",
+        "steps": [
+          "Dimarts, 3/20 és 0,15, és a dir, 15 %.",
+          "Dilluns quedava un 16 %, per sobre del llindar. Dimecres quedava un 14 %, per sota."
+        ],
+        "note": "El valor exacte del llindar també fa encendre el testimoni.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              0.16,
+              100
+            ],
+            "answer": 16
+          },
+          {
+            "calculation": [
+              "div",
+              3,
+              20
+            ],
+            "answer": 0.15
+          },
+          {
+            "calculation": [
+              "mul",
+              0.14,
+              100
+            ],
+            "answer": 14
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0075",
+      "version": 1,
+      "title": "L’errada al butlletí",
+      "context": "comunicacio",
+      "structure": "diagnostic-valor-posicional",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "De cada 100 respostes a una enquesta del barri, 8 demanen més aparcaments per a bicicletes. L’esborrany del butlletí diu: «Un 8 % de les respostes ho demanen, és a dir, 0,8 del total».",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "fraccions"
+      },
+      "question": "Com corregiries l’equivalència del butlletí? Expressa la proporció com a percentatge, decimal i fracció irreductible.",
+      "solution": {
+        "kind": "justification",
+        "response": "La proporció és 8 % = 0,08 = 2/25.",
+        "steps": [
+          "Vuit de cada cent és 8/100. Dividim 8 entre 100 per escriure-ho com a decimal.",
+          "Simplifiquem 8/100 dividint el numerador i el denominador per 4."
+        ],
+        "note": "El decimal 0,8 representa vuit dècimes, que equivalen al 80 %.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              8,
+              100
+            ],
+            "answer": 0.08
+          },
+          {
+            "calculation": [
+              "mul",
+              0.8,
+              100
+            ],
+            "answer": 80
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0076",
+      "version": 1,
+      "title": "Espai per al jardí",
+      "context": "hort",
+      "structure": "complement-de-dues-parts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En un terreny comunitari, 1/4 de tota la superfície serà per a flors i 0,35 del total serà per a hortalisses. Les dues zones són separades. La resta es destinarà a una zona de descans.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "El plànol diu que la zona de descans ocupa el 40 % del terreny. És correcte? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. La zona de descans ocupa 0,40 del terreny, és a dir, un 40 %.",
+        "steps": [
+          "Un quart del terreny és 0,25. Les flors i les hortalisses ocupen juntes 0,60 del total.",
+          "De la unitat sencera en queda 0,40."
+        ],
+        "note": "La fracció i els decimals del problema es refereixen al mateix terreny.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              1,
+              4
+            ],
+            "answer": 0.25
+          },
+          {
+            "calculation": [
+              "sub",
+              1,
+              [
+                "add",
+                [
+                  "div",
+                  1,
+                  4
+                ],
+                0.35
+              ]
+            ],
+            "answer": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0077",
+      "version": 1,
+      "title": "Dues seccions de la biblioteca",
+      "context": "biblioteca",
+      "structure": "mateixa-proporcio-totals-diferents",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la secció infantil, 3/5 dels 150 llibres són en català. A la secció juvenil, 0,60 dels 200 llibres són en català. Al cartell totes dues seccions indiquen «60 % de llibres en català».",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "El cartell és correcte? Explica si això vol dir que les dues seccions tenen la mateixa quantitat de llibres en català.",
+      "solution": {
+        "kind": "justification",
+        "response": "El cartell és correcte. Hi ha 90 llibres en català a la secció infantil i 120 a la juvenil.",
+        "steps": [
+          "Tres cinquens equivalen a 0,60 i a 60 %.",
+          "Apliquem la proporció a cada total: 0,60 de 150 són 90 i 0,60 de 200 són 120."
+        ],
+        "note": "Les dues seccions tenen la mateixa proporció però totals diferents.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              3,
+              5
+            ],
+            "answer": 0.6
+          },
+          {
+            "calculation": [
+              "mul",
+              150,
+              [
+                "div",
+                3,
+                5
+              ]
+            ],
+            "answer": 90
+          },
+          {
+            "calculation": [
+              "mul",
+              200,
+              0.6
+            ],
+            "answer": 120
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0078",
+      "version": 1,
+      "title": "Una còpia més gran",
+      "context": "impressio",
+      "structure": "factor-superior-a-la-unitat",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una làmina fa 24 cm d’ample. La fotocopiadora permet ampliar-la al 125 % de la mida original. Al manual, el mateix ajust apareix com a factor 1,25.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Una companya diu que l’ajust multiplica l’amplada per 5/4. Té raó? Indica quina amplada tindrà la còpia.",
+      "solution": {
+        "expression": "24 × 5 ÷ 4 = 30",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            24,
+            5
+          ],
+          4
+        ],
+        "answer": 30,
+        "unit": "cm",
+        "response": "Sí. El factor és 5/4 i la còpia farà 30 cm d’ample.",
+        "steps": [
+          "El 125 % de l’amplada original equival a multiplicar per 1,25.",
+          "El factor 1,25 és 125/100, que se simplifica a 5/4. Apliquem el factor a 24 cm."
+        ],
+        "note": "El 125 % inclou el 100 % original i una quarta part més."
+      }
+    },
+    {
+      "id": "P0079",
+      "version": 1,
+      "title": "L’aforament del concert",
+      "context": "musica",
+      "structure": "recuperacio-del-total",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Quan s’obre la venda d’entrades, se’n reserven 35 per als músics. El full de control diu que són el 17,5 % de les localitats. El programa de venda indica que la part reservada és 0,175 del total.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes localitats hi ha en total? Justifica la resposta a partir d’una fracció equivalent a la part reservada.",
+      "solution": {
+        "expression": "35 ÷ 7 × 40 = 200",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            35,
+            7
+          ],
+          40
+        ],
+        "answer": 200,
+        "unit": "localitats",
+        "response": "Hi ha 200 localitats en total.",
+        "steps": [
+          "El 17,5 % és 0,175, és a dir, 175/1000. Aquesta fracció se simplifica a 7/40.",
+          "Si 7 parts són 35 localitats, cada part són 5 localitats. El total en té 40 parts."
+        ],
+        "note": "Comprovació: 200 × 0,175 = 35."
+      }
+    },
+    {
+      "id": "P0080",
+      "version": 1,
+      "title": "El gràfic arrodonit",
+      "context": "escola",
+      "structure": "equivalencia-exacta-i-arrodoniment",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una jornada esportiva, 5/8 dels participants han acabat el circuit. Al full de càlcul, la proporció és 0,625. Un gràfic arrodoneix els percentatges a l’enter més proper, amb els empats cap amunt, i mostra 63 %.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Quin és el percentatge exacte i quants punts percentuals el separen del que mostra el gràfic?",
+      "solution": {
+        "expression": "63 − 5 ÷ 8 × 100 = 0,5",
+        "calculation": [
+          "sub",
+          63,
+          [
+            "mul",
+            [
+              "div",
+              5,
+              8
+            ],
+            100
+          ]
+        ],
+        "answer": 0.5,
+        "unit": "punts percentuals",
+        "response": "El percentatge exacte és 62,5 %. El gràfic el mostra 0,5 punts percentuals per sobre.",
+        "steps": [
+          "La fracció 5/8 dona el decimal 0,625, que equival a 62,5 %.",
+          "La diferència entre 63 % i 62,5 % és de 0,5 punts percentuals."
+        ],
+        "note": "El 63 % és una aproximació coherent amb l’arrodoniment del gràfic."
+      }
+    },
+    {
+      "id": "P0081",
+      "version": 1,
+      "title": "La comissió del pagament",
+      "context": "comerc",
+      "structure": "percentatge-menor-que-u",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una plataforma cobra una comissió del 0,5 % sobre un pagament de 800 €. El contracte també l’expressa com a 1/200 de l’import. Al full de càlcul algú ha escrit 0,05 com a factor.",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "Quin factor decimal és correcte i quina comissió s’ha de cobrar?",
+      "solution": {
+        "expression": "800 × 0,005 = 4",
+        "calculation": [
+          "mul",
+          800,
+          0.005
+        ],
+        "answer": 4,
+        "unit": "€",
+        "response": "El factor correcte és 0,005 i la comissió és de 4 €.",
+        "steps": [
+          "Dividim el percentatge per 100: 0,5 ÷ 100 = 0,005. La fracció 1/200 també val 0,005.",
+          "Multipliquem l’import per aquest factor."
+        ],
+        "note": "El factor 0,05 representa un 5 %."
+      }
+    },
+    {
+      "id": "P0082",
+      "version": 1,
+      "title": "Més alumnat al cor",
+      "context": "musica",
+      "structure": "variacio-relativa-i-punts",
+      "level": "eso",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "El trimestre passat, 2/5 de l’alumnat d’un grup feia cor. Aquest trimestre en fa 0,50 del mateix grup. A la revista de l’escola hi volen escriure «La proporció d’alumnes que fan cor ha augmentat un 10 %».",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "suma-resta",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "Com reescriuries la frase perquè distingeixi l’augment en punts percentuals de l’augment relatiu?",
+      "solution": {
+        "kind": "justification",
+        "response": "La participació ha passat del 40 % al 50 %. Ha pujat 10 punts percentuals, un 25 % respecte de la proporció anterior.",
+        "steps": [
+          "Dos cinquens són 0,40, és a dir, un 40 %. El decimal 0,50 és un 50 %.",
+          "La diferència és de 10 punts percentuals. Respecte al 40 % inicial, el quocient 10/40 és 0,25, és a dir, 25 %."
+        ],
+        "note": "Per calcular l’augment relatiu, la referència és la proporció inicial.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                2,
+                5
+              ],
+              100
+            ],
+            "answer": 40
+          },
+          {
+            "calculation": [
+              "sub",
+              50,
+              40
+            ],
+            "answer": 10
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                [
+                  "sub",
+                  50,
+                  40
+                ],
+                40
+              ],
+              100
+            ],
+            "answer": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0083",
+      "version": 1,
+      "title": "Les fitxes de la tómbola",
+      "context": "joc",
+      "structure": "comparacio-amb-llindar",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una tómbola, totes les fitxes d’una bossa tenen la mateixa probabilitat de sortir. A la bossa A, 9 de les 20 fitxes tenen premi. A la bossa B, la probabilitat d’obtenir premi és 0,40. L’organització vol triar una bossa que doni premi amb una probabilitat mínima del 42 %.",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Quina bossa compleix el requisit? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Només la bossa A compleix el requisit.",
+        "steps": [
+          "A la bossa A, la fracció 9/20 dona 0,45, equivalent al 45 %.",
+          "A la bossa B, 0,40 equival al 40 %. Només el 45 % arriba al mínim del 42 %."
+        ],
+        "note": "Per comparar les probabilitats, podem expressar-les totes en percentatges.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              9,
+              20
+            ],
+            "answer": 0.45
+          },
+          {
+            "calculation": [
+              "mul",
+              0.45,
+              100
+            ],
+            "answer": 45
+          },
+          {
+            "calculation": [
+              "mul",
+              0.4,
+              100
+            ],
+            "answer": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0084",
+      "version": 1,
+      "title": "Dues revisions de les pomes",
+      "context": "cooperativa",
+      "structure": "producte-de-proporcions",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una cooperativa, 3/4 de les pomes collides passen una primera revisió. En la segona revisió, passa el 80 % de les pomes que havien passat la primera. Al registre hi han escrit que han superat les dues revisions 0,55 de totes les pomes collides.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Quin decimal i quin percentatge del total collit haurien de constar al registre?",
+      "solution": {
+        "expression": "3 ÷ 4 × 0,80 = 0,60",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            3,
+            4
+          ],
+          0.8
+        ],
+        "answer": 0.6,
+        "unit": "del total collit",
+        "response": "El registre hauria d’indicar 0,60 del total, és a dir, un 60 %.",
+        "steps": [
+          "Tres quartes parts són 0,75. El 80 % és 0,80, i s’aplica sobre la part que ja havia passat la primera revisió.",
+          "Multipliquem les dues proporcions."
+        ],
+        "note": "De cada 100 pomes, 75 passen la primera revisió i 60 passen també la segona."
       }
     }
   ]

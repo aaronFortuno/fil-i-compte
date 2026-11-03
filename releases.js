@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.19.0',title:'La mateixa part, tres maneres',
+    changes:['Dotze problemes nous, de P0073 a P0084, que relacionen fraccions, decimals i percentatges.','El banc ja té 84 problemes.']
+  },
+  {
     version:'0.18.0',title:'De quina quantitat parlem?',
     changes:['Dotze problemes nous, de P0061 a P0072, amb fraccions sobre totals diferents i operacions variades.','El banc ja té 72 problemes.']
   },
