@@ -239,15 +239,15 @@
   }
   function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen,state.pageCount,state.perPage);
-    const lotFooter=chosen.length===capacity()?'<footer class="sheet-lot">Codi del lot: <code>'+LotCode.encode(state)+'</code></footer>':'';
+    const lotLabel=chosen.length===capacity()?'<span class="sheet-lot">Codi del lot: <code>'+LotCode.encode(state)+'</code></span>':'';
     let number=0;
     return groups.map((group,index)=>{
       const showHeader=index===0||state.repeatHeader;
       const title=showHeader?state.title.trim():'';
       const brand=showHeader&&state.showBrand;
-      const header=title||brand?`<header class="sheet-header ${title?'has-title':''}"><div>${brand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div></header>`:'';
+      const header=title||brand||lotLabel?`<header class="sheet-header ${title?'has-title':''}"><div class="sheet-topline">${brand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${lotLabel}</div>${title?`<h2>${escape(title)}</h2>`:''}</header>`:'';
       const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${!showHeader?'':solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems" style="--problem-rows:${state.perPage}">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space" data-pattern="${state.workPattern}"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
-      const page=sheet.slice(0,-10)+`<div class="sheet-bottom">${lotFooter}<span class="sheet-number">${index+1} / ${state.pageCount}</span></div></section>`;
+      const page=sheet.slice(0,-10)+`<div class="sheet-bottom"><span class="sheet-number">${index+1} / ${state.pageCount}</span></div></section>`;
       return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${page}</div>`:page;
     }).join('');
   }
@@ -487,18 +487,60 @@
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
   function setupLots(){
     const dialog=$('lot-dialog'), status=$('lot-status'), output=$('lot-current');
+    const templateKey='fil-i-compte-templates-v1';
+    const readTemplates=()=>JSON.parse(localStorage.getItem(templateKey)||'[]');
+    const saveTemplates=templates=>localStorage.setItem(templateKey,JSON.stringify(templates));
+    const renderTemplates=()=>{
+      const templates=readTemplates();
+      $('template-empty').hidden=templates.length>0;
+      $('template-list').innerHTML=templates.map(({name,code})=>`<li><div><strong>${escape(name)}</strong><code>${escape(code)}</code></div><div class="utility-actions"><button type="button" class="secondary" data-template-open="${escape(name)}" aria-label="Obre ${escape(name)}">Obre</button><button type="button" class="secondary" data-template-delete="${escape(name)}" aria-label="Elimina ${escape(name)}">Elimina</button></div></li>`).join('');
+    };
     const refresh=()=>{
       const ready=!issues().length;
       $('lot-share').hidden=!ready;
+      $('template-save').hidden=!ready;
+      $('template-incomplete').hidden=ready;
       output.value=ready?LotCode.encode(state):'';
     };
-    const restore=code=>{
+    const restore=(code,configuration={workPattern:state.workPattern,repeatHeader:state.repeatHeader})=>{
       const lot=LotCode.decode(code);
       if(lot.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Aquest lot conté exercicis que no són al catàleg actual.');
-      state=validateState({...initial(),...lot,workPattern:state.workPattern,repeatHeader:state.repeatHeader});query='';solutionView=false;
+      state=validateState({...initial(),...configuration,...lot});query=state.filters.codes||'';solutionView=false;
       notice='';syncControls();update();setStep(true);
     };
-    bindDialog(dialog,$('lot-open'),$('lot-close'),{onOpen:()=>{status.textContent='';refresh();}});
+    bindDialog(dialog,$('lot-open'),$('lot-close'),{onOpen:()=>{
+      status.textContent='';refresh();
+      try{renderTemplates();}catch{status.textContent='No s’han pogut llegir les plantilles d’aquest navegador.';}
+    }});
+    $('template-save').addEventListener('submit',event=>{
+      event.preventDefault();
+      const name=$('template-name').value.trim();
+      if(!name||issues().length){status.textContent='Posa un nom i completa la tria abans de desar-la.';return;}
+      try{
+        const templates=readTemplates();
+        if(templates.some(t=>t.name.toLocaleLowerCase('ca')===name.toLocaleLowerCase('ca'))){
+          status.textContent='Ja tens una plantilla amb aquest nom. Tria’n un altre.';return;
+        }
+        const {ids,...configuration}=state;
+        saveTemplates([...templates,{name,code:LotCode.encode(state),configuration}]);
+        $('template-name').value='';renderTemplates();status.textContent='Plantilla desada.';
+      }catch{status.textContent='No s’ha pogut desar la plantilla en aquest navegador.';}
+    });
+    $('template-list').addEventListener('click',event=>{
+      const button=event.target.closest('[data-template-open],[data-template-delete]');
+      if(!button)return;
+      try{
+        const templates=readTemplates(),i=templates.findIndex(t=>t.name===(button.dataset.templateOpen??button.dataset.templateDelete));
+        const template=templates[i];if(!template)return;
+        if(button.hasAttribute('data-template-open')){
+          restore(template.code,template.configuration);
+          dialog.close();$('preview-title').focus();
+        }else if(confirm(`Vols eliminar la plantilla «${template.name}»?`)){
+          saveTemplates(templates.filter((_,index)=>index!==i));renderTemplates();
+          $('template-title').focus();status.textContent='Plantilla eliminada.';
+        }
+      }catch(error){status.textContent='No s’ha pogut completar l’acció. '+error.message;}
+    });
     $('lot-form').addEventListener('submit',event=>{
       event.preventDefault();
       try{restore($('lot-input').value);dialog.close();$('preview-title').focus();}

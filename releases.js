@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.16.0',title:'Plantilles locals amb nom',
+    changes:['Desa i recupera la configuració i la tria exacta del lot des del navegador.','Codi del lot a la part superior dreta de cada pàgina.']
+  },
+  {
     version:'0.15.2',title:'Més espai per als exercicis',
     changes:['Capçalera i camps de nom i data només a la primera pàgina per defecte.','La zona d’exercicis es reparteix a parts iguals a cada pàgina.']
   },

@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.16.0 · Plantilles locals amb nom
+
+- «Lot d’exercicis» permet desar, obrir i eliminar plantilles al navegador. Es conserva la configuració i el codi que recupera els exercicis en el mateix ordre.
+- El codi del lot es mostra a la part superior dreta, alineat amb la marca quan és visible.
+
 ## 0.15.2 · Més espai per als exercicis
 
 - La capçalera del lot i els camps de nom, data i grup només apareixen a la primera pàgina per defecte. Es poden repetir des de la revisió.

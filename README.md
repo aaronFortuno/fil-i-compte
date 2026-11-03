@@ -1,6 +1,8 @@
 # Fil i compte
 
-**Capçalera del lot.** El títol, la marca i els camps de nom, data i grup es mostren a la primera pàgina per defecte. A «Revisa la fitxa» pots activar «Repeteix la capçalera a cada pàgina». La numeració i el codi del lot es mantenen al peu de totes les pàgines.
+**Plantilles locals.** A «Lot d’exercicis», desa una tria completa amb un nom. La plantilla conserva el codi exacte del lot, els filtres, el títol, el grup, la pauta i les opcions de capçalera. En obrir-la recuperes els mateixos exercicis i el mateix ordre amb els enunciats del catàleg actual. Les plantilles només es desen al navegador.
+
+**Capçalera del lot.** El títol, la marca i els camps de nom, data i grup es mostren a la primera pàgina per defecte. A «Revisa la fitxa» pots activar «Repeteix la capçalera a cada pàgina». La numeració és al peu i el codi del lot, a dalt a la dreta de cada pàgina.
 
 **Ordre dels exercicis.** A «Revisa la fitxa», passa per sobre d’un exercici i fes servir les fletxes per moure’l una posició, fins i tot entre pàgines. També hi pots arribar amb el teclat; en pantalles tàctils les fletxes són visibles directament.
 

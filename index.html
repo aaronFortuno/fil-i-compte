@@ -94,6 +94,17 @@
         <div class="utility-actions"><button id="lot-copy" class="secondary"><img class="ui-icon" src="assets/lucide/copy.svg" alt="" width="16" height="16"> Copia el codi</button><button id="lot-link" class="secondary">Copia l’enllaç</button></div>
       </section>
       <form id="lot-form" class="utility-card"><label for="lot-input">Recupera un lot</label><input id="lot-input" required maxlength="400" spellcheck="false" autocapitalize="characters" autocomplete="off"><p>Recupera els exercicis, l’ordre i la paginació amb els enunciats del catàleg actual.</p><button class="primary">Recupera</button></form>
+      <section class="utility-card" aria-labelledby="template-title">
+        <h3 id="template-title" tabindex="-1">Plantilles locals</h3>
+        <p>Desa la fitxa amb els exercicis en ordre, la pauta, la capçalera i els filtres. Les plantilles només són disponibles en aquest navegador.</p>
+        <form id="template-save" class="template-save">
+          <label for="template-name">Nom de la plantilla</label>
+          <div class="template-save-row"><input id="template-name" maxlength="80" required placeholder="Per exemple, Càlcul de 5è"><button class="primary">Desa</button></div>
+        </form>
+        <p id="template-incomplete" hidden>Completa la tria per desar-la com a plantilla.</p>
+        <p id="template-empty">Encara no tens cap plantilla desada.</p>
+        <ul id="template-list" class="template-list" aria-label="Plantilles desades"></ul>
+      </section>
       <p id="lot-status" role="status"></p>
     </div>
   </dialog>
