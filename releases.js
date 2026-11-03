@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.21.0',title:'Nombres petits, molts passos',
+    changes:['Dotze problemes de cicle mitjà, de P0097 a P0108, amb càlculs petits i diversos passos encadenats.','El banc ja té 108 problemes.']
+  },
+  {
     version:'0.20.0',title:'Sobre quina quantitat?',
     changes:['Dotze problemes de cicle superior, de P0085 a P0096, amb descomptes i augments encadenats.','El banc ja té 96 problemes.']
   },

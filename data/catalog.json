@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 13,
+    "version": 14,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -5690,6 +5690,639 @@
           "La recaptació ha pujat 40 €, que és el 12,5 % dels 320 € de l’any passat."
         ],
         "note": "El 50 % modifica el nombre d’entrades i el 25 % modifica el preu unitari. Per comparar els ingressos, cal multiplicar entrades per preu."
+      }
+    },
+    {
+      "id": "P0097",
+      "version": 1,
+      "title": "Pastís i compota",
+      "context": "cuina",
+      "structure": "repartiment-despres-de-cinc-passos",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hi ha 3 cistells amb 4 pomes cadascun. En fem servir 2 per al pastís i, de les que queden, la meitat per a la compota. Després me’n menjo una i reparteixo les que queden a parts iguals entre el meu germà i jo.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes pomes ens toquen a cadascú?",
+      "solution": {
+        "expression": "((3 × 4 − 2) ÷ 2 − 1) ÷ 2 = 2",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "div",
+              [
+                "sub",
+                [
+                  "mul",
+                  3,
+                  4
+                ],
+                2
+              ],
+              2
+            ],
+            1
+          ],
+          2
+        ],
+        "answer": 2,
+        "unit": "pomes",
+        "response": "Ens toquen 2 pomes a cadascú.",
+        "steps": [
+          "Hi ha 12 pomes. En traiem 2 per al pastís i en queden 10.",
+          "La compota en fa servir la meitat: en queden 5. Me’n menjo una i en queden 4.",
+          "Repartim les 4 pomes entre 2 persones."
+        ],
+        "note": "La meitat es calcula després de treure les pomes del pastís."
+      }
+    },
+    {
+      "id": "P0098",
+      "version": 1,
+      "title": "Els adhesius dels sobres",
+      "context": "material-escolar",
+      "structure": "reunir-treure-i-repartir",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Volem omplir 3 sobres amb la mateixa quantitat d’adhesius. Tenim 3 fulls amb 3 adhesius cadascun i 5 adhesius solts. Abans d’omplir els sobres, n’apartem 2 per decorar la capsa.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants adhesius posarem a cada sobre?",
+      "solution": {
+        "expression": "(3 × 3 + 5 − 2) ÷ 3 = 4",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                3
+              ],
+              5
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 4,
+        "unit": "adhesius",
+        "response": "Posarem 4 adhesius a cada sobre.",
+        "steps": [
+          "Els fulls tenen 9 adhesius. Amb els 5 solts, en tenim 14.",
+          "N’apartem 2 i repartim els 12 restants entre 3 sobres."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0099",
+      "version": 1,
+      "title": "Els ous de la veïna",
+      "context": "cuina",
+      "structure": "dos-grups-i-repartiment",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La veïna ens porta 4 capsetes amb 3 ous cadascuna. A casa ja en teníem 2. Fem dues truites amb 3 ous per truita. Volem repartir els ous que queden entre 4 oueres, amb la mateixa quantitat a cadascuna.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants ous posarem a cada ouera?",
+      "solution": {
+        "expression": "(4 × 3 + 2 − 2 × 3) ÷ 4 = 2",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                4,
+                3
+              ],
+              2
+            ],
+            [
+              "mul",
+              2,
+              3
+            ]
+          ],
+          4
+        ],
+        "answer": 2,
+        "unit": "ous",
+        "response": "Posarem 2 ous a cada ouera.",
+        "steps": [
+          "Les capsetes porten 12 ous. Amb els 2 de casa, en tenim 14.",
+          "Les dues truites necessiten 6 ous. Queden 8 ous per repartir entre 4 oueres."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0100",
+      "version": 1,
+      "title": "Abans d’obrir la capsa",
+      "context": "jocs",
+      "structure": "reconstruccio-de-la-quantitat-inicial",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al final del joc, cadascun dels 3 jugadors té 2 fitxes i encara en queden 3 a la capsa. Abans de repartir les fitxes, n’havíem afegit 2 a la capsa.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes fitxes hi havia a la capsa abans que n’hi afegíssim?",
+      "solution": {
+        "expression": "3 × 2 + 3 − 2 = 7",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "mul",
+              3,
+              2
+            ],
+            3
+          ],
+          2
+        ],
+        "answer": 7,
+        "unit": "fitxes",
+        "response": "A la capsa hi havia 7 fitxes.",
+        "steps": [
+          "Els jugadors tenen 6 fitxes en total. Amb les 3 que queden a la capsa, en comptem 9.",
+          "D’aquestes 9, dues les hi havíem afegit. Al principi n’hi havia 7."
+        ],
+        "note": "Per recuperar la quantitat inicial, desfem el canvi que es va fer abans de repartir."
+      }
+    },
+    {
+      "id": "P0101",
+      "version": 1,
+      "title": "Galetes per demà",
+      "context": "berenar",
+      "structure": "dues-safates-i-consum-en-grups",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Les galetes que sobrin aniran en 2 capses, amb la mateixa quantitat a cada capsa. Al berenar hi ha 2 safates amb 6 galetes cadascuna i una tercera safata amb 4. Tres infants mengen 2 galetes cadascun.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes galetes guardarem a cada capsa?",
+      "solution": {
+        "expression": "(2 × 6 + 4 − 3 × 2) ÷ 2 = 5",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                2,
+                6
+              ],
+              4
+            ],
+            [
+              "mul",
+              3,
+              2
+            ]
+          ],
+          2
+        ],
+        "answer": 5,
+        "unit": "galetes",
+        "response": "Guardarem 5 galetes a cada capsa.",
+        "steps": [
+          "En total hi ha 12 galetes a les dues primeres safates i 4 a la tercera.",
+          "Els infants mengen 6 galetes. En queden 10 per repartir entre 2 capses."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0102",
+      "version": 1,
+      "title": "El marcador del joc",
+      "context": "jocs",
+      "structure": "comparacio-de-dos-marcadors",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "L’equip Blau guanya 3 rondes de 4 punts cadascuna, suma 2 punts de bonificació i perd 3 punts per una falta. El Verd guanya 2 rondes de 5 punts cadascuna, suma 3 punts de bonificació i perd un punt per una falta.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin equip guanya i per quants punts?",
+      "solution": {
+        "expression": "(2 × 5 + 3 − 1) − (3 × 4 + 2 − 3) = 1",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                2,
+                5
+              ],
+              3
+            ],
+            1
+          ],
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                4
+              ],
+              2
+            ],
+            3
+          ]
+        ],
+        "answer": 1,
+        "unit": "punt",
+        "response": "Guanya l’equip Verd per 1 punt.",
+        "steps": [
+          "El Blau acaba amb 12 + 2 − 3 = 11 punts.",
+          "El Verd acaba amb 10 + 3 − 1 = 12 punts. Comparem els dos marcadors."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0103",
+      "version": 1,
+      "title": "Els minuts de la gimcana",
+      "context": "esport",
+      "structure": "marge-amb-pauses",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim 20 minuts per fer una gimcana. Farem 3 proves de 4 minuts cadascuna. Abans de començar, trigarem 3 minuts a preparar el material. Entre les proves farem 2 pauses d’un minut cadascuna.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants minuts ens sobraran quan acabem la gimcana?",
+      "solution": {
+        "expression": "20 − (3 × 4 + 3 + 2) = 3",
+        "calculation": [
+          "sub",
+          20,
+          [
+            "add",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                4
+              ],
+              3
+            ],
+            2
+          ]
+        ],
+        "answer": 3,
+        "unit": "minuts",
+        "response": "Ens sobraran 3 minuts.",
+        "steps": [
+          "Les tres proves duren 12 minuts.",
+          "Hi afegim els 3 minuts de preparació i els 2 de pausa: en total fem servir 17 minuts.",
+          "De 20 a 17 hi ha 3 minuts de diferència."
+        ],
+        "note": "La preparació passa abans de les proves, tot i que el text la menciona després."
+      }
+    },
+    {
+      "id": "P0104",
+      "version": 1,
+      "title": "Cordill per a l’hort",
+      "context": "hort",
+      "structure": "talls-i-repartiment",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Tenim una bobina de 20 metres de cordill. En tallem 4 trossos de 3 metres per a l’hort. Amb el cordill que sobra fem dos trossos de la mateixa llargada.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants metres fa cadascun dels dos últims trossos?",
+      "solution": {
+        "expression": "(20 − 4 × 3) ÷ 2 = 4",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            20,
+            [
+              "mul",
+              4,
+              3
+            ]
+          ],
+          2
+        ],
+        "answer": 4,
+        "unit": "metres",
+        "response": "Cadascun dels dos últims trossos fa 4 metres.",
+        "steps": [
+          "Els 4 trossos de l’hort fan 12 metres en total.",
+          "Queden 8 metres. Si els tallem per la meitat, cada tros fa 4 metres."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0105",
+      "version": 1,
+      "title": "Els bancs de la plaça",
+      "context": "plaça",
+      "structure": "capacitat-i-ocupacio-de-dos-grups",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la plaça s’asseuen 7 infants d’un grup i 8 d’un altre. Hi ha 3 bancs de 4 places i 2 bancs de 2 places. Al principi tots els bancs eren buits.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes places queden lliures un cop tothom s’ha assegut?",
+      "solution": {
+        "expression": "(3 × 4 + 2 × 2) − (7 + 8) = 1",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "mul",
+              3,
+              4
+            ],
+            [
+              "mul",
+              2,
+              2
+            ]
+          ],
+          [
+            "add",
+            7,
+            8
+          ]
+        ],
+        "answer": 1,
+        "unit": "plaça",
+        "response": "Queda lliure 1 plaça.",
+        "steps": [
+          "Els bancs grans ofereixen 12 places i els petits, 4. En total n’hi ha 16.",
+          "S’asseuen 15 infants. Restem aquestes places ocupades de les 16 disponibles."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0106",
+      "version": 1,
+      "title": "Els pots de retoladors",
+      "context": "material-escolar",
+      "structure": "traspas-i-comparacio",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al pot blau hi ha 9 retoladors i al pot verd n’hi ha 5. Passem 3 retoladors del pot blau al verd. Tot seguit, deixem 2 retoladors del pot verd a una altra classe.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quan acabem, quina diferència hi ha entre el nombre de retoladors dels dos pots?",
+      "solution": {
+        "expression": "(9 − 3) − (5 + 3 − 2) = 0",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            9,
+            3
+          ],
+          [
+            "sub",
+            [
+              "add",
+              5,
+              3
+            ],
+            2
+          ]
+        ],
+        "answer": 0,
+        "unit": "retoladors de diferència",
+        "response": "No hi ha cap diferència. A cada pot hi queden 6 retoladors.",
+        "steps": [
+          "El pot blau perd 3 retoladors i queda amb 6.",
+          "El pot verd rep aquests 3 retoladors i en té 8. En deixa 2 a l’altra classe i queda amb 6."
+        ],
+        "note": "Quan passem retoladors d’un pot a l’altre, cal restar-los d’un pot i sumar-los a l’altre."
+      }
+    },
+    {
+      "id": "P0107",
+      "version": 1,
+      "title": "El robot a la catifa",
+      "context": "robotica",
+      "structure": "desplacaments-en-sentits-oposats",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Un robot és a la casella 5 d’una filera numerada. Fa 3 salts endavant de 4 caselles cadascun i després fa 2 salts enrere de 3 caselles cadascun.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "A quina casella acaba el robot?",
+      "solution": {
+        "expression": "5 + 3 × 4 − 2 × 3 = 11",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            5,
+            [
+              "mul",
+              3,
+              4
+            ]
+          ],
+          [
+            "mul",
+            2,
+            3
+          ]
+        ],
+        "answer": 11,
+        "unit": "casella",
+        "response": "El robot acaba a la casella 11.",
+        "steps": [
+          "Amb els 3 salts endavant avança 12 caselles i arriba a la 17.",
+          "Amb els 2 salts enrere retrocedeix 6 caselles i arriba a l’11."
+        ],
+        "note": "També pots dibuixar una recta numerada i marcar-hi cada salt."
+      }
+    },
+    {
+      "id": "P0108",
+      "version": 1,
+      "title": "El preu de l’entrada",
+      "context": "sortida",
+      "structure": "preu-unitari-a-partir-del-canvi",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En comprar 3 entrades iguals per a una exposició, ens tornen 2 € de canvi. Havíem pagat amb 4 monedes de 2 € i 3 monedes d’1 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin preu tenia cada entrada?",
+      "solution": {
+        "expression": "(4 × 2 + 3 − 2) ÷ 3 = 3",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                4,
+                2
+              ],
+              3
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 3,
+        "unit": "€",
+        "response": "Cada entrada costava 3 €.",
+        "steps": [
+          "Les quatre monedes de 2 € sumen 8 €. Amb les altres tres, vam donar 11 €.",
+          "Com que ens tornen 2 €, les 3 entrades costen 9 € en total.",
+          "Dividim els 9 € entre les 3 entrades."
+        ],
+        "note": ""
       }
     }
   ]

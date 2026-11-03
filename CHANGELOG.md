@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.21.0 · Nombres petits, molts passos
+
+- Dotze problemes nous de cicle mitjà, de P0097 a P0108, amb nombres petits i operacions encadenades.
+- El bloc inclou repartiments exactes i enunciats en què cal ordenar les dades abans de calcular.
+
 ## 0.20.0 · Sobre quina quantitat?
 
 - Dotze problemes nous de cicle superior, de P0085 a P0096, amb descomptes i augments encadenats.
