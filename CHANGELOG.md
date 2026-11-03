@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.24.0 · Receptes a parts iguals
+
+- Dotze problemes de cicle superior, de P0133 a P0144, amb fraccions, litres i receptes.
+- Els solucionaris proposen camins amb gots, porcions i dibuixos. Sis problemes inclouen una barra de fraccions.
+
 ## 0.23.0 · Comptem euros i minuts
 
 - Dotze problemes de cicle mitjà, de P0121 a P0132, amb diners i canvi, durades i horaris.

@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "dotze-bloc",
+    "title": "Receptes a parts iguals",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0133",
+      "version": 1,
+      "title": "Sopa per a sis",
+      "context": "receptes",
+      "structure": "escalar-afegint-mitja-recepta",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per fer sopa per a 4 persones calen 3/4 de litre de brou. Avui en farem per a 6 persones, amb la mateixa quantitat per persona. Tenim un litre de brou.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants mil·lilitres de brou ens falten?",
+      "solution": {
+        "expression": "750 ÷ 2 × 3 − 1.000 = 125",
+        "calculation": [
+          "sub",
+          [
+            "mul",
+            [
+              "div",
+              750,
+              2
+            ],
+            3
+          ],
+          1000
+        ],
+        "answer": 125,
+        "unit": "mL",
+        "response": "Ens falten 125 mL.",
+        "steps": [
+          "Per a 2 persones cal la meitat de 750 mL, que són 375 mL. Per a 6 en calen tres vegades aquesta quantitat: 1.125 mL.",
+          "Restem els 1.000 mL que tenim."
+        ],
+        "note": "Amb un dibuix, divideix el litre en vuitens. Per a 4 persones en calen 6 i per a 2 persones més, 3 vuitens més. En calen 9 i en tenim 8.",
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 6,
+          "total": 1000,
+          "caption": "Cada tros són 125 mL. Els sis trossos pintats fan els 750 mL de la recepta per a quatre persones."
+        }
+      }
+    },
+    {
+      "id": "P0134",
+      "version": 1,
+      "title": "El brou per als dos plats",
+      "context": "receptes",
+      "structure": "suma-de-fraccions-de-la-mateixa-unitat",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "D’una ampolla d’un litre de brou farem servir 3/8 de litre per a cadascuna de dues sopes i 1/8 de litre per a una salsa.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quina fracció de l’ampolla quedarà després de preparar els tres plats?",
+      "solution": {
+        "expression": "1 − (3/8 + 3/8 + 1/8) = 1/8",
+        "calculation": [
+          "sub",
+          1,
+          [
+            "add",
+            [
+              "mul",
+              2,
+              [
+                "div",
+                3,
+                8
+              ]
+            ],
+            [
+              "div",
+              1,
+              8
+            ]
+          ]
+        ],
+        "answer": 0.125,
+        "unit": "de l’ampolla",
+        "response": "Quedarà un vuitè de l’ampolla, que són 125 mL.",
+        "steps": [
+          "Les dues sopes necessiten sis vuitens. La salsa n’afegeix un: en fem servir set.",
+          "Un litre té vuit vuitens. Si en gastem set, en queda un."
+        ],
+        "note": "Pinta tres caselles per a la primera sopa, tres per a la segona i una per a la salsa. La casella buida mostra el que queda.",
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 7,
+          "total": 1000,
+          "caption": "Set dels vuit trossos es fan servir. En queda un de 125 mL."
+        }
+      }
+    },
+    {
+      "id": "P0135",
+      "version": 1,
+      "title": "Aigua per a l’arròs i el pa",
+      "context": "receptes",
+      "structure": "fraccions-sobre-quantitats-successives",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una gerra conté 2 litres d’aigua. Per fer arròs en traiem una quarta part. Del que queda, en fem servir un terç per preparar la massa del pa.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta aigua quedarà a la gerra?",
+      "solution": {
+        "expression": "1.500 − 1.500 ÷ 3 = 1.000",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            2000,
+            [
+              "div",
+              2000,
+              4
+            ]
+          ],
+          [
+            "div",
+            [
+              "sub",
+              2000,
+              [
+                "div",
+                2000,
+                4
+              ]
+            ],
+            3
+          ]
+        ],
+        "answer": 1000,
+        "unit": "mL",
+        "response": "Quedarà 1 litre d’aigua.",
+        "steps": [
+          "Una quarta part de 2 litres són 500 mL. Després de fer l’arròs queden 1.500 mL.",
+          "Un terç d’aquesta quantitat són 500 mL més. Al final en queden 1.000 mL."
+        ],
+        "note": "Imagina quatre gots iguals. Un va a l’arròs. Dels tres que queden, un va al pa. En queden dos, la meitat de l’aigua inicial.",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 2,
+          "total": 2000,
+          "caption": "Cada part representa un got de 500 mL. Els dos gots pintats són l’aigua que queda."
+        }
+      }
+    },
+    {
+      "id": "P0136",
+      "version": 1,
+      "title": "Gots per al berenar",
+      "context": "begudes",
+      "structure": "mesurar-comptant-unitats-petites",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per al berenar tenim tres ampolles de mig litre de batut i una ampolla d’un quart de litre. Omplirem gots que contenen un vuitè de litre cadascun.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants gots plens podem servir?",
+      "solution": {
+        "expression": "3 × 4 + 2 = 14",
+        "calculation": [
+          "add",
+          [
+            "mul",
+            3,
+            [
+              "div",
+              500,
+              125
+            ]
+          ],
+          [
+            "div",
+            250,
+            125
+          ]
+        ],
+        "answer": 14,
+        "unit": "gots",
+        "response": "Podem servir 14 gots plens.",
+        "steps": [
+          "En mig litre hi caben quatre vuitens de litre. Cada ampolla gran omple quatre gots.",
+          "El quart de litre omple dos gots més. En total són 12 + 2."
+        ],
+        "note": "Dibuixa quatre marques sota cadascuna de les tres ampolles grans i dues sota la petita. Cada marca és un got."
+      }
+    },
+    {
+      "id": "P0137",
+      "version": 1,
+      "title": "La llimonada massa forta",
+      "context": "begudes",
+      "structure": "ajustar-una-proporcio-afegint-aigua",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La recepta demana que el concentrat de llimona sigui una quarta part de la llimonada acabada. A la gerra ja hi hem posat mig litre de concentrat i un litre d’aigua.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta aigua més hi hem d’afegir perquè quedi com diu la recepta?",
+      "solution": {
+        "expression": "4 × 500 − (500 + 1.000) = 500",
+        "calculation": [
+          "sub",
+          [
+            "mul",
+            4,
+            500
+          ],
+          [
+            "add",
+            500,
+            1000
+          ]
+        ],
+        "answer": 500,
+        "unit": "mL",
+        "response": "Hi hem d’afegir mig litre d’aigua.",
+        "steps": [
+          "Si el concentrat ocupa una de quatre parts, cada part ha de ser de mig litre. La barreja final ha de fer 2 litres.",
+          "Ara hi ha 1.500 mL a la gerra. Hi falten 500 mL."
+        ],
+        "note": "Pensa en gots de mig litre. Ara n’hi ha un de concentrat i dos d’aigua. Falta el tercer got d’aigua.",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 1,
+          "total": 2000,
+          "caption": "La recepta final porta una part de concentrat i tres d’aigua. Cada part són 500 mL."
+        }
+      }
+    },
+    {
+      "id": "P0138",
+      "version": 1,
+      "title": "Quina barreja té més gust de poma?",
+      "context": "begudes",
+      "structure": "comparar-proporcions-amb-un-total-comu",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La gerra A porta 1/4 de litre de suc de poma i 1/2 litre d’aigua. La gerra B porta 3/8 de litre de suc de poma i 5/8 de litre d’aigua.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "En quina gerra el suc de poma representa una part més gran de la barreja? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "A la gerra B. Si féssim 3 litres de cada barreja, la B tindria més suc de poma.",
+        "steps": [
+          "Quatre gerres A fan 3 litres de barreja i contenen 1 litre de suc.",
+          "Tres gerres B també fan 3 litres de barreja i contenen 1 litre i 1/8 de suc."
+        ],
+        "note": "Dibuixa les dues gerres amb blocs d’1/8 de litre. Repeteix el dibuix d’A quatre vegades i el de B tres vegades. Ara les dues tires tenen 24 blocs i pots comparar els blocs de suc.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "add",
+                250,
+                500
+              ],
+              4
+            ],
+            "answer": 3000
+          },
+          {
+            "calculation": [
+              "mul",
+              250,
+              4
+            ],
+            "answer": 1000
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "add",
+                375,
+                625
+              ],
+              3
+            ],
+            "answer": 3000
+          },
+          {
+            "calculation": [
+              "mul",
+              375,
+              3
+            ],
+            "answer": 1125
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0139",
+      "version": 1,
+      "title": "Mesurar sense marques",
+      "context": "cuina",
+      "structure": "minim-de-mesures-amb-dues-capacitats",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una recepta necessita 1 litre i 1/4 d’aigua. Només tenim una mesura d’1/3 de litre i una altra d’1/4 de litre. Cada vegada que en fem servir una, l’omplim fins dalt i l’aboquem al bol.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Com podem obtenir la quantitat exacta amb el mínim nombre de mesures plenes?",
+      "solution": {
+        "kind": "justification",
+        "response": "Amb quatre mesures plenes: tres d’1/3 de litre i una d’1/4 de litre.",
+        "steps": [
+          "Tres mesures grans fan un litre sencer. Hi afegim la mesura d’un quart.",
+          "Amb tres mesures només podem arribar a un litre, fins i tot si totes tres són les més grans."
+        ],
+        "note": "Dibuixa una gerra dividida en terços. Omple-la amb les tres mesures grans i afegeix el quart de litre a part.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              [
+                "div",
+                1,
+                3
+              ]
+            ],
+            "answer": 1
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                3,
+                [
+                  "div",
+                  1,
+                  3
+                ]
+              ],
+              [
+                "div",
+                1,
+                4
+              ]
+            ],
+            "answer": 1.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0140",
+      "version": 1,
+      "title": "Quant brou hi havia?",
+      "context": "receptes",
+      "structure": "reconstruir-el-volum-inicial",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "D’una gerra de brou en fem servir la meitat per a un estofat. Del brou que queda, en traiem 1/8 de litre per a una salsa. Al final hi ha 3/8 de litre a la gerra.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "question": "Quants litres de brou hi havia al principi?",
+      "solution": {
+        "expression": "(3/8 + 1/8) × 2 = 1",
+        "calculation": [
+          "mul",
+          [
+            "add",
+            [
+              "div",
+              3,
+              8
+            ],
+            [
+              "div",
+              1,
+              8
+            ]
+          ],
+          2
+        ],
+        "answer": 1,
+        "unit": "litre",
+        "response": "Al principi hi havia 1 litre de brou.",
+        "steps": [
+          "Tornem a comptar el vuitè de litre de la salsa. Abans de treure’l, quedaven quatre vuitens.",
+          "Aquests quatre vuitens són la meitat del brou inicial. Doblem la quantitat."
+        ],
+        "note": "Dibuixa tres trossos iguals per al brou final. Afegeix el tros de la salsa. Ara tens una meitat de la gerra inicial. Dibuixa al costat una altra meitat igual."
+      }
+    },
+    {
+      "id": "P0141",
+      "version": 1,
+      "title": "Quants flams podem fer?",
+      "context": "receptes",
+      "structure": "ingredient-que-limita-les-tandes",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per fer una tanda de flams calen 1/2 litre de llet i 1/4 de litre de nata. Tenim 1 litre i mig de llet i mig litre de nata.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes tandes completes podem fer? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Podem fer dues tandes completes. Ens sobrarà mig litre de llet i s’acabarà la nata.",
+        "steps": [
+          "La llet es pot repartir en tres racions de 500 mL. La nata només dona dues racions de 250 mL.",
+          "Cada tanda necessita una ració de cada ingredient. Només podem formar dues parelles."
+        ],
+        "note": "Fes tres targetes de llet i dues de nata. Cada parella és una tanda. La targeta de llet sense parella mostra per què no en podem fer tres.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              1500,
+              500
+            ],
+            "answer": 3
+          },
+          {
+            "calculation": [
+              "div",
+              500,
+              250
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "sub",
+              1500,
+              [
+                "mul",
+                2,
+                500
+              ]
+            ],
+            "answer": 500
+          },
+          {
+            "calculation": [
+              "sub",
+              500,
+              [
+                "mul",
+                2,
+                250
+              ]
+            ],
+            "answer": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0142",
+      "version": 1,
+      "title": "Un quart de què?",
+      "context": "begudes",
+      "structure": "quart-de-litre-o-quart-del-que-queda",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una gerra conté 1 litre i mig de batut. En servim dos terços. La recepta diu que després hem de reservar 1/4 de litre per fer una capa de batut a les postres. En Nil entén que cal reservar 1/4 del batut que queda a la gerra.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Si seguim la lectura d’en Nil, quanta quantitat de més quedarà a la gerra després de fer la reserva?",
+      "solution": {
+        "expression": "250 − 500 ÷ 4 = 125",
+        "calculation": [
+          "sub",
+          250,
+          [
+            "div",
+            [
+              "div",
+              1500,
+              3
+            ],
+            4
+          ]
+        ],
+        "answer": 125,
+        "unit": "mL",
+        "response": "Hi quedaran 125 mL més que si seguim la recepta.",
+        "steps": [
+          "Després de servir dos terços, queda un terç de la gerra: 500 mL.",
+          "La recepta en reserva 250 mL. En Nil en reserva només una quarta part de 500 mL, que són 125 mL. Per això en queden 125 mL més."
+        ],
+        "note": "Dibuixa els 500 mL que queden com quatre trossos iguals. La recepta en treu dos i en Nil només en treu un. La diferència és un tros.",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 1,
+          "total": 500,
+          "caption": "Cada tros fa 125 mL. La part pintada és el que reserva en Nil."
+        }
+      }
+    },
+    {
+      "id": "P0143",
+      "version": 1,
+      "title": "Omplir dues gerres",
+      "context": "cuina",
+      "structure": "fraccions-de-capacitats-diferents",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim 2 litres i mig d’aigua en una olla. N’aboquem en una gerra de 2 litres fins a omplir-ne tres quartes parts i en una gerra d’1 litre fins a omplir-ne la meitat.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta aigua queda a l’olla?",
+      "solution": {
+        "expression": "2.500 − (3 × 500 + 500) = 500",
+        "calculation": [
+          "sub",
+          2500,
+          [
+            "add",
+            [
+              "mul",
+              3,
+              [
+                "div",
+                2000,
+                4
+              ]
+            ],
+            [
+              "div",
+              1000,
+              2
+            ]
+          ]
+        ],
+        "answer": 500,
+        "unit": "mL",
+        "response": "A l’olla hi queda mig litre.",
+        "steps": [
+          "Tres quartes parts de la gerra gran són 1.500 mL. La meitat de la petita són 500 mL.",
+          "En total aboquem 2 litres. Dels 2 litres i mig inicials en queda mig litre."
+        ],
+        "note": "Compta en gots de mig litre. L’olla en tenia cinc. En traslladem tres a la gerra gran i un a la petita. En queda un."
+      }
+    },
+    {
+      "id": "P0144",
+      "version": 1,
+      "title": "Barregem els dos sucs",
+      "context": "begudes",
+      "structure": "combinar-barreges-de-la-mateixa-mida",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim dues gerres amb mig litre de beguda cadascuna. A la primera, un quart de la beguda és suc de préssec i la resta és aigua. A la segona, tres quarts de la beguda són suc de préssec i la resta és aigua. Aboquem tot el contingut en una gerra buida.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quina fracció de la beguda final és suc de préssec?",
+      "solution": {
+        "expression": "(125 + 375) ÷ 1.000 = 1/2",
+        "calculation": [
+          "div",
+          [
+            "add",
+            [
+              "div",
+              500,
+              4
+            ],
+            [
+              "mul",
+              3,
+              [
+                "div",
+                500,
+                4
+              ]
+            ]
+          ],
+          1000
+        ],
+        "answer": 0.5,
+        "unit": "de la barreja",
+        "response": "La meitat de la beguda final és suc de préssec.",
+        "steps": [
+          "La primera gerra aporta 125 mL de suc i la segona, 375 mL. En total hi ha 500 mL de suc en 1 litre de beguda."
+        ],
+        "note": "Dibuixa dues barres de quatre trossos iguals. Pinta un tros de la primera i tres de la segona. En ajuntar les barres hi ha quatre trossos pintats de vuit.",
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 4,
+          "total": 1000,
+          "caption": "Les dues gerres juntes fan vuit trossos de 125 mL. Quatre són de suc."
+        }
+      }
+    }
+  ]
+}

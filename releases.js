@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.24.0',title:'Receptes a parts iguals',
+    changes:['Dotze problemes de cicle superior amb receptes, litres i fraccions.','Solucionaris amb estratègies visuals i intuïtives. El banc ja té 144 problemes.']
+  },
+  {
     version:'0.23.0',title:'Comptem euros i minuts',
     changes:['Dotze problemes de cicle mitjà amb diners, durades i horaris. Tres comparen dos camins de resolució.','El banc ja té 132 problemes.']
   },
