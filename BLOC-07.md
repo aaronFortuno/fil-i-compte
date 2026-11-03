@@ -98,7 +98,7 @@ A la secció infantil, 3/5 dels 150 llibres són en català. A la secció juveni
 
 **El cartell és correcte? Explica si això vol dir que les dues seccions tenen la mateixa quantitat de llibres en català.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -119,7 +119,7 @@ Una làmina fa 24 cm d’ample. La fotocopiadora permet ampliar-la al 125 % de l
 
 **Una companya diu que l’ajust multiplica l’amplada per 5/4. Té raó? Indica quina amplada tindrà la còpia.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -142,7 +142,7 @@ Quan s’obre la venda d’entrades, se’n reserven 35 per als músics. El full
 
 **Quantes localitats hi ha en total? Justifica la resposta a partir d’una fracció equivalent a la part reservada.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -165,7 +165,7 @@ En una jornada esportiva, 5/8 dels participants han acabat el circuit. Al full d
 
 **Quin és el percentatge exacte i quants punts percentuals el separen del que mostra el gràfic?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals, Càlcul estimatiu.
 
 **Una possible resolució**
 
@@ -211,7 +211,7 @@ El trimestre passat, 2/5 de l’alumnat d’un grup feia cor. Aquest trimestre e
 
 **Com reescriuries la frase perquè distingeixi l’augment en punts percentuals de l’augment relatiu?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta, Fraccions, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta, Fraccions, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -253,7 +253,7 @@ En una cooperativa, 3/4 de les pomes collides passen una primera revisió. En la
 
 **Quin decimal i quin percentatge del total collit haurien de constar al registre?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 

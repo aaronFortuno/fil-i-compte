@@ -4,12 +4,20 @@
   else root.MatesCore = api;
 })(globalThis, function() {
   'use strict';
-  const FEATURES = {
+  const CONTENT_FEATURES = {
     'suma-resta':'Suma i resta', 'multiplicacio-divisio':'Multiplicació i divisió',
     'combinades':'Operacions combinades', 'parentesis':'Parèntesis',
     'fraccions':'Fraccions', 'percentatges':'Percentatges', 'decimals':'Decimals',
-    'potencies':'Potències', 'arrels':'Arrels', 'distractors':'Dades per despistar'
+    'potencies':'Potències', 'arrels':'Arrels', 'distractors':'Dades per despistar',
+    'proporcionalitat-directa':'Proporcionalitat directa', 'calcul-estimatiu':'Càlcul estimatiu'
   };
+  const REASONING_FEATURES = {
+    'treballar-cap-enrere':'Treballar cap enrere',
+    'interpretar-residu':'Interpretar el residu',
+    'identificar-tot':'Identificar el tot',
+    'comparar-estrategies':'Comparar estratègies'
+  };
+  const FEATURES = {...CONTENT_FEATURES,...REASONING_FEATURES};
   const LEVELS = {mitja:'Cicle mitjà', superior:'Cicle superior', eso:'Inici d’ESO'};
   const DIFFICULTIES = {1:'Accessible',2:'Intermedi',3:'Repte'};
   // Editorial orientation, not a calibrated measure of student ability.
@@ -136,7 +144,7 @@
     if(candidates.length<count) return {error:`Només hi ha ${candidates.length} problemes compatibles per a ${count} places. Amplia els filtres o redueix la quantitat.`};
     const pool=candidates.map(e=>({e,r:Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.e);
     const required=Object.entries(filters.features||{}).filter(([,m])=>m==='require').map(([f])=>f);
-    if(required.some(f=>!candidates.some(e=>e.features.includes(f)))) return {error:'El catàleg no cobreix tots els continguts obligatoris amb aquests filtres.'};
+    if(required.some(f=>!candidates.some(e=>e.features.includes(f)))) return {error:'El catàleg no cobreix tots els filtres obligatoris amb aquests filtres.'};
     let attempts=0;
     function search(index,chosen,avoidSame) {
       if(++attempts>150000) return null;
@@ -156,7 +164,7 @@
     }
     let found=search(0,[],true); attempts=0;
     if(!found)found=search(0,[],false);
-    return found?{ids:found.map(e=>e.id)}:{error:'No es poden cobrir tots els continguts obligatoris en aquest nombre de problemes. Amplia els filtres o tria més places.'};
+    return found?{ids:found.map(e=>e.id)}:{error:'No es poden cobrir tots els filtres obligatoris en aquest nombre de problemes. Amplia els filtres o tria més places.'};
   }
   function pageGroups(exercises,pageCount,perPage) {
     sheetLayout({pageCount,perPage});
@@ -167,9 +175,9 @@
     if(!saved||!current||Array.isArray(saved)||typeof saved!=='object')return false;
     const id=normalizeId(saved.id);
     if(!id||id!==normalizeId(current.id))return false;
-    // Editorial status and code padding alone do not invalidate a selection.
+    // Editorial metadata and code padding do not change the problem or solution.
     const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
-    return JSON.stringify(ordered({...saved,id,status:undefined}))===JSON.stringify(ordered({...current,id,status:undefined}));
+    return JSON.stringify(ordered({...saved,id,status:undefined,features:undefined}))===JSON.stringify(ordered({...current,id,status:undefined,features:undefined}));
   }
-  return {FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,exerciseParts,normalizeId,normalizeSelectionIds,parseSearch,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
+  return {FEATURES,CONTENT_FEATURES,REASONING_FEATURES,LEVELS,DIFFICULTIES,PAGE_COUNTS,PER_PAGE,exerciseParts,normalizeId,normalizeSelectionIds,parseSearch,sheetLayout,evaluate,numberRatio,eligible,missingCoverage,selectionIssues,compose,pageGroups,sameExerciseContent};
 });

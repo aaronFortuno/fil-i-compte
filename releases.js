@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.27.0',title:'Filtres de raonament',
+    changes:['Quatre filtres al grup plegable «Raonament».','Nous filtres de proporcionalitat directa i càlcul estimatiu. Etiquetes revisades a tot el catàleg.']
+  },
+  {
     version:'0.26.0',title:'Del final al principi',
     changes:['Dotze problemes de cicle superior per reconstruir l’estat inicial a partir del resultat final.','Solucionaris amb barres, dibuixos i línies del temps. El banc ja té 168 problemes.']
   },

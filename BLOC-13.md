@@ -12,7 +12,7 @@ Per fer arròs amb verdures per a 4 persones fem servir 240 g d’arròs. Avui s
 
 **Quants grams d’arròs hem de posar a l’olla?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -35,7 +35,7 @@ Per fer creps per a 8 persones, la recepta diu que calen 320 g de farina, 400 mL
 
 **Quines quantitats hem de preparar de cada ingredient?**
 
-Continguts: Multiplicació i divisió.
+Continguts: Multiplicació i divisió, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -55,7 +55,7 @@ Per fer hummus per a 6 persones fan falta 360 g de cigrons cuits i 3 cullerades 
 
 **Quina quantitat de cada ingredient hem de fer servir perquè l’hummus quedi igual i les racions siguin de la mateixa mida?**
 
-Continguts: Multiplicació i divisió, Operacions combinades.
+Continguts: Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -76,7 +76,7 @@ Una recepta de pa pla per a 4 persones porta 200 g de farina. N’hem de fer per
 
 **Quanta farina cal si cadascú ha de rebre la mateixa ració que a la recepta original?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -99,7 +99,7 @@ Un pastís de poma per a 12 persones porta 240 g de farina i 4 ous. Només en vo
 
 **Quines quantitats de farina i d’ous hem de preparar?**
 
-Continguts: Multiplicació i divisió, Operacions combinades.
+Continguts: Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -120,7 +120,7 @@ Per fer aigua amb llimona per a 10 persones, una recepta fa servir 2 litres i mi
 
 **Quants litres d’aigua necessitem?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Proporcionalitat directa, Identificar el tot.
 
 **Una possible resolució**
 
@@ -145,7 +145,7 @@ Per fer amanida de llenties per a 4 persones calen 200 g de llenties cuites. Avu
 
 **Quants grams de llenties hem de posar a cada safata perquè tothom rebi la mateixa ració?**
 
-Continguts: Multiplicació i divisió, Operacions combinades.
+Continguts: Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -166,7 +166,7 @@ Per fer un berenar per a 4 persones calen 240 g de civada i 120 g de panses. En 
 
 **Què hem d’afegir al rebost per poder preparar les deu racions?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta.
+Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -187,7 +187,7 @@ Per fer unes postres per a 4 persones calen 400 g de iogurt. Avui en fem per a 6
 
 **Quants pots hem de comprar com a mínim?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -208,7 +208,7 @@ La recepta de batut de plàtan per a 4 persones necessita 500 mL de llet. Tenim 
 
 **Per a quantes persones en podem fer si mantenim la mateixa quantitat de llet per ració i la resta d’ingredients en proporció?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Operacions combinades, Parèntesis, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -231,7 +231,7 @@ Una recepta de salsa per a 8 persones porta 800 g de tomàquet. Per fer-ne per a
 
 **Per què els dos camins donen la mateixa quantitat de tomàquet? Mostra-ho amb els càlculs.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa, Comparar estratègies.
 
 **Una possible resolució**
 
@@ -254,7 +254,7 @@ Per fer una coca salada per a 6 persones calen 4 cullerades d’oli per a la mas
 
 **Quantes cullerades d’oli necessitem en total?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 

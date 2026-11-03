@@ -24,7 +24,9 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -78,7 +80,9 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -126,7 +130,9 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -182,7 +188,9 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -234,7 +242,9 @@
         "combinades",
         "parentesis",
         "fraccions",
-        "percentatges"
+        "percentatges",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -290,7 +300,9 @@
         "combinades",
         "parentesis",
         "fraccions",
-        "percentatges"
+        "percentatges",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -337,7 +349,9 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "proporcionalitat-directa",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -382,7 +396,8 @@
       "statement": "Un grup entra a la sala d’un museu a les 12.05. Just abans ha esperat 10 minuts al vestíbul i ha trigat 5 minuts a deixar les motxilles al guarda-roba. Abans d’això havia caminat 15 minuts des de l’escola.",
       "features": [
         "suma-resta",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -432,7 +447,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -483,7 +499,8 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -531,7 +548,9 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -589,7 +608,8 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",

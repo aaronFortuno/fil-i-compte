@@ -32,7 +32,9 @@
   }
   function message(text,kind='info') {notice=text;noticeKind=kind;renderFooterStatus();}
   function makeFilters() {
-    $('feature-filters').innerHTML=Object.entries(C.FEATURES).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
+    for(const [container,features] of [['feature-filters',C.CONTENT_FEATURES],['reasoning-filters',C.REASONING_FEATURES]]){
+      $(container).innerHTML=Object.entries(features).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
+    }
     syncControls();
   }
   function syncFeatures() {
@@ -43,6 +45,8 @@
       control.setAttribute('aria-label',label+': '+current.label.toLocaleLowerCase('ca'));
       control.title=current.label+' · Clica per canviar a '+next.label.toLocaleLowerCase('ca');
     });
+    const active=Object.keys(C.REASONING_FEATURES).filter(id=>['require','exclude'].includes(state.filters.features[id])).length;
+    $('reasoning-count').textContent=active===1?'1 filtre actiu':active>1?`${active} filtres actius`:'';
   }
   function setFeature(id,mode) {
     state.filters.features[id]=mode;syncFeatures();message('');update();
@@ -139,7 +143,7 @@
     if(selected().some(e=>!C.eligible(e,state.filters)))return {short:'Revisa la tria',detail:'Obre «Veure la tria» per treure els problemes que no compleixen els filtres o proposa una fitxa nova.'};
     const missing=capacity()-state.ids.length;
     if(missing>0)return {short:missing===1?'Falta un problema':`Falten ${missing} problemes`,detail:`Selecciona ${missing} ${missing===1?'problema més':'problemes més'} per completar la fitxa.`};
-    return {short:'Falten continguts',detail:'Inclou els continguts obligatoris: '+C.missingCoverage(selected(),state.filters).map(f=>C.FEATURES[f]).join(', ')+'.'};
+    return {short:'Falten filtres obligatoris',detail:'Inclou exercicis que treballin: '+C.missingCoverage(selected(),state.filters).map(f=>C.FEATURES[f]).join(', ')+'.'};
   }
   function renderFooterStatus() {
     const feedback=selectionHint(catalogue.filter(e=>C.eligible(e,state.filters)).length),ready=!issues().length&&!(notice&&noticeKind==='error');
@@ -373,8 +377,8 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
     window.print();
   }
-  $('feature-filters').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
-  $('feature-filters').addEventListener('keydown',event=>{
+  $('filter-options').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
+  $('filter-options').addEventListener('keydown',event=>{
     const button=event.target.closest('button[data-feature]');if(!button||!['ArrowLeft','ArrowRight'].includes(event.key))return;
     event.preventDefault();cycleFeature(button.dataset.feature,event.key==='ArrowLeft'?-1:1);
   });

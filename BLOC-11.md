@@ -102,7 +102,7 @@ La Mar paga amb 20 € per 2 pots de mel de 5 € cadascun i un pa de 3 €. Ell
 
 **Compara els dos camins. Per què donen el mateix canvi?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Comparar estratègies.
 
 **Una possible resolució**
 
@@ -123,7 +123,7 @@ Per a 3 participants d’un taller cal comprar un pinzell de 2 € i un pot de p
 
 **Per què els dos camins donen el mateix preu total? Mostra-ho amb els càlculs.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Comparar estratègies.
 
 **Una possible resolució**
 
@@ -167,7 +167,7 @@ L’assaig ha d’acabar a les 16.30. Calen 3 minuts per preparar l’espai i de
 
 **A quina hora han de començar a preparar l’espai, com a molt tard?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -236,7 +236,7 @@ Una sessió de lectura comença a les 10.40 i acaba a les 11.05. Fem una pausa d
 
 **Per què els dos camins donen el mateix temps de lectura?**
 
-Continguts: Suma i resta, Operacions combinades.
+Continguts: Suma i resta, Operacions combinades, Comparar estratègies.
 
 **Una possible resolució**
 

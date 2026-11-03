@@ -12,7 +12,7 @@ A l’escola del Nord hi ha 48 alumnes de sisè i la meitat hi arriba a peu. A l
 
 **Quina fracció de l’alumnat de sisè de les dues escoles juntes arriba a peu? Expressa-la de manera irreductible.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -37,7 +37,7 @@ Dels cartells d’una fira, dilluns se’n pengen dos cinquens (2/5). Dimarts es
 
 **Quants cartells s’havien imprès?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -60,7 +60,7 @@ De les 48 persones inscrites a una jornada, la meitat s’ha apuntat al taller d
 
 **Quantes persones inscrites no s’han apuntat a cap dels dos tallers?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -105,7 +105,7 @@ Al dinar de final de curs hi assisteixen 53 persones. A cada taula s’hi poden 
 
 **Quantes taules cal parar com a mínim? Justifica-ho.**
 
-Continguts: Multiplicació i divisió.
+Continguts: Multiplicació i divisió, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -149,7 +149,7 @@ En una botiga han rebaixat un 20 % el preu d’una motxilla. El preu rebaixat qu
 
 **Quin preu tenia abans de les rebaixes?**
 
-Continguts: Multiplicació i divisió, Decimals, Percentatges.
+Continguts: Multiplicació i divisió, Decimals, Percentatges, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -276,7 +276,7 @@ El sistema de reg d’un hivernacle abocava 60 litres d’aigua per hora. Despr�
 
 **En quin percentatge cal augmentar el cabal actual per tornar al cabal inicial? Justifica sobre quina quantitat calcules el percentatge.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 

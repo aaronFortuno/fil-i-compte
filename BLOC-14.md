@@ -12,7 +12,7 @@ D’una gerra de suc en servim un terç durant el berenar. Després omplim un go
 
 **Quant suc hi havia a la gerra abans del berenar?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -37,7 +37,7 @@ Al matí una família porta 6 bosses de roba per a la parada solidària. A la ta
 
 **Quantes bosses hi havia abans que arribés la família?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -60,7 +60,7 @@ En Martí regala una quarta part dels seus cromos. Després en dona un terç del
 
 **Quants cromos tenia abans de regalar-ne cap?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -84,7 +84,7 @@ En una gerra hi ha una mica de llet. Hi afegim 1/4 de litre i ho remenem. Aboque
 
 **Quanta llet hi havia a la gerra abans d’afegir-n’hi?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -109,7 +109,7 @@ En una botiga apliquen un 25 % de descompte a una motxilla. Després resten 5 �
 
 **Quant costava la motxilla abans de les dues rebaixes?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Percentatges.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Percentatges, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -134,7 +134,7 @@ Per a un taller, l’organització augmenta un 20 % les places previstes inicial
 
 **Quantes places hi havia previstes abans de l’augment?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Percentatges.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Percentatges, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -157,7 +157,7 @@ Una recepta de pizza és per a 4 persones. En fem per a 6 amb la mateixa mida de
 
 **Quanta farina per a la massa indicava la recepta de quatre persones?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Proporcionalitat directa, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -180,7 +180,7 @@ Un grup entra a la sala d’un museu a les 12.05. Just abans ha esperat 10 minut
 
 **A quina hora va sortir el grup de l’escola?**
 
-Continguts: Suma i resta, Operacions combinades.
+Continguts: Suma i resta, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -203,7 +203,7 @@ Ara al taller hi ha 3 estoigs amb 6 retoladors cadascun i 2 retoladors solts. Ab
 
 **Quants retoladors hi havia al taller abans dels dos canvis?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -226,7 +226,7 @@ Un hort rectangular fa 6 metres de llarg. L’han ampliat fent-lo 2 metres més 
 
 **Quina superfície tenia l’hort abans de l’ampliació?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -249,7 +249,7 @@ A la fira, la Salma es gasta un terç dels diners que duia al moneder en una man
 
 **Quants diners duia al moneder quan va arribar a la fira?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -274,7 +274,7 @@ Tenim 3 safates amb el mateix nombre de plançons a cadascuna. Traiem 2 plançon
 
 **Quants plançons hi havia entre les tres safates al principi?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere.
 
 **Una possible resolució**
 

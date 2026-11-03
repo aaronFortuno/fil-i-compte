@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.27.0 · Filtres de raonament
+
+- Grup plegable «Raonament» amb quatre filtres triestat. Treballar cap enrere, interpretar el residu, identificar el tot i comparar estratègies.
+- Els continguts incorporen «Proporcionalitat directa» i «Càlcul estimatiu». Les sis etiquetes s’han revisat per a tot el catàleg.
+
 ## 0.26.0 · Del final al principi
 
 - Dotze problemes de cicle superior, de P0157 a P0168, per reconstruir l’estat inicial desfent els canvis en ordre invers.

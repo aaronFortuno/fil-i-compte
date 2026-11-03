@@ -23,7 +23,8 @@
         "multiplicacio-divisio",
         "combinades",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -78,7 +79,8 @@
         "multiplicacio-divisio",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -137,7 +139,8 @@
         "multiplicacio-divisio",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -196,7 +199,8 @@
         "suma-resta",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -264,7 +268,8 @@
         "combinades",
         "parentesis",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -313,7 +318,8 @@
         "combinades",
         "parentesis",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -360,7 +366,9 @@
         "multiplicacio-divisio",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -408,7 +416,8 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "percentatges"
+        "percentatges",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -476,7 +485,8 @@
         "multiplicacio-divisio",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -535,7 +545,8 @@
         "suma-resta",
         "combinades",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -604,7 +615,8 @@
         "combinades",
         "parentesis",
         "percentatges",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -678,7 +690,8 @@
         "combinades",
         "parentesis",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",

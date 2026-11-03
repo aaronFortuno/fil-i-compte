@@ -336,7 +336,13 @@
               "decimals",
               "potencies",
               "arrels",
-              "distractors"
+              "distractors",
+              "proporcionalitat-directa",
+              "calcul-estimatiu",
+              "treballar-cap-enrere",
+              "interpretar-residu",
+              "identificar-tot",
+              "comparar-estrategies"
             ]
           }
         },

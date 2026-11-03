@@ -12,7 +12,7 @@ Una motxilla costa 100 € a totes dues botigues. La botiga A fa un 30 % de desc
 
 **En quina botiga surt més barata la motxilla? Justifica la tria.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Operacions combinades, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -33,7 +33,7 @@ L’hort escolar ha encarregat 60 plançons. Dilluns redueix la comanda un 20 %.
 
 **Acabaran arribant tants plançons com s’havien encarregat al principi? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -54,7 +54,7 @@ Un taller de ceràmica costava 50 € al mes. Al gener van apujar la quota un 20
 
 **La quota de febrer és igual a la d’abans de la pujada? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -75,7 +75,7 @@ Unes sabates costen 80 €. En una botiga primer es resta un val de 20 € i des
 
 **Quin ordre convé més a qui compra? Justifica-ho.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Percentatges, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -96,7 +96,7 @@ Una jaqueta de 80 € té un 25 % de descompte. A la mateixa compra hi ha uns mi
 
 **Quin import es paga a caixa?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -119,7 +119,7 @@ Per a una jornada hi ha 80 places al gimnàs i 50 a la sala d’actes. Amb una n
 
 **Quantes places es poden oferir a les famílies?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -142,7 +142,7 @@ En una parada, primer es rebaixa a la meitat el preu d’una motxilla. A caixa s
 
 **Quin era el preu de la motxilla abans de les dues rebaixes?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions.
+Continguts: Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -165,7 +165,7 @@ S’han recollit 200 sobres de llavors. Es guarda el 25 % del total inicial per 
 
 **Quants sobres queden per al punt d’intercanvi després dels tres repartiments?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -188,7 +188,7 @@ Una dessuadora costa 80 € i té una rebaixa del 25 %. Un cupó dona un 10 % ad
 
 **Quin preu final haurà de pagar qui compri la dessuadora? Justifica si es pot fer servir el cupó.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -209,7 +209,7 @@ Un dipòsit conté 200 litres d’aigua. Al matí la brigada en fa servir el 50 
 
 **Quin percentatge de l’aigua inicial queda al dipòsit al final del dia?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Percentatges, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -232,7 +232,7 @@ Un joc de taula costava 80 €. La botiga ja hi ha aplicat un 25 % de descompte.
 
 **De quin percentatge ha de ser la segona rebaixa?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -256,7 +256,7 @@ L’any passat es van vendre 80 entrades a 4 € cadascuna per a una mostra. Aqu
 
 **En quin percentatge ha variat la recaptació respecte a la de l’any passat? Indica si ha pujat o ha baixat.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals, Identificar el tot.
 
 **Una possible resolució**
 

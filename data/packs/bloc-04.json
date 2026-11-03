@@ -112,7 +112,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "decimals"
+        "decimals",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "decimals",
@@ -196,7 +197,8 @@
         "combinades",
         "parentesis",
         "fraccions",
-        "distractors"
+        "distractors",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",

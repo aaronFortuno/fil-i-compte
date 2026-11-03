@@ -24,7 +24,8 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -85,7 +86,9 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -137,7 +140,8 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -229,7 +233,8 @@
       "status": "pendent-docent",
       "statement": "Al dinar de final de curs hi assisteixen 53 persones. A cada taula s’hi poden asseure com a màxim 8 persones.",
       "features": [
-        "multiplicacio-divisio"
+        "multiplicacio-divisio",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -330,7 +335,8 @@
       "features": [
         "multiplicacio-divisio",
         "decimals",
-        "percentatges"
+        "percentatges",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -588,7 +594,8 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "percentatges"
+        "percentatges",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",

@@ -24,7 +24,8 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -185,7 +186,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -604,7 +606,8 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",

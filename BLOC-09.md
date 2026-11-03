@@ -12,7 +12,7 @@ Hi ha 3 cistells amb 4 pomes cadascun. En fem servir 2 per al pastís i, de les 
 
 **Quantes pomes ens toquen a cadascú?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -82,7 +82,7 @@ Al final del joc, cadascun dels 3 jugadors té 2 fitxes i encara en queden 3 a l
 
 **Quantes fitxes hi havia a la capsa abans que n’hi afegíssim?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -267,7 +267,7 @@ En comprar 3 entrades iguals per a una exposició, ens tornen 2 € de canvi. Ha
 
 **Quin preu tenia cada entrada?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere.
 
 **Una possible resolució**
 

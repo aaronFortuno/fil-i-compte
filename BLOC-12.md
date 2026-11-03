@@ -12,7 +12,7 @@ Per fer sopa per a 4 persones calen 3/4 de litre de brou. Avui en farem per a 6 
 
 **Quants mil·lilitres de brou ens falten?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -62,7 +62,7 @@ Una gerra conté 2 litres d’aigua. Per fer arròs en traiem una quarta part. D
 
 **Quanta aigua quedarà a la gerra?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -87,7 +87,7 @@ Per al berenar tenim tres ampolles de mig litre de batut i una ampolla d’un qu
 
 **Quants gots plens podem servir?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -110,7 +110,7 @@ La recepta demana que el concentrat de llimona sigui una quarta part de la llimo
 
 **Quanta aigua més hi hem d’afegir perquè quedi com diu la recepta?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Proporcionalitat directa, Identificar el tot.
 
 **Una possible resolució**
 
@@ -135,7 +135,7 @@ La gerra A porta 1/4 de litre de suc de poma i 1/2 litre d’aigua. La gerra B p
 
 **En quina gerra el suc de poma representa una part més gran de la barreja? Justifica-ho.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions, Proporcionalitat directa, Identificar el tot.
 
 **Una possible resolució**
 
@@ -177,7 +177,7 @@ D’una gerra de brou en fem servir la meitat per a un estofat. Del brou que que
 
 **Quants litres de brou hi havia al principi?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -200,7 +200,7 @@ Per fer una tanda de flams calen 1/2 litre de llet i 1/4 de litre de nata. Tenim
 
 **Quantes tandes completes podem fer? Justifica-ho.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -221,7 +221,7 @@ Una gerra conté 1 litre i mig de batut. En servim dos terços. La recepta diu q
 
 **Si seguim la lectura d’en Nil, quanta quantitat de més quedarà a la gerra després de fer la reserva?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -246,7 +246,7 @@ Tenim 2 litres i mig d’aigua en una olla. N’aboquem en una gerra de 2 litres
 
 **Quanta aigua queda a l’olla?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -269,7 +269,7 @@ Tenim dues gerres amb mig litre de beguda cadascuna. A la primera, un quart de l
 
 **Quina fracció de la beguda final és suc de préssec?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 

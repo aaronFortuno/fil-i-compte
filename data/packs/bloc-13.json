@@ -22,7 +22,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -62,7 +63,8 @@
       "status": "pendent-docent",
       "statement": "Per fer creps per a 8 persones, la recepta diu que calen 320 g de farina, 400 mL de llet i 4 ous. Només en farem per a 4 persones i volem mantenir la mateixa recepta.",
       "features": [
-        "multiplicacio-divisio"
+        "multiplicacio-divisio",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -117,7 +119,8 @@
       "statement": "Per fer hummus per a 6 persones fan falta 360 g de cigrons cuits i 3 cullerades d’oli. Finalment serem 4 persones.",
       "features": [
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -174,7 +177,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -219,7 +223,8 @@
       "statement": "Un pastís de poma per a 12 persones porta 240 g de farina i 4 ous. Només en volem fer per a 9 persones, amb porcions de la mateixa mida.",
       "features": [
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -276,7 +281,9 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -324,7 +331,8 @@
       "statement": "Per fer amanida de llenties per a 4 persones calen 200 g de llenties cuites. Avui tenim una taula de 3 persones i una altra de 5. Posem en una safata per a cada taula les racions que li corresponen.",
       "features": [
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -381,7 +389,8 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "suma-resta"
+        "suma-resta",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -446,7 +455,9 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -519,7 +530,8 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -561,7 +573,9 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa",
+        "comparar-estrategies"
       ],
       "numeric": {
         "data": "naturals",
@@ -629,7 +643,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",

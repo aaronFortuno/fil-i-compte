@@ -14,7 +14,7 @@
     {
       "id":"P0026","version":2,"title":"Minibusos per a la trobada","context":"transport","structure":"suficiencia","level":"superior","difficulty":2,"status":"validat",
       "statement":"A una trobada hi aniran 87 alumnes i 9 adults. Cada minibús té 24 places per a passatgers, a més de la del conductor.",
-      "features":["suma-resta","multiplicacio-divisio","combinades","parentesis"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","parentesis","interpretar-residu"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "parts":[
         {"question":"Quants minibusos necessiten inicialment?","solution":{"expression":"(87 + 9) ÷ 24 = 4","calculation":["div",["add",87,9],24],"answer":4,"unit":"minibusos","response":"Inicialment necessiten 4 minibusos.","steps":["Hi van 87 + 9 = 96 persones; 96 ÷ 24 = 4 minibusos."],"note":""}},
         {"question":"Si s'hi afegeixen 6 alumnes, els minibusos previstos continuen sent suficients? Explica-ho.","solution":{"kind":"justification","response":"No: hi hauria 102 passatgers i només 96 places. Caldria un cinquè minibús.","steps":["Amb els nous alumnes són 96 + 6 = 102 persones; quatre minibusos ofereixen 4 × 24 = 96 places."],"evidence":[{"calculation":["add",["add",87,9],6],"answer":102},{"calculation":["mul",4,24],"answer":96}],"note":""}}
@@ -23,7 +23,7 @@
     {
       "id":"P0027","version":2,"title":"Dues ofertes de llibretes","context":"compres","structure":"comparacio","level":"superior","difficulty":3,"status":"validat",
       "statement":"Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la botiga B, cada llibreta costa 1,90 €.",
-      "features":["suma-resta","multiplicacio-divisio","combinades","decimals"],"numeric":{"data":"decimals","intermediate":"decimals","result":"decimals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","decimals","proporcionalitat-directa"],"numeric":{"data":"decimals","intermediate":"decimals","result":"decimals"},
       "parts":[
         {"question":"Quant costen les 12 llibretes a la botiga A?","solution":{"expression":"12 ÷ 4 × 6,80 = 20,40","calculation":["mul",["div",12,4],6.8],"answer":20.4,"unit":"euros","response":"A la botiga A costen 20,40 €.","steps":["Calen 3 paquets: 3 × 6,80 = 20,40 €."],"note":""}},
         {"question":"Quant costen a la botiga B?","solution":{"expression":"12 × 1,90 = 22,80","calculation":["mul",12,1.9],"answer":22.8,"unit":"euros","response":"A la botiga B costen 22,80 €.","steps":["Multipliquem el preu unitari per 12."],"note":""}},
@@ -90,7 +90,7 @@
     {
       "id":"P0034","version":1,"title":"Les fotografies del taller","context":"fotografia","structure":"suficiencia","level":"mitja","difficulty":3,"status":"validat",
       "statement":"Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotografies.",
-      "features":["suma-resta","multiplicacio-divisio","combinades"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","interpretar-residu"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "parts":[
         {"question":"Quantes pàgines omplim amb les 156 fotografies?","solution":{"expression":"156 ÷ 12 = 13","calculation":["div",156,12],"answer":13,"unit":"pàgines","response":"Omplim 13 pàgines.","steps":["Repartim les 156 fotografies en grups de 12."],"note":""}},
         {"question":"Si ens arriben 18 fotografies més, cabran totes en 14 pàgines? Justifica-ho.","solution":{"kind":"justification","response":"No: sis fotografies quedarien sense lloc. Necessitem una quinzena pàgina.","steps":["Tindrem 174 fotografies i 14 pàgines només n'admeten 168; la diferència és 6."],"evidence":[{"calculation":["sub",["add",156,18],["mul",14,12]],"answer":6}],"note":"Pots dibuixar les pàgines com a grups de 12 espais."}}
@@ -99,7 +99,7 @@
     {
       "id":"P0035","version":2,"title":"L'aigua de les cantimplores","context":"excursio","structure":"mesura","level":"superior","difficulty":3,"status":"validat",
       "statement":"Tenim 7,2 litres d'aigua i volem omplir completament 8 cantimplores de 0,75 litres cadascuna. Després farem una ruta de 5 km.",
-      "features":["suma-resta","multiplicacio-divisio","combinades","decimals","distractors"],"numeric":{"data":"decimals","intermediate":"decimals","result":"decimals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","decimals","distractors","proporcionalitat-directa"],"numeric":{"data":"decimals","intermediate":"decimals","result":"decimals"},
       "parts":[
         {"question":"Quants litres necessitem per omplir totes les cantimplores?","solution":{"expression":"8 × 0,75 = 6","calculation":["mul",8,0.75],"answer":6,"unit":"litres","response":"Necessitem 6 litres en total.","steps":["Multipliquem la capacitat d'una cantimplora per 8."],"note":""}},
         {"question":"Sobrarà o faltarà aigua? Quants litres? Justifica-ho amb un càlcul.","solution":{"expression":"7,2 − 8 × 0,75 = 1,2","calculation":["sub",7.2,["mul",8,0.75]],"answer":1.2,"unit":"litres","response":"L'aigua és suficient i en sobren 1,2 litres.","steps":["Restem els 6 litres necessaris dels 7,2 litres disponibles: el resultat positiu indica que sobra aigua."],"note":"Els 5 km de la ruta no intervenen en aquests càlculs."}}
@@ -108,7 +108,7 @@
     {
       "id":"P0036","version":1,"title":"La venda de samarretes","context":"venda","structure":"percentatge-acumulat","level":"superior","difficulty":3,"status":"validat",
       "statement":"Tenim 150 samarretes per vendre. El primer dia venem el 40 % del total inicial i el segon dia en venem 30 més.",
-      "features":["suma-resta","multiplicacio-divisio","combinades","parentesis","percentatges"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","parentesis","percentatges","identificar-tot"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "parts":[
         {"question":"Quantes samarretes venem el primer dia?","solution":{"expression":"150 × 40 ÷ 100 = 60","calculation":["div",["mul",150,40],100],"answer":60,"unit":"samarretes","response":"El primer dia venem 60 samarretes.","steps":["Calculem el 40 % de les 150 samarretes inicials."],"note":""}},
         {"question":"Quin percentatge del total inicial hem venut entre els dos dies?","solution":{"expression":"(60 + 30) × 100 ÷ 150 = 60","calculation":["div",["mul",["add",60,30],100],150],"answer":60,"unit":"percentatge","response":"Hem venut el 60 % del total inicial.","steps":["En total venem 90 samarretes; 90 de 150 representen el 60 %."],"note":""}},

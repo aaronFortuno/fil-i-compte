@@ -12,7 +12,7 @@ La capsa A té 24 retoladors i un terç (1/3) són vermells. La capsa B en té 3
 
 **Quina capsa té més retoladors vermells i quants més?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -34,7 +34,7 @@ Un dipòsit de 240 litres de capacitat està ple fins a tres quartes parts (3/4)
 
 **Quina fracció de la capacitat del dipòsit queda ocupada per aigua? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -59,7 +59,7 @@ Un auditori té 180 localitats. Un terç (1/3) es reserva per a invitacions. Es 
 
 **Té raó l’organitzador? Justifica la resposta.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -101,7 +101,7 @@ En una collita de tres hores s'han recollit 120 kg de tomàquets. Se'n dona un q
 
 **Quants quilograms de tomàquets es guarden?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar, Identificar el tot.
 
 **Una possible resolució**
 
@@ -124,7 +124,7 @@ Dilluns, l'Àlex llegeix tres cinquenes parts (3/5) d'un llibre. Dimarts llegeix
 
 **Quantes pàgines té el llibre?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -147,7 +147,7 @@ A la classe A hi ha 20 alumnes i tres cinquenes parts (3/5) venen en bicicleta. 
 
 **Quin percentatge del conjunt de les dues classes ve en bicicleta?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -170,7 +170,7 @@ En un taller hi ha una corda de 18 m. Primer se'n talla un terç (1/3). La nota 
 
 **Podem saber exactament quanta corda quedarà? Calcula i explica les dues interpretacions.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Decimals, Identificar el tot.
 
 **Una possible resolució**
 
@@ -191,7 +191,7 @@ D'una capsa de peces de construcció en retirem una quarta part (1/4) i després
 
 **Quantes peces hi havia al començament?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -216,7 +216,7 @@ Una recepta per a 6 persones necessita 3/4 de litre de llet. La preparem per a 1
 
 **Quanta llet quedarà després de preparar la recepta?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -239,7 +239,7 @@ En una terrassa de 96 m² es reserva un terç (1/3) per a plantes i una quarta p
 
 **a) Quina superfície queda per a les taules?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -253,7 +253,7 @@ Expressió: (96 − 96 ÷ 3) − (96 − 96 ÷ 3) ÷ 4 = 48
 
 **b) Si reservéssim primer 1/4 de tota la terrassa per al camí i després 1/3 del que queda per a plantes, el repartiment seria el mateix? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 
@@ -274,7 +274,7 @@ La campanya A ha recollit tres quartes parts (3/4) del seu objectiu econòmic. L
 
 **Podem saber quina campanya ha recollit més euros? Justifica-ho amb exemples.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Fraccions.
+Continguts: Multiplicació i divisió, Operacions combinades, Fraccions, Identificar el tot.
 
 **Una possible resolució**
 

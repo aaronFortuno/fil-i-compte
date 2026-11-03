@@ -28,6 +28,7 @@ check('Els blocs publicats respecten el seu estat de revisió i no inclouen esbo
 check('Les tries antigues admeten canvis editorials però rebutgen enunciats o solucions diferents',()=>{
   const current=all[0],legacy=JSON.parse(JSON.stringify(current));legacy.status='pendent-docent';
   assert(C.sameExerciseContent(legacy,current));
+  assert(C.sameExerciseContent({...current,features:[]},current));
   assert(!C.sameExerciseContent({...legacy,statement:legacy.statement+' Modificat.'},current));
   assert(!C.sameExerciseContent({...legacy,solution:{...legacy.solution,answer:99}},current));
   assert(!C.sameExerciseContent({...legacy,version:legacy.version+1},current));
@@ -113,6 +114,27 @@ check('El bloc de cicle mitjà combina tres operacions o més amb quantitats pet
 check('Els dibuixos corresponen a les quantitats i les parts indicades',()=>all.forEach(e=>C.exerciseParts(e).forEach(({solution:s})=>{const v=s.visual;if(!v)return;if(v.type==='fraction'){assert(v.filled<=v.parts);assert.equal(v.total%v.parts,0);}if(v.type==='objects'){assert(v.removed<=v.groups*v.perGroup);assert.equal(v.groups*v.perGroup-v.removed,s.answer);}if(v.type==='grid'){assert(v.removed<=v.side**2);assert.equal(v.side**2-v.removed,s.answer);}})));
 check('La còpia per obrir el web sense servidor coincideix amb el JSON original',()=>{const context={};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(root,'catalog-data.js'),'utf8'),context);assert.equal(JSON.stringify(context.EXERCISE_CATALOG),JSON.stringify(data));});
 const excluded={...base,features:{fraccions:'exclude',decimals:'exclude',potencies:'exclude',arrels:'exclude'}};
+check('Raonament i continguts nous es combinen al banc i a la proposta de fitxa',()=>{
+  const byId=id=>all.find(e=>e.id===id);
+  const examples={
+    'treballar-cap-enrere':'P0140','interpretar-residu':'P0116','identificar-tot':'P0142',
+    'comparar-estrategies':'P0131','proporcionalitat-directa':'P0147','calcul-estimatiu':'P0080'
+  };
+  for(const [feature,id] of Object.entries(examples)){
+    assert(C.eligible(byId(id),{scope:'each',features:{[feature]:'require'}}),id);
+    assert(!C.eligible(byId(id),{features:{[feature]:'exclude'}}),id);
+  }
+  assert(!byId('P0123').features.includes('comparar-estrategies'));
+  assert(!byId('P0114').features.includes('calcul-estimatiu'));
+  const filters={scope:'each',features:{'treballar-cap-enrere':'require',fraccions:'require',percentatges:'exclude'}};
+  const result=C.compose(all,filters,4);
+  assert(!result.error);
+  assert.deepEqual(C.selectionIssues(result.ids.map(byId),filters,4),[]);
+  const acrossSheet={scope:'sheet',features:{'calcul-estimatiu':'require','comparar-estrategies':'require','proporcionalitat-directa':'require'}};
+  const proposed=C.compose(all,acrossSheet,4);
+  assert(!proposed.error);
+  assert.deepEqual(C.selectionIssues(proposed.ids.map(byId),acrossSheet,4),[]);
+});
 check('Les exclusions eliminen tots els problemes que treballen els continguts vetats',()=>{assert.deepEqual(all.filter(e=>C.eligible(e,excluded)).map(e=>e.id),['P0001','P0002','P0003','P0004','P0007','P0008','P0013','P0014','P0015','P0016','P0020','P0021','P0025','P0026','P0030','P0034','P0036','P0037','P0040','P0043','P0046','P0048','P0064','P0065','P0070','P0072','P0092','P0098','P0099','P0100','P0101','P0102','P0103','P0104','P0105','P0106','P0107','P0108','P0109','P0110','P0111','P0112','P0114','P0115','P0116','P0118','P0119','P0120','P0121','P0122','P0123','P0124','P0125','P0126','P0127','P0128','P0129','P0130','P0131','P0132','P0145','P0146','P0147','P0148','P0149','P0151','P0152','P0153','P0154','P0155','P0156','P0163','P0164','P0165','P0166','P0168']);const r=C.compose(all,excluded,4);assert(!r.error);assert.equal(C.selectionIssues(all.filter(e=>r.ids.includes(e.id)),excluded,4).length,0);});
 check('Els problemes d’una sola operació permeten compondre fitxes sense combinades',()=>{
   const filters={...base,features:{combinades:'exclude'}};

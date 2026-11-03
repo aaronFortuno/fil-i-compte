@@ -23,7 +23,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "fraccions",
@@ -140,7 +141,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -206,7 +208,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "fraccions",
@@ -258,7 +261,9 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -312,7 +317,9 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -453,7 +460,9 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -504,7 +513,8 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "fraccions",
@@ -578,7 +588,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -633,7 +644,8 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -689,7 +701,8 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",

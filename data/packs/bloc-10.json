@@ -22,7 +22,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -69,7 +70,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -115,7 +117,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -162,7 +165,8 @@
         "multiplicacio-divisio",
         "suma-resta",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -215,7 +219,9 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -257,7 +263,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -330,7 +337,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -400,7 +408,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -456,7 +465,8 @@
         "suma-resta",
         "combinades",
         "parentesis",
-        "fraccions"
+        "fraccions",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -509,7 +519,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -574,7 +585,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -624,7 +636,9 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "treballar-cap-enrere",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",

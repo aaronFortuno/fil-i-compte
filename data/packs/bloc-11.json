@@ -236,7 +236,8 @@
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "comparar-estrategies"
       ],
       "numeric": {
         "data": "naturals",
@@ -301,7 +302,8 @@
       "features": [
         "multiplicacio-divisio",
         "suma-resta",
-        "combinades"
+        "combinades",
+        "comparar-estrategies"
       ],
       "numeric": {
         "data": "naturals",
@@ -412,7 +414,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "parentesis"
+        "parentesis",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -570,7 +573,8 @@
       "statement": "Una sessió de lectura comença a les 10.40 i acaba a les 11.05. Fem una pausa de les 10.50 a les 10.55. La Laia suma els minuts dels dos trams de lectura. En Pol compta tots els minuts de la sessió i en resta la pausa.",
       "features": [
         "suma-resta",
-        "combinades"
+        "combinades",
+        "comparar-estrategies"
       ],
       "numeric": {
         "data": "naturals",

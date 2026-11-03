@@ -48,7 +48,7 @@ Al refugi hi ha 18 gossos. Cadascun menja 0,35 kg de pinso al dia. Cal preparar 
 
 **Amb la compra prevista, tindran prou pinso per a tots tres dies? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -69,7 +69,7 @@ Un grup de 14 músics disposa de 90 minuts d'assaig. Dedica un terç (1/3) del t
 
 **Quants minuts poden dedicar a tocar les peces?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Dades per despistar, Identificar el tot.
 
 **Una possible resolució**
 

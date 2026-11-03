@@ -12,7 +12,7 @@ Al final ens queden 2 pinces a cadascun dels 3 estenedors i cap al cistell. Aban
 
 **Quantes pinces hi havia al cistell abans de deixar-ne a la veïna?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -36,7 +36,7 @@ Al final de la tarda, a la Joana li queden 6 € al moneder. A la fira havia com
 
 **Quants diners duia abans de comprar els tiquets?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -59,7 +59,7 @@ Una granota de joguina acaba a la casella 13. Abans d’arribar-hi, havia fet 2 
 
 **En quina casella era abans del primer salt?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -82,7 +82,7 @@ Al principi hi havia el mateix nombre de llibres a cadascuna de 3 lleixes. En va
 
 **Quants llibres hi havia a cada lleixa al principi?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -106,7 +106,7 @@ En un gerro hi ha 5 clavells. Just abans, hi havíem posat 2 clavells nous. Aban
 
 **Quants clavells hi havia al gerro abans de fer el regal?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 
@@ -129,7 +129,7 @@ La Júlia prepara 3 bols amb 4 panets cadascun i després en fa 2 més. A cada s
 
 **Quantes safates cal preparar com a mínim per poder-hi posar tots els panets?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -150,7 +150,7 @@ Per fer lots per a la fira tenim 2 capses de 6 postals i 5 postals soltes. En se
 
 **Com quedaran repartides les postals entre els lots i el calaix?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -171,7 +171,7 @@ Hi ha 3 capses amb 5 llapis cadascuna i un llapis solt. En traiem 2 per a la tau
 
 **Quants llapis hem d’anar a buscar com a mínim?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -194,7 +194,7 @@ Tenim 2 safates amb 3 coques petites cadascuna. En guardem una de sencera per a 
 
 **Quanta coca li toca a cada infant?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Fraccions, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -219,7 +219,7 @@ Al taller hi ha 3 bosses amb 5 peces cadascuna. Una peça està trencada i la re
 
 **Com quedarà el repartiment entre els quatre equips?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -240,7 +240,7 @@ Ara tenim 3 safates plenes amb 4 testos cadascuna i 2 testos que no han cabut a 
 
 **Quants testos teníem abans del regal i abans de rebre el test nou?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -263,7 +263,7 @@ Al principi de l’assaig hi havia un grup d’infants. Més tard s’hi han afe
 
 **Quants bancs caldran com a mínim per a l’assaig de demà?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere, Interpretar el residu.
 
 **Una possible resolució**
 

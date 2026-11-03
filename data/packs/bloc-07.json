@@ -249,7 +249,8 @@
         "combinades",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -312,7 +313,8 @@
         "combinades",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "decimals",
@@ -356,7 +358,9 @@
         "combinades",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "decimals",
@@ -401,7 +405,8 @@
         "combinades",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "calcul-estimatiu"
       ],
       "numeric": {
         "data": "fraccions",
@@ -489,7 +494,8 @@
         "suma-resta",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",
@@ -618,7 +624,8 @@
         "combinades",
         "fraccions",
         "percentatges",
-        "decimals"
+        "decimals",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "fraccions",

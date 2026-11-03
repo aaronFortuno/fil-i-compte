@@ -46,7 +46,7 @@ A una trobada hi aniran 87 alumnes i 9 adults. Cada minibús té 24 places per a
 
 **a) Quants minibusos necessiten inicialment?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -60,7 +60,7 @@ Expressió: (87 + 9) ÷ 24 = 4
 
 **b) Si s'hi afegeixen 6 alumnes, els minibusos previstos continuen sent suficients? Explica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -80,7 +80,7 @@ Necessitem 12 llibretes. A la botiga A, un paquet de 4 costa 6,80 €. A la boti
 
 **a) Quant costen les 12 llibretes a la botiga A?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -94,7 +94,7 @@ Expressió: 12 ÷ 4 × 6,80 = 20,40
 
 **b) Quant costen a la botiga B?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -108,7 +108,7 @@ Expressió: 12 × 1,90 = 22,80
 
 **c) Quina botiga convé més i quants diners estalviem?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -387,7 +387,7 @@ Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotogra
 
 **a) Quantes pàgines omplim amb les 156 fotografies?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -401,7 +401,7 @@ Expressió: 156 ÷ 12 = 13
 
 **b) Si ens arriben 18 fotografies més, cabran totes en 14 pàgines? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
 
 **Una possible resolució**
 
@@ -421,7 +421,7 @@ Tenim 7,2 litres d'aigua i volem omplir completament 8 cantimplores de 0,75 litr
 
 **a) Quants litres necessitem per omplir totes les cantimplores?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -435,7 +435,7 @@ Expressió: 8 × 0,75 = 6
 
 **b) Sobrarà o faltarà aigua? Quants litres? Justifica-ho amb un càlcul.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Decimals, Dades per despistar, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -457,7 +457,7 @@ Tenim 150 samarretes per vendre. El primer dia venem el 40 % del total inicial i
 
 **a) Quantes samarretes venem el primer dia?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -471,7 +471,7 @@ Expressió: 150 × 40 ÷ 100 = 60
 
 **b) Quin percentatge del total inicial hem venut entre els dos dies?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -485,7 +485,7 @@ Expressió: (60 + 30) × 100 ÷ 150 = 60
 
 **c) És correcte sumar 40 % + 30 % i dir que hem venut el 70 %? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
