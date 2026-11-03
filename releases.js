@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.14.0',title:'Recupera un lot',
+    changes:['Codi imprès a cada pàgina i enllaç compartible per recuperar els exercicis, l’ordre i la paginació.','Accés a la targeta de suport voluntari V4V des del peu.']
+  },
+  {
     version:'0.13.0',title:'Quin és el tot?',
     changes:[
       'Dotze problemes nous, P0049–P0060: fraccions de quantitats, totals diferents i referents que cal interpretar.',

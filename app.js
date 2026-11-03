@@ -232,12 +232,14 @@
   }
   function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen,state.pageCount,state.perPage);
+    const lotFooter=chosen.length===capacity()?'<footer class="sheet-lot">Codi del lot: <code>'+LotCode.encode(state)+'</code></footer>':'';
     let number=0;
     return groups.map((group,index)=>{
       const title=state.title.trim();
       const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / ${state.pageCount}</span></header>`:'';
       const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
-      return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${sheet}</div>`:sheet;
+      const page=sheet.slice(0,-10)+lotFooter+'</section>';
+      return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${page}</div>`:page;
     }).join('');
   }
   function renderPreview(animate=false) {
@@ -470,5 +472,45 @@
     render();
   }
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
-  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();setupFooterTools();makeFilters();update();
+  function setupLots(){
+    const dialog=$('lot-dialog'), status=$('lot-status'), output=$('lot-current');
+    const refresh=()=>{
+      const ready=!issues().length;
+      $('lot-share').hidden=!ready;
+      output.value=ready?LotCode.encode(state):'';
+    };
+    const restore=code=>{
+      const lot=LotCode.decode(code);
+      if(lot.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Aquest lot conté exercicis que no són al catàleg actual.');
+      state=validateState({...initial(),...lot});query='';solutionView=false;
+      notice='';syncControls();update();setStep(true);
+    };
+    bindDialog(dialog,$('lot-open'),$('lot-close'),{onOpen:()=>{status.textContent='';refresh();}});
+    $('lot-form').addEventListener('submit',event=>{
+      event.preventDefault();
+      try{restore($('lot-input').value);dialog.close();$('preview-title').focus();}
+      catch(error){status.textContent=error.message;}
+    });
+    const shareURL=()=>{const url=new URL(location.href);url.hash='lot='+LotCode.encode(state);return url.href;};
+    $('lot-copy').addEventListener('click',()=>{refresh();copyLotText(output.value,output,status,'Codi copiat.');});
+    $('lot-link').addEventListener('click',()=>copyLotText(shareURL(),output,status,'Enllaç copiat.'));
+    const recoverFromLink=()=>{
+      const shared=new URLSearchParams(location.hash.slice(1)).get('lot');
+      if(shared===null)return;
+      try{
+        restore(shared);
+        if(dialog.open){dialog.close();$('preview-title').focus();}
+        try{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);}catch{}
+      }catch(error){$('lot-open').click();$('lot-input').value=shared;status.textContent=error.message;}
+    };
+    addEventListener('hashchange',recoverFromLink);
+    recoverFromLink();
+  }
+  async function copyLotText(value,field,status,success){
+    try{await navigator.clipboard.writeText(value);status.textContent=success;}
+    catch{field.value=value;field.focus();field.select();status.textContent='Text seleccionat. Copia’l manualment.';}
+  }
+  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();setupFooterTools();makeFilters();update();setupLots();
+  bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));
+  $('v4v-copy').addEventListener('click',()=>copyLotText($('v4v-address').value,$('v4v-address'),$('v4v-status'),'Adreça copiada.'));
 })();

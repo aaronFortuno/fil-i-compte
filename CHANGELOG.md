@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.14.0 · Recupera un lot
+
+- Codi i enllaç per recuperar tries manuals o automàtiques, amb els exercicis en ordre i la mateixa paginació. Codi al peu dels exercicis i dels solucionaris.
+- Accés a «Sobre el projecte · V4V» des del peu, amb la targeta Lightning de la família de projectes de Plec.
+
 ## 0.13.0 · Quin és el tot?
 
 - Revisió del quart bloc: nou problemes de CS i ESO passen a pregunta única, sense demanar els càlculs intermedis com a apartats. Es conserva el guiatge de CM: el bloc té ara 16 preguntes.

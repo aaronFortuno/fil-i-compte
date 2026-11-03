@@ -6,7 +6,7 @@
   <meta name="description" content="Tria problemes de matemàtiques, configura les pàgines de la fitxa i imprimeix solucionaris amb estratègies visuals.">
   <link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="catalog-data.js"></script><script defer src="core.js"></script><script defer src="releases.js"></script><script defer src="app.js"></script>
+  <script defer src="catalog-data.js"></script><script defer src="core.js"></script><script defer src="lot-code.js"></script><script defer src="releases.js"></script><script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip" href="#catalogue">Salta al banc de problemes</a>
@@ -51,7 +51,7 @@
     </section>
     </div></div>
     <footer class="selection-bar" aria-label="Navegació i accions de la fitxa">
-      <div class="footer-version"><button id="version-history" class="version-button" aria-haspopup="dialog" aria-controls="history-dialog" aria-label="Historial de versions">Historial de versions</button></div>
+      <div class="footer-version footer-project"><button id="version-history" class="version-button" aria-haspopup="dialog" aria-controls="history-dialog" aria-label="Historial de versions">Historial de versions</button><button id="lot-open" class="footer-pill" aria-haspopup="dialog" aria-controls="lot-dialog">Lot<span class="footer-lot-long"> d’exercicis</span></button><button id="v4v-open" class="footer-pill" aria-haspopup="dialog" aria-controls="v4v-dialog" aria-label="Sobre el projecte · V4V"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.8 8.6c0 4.4-8.8 9.5-8.8 9.5S3.2 13 3.2 8.6a4.5 4.5 0 0 1 8.8-1 4.5 4.5 0 0 1 8.8 1Z"/></svg> V4V</button></div>
       <div class="footer-navigation"><nav class="step-navigation" aria-label="Passos de la fitxa"><button id="close-preview" class="step-button" aria-current="step"><span class="step-circle" aria-hidden="true">1</span><span>Banc</span></button><span class="step-connector" aria-hidden="true"></span><button id="preview-button" class="step-button" aria-describedby="selection-status"><span class="step-circle" aria-hidden="true">2</span><span>Revisa la fitxa <span aria-hidden="true">→</span></span></button></nav><p id="selection-status" class="selection-summary" role="status" aria-live="polite" aria-atomic="true"><strong id="selection-count">4/4 triats</strong><span id="selection-hint">Tria completa</span></p></div>
       <div id="bank-actions" class="selection-actions"><button id="files-toggle" class="footer-tool" popovertarget="files-popover" aria-label="Importa o exporta fitxers JSON" title="Importa o exporta JSON"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v14m-4-4 4 4 4-4M17 21V7m-4 4 4-4 4 4"/></svg></button></div>
       <div id="review-actions" class="selection-actions" hidden><button id="print-exercises" class="primary direct-print">Imprimeix fitxa / PDF</button><button id="print-solutions" class="secondary direct-print">Imprimeix solucionari / PDF</button><button id="print-toggle" class="footer-tool compact-print" popovertarget="print-popover" aria-label="Imprimeix la fitxa o el solucionari" title="Imprimeix / PDF"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H3v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7h-4"/><path d="M7 14h10v7H7zM17 11h1"/></svg></button></div>
@@ -85,6 +85,28 @@
   <dialog id="history-dialog" class="history-dialog" aria-labelledby="history-title">
     <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="history-title">Historial de versions</h2></div><button id="close-history" class="history-close" aria-label="Tanca l’historial" autofocus>×</button></header>
     <div class="history-scroll" tabindex="0" role="region" aria-label="Canvis de cada versió"><ol id="release-list" class="release-list"></ol></div>
+  </dialog>
+  <dialog id="lot-dialog" class="history-dialog" aria-labelledby="lot-title">
+    <header class="history-heading"><div><p class="history-eyebrow">Fil i compte</p><h2 id="lot-title">Lot d’exercicis</h2></div><button id="lot-close" class="history-close" aria-label="Tanca">×</button></header>
+    <div class="history-scroll utility-content">
+      <section id="lot-share" class="utility-card">
+        <label for="lot-current">Codi del lot actual</label><input id="lot-current" readonly spellcheck="false">
+        <div class="utility-actions"><button id="lot-copy" class="secondary">Copia el codi</button><button id="lot-link" class="secondary">Copia l’enllaç</button></div>
+      </section>
+      <form id="lot-form" class="utility-card"><label for="lot-input">Recupera un lot</label><input id="lot-input" required maxlength="400" spellcheck="false" autocapitalize="characters" autocomplete="off"><p>Recupera els exercicis, l’ordre i la paginació amb els enunciats del catàleg actual.</p><button class="primary">Recupera</button></form>
+      <p id="lot-status" role="status"></p>
+    </div>
+  </dialog>
+  <dialog id="v4v-dialog" class="history-dialog" aria-labelledby="v4v-title">
+    <header class="history-heading"><div><p class="history-eyebrow">Value for Value</p><h2 id="v4v-title">Sobre el projecte</h2></div><button id="v4v-close" class="history-close" aria-label="Tanca">×</button></header>
+    <div class="history-scroll utility-content">
+      <p>Fil i compte és un recurs gratuït d’Aarón Fortuño per preparar fitxes de matemàtiques. Si et resulta útil, recomanar-lo també és una manera de donar-hi suport.</p>
+      <section class="utility-card v4v-card">
+        <a class="v4v-qr" href="lightning:LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZAR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30D3H82UNVWQHKZUR5WDMKJMFEXQESLJTDDS" aria-label="Obre la cartera Lightning"><img src="assets/v4v/lightning.svg" alt="Codi QR per fer una aportació voluntària amb Lightning" width="128" height="128"></a>
+        <div><label for="v4v-address">Lightning Network</label><p>Aportació voluntària</p><input id="v4v-address" value="aptswim903@walletofsatoshi.com" readonly><button id="v4v-copy" class="secondary">Copia l’adreça</button><p id="v4v-status" role="status"></p></div>
+      </section>
+      <p><a href="https://github.com/aaronFortuno/fil-i-compte">Codi obert · GitHub ↗</a></p>
+    </div>
   </dialog>
   <div id="print-root"></div>
   <noscript>Aquest compositor necessita JavaScript activat. El catàleg original és a data/catalog.json.</noscript>
