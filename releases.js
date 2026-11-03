@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.17.0',title:'El codi i les plantilles, a mà',
+    changes:['Codi editable a la capçalera, amb còpia i recuperació directa.','Calaix lateral de plantilles i configuració a l’esquerra tant al banc com a la revisió.']
+  },
+  {
     version:'0.16.0',title:'Plantilles locals amb nom',
     changes:['Desa i recupera la configuració i la tria exacta del lot des del navegador.','Codi del lot a la part superior dreta de cada pàgina.']
   },

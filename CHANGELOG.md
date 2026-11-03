@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.17.0 · El codi i les plantilles, a mà
+
+- Camp «Codi» a la capçalera per veure, copiar i recuperar una tria. El codi imprès també porta l’etiqueta «Codi».
+- Tirador «Plantilles» a la dreta, amb un calaix per desar, obrir i eliminar plantilles locals.
+- Banc i revisió amb una barra de configuració a l’esquerra de la mateixa amplada en escriptori.
+
 ## 0.16.0 · Plantilles locals amb nom
 
 - «Lot d’exercicis» permet desar, obrir i eliminar plantilles al navegador. Es conserva la configuració i el codi que recupera els exercicis en el mateix ordre.

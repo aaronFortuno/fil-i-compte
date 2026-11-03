@@ -152,6 +152,10 @@
   function update(animatePreview=false) {
     persist();renderCards();
     const problems=issues(),candidates=catalogue.filter(e=>C.eligible(e,state.filters)).length;
+    $('lot-input').value=problems.length?'':LotCode.encode(state);
+    $('lot-copy').disabled=problems.length>0;
+    $('lot-input').removeAttribute('aria-invalid');
+    $('code-status').textContent='';
     $('preview-button').disabled=problems.length>0;
     $('preview-button').title=problems.length?'Completa una tria que compleixi els filtres per revisar la fitxa.':'';
     $('compose').disabled=candidates<capacity()||C.parseSearch(query).kind==='invalid';
@@ -239,7 +243,7 @@
   }
   function pagesHTML(solutions=false,screen=false) {
     const chosen=selected(),groups=C.pageGroups(chosen,state.pageCount,state.perPage);
-    const lotLabel=chosen.length===capacity()?'<span class="sheet-lot">Codi del lot: <code>'+LotCode.encode(state)+'</code></span>':'';
+    const lotLabel=chosen.length===capacity()?'<span class="sheet-lot">Codi: <code>'+LotCode.encode(state)+'</code></span>':'';
     let number=0;
     return groups.map((group,index)=>{
       const showHeader=index===0||state.repeatHeader;
@@ -434,19 +438,19 @@
     $('release-list').innerHTML=releases.map((release,index)=>`<li><div class="release-meta"><span class="release-version">v${escape(release.version)}</span>${index===0?'<span class="release-current">Versió actual</span>':''}</div><h3>${escape(release.title)}</h3><ul>${release.changes.map(change=>`<li>${escape(change)}</li>`).join('')}</ul></li>`).join('');
     bindDialog(dialog,trigger,$('close-history'));
   }
-  function bindDialog(dialog,trigger,closeButton,{onOpen=()=>{},onClose=()=>{}}={}) {
+  function bindDialog(dialog,trigger,closeButton,{onOpen=()=>{},onClose=()=>{},offset='translateY(8px)'}={}) {
     let closing=false;
     const close=async()=>{
       if(closing||!dialog.open)return;
       closing=true;
-      if(motionDuration())await dialog.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(8px)'}],{duration:motionDuration(),easing:'cubic-bezier(.22,.68,.25,1)'}).finished.catch(()=>{});
+      if(motionDuration())await dialog.animate([{opacity:1,transform:'none'},{opacity:0,transform:offset}],{duration:motionDuration(),easing:'cubic-bezier(.22,.68,.25,1)'}).finished.catch(()=>{});
       dialog.close();closing=false;
     };
     trigger.addEventListener('click',()=>{
       if(dialog.open)return;
       dialog.showModal();dialog.querySelector('.history-scroll').scrollTop=0;
       onOpen();
-      animateElements([dialog],[{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}]);
+      animateElements([dialog],[{opacity:0,transform:offset},{opacity:1,transform:'none'}]);
     });
     closeButton.addEventListener('click',close);
     dialog.addEventListener('close',onClose);
@@ -486,7 +490,7 @@
   }
   $('catalogue-motto').textContent=new Intl.NumberFormat('ca').format(catalogue.length)+' problemes -i sumant- per pensar, practicar i aprendre';
   function setupLots(){
-    const dialog=$('lot-dialog'), status=$('lot-status'), output=$('lot-current');
+    const dialog=$('lot-dialog'), status=$('lot-status'), input=$('lot-input'),codeStatus=$('code-status');
     const templateKey='fil-i-compte-templates-v1';
     const readTemplates=()=>JSON.parse(localStorage.getItem(templateKey)||'[]');
     const saveTemplates=templates=>localStorage.setItem(templateKey,JSON.stringify(templates));
@@ -497,10 +501,8 @@
     };
     const refresh=()=>{
       const ready=!issues().length;
-      $('lot-share').hidden=!ready;
       $('template-save').hidden=!ready;
       $('template-incomplete').hidden=ready;
-      output.value=ready?LotCode.encode(state):'';
     };
     const restore=(code,configuration={workPattern:state.workPattern,repeatHeader:state.repeatHeader})=>{
       const lot=LotCode.decode(code);
@@ -508,7 +510,7 @@
       state=validateState({...initial(),...configuration,...lot});query=state.filters.codes||'';solutionView=false;
       notice='';syncControls();update();setStep(true);
     };
-    bindDialog(dialog,$('lot-open'),$('lot-close'),{onOpen:()=>{
+    bindDialog(dialog,$('templates-open'),$('lot-close'),{offset:'translateX(100%)',onOpen:()=>{
       status.textContent='';refresh();
       try{renderTemplates();}catch{status.textContent='No s’han pogut llegir les plantilles d’aquest navegador.';}
     }});
@@ -541,14 +543,14 @@
         }
       }catch(error){status.textContent='No s’ha pogut completar l’acció. '+error.message;}
     });
+    const codeError=error=>{input.setAttribute('aria-invalid','true');codeStatus.textContent=error.message;input.focus();};
+    input.addEventListener('input',()=>{input.removeAttribute('aria-invalid');codeStatus.textContent='';});
     $('lot-form').addEventListener('submit',event=>{
       event.preventDefault();
-      try{restore($('lot-input').value);dialog.close();$('preview-title').focus();}
-      catch(error){status.textContent=error.message;}
+      try{restore(input.value);$('preview-title').focus();}
+      catch(error){codeError(error);}
     });
-    const shareURL=()=>{const url=new URL(location.href);url.hash='lot='+LotCode.encode(state);return url.href;};
-    $('lot-copy').addEventListener('click',()=>{refresh();copyLotText(output.value,output,status,'Codi copiat.');});
-    $('lot-link').addEventListener('click',()=>copyLotText(shareURL(),output,status,'Enllaç copiat.'));
+    $('lot-copy').addEventListener('click',()=>copyLotText(LotCode.encode(state),input,codeStatus,'Codi copiat.'));
     const recoverFromLink=()=>{
       const shared=new URLSearchParams(location.hash.slice(1)).get('lot');
       if(shared===null)return;
@@ -556,7 +558,7 @@
         restore(shared);
         if(dialog.open){dialog.close();$('preview-title').focus();}
         try{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);}catch{}
-      }catch(error){$('lot-open').click();$('lot-input').value=shared;status.textContent=error.message;}
+      }catch(error){input.value=shared;codeError(error);}
     };
     addEventListener('hashchange',recoverFromLink);
     recoverFromLink();
