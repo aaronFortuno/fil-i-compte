@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.14.3',title:'Un peu més senzill',
+    changes:['El codi i l’enllaç del lot substitueixen el menú JSON.','Historial i V4V a la dreta; accions d’impressió a l’esquerra durant la revisió.']
+  },
+  {
     version:'0.14.2',title:'Un quadre V4V més sobri',
     changes:['Informació del projecte sense targetes, amb tipografia més petita i una distribució inspirada en Pentagrama.']
   },

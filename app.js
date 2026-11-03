@@ -192,18 +192,22 @@
     document.addEventListener('scroll',event=>{if(popup.matches(':popover-open')&&!popup.contains(event.target))positionPopover(popup,trigger);},true);
   }
   function setupFooterTools() {
-    const menus=[[$('files-popover'),$('files-toggle')],[$('print-popover'),$('print-toggle')]];
-    for(const [popup,trigger] of menus){
-      popup.addEventListener('toggle',event=>{if(event.newState==='open'){positionPopover(popup,trigger);animateElements([popup],[{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}]);}});
-    }
-    $('files-popover').addEventListener('click',event=>{if(event.target.closest('#save,#export-catalog'))$('files-popover').hidePopover();});
-    $('print-popover').addEventListener('click',event=>{
-      const button=event.target.closest('[data-print]');if(!button)return;
-      $('print-popover').hidePopover();print(button.dataset.print==='solutions');
+    const popup=$('print-popover'),trigger=$('print-toggle');
+    popup.addEventListener('toggle',event=>{
+      if(event.newState!=='open')return;
+      positionPopover(popup,trigger);
+      animateElements([popup],[{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}]);
     });
-    const reposition=()=>{for(const [popup,trigger] of menus)if(popup.matches(':popover-open')){if(trigger.getClientRects().length)positionPopover(popup,trigger);else popup.hidePopover();}};
+    popup.addEventListener('click',event=>{
+      const button=event.target.closest('[data-print]');if(!button)return;
+      popup.hidePopover();print(button.dataset.print==='solutions');
+    });
+    const reposition=()=>{
+      if(!popup.matches(':popover-open'))return;
+      if(trigger.getClientRects().length)positionPopover(popup,trigger);else popup.hidePopover();
+    };
     window.addEventListener('resize',reposition);
-    document.addEventListener('scroll',event=>{if(!menus.some(([popup])=>popup.contains(event.target)))reposition();},true);
+    document.addEventListener('scroll',event=>{if(!popup.contains(event.target))reposition();},true);
   }
   function setupSelectionPopover() {
     const popup=$('selection-popover');
@@ -256,13 +260,13 @@
     if(review===reviewStep)return;
     if($('selection-popover').matches(':popover-open'))$('selection-popover').hidePopover();
     if($('search-help').matches(':popover-open'))$('search-help').hidePopover();
-    for(const id of ['files-popover','print-popover'])if($(id).matches(':popover-open'))$(id).hidePopover();
+    if($('print-popover').matches(':popover-open'))$('print-popover').hidePopover();
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
     $('bank-step').inert=review;$('bank-step').setAttribute('aria-hidden',String(review));
     $('preview').inert=!review;$('preview').setAttribute('aria-hidden',String(!review));
-    $('bank-actions').hidden=review;$('review-actions').hidden=!review;
+    $('review-actions').hidden=!review;
     $('close-preview').toggleAttribute('aria-current',!review);$('preview-button').toggleAttribute('aria-current',review);
     (review?$('preview-button'):$('close-preview')).setAttribute('aria-current','step');
     const skip=document.querySelector('.skip');skip.href=review?'#preview-title':'#catalogue';skip.textContent=review?'Salta a la revisió de la fitxa':'Salta al banc de problemes';
@@ -340,10 +344,6 @@
   function endPan(event){if(!pan||pan.id!==event.pointerId)return;pan=null;canvas.classList.remove('is-panning');if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);}
   canvas.addEventListener('pointerup',endPan);canvas.addEventListener('pointercancel',endPan);canvas.addEventListener('lostpointercapture',endPan);
   canvas.addEventListener('dragstart',event=>event.preventDefault());
-  function download(name,content) {
-    const url=URL.createObjectURL(new Blob([JSON.stringify(content,null,2)],{type:'application/json;charset=utf-8'}));
-    const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
-  }
   function print(solutions) {
     if(issues().length)return;
     printMode=solutions;
@@ -399,21 +399,6 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title='Fil i compte · Banc de problemes';});
-  $('save').addEventListener('click',()=>download('fil-i-compte-tria.json',{format:'fil-i-compte-selection',version:3,state,exercises:selected()}));
-  $('load').addEventListener('change',async event=>{
-    const file=event.target.files[0];if(!file)return;
-    if($('files-popover').matches(':popover-open'))$('files-popover').hidePopover();
-    try {
-      if(file.size>1000000)throw Error('El fitxer és massa gran.');
-      const saved=JSON.parse(await file.text());
-      if(saved.format!=='fil-i-compte-selection'||![1,2,3].includes(saved.version))throw Error('Aquest fitxer no és una tria de Fil i compte.');
-      const next=validateState(saved.state);
-      if(!Array.isArray(saved.exercises)||saved.exercises.length!==next.ids.length||next.ids.some((id,index)=>!C.sameExerciseContent(saved.exercises[index],catalogue.find(e=>e.id===id))))throw Error('El contingut desat no coincideix amb aquesta versió del catàleg. Conserva el fitxer per revisar-lo.');
-      state=next;query=state.filters.codes||'';syncControls();message('Tria recuperada amb els mateixos problemes.','success');update();
-    }catch(error){message('No s’ha pogut recuperar la tria. '+error.message,'error');}
-    event.target.value='';
-  });
-  $('export-catalog').addEventListener('click',()=>download('fil-i-compte-cataleg.json',EXERCISE_CATALOG));
   function setupHistory() {
     const releases=FIL_I_COMPTE_RELEASES,dialog=$('history-dialog'),trigger=$('version-history');
     trigger.textContent='v'+releases[0].version;trigger.title='Historial de versions';

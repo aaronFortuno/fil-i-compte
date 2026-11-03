@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.14.3 · Un peu més senzill
+
+- Retirat el menú d’importació i exportació JSON. Les tries es comparteixen i es recuperen des de «Lot d’exercicis».
+- Historial de versions i V4V al cantó dret del peu. El cantó esquerre queda buit al banc i mostra les accions d’impressió durant la revisió.
+
 ## 0.14.2 · Un quadre V4V més sobri
 
 - Redisseny inspirat en Pentagrama: introducció amb QR lateral, autoria i crèdits en dues columnes, tipografia més petita i separadors fins en lloc de targetes. En mòbil, el contingut passa a una columna.
