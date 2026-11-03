@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.17.1',title:'Plantilles més clares i un tirador estable',
+    changes:['Desar manté el calaix i el pas actual; el tirador ja no es desplaça en prémer-lo.','Cada plantilla indica la mida de la fitxa i els continguts obligatoris i exclosos.']
+  },
+  {
     version:'0.17.0',title:'El codi i les plantilles, a mà',
     changes:['Codi editable a la capçalera, amb còpia i recuperació directa.','Calaix lateral de plantilles i configuració a l’esquerra tant al banc com a la revisió.']
   },

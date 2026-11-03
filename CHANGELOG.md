@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.17.1 · Plantilles més clares i un tirador estable
+
+- El tirador queda fix en prémer-lo i el calaix apareix sense desplaçar els controls. Desar una plantilla manté el calaix obert, el focus al camp de nom i el pas actual.
+- Els resums mostren el nombre de pàgines i exercicis, els continguts obligatoris i els exclosos.
+
 ## 0.17.0 · El codi i les plantilles, a mà
 
 - Camp «Codi» a la capçalera per veure, copiar i recuperar una tria. El codi imprès també porta l’etiqueta «Codi».

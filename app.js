@@ -440,6 +440,11 @@
   }
   function bindDialog(dialog,trigger,closeButton,{onOpen=()=>{},onClose=()=>{},offset='translateY(8px)'}={}) {
     let closing=false;
+    let backdropPress=false;
+    const isBackdrop=event=>{
+      const r=dialog.getBoundingClientRect();
+      return event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom);
+    };
     const close=async()=>{
       if(closing||!dialog.open)return;
       closing=true;
@@ -448,6 +453,7 @@
     };
     trigger.addEventListener('click',()=>{
       if(dialog.open)return;
+      backdropPress=false;
       dialog.showModal();dialog.querySelector('.history-scroll').scrollTop=0;
       onOpen();
       animateElements([dialog],[{opacity:0,transform:offset},{opacity:1,transform:'none'}]);
@@ -455,9 +461,10 @@
     closeButton.addEventListener('click',close);
     dialog.addEventListener('close',onClose);
     dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+    dialog.addEventListener('pointerdown',event=>{backdropPress=isBackdrop(event);});
     dialog.addEventListener('click',event=>{
-      const r=dialog.getBoundingClientRect();
-      if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))close();
+      if(backdropPress&&isBackdrop(event))close();
+      backdropPress=false;
     });
   }
   function setupHelp() {
@@ -494,10 +501,26 @@
     const templateKey='fil-i-compte-templates-v1';
     const readTemplates=()=>JSON.parse(localStorage.getItem(templateKey)||'[]');
     const saveTemplates=templates=>localStorage.setItem(templateKey,JSON.stringify(templates));
+    const templateSummary=({code,configuration})=>{
+      let size='';
+      try{
+        const {pageCount,ids}=LotCode.decode(code);
+        size=`<p class="template-size">${pageCount} ${pageCount===1?'pàgina':'pàgines'} · ${ids.length} exercicis</p>`;
+      }catch{/* Keep an unreadable template visible so it can be removed. */}
+      const filters=configuration?.filters?.features||{};
+      const summary=(mode,label)=>{
+        const names=Object.entries(C.FEATURES).filter(([id])=>filters[id]===mode).map(([,name])=>name);
+        return names.length?`<p><strong>${label}:</strong> ${escape(names.join(', '))}</p>`:'';
+      };
+      return size+summary('require','Obligatoris')+summary('exclude','Exclosos');
+    };
     const renderTemplates=()=>{
       const templates=readTemplates();
       $('template-empty').hidden=templates.length>0;
-      $('template-list').innerHTML=templates.map(({name,code})=>`<li><div><strong>${escape(name)}</strong><code>${escape(code)}</code></div><div class="utility-actions"><button type="button" class="secondary" data-template-open="${escape(name)}" aria-label="Obre ${escape(name)}">Obre</button><button type="button" class="secondary" data-template-delete="${escape(name)}" aria-label="Elimina ${escape(name)}">Elimina</button></div></li>`).join('');
+      $('template-list').innerHTML=templates.map(template=>{
+        const name=escape(template.name);
+        return `<li><div class="template-summary"><strong>${name}</strong><code>${escape(template.code)}</code>${templateSummary(template)}</div><div class="utility-actions"><button type="button" class="secondary" data-template-open="${name}" aria-label="Obre ${name}">Obre</button><button type="button" class="secondary" data-template-delete="${name}" aria-label="Elimina ${name}">Elimina</button></div></li>`;
+      }).join('');
     };
     const refresh=()=>{
       const ready=!issues().length;
@@ -510,7 +533,7 @@
       state=validateState({...initial(),...configuration,...lot});query=state.filters.codes||'';solutionView=false;
       notice='';syncControls();update();setStep(true);
     };
-    bindDialog(dialog,$('templates-open'),$('lot-close'),{offset:'translateX(100%)',onOpen:()=>{
+    bindDialog(dialog,$('templates-open'),$('lot-close'),{offset:'none',onOpen:()=>{
       status.textContent='';refresh();
       try{renderTemplates();}catch{status.textContent='No s’han pogut llegir les plantilles d’aquest navegador.';}
     }});
@@ -526,6 +549,7 @@
         const {ids,...configuration}=state;
         saveTemplates([...templates,{name,code:LotCode.encode(state),configuration}]);
         $('template-name').value='';renderTemplates();status.textContent='Plantilla desada.';
+        $('template-name').focus({preventScroll:true});
       }catch{status.textContent='No s’ha pogut desar la plantilla en aquest navegador.';}
     });
     $('template-list').addEventListener('click',event=>{
