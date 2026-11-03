@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 15,
+    "version": 16,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -7001,6 +7001,696 @@ globalThis.EXERCISE_CATALOG = {
               3
             ],
             "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0121",
+      "version": 1,
+      "title": "La parada de berenars",
+      "context": "mercat",
+      "structure": "canvi-amb-dues-menes-de-producte",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "A la parada del mercat comprem 2 entrepans a 3 € cadascun i una bossa de fruita a 4 €. Paguem amb un bitllet de 20 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin canvi ens han de tornar?",
+      "solution": {
+        "expression": "20 − (2 × 3 + 4) = 10",
+        "calculation": [
+          "sub",
+          20,
+          [
+            "add",
+            [
+              "mul",
+              2,
+              3
+            ],
+            4
+          ]
+        ],
+        "answer": 10,
+        "unit": "€",
+        "response": "Ens han de tornar 10 €.",
+        "steps": [
+          "Els dos entrepans costen 6 €. Amb la fruita, el preu total és de 10 €.",
+          "Restem el preu total dels 20 € que hem donat."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0122",
+      "version": 1,
+      "title": "El moneder i les monedes",
+      "context": "fira",
+      "structure": "sumar-moneda-i-descomptar-la-compra",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En Biel compra 2 llibretes de 4 € cadascuna i un estoig de 3 €. Per pagar dona un bitllet de 10 € i dues monedes de 2 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants euros li han de tornar?",
+      "solution": {
+        "expression": "(10 + 2 × 2) − (2 × 4 + 3) = 3",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            10,
+            [
+              "mul",
+              2,
+              2
+            ]
+          ],
+          [
+            "add",
+            [
+              "mul",
+              2,
+              4
+            ],
+            3
+          ]
+        ],
+        "answer": 3,
+        "unit": "€",
+        "response": "Li han de tornar 3 €.",
+        "steps": [
+          "En Biel entrega 10 € més 4 €, en total 14 €.",
+          "Les llibretes costen 8 € i l’estoig 3 €. Restem els 11 € de la compra dels 14 € entregats."
+        ],
+        "note": "El canvi és la diferència entre el que entrega i el que costa la compra."
+      }
+    },
+    {
+      "id": "P0123",
+      "version": 1,
+      "title": "El canvi del tiquet",
+      "context": "papereria",
+      "structure": "comprovacio-del-canvi",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La Núria ha comprat 2 carpetes de 4 € cadascuna i un bloc de notes de 3 €. Ha pagat amb un bitllet de 20 € i li han tornat 7 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Li han tornat el canvi correcte? Si no, digues de quants euros és la diferència.",
+      "solution": {
+        "kind": "justification",
+        "response": "No. Li havien de tornar 9 € i n’hi han tornat 7. Li falten 2 €.",
+        "steps": [
+          "Les dues carpetes costen 8 €. Amb el bloc, la compra puja a 11 €.",
+          "El canvi correcte és 20 − 11 = 9 €. Comparem els 9 € amb els 7 € que li han tornat."
+        ],
+        "note": "La diferència que busquem és entre el canvi correcte i el canvi rebut.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              20,
+              [
+                "add",
+                [
+                  "mul",
+                  2,
+                  4
+                ],
+                3
+              ]
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "sub",
+              9,
+              7
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0124",
+      "version": 1,
+      "title": "Canvi per a tothom",
+      "context": "fira",
+      "structure": "canvi-compartit-a-parts-iguals",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tres amics posen 5 € cadascun per fer una compra conjunta. Compren 2 bosses de crispetes de 3 € cadascuna i una gerra de llimonada de 3 €. Es reparteixen el canvi a parts iguals.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quant rep cadascú del canvi?",
+      "solution": {
+        "expression": "(3 × 5 − (2 × 3 + 3)) ÷ 3 = 2",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "mul",
+              3,
+              5
+            ],
+            [
+              "add",
+              [
+                "mul",
+                2,
+                3
+              ],
+              3
+            ]
+          ],
+          3
+        ],
+        "answer": 2,
+        "unit": "€",
+        "response": "Cadascú rep 2 €.",
+        "steps": [
+          "Entre tots donen 15 €. La compra costa 6 € de crispetes i 3 € de llimonada.",
+          "Els tornen 6 €. Reparteixen aquests 6 € entre tres persones."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0125",
+      "version": 1,
+      "title": "Restar o comptar fins a vint",
+      "context": "mercat",
+      "structure": "comparacio-resta-i-complement",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La Mar paga amb 20 € per 2 pots de mel de 5 € cadascun i un pa de 3 €. Ella calcula el canvi restant el preu total als 20 € que ha entregat. En Pau parteix del preu de la compra, compta fins a 15 € i després fins a 20 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Compara els dos camins. Per què donen el mateix canvi?",
+      "solution": {
+        "kind": "justification",
+        "response": "Tots dos donen 7 € perquè mesuren la diferència entre els 13 € de la compra i els 20 € entregats.",
+        "steps": [
+          "La compra costa 2 × 5 + 3 = 13 €. La Mar fa 20 − 13 i obté 7 €.",
+          "En Pau afegeix 2 € per arribar de 13 € a 15 €, i després 5 € més per arribar a 20 €. Suma els dos salts: 2 € + 5 € = 7 €."
+        ],
+        "note": "Pots marcar els salts en una recta numèrica.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              20,
+              [
+                "add",
+                [
+                  "mul",
+                  2,
+                  5
+                ],
+                3
+              ]
+            ],
+            "answer": 7
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "sub",
+                15,
+                13
+              ],
+              [
+                "sub",
+                20,
+                15
+              ]
+            ],
+            "answer": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0126",
+      "version": 1,
+      "title": "El preu del material del taller",
+      "context": "tallers",
+      "structure": "comparacio-agrupar-per-persona-o-per-producte",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per a 3 participants d’un taller cal comprar un pinzell de 2 € i un pot de pintura de 4 € per persona. L’Aina suma primer el preu del material d’una persona. En Jan calcula primer el preu de tots els pinzells i el de tots els pots per separat.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Per què els dos camins donen el mateix preu total? Mostra-ho amb els càlculs.",
+      "solution": {
+        "kind": "justification",
+        "response": "Tots dos obtenen 18 €. Compten els mateixos 3 pinzells i 3 pots, agrupats de manera diferent.",
+        "steps": [
+          "L’Aina calcula 2 + 4 = 6 € de material per persona i fa 3 × 6 = 18 €.",
+          "En Jan calcula 3 × 2 = 6 € de pinzells i 3 × 4 = 12 € de pintura. Suma 6 + 12 = 18 €."
+        ],
+        "note": "També pots dibuixar tres parelles de pinzell i pot i després agrupar-los per tipus.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              [
+                "add",
+                2,
+                4
+              ]
+            ],
+            "answer": 18
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                3,
+                2
+              ],
+              [
+                "mul",
+                3,
+                4
+              ]
+            ],
+            "answer": 18
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0127",
+      "version": 1,
+      "title": "Del pati a la biblioteca",
+      "context": "escola",
+      "structure": "hora-final-amb-canvi-dhora",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A les 10.50 la classe comença a recollir el material del pati i triga 5 minuts. Després camina 15 minuts fins a la biblioteca. Allà espera 5 minuts abans d’entrar.",
+      "features": [
+        "suma-resta",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "A quina hora entra a la biblioteca?",
+      "solution": {
+        "expression": "50 + 5 + 15 + 5 − 60 = 15",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "add",
+              [
+                "add",
+                50,
+                5
+              ],
+              15
+            ],
+            5
+          ],
+          60
+        ],
+        "answer": 15,
+        "unit": "minuts després de les 11",
+        "response": "La classe entra a les 11.15.",
+        "steps": [
+          "Acaben de recollir a les 10.55.",
+          "Amb 15 minuts de camí arriben a les 11.10. Amb els 5 minuts d’espera, entren a les 11.15."
+        ],
+        "note": "De les 10.55 a les 11.00 passen 5 minuts. Encara en queden 10 de camí."
+      }
+    },
+    {
+      "id": "P0128",
+      "version": 1,
+      "title": "L’hora de començar l’assaig",
+      "context": "teatre",
+      "structure": "trobar-hora-inicial-a-partir-del-final",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "L’assaig ha d’acabar a les 16.30. Calen 3 minuts per preparar l’espai i després es fan dues passades de 5 minuts cadascuna. Entre les dues passades es fa una pausa de 4 minuts.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "A quina hora han de començar a preparar l’espai, com a molt tard?",
+      "solution": {
+        "expression": "30 − (3 + 2 × 5 + 4) = 13",
+        "calculation": [
+          "sub",
+          30,
+          [
+            "add",
+            [
+              "add",
+              3,
+              [
+                "mul",
+                2,
+                5
+              ]
+            ],
+            4
+          ]
+        ],
+        "answer": 13,
+        "unit": "minuts després de les 16",
+        "response": "Han de començar a les 16.13 com a molt tard.",
+        "steps": [
+          "Les dues passades duren 10 minuts. Amb la pausa i la preparació, es necessiten 17 minuts.",
+          "Comptem 17 minuts enrere des de les 16.30."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0129",
+      "version": 1,
+      "title": "La pista reservada",
+      "context": "esport",
+      "structure": "marge-dins-duna-franja",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim la pista reservada de les 9.55 a les 10.20. Farem 3 partits de 5 minuts cadascun. Al final ens calen 4 minuts per recollir el material.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants minuts de la reserva quedaran lliures després de recollir?",
+      "solution": {
+        "expression": "(60 − 55 + 20) − (3 × 5 + 4) = 6",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "sub",
+              60,
+              55
+            ],
+            20
+          ],
+          [
+            "add",
+            [
+              "mul",
+              3,
+              5
+            ],
+            4
+          ]
+        ],
+        "answer": 6,
+        "unit": "minuts",
+        "response": "Quedaran 6 minuts lliures.",
+        "steps": [
+          "De les 9.55 a les 10.00 hi ha 5 minuts, i fins a les 10.20 n’hi ha 20 més. La reserva dura 25 minuts.",
+          "Els partits i la recollida ocupen 15 + 4 = 19 minuts. Restem 19 de 25."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0130",
+      "version": 1,
+      "title": "Quin autobús ens convé?",
+      "context": "mobilitat",
+      "structure": "comparacio-de-dues-hores-darribada",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Podem agafar dos autobusos per anar al museu. El primer surt a les 10.05, triga 15 minuts i ens deixa a 3 minuts a peu del museu. El segon surt a les 10.10, triga 8 minuts i ens deixa a 4 minuts a peu.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Amb quin autobús arribarem abans al museu i amb quants minuts de diferència?",
+      "solution": {
+        "expression": "(5 + 15 + 3) − (10 + 8 + 4) = 1",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "add",
+              5,
+              15
+            ],
+            3
+          ],
+          [
+            "add",
+            [
+              "add",
+              10,
+              8
+            ],
+            4
+          ]
+        ],
+        "answer": 1,
+        "unit": "minut",
+        "response": "Amb el segon autobús arribarem un minut abans.",
+        "steps": [
+          "Amb el primer arribem a la parada a les 10.20 i al museu a les 10.23.",
+          "Amb el segon arribem a la parada a les 10.18 i al museu a les 10.22. Comparem les hores d’arribada al museu."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0131",
+      "version": 1,
+      "title": "Els minuts de lectura",
+      "context": "biblioteca",
+      "structure": "comparacio-de-suma-de-trams-i-resta-de-pausa",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una sessió de lectura comença a les 10.40 i acaba a les 11.05. Fem una pausa de les 10.50 a les 10.55. La Laia suma els minuts dels dos trams de lectura. En Pol compta tots els minuts de la sessió i en resta la pausa.",
+      "features": [
+        "suma-resta",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Per què els dos camins donen el mateix temps de lectura?",
+      "solution": {
+        "kind": "justification",
+        "response": "Tots dos donen 20 minuts de lectura. La Laia suma els trams llegits i en Pol exclou la pausa del temps total.",
+        "steps": [
+          "La Laia compta 10 minuts de lectura abans de la pausa i 10 després: 5 fins a les 11.00 i 5 més fins a les 11.05.",
+          "En Pol compta 25 minuts de sessió: 20 fins a les 11.00 i 5 més fins a les 11.05. En resta els 5 minuts de pausa."
+        ],
+        "note": "En una línia del temps, tots dos mètodes compten els mateixos dos trams.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "sub",
+                50,
+                40
+              ],
+              [
+                "add",
+                [
+                  "sub",
+                  60,
+                  55
+                ],
+                5
+              ]
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "add",
+                [
+                  "sub",
+                  60,
+                  40
+                ],
+                5
+              ],
+              [
+                "sub",
+                55,
+                50
+              ]
+            ],
+            "answer": 20
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0132",
+      "version": 1,
+      "title": "Una lectura més?",
+      "context": "biblioteca",
+      "structure": "comprovar-temps-per-afegir-una-activitat",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "El club de lectura comença a les 15.35 i ha de deixar la sala lliure a les 16.00. Cada lectura dura 6 minuts i entre dues lectures seguides fem una pausa de 3 minuts. Quan acabem l’última lectura necessitem 5 minuts per recollir. Tenim dues lectures previstes i volem afegir-n’hi una tercera.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Hi cabrà la tercera lectura dins l’horari? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "No. Amb tres lectures acabaríem de recollir a les 16.04, quatre minuts tard.",
+        "steps": [
+          "De les 15.35 a les 16.00 tenim 25 minuts.",
+          "Tres lectures duren 18 minuts. Entre les tres hi ha dues pauses, que sumen 6 minuts. Amb els 5 minuts de recollida ens calen 29 minuts."
+        ],
+        "note": "La pausa va entre lectures. Afegir una lectura també afegeix una pausa.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              60,
+              35
+            ],
+            "answer": 25
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                [
+                  "mul",
+                  3,
+                  6
+                ],
+                [
+                  "mul",
+                  2,
+                  3
+                ]
+              ],
+              5
+            ],
+            "answer": 29
+          },
+          {
+            "calculation": [
+              "sub",
+              29,
+              25
+            ],
+            "answer": 4
           }
         ]
       }

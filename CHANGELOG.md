@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.23.0 · Comptem euros i minuts
+
+- Dotze problemes de cicle mitjà, de P0121 a P0132, amb diners i canvi, durades i horaris.
+- Tres problemes demanen comparar dues maneres d’arribar al mateix resultat.
+
 ## 0.22.0 · Cap enrere i amb residu
 
 - Dotze problemes de cicle mitjà, de P0109 a P0120, amb nombres petits i diversos passos.

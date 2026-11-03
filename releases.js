@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.23.0',title:'Comptem euros i minuts',
+    changes:['Dotze problemes de cicle mitjà amb diners, durades i horaris. Tres comparen dos camins de resolució.','El banc ja té 132 problemes.']
+  },
+  {
     version:'0.22.0',title:'Cap enrere i amb residu',
     changes:['Dotze problemes de cicle mitjà per reconstruir quantitats inicials i decidir què fer amb el que sobra.','El banc ja té 120 problemes.']
   },
