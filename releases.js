@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.14.2',title:'Un quadre V4V més sobri',
+    changes:['Informació del projecte sense targetes, amb tipografia més petita i una distribució inspirada en Pentagrama.']
+  },
+  {
     version:'0.14.1',title:'El lot més a mà i crèdits del projecte',
     changes:['Accés al lot a la capçalera i més controls amb icones Lucide.','Quadre V4V amb retrat, autoria, repositori, crèdits i informació sobre l’analítica desactivada.']
   },

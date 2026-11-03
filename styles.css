@@ -104,31 +104,48 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .utility-actions{display:flex;flex-wrap:wrap;gap:6px}
 #lot-form button{justify-self:start}
 #lot-status:empty,#v4v-status:empty{display:none}
-.v4v-card{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:14px}
-.v4v-card>div{display:grid;gap:6px;justify-items:start}
-.v4v-qr{display:block;padding:4px;border-radius:6px;background:white}
-.v4v-qr img{display:block;width:min(128px,24vw);height:auto}
 .sheet:has(.sheet-lot){padding-bottom:5mm}
 .sheet-lot{flex:none;padding-top:2mm;font-size:7.5pt;line-height:1.2;color:#394c38}
 .sheet-lot code{overflow-wrap:anywhere}
 @media screen and (max-width:850px){.footer-lot-long{display:none}}
 @media screen and (max-width:560px){.selection-bar>.footer-project{flex-direction:column;align-items:flex-start;gap:2px}.footer-pill{font-size:9px;padding:3px 4px}.footer-pill svg{width:12px;height:12px}}
-@media screen and (max-width:380px){.v4v-card{grid-template-columns:1fr}.v4v-qr{justify-self:start}}
 .masthead-actions{display:flex;align-items:center;gap:6px;flex:none}
 .ui-icon{display:inline-block;width:16px;height:16px;flex:none;vertical-align:middle}
 .footer-pill{min-height:34px;justify-content:center;gap:5px;padding:5px 8px;line-height:1}
 #lot-open{background:#e3ecdc;border-color:#a4b99a;font-weight:700}
 #lot-open:hover{background:#d7e7cf}
 .history-close .ui-icon,.selection-close .ui-icon{display:block;margin:auto}
-#v4v-dialog{width:min(740px,calc(100vw - 32px))}
-.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.project-grid h3{font-size:14px;margin:0}
-.project-author{grid-template-columns:auto minmax(0,1fr);align-content:start;gap:10px}
-.project-author>img{width:64px;height:64px;border-radius:50%;object-fit:cover}
-.project-author>div{display:grid;gap:8px}
-.project-author .ui-icon{width:14px;height:14px}
-.project-privacy{grid-column:1/-1}
-.credit-list{padding-left:18px;margin:0;line-height:1.5}
-.credit-list li+li{margin-top:6px}
+#v4v-dialog{width:min(780px,calc(100vw - 32px))}
+#v4v-dialog .history-heading{padding:22px 26px 12px;border:0}
+#v4v-dialog h2{font-size:25px}
+#v4v-dialog .history-close{background:transparent;border:0}
+.v4v-content{padding:0 26px 26px;color:#505d4c}
+.v4v-content p{margin:0 0 8px}
+.v4v-content a:not(.v4v-qr){text-underline-offset:2px}
+.v4v-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;font-size:12px;line-height:1.65}
+.v4v-intro-copy label{display:block;margin-top:12px;font-size:10px}
+.v4v-address-row{display:flex;align-items:center;gap:4px}
+#v4v-address{width:31ch;min-width:0;max-width:100%;padding:2px 0;background:transparent;border:0;color:var(--ink);font:inherit}
+#v4v-copy{background:transparent;color:inherit;border-radius:4px;padding:5px}
+#v4v-copy:hover{background:#e8ede2}
+.v4v-qr{display:block;align-self:start;padding:8px;border:1px solid var(--line);border-radius:6px;background:white}
+.v4v-qr img{display:block;width:110px;height:auto}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:11px;line-height:1.6}
+.project-grid h3{font-size:11px;color:var(--ink);margin:0 0 7px}
+.project-author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px}
+.project-author>img{width:128px;height:128px;border-radius:5px;object-fit:cover}
+.project-grid .ui-icon{width:12px;height:12px}
+.project-privacy{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.project-credits{border-left:1px solid var(--line);padding-left:24px}
+.project-credits h3:not(:first-child){margin-top:13px}
+.credit-list{list-style:none;padding:0;margin:0}
+.credit-list li+li{margin-top:7px}
 @media screen and (max-width:760px){.masthead-actions{grid-column:2;grid-row:1}.masthead .footer-pill{position:relative;min-height:34px}}
-@media screen and (max-width:560px){.masthead-actions .help-label{display:none}.project-grid{grid-template-columns:1fr}.selection-bar>.footer-project{align-self:center}}
+@media screen and (max-width:560px){
+  .masthead-actions .help-label{display:none}.selection-bar>.footer-project{align-self:center}
+  #v4v-dialog .history-heading{padding:16px 18px 10px}.v4v-content{padding:0 18px 18px}
+  .v4v-intro,.project-grid{grid-template-columns:1fr;gap:12px}
+  .v4v-qr{justify-self:start}.v4v-qr img{width:96px}
+  .project-author>img{width:96px;height:96px}
+  .project-credits{border-left:0;padding:12px 0 0;border-top:1px solid var(--line)}
+}

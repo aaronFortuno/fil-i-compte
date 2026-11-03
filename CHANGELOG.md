@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.14.2 · Un quadre V4V més sobri
+
+- Redisseny inspirat en Pentagrama: introducció amb QR lateral, autoria i crèdits en dues columnes, tipografia més petita i separadors fins en lloc de targetes. En mòbil, el contingut passa a una columna.
+
 ## 0.14.1 · El lot més a mà i crèdits del projecte
 
 - Accés al lot a la capçalera, visible tant al banc com a la revisió. Botons coherents i icones Lucide locals.
