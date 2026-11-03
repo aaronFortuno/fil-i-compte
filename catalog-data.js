@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 18,
+    "version": 19,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -9069,6 +9069,619 @@ globalThis.EXERCISE_CATALOG = {
           "Hi sumem la cullerada sencera que cal per al motlle."
         ],
         "note": "Dibuixa dues columnes, una per a la massa i una per al motlle. Ratlla la meitat de les cullerades de la massa i conserva la del motlle."
+      }
+    },
+    {
+      "id": "P0157",
+      "version": 1,
+      "title": "El suc de la gerra",
+      "context": "begudes",
+      "structure": "reconstruir-després-de-treure-un-terc",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "D’una gerra de suc en servim un terç durant el berenar. Després omplim un got de 250 mL amb el suc de la mateixa gerra. Quan acabem hi queden 750 mL.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quant suc hi havia a la gerra abans del berenar?",
+      "solution": {
+        "expression": "(750 + 250) ÷ 2 × 3 = 1.500",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "add",
+              750,
+              250
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 1500,
+        "unit": "mL",
+        "response": "Al principi hi havia 1 litre i mig de suc.",
+        "steps": [
+          "Tornem a comptar el got de 250 mL. Abans d’omplir-lo hi havia 1.000 mL.",
+          "Aquests 1.000 mL són els dos terços que havien quedat. Un terç són 500 mL i tres terços són 1.500 mL."
+        ],
+        "note": "Dibuixa dos blocs que sumin 1 litre. Afegeix un tercer bloc igual per refer la gerra inicial.",
+        "visual": {
+          "type": "fraction",
+          "parts": 3,
+          "filled": 2,
+          "total": 1500,
+          "caption": "Els dos blocs pintats són el litre que hi havia abans d’omplir el got."
+        }
+      }
+    },
+    {
+      "id": "P0158",
+      "version": 1,
+      "title": "Les bosses de la parada",
+      "context": "fira",
+      "structure": "desfer-un-lliurament-i-una-arribada",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al matí una família porta 6 bosses de roba per a la parada solidària. A la tarda es dona a una entitat una quarta part de totes les bosses que hi ha en aquell moment. Al final del dia en queden 18.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes bosses hi havia abans que arribés la família?",
+      "solution": {
+        "expression": "18 ÷ 3 × 4 − 6 = 18",
+        "calculation": [
+          "sub",
+          [
+            "mul",
+            [
+              "div",
+              18,
+              3
+            ],
+            4
+          ],
+          6
+        ],
+        "answer": 18,
+        "unit": "bosses",
+        "response": "Al principi hi havia 18 bosses.",
+        "steps": [
+          "Les 18 bosses finals són els tres quarts que han quedat després de fer la donació. Cada quart són 6 bosses.",
+          "Abans de donar-ne n’hi havia 24. En traiem les 6 que havia portat la família."
+        ],
+        "note": "La quantitat final i la inicial coincideixen perquè les 6 bosses que arriben compensen les 6 que es donen."
+      }
+    },
+    {
+      "id": "P0159",
+      "version": 1,
+      "title": "Els cromos del sobre gran",
+      "context": "joc",
+      "structure": "reconstruir-dos-totals-successius",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En Martí regala una quarta part dels seus cromos. Després en dona un terç dels que li queden a la seva cosina. Finalment n’enganxa 2 a l’àlbum i li queden 10 cromos sense enganxar.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants cromos tenia abans de regalar-ne cap?",
+      "solution": {
+        "expression": "(10 + 2) ÷ 2 × 3 ÷ 3 × 4 = 24",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "mul",
+              [
+                "div",
+                [
+                  "add",
+                  10,
+                  2
+                ],
+                2
+              ],
+              3
+            ],
+            3
+          ],
+          4
+        ],
+        "answer": 24,
+        "unit": "cromos",
+        "response": "Al principi tenia 24 cromos.",
+        "steps": [
+          "Tornem a comptar els 2 de l’àlbum. Abans d’enganxar-los en quedaven 12.",
+          "Els 12 són dos terços dels que tenia abans de donar-ne a la cosina. En aquell moment en tenia 18.",
+          "Els 18 són tres quarts dels inicials. Un quart són 6 cromos i quatre quarts són 24."
+        ],
+        "note": "Dibuixa dues barres, una en terços i l’altra en quarts. El total que recuperes amb la primera omple tres parts de la segona."
+      }
+    },
+    {
+      "id": "P0160",
+      "version": 1,
+      "title": "La llet abans de reomplir",
+      "context": "receptes",
+      "structure": "desfer-mitja-gerra-i-un-volum-afegit",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una gerra hi ha una mica de llet. Hi afegim 1/4 de litre i ho remenem. Aboquem la meitat de la llet de la gerra en un bol. Després d’abocar-la queden 3/8 de litre a la gerra.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta llet hi havia a la gerra abans d’afegir-n’hi?",
+      "solution": {
+        "expression": "375 × 2 − 250 = 500",
+        "calculation": [
+          "sub",
+          [
+            "mul",
+            375,
+            2
+          ],
+          250
+        ],
+        "answer": 500,
+        "unit": "mL",
+        "response": "Al principi hi havia mig litre de llet.",
+        "steps": [
+          "Abans d’abocar la meitat al bol hi havia dos cops 3/8 de litre, és a dir, 6/8.",
+          "Restem el quart de litre que hi havíem afegit. Un quart són 2/8, així que queden 4/8, mig litre."
+        ],
+        "note": "Dibuixa sis trossos d’1/8 de litre. La meitat van anar al bol. Abans d’afegir-hi llet, només n’hi havia quatre.",
+        "visual": {
+          "type": "fraction",
+          "parts": 6,
+          "filled": 4,
+          "total": 750,
+          "caption": "Cada tros representa 125 mL. Els quatre trossos pintats són la llet inicial."
+        }
+      }
+    },
+    {
+      "id": "P0161",
+      "version": 1,
+      "title": "El preu sense rebaixes",
+      "context": "comerc",
+      "structure": "desfer-un-val-i-un-descompte",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una botiga apliquen un 25 % de descompte a una motxilla. Després resten 5 € més amb un val. El preu del tiquet és de 25 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quant costava la motxilla abans de les dues rebaixes?",
+      "solution": {
+        "expression": "(25 + 5) ÷ 3 × 4 = 40",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "add",
+              25,
+              5
+            ],
+            3
+          ],
+          4
+        ],
+        "answer": 40,
+        "unit": "€",
+        "response": "La motxilla costava 40 €.",
+        "steps": [
+          "Abans d’aplicar el val, la motxilla costava 30 €.",
+          "Amb el descompte del 25 % es paguen tres quarts del preu original. Si tres quarts són 30 €, cada quart són 10 €."
+        ],
+        "note": "Dibuixa quatre trams iguals. Els tres que es paguen abans del val sumen 30 €. Afegeix el tram que va treure el descompte.",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 3,
+          "total": 40,
+          "caption": "Els tres trams pintats sumen els 30 € del preu amb descompte abans d’aplicar el val."
+        }
+      }
+    },
+    {
+      "id": "P0162",
+      "version": 1,
+      "title": "Les places del taller",
+      "context": "escola",
+      "structure": "desfer-una-reserva-i-un-augment-percentual",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per a un taller, l’organització augmenta un 20 % les places previstes inicialment. Després reserva 3 places per a convidats. Queden 21 places disponibles per a la resta de persones.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes places hi havia previstes abans de l’augment?",
+      "solution": {
+        "expression": "(21 + 3) ÷ 6 × 5 = 20",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "add",
+              21,
+              3
+            ],
+            6
+          ],
+          5
+        ],
+        "answer": 20,
+        "unit": "places",
+        "response": "Hi havia 20 places previstes inicialment.",
+        "steps": [
+          "Abans de fer la reserva, el taller tenia 24 places.",
+          "Un augment del 20 % afegeix una cinquena part a les cinc parts inicials. Si sis parts són 24 places, cinc parts són 20."
+        ],
+        "note": "Fes sis grups de quatre places. Un grup correspon a l’augment. Els altres cinc són la previsió inicial."
+      }
+    },
+    {
+      "id": "P0163",
+      "version": 1,
+      "title": "La farina de la recepta original",
+      "context": "receptes",
+      "structure": "desfer-un-extra-i-un-canvi-de-racions",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una recepta de pizza és per a 4 persones. En fem per a 6 amb la mateixa mida de ració. A més de la farina de la massa, fem servir 40 g de farina per enfarinar el taulell. En total n’hem gastat 400 g.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta farina per a la massa indicava la recepta de quatre persones?",
+      "solution": {
+        "expression": "(400 − 40) ÷ 3 × 2 = 240",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "sub",
+              400,
+              40
+            ],
+            3
+          ],
+          2
+        ],
+        "answer": 240,
+        "unit": "g",
+        "response": "La recepta indicava 240 g de farina per a la massa.",
+        "steps": [
+          "Dels 400 g, en traiem els 40 del taulell. La massa per a sis persones porta 360 g.",
+          "Sis racions fan tres grups de dues. Cada grup porta 120 g. Per a quatre persones calen dos grups."
+        ],
+        "note": "Taula de racions de massa. 2 persones → 120 g. 4 persones → 240 g. 6 persones → 360 g."
+      }
+    },
+    {
+      "id": "P0164",
+      "version": 1,
+      "title": "Quan vam sortir de l’escola?",
+      "context": "sortida",
+      "structure": "reconstruir-horari-travessant-lhora",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un grup entra a la sala d’un museu a les 12.05. Just abans ha esperat 10 minuts al vestíbul i ha trigat 5 minuts a deixar les motxilles al guarda-roba. Abans d’això havia caminat 15 minuts des de l’escola.",
+      "features": [
+        "suma-resta",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "A quina hora va sortir el grup de l’escola?",
+      "solution": {
+        "expression": "60 + 5 − 10 − 5 − 15 = 35",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            [
+              "sub",
+              [
+                "add",
+                60,
+                5
+              ],
+              10
+            ],
+            5
+          ],
+          15
+        ],
+        "answer": 35,
+        "unit": "minuts després de les 11",
+        "response": "El grup va sortir a les 11.35.",
+        "steps": [
+          "Descomptem l’espera i arribem a les 11.55. Descomptem els 5 minuts del guarda-roba i arribem a les 11.50.",
+          "Retrocedim els 15 minuts de camí des de les 11.50."
+        ],
+        "note": "Dibuixa una línia del temps i marca tres salts cap enrere des de les 12.05, travessant les 12.00 en el primer salt."
+      }
+    },
+    {
+      "id": "P0165",
+      "version": 1,
+      "title": "El material del taller",
+      "context": "material-escolar",
+      "structure": "reconstruir-des-de-grups-i-sobrants",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Ara al taller hi ha 3 estoigs amb 6 retoladors cadascun i 2 retoladors solts. Abans d’omplir-los, una altra classe ens havia donat 4 retoladors i, després, n’havíem deixat 3 a la biblioteca.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants retoladors hi havia al taller abans dels dos canvis?",
+      "solution": {
+        "expression": "3 × 6 + 2 + 3 − 4 = 19",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                6
+              ],
+              2
+            ],
+            3
+          ],
+          4
+        ],
+        "answer": 19,
+        "unit": "retoladors",
+        "response": "Al principi hi havia 19 retoladors.",
+        "steps": [
+          "Els estoigs i els solts sumen 20 retoladors. Abans de deixar-ne a la biblioteca n’hi havia 23.",
+          "D’aquests 23, quatre els havia portat l’altra classe. Si no els comptem, en queden 19."
+        ],
+        "note": "Dibuixa els tres estoigs i els dos retoladors solts. Afegeix els tres de la biblioteca i ratlla els quatre que van arribar de l’altra classe."
+      }
+    },
+    {
+      "id": "P0166",
+      "version": 1,
+      "title": "L’hort abans de l’ampliació",
+      "context": "hort",
+      "structure": "reconstruir-una-area-a-partir-de-lamplada",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un hort rectangular fa 6 metres de llarg. L’han ampliat fent-lo 2 metres més ample, sense canviar-ne la llargada. Ara té una superfície de 30 m².",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quina superfície tenia l’hort abans de l’ampliació?",
+      "solution": {
+        "expression": "(30 ÷ 6 − 2) × 6 = 18",
+        "calculation": [
+          "mul",
+          [
+            "sub",
+            [
+              "div",
+              30,
+              6
+            ],
+            2
+          ],
+          6
+        ],
+        "answer": 18,
+        "unit": "m²",
+        "response": "L’hort tenia una superfície de 18 m².",
+        "steps": [
+          "Dividim la superfície actual per la llargada i obtenim 5 metres d’amplada.",
+          "Restem els 2 metres que s’hi han afegit. L’hort feia 6 metres de llarg i 3 d’ample."
+        ],
+        "note": "També pots dibuixar el rectangle actual i separar la franja afegida de 6 × 2 m. Els seus 12 m² es resten dels 30 m²."
+      }
+    },
+    {
+      "id": "P0167",
+      "version": 1,
+      "title": "Els diners de la tarda",
+      "context": "fira",
+      "structure": "desfer-dos-canvis-fixos-i-una-fraccio",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "A la fira, la Salma es gasta un terç dels diners que duia al moneder en una manualitat. Després rep 8 € de la seva àvia i es gasta 4 € en un berenar. Al final de la tarda li queden 20 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants diners duia al moneder quan va arribar a la fira?",
+      "solution": {
+        "expression": "(20 + 4 − 8) ÷ 2 × 3 = 24",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "sub",
+              [
+                "add",
+                20,
+                4
+              ],
+              8
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 24,
+        "unit": "€",
+        "response": "Quan va arribar duia 24 €.",
+        "steps": [
+          "Abans de comprar el berenar duia 24 €. Abans que l’àvia li donés diners, en duia 16.",
+          "Els 16 € són els dos terços que li van quedar després de comprar la manualitat. Cada terç són 8 €."
+        ],
+        "note": "Dibuixa una fletxa cap enrere per a cada canvi. Quan arribis als 16 €, posa’ls en dos blocs de 8 € i dibuixa el tercer bloc.",
+        "visual": {
+          "type": "fraction",
+          "parts": 3,
+          "filled": 2,
+          "total": 24,
+          "caption": "Els dos blocs pintats són els diners que li van quedar després de comprar la manualitat."
+        }
+      }
+    },
+    {
+      "id": "P0168",
+      "version": 1,
+      "title": "Les safates de plançons",
+      "context": "hort",
+      "structure": "desfer-una-safata-i-una-retirada-per-grup",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 3 safates amb el mateix nombre de plançons a cadascuna. Traiem 2 plançons de cada safata per trasplantar-los. Després regalem una de les safates amb tots els plançons que encara hi té. A les dues safates que ens queden hi ha 12 plançons en total.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants plançons hi havia entre les tres safates al principi?",
+      "solution": {
+        "expression": "(12 ÷ 2 + 2) × 3 = 24",
+        "calculation": [
+          "mul",
+          [
+            "add",
+            [
+              "div",
+              12,
+              2
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 24,
+        "unit": "plançons",
+        "response": "Al principi hi havia 24 plançons entre les tres safates.",
+        "steps": [
+          "Les dues safates finals tenen 6 plançons cadascuna. La safata regalada també en tenia 6 en el moment de regalar-la.",
+          "Abans de trasplantar-ne, cada safata en tenia 2 més. Eren 8 plançons a cadascuna de les tres safates."
+        ],
+        "note": "Dibuixa les dues safates de sis. Dibuixa la tercera amb la mateixa quantitat i torna a posar dos plançons a cada safata."
       }
     }
   ]

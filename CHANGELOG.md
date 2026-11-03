@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.26.0 · Del final al principi
+
+- Dotze problemes de cicle superior, de P0157 a P0168, per reconstruir l’estat inicial desfent els canvis en ordre invers.
+- Els solucionaris fan servir barres, grups de racions, dibuixos i línies del temps.
+
 ## 0.25.0 · La recepta a mida
 
 - Dotze problemes de cicle superior, de P0145 a P0156, per adaptar receptes a més o menys persones.
