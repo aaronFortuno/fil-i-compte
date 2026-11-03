@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.15.1 · Reordena sobre la fitxa
+
+- Les fletxes per reordenar els exercicis passen de la barra lateral a la previsualització. El codi del lot s’actualitza amb l’ordre nou i els controls no s’imprimeixen.
+
 ## 0.15.0 · Tria la pauta de treball
 
 - Selector de pauta a «Revisa la fitxa»: puntejat, quadrícula de 6 mm, línies suaus i espai en blanc. La pauta s’aplica a la previsualització i a la impressió dels exercicis.

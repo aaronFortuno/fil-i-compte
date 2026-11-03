@@ -250,9 +250,9 @@
   }
   function renderPreview(animate=false) {
     stopZoom();
-    renderOrder();
     $('pages').style.setProperty('--preview-columns',Math.min(2,state.pageCount));
     $('pages').innerHTML=pagesHTML(solutionView,true);
+    renderOrderControls();
     $('view-exercises').setAttribute('aria-pressed',String(!solutionView));$('view-solutions').setAttribute('aria-pressed',String(solutionView));$('answer-note').hidden=!solutionView;
     if(animate)animateElements([...$('pages').children],[{opacity:.35},{opacity:1}]);
     requestAnimationFrame(()=>resizePreview());
@@ -277,10 +277,23 @@
   }
   function motionDuration(){return matchMedia('(prefers-reduced-motion: reduce)').matches?0:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motion-duration'))||220;}
   function animateElements(elements,keyframes){const duration=motionDuration();if(duration)elements.forEach(el=>el.animate(keyframes,{duration,easing:'cubic-bezier(.22,.68,.25,1)'}));}
-  function renderOrder(){
-    const list=$('problem-order'),before=new Map([...list.children].map(el=>[el.dataset.orderRow,el.getBoundingClientRect().top]));
-    list.innerHTML=selected().map((e,index)=>`<li data-order-row="${e.id}"><span class="order-index">${index+1}</span><span class="order-title"><small>${e.id}</small>${escape(e.title)}</span><div class="order-actions"><button data-order="${e.id}" data-shift="-1" aria-label="Puja ${e.id}" title="Puja" ${index===0?'disabled':''}>↑</button><button data-order="${e.id}" data-shift="1" aria-label="Baixa ${e.id}" title="Baixa" ${index===state.ids.length-1?'disabled':''}>↓</button></div></li>`).join('');
-    for(const el of list.children){const old=before.get(el.dataset.orderRow),dy=old===undefined?0:old-el.getBoundingClientRect().top;if(Math.abs(dy)>1)animateElements([el],[{transform:`translateY(${dy}px)`},{transform:'translateY(0)'}]);}
+  function renderOrderControls(){
+    let index=0;
+    for(const frame of $('pages').children){
+      const paper=frame.querySelector('.sheet');
+      const page=paper.getBoundingClientRect();
+      for(const exercise of paper.querySelectorAll('.paper-problem')){
+        const id=state.ids[index],title=exercise.querySelector('h3').textContent;
+        const box=exercise.getBoundingClientRect(),overlay=document.createElement('div');
+        // Keep the overlay aligned when zoom changes, without scaling the buttons.
+        overlay.className='preview-order';
+        overlay.dataset.orderRow=id;
+        overlay.style.cssText=`left:${(box.left-page.left)/page.width*100}%;top:${(box.top-page.top)/page.height*100}%;width:${box.width/page.width*100}%;height:${box.height/page.height*100}%`;
+        const button=(shift,label)=>`<button type="button" data-shift="${shift}" aria-label="${label} ${escape(title)}" title="${label}"><img class="ui-icon" src="assets/lucide/arrow-right.svg" alt="" width="16" height="16"></button>`;
+        overlay.innerHTML=`<div class="preview-order-actions">${index>0?button(-1,'Puja'):''}${index<state.ids.length-1?button(1,'Baixa'):''}</div>`;
+        frame.append(overlay);index++;
+      }
+    }
   }
   function stopZoom(){if(zoomFrame)cancelAnimationFrame(zoomFrame);zoomFrame=0;zoomTarget=previewScale;$('zoom-out').disabled=previewScale<=.05;$('zoom-in').disabled=previewScale>=2;}
   function zoomAnchor(point){
@@ -338,7 +351,7 @@
     manualZoom(zoomTarget*Math.exp(-delta*.0015),event);
   },{passive:false});
   canvas.addEventListener('pointerdown',event=>{
-    if(pan||event.button!==0)return;stopZoom();
+    if(pan||event.button!==0||event.target.closest('.preview-order button'))return;stopZoom();
     pan={id:event.pointerId,x:event.clientX,y:event.clientY,left:canvas.scrollLeft,top:canvas.scrollTop};
     canvas.setPointerCapture(event.pointerId);canvas.classList.add('is-panning');event.preventDefault();
   });
@@ -389,13 +402,17 @@
     if(!WORK_PATTERNS.includes(pattern))return;
     state.workPattern=pattern;persist();renderPreview();
   });
-  $('problem-order').addEventListener('click',event=>{
-    const button=event.target.closest('button[data-order]');if(!button)return;
-    const index=state.ids.indexOf(button.dataset.order),target=index+Number(button.dataset.shift);
+  $('pages').addEventListener('click',event=>{
+    const button=event.target.closest('.preview-order button');if(!button)return;
+    const id=button.closest('.preview-order').dataset.orderRow;
+    const index=state.ids.indexOf(id),target=index+Number(button.dataset.shift);
     if(index<0||target<0||target>=state.ids.length)return;
     [state.ids[index],state.ids[target]]=[state.ids[target],state.ids[index]];update(true);
-    const row=$('problem-order').querySelector(`[data-order-row="${button.dataset.order}"]`);
-    const same=row.querySelector(`[data-shift="${button.dataset.shift}"]`);(same.disabled?row.querySelector('button:not(:disabled)'):same).focus({preventScroll:true});
+    const row=$('pages').querySelector(`[data-order-row="${id}"]`);
+    const next=row.querySelector(`[data-shift="${button.dataset.shift}"]`)||row.querySelector('button');
+    next.focus({preventScroll:true});
+    next.scrollIntoView({block:'nearest',inline:'nearest'});
+    $('order-status').textContent=`${catalogue.find(e=>e.id===id).title}: posició ${target+1} de ${state.ids.length}.`;
   });
   for(const [id,key] of [['sheet-title','title'],['sheet-group','group']])$(id).addEventListener('input',()=>{state[key]=$(id).value;persist();renderPreview();});
   $('print-exercises').addEventListener('click',()=>print(false));$('print-solutions').addEventListener('click',()=>print(true));

@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.15.1',title:'Reordena sobre la fitxa',
+    changes:['Fletxes per pujar i baixar cada problema directament sobre la previsualització, també amb teclat o pantalla tàctil.']
+  },
+  {
     version:'0.15.0',title:'Tria la pauta de treball',
     changes:['Puntejat, quadrícula de 6 mm, línies suaus o espai en blanc a la zona de treball de tots els exercicis.','Previsualització immediata i pauta desada al navegador.']
   },

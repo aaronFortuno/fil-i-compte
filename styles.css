@@ -24,12 +24,11 @@
 button,a,input,select{transition:background-color var(--motion-duration) var(--motion-ease),border-color var(--motion-duration) var(--motion-ease),box-shadow var(--motion-duration) var(--motion-ease),opacity var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease)}
 .exercise-card{transition:border-color var(--motion-duration) var(--motion-ease),background-color var(--motion-duration) var(--motion-ease),box-shadow var(--motion-duration) var(--motion-ease)}
 .brand-option{display:flex;align-items:center;gap:8px;font-size:11px;margin:-3px 0 18px;color:#535f53;cursor:pointer}.brand-option input{accent-color:var(--green);width:15px;height:15px;margin:0}
-.problem-order{list-style:none;margin:12px 0 0;padding:0}.problem-order li{display:flex;align-items:center;gap:7px;padding:8px 0;border-bottom:1px solid #dce0d3;min-height:51px}.problem-order li:last-child{border:0}.order-index{font-size:10px;min-width:17px;height:21px;display:flex;align-items:center;justify-content:center;border-radius:4px;color:#52634c;background:#dfe7d6}.order-title{flex:1;min-width:0;font-size:11px;line-height:1.4}.order-title small{font-size:9px;color:#748169;display:block;letter-spacing:.6px}.order-actions{display:flex;gap:3px;flex-shrink:0}.order-actions button{width:25px;height:28px;border-radius:4px;border:1px solid #c8d2c0;background:var(--white);color:var(--green);font-size:15px}.order-actions button:hover:not(:disabled){background:#dfe9d8}
 .preview-viewer{position:relative;min-width:0;min-height:0;overflow:clip}.preview-canvas{width:100%;height:100%;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}.preview-canvas.is-panning{cursor:grabbing}.pages{--page-gap:40px;column-gap:calc(var(--page-gap) * var(--page-scale))}
 .viewer-controls{position:absolute;bottom:17px;right:17px;z-index:3;display:flex;flex-direction:column;align-items:center;width:39px;background:var(--white);border:1px solid #bbc8b0;border-radius:7px;box-shadow:0 3px 12px #263d3430;overflow:hidden;user-select:none}.viewer-controls button{display:flex;align-items:center;justify-content:center;width:37px;min-height:34px;padding:5px;background:transparent;color:var(--green);font-size:22px;font-weight:400}.viewer-controls button:hover:not(:disabled){background:#e0e9d8}.viewer-controls output{font-size:9px;line-height:18px;color:var(--muted);font-variant-numeric:tabular-nums}.viewer-controls #zoom-fit{border-top:1px solid var(--line);margin-top:3px;min-height:37px}.viewer-controls #zoom-fit[aria-pressed=true]{background:#e7eee1}.viewer-controls img{display:block;pointer-events:none;opacity:.8}
 .sheet-header:not(.has-title){border-bottom:0;padding-bottom:2mm}.sheet-header h2:first-child{margin-top:0}
 @media(prefers-reduced-motion:reduce){:root{--motion-duration:0ms}}
-@media screen and (max-width:560px){.viewer-controls{right:11px;bottom:11px}.preview-sidebar .filter-scroll{padding-bottom:10px}.problem-order li{min-height:45px}}
+@media screen and (max-width:560px){.viewer-controls{right:11px;bottom:11px}.preview-sidebar .filter-scroll{padding-bottom:10px}}
 
 /* Release history belongs to the shared footer and never to the printed sheet. */
 .version-button{display:block;background:transparent;color:var(--green);padding:2px 0 0;font-size:10px;line-height:1.5;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#a6b49d;white-space:nowrap}.version-button:hover{text-decoration-color:var(--green)}
@@ -109,6 +108,21 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .sheet:has(.sheet-lot){padding-bottom:5mm}
 .sheet-lot{flex:none;padding-top:2mm;font-size:7.5pt;line-height:1.2;color:#394c38}
 .sheet-lot code{overflow-wrap:anywhere}
+.preview-order{position:absolute}
+.preview-order-actions{
+  position:absolute;top:2px;right:2px;display:flex;gap:2px;padding:2px;
+  border:1px solid #bdcbb2;border-radius:7px;background:var(--paper);
+  box-shadow:0 2px 6px #263d3420;opacity:0;pointer-events:none;
+}
+.preview-order:hover .preview-order-actions,.preview-order:focus-within .preview-order-actions{opacity:1;pointer-events:auto}
+.preview-order button{display:grid;place-items:center;width:30px;height:30px;padding:0;border-radius:4px;background:transparent}
+.preview-order button:hover{background:#dfe9d5}
+.preview-order button[data-shift="-1"] img{transform:rotate(-90deg)}
+.preview-order button[data-shift="1"] img{transform:rotate(90deg)}
+@media (hover:none),(pointer:coarse){
+  .preview-order-actions{opacity:1;pointer-events:auto}
+  .preview-order button{width:40px;height:40px}
+}
 .working-space[data-pattern="grid"],.working-space[data-pattern="lines"]{
   background-size:6mm 6mm;
   background-position:0 5mm;
