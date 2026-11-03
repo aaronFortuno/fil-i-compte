@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.18.0 · De quina quantitat parlem?
+
+- Dotze problemes nous, de P0061 a P0072, amb fraccions sobre totals diferents, percentatges, decimals, potències, arrels i dades per despistar.
+- Onze problemes de pregunta única i un amb dos apartats independents sobre el mateix material.
+
 ## 0.17.2 · Plantilles editables
 
 - Canvia el nom d’una plantilla o actualitza-la amb els exercicis i la configuració de la fitxa actual.

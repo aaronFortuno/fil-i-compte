@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.18.0',title:'De quina quantitat parlem?',
+    changes:['Dotze problemes nous, de P0061 a P0072, amb fraccions sobre totals diferents i operacions variades.','El banc ja té 72 problemes.']
+  },
+  {
     version:'0.17.2',title:'Plantilles editables',
     changes:['Canvia el nom d’una plantilla o actualitza-la amb els exercicis i la configuració de la fitxa actual.']
   },

@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 10,
+    "version": 11,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -3718,6 +3718,618 @@ globalThis.EXERCISE_CATALOG = {
             "answer": 120
           }
         ]
+      }
+    },
+    {
+      "id": "P0061",
+      "version": 1,
+      "title": "Dues rutes a peu",
+      "context": "mobilitat",
+      "structure": "fraccio-conjunta",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A l’escola del Nord hi ha 48 alumnes de sisè i la meitat hi arriba a peu. A l’escola del Sud hi ha 32 alumnes de sisè i una quarta part hi arriba a peu.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quina fracció de l’alumnat de sisè de les dues escoles juntes arriba a peu? Expressa-la de manera irreductible.",
+      "solution": {
+        "expression": "(48 ÷ 2 + 32 ÷ 4) ÷ (48 + 32) = 2/5",
+        "calculation": [
+          "div",
+          [
+            "add",
+            [
+              "div",
+              48,
+              2
+            ],
+            [
+              "div",
+              32,
+              4
+            ]
+          ],
+          [
+            "add",
+            48,
+            32
+          ]
+        ],
+        "answer": 0.4,
+        "unit": "del total d’alumnes",
+        "response": "Dos cinquens (2/5) de l’alumnat arriba a peu.",
+        "steps": [
+          "Al Nord hi arriben a peu 24 alumnes; al Sud, 8.",
+          "En total són 32 alumnes de 80. Simplifiquem 32/80 dividint el numerador i el denominador per 16."
+        ],
+        "note": "La meitat i la quarta part es calculen sobre escoles diferents; la fracció final es calcula sobre 80 alumnes.",
+        "visual": {
+          "type": "fraction",
+          "parts": 5,
+          "filled": 2,
+          "total": 80,
+          "caption": "Cada cinquena part representa 16 alumnes. Els 32 que arriben a peu ocupen dues parts."
+        }
+      }
+    },
+    {
+      "id": "P0062",
+      "version": 1,
+      "title": "Els cartells de la fira",
+      "context": "fira",
+      "structure": "reconstruccio-de-dos-totals",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Dels cartells d’una fira, dilluns se’n pengen dos cinquens (2/5). Dimarts es penja una quarta part dels que encara quedaven per penjar. Al final de dimarts en queden 27 per penjar.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants cartells s’havien imprès?",
+      "solution": {
+        "expression": "27 ÷ 3 × 4 ÷ 3 × 5 = 60",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            [
+              "mul",
+              [
+                "div",
+                27,
+                3
+              ],
+              4
+            ],
+            3
+          ],
+          5
+        ],
+        "answer": 60,
+        "unit": "cartells",
+        "response": "S’havien imprès 60 cartells.",
+        "steps": [
+          "Els 27 cartells són tres quartes parts dels que quedaven després de dilluns. Una quarta part són 9, així que després de dilluns en quedaven 36.",
+          "Aquests 36 són tres cinquenes parts de tots els cartells. Una cinquena part són 12 i les cinc parts sumen 60."
+        ],
+        "note": "Si comencem amb 60, dilluns se’n pengen 24 i dimarts 9. En queden 27."
+      }
+    },
+    {
+      "id": "P0063",
+      "version": 1,
+      "title": "La inscripció als tallers",
+      "context": "tallers",
+      "structure": "grups-amb-solapament",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "De les 48 persones inscrites a una jornada, la meitat s’ha apuntat al taller de cuina i un terç al de ceràmica. Una sisena part de totes les persones inscrites s’ha apuntat a tots dos tallers.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes persones inscrites no s’han apuntat a cap dels dos tallers?",
+      "solution": {
+        "expression": "48 − (48 ÷ 2 + 48 ÷ 3 − 48 ÷ 6) = 16",
+        "calculation": [
+          "sub",
+          48,
+          [
+            "sub",
+            [
+              "add",
+              [
+                "div",
+                48,
+                2
+              ],
+              [
+                "div",
+                48,
+                3
+              ]
+            ],
+            [
+              "div",
+              48,
+              6
+            ]
+          ]
+        ],
+        "answer": 16,
+        "unit": "persones",
+        "response": "16 persones no s’han apuntat a cap dels dos tallers.",
+        "steps": [
+          "A cuina hi ha 24 persones, a ceràmica 16 i als dos tallers 8.",
+          "La suma 24 + 16 compta dues vegades les 8 persones que fan tots dos tallers. Almenys un taller el fan 32 persones, i la resta són 16."
+        ],
+        "note": "Un diagrama amb dos cercles superposats permet separar els 16 de només cuina, els 8 de només ceràmica i els 8 de tots dos tallers."
+      }
+    },
+    {
+      "id": "P0064",
+      "version": 1,
+      "title": "Els llibres del vestíbul",
+      "context": "biblioteca",
+      "structure": "suma-amb-dada-irrellevant",
+      "level": "mitja",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Dilluns arriben 138 llibres a la biblioteca de l’escola i dimarts n’arriben 76 més. De la remesa de dimarts, 24 són còmics.",
+      "features": [
+        "suma-resta",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants llibres han arribat entre dilluns i dimarts?",
+      "solution": {
+        "expression": "138 + 76 = 214",
+        "calculation": [
+          "add",
+          138,
+          76
+        ],
+        "answer": 214,
+        "unit": "llibres",
+        "response": "Han arribat 214 llibres.",
+        "steps": [
+          "Sumem els llibres rebuts els dos dies."
+        ],
+        "note": "Els 24 còmics ja estan inclosos en els 76 llibres de dimarts."
+      }
+    },
+    {
+      "id": "P0065",
+      "version": 1,
+      "title": "Les taules del dinar",
+      "context": "menjador",
+      "structure": "minim-amb-capacitat",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al dinar de final de curs hi assisteixen 53 persones. A cada taula s’hi poden asseure com a màxim 8 persones.",
+      "features": [
+        "multiplicacio-divisio"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes taules cal parar com a mínim? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Calen com a mínim 7 taules.",
+        "steps": [
+          "Amb 6 taules hi ha 48 places i encara queden persones dretes.",
+          "Amb 7 taules hi ha 56 places i tothom pot seure."
+        ],
+        "note": "Comprovar les dues capacitats permet justificar que set taules són suficients i que sis no ho són.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              6,
+              8
+            ],
+            "answer": 48
+          },
+          {
+            "calculation": [
+              "mul",
+              7,
+              8
+            ],
+            "answer": 56
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0066",
+      "version": 1,
+      "title": "La compra a la fruiteria",
+      "context": "mercat",
+      "structure": "canvi-amb-preus-per-quilo",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la fruiteria comprem 3 kg de peres a 2,75 € el quilo i 2 kg de pomes a 1,85 € el quilo. Paguem amb un bitllet de 20 €.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "Quin canvi ens han de tornar?",
+      "solution": {
+        "expression": "20 − (3 × 2,75 + 2 × 1,85) = 8,05",
+        "calculation": [
+          "sub",
+          20,
+          [
+            "add",
+            [
+              "mul",
+              3,
+              2.75
+            ],
+            [
+              "mul",
+              2,
+              1.85
+            ]
+          ]
+        ],
+        "answer": 8.05,
+        "unit": "€",
+        "response": "Ens han de tornar 8,05 €.",
+        "steps": [
+          "Les peres costen 8,25 € i les pomes, 3,70 €. En total són 11,95 €.",
+          "Restem el preu total dels 20 € que hem donat."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0067",
+      "version": 1,
+      "title": "El preu abans de les rebaixes",
+      "context": "comerc",
+      "structure": "percentatge-invers",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En una botiga han rebaixat un 20 % el preu d’una motxilla. El preu rebaixat que surt a l’etiqueta és de 72 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "decimals",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "Quin preu tenia abans de les rebaixes?",
+      "solution": {
+        "expression": "72 ÷ 0,8 = 90",
+        "calculation": [
+          "div",
+          72,
+          0.8
+        ],
+        "answer": 90,
+        "unit": "€",
+        "response": "Abans de les rebaixes, la motxilla costava 90 €.",
+        "steps": [
+          "Després de la rebaixa, paguem el 80 % del preu inicial.",
+          "Si 72 € són el 80 %, el preu sencer és 72 ÷ 0,8."
+        ],
+        "note": "Comprovació: el 20 % de 90 € són 18 €, i 90 € menys 18 € són 72 €."
+      }
+    },
+    {
+      "id": "P0068",
+      "version": 1,
+      "title": "La tanca de l’hort",
+      "context": "hort",
+      "structure": "perimetre-des-de-l-area",
+      "level": "eso",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "L’hort comunitari és quadrat i té una superfície de 196 m². Es vol delimitar tot el perímetre amb cordill.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "arrels"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants metres de cordill fan falta si no comptem el que es perd amb els nusos?",
+      "solution": {
+        "expression": "4 × √196 = 56",
+        "calculation": [
+          "mul",
+          4,
+          [
+            "sqrt",
+            196
+          ]
+        ],
+        "answer": 56,
+        "unit": "m",
+        "response": "Fan falta 56 metres de cordill.",
+        "steps": [
+          "El costat fa 14 m perquè 14 × 14 = 196.",
+          "El perímetre és la longitud dels quatre costats."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0069",
+      "version": 1,
+      "title": "Les rajoles al voltant de la font",
+      "context": "placa",
+      "structure": "diferencia-de-quadrats",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "El plànol d’un paviment quadrat té 9 files de 9 caselles. Cada casella representa una rajola. La font ocupa al centre un quadrat de 5 files de 5 caselles.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "potencies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes rajoles calen per cobrir tot el paviment fora de la font? Escriu una expressió amb potències que representi el càlcul.",
+      "solution": {
+        "expression": "9² − 5² = 56",
+        "calculation": [
+          "sub",
+          [
+            "pow",
+            9,
+            2
+          ],
+          [
+            "pow",
+            5,
+            2
+          ]
+        ],
+        "answer": 56,
+        "unit": "rajoles",
+        "response": "Calen 56 rajoles.",
+        "steps": [
+          "El quadrat complet té 81 caselles i la font n’ocupa 25.",
+          "Restem les caselles de la font de les del quadrat complet."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0070",
+      "version": 1,
+      "title": "Arribada al planetari",
+      "context": "sortida",
+      "structure": "marge-de-temps",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La visita al planetari comença a les 10.30 i dura 45 minuts. El grup surt de l’escola a les 9.20, triga 35 minuts en autobús i, un cop a l’entrada, necessita 12 minuts per repartir les entrades i arribar a la sala.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "distractors"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Amb quants minuts de marge arribarà el grup a la sala abans de començar la visita?",
+      "solution": {
+        "expression": "70 − (35 + 12) = 23",
+        "calculation": [
+          "sub",
+          70,
+          [
+            "add",
+            35,
+            12
+          ]
+        ],
+        "answer": 23,
+        "unit": "minuts",
+        "response": "El grup arribarà a la sala amb 23 minuts de marge.",
+        "steps": [
+          "De les 9.20 a les 10.30 hi ha 70 minuts.",
+          "El grup necessita 47 minuts per arribar a la sala. Hi serà a les 10.07."
+        ],
+        "note": "Els 45 minuts són la durada de la visita, que encara no ha començat."
+      }
+    },
+    {
+      "id": "P0071",
+      "version": 1,
+      "title": "Material per als estoigs",
+      "context": "material-escolar",
+      "structure": "cost-i-repartiment-maxim",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per preparar estoigs de préstec, l’escola compra 36 pinzells a 0,75 € la unitat i 48 llapis a 0,25 € la unitat.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "parts": [
+        {
+          "question": "Quant ha costat tota la compra?",
+          "solution": {
+            "expression": "36 × 0,75 + 48 × 0,25 = 39",
+            "calculation": [
+              "add",
+              [
+                "mul",
+                36,
+                0.75
+              ],
+              [
+                "mul",
+                48,
+                0.25
+              ]
+            ],
+            "answer": 39,
+            "unit": "€",
+            "response": "La compra ha costat 39 €.",
+            "steps": [
+              "Els 36 pinzells costen 27 € i els 48 llapis, 12 €. Sumem els dos imports."
+            ],
+            "note": ""
+          }
+        },
+        {
+          "question": "Quin és el màxim nombre d’estoigs idèntics que es poden preparar si es vol fer servir tot el material? Justifica-ho.",
+          "solution": {
+            "kind": "justification",
+            "response": "Es poden preparar com a màxim 12 estoigs, amb 3 pinzells i 4 llapis cadascun.",
+            "steps": [
+              "El nombre d’estoigs ha de dividir 36 i 48. Per tant, també ha de dividir la seva diferència, 12, i no pot ser més gran que 12.",
+              "Podem fer 12 estoigs: a cadascun hi posem 3 pinzells i 4 llapis."
+            ],
+            "note": "També es pot buscar el màxim comú divisor llistant els divisors de 36 i 48.",
+            "evidence": [
+              {
+                "calculation": [
+                  "sub",
+                  48,
+                  36
+                ],
+                "answer": 12
+              },
+              {
+                "calculation": [
+                  "div",
+                  36,
+                  12
+                ],
+                "answer": 3
+              },
+              {
+                "calculation": [
+                  "div",
+                  48,
+                  12
+                ],
+                "answer": 4
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "P0072",
+      "version": 1,
+      "title": "Tornar al cabal de sempre",
+      "context": "aigua",
+      "structure": "variacio-percentual-amb-nova-base",
+      "level": "eso",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "El sistema de reg d’un hivernacle abocava 60 litres d’aigua per hora. Després d’un ajust, ara n’aboca 48 per hora.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "En quin percentatge cal augmentar el cabal actual per tornar al cabal inicial? Justifica sobre quina quantitat calcules el percentatge.",
+      "solution": {
+        "expression": "(60 − 48) × 100 ÷ 48 = 25",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "sub",
+              60,
+              48
+            ],
+            100
+          ],
+          48
+        ],
+        "answer": 25,
+        "unit": "%",
+        "response": "Cal augmentar el cabal actual un 25 %.",
+        "steps": [
+          "Hem d’afegir 12 litres per hora als 48 actuals.",
+          "Dividim l’augment (12) pel cabal actual (48) i multipliquem per 100 per obtenir el percentatge."
+        ],
+        "note": "L’augment es calcula a partir del cabal actual. Els mateixos 12 litres per hora serien el 20 % del cabal inicial."
       }
     }
   ]
