@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "dese-bloc",
+    "title": "Cap enrere i amb residu",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0109",
+      "version": 1,
+      "title": "Les pinces de l’estenedor",
+      "context": "casa",
+      "structure": "reconstruccio-amb-dos-canvis",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al final ens queden 2 pinces a cadascun dels 3 estenedors i cap al cistell. Abans de posar-les als estenedors, havíem deixat 3 pinces a la veïna i després n’havíem trobat 2 al calaix, que vam afegir al cistell.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes pinces hi havia al cistell abans de deixar-ne a la veïna?",
+      "solution": {
+        "expression": "3 × 2 − 2 + 3 = 7",
+        "calculation": [
+          "add",
+          [
+            "sub",
+            [
+              "mul",
+              3,
+              2
+            ],
+            2
+          ],
+          3
+        ],
+        "answer": 7,
+        "unit": "pinces",
+        "response": "Al principi hi havia 7 pinces al cistell.",
+        "steps": [
+          "Ara hi ha 6 pinces als estenedors.",
+          "Descomptem les 2 del calaix: abans d’afegir-les en teníem 4.",
+          "Tornem a comptar les 3 que vam deixar a la veïna."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0110",
+      "version": 1,
+      "title": "El moneder de la fira",
+      "context": "fira",
+      "structure": "saldo-inicial-amb-compra-i-ingres",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al final de la tarda, a la Joana li queden 6 € al moneder. A la fira havia comprat 2 tiquets de 3 € cadascun. Després de la compra, el seu avi li havia donat 4 €, que havia posat al moneder.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants diners duia abans de comprar els tiquets?",
+      "solution": {
+        "expression": "6 − 4 + 2 × 3 = 8",
+        "calculation": [
+          "add",
+          [
+            "sub",
+            6,
+            4
+          ],
+          [
+            "mul",
+            2,
+            3
+          ]
+        ],
+        "answer": 8,
+        "unit": "€",
+        "response": "Abans de comprar els tiquets duia 8 €.",
+        "steps": [
+          "Dels 6 € finals traiem els 4 € que va rebre. Just després de comprar li quedaven 2 €.",
+          "Els dos tiquets havien costat 6 €. Sumem aquest import als 2 € que li quedaven."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0111",
+      "version": 1,
+      "title": "D’on ha sortit la granota?",
+      "context": "joc",
+      "structure": "posicio-inicial-a-la-recta",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una granota de joguina acaba a la casella 13. Abans d’arribar-hi, havia fet 2 salts endavant de 4 caselles cadascun i, just després, havia reculat 3 caselles.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "En quina casella era abans del primer salt?",
+      "solution": {
+        "expression": "13 + 3 − 2 × 4 = 8",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            13,
+            3
+          ],
+          [
+            "mul",
+            2,
+            4
+          ]
+        ],
+        "answer": 8,
+        "unit": "casella",
+        "response": "La granota era a la casella 8.",
+        "steps": [
+          "Desfem el retrocés. Abans de recular, era a la casella 16.",
+          "Els dos salts endavant sumaven 8 caselles. Tornem 8 caselles enrere des de la 16."
+        ],
+        "note": "També es pot dibuixar la filera i marcar els salts cap enrere."
+      }
+    },
+    {
+      "id": "P0112",
+      "version": 1,
+      "title": "Els llibres de les lleixes",
+      "context": "biblioteca",
+      "structure": "refer-grups-i-recuperar-repartiment-inicial",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al principi hi havia el mateix nombre de llibres a cadascuna de 3 lleixes. En vam deixar 3 en préstec i en vam portar un al taller de reparació. Vam posar tots els altres llibres en 4 capses, amb 2 llibres a cadascuna.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants llibres hi havia a cada lleixa al principi?",
+      "solution": {
+        "expression": "(4 × 2 + 3 + 1) ÷ 3 = 4",
+        "calculation": [
+          "div",
+          [
+            "add",
+            [
+              "add",
+              [
+                "mul",
+                4,
+                2
+              ],
+              3
+            ],
+            1
+          ],
+          3
+        ],
+        "answer": 4,
+        "unit": "llibres",
+        "response": "Al principi hi havia 4 llibres a cada lleixa.",
+        "steps": [
+          "Ara hi ha 8 llibres a les capses.",
+          "Hi tornem a comptar els 3 prestats i el del taller. Al principi n’hi havia 12.",
+          "Repartim aquests 12 llibres entre les 3 lleixes."
+        ],
+        "note": ""
+      }
+    },
+    {
+      "id": "P0113",
+      "version": 1,
+      "title": "Els clavells del gerro",
+      "context": "flors",
+      "structure": "desfer-una-meitat-i-una-suma",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En un gerro hi ha 5 clavells. Just abans, hi havíem posat 2 clavells nous. Abans d’afegir-los, havíem regalat la meitat dels clavells que hi havia al gerro.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants clavells hi havia al gerro abans de fer el regal?",
+      "solution": {
+        "expression": "(5 − 2) × 2 = 6",
+        "calculation": [
+          "mul",
+          [
+            "sub",
+            5,
+            2
+          ],
+          2
+        ],
+        "answer": 6,
+        "unit": "clavells",
+        "response": "Al principi hi havia 6 clavells al gerro.",
+        "steps": [
+          "Abans de posar-hi els 2 clavells nous, en quedaven 3.",
+          "Aquests 3 eren la meitat dels clavells que hi havia abans del regal. L’altra meitat també en tenia 3."
+        ],
+        "note": "Per desfer el fet d’haver-ne tret la meitat, doblem la quantitat que havia quedat."
+      }
+    },
+    {
+      "id": "P0114",
+      "version": 1,
+      "title": "Safates per al forn",
+      "context": "cuina",
+      "structure": "residu-obliga-a-afegir-recipient",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La Júlia prepara 3 bols amb 4 panets cadascun i després en fa 2 més. A cada safata del forn hi caben com a màxim 4 panets.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes safates cal preparar com a mínim per poder-hi posar tots els panets?",
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 4 safates. Podem omplir-ne tres i posar 2 panets a la quarta.",
+        "steps": [
+          "En total hi ha 14 panets.",
+          "Tres safates plenes n’admeten 12. Com que encara en queden 2, ens cal una altra safata."
+        ],
+        "note": "La darrera safata pot quedar a mig omplir.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                3,
+                4
+              ],
+              2
+            ],
+            "answer": 14
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              4
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "sub",
+              14,
+              [
+                "mul",
+                3,
+                4
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "mul",
+              4,
+              4
+            ],
+            "answer": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0115",
+      "version": 1,
+      "title": "Lots per a la parada",
+      "context": "fira",
+      "structure": "residu-es-guarda",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per fer lots per a la fira tenim 2 capses de 6 postals i 5 postals soltes. En separem 2 per decorar la parada. De les que queden, en fem tants lots de 4 com puguem. Les postals que no facin un lot complet es guarden en un calaix.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Com quedaran repartides les postals entre els lots i el calaix?",
+      "solution": {
+        "kind": "justification",
+        "response": "Quedaran 3 lots complets i 3 postals al calaix.",
+        "steps": [
+          "De les 17 postals que teníem, en queden 15 després d’apartar les dues de la decoració.",
+          "Amb 12 postals fem 3 lots. Les 3 que queden es guarden perquè no arriben a fer un quart lot."
+        ],
+        "note": "Comptem només els lots complets.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "add",
+                [
+                  "mul",
+                  2,
+                  6
+                ],
+                5
+              ],
+              2
+            ],
+            "answer": 15
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              4
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "sub",
+              15,
+              [
+                "mul",
+                3,
+                4
+              ]
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0116",
+      "version": 1,
+      "title": "Completar els paquets",
+      "context": "material-escolar",
+      "structure": "residu-es-completa",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hi ha 3 capses amb 5 llapis cadascuna i un llapis solt. En traiem 2 per a la taula de dibuix. Volem preparar paquets de 4 llapis amb tots els que ens queden, sense deixar-ne cap de solt. Podem anar a buscar més llapis a l’armari.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants llapis hem d’anar a buscar com a mínim?",
+      "solution": {
+        "expression": "4 × 4 − (3 × 5 + 1 − 2) = 2",
+        "calculation": [
+          "sub",
+          [
+            "mul",
+            4,
+            4
+          ],
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                5
+              ],
+              1
+            ],
+            2
+          ]
+        ],
+        "answer": 2,
+        "unit": "llapis",
+        "response": "Hem d’anar a buscar 2 llapis.",
+        "steps": [
+          "Tenim 14 llapis després de treure els dos de la taula.",
+          "Podem fer 3 paquets i ens queden 2 llapis solts. Per completar el quart paquet, ens en falten 2."
+        ],
+        "note": "Si n’agaféssim només un, encara quedarien 3 llapis sense fer paquet."
+      }
+    },
+    {
+      "id": "P0117",
+      "version": 1,
+      "title": "Coques a parts iguals",
+      "context": "berenar",
+      "structure": "residu-que-es-pot-partir",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 2 safates amb 3 coques petites cadascuna. En guardem una de sencera per a demà. Repartim tota la resta a parts iguals entre 4 infants. Les coques es poden tallar.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "question": "Quanta coca li toca a cada infant?",
+      "solution": {
+        "expression": "(2 × 3 − 1) ÷ 4 = 5/4",
+        "calculation": [
+          "div",
+          [
+            "sub",
+            [
+              "mul",
+              2,
+              3
+            ],
+            1
+          ],
+          4
+        ],
+        "answer": 1.25,
+        "unit": "coques",
+        "response": "A cada infant li toca una coca sencera i un quart de coca.",
+        "steps": [
+          "De les 6 coques, en guardem una. En queden 5 per repartir.",
+          "Donem una coca sencera a cada infant. Tallem la coca que sobra en 4 parts iguals i en donem una a cadascú."
+        ],
+        "note": "La coca que sobra es pot partir, de manera que tothom rep la mateixa quantitat.",
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 1,
+          "total": 4,
+          "caption": "De la cinquena coca, cada infant en rep un quart, a més de la coca sencera."
+        }
+      }
+    },
+    {
+      "id": "P0118",
+      "version": 1,
+      "title": "Les peces dels equips",
+      "context": "joc",
+      "structure": "residu-es-distribueix-segons-una-regla",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al taller hi ha 3 bosses amb 5 peces cadascuna. Una peça està trencada i la retirem. Volem repartir totes les altres entre 4 equips. Primer donem a cada equip tantes peces com puguem, la mateixa quantitat per a tots. Si en sobren, en donem una més a cadascun dels primers equips de la llista fins que s’acabin.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Com quedarà el repartiment entre els quatre equips?",
+      "solution": {
+        "kind": "justification",
+        "response": "Els equips 1 i 2 rebran 4 peces cadascun. Els equips 3 i 4 en rebran 3 cadascun.",
+        "steps": [
+          "Traiem la peça trencada. Queden 14 peces.",
+          "Donem 3 peces a cada equip i en fem servir 12. Les 2 que sobren van, d’una en una, als dos primers equips."
+        ],
+        "note": "La regla diu a quins equips van les peces sobrants.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                3,
+                5
+              ],
+              1
+            ],
+            "answer": 14
+          },
+          {
+            "calculation": [
+              "sub",
+              14,
+              [
+                "mul",
+                4,
+                3
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "add",
+              3,
+              1
+            ],
+            "answer": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0119",
+      "version": 1,
+      "title": "Els testos de l’hort",
+      "context": "hort",
+      "structure": "reconstruccio-a-partir-de-grups-i-residu",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Ara tenim 3 safates plenes amb 4 testos cadascuna i 2 testos que no han cabut a les safates. Abans d’omplir-les, havíem regalat 4 testos a la classe del costat i n’havíem rebut un de nou.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants testos teníem abans del regal i abans de rebre el test nou?",
+      "solution": {
+        "expression": "3 × 4 + 2 − 1 + 4 = 17",
+        "calculation": [
+          "add",
+          [
+            "sub",
+            [
+              "add",
+              [
+                "mul",
+                3,
+                4
+              ],
+              2
+            ],
+            1
+          ],
+          4
+        ],
+        "answer": 17,
+        "unit": "testos",
+        "response": "Al principi teníem 17 testos.",
+        "steps": [
+          "Ara tenim 12 testos a les safates i 2 a fora. En total, 14.",
+          "Descomptem el que hem rebut i recuperem els 4 que havíem regalat."
+        ],
+        "note": "Els testos que no han cabut a les safates també formen part del total actual."
+      }
+    },
+    {
+      "id": "P0120",
+      "version": 1,
+      "title": "Seients per a l’assaig",
+      "context": "teatre",
+      "structure": "reconstruccio-i-residu-que-requereix-un-grup-mes",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al principi de l’assaig hi havia un grup d’infants. Més tard s’hi han afegit 2 infants. Després han marxat dos grups de 4 infants cadascun i a la sala només n’han quedat 5. Demà hi tornaran només els infants que hi havia al principi. Els volem asseure en bancs de 3 places.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants bancs caldran com a mínim per a l’assaig de demà?",
+      "solution": {
+        "kind": "justification",
+        "response": "Caldran 4 bancs. Hi haurà 11 infants i quedarà una plaça lliure en total.",
+        "steps": [
+          "Abans que marxessin els dos grups hi havia 5 + 8 = 13 infants. En traiem els 2 que s’hi havien afegit. Demà en vindran 11.",
+          "Tres bancs ofereixen 9 places. Els 2 infants que encara falten per seure necessiten un quart banc."
+        ],
+        "note": "Primer recuperem el nombre d’infants inicial. Després decidim què fer amb els infants que no caben en tres bancs.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "add",
+                5,
+                [
+                  "mul",
+                  2,
+                  4
+                ]
+              ],
+              2
+            ],
+            "answer": 11
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              3
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "sub",
+              11,
+              [
+                "mul",
+                3,
+                3
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "mul",
+              4,
+              3
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    }
+  ]
+}

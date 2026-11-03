@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.22.0',title:'Cap enrere i amb residu',
+    changes:['Dotze problemes de cicle mitjà per reconstruir quantitats inicials i decidir què fer amb el que sobra.','El banc ja té 120 problemes.']
+  },
+  {
     version:'0.21.0',title:'Nombres petits, molts passos',
     changes:['Dotze problemes de cicle mitjà, de P0097 a P0108, amb càlculs petits i diversos passos encadenats.','El banc ja té 108 problemes.']
   },

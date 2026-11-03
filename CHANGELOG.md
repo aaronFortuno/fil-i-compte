@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.22.0 · Cap enrere i amb residu
+
+- Dotze problemes de cicle mitjà, de P0109 a P0120, amb nombres petits i diversos passos.
+- El bloc treballa la reconstrucció de la quantitat inicial i diferents maneres de resoldre un repartiment amb residu.
+
 ## 0.21.0 · Nombres petits, molts passos
 
 - Dotze problemes nous de cicle mitjà, de P0097 a P0108, amb nombres petits i operacions encadenades.
