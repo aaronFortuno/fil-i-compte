@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.15.0 · Tria la pauta de treball
+
+- Selector de pauta a «Revisa la fitxa»: puntejat, quadrícula de 6 mm, línies suaus i espai en blanc. La pauta s’aplica a la previsualització i a la impressió dels exercicis.
+- La pauta es conserva al navegador, també quan es recupera un lot amb codi.
+
 ## 0.14.3 · Un peu més senzill
 
 - Retirat el menú d’importació i exportació JSON. Les tries es comparteixen i es recuperen des de «Lot d’exercicis».

@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.15.0',title:'Tria la pauta de treball',
+    changes:['Puntejat, quadrícula de 6 mm, línies suaus o espai en blanc a la zona de treball de tots els exercicis.','Previsualització immediata i pauta desada al navegador.']
+  },
+  {
     version:'0.14.3',title:'Un peu més senzill',
     changes:['El codi i l’enllaç del lot substitueixen el menú JSON.','Historial i V4V a la dreta; accions d’impressió a l’esquerra durant la revisió.']
   },

@@ -109,6 +109,15 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .sheet:has(.sheet-lot){padding-bottom:5mm}
 .sheet-lot{flex:none;padding-top:2mm;font-size:7.5pt;line-height:1.2;color:#394c38}
 .sheet-lot code{overflow-wrap:anywhere}
+.working-space[data-pattern="grid"],.working-space[data-pattern="lines"]{
+  background-size:6mm 6mm;
+  background-position:0 5mm;
+}
+.working-space[data-pattern="grid"]{
+  background-image:linear-gradient(to right,#cdd5c9 .2mm,transparent .2mm),linear-gradient(to bottom,#cdd5c9 .2mm,transparent .2mm);
+}
+.working-space[data-pattern="lines"]{background-image:linear-gradient(to bottom,#cdd5c9 .2mm,transparent .2mm)}
+.working-space[data-pattern="blank"]{background-image:none}
 @media screen and (max-width:850px){.footer-lot-long{display:none}}
 @media screen and (max-width:560px){.selection-bar>.footer-project{flex-direction:column;align-items:flex-start;gap:2px}.footer-pill{font-size:9px;padding:3px 4px}.footer-pill svg{width:12px;height:12px}}
 .masthead-actions{display:flex;align-items:center;gap:6px;flex:none}

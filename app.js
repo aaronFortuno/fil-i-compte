@@ -5,7 +5,8 @@
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const FEATURE_MODES=[{id:'allow',label:'Permès',icon:'·'},{id:'require',label:'Obligatori',icon:'✓'},{id:'exclude',label:'Exclòs',icon:'×'}];
-  const initial=()=>({pageCount:2,perPage:2,ids:['P0001','P0003','P0005','P0009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true});
+  const WORK_PATTERNS=['dots','grid','lines','blank'];
+  const initial=()=>({pageCount:2,perPage:2,ids:['P0001','P0003','P0005','P0009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true,workPattern:'dots'});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
   let notice='',noticeKind='info';
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
@@ -27,7 +28,7 @@
     if(s.showBrand!==undefined&&typeof s.showBrand!=='boolean')throw Error('Opció de marca no vàlida.');
     const codes=s.filters.codes===undefined?'':s.filters.codes;
     if(typeof codes!=='string'||(codes&&C.parseSearch(codes).kind!=='codes'))throw Error('Rang de codis no vàlid.');
-    return {...layout,ids,filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features},...(codes?{codes:C.parseSearch(codes).canonical}:{})},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand};
+    return {...layout,ids,filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features},...(codes?{codes:C.parseSearch(codes).canonical}:{})},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand,workPattern:WORK_PATTERNS.includes(s.workPattern)?s.workPattern:'dots'};
   }
   function message(text,kind='info') {notice=text;noticeKind=kind;renderFooterStatus();}
   function makeFilters() {
@@ -58,6 +59,7 @@
     syncFeatures();
     $('feature-status').textContent='';
     $('sheet-title').value=state.title;$('sheet-group').value=state.group;$('show-brand').checked=state.showBrand;
+    $('work-pattern').value=state.workPattern;
   }
   function visual(v,id) {
     if(!v)return '';
@@ -241,7 +243,7 @@
     return groups.map((group,index)=>{
       const title=state.title.trim();
       const header=title||state.showBrand?`<header class="sheet-header ${title?'has-title':''}"><div>${state.showBrand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${title?`<h2>${escape(title)}</h2>`:''}</div><span class="sheet-number">${index+1} / ${state.pageCount}</span></header>`:'';
-      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
+      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space" data-pattern="${state.workPattern}"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
       const page=sheet.slice(0,-10)+lotFooter+'</section>';
       return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${page}</div>`:page;
     }).join('');
@@ -382,6 +384,11 @@
   $('zoom-fit').addEventListener('click',()=>{fitPreview=true;resizePreview(true);});
   $('view-exercises').addEventListener('click',()=>{solutionView=false;renderPreview(true);});$('view-solutions').addEventListener('click',()=>{solutionView=true;renderPreview(true);});
   $('show-brand').addEventListener('change',()=>{state.showBrand=$('show-brand').checked;persist();renderPreview(true);});
+  $('work-pattern').addEventListener('change',()=>{
+    const pattern=$('work-pattern').value;
+    if(!WORK_PATTERNS.includes(pattern))return;
+    state.workPattern=pattern;persist();renderPreview();
+  });
   $('problem-order').addEventListener('click',event=>{
     const button=event.target.closest('button[data-order]');if(!button)return;
     const index=state.ids.indexOf(button.dataset.order),target=index+Number(button.dataset.shift);
@@ -467,7 +474,7 @@
     const restore=code=>{
       const lot=LotCode.decode(code);
       if(lot.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Aquest lot conté exercicis que no són al catàleg actual.');
-      state=validateState({...initial(),...lot});query='';solutionView=false;
+      state=validateState({...initial(),...lot,workPattern:state.workPattern});query='';solutionView=false;
       notice='';syncControls();update();setStep(true);
     };
     bindDialog(dialog,$('lot-open'),$('lot-close'),{onOpen:()=>{status.textContent='';refresh();}});
