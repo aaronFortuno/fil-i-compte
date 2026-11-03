@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.14.1 · El lot més a mà i crèdits del projecte
+
+- Accés al lot a la capçalera, visible tant al banc com a la revisió. Botons coherents i icones Lucide locals.
+- Quadre V4V ampliat amb autoria, retrat, portfoli, repositori i crèdits. Espai de privacitat per a Umami, que continua desactivat.
+
 ## 0.14.0 · Recupera un lot
 
 - Codi i enllaç per recuperar tries manuals o automàtiques, amb els exercicis en ordre i la mateixa paginació. Codi al peu dels exercicis i dels solucionaris.

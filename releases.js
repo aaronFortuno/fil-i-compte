@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.14.1',title:'El lot més a mà i crèdits del projecte',
+    changes:['Accés al lot a la capçalera i més controls amb icones Lucide.','Quadre V4V amb retrat, autoria, repositori, crèdits i informació sobre l’analítica desactivada.']
+  },
+  {
     version:'0.14.0',title:'Recupera un lot',
     changes:['Codi imprès a cada pàgina i enllaç compartible per recuperar els exercicis, l’ordre i la paginació.','Accés a la targeta de suport voluntari V4V des del peu.']
   },

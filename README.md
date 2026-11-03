@@ -1,6 +1,6 @@
 # Fil i compte
 
-**Recupera un lot.** El botó **Lot** del peu permet copiar el codi o l’enllaç d’una tria completa, o recuperar-la a partir del codi imprès. Es conserven els identificadors en ordre i la paginació. El codi no depèn de la mida del catàleg ni desa el títol, el grup o versions antigues dels enunciats. En recuperar-lo s’apliquen els enunciats actuals i es netegen els filtres. Si falta un exercici, es mostra un avís i es conserva la tria anterior.
+**Recupera un lot.** El botó **Lot** de la capçalera permet copiar el codi o l’enllaç d’una tria completa, o recuperar-la a partir del codi imprès. Es conserven els identificadors en ordre i la paginació. El codi no depèn de la mida del catàleg ni desa el títol, el grup o versions antigues dels enunciats. En recuperar-lo s’apliquen els enunciats actuals i es netegen els filtres. Si falta un exercici, es mostra un avís i es conserva la tria anterior.
 
 Banc de 60 problemes estàtics en català, organitzats en cinc blocs, i compositor de fitxes d’1, 2, 4 o 6 pàgines A4. Hi ha preguntes úniques i problemes amb dos o tres apartats, incloses justificacions. Funciona en local o a GitHub Pages, sense dependències, comptes, API, analítica ni recursos externs durant l'ús.
 
