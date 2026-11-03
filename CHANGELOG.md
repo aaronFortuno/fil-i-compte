@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.25.0 · La recepta a mida
+
+- Dotze problemes de cicle superior, de P0145 a P0156, per adaptar receptes a més o menys persones.
+- Els solucionaris proposen taules de racions, dibuixos i agrupacions per mantenir les proporcions.
+
 ## 0.24.0 · Receptes a parts iguals
 
 - Dotze problemes de cicle superior, de P0133 a P0144, amb fraccions, litres i receptes.

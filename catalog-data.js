@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 17,
+    "version": 18,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -8420,6 +8420,655 @@ globalThis.EXERCISE_CATALOG = {
           "total": 1000,
           "caption": "Les dues gerres juntes fan vuit trossos de 125 mL. Quatre són de suc."
         }
+      }
+    },
+    {
+      "id": "P0145",
+      "version": 1,
+      "title": "Arròs per a sis",
+      "context": "receptes",
+      "structure": "afegir-mitja-recepta",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer arròs amb verdures per a 4 persones fem servir 240 g d’arròs. Avui serem 6 i volem servir racions de la mateixa mida.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants grams d’arròs hem de posar a l’olla?",
+      "solution": {
+        "expression": "240 + 240 ÷ 2 = 360",
+        "calculation": [
+          "add",
+          240,
+          [
+            "div",
+            240,
+            2
+          ]
+        ],
+        "answer": 360,
+        "unit": "g",
+        "response": "Hem de posar-hi 360 g d’arròs.",
+        "steps": [
+          "Dues persones més necessiten la meitat del que necessiten quatre. La meitat de 240 g són 120 g.",
+          "Afegim els 120 g als 240 g de la recepta."
+        ],
+        "note": "Taula de racions. 2 persones → 120 g. 4 persones → 240 g. 6 persones → 360 g."
+      }
+    },
+    {
+      "id": "P0146",
+      "version": 1,
+      "title": "Creps per a quatre",
+      "context": "receptes",
+      "structure": "reduir-tots-els-ingredients-a-la-meitat",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer creps per a 8 persones, la recepta diu que calen 320 g de farina, 400 mL de llet i 4 ous. Només en farem per a 4 persones i volem mantenir la mateixa recepta.",
+      "features": [
+        "multiplicacio-divisio"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quines quantitats hem de preparar de cada ingredient?",
+      "solution": {
+        "kind": "justification",
+        "response": "Hem de preparar 160 g de farina, 200 mL de llet i 2 ous.",
+        "steps": [
+          "Quatre persones són la meitat de vuit. Dividim per dos cadascuna de les quantitats."
+        ],
+        "note": "Dibuixa dues safates amb quatre plats cadascuna. Reparteix la farina, la llet i els ous de la recepta entre les dues safates. Una safata representa la recepta per a quatre.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              320,
+              2
+            ],
+            "answer": 160
+          },
+          {
+            "calculation": [
+              "div",
+              400,
+              2
+            ],
+            "answer": 200
+          },
+          {
+            "calculation": [
+              "div",
+              4,
+              2
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0147",
+      "version": 1,
+      "title": "L’hummus de la trobada",
+      "context": "receptes",
+      "structure": "reduir-a-partir-de-grups-de-dues-racions",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per fer hummus per a 6 persones fan falta 360 g de cigrons cuits i 3 cullerades d’oli. Finalment serem 4 persones.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quina quantitat de cada ingredient hem de fer servir perquè l’hummus quedi igual i les racions siguin de la mateixa mida?",
+      "solution": {
+        "kind": "justification",
+        "response": "Hem de fer servir 240 g de cigrons i 2 cullerades d’oli.",
+        "steps": [
+          "Separem la recepta de sis en tres grups de dues racions. Cada grup necessita 120 g de cigrons i una cullerada d’oli.",
+          "Per a quatre persones preparem dos grups iguals."
+        ],
+        "note": "Taula de racions. 2 persones → 120 g i 1 cullerada. 4 persones → 240 g i 2 cullerades. 6 persones → 360 g i 3 cullerades.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                360,
+                3
+              ],
+              2
+            ],
+            "answer": 240
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                3,
+                3
+              ],
+              2
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0148",
+      "version": 1,
+      "title": "Pa pla per a deu",
+      "context": "receptes",
+      "structure": "descompondre-en-dues-receptes-i-mitja",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una recepta de pa pla per a 4 persones porta 200 g de farina. N’hem de fer per a 10 persones.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quanta farina cal si cadascú ha de rebre la mateixa ració que a la recepta original?",
+      "solution": {
+        "expression": "200 × 2 + 200 ÷ 2 = 500",
+        "calculation": [
+          "add",
+          [
+            "mul",
+            200,
+            2
+          ],
+          [
+            "div",
+            200,
+            2
+          ]
+        ],
+        "answer": 500,
+        "unit": "g",
+        "response": "Calen 500 g de farina.",
+        "steps": [
+          "Comptem les deu racions com quatre, quatre i dues.",
+          "Preparem dues receptes senceres de 200 g i mitja recepta de 100 g."
+        ],
+        "note": "Es pot dibuixar una fila de deu plats i encerclar-ne quatre, quatre i dos. Així es veu quines quantitats s’han d’ajuntar."
+      }
+    },
+    {
+      "id": "P0149",
+      "version": 1,
+      "title": "El pastís de nou porcions",
+      "context": "receptes",
+      "structure": "treure-un-grup-de-tres-racions",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un pastís de poma per a 12 persones porta 240 g de farina i 4 ous. Només en volem fer per a 9 persones, amb porcions de la mateixa mida.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quines quantitats de farina i d’ous hem de preparar?",
+      "solution": {
+        "kind": "justification",
+        "response": "Hem de preparar 180 g de farina i 3 ous.",
+        "steps": [
+          "Fem quatre grups de tres racions. Cada grup necessita 60 g de farina i un ou.",
+          "Per a nou persones només necessitem tres grups."
+        ],
+        "note": "També pots pensar en els ingredients que trauries de la recepta de dotze. En restes 60 g de farina i un ou.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                240,
+                4
+              ],
+              3
+            ],
+            "answer": 180
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                4,
+                4
+              ],
+              3
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0150",
+      "version": 1,
+      "title": "Aigua amb llimona per a sis",
+      "context": "receptes",
+      "structure": "prendre-tres-cinquens-de-la-recepta",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per fer aigua amb llimona per a 10 persones, una recepta fa servir 2 litres i mig d’aigua. Avui la volem fer per a 6 persones, amb la mateixa quantitat de beguda per persona.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants litres d’aigua necessitem?",
+      "solution": {
+        "expression": "2.500 ÷ 5 × 3 = 1.500",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            2500,
+            5
+          ],
+          3
+        ],
+        "answer": 1500,
+        "unit": "mL",
+        "response": "Necessitem 1 litre i mig d’aigua.",
+        "steps": [
+          "Les sis racions són tres cinquens de les deu originals.",
+          "Dividim els 2.500 mL en cinc grups de 500 mL. N’agafem tres."
+        ],
+        "note": "Agrupa les persones de dues en dues. Per a deu persones hi ha cinc grups. Per a sis en calen tres.",
+        "visual": {
+          "type": "fraction",
+          "parts": 5,
+          "filled": 3,
+          "total": 2500,
+          "caption": "Cada bloc de 500 mL serveix dues persones. Els tres blocs pintats fan sis racions."
+        }
+      }
+    },
+    {
+      "id": "P0151",
+      "version": 1,
+      "title": "Amanida per a dues taules",
+      "context": "receptes",
+      "structure": "escalar-i-distribuir-segons-els-comensals",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per fer amanida de llenties per a 4 persones calen 200 g de llenties cuites. Avui tenim una taula de 3 persones i una altra de 5. Posem en una safata per a cada taula les racions que li corresponen.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants grams de llenties hem de posar a cada safata perquè tothom rebi la mateixa ració?",
+      "solution": {
+        "kind": "justification",
+        "response": "Hem de posar 150 g de llenties a la safata de tres persones i 250 g a la de cinc.",
+        "steps": [
+          "Quatre racions són 200 g, així que una ració pesa 50 g.",
+          "Comptem tres racions de 50 g per a la primera taula i cinc per a la segona."
+        ],
+        "note": "Taula de racions. 1 persona → 50 g. 3 persones → 150 g. 4 persones → 200 g. 5 persones → 250 g.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                200,
+                4
+              ],
+              3
+            ],
+            "answer": 150
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                200,
+                4
+              ],
+              5
+            ],
+            "answer": 250
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0152",
+      "version": 1,
+      "title": "La barreja de civada i panses",
+      "context": "receptes",
+      "structure": "detectar-lingredient-que-falta",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per fer un berenar per a 4 persones calen 240 g de civada i 120 g de panses. En volem preparar per a 10 persones amb la mateixa recepta. A l’armari hi ha 600 g de civada i 250 g de panses.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "suma-resta"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Què hem d’afegir al rebost per poder preparar les deu racions?",
+      "solution": {
+        "kind": "justification",
+        "response": "Només calen 50 g més de panses. Ja tenim tota la civada que necessitem.",
+        "steps": [
+          "Per a dues persones calen 120 g de civada i 60 g de panses. Per a deu persones ens calen cinc grups com aquest.",
+          "La recepta adaptada demana 600 g de civada i 300 g de panses. Comparem aquestes quantitats amb les que tenim."
+        ],
+        "note": "Fes cinc targetes de dues racions, cadascuna amb 120 g de civada i 60 g de panses. Omple-les amb el que tens al rebost per veure què hi falta.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                240,
+                2
+              ],
+              5
+            ],
+            "answer": 600
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                120,
+                2
+              ],
+              5
+            ],
+            "answer": 300
+          },
+          {
+            "calculation": [
+              "sub",
+              300,
+              250
+            ],
+            "answer": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0153",
+      "version": 1,
+      "title": "Quants pots de iogurt?",
+      "context": "receptes",
+      "structure": "escalar-i-comprar-en-envasos-sencers",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per fer unes postres per a 4 persones calen 400 g de iogurt. Avui en fem per a 6 persones. A la botiga venen pots de 250 g i a casa no tenim iogurt.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants pots hem de comprar com a mínim?",
+      "solution": {
+        "kind": "justification",
+        "response": "Hem de comprar 3 pots. En farem servir 600 g i en sobraran 150 g.",
+        "steps": [
+          "Per passar de quatre a sis racions afegim 200 g als 400 g de la recepta.",
+          "Dos pots només donen 500 g. Amb tres en tenim 750, prou per a les sis racions."
+        ],
+        "note": "Compara una fila de sis racions de 100 g amb tres pots de 250 g. Els dos primers pots cobreixen cinc racions. El tercer permet completar l’última.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              400,
+              [
+                "div",
+                400,
+                2
+              ]
+            ],
+            "answer": 600
+          },
+          {
+            "calculation": [
+              "mul",
+              250,
+              2
+            ],
+            "answer": 500
+          },
+          {
+            "calculation": [
+              "mul",
+              250,
+              3
+            ],
+            "answer": 750
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                250,
+                3
+              ],
+              600
+            ],
+            "answer": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0154",
+      "version": 1,
+      "title": "Batuts amb la llet que queda",
+      "context": "receptes",
+      "structure": "trobar-les-racions-a-partir-de-lingredient",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "La recepta de batut de plàtan per a 4 persones necessita 500 mL de llet. Tenim 750 mL de llet i tenim prou quantitat dels altres ingredients.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "parentesis"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Per a quantes persones en podem fer si mantenim la mateixa quantitat de llet per ració i la resta d’ingredients en proporció?",
+      "solution": {
+        "expression": "750 ÷ (500 ÷ 4) = 6",
+        "calculation": [
+          "div",
+          750,
+          [
+            "div",
+            500,
+            4
+          ]
+        ],
+        "answer": 6,
+        "unit": "persones",
+        "response": "En podem fer per a 6 persones.",
+        "steps": [
+          "Si quatre racions necessiten 500 mL de llet, una ració en necessita 125 mL.",
+          "Dividim els 750 mL en racions de 125 mL."
+        ],
+        "note": "Taula de racions. 250 mL → 2 persones. 500 mL → 4 persones. 750 mL → 6 persones."
+      }
+    },
+    {
+      "id": "P0155",
+      "version": 1,
+      "title": "Dues maneres de fer la salsa",
+      "context": "receptes",
+      "structure": "comparar-afegir-i-treure-racions",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una recepta de salsa per a 8 persones porta 800 g de tomàquet. Per fer-ne per a 6, la Bruna proposa preparar-ne per a quatre i afegir-ne per a dues. En Roc proposa calcular la quantitat per a vuit i treure’n la de dues racions.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Per què els dos camins donen la mateixa quantitat de tomàquet? Mostra-ho amb els càlculs.",
+      "solution": {
+        "kind": "justification",
+        "response": "Amb els dos camins calen 600 g de tomàquet. En tots dos casos comptem tres grups de dues racions.",
+        "steps": [
+          "Dues racions necessiten 200 g de tomàquet. La Bruna suma 400 g de quatre racions i 200 g de dues racions.",
+          "En Roc resta 200 g de dues racions als 800 g de la recepta sencera."
+        ],
+        "note": "Dibuixa quatre blocs de dues racions. La Bruna compta dos blocs i n’hi afegeix un. En Roc parteix dels quatre blocs i en ratlla un.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "div",
+                800,
+                2
+              ],
+              [
+                "div",
+                800,
+                4
+              ]
+            ],
+            "answer": 600
+          },
+          {
+            "calculation": [
+              "sub",
+              800,
+              [
+                "div",
+                800,
+                4
+              ]
+            ],
+            "answer": 600
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 3,
+          "total": 800,
+          "caption": "Cada bloc representa dues racions i 200 g de tomàquet. Els dos camins arriben als mateixos tres blocs."
+        }
+      }
+    },
+    {
+      "id": "P0156",
+      "version": 1,
+      "title": "L’oli de la coca i del motlle",
+      "context": "receptes",
+      "structure": "separar-un-ingredient-variable-dun-us-fix",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per fer una coca salada per a 6 persones calen 4 cullerades d’oli per a la massa i una cullerada més per untar el motlle. En farem per a 3 persones. Mantindrem la mida de les porcions i untarem el mateix motlle amb una cullerada sencera.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quantes cullerades d’oli necessitem en total?",
+      "solution": {
+        "expression": "4 ÷ 2 + 1 = 3",
+        "calculation": [
+          "add",
+          [
+            "div",
+            4,
+            2
+          ],
+          1
+        ],
+        "answer": 3,
+        "unit": "cullerades",
+        "response": "Necessitem 3 cullerades d’oli en total.",
+        "steps": [
+          "Per a mitja massa fem servir la meitat de les quatre cullerades, que són dues.",
+          "Hi sumem la cullerada sencera que cal per al motlle."
+        ],
+        "note": "Dibuixa dues columnes, una per a la massa i una per al motlle. Ratlla la meitat de les cullerades de la massa i conserva la del motlle."
       }
     }
   ]

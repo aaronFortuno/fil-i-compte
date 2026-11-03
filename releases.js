@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.25.0',title:'La recepta a mida',
+    changes:['Dotze problemes de cicle superior per adaptar receptes al nombre de persones.','Solucionaris amb taules, dibuixos i grups de racions. El banc ja té 156 problemes.']
+  },
+  {
     version:'0.24.0',title:'Receptes a parts iguals',
     changes:['Dotze problemes de cicle superior amb receptes, litres i fraccions.','Solucionaris amb estratègies visuals i intuïtives. El banc ja té 144 problemes.']
   },
