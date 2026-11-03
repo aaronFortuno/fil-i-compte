@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 12,
+    "version": 13,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -4967,6 +4967,729 @@
           "Multipliquem les dues proporcions."
         ],
         "note": "De cada 100 pomes, 75 passen la primera revisió i 60 passen també la segona."
+      }
+    },
+    {
+      "id": "P0085",
+      "version": 1,
+      "title": "Dos cartells de rebaixes",
+      "context": "comerc",
+      "structure": "comparacio-amb-descompte-unic",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una motxilla costa 100 € a totes dues botigues. La botiga A fa un 30 % de descompte. La botiga B fa un 20 % de descompte i, sobre el preu rebaixat, un 10 % addicional.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "En quina botiga surt més barata la motxilla? Justifica la tria.",
+      "solution": {
+        "kind": "justification",
+        "response": "A la botiga A. Costa 70 €, dos euros menys que a la botiga B.",
+        "steps": [
+          "A la botiga A paguem el 70 % de 100 €, és a dir, 70 €.",
+          "A la botiga B el primer descompte deixa el preu en 80 €. El 10 % de 80 € són 8 €, de manera que el preu final és 72 €."
+        ],
+        "note": "Els factors de preu a la botiga B són 0,80 i 0,90. Aplicats seguits donen un factor de 0,72, equivalent a un descompte total del 28 %.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              100,
+              0.7
+            ],
+            "answer": 70
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "mul",
+                100,
+                0.8
+              ],
+              0.9
+            ],
+            "answer": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0086",
+      "version": 1,
+      "title": "La comanda de planter",
+      "context": "hort",
+      "structure": "disminucio-i-augment-que-compensen",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "L’hort escolar ha encarregat 60 plançons. Dilluns redueix la comanda un 20 %. Dimarts l’amplia un 25 % respecte a la quantitat que havia encarregat dilluns.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Acabaran arribant tants plançons com s’havien encarregat al principi? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. La comanda torna a ser de 60 plançons.",
+        "steps": [
+          "El 20 % és una cinquena part. Dilluns es treuen 12 plançons de la comanda i en queden 48.",
+          "El 25 % és una quarta part. Una quarta part de 48 també són 12 plançons. En afegir-los, tornem a 60."
+        ],
+        "note": "La disminució es calcula sobre 60 i l’augment sobre 48.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              60,
+              [
+                "div",
+                60,
+                5
+              ]
+            ],
+            "answer": 48
+          },
+          {
+            "calculation": [
+              "add",
+              48,
+              [
+                "div",
+                48,
+                4
+              ]
+            ],
+            "answer": 60
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0087",
+      "version": 1,
+      "title": "La quota del taller",
+      "context": "tallers",
+      "structure": "canvis-oposats-mateix-percentatge",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un taller de ceràmica costava 50 € al mes. Al gener van apujar la quota un 20 %. Al febrer la van abaixar un 20 % respecte al preu del gener.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "La quota de febrer és igual a la d’abans de la pujada? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "No. Al febrer la quota és de 48 €, dos euros menys que al principi.",
+        "steps": [
+          "El 20 % és un cinquè. Al gener se suma un cinquè de 50 €, que són 10 €, i la quota puja a 60 €.",
+          "Al febrer es resta un cinquè de 60 €, que són 12 €, i la quota queda en 48 €."
+        ],
+        "note": "El segon 20 % es calcula sobre una quota més alta.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              50,
+              [
+                "div",
+                50,
+                5
+              ]
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "sub",
+              60,
+              [
+                "div",
+                60,
+                5
+              ]
+            ],
+            "answer": 48
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0088",
+      "version": 1,
+      "title": "El val i la rebaixa",
+      "context": "comerc",
+      "structure": "ordre-percentatge-import-fix",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Unes sabates costen 80 €. En una botiga primer es resta un val de 20 € i després es fa un 25 % de descompte sobre el que queda. En una altra, amb el mateix preu inicial, primer es fa el 25 % de descompte i després es resta el val de 20 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin ordre convé més a qui compra? Justifica-ho.",
+      "solution": {
+        "kind": "justification",
+        "response": "Convé aplicar primer el 25 % i després el val. El preu final és de 40 € en comptes de 45 €.",
+        "steps": [
+          "Amb el val primer, el descompte del 25 % és una quarta part de 60 €, és a dir, 15 €. Es paguen 45 €.",
+          "Amb el descompte primer, es resta una quarta part de 80 €, és a dir, 20 €. Després es resta el val i es paguen 40 €."
+        ],
+        "note": "El val sempre estalvia 20 €. El descompte del 25 % estalvia més euros quan s’aplica a la quantitat més alta.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "sub",
+                  80,
+                  20
+                ],
+                3
+              ],
+              4
+            ],
+            "answer": 45
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "div",
+                [
+                  "mul",
+                  80,
+                  3
+                ],
+                4
+              ],
+              20
+            ],
+            "answer": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0089",
+      "version": 1,
+      "title": "El descompte de la cistella",
+      "context": "comerc",
+      "structure": "descompte-de-producte-i-de-cistella",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una jaqueta de 80 € té un 25 % de descompte. A la mateixa compra hi ha uns mitjons de 10 € sense rebaixa pròpia. A caixa s’aplica un 10 % addicional sobre el total dels dos articles després de la rebaixa de la jaqueta.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "Quin import es paga a caixa?",
+      "solution": {
+        "expression": "(80 × 0,75 + 10) × 0,90 = 63",
+        "calculation": [
+          "mul",
+          [
+            "add",
+            [
+              "mul",
+              80,
+              0.75
+            ],
+            10
+          ],
+          0.9
+        ],
+        "answer": 63,
+        "unit": "€",
+        "response": "Es paguen 63 €.",
+        "steps": [
+          "Amb el 25 % de descompte, es paga el 75 % del preu de la jaqueta: 60 €.",
+          "Amb els mitjons, la cistella puja a 70 €. El 10 % addicional deixa el 90 % d’aquest total, que són 63 €."
+        ],
+        "note": "La primera base són els 80 € de la jaqueta. La segona són els 70 € de tota la cistella."
+      }
+    },
+    {
+      "id": "P0090",
+      "version": 1,
+      "title": "Les places de la jornada",
+      "context": "escola",
+      "structure": "augment-parcial-i-total-recalculat",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per a una jornada hi ha 80 places al gimnàs i 50 a la sala d’actes. Amb una nova filera de cadires, s’amplien un 25 % les places del gimnàs. Després es reserva per a convidats el 10 % de totes les places que han quedat a les dues sales.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "question": "Quantes places es poden oferir a les famílies?",
+      "solution": {
+        "expression": "(80 × 1,25 + 50) × 0,90 = 135",
+        "calculation": [
+          "mul",
+          [
+            "add",
+            [
+              "mul",
+              80,
+              1.25
+            ],
+            50
+          ],
+          0.9
+        ],
+        "answer": 135,
+        "unit": "places",
+        "response": "Es poden oferir 135 places a les famílies.",
+        "steps": [
+          "El gimnàs guanya 20 places i en passa a tenir 100. Amb les 50 de la sala d’actes, n’hi ha 150.",
+          "La reserva és el 10 % de 150, que són 15 places. Les famílies poden ocupar les 135 restants."
+        ],
+        "note": "L’augment afecta només el gimnàs. La reserva es calcula sobre el total actualitzat de les dues sales."
+      }
+    },
+    {
+      "id": "P0091",
+      "version": 1,
+      "title": "L’etiqueta tapada",
+      "context": "comerc",
+      "structure": "inversio-de-dos-descomptes",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una parada, primer es rebaixa a la meitat el preu d’una motxilla. A caixa s’aplica un 20 % addicional sobre el preu ja rebaixat. El tiquet final marca 24 €.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin era el preu de la motxilla abans de les dues rebaixes?",
+      "solution": {
+        "expression": "24 ÷ 4 × 5 × 2 = 60",
+        "calculation": [
+          "mul",
+          [
+            "mul",
+            [
+              "div",
+              24,
+              4
+            ],
+            5
+          ],
+          2
+        ],
+        "answer": 60,
+        "unit": "€",
+        "response": "El preu inicial era de 60 €.",
+        "steps": [
+          "Després de la segona rebaixa es paguen quatre cinquens del preu anterior. Si quatre cinquens són 24 €, un cinquè són 6 € i el preu anterior era de 30 €.",
+          "Els 30 € ja eren la meitat del preu inicial. Doblem aquesta quantitat."
+        ],
+        "note": "Comprovació: de 60 € es passa a 30 €, i un 20 % menys de 30 € són 24 €."
+      }
+    },
+    {
+      "id": "P0092",
+      "version": 1,
+      "title": "La collita del banc de llavors",
+      "context": "hort",
+      "structure": "base-comuna-i-base-successiva",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "S’han recollit 200 sobres de llavors. Es guarda el 25 % del total inicial per a la sembra i se’n dona un 10 %, també del total inicial, a l’escola. Dels sobres que queden després d’aquests dos repartiments, un 20 % va a la biblioteca.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "percentatges"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quants sobres queden per al punt d’intercanvi després dels tres repartiments?",
+      "solution": {
+        "expression": "(200 − 50 − 20) × 80 ÷ 100 = 104",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "sub",
+              [
+                "sub",
+                200,
+                [
+                  "div",
+                  [
+                    "mul",
+                    200,
+                    25
+                  ],
+                  100
+                ]
+              ],
+              [
+                "div",
+                [
+                  "mul",
+                  200,
+                  10
+                ],
+                100
+              ]
+            ],
+            80
+          ],
+          100
+        ],
+        "answer": 104,
+        "unit": "sobres",
+        "response": "Queden 104 sobres per al punt d’intercanvi.",
+        "steps": [
+          "Es guarden 50 sobres i se’n donen 20 a l’escola, sempre sobre els 200 inicials. En queden 130.",
+          "El 20 % de 130 són 26 sobres per a la biblioteca. El punt d’intercanvi rep els 104 restants."
+        ],
+        "note": "Els dos primers percentatges tenen la mateixa base. El de la biblioteca té com a base els 130 sobres que queden."
+      }
+    },
+    {
+      "id": "P0093",
+      "version": 1,
+      "title": "El cupó de caixa",
+      "context": "comerc",
+      "structure": "descompte-condicionat-per-llindar",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una dessuadora costa 80 € i té una rebaixa del 25 %. Un cupó dona un 10 % addicional sobre el preu rebaixat si, abans d’aplicar el cupó, l’import és de 60 € o més.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin preu final haurà de pagar qui compri la dessuadora? Justifica si es pot fer servir el cupó.",
+      "solution": {
+        "kind": "justification",
+        "response": "Es paguen 54 €. El cupó es pot aplicar perquè l’import rebaixat és just de 60 €.",
+        "steps": [
+          "El 25 % de 80 € és una quarta part, és a dir, 20 €. Després de la rebaixa, l’import és de 60 € i arriba al mínim del cupó.",
+          "El 10 % de 60 € és una desena part, 6 €. Restem aquests 6 € del preu rebaixat."
+        ],
+        "note": "El llindar es comprova després de la primera rebaixa i abans d’aplicar el cupó.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              80,
+              [
+                "div",
+                80,
+                4
+              ]
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "sub",
+              60,
+              [
+                "div",
+                60,
+                10
+              ]
+            ],
+            "answer": 54
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0094",
+      "version": 1,
+      "title": "El dipòsit de la brigada",
+      "context": "aigua",
+      "structure": "tres-canvis-i-fraccio-final",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un dipòsit conté 200 litres d’aigua. Al matí la brigada en fa servir el 50 %. Al migdia hi afegeix una quantitat igual al 20 % de l’aigua que hi queda. A la tarda fa servir el 25 % del contingut que hi ha després d’afegir-hi aigua.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "Quin percentatge de l’aigua inicial queda al dipòsit al final del dia?",
+      "solution": {
+        "expression": "90 × 100 ÷ 200 = 45",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "div",
+              [
+                "mul",
+                [
+                  "add",
+                  [
+                    "div",
+                    200,
+                    2
+                  ],
+                  [
+                    "div",
+                    [
+                      "div",
+                      200,
+                      2
+                    ],
+                    5
+                  ]
+                ],
+                3
+              ],
+              4
+            ],
+            100
+          ],
+          200
+        ],
+        "answer": 45,
+        "unit": "%",
+        "response": "Al final del dia queda el 45 % de l’aigua inicial.",
+        "steps": [
+          "Al matí queden 100 litres. Al migdia se n’afegeix un cinquè, 20 litres, i el dipòsit passa a tenir-ne 120.",
+          "A la tarda se’n fa servir una quarta part, 30 litres. En queden 90, que són 45 de cada 100 litres inicials."
+        ],
+        "note": "El 25 % de la tarda es calcula sobre 120 litres; el percentatge de la resposta, sobre 200."
+      }
+    },
+    {
+      "id": "P0095",
+      "version": 1,
+      "title": "La segona rebaixa exacta",
+      "context": "comerc",
+      "structure": "percentatge-desconegut-amb-objectiu",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un joc de taula costava 80 €. La botiga ja hi ha aplicat un 25 % de descompte. Vol aplicar una segona rebaixa sobre el preu actual de manera que el descompte total sigui del 40 % sobre el preu original.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "percentatges",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "question": "De quin percentatge ha de ser la segona rebaixa?",
+      "solution": {
+        "expression": "(60 − 48) × 100 ÷ 60 = 20",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "sub",
+              [
+                "div",
+                [
+                  "mul",
+                  80,
+                  3
+                ],
+                4
+              ],
+              [
+                "div",
+                [
+                  "mul",
+                  80,
+                  3
+                ],
+                5
+              ]
+            ],
+            100
+          ],
+          [
+            "div",
+            [
+              "mul",
+              80,
+              3
+            ],
+            4
+          ]
+        ],
+        "answer": 20,
+        "unit": "%",
+        "response": "La segona rebaixa ha de ser del 20 %.",
+        "steps": [
+          "La primera rebaixa treu una quarta part de 80 € i deixa el preu en 60 €.",
+          "Amb un 40 % de descompte total, es pagarien tres cinquens de 80 €, que són 48 €. Cal treure 12 € més.",
+          "Aquests 12 € són un cinquè dels 60 € actuals."
+        ],
+        "note": "El 40 % té com a base el preu original i la segona rebaixa, el preu de 60 €."
+      }
+    },
+    {
+      "id": "P0096",
+      "version": 1,
+      "title": "Les entrades de la mostra",
+      "context": "cultura",
+      "structure": "dos-factors-sobre-quantitats-diferents",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "L’any passat es van vendre 80 entrades a 4 € cadascuna per a una mostra. Aquest any s’han venut un 50 % més d’entrades, però el preu de cada entrada ha baixat un 25 % respecte a l’any passat.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "parentesis",
+        "percentatges",
+        "decimals"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "question": "En quin percentatge ha variat la recaptació respecte a la de l’any passat? Indica si ha pujat o ha baixat.",
+      "solution": {
+        "expression": "(360 − 320) × 100 ÷ 320 = 12,5",
+        "calculation": [
+          "div",
+          [
+            "mul",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  80,
+                  1.5
+                ],
+                [
+                  "mul",
+                  4,
+                  0.75
+                ]
+              ],
+              [
+                "mul",
+                80,
+                4
+              ]
+            ],
+            100
+          ],
+          [
+            "mul",
+            80,
+            4
+          ]
+        ],
+        "answer": 12.5,
+        "unit": "%",
+        "response": "La recaptació ha pujat un 12,5 %.",
+        "steps": [
+          "L’any passat es van recaptar 80 × 4 € = 320 €.",
+          "Aquest any s’han venut 120 entrades a 3 € i s’han recaptat 360 €.",
+          "La recaptació ha pujat 40 €, que és el 12,5 % dels 320 € de l’any passat."
+        ],
+        "note": "El 50 % modifica el nombre d’entrades i el 25 % modifica el preu unitari. Per comparar els ingressos, cal multiplicar entrades per preu."
       }
     }
   ]

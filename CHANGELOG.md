@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.20.0 · Sobre quina quantitat?
+
+- Dotze problemes nous de cicle superior, de P0085 a P0096, amb descomptes i augments encadenats.
+- Els exercicis practiquen el canvi de base, l’ordre d’un val i un descompte, i la recuperació del preu inicial.
+
 ## 0.19.0 · La mateixa part, tres maneres
 
 - Dotze problemes nous, de P0073 a P0084, que relacionen fraccions, decimals i percentatges.

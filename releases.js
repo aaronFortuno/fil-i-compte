@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.20.0',title:'Sobre quina quantitat?',
+    changes:['Dotze problemes de cicle superior, de P0085 a P0096, amb descomptes i augments encadenats.','El banc ja té 96 problemes.']
+  },
+  {
     version:'0.19.0',title:'La mateixa part, tres maneres',
     changes:['Dotze problemes nous, de P0073 a P0084, que relacionen fraccions, decimals i percentatges.','El banc ja té 84 problemes.']
   },
