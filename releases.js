@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.29.0',title:'Dos camins, una resposta',
+    changes:['Dotze problemes de cicle superior per comparar estratègies amb nombres senzills.','El banc ja té 192 problemes.']
+  },
+  {
     version:'0.28.0',title:'Amb aquesta estimació en tenim prou?',
     changes:['Dotze problemes de càlcul estimatiu amb decisions quotidianes.','El banc ja té 180 problemes.']
   },

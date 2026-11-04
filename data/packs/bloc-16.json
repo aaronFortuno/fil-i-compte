@@ -1,0 +1,782 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "setze-bloc",
+    "title": "Dos camins, una resposta",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0181",
+      "version": 1,
+      "title": "Sis entrades a dinou euros",
+      "context": "cultura",
+      "structure": "comparar-descomposicio-i-compensacio",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Sis entrades de teatre costen 19 € cadascuna. La Bruna separa cada preu en 10 € i 9 €. En Nil calcula com si cada entrada costés 20 € i després corregeix el total.",
+      "question": "Quin preu total dona cada camí i quin et sembla més pràctic per calcular-lo de cap? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Els dos camins donen 114 €. Arrodonir a 20 € facilita el càlcul mental perquè només cal restar un euro per entrada.",
+        "steps": [
+          "La Bruna calcula 6 × 10 = 60 i 6 × 9 = 54. En sumar-ho obté 114 €.",
+          "En Nil calcula 6 × 20 = 120. Resta els 6 € que ha comptat de més i obté 114 €."
+        ],
+        "note": "Separar desenes i unitats també és pràctic si vols aplicar el mateix procediment a qualsevol preu de dues xifres.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                6,
+                10
+              ],
+              [
+                "mul",
+                6,
+                9
+              ]
+            ],
+            "answer": 114
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                6,
+                20
+              ],
+              6
+            ],
+            "answer": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0182",
+      "version": 1,
+      "title": "Les llibretes del prestatge",
+      "context": "material-escolar",
+      "structure": "comparar-canvis-seguits-i-canvi-net",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En un prestatge hi ha 48 llibretes. Al matí se’n reparteixen 19 i a la tarda n’hi posen 9 de noves. La Jana segueix els canvis un per un. En Pol calcula primer de quantes llibretes ha disminuït el total al llarg del dia.",
+      "question": "Compara els dos camins i explica quin et sembla més pràctic per saber quantes llibretes hi queden.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Queden 38 llibretes. Calcular el canvi del dia facilita el càlcul, perquè es redueix a restar 10.",
+        "steps": [
+          "La Jana resta 19 de 48 i obté 29. Després hi suma 9 i arriba a 38.",
+          "En Pol veu que de les 19 llibretes que han sortit, 9 queden compensades per les que arriben. En total n’hi ha 10 menys i en queden 38."
+        ],
+        "note": "Si també volem saber quantes n’hi havia al migdia, seguir els canvis un per un ens dona aquesta dada.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "sub",
+                48,
+                19
+              ],
+              9
+            ],
+            "answer": 38
+          },
+          {
+            "calculation": [
+              "sub",
+              48,
+              [
+                "sub",
+                19,
+                9
+              ]
+            ],
+            "answer": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0183",
+      "version": 1,
+      "title": "El repartiment dels retoladors",
+      "context": "material-escolar",
+      "structure": "comparar-meitats-i-dividir-per-parts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Hem de repartir 96 retoladors entre 8 taules a parts iguals. L’Aina separa 80 retoladors i reparteix per separat aquests 80 i els 16 restants. En Biel divideix el lot per la meitat tres vegades fins a tenir 8 grups.",
+      "question": "Quants retoladors toca a cada taula amb cada camí? Quin et sembla més pràctic i per què?",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cada taula rep 12 retoladors. Separar 80 i 16 permet usar dos múltiples coneguts de 8.",
+        "steps": [
+          "L’Aina reparteix els 80 i dona 10 retoladors a cada taula. Amb els 16 restants, en dona 2 més a cadascuna.",
+          "En Biel fa dues parts de 48, després quatre de 24 i finalment vuit de 12."
+        ],
+        "note": "Les meitats poden ser més fàcils de seguir si tens els retoladors al davant i els vas separant en grups.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "div",
+                80,
+                8
+              ],
+              [
+                "div",
+                16,
+                8
+              ]
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "div",
+                [
+                  "div",
+                  96,
+                  2
+                ],
+                2
+              ],
+              2
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0184",
+      "version": 1,
+      "title": "Rajoles al voltant de la jardinera",
+      "context": "hort",
+      "structure": "comparar-complement-i-descomposicio-darea",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un pati rectangular fa 8 m per 6 m. En una cantonada hi ha una jardinera rectangular de 3 m per 2 m, amb el costat de 3 m sobre el costat de 8 m del pati. Volem enrajolar tot el pati que queda fora de la jardinera. La Laia calcula tot el rectangle i en treu la jardinera. En Marc divideix la zona per enrajolar en dos rectangles.",
+      "question": "Quina superfície obté cadascú i quin camí et sembla més pràctic amb aquest plànol? Justifica-ho amb un dibuix o amb els càlculs.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cal enrajolar 42 m². Restar la jardinera aprofita les quatre mides que ja tenim.",
+        "steps": [
+          "La Laia calcula 8 × 6 = 48 m² i en treu els 3 × 2 = 6 m² de la jardinera.",
+          "En Marc separa una peça de 8 m per 4 m i una de 5 m per 2 m. Suma els 32 m² i els 10 m²."
+        ],
+        "note": "Si dibuixes el pati, dividir-lo en dues peces permet veure que has comptat tota la zona per enrajolar una sola vegada.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                8,
+                6
+              ],
+              [
+                "mul",
+                3,
+                2
+              ]
+            ],
+            "answer": 42
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                8,
+                [
+                  "sub",
+                  6,
+                  2
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "sub",
+                  8,
+                  3
+                ],
+                2
+              ]
+            ],
+            "answer": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0185",
+      "version": 1,
+      "title": "Una tanca per als dos horts",
+      "context": "hort",
+      "structure": "comparar-contorn-exterior-i-perimetres-separats",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Dos horts rectangulars de 4 m per 3 m comparteixen tot un costat de 3 m. Només volem tancar el contorn exterior. En Roc dibuixa els dos horts com un sol rectangle. La Núria suma els perímetres dels dos horts i corregeix el recompte del costat compartit.",
+      "question": "Quants metres de tanca dona cada camí? Quin et sembla més pràctic per evitar errors i per què?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 22 m de tanca. Mirar el rectangle exterior permet comptar directament els costats que necessiten tanca.",
+        "steps": [
+          "En Roc veu un rectangle de 8 m per 3 m. Suma dos costats de 8 m i dos de 3 m.",
+          "La Núria obté 14 m de perímetre per hort. Dels 28 m totals en resta 6, perquè el costat interior de 3 m s’ha comptat dues vegades."
+        ],
+        "note": "Si les peces formessin un contorn difícil de resumir, sumar els perímetres i marcar els costats interiors podria ser un camí més fàcil de controlar.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              2,
+              [
+                "add",
+                [
+                  "add",
+                  4,
+                  4
+                ],
+                3
+              ]
+            ],
+            "answer": 22
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                2,
+                [
+                  "mul",
+                  2,
+                  [
+                    "add",
+                    4,
+                    3
+                  ]
+                ]
+              ],
+              [
+                "mul",
+                2,
+                3
+              ]
+            ],
+            "answer": 22
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0186",
+      "version": 1,
+      "title": "La civada per a nou",
+      "context": "receptes",
+      "structure": "comparar-reduccio-a-la-unitat-i-mitja-recepta",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un esmorzar per a 6 persones porta 300 g de civada. En volem fer per a 9 persones amb racions iguals. La Berta calcula els grams per persona. En Karim prepara la quantitat per a sis i hi afegeix la que cal per a tres més.",
+      "question": "Quanta civada calcula cadascú? Quin dels dos camins et sembla més pràctic per adaptar aquesta recepta i per què?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "proporcionalitat-directa",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 450 g de civada. Afegir mitja recepta és còmode perquè tres persones són la meitat de sis.",
+        "steps": [
+          "La Berta divideix 300 g entre sis i obté 50 g per persona. Multiplica 50 g per nou i obté 450 g.",
+          "En Karim afegeix 150 g, la meitat de la recepta, als 300 g de la recepta sencera."
+        ],
+        "note": "La quantitat per persona es pot reutilitzar si volem adaptar la mateixa recepta a molts nombres de comensals.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                300,
+                6
+              ],
+              9
+            ],
+            "answer": 450
+          },
+          {
+            "calculation": [
+              "add",
+              300,
+              [
+                "div",
+                300,
+                2
+              ]
+            ],
+            "answer": 450
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0187",
+      "version": 1,
+      "title": "Els testos que aniran al pati",
+      "context": "hort",
+      "structure": "comparar-calcular-la-fraccio-i-el-complement",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "De 24 testos, tres quartes parts aniran al pati i la resta es quedaran a l’aula. La Clara calcula quant és un quart i n’agafa tres. En Max calcula el quart que es queda a l’aula i el resta dels 24 testos.",
+      "question": "Quants testos van al pati segons cada camí? Quin et sembla més pràctic amb aquesta fracció i per què?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Al pati hi van 18 testos. Si veus ràpid que només un quart es queda a l’aula, pots treure 6 testos dels 24.",
+        "steps": [
+          "La Clara troba que un quart són 6 testos i calcula tres grups de 6.",
+          "En Max troba el mateix grup de 6 i calcula quants testos queden si el treu."
+        ],
+        "note": "Dibuixa quatre grups de sis. El primer camí assenyala tres grups. El segon en treu un i compta els mateixos tres.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                24,
+                4
+              ],
+              3
+            ],
+            "answer": 18
+          },
+          {
+            "calculation": [
+              "sub",
+              24,
+              [
+                "div",
+                24,
+                4
+              ]
+            ],
+            "answer": 18
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0188",
+      "version": 1,
+      "title": "El descompte de la motxilla",
+      "context": "comerc",
+      "structure": "comparar-percentatge-i-fraccio-equivalent",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una motxilla de 45 € té un descompte del 20 %. La Salma vol trobar el 10 % i doblar-lo. En Martí recorda que el 20 % equival a una cinquena part i calcula aquesta part directament.",
+      "question": "Quin descompte obté cadascú i quin camí triaries per fer aquest càlcul de cap? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "decimals",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Tots dos obtenen 9 € de descompte. Fer 45 ÷ 5 és pràctic si reconeixes el 20 % com una cinquena part.",
+        "steps": [
+          "La Salma divideix 45 € entre 10 i obté 4,50 €. En doblar-ho obté 9 €.",
+          "En Martí divideix 45 € entre 5 i obté 9 €."
+        ],
+        "note": "Trobar el 10 % primer també serveix per a altres descomptes, com el 30 %, si després el multipliques per tres.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                45,
+                10
+              ],
+              2
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "div",
+              45,
+              5
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0189",
+      "version": 1,
+      "title": "Ajuntem la beguda",
+      "context": "begudes",
+      "structure": "comparar-fer-parelles-i-canviar-dunitat",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En quatre ampolles hi ha 1,25 L, 0,75 L, 1,5 L i 0,5 L de suc. La Joana fa parelles que sumin litres sencers. En Pau passa cada quantitat a mil·lilitres abans de sumar-les.",
+      "question": "Quanta beguda hi ha en total segons cada camí? Quin et sembla més pràctic amb aquestes quantitats i per què?",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Hi ha 4 litres. Fer parelles és ràpid perquè cada parella suma exactament 2 litres.",
+        "steps": [
+          "La Joana suma 1,25 L amb 0,75 L i 1,5 L amb 0,5 L. Fa 2 L + 2 L.",
+          "En Pau suma 1.250, 750, 1.500 i 500 mL. Obté 4.000 mL i els converteix en 4 L."
+        ],
+        "note": "Passar a mil·lilitres pot facilitar el recompte si després has d’omplir gots graduats en mil·lilitres.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                1.25,
+                0.75
+              ],
+              [
+                "add",
+                1.5,
+                0.5
+              ]
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "add",
+                    1250,
+                    750
+                  ],
+                  1500
+                ],
+                500
+              ],
+              1000
+            ],
+            "answer": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0190",
+      "version": 1,
+      "title": "El temps de la visita",
+      "context": "horaris",
+      "structure": "comparar-salts-fins-a-lhora-i-desplacar-els-extrems",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una visita comença a les 10.55 i acaba a les 11.25. La Mar compta primer fins a les 11.00 i després fins al final. En Ton mou totes dues hores 5 minuts endavant i calcula la durada entre les hores noves.",
+      "question": "Quina durada obté cada persona i quin camí et sembla més pràctic amb aquestes hores? Explica per què es pot desplaçar la visita sencera.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La visita dura 30 minuts. Desplaçar-la 5 minuts permet llegir la durada entre les 11.00 i les 11.30.",
+        "steps": [
+          "La Mar compta 5 minuts fins a les 11.00 i 25 minuts més fins a les 11.25.",
+          "En Ton passa de 10.55 a 11.00 i de 11.25 a 11.30. Com que mou l’inici i el final els mateixos minuts, la durada es conserva."
+        ],
+        "note": "Separar la visita en trams pot ser més fàcil de comprovar si marques les hores en una línia del temps.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "sub",
+                60,
+                55
+              ],
+              25
+            ],
+            "answer": 30
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "add",
+                25,
+                5
+              ],
+              [
+                "sub",
+                [
+                  "add",
+                  55,
+                  5
+                ],
+                60
+              ]
+            ],
+            "answer": 30
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0191",
+      "version": 1,
+      "title": "Els dies de l’exposició",
+      "context": "calendari",
+      "structure": "comparar-diferencia-inclusiva-i-grups-de-set",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una exposició obre cada dia del 8 al 21 del mateix mes, tant el dia 8 com el 21 inclosos. L’Ona resta el número del primer dia del de l’últim i hi fa un ajust. En Guim marca al calendari els dies del 8 al 14 i després els del 15 al 21.",
+      "question": "Quants dies obre segons cada camí? Quin et sembla més pràctic per assegurar que comptes els dos extrems i per què?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "L’exposició obre 14 dies. Marcar els dos grups de set en un calendari permet veure que s’han comptat el 8 i el 21.",
+        "steps": [
+          "L’Ona calcula 21 − 8 = 13 salts entre dies. Compta també el dia 8 i obté 14.",
+          "En Guim compta set dies del 8 al 14 i set més del 15 al 21."
+        ],
+        "note": "La resta i el dia addicional són ràpids quan no tens el calendari, si recordes que la resta compta els salts entre dates.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "sub",
+                21,
+                8
+              ],
+              1
+            ],
+            "answer": 14
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                [
+                  "sub",
+                  14,
+                  8
+                ],
+                1
+              ],
+              [
+                "add",
+                [
+                  "sub",
+                  21,
+                  15
+                ],
+                1
+              ]
+            ],
+            "answer": 14
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0192",
+      "version": 1,
+      "title": "Els adhesius dels sobres",
+      "context": "fira",
+      "structure": "comparar-calcular-el-total-i-reagrupar-en-multiples",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hem de posar 3 adhesius a cadascun de 24 sobres. Els adhesius es venen en fulls de 8. La Rita calcula primer quants adhesius necessita en total. En Bernat fa grups de vuit sobres i mira quants fulls necessita per a cada grup.",
+      "question": "Quants fulls calen segons cada camí? Quin et sembla més pràctic per organitzar la feina i per què?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "comparar-estrategies"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 9 fulls. Fer grups de vuit sobres permet preparar tres lots iguals de tres fulls.",
+        "steps": [
+          "La Rita calcula 24 × 3 = 72 adhesius. Com que cada full en té 8, en necessita 9.",
+          "En Bernat forma tres grups de vuit sobres. Per a cada grup, un full dona un adhesiu per sobre i tres fulls donen els tres adhesius que calen."
+        ],
+        "note": "Calcular el total és directe per fer la compra. Els grups van bé si tres persones han d’omplir els sobres en paral·lel.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                24,
+                3
+              ],
+              8
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                24,
+                8
+              ],
+              3
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    }
+  ]
+}

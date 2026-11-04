@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.29.0 · Dos camins, una resposta
+
+- Dotze problemes de cicle superior, de P0181 a P0192, per comparar dues estratègies i justificar quina és més pràctica en cada cas.
+- Els solucionaris mostren tots dos camins i expliquen quan poden ser més ràpids o més fàcils de comprovar.
+
 ## 0.28.0 · Amb aquesta estimació en tenim prou?
 
 - Dotze problemes nous, de P0169 a P0180, per decidir si una estimació és prou bona en situacions quotidianes.
