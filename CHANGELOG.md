@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.33.0 · Quan canvien al mateix ritme
+
+- Dotze problemes de cicle superior, de P0217 a P0228, amb l’etiqueta «Proporcionalitat directa».
+- El bloc treballa ritmes, escales, preus i repartiments. Sis problemes demanen justificar si hi ha proporcionalitat directa.
+
 ## 0.32.0 · Cada part té el seu tot
 
 - Dotze problemes de cicle superior, de P0205 a P0216, amb l’etiqueta «Identificar el tot».

@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "dinove-bloc",
+    "title": "Quan canvien al mateix ritme",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0217",
+      "version": 1,
+      "title": "Etiquetes a ritme constant",
+      "context": "impressio",
+      "structure": "passar-per-la-unitat",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Una impressora que ja està en marxa fa 24 etiquetes en 4 minuts. Durant tota la feina imprimeix el mateix nombre d’etiquetes cada minut.",
+      "question": "Quantes etiquetes farà en 10 minuts?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Farà 60 etiquetes.",
+        "steps": [
+          "En un minut fa 24 ÷ 4 = 6 etiquetes.",
+          "En deu minuts fa deu grups de sis etiquetes."
+        ],
+        "note": "Taula de ritme. 1 minut → 6 etiquetes. 4 minuts → 24 etiquetes. 10 minuts → 60 etiquetes.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                24,
+                4
+              ],
+              10
+            ],
+            "answer": 60
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0218",
+      "version": 1,
+      "title": "El camí al plànol",
+      "context": "orientacio",
+      "structure": "escalar-una-distancia",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "En un plànol del poble, 2 cm representen 100 metres reals. El camí recte entre l’escola i el parc fa 7 cm al plànol.",
+      "question": "Quants metres fa el camí en realitat?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Fa 350 metres.",
+        "steps": [
+          "Cada centímetre representa 50 metres, la meitat de 100.",
+          "Multipliquem els 50 metres pels set centímetres del camí."
+        ],
+        "note": "També podem comptar 2 + 2 + 2 + 1 cm. Són tres trams de 100 metres i un de 50.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                100,
+                2
+              ],
+              7
+            ],
+            "answer": 350
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0219",
+      "version": 1,
+      "title": "Els cartells de la festa",
+      "context": "comerc",
+      "structure": "preu-amb-un-import-fix",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una copisteria cobra 3 € per preparar la comanda de cartells, independentment de quants se’n facin. Cada cartell costa 2 € més. L’Èric diu que encarregar sis cartells costarà el doble que encarregar-ne tres.",
+      "question": "El preu total és directament proporcional al nombre de cartells? Justifica-ho amb les dues comandes.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El preu total no és proporcional. Tres cartells costen 9 € i sis en costen 15. El doble de 9 € serien 18 €.",
+        "steps": [
+          "Amb tres cartells paguem 6 € pels cartells i 3 € de preparació.",
+          "Amb sis cartells paguem 12 € pels cartells i els mateixos 3 € de preparació."
+        ],
+        "note": "El preu dels cartells sols es dobla. La preparació es cobra una vegada en cada comanda.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              3,
+              [
+                "mul",
+                3,
+                2
+              ]
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "add",
+              3,
+              [
+                "mul",
+                6,
+                2
+              ]
+            ],
+            "answer": 15
+          },
+          {
+            "calculation": [
+              "mul",
+              9,
+              2
+            ],
+            "answer": 18
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0220",
+      "version": 1,
+      "title": "El patró del mosaic",
+      "context": "art",
+      "structure": "mantenir-la-proporcio-entre-dos-colors",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un patró per a un mosaic té 3 rajoles blaves i 2 de blanques. Volem fer un mosaic de 20 rajoles repetint aquest patró sencer.",
+      "question": "Quantes rajoles blaves i blanques necessitem? Explica com mantens la proporció.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Necessitem 12 rajoles blaves i 8 de blanques.",
+        "steps": [
+          "Cada patró té 5 rajoles. Amb 20 rajoles podem fer quatre còpies del patró.",
+          "Multipliquem per quatre tant les rajoles blaves com les blanques."
+        ],
+        "note": "Dibuixa quatre tires de cinc rajoles, amb tres blaves i dues blanques a cadascuna.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              20,
+              [
+                "add",
+                3,
+                2
+              ]
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              4
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "mul",
+              2,
+              4
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0221",
+      "version": 1,
+      "title": "Les capses del magatzem",
+      "context": "material-escolar",
+      "structure": "reconstruir-el-nombre-de-grups",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En 6 capses plenes hi ha 48 llapis. Totes les capses són iguals. Volem guardar 72 llapis en capses com aquestes i omplir-les totes.",
+      "question": "Quantes capses necessitem?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Necessitem 9 capses.",
+        "steps": [
+          "Cada capsa plena conté 48 ÷ 6 = 8 llapis.",
+          "Dividim els 72 llapis entre els 8 que van a cada capsa."
+        ],
+        "note": "També pots veure els 72 llapis com els 48 inicials més 24. Els 24 són la meitat de 48 i omplen tres capses més.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              72,
+              [
+                "div",
+                48,
+                6
+              ]
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0222",
+      "version": 1,
+      "title": "Un ritme diferent a la pujada",
+      "context": "esport",
+      "structure": "comparar-temps-i-distancia-amb-ritme-variable",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Durant els primers 4 minuts d’una ruta en bicicleta, la Laia recorre 400 metres. Durant els 4 minuts següents, en pujada, en recorre 200.",
+      "question": "Si comptem el temps i la distància des de l’inici de la ruta, són directament proporcionals en aquests dos moments? Justifica-ho comparant els 4 minuts amb els 8.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "En aquests dos moments la distància no és proporcional al temps. En 8 minuts la Laia fa 600 metres. Si mantingués la proporció dels primers 4 minuts, en faria 800.",
+        "steps": [
+          "Als 4 minuts ha fet 400 metres. Als 8, sumem els 400 metres del primer tram i els 200 del segon.",
+          "El temps s’ha doblat. La distància només passaria a 800 metres si també es doblés."
+        ],
+        "note": "En una relació proporcional, en doblar el temps des de l’inici també s’ha de doblar la distància acumulada.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              400,
+              200
+            ],
+            "answer": 600
+          },
+          {
+            "calculation": [
+              "mul",
+              400,
+              2
+            ],
+            "answer": 800
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0223",
+      "version": 1,
+      "title": "La foto ampliada",
+      "context": "fotografia",
+      "structure": "comprovar-que-es-mante-la-forma",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una foto rectangular fa 6 cm d’ample i 4 cm d’alt. Una còpia fa 9 cm d’ample i 6 cm d’alt. Volem saber si les dues mides han crescut en la mateixa proporció.",
+      "question": "Les mides de la còpia mantenen la proporció de la foto original? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Tant l’amplada com l’alçada s’han ampliat afegint la meitat de la mida original.",
+        "steps": [
+          "L’amplada original és de 6 cm. Si hi afegim la meitat, 3 cm, arribem als 9 de la còpia.",
+          "L’alçada original és de 4 cm. Si hi afegim la meitat, 2 cm, arribem als 6 de la còpia."
+        ],
+        "note": "En una graella, tots dos rectangles tenen tres columnes per cada dues files. El de 6 × 4 dobla aquestes dues mides i el de 9 × 6 les triplica.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              6,
+              [
+                "div",
+                6,
+                2
+              ]
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "add",
+              4,
+              [
+                "div",
+                4,
+                2
+              ]
+            ],
+            "answer": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0224",
+      "version": 1,
+      "title": "El costat i la superfície",
+      "context": "hort",
+      "structure": "costat-i-area-no-proporcionals",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un hort quadrat fa 3 metres de costat. Se’n vol fer un altre també quadrat, amb un costat de 6 metres. En Pau diu que el nou hort tindrà el doble de superfície perquè el costat és el doble.",
+      "question": "La superfície d’un quadrat és directament proporcional a la llargada del costat? Justifica-ho amb els dos horts.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. El costat es dobla, però la superfície passa de 9 a 36 m². La superfície es multiplica per quatre.",
+        "steps": [
+          "L’hort de 3 metres té 3 × 3 = 9 m². El de 6 metres té 6 × 6 = 36 m².",
+          "Dividim 36 entre 9 i obtenim 4."
+        ],
+        "note": "Dibuixa el quadrat gran i divideix-lo per la meitat en tots dos sentits. Hi caben quatre quadrats com el petit.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              3
+            ],
+            "answer": 9
+          },
+          {
+            "calculation": [
+              "mul",
+              6,
+              6
+            ],
+            "answer": 36
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                6,
+                6
+              ],
+              [
+                "mul",
+                3,
+                3
+              ]
+            ],
+            "answer": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0225",
+      "version": 1,
+      "title": "La cinta per al taller",
+      "context": "comerc",
+      "structure": "comparar-dos-preus-per-unitat",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la botiga A, 6 metres de cinta costen 18 €. A la botiga B, 4 metres costen 16 €. A cada botiga el preu per metre és fix, sense cap import afegit. Necessitem 8 metres.",
+      "question": "A quina botiga els hauríem de comprar i quants euros estalviaríem?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "A la botiga A. Hi pagarem 24 €, vuit euros menys que a la botiga B.",
+        "steps": [
+          "A la botiga A cada metre costa 3 €. A la B en costa 4.",
+          "Multipliquem cada preu per metre pels 8 metres que necessitem i comparem els dos totals."
+        ],
+        "note": "Trobar el preu d’un metre permet comparar les ofertes encara que els cartells anunciïn llargades diferents.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                18,
+                6
+              ],
+              8
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                16,
+                4
+              ],
+              8
+            ],
+            "answer": 32
+          },
+          {
+            "calculation": [
+              "sub",
+              32,
+              24
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0226",
+      "version": 1,
+      "title": "L’aigua de les jardineres",
+      "context": "hort",
+      "structure": "escalar-i-comprovar-si-arriba",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per regar 3 jardineres iguals fem servir 12 litres d’aigua. Avui volem regar 7 jardineres, amb la mateixa quantitat d’aigua a cadascuna. Tenim un dipòsit amb 30 litres.",
+      "question": "N’hi haurà prou? Justifica quanta aigua sobrarà o faltarà.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. En necessitarem 28 litres i en sobraran 2.",
+        "steps": [
+          "Si tres jardineres necessiten 12 litres, cadascuna en necessita 4.",
+          "Set jardineres necessiten 7 × 4 = 28 litres. Comparem els 28 litres amb els 30 del dipòsit."
+        ],
+        "note": "També pots comptar 3 + 3 + 1 jardineres i sumar 12 + 12 + 4 litres.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                12,
+                3
+              ],
+              7
+            ],
+            "answer": 28
+          },
+          {
+            "calculation": [
+              "sub",
+              30,
+              28
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0227",
+      "version": 1,
+      "title": "Les capses de la biblioteca",
+      "context": "biblioteca",
+      "structure": "quantitat-fixa-i-repartiment-invers",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 24 llibres per repartir entre capses. Amb 3 capses, cadascuna rep 8 llibres. Ara volem repartir els mateixos 24 llibres a parts iguals entre 6 capses.",
+      "question": "És directament proporcional el nombre de llibres per capsa al nombre de capses? Justifica-ho amb els dos repartiments.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. En doblar les capses de 3 a 6, els llibres per capsa passen de 8 a 4. Cada capsa en rep la meitat.",
+        "steps": [
+          "Amb tres capses fem 24 ÷ 3 = 8 llibres per capsa. Amb sis capses fem 24 ÷ 6 = 4.",
+          "Si fos proporcional en sentit directe, cada capsa hauria de passar de 8 a 16 llibres quan doblem el nombre de capses."
+        ],
+        "note": "Quan el total de llibres és fix, pots imaginar que divides cada capsa de vuit llibres en dues de quatre.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              24,
+              3
+            ],
+            "answer": 8
+          },
+          {
+            "calculation": [
+              "div",
+              24,
+              6
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "mul",
+              2,
+              [
+                "div",
+                24,
+                3
+              ]
+            ],
+            "answer": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0228",
+      "version": 1,
+      "title": "El ritme de les voltes",
+      "context": "esport",
+      "structure": "validar-una-taula-i-extrapolar-amb-condicio",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una sessió de patinatge, el registre marca 12 minuts després de 2 voltes, 24 minuts després de 4 voltes i 30 minuts després de 5 voltes. En tots tres casos el temps es compta des de l’inici.",
+      "question": "Els tres registres són compatibles amb una relació de proporcionalitat directa? Si es mantingués aquesta relació, quant duraria fer 7 voltes? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Els tres registres corresponen a 6 minuts per volta. Si es manté aquest ritme, 7 voltes duraran 42 minuts.",
+        "steps": [
+          "Dividim cada temps pel nombre de voltes. Els càlculs 12 ÷ 2, 24 ÷ 4 i 30 ÷ 5 donen el mateix resultat.",
+          "Si el ritme de 6 minuts per volta es manté, multipliquem 6 per 7."
+        ],
+        "note": "Els registres són compatibles amb una mateixa proporció. Per predir les set voltes cal suposar que aquest ritme es manté.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              12,
+              2
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              24,
+              4
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              30,
+              5
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                12,
+                2
+              ],
+              7
+            ],
+            "answer": 42
+          }
+        ]
+      }
+    }
+  ]
+}

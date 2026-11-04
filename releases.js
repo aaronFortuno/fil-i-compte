@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.33.0',title:'Quan canvien al mateix ritme',
+    changes:['Dotze problemes de cicle superior per aplicar i comprovar la proporcionalitat directa.','El banc ja té 228 problemes.']
+  },
+  {
     version:'0.32.0',title:'Cada part té el seu tot',
     changes:['Dotze problemes de cicle superior per identificar la quantitat de referència de fraccions i percentatges.','El banc ja té 216 problemes.']
   },
