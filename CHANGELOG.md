@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.34.3 · Avisos més discrets
+
+- La casella de selecció ocupa la cantonada de la targeta i la bandera queda a la seva esquerra.
+- Un sol accés a «Privacitat i avisos» a la capçalera. Les banderes mostren l’ajuda en passar-hi per sobre o en enfocar-les.
+
 ## 0.34.2 · Historial complet a GitHub
 
 - El diàleg de l’historial enllaça amb el registre complet de canvis a GitHub.

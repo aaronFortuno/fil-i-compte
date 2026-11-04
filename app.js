@@ -112,17 +112,36 @@
     return `<div class="part-responses">${e.parts.map((part,index)=>`<div class="response-space ${part.solution.kind==='justification'?'reasoning-response':''}"><span class="response-label">${String.fromCharCode(97+index)})</span><span class="response-line"></span></div>`).join('')}</div>`;
   }
   const reportContext=control=>({problem:control.dataset.problem,version:Number(control.dataset.version),section:control.dataset.section});
+  let reportTooltipAnchor=null,reportTooltipTimer;
   function reportHTML(e,section){
     const label=section==='solution'?'al solucionari':'a l’enunciat';
-    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" disabled data-report aria-label="Notifica un error ${label} de ${e.id}"><img class="ui-icon" src="assets/lucide/flag.svg" alt="" width="16" height="16"></button><button type="button" data-report-help class="report-help" aria-label="Ajuda per notificar errors de ${e.id}" title="Privacitat i avisos" aria-haspopup="dialog">?</button><span class="report-sent" hidden>Enviat</span></span>`;
+    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" aria-disabled="true" data-report aria-label="Notifica un error ${label} de ${e.id}"><img class="ui-icon" src="assets/lucide/flag.svg" alt="" width="16" height="16"><span class="report-sent" aria-hidden="true" hidden>✓</span></button></span>`;
+  }
+  function hideReportTooltip(){
+    clearTimeout(reportTooltipTimer);
+    reportTooltipAnchor?.removeAttribute('aria-describedby');
+    reportTooltipAnchor=null;
+    if($('report-tooltip').matches(':popover-open'))$('report-tooltip').hidePopover();
+  }
+  function showReportTooltip(button){
+    if(!button.dataset.tooltip)return;
+    clearTimeout(reportTooltipTimer);
+    if(reportTooltipAnchor!==button)reportTooltipAnchor?.removeAttribute('aria-describedby');
+    const tooltip=$('report-tooltip');
+    reportTooltipAnchor=button;
+    button.setAttribute('aria-describedby',tooltip.id);
+    tooltip.textContent=button.dataset.tooltip;
+    if(!tooltip.matches(':popover-open'))tooltip.showPopover();
+    positionPopover(tooltip,button);
   }
   function refreshReports(root=document,analyticsState=FilAnalytics.getState()){
     for(const control of root.querySelectorAll('.report-control')){
       const state=FilAnalytics.reportState(reportContext(control)),flag=control.querySelector('[data-report]');
-      flag.disabled=analyticsState.status!=='ready'||state!=='idle';
-      control.querySelector('[data-report-help]').hidden=analyticsState.status==='ready'||state!=='idle';
-      control.querySelector('.report-sent').hidden=state!=='sent';
-      flag.title=state==='sent'?'Avís enviat':state==='sending'?'Enviant l’avís…':flag.disabled?'Avisos no disponibles. Obre l’ajuda de privacitat.':'Notifica un error';
+      flag.setAttribute('aria-disabled',String(analyticsState.status!=='ready'||state!=='idle'));
+      flag.querySelector('img').hidden=state==='sent';
+      flag.querySelector('.report-sent').hidden=state!=='sent';
+      flag.dataset.tooltip=state==='sent'?'Avís enviat.':state==='sending'?'Enviant l’avís…':analyticsState.status==='ready'?'Notifica un error. Més informació a «Privacitat» a la capçalera.':'Els avisos no estan disponibles. Obre «Privacitat» a la capçalera per saber-ne més.';
+      if(flag===reportTooltipAnchor)showReportTooltip(flag);
     }
   }
   function renderCards() {
@@ -143,9 +162,10 @@
       });
       return;
     }
+    if($('cards').contains(reportTooltipAnchor))hideReportTooltip();
     $('cards').innerHTML=matches.map(e=>{
       const isSelected=state.ids.includes(e.id),blocked=!isSelected&&state.ids.length>=capacity();
-      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><div class="card-tools"><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label>${reportHTML(e,'statement')}</div></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
+      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><div class="card-tools">${reportHTML(e,'statement')}<label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></div></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     refreshReports($('cards'));
@@ -243,6 +263,7 @@
   }
   function renderPreview(animate=false) {
     stopZoom();
+    if($('pages').contains(reportTooltipAnchor))hideReportTooltip();
     $('pages').style.setProperty('--preview-columns',Math.min(2,state.pageCount));
     $('pages').innerHTML=pagesHTML(solutionView,true);
     refreshReports($('pages'));
@@ -468,17 +489,42 @@
     if(navigator.brave?.isBrave)navigator.brave.isBrave().then(isBrave=>{
       if(isBrave&&!browserChosen){browser.value='brave';updatePrivacy(analytics.getState());}
     }).catch(()=>{});
-    bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{void analytics.refresh();updatePrivacy(analytics.getState());}});
+    bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{hideReportTooltip();void analytics.refresh();updatePrivacy(analytics.getState());}});
     analytics.subscribe(state=>{updatePrivacy(state);refreshReports(document,state);});
     temporary.addEventListener('click',()=>{void analytics.allowTemporarily();});
     disable.addEventListener('click',()=>analytics.disable());
     window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics.refresh();});
     window.addEventListener('focus',()=>{void analytics.refresh();});
     document.addEventListener('visibilitychange',()=>{if(!document.hidden)void analytics.refresh();});
+    const tooltip=$('report-tooltip');
+    const scheduleTooltipClose=()=>{
+      clearTimeout(reportTooltipTimer);
+      reportTooltipTimer=setTimeout(()=>{
+        if(!reportTooltipAnchor?.matches(':hover, :focus')&&!tooltip.matches(':hover'))hideReportTooltip();
+      },120);
+    };
+    document.addEventListener('pointerover',event=>{
+      const button=event.target.closest('[data-report]');
+      if(button&&event.pointerType!=='touch')showReportTooltip(button);
+    });
+    document.addEventListener('pointerout',event=>{
+      if(reportTooltipAnchor?.contains(event.target)&&!reportTooltipAnchor.contains(event.relatedTarget))scheduleTooltipClose();
+    });
+    tooltip.addEventListener('pointerleave',scheduleTooltipClose);
+    document.addEventListener('focusin',event=>{
+      const button=event.target.closest('[data-report]');
+      if(button)showReportTooltip(button);else hideReportTooltip();
+    });
+    document.addEventListener('pointerdown',event=>{
+      if(!event.target.closest('[data-report]')&&!tooltip.contains(event.target))hideReportTooltip();
+    });
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')hideReportTooltip();});
+    document.addEventListener('scroll',hideReportTooltip,true);
+    window.addEventListener('resize',hideReportTooltip);
     document.addEventListener('click',async event=>{
-      const button=event.target.closest('[data-report], [data-report-help]');
+      const button=event.target.closest('[data-report]');
       if(!button)return;
-      if(button.hasAttribute('data-report-help')){trigger.click();return;}
+      if(button.getAttribute('aria-disabled')==='true'){showReportTooltip(button);return;}
       const context=reportContext(button.closest('.report-control'));
       const status=$('report-status');
       status.textContent='';

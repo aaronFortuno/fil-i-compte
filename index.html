@@ -11,7 +11,7 @@
 <body>
   <a class="skip" href="#catalogue">Salta al banc de problemes</a>
   <div class="app-shell">
-    <header class="masthead"><a class="brand" href="./index.html"><img class="brand-mark" src="assets/brand/fil-i-compte.svg" width="36" height="36" alt=""><span>fil i compte</span></a><span class="edition" id="catalogue-motto"></span><div class="masthead-actions"><form id="lot-form" class="code-form"><label for="lot-input">Codi</label><input id="lot-input" maxlength="400" spellcheck="false" autocapitalize="characters" autocomplete="off" placeholder="Enganxa un codi" aria-describedby="code-status"><button class="footer-pill" type="submit">Recupera</button><button class="footer-pill" type="button" id="lot-copy" aria-label="Copia el codi actual" title="Copia el codi actual"><img class="ui-icon" src="assets/lucide/share-2.svg" alt="" width="16" height="16"></button><span id="code-status" role="status"></span></form><button class="footer-pill" aria-label="Com funciona" id="help-toggle" aria-haspopup="dialog" aria-controls="help-dialog"><img class="ui-icon" src="assets/lucide/circle-question-mark.svg" alt="" width="16" height="16"> <span class="help-label">Com funciona</span></button></div></header>
+    <header class="masthead"><a class="brand" href="./index.html"><img class="brand-mark" src="assets/brand/fil-i-compte.svg" width="36" height="36" alt=""><span>fil i compte</span></a><span class="edition" id="catalogue-motto"></span><div class="masthead-actions"><form id="lot-form" class="code-form"><label for="lot-input">Codi</label><input id="lot-input" maxlength="400" spellcheck="false" autocapitalize="characters" autocomplete="off" placeholder="Enganxa un codi" aria-describedby="code-status"><button class="footer-pill" type="submit">Recupera</button><button class="footer-pill" type="button" id="lot-copy" aria-label="Copia el codi actual" title="Copia el codi actual"><img class="ui-icon" src="assets/lucide/share-2.svg" alt="" width="16" height="16"></button><span id="code-status" role="status"></span></form><button class="footer-pill" aria-label="Com funciona" id="help-toggle" aria-haspopup="dialog" aria-controls="help-dialog"><img class="ui-icon" src="assets/lucide/circle-question-mark.svg" alt="" width="16" height="16"> <span class="help-label">Com funciona</span></button><button type="button" class="footer-pill" id="privacy-open" aria-label="Privacitat i avisos" aria-haspopup="dialog" aria-controls="privacy-dialog" title="Privacitat i avisos"><img class="ui-icon" src="assets/lucide/flag.svg" alt="" width="16" height="16"><span class="privacy-label">Privacitat</span></button></div></header>
     <div class="step-viewport"><div class="step-track">
     <main class="workspace" id="bank-step">
       <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la fitxa</h2><button id="reset" class="text-button">Neteja filtres</button></div>
@@ -137,7 +137,6 @@
       <div class="project-grid">
         <div>
           <section><h3>Sobre l’autor · Aarón Fortuño</h3><div class="project-author"><img src="assets/author/aaron-fortuno.png" width="128" height="128" alt="Aarón Fortuño" loading="lazy"><div><p>Soc docent i creo recursos educatius per a l’aula. Al meu portfoli hi trobaràs Fil i compte i altres projectes.</p><p><a href="https://aaronfortuno.github.io/portfolio/">El meu portfoli <img class="ui-icon" src="assets/lucide/arrow-up-right.svg" alt="" width="16" height="16"></a></p></div></div></section>
-          <section class="project-privacy"><h3>Privacitat i estadístiques</h3><button type="button" id="privacy-open" class="text-button" aria-haspopup="dialog" aria-controls="privacy-dialog">Privacitat i avisos</button></section>
         </div>
         <section class="project-credits"><h3>Repositori</h3><p><a href="https://github.com/aaronFortuno/fil-i-compte">GitHub · Fil i compte <img class="ui-icon" src="assets/lucide/arrow-up-right.svg" alt="" width="16" height="16"></a></p><h3>Crèdits i recursos</h3><ul class="credit-list">
           <li><a href="https://lucide.dev/">Lucide</a> · Icones distribuïdes amb la <a href="assets/lucide/LICENSE">llicència ISC i els avisos MIT corresponents</a>.</li>
@@ -148,11 +147,11 @@
     </div>
   </dialog>
   <dialog class="history-dialog" id="privacy-dialog" aria-labelledby="privacy-title">
-    <header class="history-heading"><h2 id="privacy-title">Privacitat i avisos</h2><button type="button" id="privacy-close" class="history-close" aria-label="Tanca"><img class="ui-icon" src="assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
-    <div class="history-scroll utility-content privacy-content" tabindex="0">
+    <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="privacy-title">Privacitat i avisos</h2></div><button type="button" id="privacy-close" class="history-close" aria-label="Tanca"><img class="ui-icon" src="assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="history-scroll privacy-content" tabindex="0">
       <p>Fem servir Umami per comptar visites, propostes de fitxa, seleccions manuals de problemes, accions amb plantilles i peticions d’impressió. Excloem els noms, els grups, els títols, les cerques i els codis de fitxa.</p>
       <p>Quan notifiques un error, enviem el codi públic del problema, la versió i si l’avís és sobre l’enunciat o el solucionari.</p>
-      <p id="privacy-state" role="status"></p>
+      <p id="privacy-state" class="privacy-state" role="status"></p>
       <div class="utility-actions"><button type="button" class="secondary" id="privacy-disable">Desactiva l’analítica</button><button type="button" class="primary" id="privacy-temporary">Permet temporalment</button></div>
       <details id="privacy-browser-help" open hidden>
         <summary>Com habilitar els avisos al meu navegador</summary>
@@ -162,6 +161,7 @@
       <p class="hint">El permís temporal dura fins que tanques la pestanya. Amb l’analítica desactivada pots preparar i imprimir fitxes. <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer">Privacitat d’Umami</a>.</p>
     </div>
   </dialog>
+  <div id="report-tooltip" popover="manual" role="tooltip"></div>
   <span id="report-status" class="sr-only" role="status"></span>
   <div id="print-root"></div>
   <noscript>Aquest compositor necessita JavaScript activat. El catàleg original és a data/catalog.json.</noscript>

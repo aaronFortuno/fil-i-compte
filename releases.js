@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.34.3',title:'Avisos més discrets',
+    changes:['Casella a la cantonada i bandera amb ajuda contextual.','Un sol accés a «Privacitat i avisos» a la capçalera, amb el diàleg redissenyat.']
+  },
+  {
     version:'0.34.2',title:'Historial complet a GitHub',
     changes:['Enllaç al registre complet de canvis des de la capçalera de l’historial.']
   },

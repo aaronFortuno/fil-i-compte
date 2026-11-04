@@ -124,16 +124,32 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .reasoning-section{margin-top:10px;border-top:1px solid #d6dbcd}
 .reasoning-section summary{padding:9px 0;cursor:pointer;font-size:12px;font-weight:600}
 #reasoning-count{float:right;color:var(--muted);font-size:10px;font-weight:400}
-.card-tools{display:flex;align-items:center;gap:4px;flex:none}
-.card-tools .card-select{margin-right:0}
-.report-control{display:inline-flex;align-items:center;gap:2px;flex:none}
-.report-flag,.report-help{display:grid;place-items:center;min-width:22px;height:26px;padding:2px;background:transparent;color:var(--green);border-radius:4px}
-.report-flag:not(:disabled):hover,.report-help:hover{background:#dfe9d8}
-.report-flag:disabled{opacity:.42;cursor:default}
-.report-help{min-width:18px;font-size:11px;font-weight:700}
-.report-sent{font-size:10px;color:var(--green)}
-.privacy-content details{padding:10px 0;border-top:1px solid var(--line)}
-.privacy-content summary{cursor:pointer;font-weight:600;margin-bottom:8px}
+.exercise-card{position:relative}
+.card-header{min-height:22px;padding-inline-end:55px}
+.card-tools{position:absolute;inset:9px 9px auto auto;display:flex;align-items:center;gap:1px}
+.card-tools .card-select{margin:0}
+.report-control{display:inline-flex;align-items:center;flex:none}
+.report-flag{display:grid;place-items:center;width:28px;height:28px;padding:0;background:transparent;color:var(--green);border-radius:5px}
+.report-flag:hover,.report-flag:focus-visible{background:#e3ebdb}
+.report-flag[aria-disabled="true"]{cursor:default}
+.report-flag[aria-disabled="true"] .ui-icon{opacity:.48}
+.report-sent{font-size:14px;font-weight:700}
+#report-tooltip{position:fixed;inset:auto;margin:0;width:max-content;max-width:min(260px,calc(100vw - 24px));padding:8px 11px;border:1px solid #cbd4c3;border-radius:8px;background:var(--white);color:var(--ink);font-size:11px;line-height:1.5;box-shadow:0 4px 12px #263d3420}
+@media print{#report-tooltip{display:none!important}}
+#privacy-dialog{width:min(500px,calc(100vw - 32px))}
+.privacy-content{padding-block:18px 23px;font-size:13px;line-height:1.6}
+.privacy-content>p{margin:0 0 12px}
+.privacy-content .privacy-state{margin:16px 0 10px;padding:9px 12px;border-radius:7px;background:#e8eee3;color:#32523c;font-weight:600}
+.privacy-content>.utility-actions{gap:8px;margin-bottom:16px}
+.privacy-content details{margin:0 0 14px;padding:12px 0;border-block:1px solid var(--line)}
+.privacy-content summary{cursor:pointer;font-weight:600}
+.privacy-content details[open] summary{margin-bottom:10px}
+.privacy-content details .field{max-width:210px;margin-bottom:8px}
+.privacy-content details p,.privacy-content details ol{margin:6px 0}
+.privacy-content details ol{padding-inline-start:19px}
+.privacy-content details li+li{margin-top:4px}
+.privacy-content>.hint:last-child{margin-bottom:0;font-size:11px}
+@media screen and (max-width:900px){.privacy-label{display:none}}
 .preview-order{position:absolute}
 .preview-order-actions{
   position:absolute;top:2px;right:2px;display:flex;gap:2px;padding:2px;
