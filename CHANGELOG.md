@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.36.2 · Etiquetes revisades en tot el banc
+
+- Revisió dels 252 problemes amb els filtres de proporcionalitat, càlcul estimatiu i raonament.
+- El catàleg català i el castellà comparteixen les mateixes etiquetes per a cada codi.
+
 ## 0.36.1 · Quadres i codi de fitxa
 
 - «Com funciona» i «Privacitat i avisos» comparteixen mida i tipografia en escriptori. L’ajuda s’organitza en dues columnes.

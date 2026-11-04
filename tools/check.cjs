@@ -134,14 +134,20 @@ const excluded={...base,features:{fraccions:'exclude',decimals:'exclude',potenci
 check('Raonament i continguts nous es combinen al banc i a la proposta de fitxa',()=>{
   const byId=id=>all.find(e=>e.id===id);
   const examples={
-    'treballar-cap-enrere':'P0140','interpretar-residu':'P0116','identificar-tot':'P0142',
-    'comparar-estrategies':'P0131','proporcionalitat-directa':'P0147','calcul-estimatiu':'P0080'
+    'treballar-cap-enrere':['P0095','P0140'],'interpretar-residu':['P0116','P0119','P0139'],
+    'identificar-tot':['P0007','P0142'],'comparar-estrategies':['P0131'],
+    'proporcionalitat-directa':['P0015','P0147'],'proporcionalitat-inversa':['P0183','P0227'],
+    'calcul-estimatiu':['P0080']
   };
-  for(const [feature,id] of Object.entries(examples)){
-    assert(C.eligible(byId(id),{scope:'each',features:{[feature]:'require'}}),id);
-    assert(!C.eligible(byId(id),{features:{[feature]:'exclude'}}),id);
+  for(const [feature,ids] of Object.entries(examples)){
+    for(const id of ids){
+      assert(C.eligible(byId(id),{scope:'each',features:{[feature]:'require'}}),id);
+      assert(!C.eligible(byId(id),{features:{[feature]:'exclude'}}),id);
+    }
   }
   assert(!byId('P0123').features.includes('comparar-estrategies'));
+  assert(!byId('P0018').features.includes('interpretar-residu'));
+  assert(!byId('P0063').features.includes('identificar-tot'));
   assert(!byId('P0114').features.includes('calcul-estimatiu'));
   const estimations={scope:'each',codes:'169-180',features:{'calcul-estimatiu':'require'}};
   assert.deepEqual([...C.compose(all,estimations,12).ids].sort(),all.slice(168,180).map(e=>e.id));
@@ -159,7 +165,7 @@ check('Raonament i continguts nous es combinen al banc i a la proposta de fitxa'
   const proportionality={scope:'each',codes:'217-228',level:'superior',features:{'proporcionalitat-directa':'require'}};
   assert.deepEqual([...C.compose(all,proportionality,12).ids].sort(),all.slice(216,228).map(e=>e.id));
   const inverse={scope:'each',level:'superior',features:{'proporcionalitat-inversa':'require'}};
-  assert.deepEqual(all.filter(e=>C.eligible(e,inverse)).map(e=>e.id),['P0227',...all.slice(228,252).map(e=>e.id)]);
+  assert.deepEqual(all.filter(e=>C.eligible(e,inverse)).map(e=>e.id),['P0183','P0227',...all.slice(228,252).map(e=>e.id)]);
   assert.deepEqual([...C.compose(all,{...inverse,codes:'229-240'},12).ids].sort(),all.slice(228,240).map(e=>e.id));
   const bothProportions={...inverse,codes:'241-252',features:{...inverse.features,'proporcionalitat-directa':'require'}};
   assert.deepEqual([...C.compose(all,bothProportions,12).ids].sort(),all.slice(240,252).map(e=>e.id));

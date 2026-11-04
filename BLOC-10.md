@@ -240,7 +240,7 @@ Ara tenim 3 safates plenes amb 4 testos cadascuna i 2 testos que no han cabut a 
 
 **Quants testos teníem abans del regal i abans de rebre el test nou?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Treballar cap enrere, Interpretar el residu.
 
 **Una possible resolució**
 

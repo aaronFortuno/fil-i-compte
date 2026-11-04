@@ -12,7 +12,7 @@ Per a una festa hi ha 6 paquets de 12 gots reutilitzables. Hi participaran 65 pe
 
 **a) Quants gots tenim en total?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -26,7 +26,7 @@ Expressió: 6 × 12 = 72
 
 **b) Cal comprar més gots? Justifica la resposta.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -387,7 +387,7 @@ Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotogra
 
 **a) Quantes pàgines omplim amb les 156 fotografies?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -401,7 +401,7 @@ Expressió: 156 ÷ 12 = 13
 
 **b) Si ens arriben 18 fotografies més, cabran totes en 14 pàgines? Justifica-ho.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Interpretar el residu, Proporcionalitat directa.
 
 **Una possible resolució**
 

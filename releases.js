@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.2',title:'Etiquetes revisades en tot el banc',
+    changes:['Revisats els filtres de proporcionalitat, càlcul estimatiu i raonament dels 252 problemes.','Les etiquetes són comunes al català i al castellà.']
+  },
+  {
     version:'0.36.1',title:'Quadres i codi de fitxa',
     changes:['Mida comuna per als quadres d’ajuda i privacitat, amb l’ajuda en dues columnes.','La icona per copiar el codi queda dins del camp i «Obre la fitxa» carrega la tria.']
   },

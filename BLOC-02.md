@@ -56,7 +56,7 @@ Una impremta prepara 18 cartells per a cadascuna de les 24 escoles que participe
 
 **Quants cartells ha de preparar en total?**
 
-Continguts: Multiplicació i divisió.
+Continguts: Multiplicació i divisió, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -122,7 +122,7 @@ Disposem d'una cinta de 12,6 metres. Per a cada medalla tallem un tros de 0,35 m
 
 **Quants trossos complets de 0,35 metres podem obtenir?**
 
-Continguts: Multiplicació i divisió, Decimals.
+Continguts: Multiplicació i divisió, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 

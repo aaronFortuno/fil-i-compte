@@ -17,7 +17,7 @@
     {
       "id":"P0015", "version":1, "title":"Cartells per a les escoles", "context":"impremta", "structure":"grups-iguals", "level":"mitja", "difficulty":2, "status":"pendent-docent",
       "statement":"Una impremta prepara 18 cartells per a cadascuna de les 24 escoles que participen en una campanya.",
-      "question":"Quants cartells ha de preparar en total?", "features":["multiplicacio-divisio"], "numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "question":"Quants cartells ha de preparar en total?", "features":["multiplicacio-divisio","proporcionalitat-directa"], "numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "solution":{"expression":"24 × 18 = 432", "calculation":["mul",24,18], "answer":432,"unit":"cartells", "response":"Ha de preparar 432 cartells.", "steps":["Hi ha 24 grups de 18 cartells: 24 × 18 = 432 cartells."], "note":"Un esquema amb 24 grups iguals ajuda a identificar la multiplicació."}
     },
     {
@@ -35,7 +35,7 @@
     {
       "id":"P0018", "version":1, "title":"Cintes per a les medalles", "context":"esport", "structure":"mesura", "level":"superior", "difficulty":3, "status":"pendent-docent",
       "statement":"Disposem d'una cinta de 12,6 metres. Per a cada medalla tallem un tros de 0,35 metres, sense perdre cinta en els talls.",
-      "question":"Quants trossos complets de 0,35 metres podem obtenir?", "features":["multiplicacio-divisio","decimals"], "numeric":{"data":"decimals","intermediate":"naturals","result":"naturals"},
+      "question":"Quants trossos complets de 0,35 metres podem obtenir?", "features":["multiplicacio-divisio","decimals","proporcionalitat-directa"], "numeric":{"data":"decimals","intermediate":"naturals","result":"naturals"},
       "solution":{"expression":"12,6 ÷ 0,35 = 36", "calculation":["div",12.6,0.35], "answer":36,"unit":"trossos", "response":"Podem obtenir 36 trossos, sense que sobri cinta.", "steps":["Busquem quants trossos de 0,35 m caben en 12,6 m: 12,6 ÷ 0,35 = 36."], "note":"També pots passar-ho a centímetres: repartir 1.260 cm en trossos de 35 cm dona el mateix nombre de trossos."}
     },
     {

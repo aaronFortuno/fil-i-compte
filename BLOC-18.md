@@ -258,7 +258,7 @@ En una primera votació hi participen 80 alumnes i un quart vota pel cor. En una
 
 **Augmenta la fracció de votants que tria el cor? Justifica a quina quantitat s’aplica cadascun dels dos augments i amb quin total compares els vots al final.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions, Percentatges, Identificar el tot.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Fraccions, Percentatges, Identificar el tot, Proporcionalitat directa.
 
 **Una possible resolució**
 

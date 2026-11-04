@@ -232,7 +232,7 @@ Un joc de taula costava 80 €. La botiga ja hi ha aplicat un 25 % de descompte.
 
 **De quin percentatge ha de ser la segona rebaixa?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Fraccions, Identificar el tot.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Fraccions, Identificar el tot, Treballar cap enrere.
 
 **Una possible resolució**
 
@@ -256,7 +256,7 @@ L’any passat es van vendre 80 entrades a 4 € cadascuna per a una mostra. Aqu
 
 **En quin percentatge ha variat la recaptació respecte a la de l’any passat? Indica si ha pujat o ha baixat.**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals, Identificar el tot.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Percentatges, Decimals, Identificar el tot, Proporcionalitat directa.
 
 **Una possible resolució**
 

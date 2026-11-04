@@ -1,5 +1,10 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.2": [
+    "Etiquetas revisadas en todo el banco",
+    "Revisados los filtros de proporcionalidad, cálculo estimativo y razonamiento de los 252 problemas.",
+    "Las etiquetas son comunes al catalán y al castellano."
+  ],
   "0.36.1": [
     "Cuadros y código de ficha",
     "Mismo tamaño para los cuadros de ayuda y privacidad, con la ayuda en dos columnas.",

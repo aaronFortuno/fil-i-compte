@@ -140,8 +140,7 @@
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions",
-        "identificar-tot"
+        "fraccions"
       ],
       "numeric": {
         "data": "fraccions",
@@ -336,7 +335,8 @@
         "multiplicacio-divisio",
         "decimals",
         "percentatges",
-        "treballar-cap-enrere"
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",

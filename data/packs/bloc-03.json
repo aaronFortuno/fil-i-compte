@@ -5,7 +5,7 @@
     {
       "id":"P0025","version":1,"title":"Gots per a la festa","context":"festa","structure":"suficiencia","level":"mitja","difficulty":2,"status":"validat",
       "statement":"Per a una festa hi ha 6 paquets de 12 gots reutilitzables. Hi participaran 65 persones i cadascuna necessitarà un got.",
-      "features":["suma-resta","multiplicacio-divisio","combinades"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","proporcionalitat-directa"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "parts":[
         {"question":"Quants gots tenim en total?","solution":{"expression":"6 × 12 = 72","calculation":["mul",6,12],"answer":72,"unit":"gots","response":"Tenim 72 gots.","steps":["Hi ha 6 grups de 12 gots: 6 × 12 = 72."],"note":""}},
         {"question":"Cal comprar més gots? Justifica la resposta.","solution":{"kind":"justification","response":"No cal comprar-ne més: hi ha un got per a cada persona i en sobren 7.","steps":["Comparem els gots amb les persones: 72 − 65 = 7 gots sobrants."],"evidence":[{"calculation":["sub",["mul",6,12],65],"answer":7}],"note":"També pots representar les persones i els gots amb dues barres."}}
@@ -90,7 +90,7 @@
     {
       "id":"P0034","version":1,"title":"Les fotografies del taller","context":"fotografia","structure":"suficiencia","level":"mitja","difficulty":3,"status":"validat",
       "statement":"Tenim 156 fotografies per posar en un àlbum. A cada pàgina hi caben 12 fotografies.",
-      "features":["suma-resta","multiplicacio-divisio","combinades","interpretar-residu"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "features":["suma-resta","multiplicacio-divisio","combinades","interpretar-residu","proporcionalitat-directa"],"numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "parts":[
         {"question":"Quantes pàgines omplim amb les 156 fotografies?","solution":{"expression":"156 ÷ 12 = 13","calculation":["div",156,12],"answer":13,"unit":"pàgines","response":"Omplim 13 pàgines.","steps":["Repartim les 156 fotografies en grups de 12."],"note":""}},
         {"question":"Si ens arriben 18 fotografies més, cabran totes en 14 pàgines? Justifica-ho.","solution":{"kind":"justification","response":"No: sis fotografies quedarien sense lloc. Necessitem una quinzena pàgina.","steps":["Tindrem 174 fotografies i 14 pàgines només n'admeten 168; la diferència és 6."],"evidence":[{"calculation":["sub",["add",156,18],["mul",14,12]],"answer":6}],"note":"Pots dibuixar les pàgines com a grups de 12 espais."}}

@@ -54,7 +54,7 @@ Hem de repartir 96 retoladors entre 8 taules a parts iguals. L’Aina separa 80 
 
 **Quants retoladors toca a cada taula amb cada camí? Quin et sembla més pràctic i per què?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Comparar estratègies.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Comparar estratègies, Proporcionalitat inversa.
 
 **Una possible resolució**
 
@@ -243,7 +243,7 @@ Hem de posar 3 adhesius a cadascun de 24 sobres. Els adhesius es venen en fulls 
 
 **Quants fulls calen segons cada camí? Quin et sembla més pràctic per organitzar la feina i per què?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Comparar estratègies.
+Continguts: Multiplicació i divisió, Operacions combinades, Comparar estratègies, Proporcionalitat directa.
 
 **Una possible resolució**
 

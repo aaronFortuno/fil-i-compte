@@ -158,7 +158,7 @@ Una motxilla costa 80 €. La botiga hi aplica un descompte del 25 %. Si la comp
 
 **Quant pagarem en total per la motxilla i el transport?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -231,7 +231,7 @@ Un circuit té forma de rectangle: fa 12,5 metres de llarg i 7,5 metres d'ample.
 
 **Quantes passes necessita per fer una volta completa?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals, Proporcionalitat directa.
 
 **Una possible resolució**
 

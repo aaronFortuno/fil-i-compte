@@ -41,7 +41,7 @@
     {
       "id":"P0007", "version":1, "title":"La motxilla rebaixada", "context":"compres", "structure":"descompte", "level":"superior", "difficulty":2, "status":"validat",
       "statement":"Una motxilla costa 80 €. La botiga hi aplica un descompte del 25 %. Si la comprem per internet, el transport costa 6 € i no té descompte.",
-      "question":"Quant pagarem en total per la motxilla i el transport?", "features":["suma-resta","multiplicacio-divisio","combinades","percentatges"], "numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
+      "question":"Quant pagarem en total per la motxilla i el transport?", "features":["suma-resta","multiplicacio-divisio","combinades","percentatges","identificar-tot"], "numeric":{"data":"naturals","intermediate":"naturals","result":"naturals"},
       "solution":{"expression":"80 − 80 × 25 ÷ 100 + 6 = 66", "calculation":["add",["sub",80,["div",["mul",80,25],100]],6], "answer":66,"unit":"euros", "response":"Pagarem 66 € en total.", "steps":["El descompte és 80 × 25 ÷ 100 = 20 €.","La motxilla rebaixada costa 80 − 20 = 60 €.","Amb el transport: 60 + 6 = 66 €."], "visual":{"type":"fraction","parts":4,"filled":1,"total":80,"caption":"El 25 % és una de quatre parts iguals: 20 € de descompte. Les altres tres parts sumen 60 €."}, "note":"La barra és una estratègia alternativa; també es pot resoldre amb el càlcul del percentatge."}
     },
     {
@@ -59,7 +59,7 @@
     {
       "id":"P0010", "version":1, "title":"Una volta al circuit", "context":"esport", "structure":"mesura", "level":"superior", "difficulty":3, "status":"validat",
       "statement":"Un circuit té forma de rectangle: fa 12,5 metres de llarg i 7,5 metres d'ample. La Jana hi fa una volta completa amb passes de 0,8 metres, totes de la mateixa llargada.",
-      "question":"Quantes passes necessita per fer una volta completa?", "features":["suma-resta","multiplicacio-divisio","combinades","parentesis","decimals"], "numeric":{"data":"decimals","intermediate":"naturals","result":"naturals"},
+      "question":"Quantes passes necessita per fer una volta completa?", "features":["suma-resta","multiplicacio-divisio","combinades","parentesis","decimals","proporcionalitat-directa"], "numeric":{"data":"decimals","intermediate":"naturals","result":"naturals"},
       "solution":{"expression":"2 × (12,5 + 7,5) ÷ 0,8 = 50", "calculation":["div",["mul",2,["add",12.5,7.5]],0.8], "answer":50,"unit":"passes", "response":"Necessita 50 passes per fer una volta completa.", "steps":["La volta mesura 2 × (12,5 + 7,5) = 40 metres.","40 ÷ 0,8 = 50 passes."], "visual":{"type":"rectangle","widthLabel":"12,5 m","heightLabel":"7,5 m","caption":"Recorrem els quatre costats del rectangle. Esquema orientatiu."}, "note":"Comprovació: 50 passes de 0,8 m fan 40 m."}
     },
     {

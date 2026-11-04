@@ -586,7 +586,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "treballar-cap-enrere"
+        "treballar-cap-enrere",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",

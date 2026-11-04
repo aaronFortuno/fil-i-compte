@@ -143,7 +143,8 @@
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "comparar-estrategies"
+        "comparar-estrategies",
+        "proporcionalitat-inversa"
       ],
       "numeric": {
         "data": "naturals",
@@ -735,7 +736,8 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "comparar-estrategies"
+        "comparar-estrategies",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",

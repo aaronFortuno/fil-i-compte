@@ -616,7 +616,8 @@
         "parentesis",
         "percentatges",
         "fraccions",
-        "identificar-tot"
+        "identificar-tot",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -691,7 +692,8 @@
         "parentesis",
         "percentatges",
         "decimals",
-        "identificar-tot"
+        "identificar-tot",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",

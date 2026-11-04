@@ -393,7 +393,8 @@
         "multiplicacio-divisio",
         "combinades",
         "suma-resta",
-        "fraccions"
+        "fraccions",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "fraccions",

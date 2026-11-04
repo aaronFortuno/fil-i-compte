@@ -156,7 +156,7 @@ Una recepta necessita 1 litre i 1/4 d’aigua. Només tenim una mesura d’1/3 d
 
 **Com podem obtenir la quantitat exacta amb el mínim nombre de mesures plenes?**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta, Fraccions.
+Continguts: Multiplicació i divisió, Operacions combinades, Suma i resta, Fraccions, Interpretar el residu.
 
 **Una possible resolució**
 

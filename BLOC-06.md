@@ -60,7 +60,7 @@ De les 48 persones inscrites a una jornada, la meitat s’ha apuntat al taller d
 
 **Quantes persones inscrites no s’han apuntat a cap dels dos tallers?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions, Identificar el tot.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Fraccions.
 
 **Una possible resolució**
 
@@ -149,7 +149,7 @@ En una botiga han rebaixat un 20 % el preu d’una motxilla. El preu rebaixat qu
 
 **Quin preu tenia abans de les rebaixes?**
 
-Continguts: Multiplicació i divisió, Decimals, Percentatges, Treballar cap enrere.
+Continguts: Multiplicació i divisió, Decimals, Percentatges, Treballar cap enrere, Identificar el tot.
 
 **Una possible resolució**
 

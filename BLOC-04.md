@@ -94,7 +94,7 @@ Una botiga ven un recanvi de bicicleta per 120 €, amb un descompte del 20 %. E
 
 **Quina oferta és més barata i quants diners estalviem si la triem?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Percentatges, Identificar el tot.
 
 **Una possible resolució**
 
@@ -184,7 +184,7 @@ Un circuit de bicicleta té un primer tram de 3,6 km i un segon de 2,4 km, que t
 
 **Ha assolit l'objectiu? Indica quants quilòmetres li falten o de quant l'ha superat.**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Parèntesis, Decimals, Dades per despistar, Proporcionalitat directa.
 
 **Una possible resolució**
 
@@ -207,7 +207,7 @@ En Pol té 156 cromos: un quart (1/4) són còpies repetides i els altres són t
 
 **Quants cromos diferents tindrà després de fer tots els intercanvis possibles?**
 
-Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Dades per despistar.
+Continguts: Suma i resta, Multiplicació i divisió, Operacions combinades, Fraccions, Dades per despistar, Proporcionalitat directa.
 
 **Una possible resolució**
 

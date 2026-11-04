@@ -321,7 +321,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "percentatges"
+        "percentatges",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -481,7 +482,8 @@ globalThis.EXERCISE_CATALOG = {
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "decimals"
+        "decimals",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "decimals",
@@ -703,7 +705,8 @@ globalThis.EXERCISE_CATALOG = {
       "statement": "Una imprenta prepara 18 carteles para cada una de las 24 escuelas que participan en una campaña.",
       "question": "¿Cuántos carteles tiene que preparar en total?",
       "features": [
-        "multiplicacio-divisio"
+        "multiplicacio-divisio",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -811,7 +814,8 @@ globalThis.EXERCISE_CATALOG = {
       "question": "¿Cuántos trozos completos de 0,35 metros podemos obtener?",
       "features": [
         "multiplicacio-divisio",
-        "decimals"
+        "decimals",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "decimals",
@@ -1115,7 +1119,8 @@ globalThis.EXERCISE_CATALOG = {
       "features": [
         "suma-resta",
         "multiplicacio-divisio",
-        "combinades"
+        "combinades",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -1850,7 +1855,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "interpretar-residu"
+        "interpretar-residu",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -2327,7 +2333,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "percentatges"
+        "percentatges",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -2600,7 +2607,8 @@ globalThis.EXERCISE_CATALOG = {
         "combinades",
         "parentesis",
         "decimals",
-        "distractors"
+        "distractors",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "decimals",
@@ -2648,7 +2656,8 @@ globalThis.EXERCISE_CATALOG = {
         "multiplicacio-divisio",
         "combinades",
         "fraccions",
-        "distractors"
+        "distractors",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "fraccions",
@@ -3871,8 +3880,7 @@ globalThis.EXERCISE_CATALOG = {
         "multiplicacio-divisio",
         "combinades",
         "parentesis",
-        "fraccions",
-        "identificar-tot"
+        "fraccions"
       ],
       "numeric": {
         "data": "fraccions",
@@ -4067,7 +4075,8 @@ globalThis.EXERCISE_CATALOG = {
         "multiplicacio-divisio",
         "decimals",
         "percentatges",
-        "treballar-cap-enrere"
+        "treballar-cap-enrere",
+        "identificar-tot"
       ],
       "numeric": {
         "data": "naturals",
@@ -5611,7 +5620,8 @@ globalThis.EXERCISE_CATALOG = {
         "parentesis",
         "percentatges",
         "fraccions",
-        "identificar-tot"
+        "identificar-tot",
+        "treballar-cap-enrere"
       ],
       "numeric": {
         "data": "naturals",
@@ -5686,7 +5696,8 @@ globalThis.EXERCISE_CATALOG = {
         "parentesis",
         "percentatges",
         "decimals",
-        "identificar-tot"
+        "identificar-tot",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -6953,7 +6964,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "treballar-cap-enrere"
+        "treballar-cap-enrere",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "naturals",
@@ -8147,7 +8159,8 @@ globalThis.EXERCISE_CATALOG = {
         "multiplicacio-divisio",
         "combinades",
         "suma-resta",
-        "fraccions"
+        "fraccions",
+        "interpretar-residu"
       ],
       "numeric": {
         "data": "fraccions",
@@ -9658,7 +9671,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "combinades",
         "parentesis",
-        "treballar-cap-enrere"
+        "treballar-cap-enrere",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -10607,7 +10621,8 @@ globalThis.EXERCISE_CATALOG = {
         "suma-resta",
         "multiplicacio-divisio",
         "combinades",
-        "comparar-estrategies"
+        "comparar-estrategies",
+        "proporcionalitat-inversa"
       ],
       "numeric": {
         "data": "naturals",
@@ -11199,7 +11214,8 @@ globalThis.EXERCISE_CATALOG = {
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "comparar-estrategies"
+        "comparar-estrategies",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "naturals",
@@ -12826,7 +12842,8 @@ globalThis.EXERCISE_CATALOG = {
         "combinades",
         "fraccions",
         "percentatges",
-        "identificar-tot"
+        "identificar-tot",
+        "proporcionalitat-directa"
       ],
       "numeric": {
         "data": "fraccions",

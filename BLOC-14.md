@@ -226,7 +226,7 @@ Un hort rectangular fa 6 metres de llarg. L’han ampliat fent-lo 2 metres més 
 
 **Quina superfície tenia l’hort abans de l’ampliació?**
 
-Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere.
+Continguts: Multiplicació i divisió, Suma i resta, Operacions combinades, Parèntesis, Treballar cap enrere, Proporcionalitat directa.
 
 **Una possible resolució**
 
