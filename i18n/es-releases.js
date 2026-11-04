@@ -1,5 +1,10 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.1": [
+    "Cuadros y código de ficha",
+    "Mismo tamaño para los cuadros de ayuda y privacidad, con la ayuda en dos columnas.",
+    "El icono para copiar el código queda dentro del campo y «Abrir la ficha» carga la selección."
+  ],
   "0.36.0": [
     "Fil i compte en catalán y castellano",
     "Selector de idioma y 252 problemas con solucionarios en ambas lenguas.",

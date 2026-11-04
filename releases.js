@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.1',title:'Quadres i codi de fitxa',
+    changes:['Mida comuna per als quadres d’ajuda i privacitat, amb l’ajuda en dues columnes.','La icona per copiar el codi queda dins del camp i «Obre la fitxa» carrega la tria.']
+  },
+  {
     version:'0.36.0',title:'Fil i compte en català i castellà',
     changes:['Selector de llengua i 252 problemes amb solucionaris en totes dues llengües.','Codis i plantilles compartits. Els avisos indiquen la llengua del problema.']
   },

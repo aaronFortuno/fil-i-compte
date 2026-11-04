@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.36.1 · Quadres i codi de fitxa
+
+- «Com funciona» i «Privacitat i avisos» comparteixen mida i tipografia en escriptori. L’ajuda s’organitza en dues columnes.
+- La icona per copiar el codi queda dins del camp. El botó «Obre la fitxa» recupera la tria del codi introduït.
+
 ## 0.36.0 · Fil i compte en català i castellà
 
 - Selector de llengua a la capçalera i versió castellana a `/es/`, amb els 252 problemes i tots els solucionaris.
