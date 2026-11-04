@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.28.0',title:'Amb aquesta estimació en tenim prou?',
+    changes:['Dotze problemes de càlcul estimatiu amb decisions quotidianes.','El banc ja té 180 problemes.']
+  },
+  {
     version:'0.27.0',title:'Filtres de raonament',
     changes:['Quatre filtres al grup plegable «Raonament».','Nous filtres de proporcionalitat directa i càlcul estimatiu. Etiquetes revisades a tot el catàleg.']
   },

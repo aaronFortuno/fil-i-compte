@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "quinze-bloc",
+    "title": "Amb aquesta estimació en tenim prou?",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0169",
+      "version": 1,
+      "title": "Amb quinze euros al mercat",
+      "context": "mercat",
+      "structure": "pressupost-amb-marge-a-lalca",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Portes 15 €. Al mercat vols comprar fruita per 4,60 €, un formatge per 6,20 € i pa per 2,80 €. La Mar proposa comptar 5 €, 7 € i 3 €.",
+      "question": "L’estimació de la Mar és prou bona per saber si ho pots comprar tot? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Els preus estimats sumen 15 € i cadascun és més alt que el preu real.",
+        "steps": [
+          "La Mar ha arrodonit cada preu cap amunt. En total li surten 5 + 7 + 3 = 15 €.",
+          "El cost real queda per sota d’aquest total, així que amb 15 € en tens prou."
+        ],
+        "note": "La suma exacta només caldria si volguéssim saber quin canvi ens han de tornar.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                5,
+                7
+              ],
+              3
+            ],
+            "answer": 15
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0170",
+      "version": 1,
+      "title": "El compte just del berenar",
+      "context": "botiga",
+      "structure": "arrodoniment-que-amaga-un-exces",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per al berenar comprem tres coses que costen 8,40 €, 6,40 € i 5,40 €. Portem 20 €. En Jan arrodoneix a l’euro més proper i calcula que gastarem 19 €.",
+      "question": "Ens podem refiar dels 19 € per decidir si podem pagar tota la compra? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. La compra costa 20,20 € i ens falten 20 cèntims.",
+        "steps": [
+          "Els 19 € surten d’arrodonir els tres preus cap avall. En cada preu s’han deixat de comptar 40 cèntims.",
+          "Els cèntims que falten sumen 1,20 €, més que l’euro de marge que semblava que teníem."
+        ],
+        "note": "Quan el marge és petit, comptar els errors de l’arrodoniment pot ser més ràpid que refer tota la suma.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                8,
+                6
+              ],
+              5
+            ],
+            "answer": 19
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              0.4
+            ],
+            "answer": 1.2
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                [
+                  "add",
+                  8,
+                  6
+                ],
+                5
+              ],
+              [
+                "mul",
+                3,
+                0.4
+              ]
+            ],
+            "answer": 20.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0171",
+      "version": 1,
+      "title": "Amb temps per arribar a l’assaig",
+      "context": "mobilitat",
+      "structure": "temps-maxim-amb-marge",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Queden 35 minuts per començar l’assaig. El primer tram a peu dura entre 12 i 15 minuts. L’autobús triga entre 8 i 10 minuts a fer el seu recorregut. De la parada a la sala cal caminar entre 5 i 7 minuts. Agafarem l’autobús de seguida.",
+      "question": "Amb aquests intervals, podem assegurar que serem a la sala abans de l’assaig? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Fins i tot si tots els trams duren el màxim previst, arribarem amb 3 minuts de marge.",
+        "steps": [
+          "Sumem els temps més llargs dels tres trams, 15 + 10 + 7. Això dona 32 minuts.",
+          "Com que tenim 35 minuts, ens en sobraran almenys 3."
+        ],
+        "note": "Per assegurar que arribarem a temps, ens interessa el cas més lent.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                15,
+                10
+              ],
+              7
+            ],
+            "answer": 32
+          },
+          {
+            "calculation": [
+              "sub",
+              35,
+              [
+                "add",
+                [
+                  "add",
+                  15,
+                  10
+                ],
+                7
+              ]
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0172",
+      "version": 1,
+      "title": "A temps per a la pel·lícula?",
+      "context": "mobilitat",
+      "structure": "interval-que-travessa-el-limit",
+      "level": "mitja",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per arribar al cinema queden 35 minuts. Esperar l’autobús pot durar entre 18 i 22 minuts. Un cop hi pugem, fins a la porta del cinema trigarem entre 12 i 16 minuts.",
+      "question": "És prou bona aquesta informació per assegurar que arribarem a temps? Justifica-ho amb dos casos possibles.",
+      "features": [
+        "suma-resta",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. En un cas podem arribar en 30 minuts i en un altre en podem trigar 38.",
+        "steps": [
+          "Si totes dues durades són les més curtes, 18 + 12 = 30 minuts i arribem a temps.",
+          "Si són les més llargues, 22 + 16 = 38 minuts i fem tard."
+        ],
+        "note": "Per assegurar l’arribada caldria tenir més marge o reduir el temps màxim d’algun tram.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              18,
+              12
+            ],
+            "answer": 30
+          },
+          {
+            "calculation": [
+              "add",
+              22,
+              16
+            ],
+            "answer": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0173",
+      "version": 1,
+      "title": "La garlanda del passadís",
+      "context": "mesura",
+      "structure": "arrodonir-longituds-per-sobre",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per fer una garlanda necessitem tres trossos de cordill de 197 cm, 206 cm i 195 cm. Tenim un rotlle amb 650 cm de cordill i no en perdem gens en tallar.",
+      "question": "Sense sumar les tres llargades exactes, com pots justificar si el rotlle és prou llarg?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí que és prou llarg. Fins i tot si comptem 210 cm per a cada tros, ens calen com a màxim 630 cm.",
+        "steps": [
+          "Els tres trossos fan menys de 210 cm cadascun. Podem comptar com si tots fessin 210 cm.",
+          "Tres trossos de 210 cm sumarien 630 cm, per sota dels 650 cm del rotlle."
+        ],
+        "note": "També pots arrodonir cada mida a la desena de centímetres següent i comparar el resultat amb 650 cm.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              210
+            ],
+            "answer": 630
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "add",
+                200,
+                210
+              ],
+              200
+            ],
+            "answer": 610
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0174",
+      "version": 1,
+      "title": "Tres capses al prestatge",
+      "context": "mesura",
+      "structure": "afinar-quan-una-cota-no-decideix",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Volem posar tres capses l’una al costat de l’altra en un prestatge de 59,5 cm d’ample. Cada capsa fa 19,8 cm d’ample i no cal deixar cap espai entre elles. En Pol compta 20 cm per capsa i diu que no hi cabran.",
+      "question": "És prou bona l’aproximació d’en Pol per descartar el prestatge? Justifica la decisió.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. Les tres capses ocupen 59,4 cm i sí que hi caben, amb 1 mm de marge.",
+        "steps": [
+          "Amb 20 cm per capsa obtenim 60 cm, una estimació per sobre de l’amplada real. Això sol no ens diu si hi caben.",
+          "Cada capsa fa 0,2 cm menys de 20 cm. Restem 0,6 cm dels 60 cm i obtenim 59,4 cm."
+        ],
+        "note": "Una estimació per sobre pot assegurar que una cosa cap si ja queda per sota del límit. En aquest cas, el marge era massa petit per decidir amb els 60 cm.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              20
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                3,
+                20
+              ],
+              [
+                "mul",
+                3,
+                0.2
+              ]
+            ],
+            "answer": 59.4
+          },
+          {
+            "calculation": [
+              "sub",
+              59.5,
+              59.4
+            ],
+            "answer": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0175",
+      "version": 1,
+      "title": "Cadires per a la funció",
+      "context": "escola",
+      "structure": "cota-superior-amb-grups",
+      "level": "mitja",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la funció hi vindran cinc grups. Cada grup té entre 11 i 13 persones. A la sala hi ha 70 cadires i cada persona en necessita una.",
+      "question": "Podem saber si hi haurà prou cadires abans de conèixer l’assistència exacta? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Com a màxim hi vindran 65 persones, així que sobraran almenys 5 cadires.",
+        "steps": [
+          "Comptem com si tots cinc grups tinguessin 13 persones. En total serien 65.",
+          "Els grups reals no poden fer pujar aquest total. Les 70 cadires són suficients."
+        ],
+        "note": "Comptar 12 persones per grup dona una idea de l’assistència. Comptar-ne 13 permet assegurar que tothom podrà seure.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              5,
+              13
+            ],
+            "answer": 65
+          },
+          {
+            "calculation": [
+              "sub",
+              70,
+              [
+                "mul",
+                5,
+                13
+              ]
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0176",
+      "version": 1,
+      "title": "El pot de pintura",
+      "context": "casa",
+      "structure": "cota-inferior-per-detectar-que-no-nhi-ha-prou",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hem de pintar dues parets rectangulars sense portes ni finestres. Fan 2,9 m i 3,8 m de llarg i totes dues fan 2,4 m d’alt. Segons l’etiqueta, amb el pot podem pintar com a màxim 10 m².",
+      "question": "Sense calcular les dues superfícies exactes, pots decidir si el pot serà suficient? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No serà suficient. Fins i tot amb unes parets més petites, ens sortirien 12 m².",
+        "steps": [
+          "Per comptar per sota, imaginem parets de 2,5 m i 3,5 m de llarg i només 2 m d’alt.",
+          "Amb aquestes mides ja surten 5 + 7 = 12 m², més dels 10 m² que cobreix el pot."
+        ],
+        "note": "N’hi ha prou de trobar una superfície més petita que la real i que ja superi els 10 m².",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                2.5,
+                2
+              ],
+              [
+                "mul",
+                3.5,
+                2
+              ]
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0177",
+      "version": 1,
+      "title": "Una sola càrrega?",
+      "context": "transport",
+      "structure": "estimar-per-sota-un-pes",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Volem dur quatre caixes en un carretó que admet com a màxim 10 kg. Les caixes pesen 2,7 kg, 2,8 kg, 2,9 kg i 2,8 kg. La Ivet proposa comptar 2,5 kg per caixa i fer un sol viatge.",
+      "question": "Els 10 kg que obté la Ivet són una estimació prou bona per decidir fer un sol viatge? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. Les quatre caixes pesen més de 10 kg i s’han de repartir en més d’una càrrega.",
+        "steps": [
+          "Quatre caixes de 2,5 kg sumarien just 10 kg.",
+          "Cada caixa real pesa més de 2,5 kg. Així podem assegurar que el total supera el límit sense sumar els pesos exactes."
+        ],
+        "note": "Una estimació per sota pot servir per descartar una càrrega, fins i tot quan coincideix amb el límit, si sabem que el pes real és estrictament més gran.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              4,
+              2.5
+            ],
+            "answer": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0178",
+      "version": 1,
+      "title": "Beguda per a vint-i-quatre",
+      "context": "berenar",
+      "structure": "triar-envasos-amb-cota-inferior",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Cal preparar 24 gots de 125 mL de beguda. Tenim quatre gerres i cadascuna conté entre 0,9 L i 1 L. En volem portar el mínim nombre possible i assegurar que tothom tindrà un got ple.",
+      "question": "N’hi ha prou de portar tres gerres? Justifica amb l’estimació quantes cal portar.",
+      "features": [
+        "multiplicacio-divisio",
+        "decimals",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "decimals",
+        "result": "decimals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cal portar quatre gerres. Amb tres només n’hi hauria prou si totes tres continguessin exactament un litre.",
+        "steps": [
+          "Els 24 gots necessiten 3.000 mL, és a dir, 3 litres.",
+          "Tres gerres poden tenir només 2,7 L. Quatre gerres aporten almenys 3,6 L i això assegura els 24 gots."
+        ],
+        "note": "Per garantir que n’hi haurà prou, comparem el volum que cal amb el mínim que poden contenir les gerres.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              24,
+              125
+            ],
+            "answer": 3000
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              0.9
+            ],
+            "answer": 2.7
+          },
+          {
+            "calculation": [
+              "mul",
+              4,
+              0.9
+            ],
+            "answer": 3.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0179",
+      "version": 1,
+      "title": "Quants llibres queden per comptar?",
+      "context": "biblioteca",
+      "structure": "mostra-petita-i-casos-possibles",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hi ha cinc caixes de llibres. Obrim la primera i hi comptem 20 llibres. A cadascuna de les altres quatre caixes hi pot haver entre 15 i 25 llibres. Algú calcula uns 100 llibres i vol preparar un espai per a exactament 100.",
+      "question": "L’estimació és prou bona per assegurar que tots els llibres cabran a l’espai? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "No. El total podria ser de 80 llibres, però també podria arribar a 120.",
+        "steps": [
+          "Si les quatre caixes pendents en tenen 15 cadascuna, el total és de 80 llibres. Si en tenen 25 cadascuna, el total és de 120.",
+          "Els 100 són possibles, però comptar una sola caixa no permet assegurar que la resta siguin iguals."
+        ],
+        "note": "Es pot assegurar que hi cabran tots si hi ha espai per a 120, o si es compten les altres caixes i el total no passa de 100.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              5,
+              20
+            ],
+            "answer": 100
+          },
+          {
+            "calculation": [
+              "add",
+              20,
+              [
+                "mul",
+                4,
+                15
+              ]
+            ],
+            "answer": 80
+          },
+          {
+            "calculation": [
+              "add",
+              20,
+              [
+                "mul",
+                4,
+                25
+              ]
+            ],
+            "answer": 120
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0180",
+      "version": 1,
+      "title": "Quin camí és més curt?",
+      "context": "mobilitat",
+      "structure": "comparar-intervals-separats",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per anar al parc hi ha dos camins. Pel camí A, el primer tram fa entre 180 i 200 metres i el segon en fa entre 140 i 160. El camí B fa entre 380 i 410 metres.",
+      "question": "Amb aquestes dades es pot triar amb seguretat el camí més curt? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "calcul-estimatiu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. El camí A és com a mínim 20 metres més curt.",
+        "steps": [
+          "Fins i tot comptant les dues llargades màximes, el camí A fa com a màxim 360 metres.",
+          "El camí B en fa almenys 380. Encara que el camí A sigui tan llarg com pugui i el B tan curt com pugui, el camí A guanya."
+        ],
+        "note": "Marca en una recta de 320 a 360 metres per al camí A i de 380 a 410 per al B. L’espai de 20 metres entre els dos intervals mostra el marge mínim.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              200,
+              160
+            ],
+            "answer": 360
+          },
+          {
+            "calculation": [
+              "sub",
+              380,
+              [
+                "add",
+                200,
+                160
+              ]
+            ],
+            "answer": 20
+          }
+        ]
+      }
+    }
+  ]
+}

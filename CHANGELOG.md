@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.28.0 · Amb aquesta estimació en tenim prou?
+
+- Dotze problemes nous, de P0169 a P0180, per decidir si una estimació és prou bona en situacions quotidianes.
+- Els solucionaris mostren quan convé estimar per sobre o per sota, i quan cal afinar abans de decidir.
+
 ## 0.27.0 · Filtres de raonament
 
 - Grup plegable «Raonament» amb quatre filtres triestat. Treballar cap enrere, interpretar el residu, identificar el tot i comparar estratègies.
