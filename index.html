@@ -22,7 +22,9 @@
     </div></header>
     <div class="step-viewport"><div class="step-track">
     <main class="workspace" id="bank-step">
-      <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la fitxa</h2><button id="reset" class="text-button">Neteja filtres</button></div>
+      <aside id="bank-filters" class="filters" aria-label="Prepara la fitxa">
+        <button id="bank-filter-toggle" class="mobile-panel-toggle" type="button" aria-expanded="false" aria-controls="bank-filter-heading filter-options bank-filter-scope">Filtres</button>
+        <div id="bank-filter-heading" class="panel-heading"><h2>Prepara la fitxa</h2><button id="reset" class="text-button">Neteja filtres</button></div>
         <div id="filter-options" class="filter-scroll" role="region" aria-label="Opcions de configuració"><div class="two-fields"><div class="field"><label for="page-count">Nombre de pàgines</label><select id="page-count"><option value="1">1 pàgina</option><option value="2" selected>2 pàgines</option><option value="4">4 pàgines</option><option value="6">6 pàgines</option></select></div><div class="field"><label for="per-page">Problemes per pàgina</label><select id="per-page"><option value="2">2 · en columna</option><option value="3">3 · en columna</option><option value="4">4 · 2 × 2</option></select></div></div>
         <div class="two-fields"><div class="field"><label for="level">Nivell orientatiu</label><select id="level" aria-describedby="orientation-instructions" title="Inclou combinacions equivalents de nivell i dificultat."><option value="">Tots</option><option value="mitja">Cicle mitjà</option><option value="superior">Cicle superior</option><option value="eso">Inici d’ESO</option></select></div><div class="field"><label for="difficulty">Dificultat orientativa</label><select id="difficulty" aria-describedby="orientation-instructions" title="CS intermedi equival a CM repte i inici d’ESO accessible."><option value="">Totes</option><option value="1">Accessible</option><option value="2">Intermedi</option><option value="3">Repte</option></select></div></div><p id="orientation-instructions" class="sr-only">Nivell i dificultat s'interpreten conjuntament i inclouen combinacions equivalents entre cicles. Per exemple, cicle superior intermedi inclou cicle mitjà repte i inici d'ESO accessible.</p>
         <p class="filter-key"><span>· Permès</span><span>✓ Obligatori</span><span>× Exclòs</span></p>
@@ -39,7 +41,7 @@
         </div>
         <span id="feature-status" class="sr-only" role="status" aria-live="polite"></span>
         </div><div class="filter-actions bank-filter-actions">
-          <div class="field scope-field"><label for="scope">Filtres obligatoris…</label><select id="scope" aria-describedby="scope-instructions"><option value="sheet">Al conjunt del full</option><option value="each">En cada problema</option></select><p id="scope-instructions" class="sr-only">Els filtres de contingut i raonament es combinen. Les exclusions afecten tot el full.</p></div>
+          <div id="bank-filter-scope" class="field scope-field"><label for="scope">Filtres obligatoris…</label><select id="scope" aria-describedby="scope-instructions"><option value="sheet">Al conjunt del full</option><option value="each">En cada problema</option></select><p id="scope-instructions" class="sr-only">Els filtres de contingut i raonament es combinen. Les exclusions afecten tot el full.</p></div>
           <button class="primary compose-button" id="compose"><img class="ui-icon" src="assets/lucide/refresh-cw.svg" alt="" width="16" height="16"> Proposa una fitxa nova</button><p id="bank-feedback" role="status"></p>
         </div>
       </aside>
@@ -50,8 +52,14 @@
     </main>
     <section id="preview" class="preview" inert aria-hidden="true" aria-labelledby="preview-title">
       <aside class="filters preview-sidebar" aria-label="Configuració de la fitxa">
-        <div class="panel-heading"><h2 id="preview-title" tabindex="-1">Revisa la fitxa</h2></div>
-        <div class="filter-scroll" tabindex="0" role="region" aria-label="Opcions de la fitxa">
+        <div class="panel-heading">
+          <h2 id="preview-title" tabindex="-1">Revisa la fitxa</h2>
+          <div class="preview-mobile-actions">
+            <button id="preview-settings-toggle" class="mobile-panel-toggle" type="button" aria-expanded="false" aria-controls="preview-settings">Configuració</button>
+            <button id="preview-order-toggle" class="mobile-panel-toggle" type="button" aria-pressed="false" aria-controls="pages">Reordena</button>
+          </div>
+        </div>
+        <div id="preview-settings" class="filter-scroll" tabindex="0" role="region" aria-label="Opcions de la fitxa">
           <div class="field"><label for="sheet-title">Títol (opcional)</label><input id="sheet-title" maxlength="65" value="Problemes per pensar" placeholder="Sense títol"></div>
           <div class="field"><label for="work-pattern">Zona de treball</label><select id="work-pattern"><option value="dots">Puntejada</option><option value="grid">Quadrícula de 6 mm</option><option value="lines">Línies suaus</option><option value="blank">En blanc</option></select></div>
           <label class="brand-option"><input id="show-brand" type="checkbox" checked> Inclou «fil i compte»</label>
@@ -81,7 +89,7 @@
           <div class="review-step"><button id="preview-button" class="step-button" aria-describedby="selection-status"><span class="step-number" aria-hidden="true">2</span><span>Revisa la fitxa</span></button><p id="selection-status" class="selection-summary" role="status" aria-atomic="true"></p></div>
         </nav>
         <div class="footer-print" role="group" aria-label="Impressió i PDF">
-          <button id="print-exercises" class="primary" disabled aria-label="Imprimeix fitxa / PDF" title="Imprimeix fitxa / PDF"><img class="ui-icon" src="assets/lucide/printer.svg" alt="" width="16" height="16"><span>Imprimeix fitxa</span></button>
+          <button id="print-exercises" class="primary" disabled aria-label="Imprimeix fitxa / PDF" title="Imprimeix fitxa / PDF"><img class="ui-icon" src="assets/lucide/printer.svg" alt="" width="16" height="16"><span class="print-label">Imprimeix fitxa</span><span class="print-label-mobile">Imprimeix</span></button>
           <button id="print-options-toggle" class="primary" type="button" disabled popovertarget="print-options" aria-label="Més opcions d’impressió" title="Més opcions d’impressió"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         </div>
       </div>

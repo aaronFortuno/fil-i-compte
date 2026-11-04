@@ -5,6 +5,7 @@
   const pageTitle=document.title;
   const assets=language==='es'?'../assets/':'assets/';
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
+  const mobileLayout=matchMedia('screen and (max-width: 560px)');
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const FEATURE_MODES=[{id:'allow',label:t('Permès'),icon:'·'},{id:'require',label:t('Obligatori'),icon:'✓'},{id:'exclude',label:t('Exclòs'),icon:'×'}];
@@ -423,14 +424,15 @@
     const paddingX=parseFloat(container.paddingLeft)+parseFloat(container.paddingRight);
     const paddingY=parseFloat(container.paddingTop)+parseFloat(container.paddingBottom);
     // Use the canvas interior without transient scrollbars left over from a larger zoom.
-    const availableWidth=box.width-parseFloat(canvasCSS.borderLeftWidth)-parseFloat(canvasCSS.borderRightWidth);
+    const mobile=mobileLayout.matches;
+    const availableWidth=mobile?canvas.clientWidth:box.width-parseFloat(canvasCSS.borderLeftWidth)-parseFloat(canvasCSS.borderRightWidth);
     const availableHeight=box.height-parseFloat(canvasCSS.borderTopWidth)-parseFloat(canvasCSS.borderBottomWidth);
     const gap=parseFloat(container.getPropertyValue('--page-gap'))||20;
-    const columns=Math.min(2,state.pageCount),rows=Math.ceil(state.pageCount/columns);
+    const columns=mobile?1:Math.min(2,state.pageCount),rows=Math.ceil(state.pageCount/columns);
     const width=(availableWidth-paddingX-2)/(columns*parseFloat(css.width)+(columns-1)*gap);
     const height=(availableHeight-paddingY-2)/(rows*parseFloat(css.height)+(rows-1)*gap);
-    const scale=Math.floor(Math.min(width,height,1.5)*1000)/1000;
-    if(animate)startZoom(scale,null,true);else{stopZoom();zoomTarget=Math.max(.05,Math.min(2,scale));applyPreviewScale(scale,null,true);}
+    const scale=Math.floor(Math.min(mobile?width:Math.min(width,height),1.5)*1000)/1000;
+    if(animate)startZoom(scale,null,true);else{stopZoom();zoomTarget=Math.max(.05,Math.min(2,scale));applyPreviewScale(scale,null,!mobile);}
   }
   function manualZoom(scale,point=null) {fitPreview=false;startZoom(scale,point);}
   new ResizeObserver(()=>{if(fitPreview)requestAnimationFrame(()=>resizePreview());}).observe($('preview-canvas'),{box:'border-box'});
@@ -441,7 +443,7 @@
     manualZoom(zoomTarget*Math.exp(-delta*.0015),event);
   },{passive:false});
   canvas.addEventListener('pointerdown',event=>{
-    if(pan||event.button!==0||event.target.closest('button'))return;stopZoom();
+    if(pan||event.button!==0||event.target.closest('button')||(mobileLayout.matches&&event.pointerType==='touch'))return;stopZoom();
     pan={id:event.pointerId,x:event.clientX,y:event.clientY,left:canvas.scrollLeft,top:canvas.scrollTop};
     canvas.setPointerCapture(event.pointerId);canvas.classList.add('is-panning');event.preventDefault();
   });
@@ -459,6 +461,18 @@
   }
   const filterSections=['contents-title','reasoning-title'].map($);
   const compactFilters=matchMedia('(max-width: 900px), (max-height: 580px)');
+  function placeBankFilters(){
+    const filters=$('bank-filters');
+    const focused=filters.contains(document.activeElement)?document.activeElement:null;
+    (mobileLayout.matches?$('catalogue-scroll'):$('catalogue')).before(filters);
+    focused?.focus({preventScroll:true});
+  }
+  placeBankFilters();
+  mobileLayout.addEventListener('change',placeBankFilters);
+  for(const id of ['bank-filter-toggle','preview-settings-toggle','preview-order-toggle']){
+    const button=$(id),attribute=id==='preview-order-toggle'?'aria-pressed':'aria-expanded';
+    button.addEventListener('click',()=>button.setAttribute(attribute,String(button.getAttribute(attribute)==='false')));
+  }
   function setFilterSection(button,open){
     $(button.getAttribute('aria-controls')).hidden=!open;
     button.setAttribute('aria-expanded',String(open));

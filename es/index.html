@@ -23,7 +23,9 @@
     </div></header>
     <div class="step-viewport"><div class="step-track">
     <main class="workspace" id="bank-step">
-      <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la ficha</h2><button id="reset" class="text-button">Borrar filtros</button></div>
+      <aside id="bank-filters" class="filters" aria-label="Prepara la ficha">
+        <button id="bank-filter-toggle" class="mobile-panel-toggle" type="button" aria-expanded="false" aria-controls="bank-filter-heading filter-options bank-filter-scope">Filtros</button>
+        <div id="bank-filter-heading" class="panel-heading"><h2>Prepara la ficha</h2><button id="reset" class="text-button">Borrar filtros</button></div>
         <div id="filter-options" class="filter-scroll" role="region" aria-label="Opciones de configuración"><div class="two-fields"><div class="field"><label for="page-count">Número de páginas</label><select id="page-count"><option value="1">1 página</option><option value="2" selected>2 páginas</option><option value="4">4 páginas</option><option value="6">6 páginas</option></select></div><div class="field"><label for="per-page">Problemas por página</label><select id="per-page"><option value="2">2 · en columna</option><option value="3">3 · en columna</option><option value="4">4 · 2 × 2</option></select></div></div>
         <div class="two-fields"><div class="field"><label for="level">Nivel orientativo</label><select id="level" aria-describedby="orientation-instructions" title="Incluye combinaciones equivalentes de nivel y dificultad."><option value="">Todos</option><option value="mitja">Ciclo medio</option><option value="superior">Ciclo superior</option><option value="eso">Inicio de ESO</option></select></div><div class="field"><label for="difficulty">Dificultad orientativa</label><select id="difficulty" aria-describedby="orientation-instructions" title="El nivel intermedio de ciclo superior equivale a reto de ciclo medio y a accesible de inicio de ESO."><option value="">Todas</option><option value="1">Accesible</option><option value="2">Intermedio</option><option value="3">Reto</option></select></div></div><p id="orientation-instructions" class="sr-only">El nivel y la dificultad se interpretan juntos e incluyen combinaciones equivalentes entre ciclos. Por ejemplo, ciclo superior intermedio incluye ciclo medio reto e inicio de ESO accesible.</p>
         <p class="filter-key"><span>· Permitido</span><span>✓ Obligatorio</span><span>× Excluido</span></p>
@@ -40,7 +42,7 @@
         </div>
         <span id="feature-status" class="sr-only" role="status" aria-live="polite"></span>
         </div><div class="filter-actions bank-filter-actions">
-          <div class="field scope-field"><label for="scope">Filtros obligatorios…</label><select id="scope" aria-describedby="scope-instructions"><option value="sheet">En el conjunto de la ficha</option><option value="each">En cada problema</option></select><p id="scope-instructions" class="sr-only">Los filtros de contenido y razonamiento se combinan. Las exclusiones se aplican a toda la ficha.</p></div>
+          <div id="bank-filter-scope" class="field scope-field"><label for="scope">Filtros obligatorios…</label><select id="scope" aria-describedby="scope-instructions"><option value="sheet">En el conjunto de la ficha</option><option value="each">En cada problema</option></select><p id="scope-instructions" class="sr-only">Los filtros de contenido y razonamiento se combinan. Las exclusiones se aplican a toda la ficha.</p></div>
           <button class="primary compose-button" id="compose"><img class="ui-icon" src="../assets/lucide/refresh-cw.svg" alt="" width="16" height="16"> Proponer una ficha nueva</button><p id="bank-feedback" role="status"></p>
         </div>
       </aside>
@@ -51,8 +53,14 @@
     </main>
     <section id="preview" class="preview" inert aria-hidden="true" aria-labelledby="preview-title">
       <aside class="filters preview-sidebar" aria-label="Configuración de la ficha">
-        <div class="panel-heading"><h2 id="preview-title" tabindex="-1">Revisa la ficha</h2></div>
-        <div class="filter-scroll" tabindex="0" role="region" aria-label="Opciones de la ficha">
+        <div class="panel-heading">
+          <h2 id="preview-title" tabindex="-1">Revisa la ficha</h2>
+          <div class="preview-mobile-actions">
+            <button id="preview-settings-toggle" class="mobile-panel-toggle" type="button" aria-expanded="false" aria-controls="preview-settings">Configuración</button>
+            <button id="preview-order-toggle" class="mobile-panel-toggle" type="button" aria-pressed="false" aria-controls="pages">Reordenar</button>
+          </div>
+        </div>
+        <div id="preview-settings" class="filter-scroll" tabindex="0" role="region" aria-label="Opciones de la ficha">
           <div class="field"><label for="sheet-title">Título (opcional)</label><input id="sheet-title" maxlength="65" value="Problemas para pensar" placeholder="Sin título"></div>
           <div class="field"><label for="work-pattern">Zona de trabajo</label><select id="work-pattern"><option value="dots">Punteada</option><option value="grid">Cuadrícula de 6 mm</option><option value="lines">Líneas suaves</option><option value="blank">En blanco</option></select></div>
           <label class="brand-option"><input id="show-brand" type="checkbox" checked> Incluir «fil i compte»</label>
@@ -82,7 +90,7 @@
           <div class="review-step"><button id="preview-button" class="step-button" aria-describedby="selection-status"><span class="step-number" aria-hidden="true">2</span><span>Revisa la ficha</span></button><p id="selection-status" class="selection-summary" role="status" aria-atomic="true"></p></div>
         </nav>
         <div class="footer-print" role="group" aria-label="Impresión y PDF">
-          <button id="print-exercises" class="primary" disabled aria-label="Imprimir ficha / PDF" title="Imprimir ficha / PDF"><img class="ui-icon" src="../assets/lucide/printer.svg" alt="" width="16" height="16"><span>Imprimir ficha</span></button>
+          <button id="print-exercises" class="primary" disabled aria-label="Imprimir ficha / PDF" title="Imprimir ficha / PDF"><img class="ui-icon" src="../assets/lucide/printer.svg" alt="" width="16" height="16"><span class="print-label">Imprimir ficha</span><span class="print-label-mobile">Imprimir</span></button>
           <button id="print-options-toggle" class="primary" type="button" disabled popovertarget="print-options" aria-label="Más opciones de impresión" title="Más opciones de impresión"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         </div>
       </div>

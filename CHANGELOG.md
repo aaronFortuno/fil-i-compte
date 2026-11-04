@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.36.7 · Prepara i imprimeix des del mòbil
+
+- El banc mostra primer la cerca i els problemes, amb els filtres plegats i l’acció de proposar una fitxa a mà.
+- El visor mostra una pàgina per fila, ajustada a l’amplada. La configuració i les fletxes per reordenar s’obren quan calen.
+- El botó d’impressió mostra «Imprimeix» al peu del mòbil i manté el menú del solucionari.
+
 ## 0.36.6 · Plantilles sense franja lateral
 
 - Plantilles obre el panell sobre el banc i el visor sense reservar-los espai lateral. En pantalles estretes, el botó queda al costat del selector d’idioma.

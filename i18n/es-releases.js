@@ -1,5 +1,11 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.7": [
+    "Prepara e imprime desde el móvil",
+    "El banco muestra primero la búsqueda y los problemas, con los filtros plegados.",
+    "El visor ajusta una página al ancho y muestra la configuración y la reordenación cuando hacen falta.",
+    "El pie muestra «Imprimir» y mantiene el menú del solucionario."
+  ],
   "0.36.6": [
     "Plantillas sin franja lateral",
     "El panel de plantillas se superpone al banco y al visor. En pantallas estrechas, el botón queda junto al selector de idioma."

@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.7',title:'Prepara i imprimeix des del mòbil',
+    changes:['El banc mostra primer la cerca i els problemes, amb els filtres plegats.','El visor ajusta una pàgina a l’amplada i mostra la configuració i la reordenació quan calen.','El peu mostra «Imprimeix» i manté el menú del solucionari.']
+  },
+  {
     version:'0.36.6',title:'Plantilles sense franja lateral',
     changes:['El panell de plantilles se superposa al banc i al visor. En pantalles estretes, el botó queda al costat del selector d’idioma.']
   },
