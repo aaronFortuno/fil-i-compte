@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.35.0',title:'Què canvia i què es manté?',
+    changes:['Dotze problemes de cicle superior que combinen proporcionalitat directa i inversa.','El banc ja té 252 problemes.']
+  },
+  {
     version:'0.34.3',title:'Avisos més discrets',
     changes:['Casella a la cantonada i bandera amb ajuda contextual.','Un sol accés a «Privacitat i avisos» a la capçalera, amb el diàleg redissenyat.']
   },

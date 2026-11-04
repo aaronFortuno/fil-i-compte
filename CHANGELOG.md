@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.35.0 · Què canvia i què es manté?
+
+- Dotze problemes de cicle superior, de P0241 a P0252, que combinen proporcionalitat directa i inversa.
+- Els solucionaris separen els dos canvis i indiquen quina quantitat es manté constant en cada pas.
+
 ## 0.34.3 · Avisos més discrets
 
 - La casella de selecció ocupa la cantonada de la targeta i la bandera queda a la seva esquerra.

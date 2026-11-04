@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "vint-i-une-bloc",
+    "title": "Què canvia i què es manté?",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0241",
+      "version": 1,
+      "title": "Més lots, més mans",
+      "context": "tallers",
+      "structure": "temps-segons-encarrec-i-persones",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tres voluntaris preparen 24 lots en 12 minuts. Demà caldrà preparar 36 lots i hi haurà sis voluntaris. Tothom treballa al mateix ritme i es poden repartir els lots sense esperes.",
+      "question": "Quant trigaran demà? Explica què mantens constant quan canvies el nombre de lots i quan canvies el nombre de voluntaris.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sis voluntaris prepararan els 36 lots en 9 minuts.",
+        "steps": [
+          "Amb els mateixos tres voluntaris, fer 36 lots demana una vegada i mitja el temps de fer-ne 24. Trigarien 18 minuts.",
+          "Ara mantenim fixos els 36 lots. Amb el doble de voluntaris, el temps es redueix a la meitat i queda en 9 minuts."
+        ],
+        "note": "Taula de passos. 24 lots amb 3 voluntaris → 12 minuts. 36 amb 3 → 18 minuts. 36 amb 6 → 9 minuts.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                12,
+                2
+              ],
+              3
+            ],
+            "answer": 18
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "div",
+                  12,
+                  2
+                ],
+                3
+              ],
+              2
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0242",
+      "version": 1,
+      "title": "Una ruta més llarga i més lenta",
+      "context": "mobilitat",
+      "structure": "temps-segons-distancia-i-velocitat",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una ruta de 12 km, l’Aina pedala a 12 km/h i tarda 60 minuts. En una altra ruta haurà de fer 18 km a 9 km/h. En totes dues rutes va a la velocitat indicada i no s’atura.",
+      "question": "Quant tardarà a fer la segona ruta? Justifica com afecta el temps cada canvi si mantens l’altra dada fixa.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Tardarà 120 minuts, és a dir, 2 hores.",
+        "steps": [
+          "Primer mantenim 12 km/h. Els 18 km són els 12 originals més 6 km. A la mateixa velocitat, als 60 minuts hi afegim mitja hora i obtenim 90 minuts.",
+          "Ara mantenim els 18 km. A 9 km/h es recorren 9 km en una hora. Per recórrer-ne 18 calen dues hores."
+        ],
+        "note": "Amb la velocitat fixa, més distància demana més temps en la mateixa proporció. Amb la distància fixa, baixar de 12 a 9 km/h augmenta el temps.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                60,
+                12
+              ],
+              18
+            ],
+            "answer": 90
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                18,
+                9
+              ],
+              60
+            ],
+            "answer": 120
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0243",
+      "version": 1,
+      "title": "El dipòsit i la tercera aixeta",
+      "context": "aigua",
+      "structure": "temps-segons-volum-i-cabal",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Dues aixetes iguals omplen un dipòsit de 30 litres en 10 minuts. Ara volem recollir-ne 45 litres amb tres aixetes iguals. Cada aixeta dona sempre la mateixa quantitat d’aigua per minut.",
+      "question": "Trigarem més, menys o el mateix? Justifica-ho amb els dos canvis i digues què mantens fix en cada cas.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Trigarem el mateix, 10 minuts.",
+        "steps": [
+          "Si deixem dues aixetes obertes, per passar de 30 a 45 litres cal afegir la meitat del volum. El temps augmenta en la mateixa proporció i passa de 10 a 15 minuts.",
+          "Amb els 45 litres fixos, les dues aixetes necessiten 30 minuts d’aixeta en total. Amb tres aixetes funcionant alhora, són 10 minuts."
+        ],
+        "note": "Afegir la meitat de volum i afegir la meitat d’aixetes són canvis que es compensen en aquest cas.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                10,
+                2
+              ],
+              3
+            ],
+            "answer": 15
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                2,
+                15
+              ],
+              3
+            ],
+            "answer": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0244",
+      "version": 1,
+      "title": "El nou àlbum de fotografies",
+      "context": "fotografia",
+      "structure": "pagines-segons-fotos-totals-i-fotos-per-pagina",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un àlbum amb 48 fotografies ocupa 8 pàgines plenes, amb 6 fotografies a cadascuna. En un àlbum nou hi volem posar 60 fotografies i n’hi caben 10 a cada pàgina.",
+      "question": "Quantes pàgines omplirem a l’àlbum nou? Explica l’efecte de canviar el total de fotografies i el de canviar les places de cada pàgina.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Omplirem 6 pàgines.",
+        "steps": [
+          "Si mantenim la capacitat de 6 fotografies per pàgina, passar de 48 a 60 fa passar de 8 a 10 pàgines.",
+          "Ara mantenim les 60 fotografies. Amb pàgines que n’admeten 10, les mateixes fotografies ocupen 6 pàgines."
+        ],
+        "note": "Per veure la relació inversa, compara deu pàgines de sis amb sis pàgines de deu. Tots dos productes són 60.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              60,
+              6
+            ],
+            "answer": 10
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                10,
+                6
+              ],
+              10
+            ],
+            "answer": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0245",
+      "version": 1,
+      "title": "Un camí més llarg en un altre mapa",
+      "context": "orientacio",
+      "structure": "dibuix-segons-escala-i-distancia-real",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En un mapa, cada centímetre representa 100 metres. Una ruta de 400 metres hi fa 4 cm. N’haurem de dibuixar una de 600 metres en un altre mapa, on cada centímetre representa 200 metres.",
+      "question": "Quants centímetres farà el dibuix nou? Justifica què mantens constant quan canvies de mapa i quan allargues la ruta.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El dibuix nou farà 3 cm.",
+        "steps": [
+          "Primer deixem la ruta en 400 metres. Al nou mapa, cada centímetre representa el doble de metres, així que la ruta ocupa la meitat de centímetres, només 2.",
+          "Ara mantenim el nou mapa. Els 200 metres de més ocupen 1 cm més. La ruta de 600 metres ocupa 3 cm."
+        ],
+        "note": "Amb la ruta fixa, si augmenten els metres que representa cada centímetre, disminueix la llargada dibuixada. En un mateix mapa, la llargada dibuixada creix amb la distància real.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              400,
+              200
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "div",
+                400,
+                200
+              ],
+              [
+                "div",
+                200,
+                200
+              ]
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0246",
+      "version": 1,
+      "title": "El lloguer de la pista",
+      "context": "diners",
+      "structure": "quota-segons-hores-i-persones",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Llogar una pista costa 12 € per hora, sense cap altre càrrec. Sis persones la lloguen dues hores i reparteixen el cost a parts iguals. La setmana següent, quatre persones la lloguen tres hores.",
+      "question": "Quant pagarà cadascú la segona setmana? Explica com canvia el preu per persona quan allargues el lloguer i quan canvies la mida del grup.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La segona setmana cadascú pagarà 9 €.",
+        "steps": [
+          "Amb les mateixes sis persones, dues hores costen 4 € per persona i tres hores en costen 6. El preu per persona creix en la mateixa proporció que les hores.",
+          "Ara fixem el lloguer en tres hores. La despesa total és de 36 € i, amb quatre persones, toca dividir-la entre quatre."
+        ],
+        "note": "Per a un mateix lloguer, el producte de la quota individual pel nombre de persones és la despesa total.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                2
+              ],
+              6
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                3
+              ],
+              6
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                3
+              ],
+              4
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0247",
+      "version": 1,
+      "title": "Redibuixem l’hort",
+      "context": "hort",
+      "structure": "llargada-segons-amplada-i-superficie",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un hort rectangular fa 3 metres d’ample i 8 de llarg. El nou hort tindrà 4 metres d’ample i una superfície de 36 m².",
+      "question": "Quina llargada tindrà el nou hort? Resol-ho en dos passos i explica quina mida mantens fixa en cadascun.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El nou hort farà 9 metres de llarg.",
+        "steps": [
+          "Primer conservem els 24 m² de l’hort original. Si l’amplada passa a ser de 4 metres, la llargada es redueix a 6 metres perquè el producte encara sigui 24.",
+          "Ara mantenim els 4 metres d’amplada i augmentem la superfície de 24 a 36 m². La llargada creix en la mateixa proporció i passa de 6 a 9 metres."
+        ],
+        "note": "En una graella de quatre files, passar de 24 a 36 caselles afegeix tres columnes de quatre caselles.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              8
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                3,
+                8
+              ],
+              4
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              36,
+              4
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0248",
+      "version": 1,
+      "title": "Les rajoles del taller de fang",
+      "context": "art",
+      "structure": "peces-per-equip-segons-fang-i-equips",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Amb 6 kg de fang es fan 24 rajoles iguals. Si es reparteixen entre tres equips, en toquen 8 a cadascun. En la propera sessió hi haurà 9 kg de fang i sis equips. Cada rajola necessita la mateixa quantitat de fang i s’aprofita tot el material.",
+      "question": "Quantes rajoles li tocaran a cada equip si les repartim a parts iguals? Explica els dos canvis i què mantens constant en cada pas.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cada equip rebrà 6 rajoles.",
+        "steps": [
+          "Primer mantenim les 24 rajoles. Si doblem els equips de tres a sis, a cada equip li toca la meitat, 4 rajoles.",
+          "Amb sis equips fixos, els 9 kg donen una vegada i mitja les rajoles que donaven els 6 kg. A cada equip li toca una vegada i mitja la seva part, és a dir, 6."
+        ],
+        "note": "També pots comprovar que amb 9 kg surten 36 rajoles i que sis grups de sis en fan 36.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              24,
+              6
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                [
+                  "div",
+                  24,
+                  6
+                ],
+                2
+              ],
+              3
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                [
+                  "div",
+                  24,
+                  6
+                ],
+                9
+              ],
+              6
+            ],
+            "answer": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0249",
+      "version": 1,
+      "title": "Les diapositives del recital",
+      "context": "musica",
+      "structure": "temps-per-imatge-segons-durada-i-nombre-dimatges",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En un recital passen 60 imatges en 4 minuts, totes el mateix temps i sense pauses. Per a la propera actuació volen passar 72 imatges en 6 minuts, també amb el mateix temps per imatge.",
+      "question": "Quants segons haurà de durar cada imatge? Justifica què deixes fix quan canvies la durada total i quan canvies el nombre d’imatges.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cada imatge haurà de durar 5 segons.",
+        "steps": [
+          "Amb les mateixes 60 imatges, passar de 4 a 6 minuts fa augmentar el temps per imatge de 4 a 6 segons.",
+          "Ara mantenim els 6 minuts, és a dir, 360 segons. En posar 72 imatges en lloc de 60, el temps per imatge baixa a 5 segons."
+        ],
+        "note": "Taula de passos. 60 imatges en 4 minuts → 4 segons per imatge. 60 imatges en 6 minuts → 6 segons. 72 imatges en 6 minuts → 5 segons.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                4,
+                60
+              ],
+              60
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                6,
+                60
+              ],
+              60
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                6,
+                60
+              ],
+              72
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0250",
+      "version": 1,
+      "title": "Preparar els expositors a temps",
+      "context": "fira",
+      "structure": "equips-segons-feina-i-termini",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Quatre equips munten 8 expositors en 4 minuts. Abans d’obrir la fira en caldrà muntar 12 en només 2 minuts. Tots els expositors són iguals i cada equip triga 2 minuts a muntar-ne un.",
+      "question": "Quants equips calen per acabar en 2 minuts? Explica què mantens fix quan canvies el nombre d’expositors i quan escurces el temps.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 12 equips.",
+        "steps": [
+          "Amb els mateixos 4 minuts, passar de 8 a 12 expositors demana la meitat d’equips més. En caldrien 6.",
+          "Ara mantenim els 12 expositors. Sis equips durant 4 minuts fan la mateixa feina que dotze equips durant 2 minuts."
+        ],
+        "note": "En 4 minuts, cada equip en munta dos. En 2 minuts només en munta un i per això fan falta el doble d’equips.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                4,
+                2
+              ],
+              3
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "mul",
+              6,
+              4
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                6,
+                4
+              ],
+              2
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0251",
+      "version": 1,
+      "title": "La reserva de pinso",
+      "context": "animals",
+      "structure": "dies-segons-reserva-i-animals",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una reserva de 24 kg de pinso dura 6 dies per a quatre animals. Ara hi haurà sis animals i tindrem 48 kg de pinso. Tots mengen la mateixa quantitat cada dia.",
+      "question": "Quants dies durarà la nova reserva? Explica què mantens constant quan canvies la quantitat de pinso i quan canvies el nombre d’animals.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La reserva durarà 8 dies.",
+        "steps": [
+          "Amb quatre animals fixos, doblar la reserva de 24 a 48 kg dobla la durada de 6 a 12 dies.",
+          "Ara mantenim els 48 kg. Quatre animals durant 12 dies sumen 48 dies d’alimentació d’un sol animal. Si els repartim entre sis animals, cadascun té pinso per a 8 dies."
+        ],
+        "note": "Amb la mateixa reserva, el producte d’animals per dies es manté constant si tots mengen igual.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              6,
+              2
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                4,
+                12
+              ],
+              6
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0252",
+      "version": 1,
+      "title": "Les tires de tela per a la fira",
+      "context": "manualitats",
+      "structure": "peces-segons-llargada-total-i-mida",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "D’una peça de tela de 24 metres en surten 8 tires de 3 metres. Per a la fira tenim una peça de 36 metres i volem que cada tira faci 4 metres. En tallar no perdem tela.",
+      "question": "Quantes tires en sortiran? Explica com varia el nombre de tires quan canvies la llargada total i quan canvies la mida de cada tira.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "En sortiran 9 tires.",
+        "steps": [
+          "Mantenint els talls de 3 metres, una peça de 36 metres dona 12 tires. Com més llarga és la peça, més tires de la mateixa mida en surten.",
+          "Ara mantenim els 36 metres totals. Com que cada tira passa a fer 4 metres, en surten menys. Dividim els 36 metres en 9 tires de 4."
+        ],
+        "note": "A partir de 36 metres, dotze tires de tres i nou tires de quatre representen la mateixa llargada.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              36,
+              3
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                3
+              ],
+              4
+            ],
+            "answer": 9
+          }
+        ]
+      }
+    }
+  ]
+}
