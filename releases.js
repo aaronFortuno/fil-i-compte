@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.35.1',title:'Bandera accessible al solucionari',
+    changes:['Els controls de reordenació deixen lliure la bandera d’avís del solucionari.']
+  },
+  {
     version:'0.35.0',title:'Què canvia i què es manté?',
     changes:['Dotze problemes de cicle superior que combinen proporcionalitat directa i inversa.','El banc ja té 252 problemes.']
   },

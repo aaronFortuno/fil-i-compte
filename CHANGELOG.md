@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.35.1 · Bandera accessible al solucionari
+
+- Els controls de reordenació comencen sota el títol al solucionari i deixen lliure la bandera d’avís.
+
 ## 0.35.0 · Què canvia i què es manté?
 
 - Dotze problemes de cicle superior, de P0241 a P0252, que combinen proporcionalitat directa i inversa.

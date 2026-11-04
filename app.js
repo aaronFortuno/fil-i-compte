@@ -299,10 +299,11 @@
       for(const exercise of paper.querySelectorAll('.paper-problem')){
         const id=state.ids[index],title=exercise.querySelector('h3').textContent;
         const box=exercise.getBoundingClientRect(),overlay=document.createElement('div');
+        const top=solutionView?exercise.querySelector('.paper-title').getBoundingClientRect().bottom:box.top;
         // Keep the overlay aligned when zoom changes, without scaling the buttons.
         overlay.className='preview-order';
         overlay.dataset.orderRow=id;
-        overlay.style.cssText=`left:${(box.left-page.left)/page.width*100}%;top:${(box.top-page.top)/page.height*100}%;width:${box.width/page.width*100}%;height:${box.height/page.height*100}%`;
+        overlay.style.cssText=`left:${(box.left-page.left)/page.width*100}%;top:${(top-page.top)/page.height*100}%;width:${box.width/page.width*100}%;height:${(box.bottom-top)/page.height*100}%`;
         const button=(shift,label)=>`<button type="button" data-shift="${shift}" aria-label="${label} ${escape(title)}" title="${label}"><img class="ui-icon" src="assets/lucide/arrow-right.svg" alt="" width="16" height="16"></button>`;
         overlay.innerHTML=`<div class="preview-order-actions">${index>0?button(-1,'Puja'):''}${index<state.ids.length-1?button(1,'Baixa'):''}</div>`;
         frame.append(overlay);index++;
