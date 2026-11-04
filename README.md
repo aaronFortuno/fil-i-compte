@@ -153,6 +153,10 @@ El projecte té repositori Git propi dins d'aquesta carpeta. La branca principal
 
 El número de versió es mostra al peu dels dos passos. En prémer-lo s'obre l'historial resumit de novetats. **releases.js** és la font d'aquest número: la primera entrada correspon a la versió actual. En cada iteració cal afegir-hi el resum, actualitzar **CHANGELOG.md** i crear l'etiqueta Git `vX.Y.Z` corresponent. La versió indica el contingut carregat al navegador. Si s’amplia una versió amb el mateix número per indicació de l’usuari, s’actualitza la seva entrada i s’afegeix un commit, sense moure les etiquetes ja publicades.
 
+## Llicència
+
+El codi i els exercicis originals, inclosos els enunciats i els solucionaris, es publiquen sota la [llicència MIT](LICENSE). Les icones de Lucide conserven les seves [llicències i avisos](assets/lucide/LICENSE). El quadre V4V recull els crèdits dels altres recursos.
+
 ## Publicació a GitHub Pages
 
 Repositori: [aaronFortuno/fil-i-compte](https://github.com/aaronFortuno/fil-i-compte). Adreça del web: [aaronfortuno.github.io/fil-i-compte](https://aaronfortuno.github.io/fil-i-compte/).

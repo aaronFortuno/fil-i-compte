@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.8": [
+    "Licencia abierta",
+    "El código y los ejercicios originales se publican bajo licencia MIT, con un enlace directo en el cuadro V4V."
+  ],
   "0.36.7": [
     "Prepara e imprime desde el móvil",
     "El banco muestra primero la búsqueda y los problemas, con los filtros plegados.",

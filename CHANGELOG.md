@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.8 · Llicència oberta
+
+- El codi i els exercicis originals es publiquen sota llicència MIT, amb un enllaç directe al quadre V4V.
+
 ## 0.36.7 · Prepara i imprimeix des del mòbil
 
 - El banc mostra primer la cerca i els problemes, amb els filtres plegats i l’acció de proposar una fitxa a mà.

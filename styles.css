@@ -289,6 +289,7 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .project-privacy{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .project-credits{border-left:1px solid var(--line);padding-left:24px}
 .project-credits h3:not(:first-child){margin-top:13px}
+.project-links{display:flex;flex-wrap:wrap;gap:2px 12px}
 .credit-list{list-style:none;padding:0;margin:0}
 .credit-list li+li{margin-top:7px}
 #bank-feedback{margin:7px 0 0;font-size:11px;line-height:1.35;color:var(--green)}
