@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.5": [
+    "Metadatos de las dos lenguas",
+    "Títulos y descripciones para cada idioma, URL canónicas y mapa del sitio."
+  ],
   "0.36.4": [
     "Más espacio para responder",
     "El nombre y la fecha comparten fila con el título de la ficha cuando hay espacio.",

@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   const {language,t}=FilI18n;
+  const pageTitle=document.title;
   const assets=language==='es'?'../assets/':'assets/';
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
   const STORAGE='fil-i-compte-v1';
@@ -549,7 +550,7 @@
     $('print-root').innerHTML=pagesHTML(solutions);
     document.title=(state.title.trim()||t('Fitxa de matemàtiques'))+(solutions?t(' — solucionari'):t(' — exercicis'));
   });
-  window.addEventListener('afterprint',()=>{printMode=null;document.title=t('Fil i compte · Banc de problemes');});
+  window.addEventListener('afterprint',()=>{printMode=null;document.title=pageTitle;});
   function setupPrivacy() {
     const analytics=FilAnalytics,help=FilPrivacyHelp,browser=$('privacy-browser');
     const trigger=$('privacy-open'),temporary=$('privacy-temporary'),disable=$('privacy-disable');

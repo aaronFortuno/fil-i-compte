@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.5',title:'Metadades de les dues llengües',
+    changes:['Títols i descripcions per a cada llengua, URL canòniques i mapa del web.']
+  },
+  {
     version:'0.36.4',title:'Més espai per respondre',
     changes:['El nom i la data comparteixen fila amb el títol de la fitxa quan hi caben.','Més separació entre les línies de resposta i cap ratlla entre exercicis.','Contrastats els resultats dels 252 problemes del catàleg català amb el solucionari.']
   },

@@ -63,7 +63,6 @@
     "{0}: posició {1} de {2}.": "{0}: posición {1} de {2}.",
     "La fitxa encara no està preparada": "La ficha todavía no está preparada",
     "Completa una tria que compleixi els filtres abans d’imprimir.": "Completa una selección que cumpla los filtros antes de imprimir.",
-    "Fil i compte · Banc de problemes": "Fil i compte · Banco de problemas",
     "Umami està disponible. Pots notificar errors amb la bandera.": "Umami está disponible. Puedes notificar errores con la bandera.",
     "Connectant amb Umami…": "Conectando con Umami…",
     "Umami no està disponible. Si el bloquejador ho permet, habilita Umami només en aquest web i prem «Permet temporalment» per reintentar-ho.": "Umami no está disponible. Si tu bloqueador lo permite, habilita Umami solo en este sitio y pulsa «Permitir temporalmente» para volver a intentarlo.",

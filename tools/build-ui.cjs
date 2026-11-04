@@ -16,6 +16,7 @@ const html=input
     return token.replace(/^(\s*)(.*?)(\s*)$/s,(_,start,value,end)=>start+translate(value)+end);
   })
   .replace('<html lang="ca">','<html lang="es">')
+  .replace('rel="canonical" href="https://filicompte.ortogra.fi/"','rel="canonical" href="https://filicompte.ortogra.fi/es/"')
   .replace('<script defer src="../releases.js"></script>','<script defer src="../releases.js"></script><script defer src="../i18n/es-releases.js"></script>')
   .replace('href="./" hreflang="ca" lang="ca" aria-current="page"','href="../" hreflang="ca" lang="ca"')
   .replace('href="es/" hreflang="es" lang="es"','href="./" hreflang="es" lang="es" aria-current="page"');
