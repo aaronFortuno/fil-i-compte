@@ -1,5 +1,10 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.3": [
+    "Filtros plegables y ayuda de razonamiento",
+    "Contenidos y Razonamiento se pueden plegar y tienen desplazamiento interno.",
+    "El selector de filtros obligatorios queda fijo y las etiquetas de razonamiento tienen una explicación breve."
+  ],
   "0.36.2": [
     "Etiquetas revisadas en todo el banco",
     "Revisados los filtros de proporcionalidad, cálculo estimativo y razonamiento de los 252 problemas.",

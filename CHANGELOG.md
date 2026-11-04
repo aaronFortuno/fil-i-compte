@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.36.3 · Filtres plegables i ajuda de raonament
+
+- Continguts i Raonament tenen capçaleres fixes i desplaçament intern. El selector de filtres obligatoris queda fora de les llistes.
+- Les etiquetes de raonament mostren una explicació breu en català o castellà.
+
 ## 0.36.2 · Etiquetes revisades en tot el banc
 
 - Revisió dels 252 problemes amb els filtres de proporcionalitat, càlcul estimatiu i raonament.

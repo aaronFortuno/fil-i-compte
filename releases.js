@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.3',title:'Filtres plegables i ajuda de raonament',
+    changes:['Continguts i Raonament es poden plegar i tenen desplaçament intern.','El selector de filtres obligatoris queda fix i les etiquetes de raonament tenen una explicació breu.']
+  },
+  {
     version:'0.36.2',title:'Etiquetes revisades en tot el banc',
     changes:['Revisats els filtres de proporcionalitat, càlcul estimatiu i raonament dels 252 problemes.','Les etiquetes són comunes al català i al castellà.']
   },

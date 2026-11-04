@@ -121,9 +121,48 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .template-size{color:var(--muted)}
 .template-editor{width:100%;min-width:0}
 .template-error:empty{display:none}
-.reasoning-section{margin-top:10px;border-top:1px solid #d6dbcd}
-.reasoning-section summary{padding:9px 0;cursor:pointer;font-size:12px;font-weight:600}
-#reasoning-count{float:right;color:var(--muted);font-size:10px;font-weight:400}
+#filter-options{display:flex;flex-direction:column;overflow:visible}
+#filter-options>.two-fields,#filter-options>.filter-key{flex:none}
+#bank-step .panel-heading{padding-block:13px 10px}
+#bank-step #filter-options .field{margin-bottom:6px;gap:3px}
+#filter-options .two-fields label{min-height:0;flex:1}
+#bank-step #filter-options .field select,#bank-step .scope-field select{min-height:30px;padding-block:5px}
+#filter-options .filter-key{margin:3px 0 8px}
+.filter-sections,.filter-section{display:flex;flex-direction:column}
+.filter-sections{flex:1;min-height:0}
+.filter-section{border-top:1px solid #d6dbcd;min-height:34px}
+.filter-section h3{flex:none;margin:0}
+.filter-section-toggle{display:flex;align-items:center;gap:7px;width:100%;min-height:33px;padding:5px 3px;background:transparent;color:var(--ink);font-size:12px;font-weight:600;text-align:left}
+.filter-section-toggle::before{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(-45deg);transition:transform var(--motion-duration) var(--motion-ease)}
+.filter-section-toggle[aria-expanded=true]::before{transform:rotate(45deg)}
+.filter-section-count{margin-inline-start:auto;color:var(--muted);font-size:10px;font-weight:400}
+.feature-scroll{overflow:auto;min-height:0;padding:3px 4px 5px;margin-inline:-4px;scrollbar-width:thin;scrollbar-color:#bbc8b0 transparent;overscroll-behavior:contain}
+#bank-step .bank-filter-actions{padding-block:7px 9px}
+#bank-step .bank-filter-actions .scope-field{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:6px;margin:0 0 7px}
+@media screen and (min-width:561px){
+  .reasoning-section{flex:none;max-height:calc(100% - 34px)}
+  .filter-section:has(.feature-scroll:not([hidden])) + .reasoning-section{max-height:calc(100% - 69px)}
+}
+@media screen and (max-height:700px){
+  .filter-section{min-height:29px}
+  .filter-section-toggle{min-height:28px}
+  #filter-options .filter-key{margin:2px 0 5px}
+  #reasoning-filters{gap:6px}
+  #reasoning-filters .feature-chip{min-height:30px}
+}
+@media screen and (min-width:561px) and (max-height:580px){
+  #bank-step .panel-heading{padding-block:8px 5px}
+  #bank-step #filter-options .field{margin-bottom:4px;gap:2px}
+  #bank-step #filter-options .field select,#bank-step .scope-field select{min-height:26px;padding-block:3px}
+  #bank-step .bank-filter-actions{padding-block:5px 6px}
+  #bank-step .bank-filter-actions .scope-field{margin-bottom:5px}
+  #bank-step .compose-button{min-height:32px;padding-block:6px}
+}
+@media screen and (max-width:560px){
+  #bank-step>.filters{max-height:none}
+  #filter-options,.filter-sections{flex:none}
+  .feature-scroll{max-height:min(22dvh,154px)}
+}
 .exercise-card{position:relative}
 .card-header{min-height:22px;padding-inline-end:55px}
 .card-tools{position:absolute;inset:9px 9px auto auto;display:flex;align-items:center;gap:1px}
@@ -134,8 +173,8 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .report-flag[aria-disabled="true"]{cursor:default}
 .report-flag[aria-disabled="true"] .ui-icon{opacity:.48}
 .report-sent{font-size:14px;font-weight:700}
-#report-tooltip{position:fixed;inset:auto;margin:0;width:max-content;max-width:min(260px,calc(100vw - 24px));padding:8px 11px;border:1px solid #cbd4c3;border-radius:8px;background:var(--white);color:var(--ink);font-size:11px;line-height:1.5;box-shadow:0 4px 12px #263d3420}
-@media print{#report-tooltip{display:none!important}}
+.context-tooltip{position:fixed;inset:auto;margin:0;width:max-content;max-width:min(260px,calc(100vw - 24px));padding:8px 11px;border:1px solid #cbd4c3;border-radius:8px;background:var(--white);color:var(--ink);font-size:11px;line-height:1.5;box-shadow:0 4px 12px #263d3420}
+@media print{.context-tooltip{display:none!important}}
 .privacy-content{padding-block:18px 23px}
 .privacy-main>p{margin:0 0 12px}
 .privacy-content .privacy-state{margin:16px 0 10px;padding:9px 12px;border-radius:7px;background:#e8eee3;color:#32523c;font-weight:600}

@@ -7,6 +7,12 @@
   const STORAGE='fil-i-compte-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const FEATURE_MODES=[{id:'allow',label:t('Permès'),icon:'·'},{id:'require',label:t('Obligatori'),icon:'✓'},{id:'exclude',label:t('Exclòs'),icon:'×'}];
+  const REASONING_HINTS={
+    'treballar-cap-enrere':t('Parteix del resultat i desfés els canvis per recuperar el que hi havia al principi o un pas desconegut.'),
+    'interpretar-residu':t('Decideix què fer amb el que sobra en un repartiment o una agrupació.'),
+    'identificar-tot':t('Identifica a quina quantitat es refereix cada fracció o percentatge.'),
+    'comparar-estrategies':t('Compara dos camins per resoldre el problema i valora quan convé cadascun.')
+  };
   const WORK_PATTERNS=['dots','grid','lines','blank'];
   const defaultTitle='Problemes per pensar';
   const initial=()=>({pageCount:2,perPage:2,ids:['P0001','P0003','P0005','P0009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:t(defaultTitle),titleIsDefault:true,group:'',showBrand:true,workPattern:'dots',repeatHeader:false});
@@ -40,7 +46,10 @@
   }
   function makeFilters() {
     for(const [container,features] of [['feature-filters',C.CONTENT_FEATURES],['reasoning-filters',C.REASONING_FEATURES]]){
-      $(container).innerHTML=Object.entries(features).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
+      $(container).innerHTML=Object.entries(features).map(([id,label])=>{
+        const hint=REASONING_HINTS[id];
+        return `<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" ${hint?`data-reasoning="${id}"`:''} aria-describedby="feature-instructions${hint?` hint-${id}`:''}"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span>${hint?`<span class="sr-only" id="hint-${id}">${escape(hint)}</span>`:''}</button>`;
+      }).join('');
     }
     syncControls();
   }
@@ -50,10 +59,12 @@
       control.dataset.mode=mode;
       control.querySelector('.feature-state').textContent=current.icon;
       control.setAttribute('aria-label',label+': '+current.label.toLocaleLowerCase(language));
-      control.title=current.label+' · '+t('Clica per canviar a {0}',next.label.toLocaleLowerCase(language));
+      if(!REASONING_HINTS[id])control.title=current.label+' · '+t('Clica per canviar a {0}',next.label.toLocaleLowerCase(language));
     });
-    const active=Object.keys(C.REASONING_FEATURES).filter(id=>['require','exclude'].includes(state.filters.features[id])).length;
-    $('reasoning-count').textContent=active===1?t('1 filtre actiu'):active>1?t('{0} filtres actius',active):'';
+    for(const [count,features] of [['contents-count',C.CONTENT_FEATURES],['reasoning-count',C.REASONING_FEATURES]]){
+      const active=Object.keys(features).filter(id=>['require','exclude'].includes(state.filters.features[id])).length;
+      $(count).textContent=active===1?t('1 filtre actiu'):active>1?t('{0} filtres actius',active):'';
+    }
   }
   function setFeature(id,mode) {
     state.filters.features[id]=mode;syncFeatures();message('');update();
@@ -170,7 +181,7 @@
     if($('cards').contains(reportTooltipAnchor))hideReportTooltip();
     $('cards').innerHTML=matches.map(e=>{
       const isSelected=state.ids.includes(e.id),blocked=!isSelected&&state.ids.length>=capacity();
-      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?`title="${escape(t('Desmarca un problema de la tria per afegir-ne un altre.'))}"`:''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="${t('Dificultat: {0}',C.DIFFICULTIES[e.difficulty])}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><div class="card-tools">${reportHTML(e,'statement')}<label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">${t('Inclou {0} a la fitxa',e.id)}</span></label></div></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
+      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?`title="${escape(t('Desmarca un problema de la tria per afegir-ne un altre.'))}"`:''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="${t('Dificultat: {0}',C.DIFFICULTIES[e.difficulty])}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}" ${REASONING_HINTS[f]?`data-reasoning="${f}"`:''}>${escape(C.FEATURES[f])}</span>`).join('')}</div><div class="card-tools">${reportHTML(e,'statement')}<label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">${t('Inclou {0} a la fitxa',e.id)}</span></label></div></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
     refreshReports($('cards'));
@@ -210,6 +221,48 @@
     popup.style.left=Math.max(12,Math.min(anchor.right-width,innerWidth-width-12))+'px';
     const below=anchor.bottom+8;
     popup.style.top=Math.max(12,Math.min(below+height<=innerHeight-12?below:anchor.top-height-8,innerHeight-height-12))+'px';
+  }
+  function setupReasoningHints() {
+    const tooltip=$('reasoning-tooltip');
+    let anchor,timer;
+    const hide=()=>{
+      clearTimeout(timer);anchor=null;
+      if(tooltip.matches(':popover-open'))tooltip.hidePopover();
+    };
+    const show=()=>{
+      if(!anchor?.isConnected)return;
+      tooltip.textContent=REASONING_HINTS[anchor.dataset.reasoning];
+      if(!tooltip.matches(':popover-open'))tooltip.showPopover();
+      positionPopover(tooltip,anchor);
+    };
+    const leave=()=>{
+      clearTimeout(timer);
+      timer=setTimeout(()=>{
+        if(!anchor?.matches(':hover, :focus-visible')&&!tooltip.matches(':hover'))hide();
+      },160);
+    };
+    document.addEventListener('pointerover',event=>{
+      const target=event.target.closest('[data-reasoning]');
+      if(!target||target.contains(event.relatedTarget)||event.pointerType==='touch')return;
+      if(target===anchor&&tooltip.matches(':popover-open')){clearTimeout(timer);return;}
+      hide();anchor=target;timer=setTimeout(show,450);
+    });
+    document.addEventListener('pointerout',event=>{
+      if(anchor?.contains(event.target)&&!anchor.contains(event.relatedTarget))leave();
+    });
+    tooltip.addEventListener('pointerleave',leave);
+    document.addEventListener('focusin',event=>{
+      hide();
+      const target=event.target.closest('[data-reasoning]:focus-visible');
+      if(target){anchor=target;show();}
+    });
+    document.addEventListener('focusout',event=>{if(anchor===event.target)hide();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')hide();});
+    document.addEventListener('scroll',()=>{
+      if(anchor?.matches(':focus-visible')&&tooltip.matches(':popover-open'))positionPopover(tooltip,anchor);
+      else hide();
+    },true);
+    window.addEventListener('resize',hide);
   }
   function setupLanguageMenu() {
     const menu=$('language-menu'),trigger=$('language-toggle');
@@ -401,6 +454,22 @@
     void FilAnalytics.track('print-requested',{document:solutions?'solutions':'exercises',pages:state.pageCount,per_page:state.perPage});
     window.print();
   }
+  const filterSections=['contents-title','reasoning-title'].map($);
+  const compactFilters=matchMedia('(max-width: 900px), (max-height: 580px)');
+  function setFilterSection(button,open){
+    $(button.getAttribute('aria-controls')).hidden=!open;
+    button.setAttribute('aria-expanded',String(open));
+  }
+  filterSections.forEach(button=>button.addEventListener('click',()=>{
+    const open=button.getAttribute('aria-expanded')==='false';
+    if(open&&compactFilters.matches)setFilterSection(filterSections.find(other=>other!==button),false);
+    setFilterSection(button,open);
+  }));
+  compactFilters.addEventListener('change',()=>{
+    if(compactFilters.matches&&filterSections.every(button=>button.getAttribute('aria-expanded')==='true')){
+      setFilterSection(filterSections[0],false);
+    }
+  });
   $('filter-options').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
   $('filter-options').addEventListener('keydown',event=>{
     const button=event.target.closest('button[data-feature]');if(!button||!['ArrowLeft','ArrowRight'].includes(event.key))return;
@@ -786,7 +855,7 @@
     try{await navigator.clipboard.writeText(value);status.textContent=success;}
     catch{field.value=value;field.focus();field.select();status.textContent=t('Text seleccionat. Copia’l manualment.');}
   }
-  setupHistory();setupHelp();setupLanguageMenu();setupSelectionPopover();setupSearchHelp();makeFilters();update();setupLots();
+  setupHistory();setupHelp();setupLanguageMenu();setupSelectionPopover();setupSearchHelp();setupReasoningHints();makeFilters();update();setupLots();
   if(languageView){
     if(languageView!=='bank'){solutionView=languageView==='solutions';setStep(true);}
     try{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);}catch{}

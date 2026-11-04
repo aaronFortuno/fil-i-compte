@@ -15,13 +15,25 @@
     <div class="step-viewport"><div class="step-track">
     <main class="workspace" id="bank-step">
       <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la fitxa</h2><button id="reset" class="text-button">Neteja filtres</button></div>
-        <div id="filter-options" class="filter-scroll" role="region" aria-label="Opcions de configuració" tabindex="0"><div class="two-fields"><div class="field"><label for="page-count">Nombre de pàgines</label><select id="page-count"><option value="1">1 pàgina</option><option value="2" selected>2 pàgines</option><option value="4">4 pàgines</option><option value="6">6 pàgines</option></select></div><div class="field"><label for="per-page">Problemes per pàgina</label><select id="per-page"><option value="2">2 · en columna</option><option value="3">3 · en columna</option><option value="4">4 · 2 × 2</option></select></div></div>
+        <div id="filter-options" class="filter-scroll" role="region" aria-label="Opcions de configuració"><div class="two-fields"><div class="field"><label for="page-count">Nombre de pàgines</label><select id="page-count"><option value="1">1 pàgina</option><option value="2" selected>2 pàgines</option><option value="4">4 pàgines</option><option value="6">6 pàgines</option></select></div><div class="field"><label for="per-page">Problemes per pàgina</label><select id="per-page"><option value="2">2 · en columna</option><option value="3">3 · en columna</option><option value="4">4 · 2 × 2</option></select></div></div>
         <div class="two-fields"><div class="field"><label for="level">Nivell orientatiu</label><select id="level" aria-describedby="orientation-instructions" title="Inclou combinacions equivalents de nivell i dificultat."><option value="">Tots</option><option value="mitja">Cicle mitjà</option><option value="superior">Cicle superior</option><option value="eso">Inici d’ESO</option></select></div><div class="field"><label for="difficulty">Dificultat orientativa</label><select id="difficulty" aria-describedby="orientation-instructions" title="CS intermedi equival a CM repte i inici d’ESO accessible."><option value="">Totes</option><option value="1">Accessible</option><option value="2">Intermedi</option><option value="3">Repte</option></select></div></div><p id="orientation-instructions" class="sr-only">Nivell i dificultat s'interpreten conjuntament i inclouen combinacions equivalents entre cicles. Per exemple, cicle superior intermedi inclou cicle mitjà repte i inici d'ESO accessible.</p>
-        <div class="filter-divider"></div><h3>Continguts</h3><p class="filter-key"><span>· Permès</span><span>✓ Obligatori</span><span>× Exclòs</span></p><p id="feature-instructions" class="sr-only">Clica per passar de permès a obligatori, d'obligatori a exclòs i d'exclòs a permès. També pots fer servir les fletxes esquerra i dreta.</p><div id="feature-filters" class="feature-grid" role="group" aria-label="Filtres de contingut"></div>
-        <details class="reasoning-section"><summary id="reasoning-title">Raonament<span id="reasoning-count"></span></summary><div id="reasoning-filters" class="feature-grid" role="group" aria-labelledby="reasoning-title"></div></details>
+        <p class="filter-key"><span>· Permès</span><span>✓ Obligatori</span><span>× Exclòs</span></p>
+        <p id="feature-instructions" class="sr-only">Clica per passar de permès a obligatori, d'obligatori a exclòs i d'exclòs a permès. També pots fer servir les fletxes esquerra i dreta.</p>
+        <div class="filter-sections">
+          <section class="filter-section">
+            <h3><button type="button" id="contents-title" class="filter-section-toggle" aria-expanded="true" aria-controls="contents-body"><span>Continguts</span><span id="contents-count" class="filter-section-count"></span></button></h3>
+            <div id="contents-body" class="feature-scroll" tabindex="0" role="region" aria-label="Filtres de contingut"><div id="feature-filters" class="feature-grid"></div></div>
+          </section>
+          <section class="filter-section reasoning-section">
+            <h3><button type="button" id="reasoning-title" class="filter-section-toggle" aria-expanded="false" aria-controls="reasoning-body"><span>Raonament</span><span id="reasoning-count" class="filter-section-count"></span></button></h3>
+            <div id="reasoning-body" class="feature-scroll" tabindex="0" role="region" aria-label="Filtres de raonament" hidden><div id="reasoning-filters" class="feature-grid"></div></div>
+          </section>
+        </div>
         <span id="feature-status" class="sr-only" role="status" aria-live="polite"></span>
-        <div class="field scope-field"><label for="scope">Filtres obligatoris…</label><select id="scope"><option value="sheet">Al conjunt del full</option><option value="each">En cada problema</option></select><p class="hint">Els filtres de contingut i raonament es combinen. Les exclusions afecten tot el full.</p></div>
-        </div><div class="filter-actions"><button class="primary compose-button" id="compose"><img class="ui-icon" src="assets/lucide/refresh-cw.svg" alt="" width="16" height="16"> Proposa una fitxa nova</button><p id="bank-feedback" role="status"></p></div>
+        </div><div class="filter-actions bank-filter-actions">
+          <div class="field scope-field"><label for="scope">Filtres obligatoris…</label><select id="scope" aria-describedby="scope-instructions"><option value="sheet">Al conjunt del full</option><option value="each">En cada problema</option></select><p id="scope-instructions" class="sr-only">Els filtres de contingut i raonament es combinen. Les exclusions afecten tot el full.</p></div>
+          <button class="primary compose-button" id="compose"><img class="ui-icon" src="assets/lucide/refresh-cw.svg" alt="" width="16" height="16"> Proposa una fitxa nova</button><p id="bank-feedback" role="status"></p>
+        </div>
       </aside>
       <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
         <div class="catalogue-heading"><div class="catalogue-title-group"><h1 id="catalogue-title" tabindex="-1">El banc de problemes</h1><button id="selection-toggle" class="selection-toggle" popovertarget="selection-popover" aria-haspopup="dialog"><span class="selection-toggle-label"><span class="selection-toggle-prefix">Veure la </span><span class="selection-toggle-noun">tria</span></span><span id="selection-badge" class="selection-badge">4</span></button></div><div class="search"><label class="sr-only" for="search">Cerca al banc</label><span aria-hidden="true">⌕</span><input type="search" id="search" maxlength="200" placeholder="Tema, codi o rang (13-)…" aria-describedby="search-instructions"><button id="search-help-toggle" class="search-help-toggle" popovertarget="search-help" aria-label="Com cercar per codi o rang" title="Com cercar per codi o rang">?</button><span id="search-instructions" class="sr-only">Cerca text o filtra per codis com als rangs d'impressió: -4, 5-7,9-10 o 13-. Els codis i rangs també limiten la proposta automàtica.</span><span id="search-status" class="sr-only" role="status" aria-live="polite"></span></div></div>
@@ -164,7 +176,8 @@
       <p class="hint">El permís temporal dura fins que tanques la pestanya. Amb l’analítica desactivada pots preparar i imprimir fitxes. <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer">Privacitat d’Umami</a>.</p>
     </div>
   </dialog>
-  <div id="report-tooltip" popover="manual" role="tooltip"></div>
+  <div id="report-tooltip" class="context-tooltip" popover="manual" role="tooltip"></div>
+  <div id="reasoning-tooltip" class="context-tooltip" popover="manual" role="tooltip" aria-hidden="true"></div>
   <span id="report-status" class="sr-only" role="status"></span>
   <div id="print-root"></div>
   <noscript>Aquest compositor necessita JavaScript activat. El catàleg original és a data/catalog.json.</noscript>
