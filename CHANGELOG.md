@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.32.0 · Cada part té el seu tot
+
+- Dotze problemes de cicle superior, de P0205 a P0216, amb l’etiqueta «Identificar el tot».
+- Tots combinen fraccions i percentatges i demanen justificar quina quantitat es pren com a referència en cada pas.
+
 ## 0.31.0 · Què en fem, del que sobra?
 
 - Dotze problemes de cicle superior, de P0193 a P0204, amb l’etiqueta «Interpretar el residu».

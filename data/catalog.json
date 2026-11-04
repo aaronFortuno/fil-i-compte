@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 22,
+    "version": 23,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-18.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -11967,6 +11967,928 @@
               6
             ],
             "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0205",
+      "version": 1,
+      "title": "Comandes en bicicleta",
+      "context": "comerc",
+      "structure": "percentatge-del-restant-i-del-total",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una botiga prepara 80 comandes. Tres quartes parts es recullen a la botiga. De les comandes que cal repartir a domicili, el 20 % es lliura en bicicleta.",
+      "question": "Quin percentatge de totes les comandes es lliura en bicicleta? Justifica sobre quina quantitat fas cada càlcul.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El 5 % de totes les comandes es lliura en bicicleta.",
+        "steps": [
+          "El tot de la fracció són les 80 comandes. Si se’n recullen tres quartes parts, a domicili n’hi van 20.",
+          "El 20 % es calcula sobre aquestes 20 comandes. Són 4 lliuraments en bicicleta.",
+          "Per calcular el percentatge final tornem al total de 80. Quatre de 80 equival a cinc de cada 100."
+        ],
+        "note": "El 20 % descriu els lliuraments a domicili i el 5 % descriu el conjunt de comandes.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              80,
+              4
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                20,
+                20
+              ],
+              100
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                4,
+                100
+              ],
+              80
+            ],
+            "answer": 5
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 4,
+          "filled": 1,
+          "total": 80,
+          "caption": "Cada part representa 20 comandes. La part pintada és el grup que es reparteix a domicili."
+        }
+      }
+    },
+    {
+      "id": "P0206",
+      "version": 1,
+      "title": "Dues corals, dos totals",
+      "context": "musica",
+      "structure": "fraccio-i-percentatge-de-grups-diferents",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "A la coral del barri Nord hi ha 48 persones i una quarta part hi canta per primera vegada. A la del barri Sud hi ha 60 persones i el 20 % hi canta per primera vegada. En Pau diu que al Nord hi ha més debutants perquè un quart és més que el 20 %.",
+      "question": "Té raó en Pau? Justifica la comparació indicant quin és el tot en cada coral.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Totes dues corals tenen 12 debutants.",
+        "steps": [
+          "Un quart és el 25 %. A la coral Nord aquest quart es calcula sobre 48 persones i dona 12.",
+          "A la coral Sud el 20 % es calcula sobre 60 persones i també dona 12."
+        ],
+        "note": "Comparar només les proporcions no permet comparar les quantitats quan els totals són diferents.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              100,
+              4
+            ],
+            "answer": 25
+          },
+          {
+            "calculation": [
+              "div",
+              48,
+              4
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                60,
+                20
+              ],
+              100
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0207",
+      "version": 1,
+      "title": "Les plantes que hi havia al matí",
+      "context": "hort",
+      "structure": "reconstruir-dues-bases-successives",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al matí es dona un quart de les plantes d’un viver a una escola. A la tarda es ven el 20 % de les que hi queden després de la donació. Quan tanquen, al viver encara hi ha 24 plantes.",
+      "question": "Quantes plantes hi havia abans de la donació? Explica quin és el tot quan desfàs cadascun dels dos canvis.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot",
+        "treballar-cap-enrere"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Abans de la donació hi havia 40 plantes.",
+        "steps": [
+          "Les 24 plantes són el 80 % de les que hi havia just abans de vendre. Són quatre cinquenes parts, de manera que cinc parts són 30 plantes.",
+          "Les 30 plantes són tres quartes parts de la quantitat que hi havia abans de la donació. Cada quart són 10 plantes. El total inicial és de 40."
+        ],
+        "note": "La venda té com a base les 30 plantes que queden després de donar-ne. La donació té com a base les 40 plantes inicials.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                24,
+                4
+              ],
+              5
+            ],
+            "answer": 30
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                30,
+                3
+              ],
+              4
+            ],
+            "answer": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0208",
+      "version": 1,
+      "title": "La votació del pati",
+      "context": "escola",
+      "structure": "percentatge-conjunt-amb-grups-desiguals",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Voten 40 alumnes de cinquè i 60 de sisè. Tres quarts dels de cinquè voten a favor de posar una taula de ping-pong al pati. A sisè hi vota a favor el 20 % dels qui han votat.",
+      "question": "Quin percentatge del conjunt de votants hi ha votat a favor? Indica quin és el tot en cadascun dels càlculs.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El 42 % del conjunt de votants hi ha votat a favor.",
+        "steps": [
+          "Calculem tres quarts dels 40 alumnes de cinquè i obtenim 30 vots.",
+          "Calculem el 20 % dels 60 alumnes de sisè i obtenim 12 vots.",
+          "Sumem els 42 vots favorables. El percentatge conjunt es calcula sobre els 100 alumnes que han votat."
+        ],
+        "note": "Cada classe aporta un nombre diferent de votants. Per calcular el resultat conjunt, sumem els vots i també els votants.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                40,
+                4
+              ],
+              3
+            ],
+            "answer": 30
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                60,
+                20
+              ],
+              100
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "add",
+              30,
+              12
+            ],
+            "answer": 42
+          },
+          {
+            "calculation": [
+              "add",
+              40,
+              60
+            ],
+            "answer": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0209",
+      "version": 1,
+      "title": "Del bidó al dipòsit",
+      "context": "aigua",
+      "structure": "fraccions-i-percentatges-de-capacitats-diferents",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un dipòsit de 4 litres està ple fins a tres quartes parts de la seva capacitat. Un bidó de 2 litres conté aigua fins al 25 % de la seva capacitat. Aboquem tota l’aigua del bidó al dipòsit.",
+      "question": "Quina fracció de la capacitat del dipòsit quedarà plena? Justifica sobre quina capacitat fas cada càlcul.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El dipòsit quedarà ple fins a set vuitens de la seva capacitat. Hi haurà 3 litres i mig d’aigua.",
+        "steps": [
+          "Tres quartes parts del dipòsit de 4 litres són 3.000 mL.",
+          "El 25 % del bidó de 2 litres és un quart de 2.000 mL, és a dir, 500 mL.",
+          "El dipòsit acaba amb 3.500 mL. El tot de la fracció final torna a ser la capacitat del dipòsit, 4.000 mL. Set dels seus vuit blocs de 500 mL queden plens."
+        ],
+        "note": "El quart del bidó són 500 mL. Un quart del dipòsit seria el doble.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                4000,
+                4
+              ],
+              3
+            ],
+            "answer": 3000
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                2000,
+                25
+              ],
+              100
+            ],
+            "answer": 500
+          },
+          {
+            "calculation": [
+              "add",
+              3000,
+              500
+            ],
+            "answer": 3500
+          },
+          {
+            "calculation": [
+              "div",
+              3500,
+              500
+            ],
+            "answer": 7
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 7,
+          "total": 4000,
+          "caption": "El dibuix representa el dipòsit de 4 litres. Cada bloc són 500 mL i set blocs queden plens."
+        }
+      }
+    },
+    {
+      "id": "P0210",
+      "version": 1,
+      "title": "Pressupost per al taller",
+      "context": "diners",
+      "structure": "reserva-de-pressupost-i-rebaixa-de-preu",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per a un taller tenim 120 €. En reservem una cinquena part per a la impressió de cartells. El material del taller costa 100 € abans d’una rebaixa del 20 %.",
+      "question": "Quants diners quedaran per comprar més material després de pagar la compra? Justifica quin és el tot de la reserva i quin és el de la rebaixa.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Quedaran 16 € per comprar més material.",
+        "steps": [
+          "La reserva és una cinquena part dels 120 € de pressupost. Apartem 24 € i en queden 96 per a material.",
+          "El descompte es calcula sobre els 100 € del preu inicial del material. Descomptem 20 € i en paguem 80.",
+          "Dels 96 € disponibles per a material, en queden 16."
+        ],
+        "note": "Una cinquena part i un 20 % són equivalents. Aquí donen imports diferents perquè s’apliquen a quantitats diferents.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              120,
+              5
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                100,
+                20
+              ],
+              100
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "sub",
+                120,
+                24
+              ],
+              [
+                "sub",
+                100,
+                20
+              ]
+            ],
+            "answer": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0211",
+      "version": 1,
+      "title": "Tennis dins dels esports",
+      "context": "esport",
+      "structure": "passar-del-conjunt-a-un-subgrup",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En un casal hi ha 60 infants. Dos terços del total han triat fer esport. El 25 % de tots els infants han triat tennis, que és una de les activitats esportives. La Jana afirma que una quarta part dels infants que han triat esport fan tennis.",
+      "question": "És correcta l’afirmació? Justifica quina fracció dels que fan esport ha triat tennis i quin és el tot en cada pas.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La Jana s’equivoca. Fan tennis 3/8 dels infants que han triat esport.",
+        "steps": [
+          "Sobre els 60 infants del casal, dos terços són 40 infants que han triat esport. El 25 % dels mateixos 60 són 15 infants que han triat tennis.",
+          "Ara el tot són els 40 infants que han triat esport. D’aquests, 15 fan tennis. Simplifiquem 15/40 agrupant de cinc en cinc i obtenim 3/8."
+        ],
+        "note": "Un quart de tot el casal són 15 infants. Un quart dels que han triat esport en serien 10.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                60,
+                3
+              ],
+              2
+            ],
+            "answer": 40
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                60,
+                25
+              ],
+              100
+            ],
+            "answer": 15
+          },
+          {
+            "calculation": [
+              "div",
+              15,
+              5
+            ],
+            "answer": 3
+          },
+          {
+            "calculation": [
+              "div",
+              40,
+              5
+            ],
+            "answer": 8
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 8,
+          "filled": 3,
+          "total": 40,
+          "caption": "La barra representa els 40 infants que han triat esport. Els tres blocs pintats representen els 15 que fan tennis."
+        }
+      }
+    },
+    {
+      "id": "P0212",
+      "version": 1,
+      "title": "Dues gerres al mateix bol",
+      "context": "begudes",
+      "structure": "parts-iguals-amb-proporcions-diferents",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La primera gerra conté 1 litre de beguda i un quart del seu contingut és suc de préssec. La segona conté mig litre de beguda i el 50 % del seu contingut és suc de préssec. Aboquem totes dues begudes en un bol.",
+      "question": "Quina fracció de la barreja final és suc de préssec? Justifica quin és el tot de cadascuna de les tres proporcions.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Un terç de la barreja final és suc de préssec.",
+        "steps": [
+          "Un quart del litre de la primera gerra són 250 mL de suc. El 50 % del mig litre de la segona també són 250 mL de suc.",
+          "Al bol hi ha 500 mL de suc dins d’un total de 1.500 mL de barreja. Hi caben tres parts de 500 mL i només una correspon al suc."
+        ],
+        "note": "Amb un dibuix, representa la barreja final amb tres gots de mig litre. Un got sencer equival a la quantitat de suc.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              1000,
+              4
+            ],
+            "answer": 250
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                500,
+                50
+              ],
+              100
+            ],
+            "answer": 250
+          },
+          {
+            "calculation": [
+              "add",
+              250,
+              250
+            ],
+            "answer": 500
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "add",
+                1000,
+                500
+              ],
+              500
+            ],
+            "answer": 3
+          }
+        ],
+        "visual": {
+          "type": "fraction",
+          "parts": 3,
+          "filled": 1,
+          "total": 1500,
+          "caption": "La barreja completa té tres parts de 500 mL. La part pintada representa tot el suc."
+        }
+      }
+    },
+    {
+      "id": "P0213",
+      "version": 1,
+      "title": "Dos cupons, el mateix percentatge",
+      "context": "comerc",
+      "structure": "comparar-rebaixes-amb-bases-diferents",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Una motxilla costa 80 € i primer hi apliquen una rebaixa d’un quart del preu. Després cal triar un cupó. El cupó A descompta el 20 % del preu original i el cupó B descompta el 20 % del preu rebaixat.",
+      "question": "Quin cupó deixa el preu final més baix i per quants euros? Justifica sobre quin preu s’aplica cada percentatge.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El cupó A deixa el preu 4 € més baix. Amb l’A es paguen 44 € i amb el B, 48 €.",
+        "steps": [
+          "La primera rebaixa és un quart dels 80 € originals, o sigui 20 €. El preu rebaixat és de 60 €.",
+          "El cupó A treu el 20 % dels 80 € originals, que són 16 €. El cupó B treu el 20 % dels 60 € rebaixats, que són 12 €.",
+          "En tots dos casos el cupó es resta dels 60 € que es pagaven abans d’aplicar-lo."
+        ],
+        "note": "Els cupons tenen el mateix percentatge, però prenen com a referència preus diferents.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              80,
+              4
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "sub",
+              60,
+              [
+                "div",
+                [
+                  "mul",
+                  80,
+                  20
+                ],
+                100
+              ]
+            ],
+            "answer": 44
+          },
+          {
+            "calculation": [
+              "sub",
+              60,
+              [
+                "div",
+                [
+                  "mul",
+                  60,
+                  20
+                ],
+                100
+              ]
+            ],
+            "answer": 48
+          },
+          {
+            "calculation": [
+              "sub",
+              48,
+              44
+            ],
+            "answer": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0214",
+      "version": 1,
+      "title": "L’inventari dels plançons",
+      "context": "hort",
+      "structure": "perdua-sobre-les-llavors-i-supervivencia-sobre-els-germinats",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al viver sembrem 120 llavors i tres quartes parts germinen. De cada llavor que germina en surt un plançó. Més endavant, es fan malbé alguns plançons. El registre diu que se n’han fet malbé tants com el 15 % de les llavors sembrades.",
+      "question": "Quin percentatge dels plançons que van sortir continua en bon estat? Justifica quin és el tot de cada càlcul.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El 80 % dels plançons que van sortir continua en bon estat.",
+        "steps": [
+          "Tres quartes parts de les 120 llavors són 90 llavors germinades. Per tant, surten 90 plançons.",
+          "El 15 % es calcula sobre les 120 llavors sembrades. Es fan malbé 18 plançons i en queden 72.",
+          "Per respondre, comparem els 72 que estan bé amb els 90 que havien sortit. És el 80 %."
+        ],
+        "note": "El registre pren com a referència les llavors sembrades. La pregunta pren com a referència els plançons que van sortir.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                120,
+                4
+              ],
+              3
+            ],
+            "answer": 90
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                120,
+                15
+              ],
+              100
+            ],
+            "answer": 18
+          },
+          {
+            "calculation": [
+              "sub",
+              90,
+              18
+            ],
+            "answer": 72
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                72,
+                100
+              ],
+              90
+            ],
+            "answer": 80
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0215",
+      "version": 1,
+      "title": "Els pans integrals dels dos dies",
+      "context": "forn",
+      "structure": "recuperar-un-total-i-combinar-dos-grups",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Dilluns un forn ven 18 pans integrals. Aquests pans són el 30 % de tots els pans venuts dilluns. Dimarts ven 40 pans en total i la meitat són integrals.",
+      "question": "Quin percentatge de tots els pans venuts entre dilluns i dimarts eren integrals? Justifica quin és el tot en cada pas.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot",
+        "treballar-cap-enrere"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El 38 % dels pans venuts entre els dos dies eren integrals.",
+        "steps": [
+          "El tot del 30 % és la venda de dilluns. Si tres dècimes són 18 pans, una dècima són 6 pans. Dilluns se’n venen 60 en total.",
+          "El tot de la meitat són els 40 pans de dimarts. Vint són integrals.",
+          "Entre tots dos dies es venen 38 pans integrals sobre un total de 100 pans."
+        ],
+        "note": "Per al percentatge conjunt, la referència és la suma dels pans venuts els dos dies.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                18,
+                3
+              ],
+              10
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "div",
+              40,
+              2
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "add",
+              18,
+              20
+            ],
+            "answer": 38
+          },
+          {
+            "calculation": [
+              "add",
+              60,
+              40
+            ],
+            "answer": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0216",
+      "version": 1,
+      "title": "Més vots per al cor",
+      "context": "musica",
+      "structure": "creixement-proporcional-de-la-part-i-del-tot",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "En una primera votació hi participen 80 alumnes i un quart vota pel cor. En una segona votació, el nombre total de votants augmenta un 25 % respecte a la primera. El nombre de vots pel cor també augmenta un 25 % respecte a la primera.",
+      "question": "Augmenta la fracció de votants que tria el cor? Justifica a quina quantitat s’aplica cadascun dels dos augments i amb quin total compares els vots al final.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "percentatges",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La fracció es manté en un quart. Els vots pel cor passen de 20 a 25, però el total passa de 80 a 100.",
+        "steps": [
+          "En la primera votació, un quart de 80 són 20 vots pel cor.",
+          "L’augment dels votants es calcula sobre els 80 inicials i hi afegeix 20. L’augment dels vots pel cor es calcula sobre els 20 inicials i n’hi afegeix 5.",
+          "En la segona votació, els 25 vots pel cor es comparen amb els 100 votants. Vint-i-cinc és un quart de 100."
+        ],
+        "note": "Si la part i el tot creixen en la mateixa proporció, la fracció es manté.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              80,
+              4
+            ],
+            "answer": 20
+          },
+          {
+            "calculation": [
+              "add",
+              80,
+              [
+                "div",
+                [
+                  "mul",
+                  80,
+                  25
+                ],
+                100
+              ]
+            ],
+            "answer": 100
+          },
+          {
+            "calculation": [
+              "add",
+              20,
+              [
+                "div",
+                [
+                  "mul",
+                  20,
+                  25
+                ],
+                100
+              ]
+            ],
+            "answer": 25
+          },
+          {
+            "calculation": [
+              "div",
+              100,
+              4
+            ],
+            "answer": 25
           }
         ]
       }

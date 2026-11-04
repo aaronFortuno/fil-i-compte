@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.32.0',title:'Cada part té el seu tot',
+    changes:['Dotze problemes de cicle superior per identificar la quantitat de referència de fraccions i percentatges.','El banc ja té 216 problemes.']
+  },
+  {
     version:'0.31.0',title:'Què en fem, del que sobra?',
     changes:['Dotze problemes de cicle superior per interpretar el residu i justificar què fer amb el sobrant.','El banc ja té 204 problemes.']
   },
