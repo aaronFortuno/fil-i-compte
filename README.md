@@ -155,3 +155,19 @@ Repositori: [aaronFortuno/fil-i-compte](https://github.com/aaronFortuno/fil-i-co
 GitHub Pages publica la branca **main**, carpeta **/ (root)**. El fitxer **.nojekyll** permet servir els fitxers estàtics directament. Els enllaços i els recursos són relatius perquè funcionin també dins de `/fil-i-compte/` i obrint **index.html** en local. No cal cap procés de compilació ni secrets de publicació.
 
 Abans de pujar una iteració, comprova-la en local amb `node tools/check.cjs` i revisa la interfície. Després puja el commit de `main` i la seva etiqueta de versió a `origin`; GitHub Pages iniciarà la publicació automàticament. La comprovació del web remot la fa l'usuari. Si el navegador encara mostra la versió anterior, recarrega la pàgina després que GitHub hagi acabat de publicar.
+
+## Umami i avisos
+
+La integració s’activa amb l’identificador propi del web a `WEBSITE`, dins d’`analytics.js`. Només funciona a `https://filicompte.ortogra.fi`. El panell «Privacitat i avisos» és accessible des de «Sobre el projecte» i des de l’ajuda de les banderes.
+
+| Esdeveniment | Quan es compta | Dades de l’esdeveniment |
+| --- | --- | --- |
+| `worksheet-proposed` | Quan es genera una proposta automàtica vàlida | Pàgines i problemes per pàgina |
+| `problem-selected` | Quan es marca manualment un problema al banc | Identificador públic del problema |
+| `template-action` | Quan es crea, s’obre, es reanomena, s’actualitza o s’elimina una plantilla | Tipus d’acció |
+| `print-requested` | Quan un botó del web obre el diàleg d’impressió | Fitxa o solucionari, pàgines i problemes per pàgina |
+| `problem-reported` | Quan algú prem la bandera d’un enunciat o d’un solucionari | Identificador públic del problema, secció i versió |
+
+Es registra una visita quan el receptor està disponible. Les peticions d’impressió compten encara que després es cancel·li el diàleg. Els avisos es marquen com a enviats quan el receptor els accepta. La mateixa combinació de problema, secció i versió es pot notificar un cop per pestanya.
+
+El web respecta GPC, DNT i l’opció local de desactivar l’analítica. Les comprovacions de privacitat i recepció es poden executar amb `node tools/check-analytics.cjs`, amb un receptor simulat.

@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.30.0 · Privacitat, estadístiques i avisos
+
+- Banderes per notificar errors d’enunciats i solucionaris, amb ajuda segons el navegador.
+- Integració d’Umami per comptar visites, propostes, seleccions manuals, peticions d’impressió i accions amb plantilles. El seguiment només s’activa amb HTTPS i respecta els senyals de privadesa.
+
 ## 0.29.1 · Peu més compacte
 
 - Els passos queden a l’esquerra, amb els noms sota els cercles i el recompte sota «Revisa la fitxa».

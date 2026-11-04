@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.30.0',title:'Privacitat, estadístiques i avisos',
+    changes:['Banderes per notificar errors d’enunciats i solucionaris.','Umami compta propostes, seleccions manuals, peticions d’impressió i accions amb plantilles quan el web funciona amb HTTPS.']
+  },
+  {
     version:'0.29.1',title:'Peu més compacte',
     changes:['Passos a l’esquerra amb els noms sota els cercles i el recompte sota la revisió.','Botó partit per imprimir la fitxa o el solucionari i segell d’ortogra.fi al centre.']
   },

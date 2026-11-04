@@ -111,6 +111,20 @@
     if(!e.parts)return `<div class="response-space ${e.solution.kind==='justification'?'reasoning-response':''}">Resposta: <span class="response-line"></span></div>`;
     return `<div class="part-responses">${e.parts.map((part,index)=>`<div class="response-space ${part.solution.kind==='justification'?'reasoning-response':''}"><span class="response-label">${String.fromCharCode(97+index)})</span><span class="response-line"></span></div>`).join('')}</div>`;
   }
+  const reportContext=control=>({problem:control.dataset.problem,version:Number(control.dataset.version),section:control.dataset.section});
+  function reportHTML(e,section){
+    const label=section==='solution'?'al solucionari':'a l’enunciat';
+    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" disabled data-report aria-label="Notifica un error ${label} de ${e.id}"><img class="ui-icon" src="assets/lucide/flag.svg" alt="" width="16" height="16"></button><button type="button" data-report-help class="report-help" aria-label="Ajuda per notificar errors de ${e.id}" title="Privacitat i avisos" aria-haspopup="dialog">?</button><span class="report-sent" hidden>Enviat</span></span>`;
+  }
+  function refreshReports(root=document,analyticsState=FilAnalytics.getState()){
+    for(const control of root.querySelectorAll('.report-control')){
+      const state=FilAnalytics.reportState(reportContext(control)),flag=control.querySelector('[data-report]');
+      flag.disabled=analyticsState.status!=='ready'||state!=='idle';
+      control.querySelector('[data-report-help]').hidden=analyticsState.status==='ready'||state!=='idle';
+      control.querySelector('.report-sent').hidden=state!=='sent';
+      flag.title=state==='sent'?'Avís enviat':state==='sending'?'Enviant l’avís…':flag.disabled?'Avisos no disponibles. Obre l’ajuda de privacitat.':'Notifica un error';
+    }
+  }
   function renderCards() {
     const matches=catalogue.filter(e=>C.eligible(e,{...state.filters,query}));
     const search=C.parseSearch(query),invalid=search.kind==='invalid';
@@ -131,9 +145,10 @@
     }
     $('cards').innerHTML=matches.map(e=>{
       const isSelected=state.ids.includes(e.id),blocked=!isSelected&&state.ids.length>=capacity();
-      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
+      return `<article class="exercise-card ${isSelected?'is-selected':''} ${blocked?'is-unavailable':''}" data-id="${e.id}" ${blocked?'title="Desmarca un problema de la tria per afegir-ne un altre."':''}><header class="card-header"><div class="card-meta"><span class="exercise-code">${e.id}</span><abbr class="level-tag" title="${escape(C.LEVELS[e.level])}">${LEVEL_SHORT[e.level]}</abbr><span class="difficulty" title="${C.DIFFICULTIES[e.difficulty]}" aria-label="Dificultat: ${C.DIFFICULTIES[e.difficulty]}"><span aria-hidden="true">${'●'.repeat(e.difficulty)}${'○'.repeat(3-e.difficulty)}</span></span>${e.features.map(f=>`<span class="tag ${['decimals','fraccions','percentatges','potencies','arrels'].includes(f)?'tag-accent':''}">${escape(C.FEATURES[f])}</span>`).join('')}</div><div class="card-tools"><label class="card-select"><input type="checkbox" data-select="${e.id}" ${isSelected?'checked':''} ${blocked?'disabled':''} aria-describedby="selection-status"><span class="sr-only">Inclou ${e.id} a la fitxa</span></label>${reportHTML(e,'statement')}</div></header><h2><label for="select-${e.id}">${escape(e.title)}</label></h2><p class="statement">${escape(e.statement)}</p>${questionsHTML(e)}</article>`;
     }).join('');
     document.querySelectorAll('[data-select]').forEach(input=>input.id='select-'+input.dataset.select);
+    refreshReports($('cards'));
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
   function issues() {const problems=C.selectionIssues(selected(),state.filters,capacity());if(C.parseSearch(query).kind==='invalid')problems.push('Revisa el rang de codis.');return problems;}
@@ -221,7 +236,7 @@
       const title=showHeader?state.title.trim():'';
       const brand=showHeader&&state.showBrand;
       const header=title||brand||lotLabel?`<header class="sheet-header ${title?'has-title':''}"><div class="sheet-topline">${brand?`<span class="sheet-brand">fil i compte ${solutions?'· SOLUCIONARI':''}</span>`:''}${lotLabel}</div>${title?`<h2>${escape(title)}</h2>`:''}</header>`:'';
-      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${!showHeader?'':solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems" style="--problem-rows:${state.perPage}">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small></div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space" data-pattern="${state.workPattern}"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
+      const sheet=`<section class="sheet ${state.perPage===4?'sheet-grid':''} ${solutions?'solution-sheet':'exercise-sheet'}">${header}${!showHeader?'':solutions?'<p class="sheet-subtitle">Una possible resolució. Altres estratègies correctes també són vàlides.</p>':`<div class="student-fields"><span>Nom: <span class="name-line"></span></span><span>Data: <span class="date-line"></span></span>${state.group?`<span>Grup: ${escape(state.group)}</span>`:''}</div>`}<div class="sheet-problems" style="--problem-rows:${state.perPage}">${group.map(e=>{number++;return `<article class="paper-problem ${e.parts?'has-parts':''}"><div class="paper-title"><span>${String(number).padStart(2,'0')}</span><h3>${escape(e.title)}</h3><small>${e.id}</small>${screen&&solutions?reportHTML(e,'solution'):''}</div>${solutions?solutionHTML(e):`<p>${escape(e.statement)}</p>${questionsHTML(e,true)}<div class="working-space" data-pattern="${state.workPattern}"><span>Pensa, dibuixa, calcula…</span></div>${responseHTML(e)}`}</article>`;}).join('')}</div></section>`;
       const page=sheet.slice(0,-10)+`<div class="sheet-bottom"><span class="sheet-number">${index+1} / ${state.pageCount}</span></div></section>`;
       return screen?`<div class="page-frame" aria-label="Pàgina ${index+1} de ${state.pageCount}">${page}</div>`:page;
     }).join('');
@@ -230,6 +245,7 @@
     stopZoom();
     $('pages').style.setProperty('--preview-columns',Math.min(2,state.pageCount));
     $('pages').innerHTML=pagesHTML(solutionView,true);
+    refreshReports($('pages'));
     renderOrderControls();
     $('view-exercises').setAttribute('aria-pressed',String(!solutionView));$('view-solutions').setAttribute('aria-pressed',String(solutionView));$('answer-note').hidden=!solutionView;
     if(animate)animateElements([...$('pages').children],[{opacity:.35},{opacity:1}]);
@@ -328,7 +344,7 @@
     manualZoom(zoomTarget*Math.exp(-delta*.0015),event);
   },{passive:false});
   canvas.addEventListener('pointerdown',event=>{
-    if(pan||event.button!==0||event.target.closest('.preview-order button'))return;stopZoom();
+    if(pan||event.button!==0||event.target.closest('button'))return;stopZoom();
     pan={id:event.pointerId,x:event.clientX,y:event.clientY,left:canvas.scrollLeft,top:canvas.scrollTop};
     canvas.setPointerCapture(event.pointerId);canvas.classList.add('is-panning');event.preventDefault();
   });
@@ -341,6 +357,7 @@
     printMode=solutions;
     $('print-root').innerHTML=pagesHTML(solutions);
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
+    void FilAnalytics.track('print-requested',{document:solutions?'solutions':'exercises',pages:state.pageCount,per_page:state.perPage});
     window.print();
   }
   $('filter-options').addEventListener('click',event=>{const button=event.target.closest('button[data-feature]');if(button)cycleFeature(button.dataset.feature);});
@@ -358,13 +375,17 @@
   $('compose').addEventListener('click',()=>{
     const result=C.compose(catalogue,state.filters,capacity(),state.ids);
     if(result.error){message(result.error);return;}
+    void FilAnalytics.track('worksheet-proposed',{pages:state.pageCount,per_page:state.perPage});
     state.ids=result.ids;query=state.filters.codes||'';$('search').value=query;message('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.','success');update();
   });
   $('cards').addEventListener('change',event=>{
     const input=event.target.closest('input[data-select]');if(!input)return;
     const id=input.dataset.select;
     if(input.checked && state.ids.length>=capacity()){input.checked=false;message(`Ja tens ${capacity()} problemes. Desmarca’n un abans d’afegir-ne un altre.`,'error');return;}
-    if(input.checked)state.ids.push(id);else state.ids=state.ids.filter(x=>x!==id);
+    if(input.checked){
+      state.ids.push(id);
+      void FilAnalytics.track('problem-selected',{problem_id:id});
+    }else state.ids=state.ids.filter(x=>x!==id);
     message('');update();document.querySelector(`[data-select="${id}"]`)?.focus({preventScroll:true});
   });
   $('preview-button').addEventListener('click',()=>setStep(true));
@@ -413,6 +434,58 @@
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title='Fil i compte · Banc de problemes';});
+  function setupPrivacy() {
+    const analytics=FilAnalytics,help=FilPrivacyHelp,browser=$('privacy-browser');
+    const trigger=$('privacy-open'),temporary=$('privacy-temporary'),disable=$('privacy-disable');
+    let browserChosen=false;
+    const messages={
+      ready:'Umami està disponible. Pots notificar errors amb la bandera.',
+      loading:'Connectant amb Umami…',
+      unavailable:'Umami no està disponible. Si el bloquejador ho permet, habilita Umami només en aquest web i prem «Permet temporalment» per reintentar-ho.',
+      development:'Els avisos només es poden enviar des del web públic.',
+      insecure:'Els avisos es podran enviar quan el domini tingui HTTPS.',
+      unconfigured:'Umami encara està pendent d’activació. Els avisos es podran enviar quan estigui configurat.',
+      disabled:'L’analítica està desactivada. Si ho vols, pots permetre-la temporalment per a aquesta pestanya.'
+    };
+    const updatePrivacy=state=>{
+      const browserSignal=['gpc','dnt'].includes(state.reason);
+      $('privacy-state').textContent=browserSignal?'Els avisos estan desactivats pel senyal de privacitat del navegador.':messages[state.status];
+      temporary.disabled=browserSignal||!['disabled','unavailable'].includes(state.status);
+      disable.disabled=!['ready','loading','unavailable'].includes(state.status);
+      const showHelp=browserSignal||state.status==='unavailable';
+      $('privacy-browser-help').hidden=!showHelp;
+      if(showHelp){
+        const guide=help.guide(browser.value,state,navigator);
+        $('privacy-help-intro').textContent=guide.intro;
+        $('privacy-help-steps').replaceChildren(...guide.steps.map(text=>{const item=document.createElement('li');item.textContent=text;return item;}));
+        $('privacy-help-scope').textContent=guide.scope;
+        const source=$('privacy-help-source');source.hidden=!guide.source;
+        if(guide.source)source.href=guide.source;
+      }
+    };
+    browser.value=help.browserFor(navigator);
+    browser.addEventListener('change',()=>{browserChosen=true;updatePrivacy(analytics.getState());});
+    if(navigator.brave?.isBrave)navigator.brave.isBrave().then(isBrave=>{
+      if(isBrave&&!browserChosen){browser.value='brave';updatePrivacy(analytics.getState());}
+    }).catch(()=>{});
+    bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{void analytics.refresh();updatePrivacy(analytics.getState());}});
+    analytics.subscribe(state=>{updatePrivacy(state);refreshReports(document,state);});
+    temporary.addEventListener('click',()=>{void analytics.allowTemporarily();});
+    disable.addEventListener('click',()=>analytics.disable());
+    window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics.refresh();});
+    window.addEventListener('focus',()=>{void analytics.refresh();});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)void analytics.refresh();});
+    document.addEventListener('click',async event=>{
+      const button=event.target.closest('[data-report], [data-report-help]');
+      if(!button)return;
+      if(button.hasAttribute('data-report-help')){trigger.click();return;}
+      const context=reportContext(button.closest('.report-control'));
+      const status=$('report-status');
+      status.textContent='';
+      const sent=await analytics.reportProblem(context);
+      status.textContent=sent?`Avís de ${context.problem} enviat.`:'No s’ha pogut enviar l’avís. Consulta Privacitat i avisos.';
+    });
+  }
   function setupHistory() {
     const releases=FIL_I_COMPTE_RELEASES,dialog=$('history-dialog'),trigger=$('version-history');
     trigger.textContent='v'+releases[0].version;trigger.title='Historial de versions';
@@ -556,6 +629,7 @@
           status.textContent='Ja tens una plantilla amb aquest nom. Tria’n un altre.';return;
         }
         saveTemplates([...templates,snapshotTemplate(name)]);
+        void FilAnalytics.track('template-action',{action:'create'});
         $('template-name').value='';renderTemplates();status.textContent='Plantilla desada.';
         $('template-name').focus({preventScroll:true});
       }catch{status.textContent='No s’ha pogut desar la plantilla en aquest navegador.';}
@@ -570,6 +644,7 @@
         const template=templates[i];if(!template)return;
         if(action==='open'){
           restore(template.code,template.configuration);
+          void FilAnalytics.track('template-action',{action:'open'});
           dialog.close();$('preview-title').focus();
         }else if(action==='rename'||action==='replace'){
           status.textContent='';
@@ -579,7 +654,9 @@
           const edit=button.form.dataset.templateEdit;
           renderTemplates();focusTemplateAction(name,edit);
         }else if(confirm(`Vols eliminar la plantilla «${template.name}»?`)){
-          saveTemplates(templates.filter((_,index)=>index!==i));renderTemplates();
+          saveTemplates(templates.filter((_,index)=>index!==i));
+          void FilAnalytics.track('template-action',{action:'delete'});
+          renderTemplates();
           $('template-title').focus();status.textContent='Plantilla eliminada.';
         }
       }catch(error){status.textContent='No s’ha pogut completar l’acció. '+error.message;}
@@ -604,6 +681,7 @@
         if(!rename&&issues().length)throw Error('Completa la tria abans d’actualitzar la plantilla.');
         templates[index]=rename?{...templates[index],name}:snapshotTemplate(name);
         saveTemplates(templates);
+        void FilAnalytics.track('template-action',{action:rename?'rename':'update'});
         renderTemplates();focusTemplateAction(name,action);
         status.textContent=rename?'Nom actualitzat.':'Plantilla actualitzada amb la fitxa actual.';
       }catch(cause){error.textContent='No s’ha pogut modificar la plantilla. '+cause.message;}
@@ -633,6 +711,6 @@
     catch{field.value=value;field.focus();field.select();status.textContent='Text seleccionat. Copia’l manualment.';}
   }
   setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();makeFilters();update();setupLots();
-  bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));
+  bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));setupPrivacy();
   $('v4v-copy').addEventListener('click',()=>copyLotText($('v4v-address').value,$('v4v-address'),$('v4v-status'),'Adreça copiada.'));
 })();
