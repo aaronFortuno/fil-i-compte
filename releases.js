@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.6',title:'Plantilles sense franja lateral',
+    changes:['El panell de plantilles se superposa al banc i al visor. En pantalles estretes, el botó queda al costat del selector d’idioma.']
+  },
+  {
     version:'0.36.5',title:'Metadades de les dues llengües',
     changes:['Títols i descripcions per a cada llengua, URL canòniques i mapa del web.']
   },

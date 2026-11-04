@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.6 · Plantilles sense franja lateral
+
+- Plantilles obre el panell sobre el banc i el visor sense reservar-los espai lateral. En pantalles estretes, el botó queda al costat del selector d’idioma.
+
 ## 0.36.5 · Metadades de les dues llengües
 
 - Títols i descripcions per a les cerques en català i castellà, amb URL canòniques, enllaços de llengua i un sitemap de les dues portades.

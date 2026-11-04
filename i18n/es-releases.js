@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.6": [
+    "Plantillas sin franja lateral",
+    "El panel de plantillas se superpone al banco y al visor. En pantallas estrechas, el botón queda junto al selector de idioma."
+  ],
   "0.36.5": [
     "Metadatos de las dos lenguas",
     "Títulos y descripciones para cada idioma, URL canónicas y mapa del sitio."
