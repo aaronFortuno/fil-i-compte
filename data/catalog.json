@@ -4,9 +4,9 @@
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 24,
+    "version": 25,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-18.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-19.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-18.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-19.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-20.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -13462,7 +13462,8 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "proporcionalitat-directa"
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
       ],
       "numeric": {
         "data": "naturals",
@@ -13574,6 +13575,721 @@
               7
             ],
             "answer": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0229",
+      "version": 1,
+      "title": "Preparar el material del taller",
+      "context": "tallers",
+      "structure": "feina-fixa-i-persones",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Quatre voluntaris triguen 12 minuts a preparar uns sobres. Per repetir la mateixa feina hi haurà sis voluntaris. Tothom treballa al mateix ritme i els sobres es poden repartir sense que ningú hagi d’esperar.",
+      "question": "Quants minuts trigaran sis voluntaris a preparar els mateixos sobres? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sis voluntaris trigaran 8 minuts.",
+        "steps": [
+          "Quatre voluntaris treballant dotze minuts fan la mateixa feina que un voluntari treballant 48 minuts.",
+          "Amb sis voluntaris ens repartim aquests 48 minuts de feina. Cadascú treballa 8 minuts."
+        ],
+        "note": "En una taula, 4 persones durant 12 minuts i 6 persones durant 8 minuts donen el mateix producte, 48.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              4,
+              12
+            ],
+            "answer": 48
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                4,
+                12
+              ],
+              6
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0230",
+      "version": 1,
+      "title": "La ruta en bicicleta",
+      "context": "mobilitat",
+      "structure": "distancia-fixa-i-velocitat",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Dues persones fan la mateixa ruta de 24 km en bicicleta, sense aturar-se. La Núria va a 12 km/h i en Biel a 8 km/h. Cadascú manté la seva velocitat tota l’estona.",
+      "question": "Si la Núria tarda 2 hores, quant tarda en Biel? Justifica què es manté igual.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "En Biel tarda 3 hores.",
+        "steps": [
+          "La distància és de 24 km en tots dos casos. La Núria fa 12 km cada hora i en dues hores n’ha fet 24.",
+          "En Biel fa 8 km cada hora. Necessita tres grups de 8 km per completar el recorregut."
+        ],
+        "note": "Dibuixa una tira de 24 km. Pots dividir-la en dos trams de 12 o en tres de 8. Cada tram representa una hora.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              12,
+              2
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                2
+              ],
+              8
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0231",
+      "version": 1,
+      "title": "Obrim una aixeta més",
+      "context": "aigua",
+      "structure": "volum-fix-i-nombre-daixetes",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tres aixetes iguals omplen un dipòsit buit en 8 minuts. L’endemà l’omplim amb quatre aixetes com aquestes. Cada aixeta aboca la mateixa quantitat d’aigua per minut, tant si està oberta tota sola com amb les altres.",
+      "question": "Quant trigarem a omplir el mateix dipòsit amb quatre aixetes? Justifica-ho.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Amb quatre aixetes trigarem 6 minuts.",
+        "steps": [
+          "Tres aixetes obertes vuit minuts aporten tanta aigua com una aixeta oberta 24 minuts.",
+          "Repartim aquests 24 minuts entre les quatre aixetes que funcionen alhora."
+        ],
+        "note": "El producte del nombre d’aixetes pels minuts ha de ser el mateix perquè el dipòsit rep el mateix volum.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              8
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                3,
+                8
+              ],
+              4
+            ],
+            "answer": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0232",
+      "version": 1,
+      "title": "Un mural amb la mateixa superfície",
+      "context": "art",
+      "structure": "area-fixa-i-dimensions-del-rectangle",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una escola té una lona rectangular de 4 m d’alt i 9 m d’ample. Per a una altra paret vol una lona rectangular de la mateixa superfície, però de 6 m d’alt.",
+      "question": "Quina amplada ha de tenir la nova lona? Justifica com es compensa el canvi d’alçada.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La nova lona ha de fer 6 m d’ample.",
+        "steps": [
+          "La primera lona fa 4 × 9 = 36 m².",
+          "A la nova lona, l’alçada és de 6 metres. L’amplada ha de ser 36 ÷ 6 perquè el producte continuï sent 36."
+        ],
+        "note": "Amb una graella, pots dibuixar 36 quadrats com quatre files de nou o com sis files de sis.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              4,
+              9
+            ],
+            "answer": 36
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                4,
+                9
+              ],
+              6
+            ],
+            "answer": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0233",
+      "version": 1,
+      "title": "Les imatges de la presentació",
+      "context": "escola",
+      "structure": "durada-fixa-i-temps-per-imatge",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una presentació ha de durar exactament un minut. Si cada imatge surt durant 3 segons, hi caben 20 imatges. Ara es vol que cada imatge surti durant 5 segons. No hi ha pauses entre imatges.",
+      "question": "Quantes imatges hi cabran ara? Justifica per què canvia el nombre d’imatges.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Ara hi cabran 12 imatges.",
+        "steps": [
+          "Les vint imatges de tres segons ocupen els 60 segons disponibles.",
+          "Si cada imatge ocupa cinc segons, en podem posar dotze perquè 12 × 5 = 60."
+        ],
+        "note": "El total de segons és el mateix. Donar més temps a cada imatge fa que n’hi càpiguen menys.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              20,
+              3
+            ],
+            "answer": 60
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                20,
+                3
+              ],
+              5
+            ],
+            "answer": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0234",
+      "version": 1,
+      "title": "Trossos de cordill sense sobrants",
+      "context": "manualitats",
+      "structure": "llargada-total-fixa-i-mida-del-tros",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un rotlle de cordill es pot tallar en 12 trossos de 2 metres sense que en sobri gens. El taller prefereix tallar el mateix rotlle en trossos de 3 metres.",
+      "question": "Quants trossos sencers de 3 metres en sortiran? Explica quina quantitat es conserva.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "En sortiran 8 trossos sencers.",
+        "steps": [
+          "El rotlle fa 12 × 2 = 24 metres.",
+          "Si cada tros fa 3 metres, dividim els 24 metres entre 3."
+        ],
+        "note": "Pots agrupar els talls de dos en tres i els de tres en dos. En tots dos casos cada grup fa 6 metres.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              12,
+              2
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                12,
+                2
+              ],
+              3
+            ],
+            "answer": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0235",
+      "version": 1,
+      "title": "Dues preguntes sobre les màquines",
+      "context": "impressio",
+      "structure": "distingir-produccio-directa-i-temps-invers",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Dues màquines iguals imprimeixen juntes 6 làmines cada minut. S’hi afegeixen dues màquines iguals més. Totes funcionen al mateix ritme i es reparteixen la feina. La comanda és de 48 làmines.",
+      "question": "Quina relació hi ha entre el nombre de màquines i les làmines per minut? I entre el nombre de màquines i el temps per completar la comanda? Classifica i justifica totes dues relacions.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Les làmines per minut són directament proporcionals al nombre de màquines. El temps per fer les 48 làmines hi és inversament proporcional.",
+        "steps": [
+          "En passar de dues a quatre màquines, doblem la producció de 6 a 12 làmines per minut.",
+          "Amb dues màquines calen 8 minuts. Amb quatre en calen 4. Doblem el nombre de màquines i el temps es redueix a la meitat."
+        ],
+        "note": "Per comparar el temps mantenim fixes les 48 làmines de la comanda.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              6,
+              2
+            ],
+            "answer": 12
+          },
+          {
+            "calculation": [
+              "div",
+              48,
+              6
+            ],
+            "answer": 8
+          },
+          {
+            "calculation": [
+              "div",
+              48,
+              [
+                "mul",
+                6,
+                2
+              ]
+            ],
+            "answer": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0236",
+      "version": 1,
+      "title": "El preu del lloguer de patins",
+      "context": "comerc",
+      "structure": "preu-amb-quota-inicial-no-proporcional",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per llogar uns patins paguem 3 € fixos i 2 € per hora. Comparem llogar-los durant 2 hores i durant 4 hores.",
+      "question": "La relació entre les hores i el preu total és directa, inversa o cap de les dues? Justifica-ho amb els dos imports.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cap de les dues. Dues hores costen 7 € i quatre hores en costen 11.",
+        "steps": [
+          "Si fos directa, en doblar les hores el preu també es doblaria i passaria de 7 € a 14 €.",
+          "Si fos inversa, el preu es reduiria a la meitat quan doblem les hores. En realitat augmenta de 7 € a 11 €."
+        ],
+        "note": "Els 3 € fixos es paguen una vegada en tots dos lloguers.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              3,
+              [
+                "mul",
+                2,
+                2
+              ]
+            ],
+            "answer": 7
+          },
+          {
+            "calculation": [
+              "add",
+              3,
+              [
+                "mul",
+                4,
+                2
+              ]
+            ],
+            "answer": 11
+          },
+          {
+            "calculation": [
+              "mul",
+              2,
+              [
+                "add",
+                3,
+                [
+                  "mul",
+                  2,
+                  2
+                ]
+              ]
+            ],
+            "answer": 14
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0237",
+      "version": 1,
+      "title": "La taula dels cromos",
+      "context": "joc",
+      "structure": "classificar-i-corregir-un-valor",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Repartim el mateix lot de cromos a parts iguals. Amb dos infants en toquen 18 a cadascú. Amb tres en toquen 12 a cadascú. A la fila de sis infants, algú ha anotat que en tocarien 9.",
+      "question": "El nombre de cromos per infant varia de manera directa, inversa o de cap de les dues maneres? Corregeix la fila de sis i justifica la resposta.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La relació és inversa. Amb sis infants en toquen 6 a cadascú.",
+        "steps": [
+          "Les dues primeres files donen el mateix total de 36 cromos. Dos grups de 18 i tres grups de 12 sumen el mateix.",
+          "Amb sis infants toca la meitat del que tocava amb tres. Si en donéssim nou a cadascú, necessitaríem 54 cromos."
+        ],
+        "note": "Pots comprovar cada fila multiplicant infants per cromos per infant. El producte sempre ha de ser 36.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              2,
+              18
+            ],
+            "answer": 36
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              12
+            ],
+            "answer": 36
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                2,
+                18
+              ],
+              6
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "mul",
+              6,
+              9
+            ],
+            "answer": 54
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0238",
+      "version": 1,
+      "title": "Compartim el lloguer de la sala",
+      "context": "diners",
+      "structure": "repartiment-invers-amb-un-import-addicional",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un grup lloga una sala per 36 € i reparteix aquesta despesa a parts iguals. Cada persona també paga 2 € per una entrada individual. Comparem què paga cadascú quan hi van 3 persones i quan hi van 6.",
+      "question": "La relació entre el nombre de persones i el que paga cadascú en total és directa, inversa o cap de les dues? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cap de les dues. Amb tres persones, cadascú paga 14 €. Amb sis, en paga 8.",
+        "steps": [
+          "La part del lloguer baixa de 12 € a 6 €. L’entrada continua costant 2 € per persona.",
+          "Quan doblem el grup, el total per persona baixa, de manera que no és directament proporcional. Tampoc es redueix a la meitat. La meitat de 14 € serien 7 €."
+        ],
+        "note": "La part del lloguer sí que varia de manera inversament proporcional. En sumar-hi l’entrada, el total per persona perd aquesta relació.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              [
+                "div",
+                36,
+                3
+              ],
+              2
+            ],
+            "answer": 14
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "div",
+                36,
+                6
+              ],
+              2
+            ],
+            "answer": 8
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "add",
+                [
+                  "div",
+                  36,
+                  3
+                ],
+                2
+              ],
+              2
+            ],
+            "answer": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0239",
+      "version": 1,
+      "title": "El mateix camí en dos mapes",
+      "context": "orientacio",
+      "structure": "distancia-real-fixa-i-escala-del-mapa",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Un camí fa 600 m en realitat. En un mapa, cada centímetre representa 100 m reals. En un altre mapa, cada centímetre representa 200 m reals.",
+      "question": "Entre els metres que representa cada centímetre i la llargada dibuixada d’aquest mateix camí, la relació és directa, inversa o cap de les dues? Justifica-ho amb els dos mapes.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La relació és inversa. El camí fa 6 cm al primer mapa i 3 cm al segon.",
+        "steps": [
+          "Amb 100 metres per centímetre, els 600 metres reals ocupen 6 cm. Si cada centímetre en representa 200, n’hi ha prou amb 3 cm.",
+          "Quan un centímetre representa el doble de metres, calen la meitat de centímetres per representar la mateixa distància."
+        ],
+        "note": "Podem tornar a la distància real multiplicant els centímetres pels metres que representa cadascun.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              600,
+              100
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "div",
+              600,
+              200
+            ],
+            "answer": 3
+          },
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                600,
+                200
+              ],
+              200
+            ],
+            "answer": 600
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0240",
+      "version": 1,
+      "title": "Quants dies durarà el pinso?",
+      "context": "animals",
+      "structure": "reserva-fixa-i-consum-diari",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Al refugi tenen una reserva de 24 kg de pinso. Si en gasten 3 kg cada dia, els dura 8 dies. En una altra setmana necessiten gastar-ne 4 kg cada dia. Comencen amb la mateixa reserva i no n’afegeixen.",
+      "question": "Quants dies durarà ara el pinso? Justifica la resposta amb el que es conserva en tots dos casos.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "proporcionalitat-inversa"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "La reserva durarà 6 dies.",
+        "steps": [
+          "La primera previsió utilitza els 24 kg, perquè 3 kg al dia durant 8 dies són 24 kg.",
+          "Si ara es gasten 4 kg cada dia, dividim els mateixos 24 kg entre 4."
+        ],
+        "note": "A la taula, 3 kg al dia i 8 dies donen el mateix producte que 4 kg al dia i 6 dies.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              3,
+              8
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                3,
+                8
+              ],
+              4
+            ],
+            "answer": 6
           }
         ]
       }

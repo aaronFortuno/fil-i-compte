@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.34.0',title:'El producte es manté?',
+    changes:['Dotze problemes de cicle superior amb el nou filtre de proporcionalitat inversa.','Cinc exercicis comparen relacions directes, inverses o cap de les dues. El banc ja té 240 problemes.']
+  },
+  {
     version:'0.33.0',title:'Quan canvien al mateix ritme',
     changes:['Dotze problemes de cicle superior per aplicar i comprovar la proporcionalitat directa.','El banc ja té 228 problemes.']
   },

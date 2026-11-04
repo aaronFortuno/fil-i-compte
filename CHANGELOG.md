@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.34.0 · El producte es manté?
+
+- Dotze problemes de cicle superior, de P0229 a P0240, amb el nou filtre «Proporcionalitat inversa».
+- Cinc exercicis demanen distingir entre relacions directes, inverses o cap de les dues.
+
 ## 0.33.0 · Quan canvien al mateix ritme
 
 - Dotze problemes de cicle superior, de P0217 a P0228, amb l’etiqueta «Proporcionalitat directa».

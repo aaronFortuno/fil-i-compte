@@ -578,7 +578,8 @@
       "features": [
         "multiplicacio-divisio",
         "combinades",
-        "proporcionalitat-directa"
+        "proporcionalitat-directa",
+        "proporcionalitat-inversa"
       ],
       "numeric": {
         "data": "naturals",

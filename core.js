@@ -9,7 +9,8 @@
     'combinades':'Operacions combinades', 'parentesis':'Parèntesis',
     'fraccions':'Fraccions', 'percentatges':'Percentatges', 'decimals':'Decimals',
     'potencies':'Potències', 'arrels':'Arrels', 'distractors':'Dades per despistar',
-    'proporcionalitat-directa':'Proporcionalitat directa', 'calcul-estimatiu':'Càlcul estimatiu'
+    'proporcionalitat-directa':'Proporcionalitat directa', 'proporcionalitat-inversa':'Proporcionalitat inversa',
+    'calcul-estimatiu':'Càlcul estimatiu'
   };
   const REASONING_FEATURES = {
     'treballar-cap-enrere':'Treballar cap enrere',

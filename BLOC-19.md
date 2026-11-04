@@ -222,7 +222,7 @@ Tenim 24 llibres per repartir entre capses. Amb 3 capses, cadascuna rep 8 llibre
 
 **És directament proporcional el nombre de llibres per capsa al nombre de capses? Justifica-ho amb els dos repartiments.**
 
-Continguts: Multiplicació i divisió, Operacions combinades, Proporcionalitat directa.
+Continguts: Multiplicació i divisió, Operacions combinades, Proporcionalitat directa, Proporcionalitat inversa.
 
 **Una possible resolució**
 
