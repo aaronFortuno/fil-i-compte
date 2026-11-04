@@ -8,7 +8,6 @@
   const WORK_PATTERNS=['dots','grid','lines','blank'];
   const initial=()=>({pageCount:2,perPage:2,ids:['P0001','P0003','P0005','P0009'],filters:{features:{},scope:'sheet',level:'',difficulty:''},title:'Problemes per pensar',group:'',showBrand:true,workPattern:'dots',repeatHeader:false});
   let state=initial(), query='', solutionView=false, visualSequence=0, printMode=null;
-  let notice='',noticeKind='info';
   let reviewStep=false, previewScale=1, fitPreview=true, zoomTarget=1, zoomFrame=0, pan=null;
   try {const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved)state=validateState(saved);}catch{}
   // Each visit starts with an empty search; saved/exported selections keep their IDs.
@@ -30,7 +29,10 @@
     if(typeof codes!=='string'||(codes&&C.parseSearch(codes).kind!=='codes'))throw Error('Rang de codis no vàlid.');
     return {...layout,ids,filters:{scope:s.filters.scope,level:s.filters.level,difficulty:s.filters.difficulty,features:{...s.filters.features},...(codes?{codes:C.parseSearch(codes).canonical}:{})},title:s.title,group:s.group,showBrand:s.showBrand===undefined?true:s.showBrand,workPattern:WORK_PATTERNS.includes(s.workPattern)?s.workPattern:'dots',repeatHeader:s.repeatHeader===true};
   }
-  function message(text,kind='info') {notice=text;noticeKind=kind;renderFooterStatus();}
+  function message(text,kind='info') {
+    $('bank-feedback').dataset.kind=kind;
+    $('bank-feedback').textContent=text;
+  }
   function makeFilters() {
     for(const [container,features] of [['feature-filters',C.CONTENT_FEATURES],['reasoning-filters',C.REASONING_FEATURES]]){
       $(container).innerHTML=Object.entries(features).map(([id,label])=>`<button type="button" class="feature-chip" id="feature-${id}" data-feature="${id}" aria-describedby="feature-instructions"><span class="feature-name">${escape(label)}</span><span class="feature-state" aria-hidden="true"></span></button>`).join('');
@@ -135,24 +137,6 @@
     animateElements([...$('cards').children],[{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}]);
   }
   function issues() {const problems=C.selectionIssues(selected(),state.filters,capacity());if(C.parseSearch(query).kind==='invalid')problems.push('Revisa el rang de codis.');return problems;}
-  function selectionHint(candidates) {
-    const search=C.parseSearch(query);if(search.kind==='invalid')return {short:'Rang no vàlid',detail:search.error};
-    if(!issues().length)return {short:'Tria completa',detail:'Desmarca un problema de la tria per canviar-lo.'};
-    if(!candidates)return {short:'Sense candidats',detail:'Canvia els filtres per trobar problemes compatibles.'};
-    if(candidates<capacity())return {short:'No hi ha prou candidats',detail:`Hi ha ${candidates} problemes compatibles per a ${capacity()} places. Amplia els filtres o redueix les places.`};
-    if(selected().some(e=>!C.eligible(e,state.filters)))return {short:'Revisa la tria',detail:'Obre «Veure la tria» per treure els problemes que no compleixen els filtres o proposa una fitxa nova.'};
-    const missing=capacity()-state.ids.length;
-    if(missing>0)return {short:missing===1?'Falta un problema':`Falten ${missing} problemes`,detail:`Selecciona ${missing} ${missing===1?'problema més':'problemes més'} per completar la fitxa.`};
-    return {short:'Falten filtres obligatoris',detail:'Inclou exercicis que treballin: '+C.missingCoverage(selected(),state.filters).map(f=>C.FEATURES[f]).join(', ')+'.'};
-  }
-  function renderFooterStatus() {
-    const feedback=selectionHint(catalogue.filter(e=>C.eligible(e,state.filters)).length),ready=!issues().length&&!(notice&&noticeKind==='error');
-    $('selection-count').textContent=`${state.ids.length}/${capacity()} triats`;
-    $('selection-hint').textContent=ready?feedback.short:(notice||feedback.short);
-    $('selection-status').title=notice||feedback.detail;
-    $('selection-status').classList.toggle('is-ready',ready);
-    $('selection-status').classList.toggle('has-error',!!notice&&noticeKind==='error');
-  }
   function update(animatePreview=false) {
     persist();renderCards();
     const problems=issues(),candidates=catalogue.filter(e=>C.eligible(e,state.filters)).length;
@@ -163,7 +147,8 @@
     $('preview-button').disabled=problems.length>0;
     $('preview-button').title=problems.length?'Completa una tria que compleixi els filtres per revisar la fitxa.':'';
     $('compose').disabled=candidates<capacity()||C.parseSearch(query).kind==='invalid';
-    renderFooterStatus();
+    $('selection-status').textContent=`${state.ids.length}/${capacity()} triats`;
+    for(const id of ['print-exercises','print-options-toggle','print-solutions'])$(id).disabled=!reviewStep||problems.length>0;
     $('selection-badge').textContent=state.ids.length;
     $('selection-toggle').setAttribute('aria-label',`Veure la tria: ${state.ids.length} problemes seleccionats`);
     if($('selection-popover').matches(':popover-open'))renderSelectionList();
@@ -201,24 +186,6 @@
     });
     window.addEventListener('resize',()=>{if(popup.matches(':popover-open'))positionPopover(popup,trigger);});
     document.addEventListener('scroll',event=>{if(popup.matches(':popover-open')&&!popup.contains(event.target))positionPopover(popup,trigger);},true);
-  }
-  function setupFooterTools() {
-    const popup=$('print-popover'),trigger=$('print-toggle');
-    popup.addEventListener('toggle',event=>{
-      if(event.newState!=='open')return;
-      positionPopover(popup,trigger);
-      animateElements([popup],[{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}]);
-    });
-    popup.addEventListener('click',event=>{
-      const button=event.target.closest('[data-print]');if(!button)return;
-      popup.hidePopover();print(button.dataset.print==='solutions');
-    });
-    const reposition=()=>{
-      if(!popup.matches(':popover-open'))return;
-      if(trigger.getClientRects().length)positionPopover(popup,trigger);else popup.hidePopover();
-    };
-    window.addEventListener('resize',reposition);
-    document.addEventListener('scroll',event=>{if(!popup.contains(event.target))reposition();},true);
   }
   function setupSelectionPopover() {
     const popup=$('selection-popover');
@@ -273,13 +240,12 @@
     if(review===reviewStep)return;
     if($('selection-popover').matches(':popover-open'))$('selection-popover').hidePopover();
     if($('search-help').matches(':popover-open'))$('search-help').hidePopover();
-    if($('print-popover').matches(':popover-open'))$('print-popover').hidePopover();
+    if($('print-options').matches(':popover-open'))$('print-options').hidePopover();
     stopZoom();
     reviewStep=review;
     document.querySelector('.app-shell').classList.toggle('show-preview',review);
     $('bank-step').inert=review;$('bank-step').setAttribute('aria-hidden',String(review));
     $('preview').inert=!review;$('preview').setAttribute('aria-hidden',String(!review));
-    $('review-actions').hidden=!review;
     $('close-preview').toggleAttribute('aria-current',!review);$('preview-button').toggleAttribute('aria-current',review);
     (review?$('preview-button'):$('close-preview')).setAttribute('aria-current','step');
     const skip=document.querySelector('.skip');skip.href=review?'#preview-title':'#catalogue';skip.textContent=review?'Salta a la revisió de la fitxa':'Salta al banc de problemes';
@@ -371,7 +337,7 @@
   canvas.addEventListener('pointerup',endPan);canvas.addEventListener('pointercancel',endPan);canvas.addEventListener('lostpointercapture',endPan);
   canvas.addEventListener('dragstart',event=>event.preventDefault());
   function print(solutions) {
-    if(issues().length)return;
+    if(!reviewStep||issues().length)return;
     printMode=solutions;
     $('print-root').innerHTML=pagesHTML(solutions);
     document.title=(state.title.trim()||'Fitxa de matemàtiques')+(solutions?' — solucionari':' — exercicis');
@@ -427,7 +393,19 @@
     $('order-status').textContent=`${catalogue.find(e=>e.id===id).title}: posició ${target+1} de ${state.ids.length}.`;
   });
   for(const [id,key] of [['sheet-title','title'],['sheet-group','group']])$(id).addEventListener('input',()=>{state[key]=$(id).value;persist();renderPreview();});
-  $('print-exercises').addEventListener('click',()=>print(false));$('print-solutions').addEventListener('click',()=>print(true));
+  const printOptions=$('print-options'),printAnchor=$('print-options-toggle').parentElement;
+  const positionPrintOptions=()=>positionPopover(printOptions,printAnchor);
+  printOptions.addEventListener('toggle',event=>{
+    if(event.newState!=='open')return;
+    positionPrintOptions();
+    animateElements([printOptions],[{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}]);
+  });
+  window.addEventListener('resize',()=>{if(printOptions.matches(':popover-open'))positionPrintOptions();});
+  $('print-exercises').addEventListener('click',()=>print(false));
+  $('print-solutions').addEventListener('click',()=>{
+    printOptions.hidePopover();
+    print(true);
+  });
   window.addEventListener('beforeprint',()=>{
     if(issues().length){$('print-root').innerHTML='<section class="sheet"><h2>La fitxa encara no està preparada</h2><p>Completa una tria que compleixi els filtres abans d’imprimir.</p></section>';return;}
     const solutions=printMode===null?(reviewStep&&solutionView):printMode;
@@ -562,7 +540,7 @@
       const lot=LotCode.decode(code);
       if(lot.ids.some(id=>!catalogue.some(e=>e.id===id)))throw Error('Aquest lot conté exercicis que no són al catàleg actual.');
       state=validateState({...initial(),...configuration,...lot});query=state.filters.codes||'';solutionView=false;
-      notice='';syncControls();update();setStep(true);
+      message('');syncControls();update();setStep(true);
     };
     bindDialog(dialog,$('templates-open'),$('lot-close'),{offset:'none',onOpen:()=>{
       status.textContent='';refresh();
@@ -654,7 +632,7 @@
     try{await navigator.clipboard.writeText(value);status.textContent=success;}
     catch{field.value=value;field.focus();field.select();status.textContent='Text seleccionat. Copia’l manualment.';}
   }
-  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();setupFooterTools();makeFilters();update();setupLots();
+  setupHistory();setupHelp();setupSelectionPopover();setupSearchHelp();makeFilters();update();setupLots();
   bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));
   $('v4v-copy').addEventListener('click',()=>copyLotText($('v4v-address').value,$('v4v-address'),$('v4v-status'),'Adreça copiada.'));
 })();

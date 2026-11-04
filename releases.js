@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.29.1',title:'Peu més compacte',
+    changes:['Passos a l’esquerra amb els noms sota els cercles i el recompte sota la revisió.','Botó partit per imprimir la fitxa o el solucionari i segell d’ortogra.fi al centre.']
+  },
+  {
     version:'0.29.0',title:'Dos camins, una resposta',
     changes:['Dotze problemes de cicle superior per comparar estratègies amb nombres senzills.','El banc ja té 192 problemes.']
   },

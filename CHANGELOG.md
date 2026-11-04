@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.29.1 · Peu més compacte
+
+- Els passos queden a l’esquerra, amb els noms sota els cercles i el recompte sota «Revisa la fitxa».
+- «Imprimeix fitxa» és l’acció principal i el desplegable permet imprimir el solucionari. Les dues accions s’activen a la revisió.
+- El segell «Un projecte d’ortogra.fi» queda centrat al peu.
+
 ## 0.29.0 · Dos camins, una resposta
 
 - Dotze problemes de cicle superior, de P0181 a P0192, per comparar dues estratègies i justificar quina és més pràctica en cada cas.
