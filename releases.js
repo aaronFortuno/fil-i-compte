@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.34.2',title:'Historial complet a GitHub',
+    changes:['Enllaç al registre complet de canvis des de la capçalera de l’historial.']
+  },
+  {
     version:'0.34.0',title:'El producte es manté?',
     changes:['Dotze problemes de cicle superior amb el nou filtre de proporcionalitat inversa.','Cinc exercicis comparen relacions directes, inverses o cap de les dues. El banc ja té 240 problemes.']
   },

@@ -95,7 +95,14 @@
     </div>
   </dialog>
   <dialog id="history-dialog" class="history-dialog" aria-labelledby="history-title">
-    <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="history-title">Historial de versions</h2></div><button id="close-history" class="history-close" aria-label="Tanca l’historial" autofocus><img class="ui-icon" src="assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <header class="history-heading">
+      <div>
+        <p class="history-eyebrow">fil i compte</p>
+        <h2 id="history-title">Historial de versions</h2>
+        <a class="history-source" href="https://github.com/aaronFortuno/fil-i-compte/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Historial complet a GitHub <img class="ui-icon" src="assets/lucide/arrow-up-right.svg" alt="" width="12" height="12"></a>
+      </div>
+      <button id="close-history" class="history-close" aria-label="Tanca l’historial" autofocus><img class="ui-icon" src="assets/lucide/x.svg" alt="" width="16" height="16"></button>
+    </header>
     <div class="history-scroll" tabindex="0" role="region" aria-label="Canvis de cada versió"><ol id="release-list" class="release-list"></ol></div>
   </dialog>
   <dialog id="lot-dialog" class="history-dialog templates-drawer" aria-labelledby="template-title">

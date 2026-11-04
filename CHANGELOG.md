@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.34.2 · Historial complet a GitHub
+
+- El diàleg de l’historial enllaça amb el registre complet de canvis a GitHub.
+
 ## 0.34.0 · El producte es manté?
 
 - Dotze problemes de cicle superior, de P0229 a P0240, amb el nou filtre «Proporcionalitat inversa».
