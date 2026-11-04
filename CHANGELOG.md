@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.30.1 · Un peu més baix
+
+- Els passos del peu es mostren amb números petits i una ratlla que indica el pas actiu. El recompte continua sota «Revisa la fitxa».
+
 ## 0.30.0 · Privacitat, estadístiques i avisos
 
 - Banderes per notificar errors d’enunciats i solucionaris, amb ajuda segons el navegador.

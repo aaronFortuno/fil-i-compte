@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.30.1',title:'Un peu més baix',
+    changes:['Números petits amb una ratlla d’estat i menys alçada al peu.']
+  },
+  {
     version:'0.30.0',title:'Privacitat, estadístiques i avisos',
     changes:['Banderes per notificar errors d’enunciats i solucionaris.','Umami compta propostes, seleccions manuals, peticions d’impressió i accions amb plantilles quan el web funciona amb HTTPS.']
   },
