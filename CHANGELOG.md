@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.36.4 · Més espai per respondre
+
+- El nom i la data comparteixen fila amb el títol de la fitxa quan hi caben.
+- Més separació entre les línies de resposta i cap ratlla entre exercicis.
+- Contrastats els resultats dels 252 problemes del catàleg català amb el solucionari.
+
 ## 0.36.3 · Filtres plegables i ajuda de raonament
 
 - Continguts i Raonament tenen capçaleres fixes i desplaçament intern. El selector de filtres obligatoris queda fora de les llistes.

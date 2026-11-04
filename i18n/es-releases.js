@@ -1,5 +1,11 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.4": [
+    "Más espacio para responder",
+    "El nombre y la fecha comparten fila con el título de la ficha cuando hay espacio.",
+    "Más separación entre las líneas de respuesta y sin raya entre ejercicios.",
+    "Contrastados los resultados de los 252 problemas del catálogo en catalán con el solucionario."
+  ],
   "0.36.3": [
     "Filtros plegables y ayuda de razonamiento",
     "Contenidos y Razonamiento se pueden plegar y tienen desplazamiento interno.",
