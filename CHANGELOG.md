@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.31.0 · Què en fem, del que sobra?
+
+- Dotze problemes de cicle superior, de P0193 a P0204, amb l’etiqueta «Interpretar el residu».
+- El context determina si convé completar un grup, redistribuir el sobrant, dividir-lo en parts iguals o guardar-lo.
+
 ## 0.30.1 · Un peu més baix
 
 - Els passos del peu es mostren amb números petits i una ratlla que indica el pas actiu. El recompte continua sota «Revisa la fitxa».

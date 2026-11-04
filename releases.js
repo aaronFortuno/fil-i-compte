@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.31.0',title:'Què en fem, del que sobra?',
+    changes:['Dotze problemes de cicle superior per interpretar el residu i justificar què fer amb el sobrant.','El banc ja té 204 problemes.']
+  },
+  {
     version:'0.30.1',title:'Un peu més baix',
     changes:['Números petits amb una ratlla d’estat i menys alçada al peu.']
   },

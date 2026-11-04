@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 21,
+    "version": 22,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -11238,6 +11238,736 @@ globalThis.EXERCISE_CATALOG = {
               3
             ],
             "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0193",
+      "version": 1,
+      "title": "Voluntaris per dur les caixes",
+      "context": "transport",
+      "structure": "dues-capacitats-amb-torns-limitats",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Cal dur 53 caixes d’una sala a una altra. A cada viatge del carretó hi caben 8 caixes i cada voluntari pot fer com a màxim 3 viatges.",
+      "question": "Quants voluntaris calen com a mínim? Justifica com organitzaries el darrer viatge.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 3 voluntaris. Dos poden fer tres viatges cadascun i el tercer pot dur les 5 caixes que queden en un sol viatge.",
+        "steps": [
+          "En sis viatges es poden dur 48 caixes. Amb dos voluntaris és el màxim de viatges possible, però encara queden 5 caixes.",
+          "Les 5 caixes caben en un altre viatge. Amb un tercer voluntari es poden dur totes."
+        ],
+        "note": "El darrer viatge no ha d’omplir el carretó.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "mul",
+                2,
+                3
+              ],
+              8
+            ],
+            "answer": 48
+          },
+          {
+            "calculation": [
+              "sub",
+              53,
+              [
+                "mul",
+                [
+                  "mul",
+                  2,
+                  3
+                ],
+                8
+              ]
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0194",
+      "version": 1,
+      "title": "Plançons per al mercat",
+      "context": "hort",
+      "structure": "triar-mida-per-reduir-el-residu",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Hi ha 38 plançons per fer lots. Tots els lots han de ser de la mateixa mida i podem triar entre fer-los de 6 o de 7 plançons. Volem deixar tan pocs plançons fora dels lots com sigui possible.",
+      "question": "Quina mida de lot convé triar? Justifica-ho amb el sobrant de cada opció.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Convé fer lots de 6. En sobren 2, mentre que amb lots de 7 en sobren 3.",
+        "steps": [
+          "Amb lots de 6 en fem 6 i hi posem 36 plançons. En queden 2.",
+          "Amb lots de 7 en fem 5 i hi posem 35 plançons. En queden 3."
+        ],
+        "note": "Amb lots de 6 també surt un lot més, però la decisió es pren comparant els dos sobrants.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              38,
+              [
+                "mul",
+                6,
+                6
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "sub",
+              38,
+              [
+                "mul",
+                5,
+                7
+              ]
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0195",
+      "version": 1,
+      "title": "El màxim d’equips possibles",
+      "context": "esport",
+      "structure": "repartir-residu-sense-superar-la-mida-maxima",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hi ha 35 participants per a un torneig. Cada equip ha de tenir 4 o 5 persones i tothom hi ha de jugar. L’organització vol formar tants equips com pugui.",
+      "question": "Quants equips pot formar com a màxim i com hi ha de repartir els participants? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Es poden formar 8 equips. Cinc tindran 4 persones i tres en tindran 5.",
+        "steps": [
+          "Amb vuit equips de quatre hi ha 32 places ocupades i queden 3 persones. Posem una d’aquestes persones a cadascun de tres equips.",
+          "Nou equips necessitarien almenys 36 persones, encara que tots fossin de quatre."
+        ],
+        "note": "El residu es pot incorporar als equips perquè el màxim permès és cinc.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              35,
+              [
+                "mul",
+                8,
+                4
+              ]
+            ],
+            "answer": 3
+          },
+          {
+            "calculation": [
+              "mul",
+              9,
+              4
+            ],
+            "answer": 36
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                5,
+                4
+              ],
+              [
+                "mul",
+                3,
+                5
+              ]
+            ],
+            "answer": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0196",
+      "version": 1,
+      "title": "Completar o desfer el paquet",
+      "context": "material-escolar",
+      "structure": "comparar-complement-i-residu",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim 47 llibretes per fer paquets de 8. Podem afegir-hi llibretes del magatzem o tornar-hi les que sobrin. Volem que totes les llibretes que quedin facin paquets complets i moure tan poques llibretes com sigui possible.",
+      "question": "Quina decisió convé prendre? Justifica-la comparant les dues opcions.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Convé anar a buscar una llibreta. Així es poden fer sis paquets complets.",
+        "steps": [
+          "Amb cinc paquets fem servir 40 llibretes i en sobren 7. Les podríem tornar al magatzem.",
+          "Per completar el sisè paquet cal arribar a 48 llibretes. Només n’hem d’afegir una."
+        ],
+        "note": "La decisió surt de comparar el que sobra amb el que falta per omplir el paquet següent.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              47,
+              [
+                "mul",
+                5,
+                8
+              ]
+            ],
+            "answer": 7
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                6,
+                8
+              ],
+              47
+            ],
+            "answer": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0197",
+      "version": 1,
+      "title": "Dos trossos de coca per a deu",
+      "context": "berenar",
+      "structure": "partir-el-residu-per-mantenir-la-igualtat",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Per a un berenar hi ha 9 coques petites de la mateixa mida, cadascuna tallada en 8 trossos iguals. Les volem repartir totes entre 10 persones. Podem tornar a tallar els trossos que quedin.",
+      "question": "Com podem repartir tota la coca de manera que cadascú en rebi la mateixa quantitat? Justifica què fas amb el sobrant.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cadascú rep 7 trossos sencers i un cinquè d’un tros més.",
+        "steps": [
+          "Hi ha 72 trossos. En donem 7 a cada persona i en sobren 2.",
+          "Tallem cadascun dels 2 trossos sobrants en 5 parts iguals. Ara tenim 10 parts petites i en podem donar una a cadascú."
+        ],
+        "note": "Dibuixa els dos trossos sobrants i divideix cadascun en cinc parts. Cada part petita és un cinquè d’un tros original, no un cinquè de tota la coca.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                9,
+                8
+              ],
+              [
+                "mul",
+                10,
+                7
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "div",
+              2,
+              10
+            ],
+            "answer": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0198",
+      "version": 1,
+      "title": "Cordill per als set fanalets",
+      "context": "manualitats",
+      "structure": "residu-que-no-es-pot-ajuntar",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Cal un tros sencer de cordill de 3 metres per a cadascun de 7 fanalets. A la botiga venen rotlles de 8 metres. No podem fer nusos per ajuntar trossos.",
+      "question": "Quants rotlles hem de comprar com a mínim? Explica per què sumar els metres disponibles pot dur a una altra resposta.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 4 rotlles. Tres rotlles sumen prou metres, però només donen sis trossos sencers de la mida necessària.",
+        "steps": [
+          "De cada rotlle surten dos trossos de 3 metres i en sobren 2. Els 2 metres sobrants d’un rotlle no arriben per a un fanalet.",
+          "Amb tres rotlles tenim sis trossos vàlids. Amb un quart rotlle en podem tallar el setè."
+        ],
+        "note": "Els tres rotlles fan 24 metres i els fanalets només en demanen 21. Els sobrants queden separats i no es poden comptar com si fossin un tros continu.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              8,
+              [
+                "mul",
+                2,
+                3
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "mul",
+              3,
+              2
+            ],
+            "answer": 6
+          },
+          {
+            "calculation": [
+              "sub",
+              [
+                "mul",
+                3,
+                8
+              ],
+              [
+                "mul",
+                7,
+                3
+              ]
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0199",
+      "version": 1,
+      "title": "Grups per a les estacions del taller",
+      "context": "tallers",
+      "structure": "redistribuir-un-grup-massa-petit",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al taller hi participen 38 persones. A cada estació hi ha d’haver entre 4 i 6 persones. Es poden obrir tantes estacions com calgui, però en volem fer servir el mínim.",
+      "question": "Quantes estacions cal obrir i com hi podem repartir tothom? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 7 estacions. Una manera és posar 6 persones en cinc estacions i 4 en cadascuna de les altres dues.",
+        "steps": [
+          "Amb sis estacions plenes només hi caben 36 persones. En sobren 2 i totes soles no poden formar un grup de quatre.",
+          "Prenem dues persones d’un grup de sis i les ajuntem amb les dues que sobraven. Ara tenim dos grups de quatre i en queden cinc de sis."
+        ],
+        "note": "Obrir una estació més resol la capacitat, però cal reorganitzar els grups perquè també es compleixi la mida mínima.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              38,
+              [
+                "mul",
+                6,
+                6
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                5,
+                6
+              ],
+              [
+                "mul",
+                2,
+                4
+              ]
+            ],
+            "answer": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0200",
+      "version": 1,
+      "title": "L’àlbum a mig omplir",
+      "context": "fotografia",
+      "structure": "aprofitar-la-capacitat-que-ja-queda",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Cada pàgina de l’àlbum d’anelles té 8 espais per a fotografies. A l’última pàgina hi ha 5 fotografies i les altres pàgines són plenes. Ara hi volem posar 26 fotografies més.",
+      "question": "Quantes pàgines noves cal afegir com a mínim? Justifica-ho tenint en compte l’espai que ja queda.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cal afegir 3 pàgines. En podem omplir dues i posar 7 fotografies a la tercera.",
+        "steps": [
+          "A la pàgina començada hi caben 3 fotografies més. Després d’omplir-la encara n’hem de col·locar 23.",
+          "Dues pàgines noves n’admeten 16. Les 7 que queden necessiten una tercera pàgina."
+        ],
+        "note": "Si comptéssim les 26 fotografies sense aprofitar els tres espais lliures, semblaria que calen quatre pàgines noves.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              26,
+              [
+                "sub",
+                8,
+                5
+              ]
+            ],
+            "answer": 23
+          },
+          {
+            "calculation": [
+              "sub",
+              23,
+              [
+                "mul",
+                2,
+                8
+              ]
+            ],
+            "answer": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0201",
+      "version": 1,
+      "title": "El fons comú de l’excursió",
+      "context": "diners",
+      "structure": "guardar-centims-per-mantenir-la-igualtat",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Al fons de la classe queden 17,03 €. Els volem retornar a cinc persones, a parts iguals i fent servir monedes. Si queden diners que no es poden repartir a parts iguals, els guardarem al fons.",
+      "question": "Quina és la quantitat màxima que pot rebre cadascú? Justifica què cal fer amb els cèntims que sobren.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "decimals",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "decimals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Cadascú pot rebre 3,40 € i es guarden 3 cèntims al fons.",
+        "steps": [
+          "Passem a cèntims. Amb 1.700 cèntims podem donar-ne 340 a cadascuna de les cinc persones.",
+          "Queden 3 cèntims. Ens en caldrien 5 per donar un cèntim més a tothom."
+        ],
+        "note": "L’euro es pot repartir en cèntims. En aquest repartiment, el cèntim és la unitat més petita que podem donar.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              1700,
+              5
+            ],
+            "answer": 340
+          },
+          {
+            "calculation": [
+              "sub",
+              1703,
+              [
+                "mul",
+                5,
+                340
+              ]
+            ],
+            "answer": 3
+          },
+          {
+            "calculation": [
+              "mul",
+              5,
+              341
+            ],
+            "answer": 1705
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0202",
+      "version": 1,
+      "title": "De quin color és el cartell?",
+      "context": "fira",
+      "structure": "residu-com-a-posicio-en-un-cicle",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per decorar la fira pengem un cartell blau, un de vermell, un de groc, un de verd, un de lila i un de blanc. Repetim sempre aquest ordre, començant pel blau.",
+      "question": "De quin color és el cartell que ocupa el lloc 29? Justifica com fas servir el residu.",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "El cartell del lloc 29 és lila.",
+        "steps": [
+          "Quatre repeticions de sis colors ocupen els primers 24 llocs.",
+          "El lloc 29 és el cinquè de la repetició següent. El cinquè color de la llista és el lila."
+        ],
+        "note": "Aquí el residu compta quants llocs avancem dins de la repetició següent.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              4,
+              6
+            ],
+            "answer": 24
+          },
+          {
+            "calculation": [
+              "sub",
+              29,
+              [
+                "mul",
+                4,
+                6
+              ]
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0203",
+      "version": 1,
+      "title": "Capses grans i petites",
+      "context": "cuina",
+      "structure": "residu-que-encaixa-en-un-altre-format",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Hem d’envasar 40 galetes. Tenim capses de 6 galetes i capses de 4. Volem envasar-les totes, omplir totes les capses que fem servir i utilitzar-ne el mínim possible.",
+      "question": "Quina combinació de capses ens convé? Justifica per què no en podem fer servir menys.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Calen 7 capses. Podem omplir-ne sis de 6 galetes i una de 4.",
+        "steps": [
+          "Omplim sis capses grans amb 36 galetes. Les 4 sobrants omplen just una capsa petita.",
+          "Amb sis capses com a màxim hi cabrien 36 galetes, fins i tot si totes fossin grans."
+        ],
+        "note": "El que sobra d’omplir les capses grans té just la mida d’una capsa petita.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              40,
+              [
+                "mul",
+                6,
+                6
+              ]
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "add",
+              [
+                "mul",
+                6,
+                6
+              ],
+              4
+            ],
+            "answer": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0204",
+      "version": 1,
+      "title": "Els díptics de tres dies",
+      "context": "impressio",
+      "structure": "ajuntar-residus-de-diversos-grups",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Dilluns, dimarts i dimecres imprimim 22 díptics cada dia. Els distribuïm en paquets complets de 6. Podem guardar els díptics que sobrin un dia i ajuntar-los amb els dels altres dies.",
+      "question": "Quants paquets més aconseguim si guardem i ajuntem els sobrants en lloc de fer els paquets de cada dia per separat? Justifica-ho.",
+      "features": [
+        "suma-resta",
+        "multiplicacio-divisio",
+        "combinades",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "naturals",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Aconseguim 2 paquets complets més.",
+        "steps": [
+          "Cada dia podem fer tres paquets amb 18 díptics i en sobren 4.",
+          "En tres dies els sobrants sumen 12 díptics. Si els ajuntem, en fem dos paquets més."
+        ],
+        "note": "Sense ajuntar els sobrants surten nou paquets. Amb els sobrants junts n’obtenim onze.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              22,
+              [
+                "mul",
+                3,
+                6
+              ]
+            ],
+            "answer": 4
+          },
+          {
+            "calculation": [
+              "div",
+              [
+                "mul",
+                3,
+                4
+              ],
+              6
+            ],
+            "answer": 2
           }
         ]
       }
