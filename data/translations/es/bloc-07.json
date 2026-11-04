@@ -1,0 +1,166 @@
+{
+  "P0073": {
+    "title": "El mural del pasillo",
+    "statement": "La clase ha pintado 3/8 del mural. En la hoja de seguimiento, una alumna apunta 0,375 del mural y en el tablón del pasillo otro alumno escribe «37,5 % pintado».",
+    "question": "¿Coinciden las dos anotaciones con la parte que se ha pintado? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. Las tres expresiones indican la misma parte del mural.",
+      "steps": [
+        "Dividimos 3 entre 8 y obtenemos 0,375.",
+        "Multiplicamos 0,375 por 100 y obtenemos 37,5 %."
+      ],
+      "note": "Todas las anotaciones toman el mural completo como unidad.",
+      "visual": {
+        "caption": "Las tres partes pintadas representan 375 milésimas del mural, es decir, 0,375 o 37,5 %."
+      }
+    }
+  },
+  "P0074": {
+    "title": "Cuándo se enciende el indicador",
+    "statement": "En un aparato se enciende un indicador cuando queda un 15 % de batería o menos. En tres comprobaciones se ha anotado la proporción de carga que quedaba. El lunes quedaba 0,16, el martes 3/20 y el miércoles 0,14.",
+    "question": "¿En qué comprobaciones tenía que estar encendido el indicador? Justifica la respuesta.",
+    "solution": {
+      "response": "El martes y el miércoles.",
+      "steps": [
+        "El martes, 3/20 equivale a 0,15, es decir, 15 %.",
+        "El lunes quedaba un 16 %, por encima del umbral. El miércoles quedaba un 14 %, por debajo."
+      ],
+      "note": "El indicador también se enciende cuando la batería alcanza el valor exacto del umbral."
+    }
+  },
+  "P0075": {
+    "title": "El error en el boletín",
+    "statement": "De cada 100 respuestas a una encuesta del barrio, 8 piden más aparcamientos para bicicletas. El borrador del boletín dice: «Un 8 % de las respuestas lo pide, es decir, 0,8 del total».",
+    "question": "¿Cómo corregirías la equivalencia del boletín? Expresa la proporción como porcentaje, decimal y fracción irreducible.",
+    "solution": {
+      "response": "La proporción es 8 % = 0,08 = 2/25.",
+      "steps": [
+        "Ocho de cada cien es 8/100. Dividimos 8 entre 100 para escribirlo como decimal.",
+        "Simplificamos 8/100 dividiendo el numerador y el denominador entre 4."
+      ],
+      "note": "El decimal 0,8 representa ocho décimas, que equivalen al 80 %."
+    }
+  },
+  "P0076": {
+    "title": "Espacio para el jardín",
+    "statement": "En un terreno comunitario, 1/4 de toda la superficie se destinará a flores y 0,35 del total a hortalizas. Las dos zonas están separadas. El resto se destinará a una zona de descanso.",
+    "question": "El plano dice que la zona de descanso ocupa el 40 % del terreno. ¿Es correcto? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. La zona de descanso ocupa 0,40 del terreno, es decir, un 40 %.",
+      "steps": [
+        "Un cuarto del terreno equivale a 0,25. Las flores y las hortalizas ocupan juntas 0,60 del total.",
+        "De la unidad entera queda 0,40."
+      ],
+      "note": "La fracción y los decimales del problema se refieren al mismo terreno."
+    }
+  },
+  "P0077": {
+    "title": "Dos secciones de la biblioteca",
+    "statement": "En la sección infantil, 3/5 de los 150 libros están en catalán. En la sección juvenil, 0,60 de los 200 libros están en catalán. En ambas secciones, el cartel indica «60 % de libros en catalán».",
+    "question": "¿Es correcto el cartel? Explica si eso significa que las dos secciones tienen la misma cantidad de libros en catalán.",
+    "solution": {
+      "response": "El cartel es correcto. Hay 90 libros en catalán en la sección infantil y 120 en la juvenil.",
+      "steps": [
+        "Tres quintos equivalen a 0,60 y a 60 %.",
+        "Aplicamos la proporción a cada total. 0,60 de 150 son 90 y 0,60 de 200 son 120."
+      ],
+      "note": "Las dos secciones tienen la misma proporción, pero parten de totales distintos."
+    }
+  },
+  "P0078": {
+    "title": "Una copia más grande",
+    "statement": "Una lámina mide 24 cm de ancho. La fotocopiadora permite ampliarla al 125 % de su tamaño original. En el manual, ese mismo ajuste aparece como factor 1,25.",
+    "question": "Una compañera dice que el ajuste multiplica la anchura por 5/4. ¿Tiene razón? Indica qué anchura tendrá la copia.",
+    "solution": {
+      "unit": "cm",
+      "response": "Sí. El factor es 5/4 y la copia medirá 30 cm de ancho.",
+      "steps": [
+        "El 125 % de la anchura original equivale a multiplicar por 1,25.",
+        "El factor 1,25 es 125/100, que se simplifica a 5/4. Aplicamos el factor a 24 cm."
+      ],
+      "note": "El 125 % incluye el 100 % original y una cuarta parte más."
+    }
+  },
+  "P0079": {
+    "title": "El aforo del concierto",
+    "statement": "Al abrirse la venta de entradas, se reservan 35 para los músicos. La hoja de control dice que son el 17,5 % de las localidades. El programa de venta indica que la parte reservada es 0,175 del total.",
+    "question": "¿Cuántas localidades hay en total? Justifica la respuesta a partir de una fracción equivalente a la parte reservada.",
+    "solution": {
+      "unit": "localidades",
+      "response": "Hay 200 localidades en total.",
+      "steps": [
+        "El 17,5 % equivale a 0,175, es decir, 175/1000. Esta fracción se simplifica a 7/40.",
+        "Si 7 partes son 35 localidades, cada parte son 5 localidades. El total tiene 40 partes."
+      ],
+      "note": "Lo comprobamos con 200 × 0,175 = 35."
+    }
+  },
+  "P0080": {
+    "title": "El gráfico redondeado",
+    "statement": "En una jornada deportiva, 5/8 de los participantes han terminado el circuito. En la hoja de cálculo, la proporción es 0,625. Un gráfico redondea los porcentajes al entero más cercano, hacia arriba si queda justo entre dos, y muestra 63 %.",
+    "question": "¿Cuál es el porcentaje exacto y cuántos puntos porcentuales lo separan del que muestra el gráfico?",
+    "solution": {
+      "unit": "puntos porcentuales",
+      "response": "El porcentaje exacto es 62,5 %. El gráfico muestra 0,5 puntos porcentuales de más.",
+      "steps": [
+        "La fracción 5/8 da el decimal 0,625, que equivale a 62,5 %.",
+        "La diferencia entre 63 % y 62,5 % es de 0,5 puntos porcentuales."
+      ],
+      "note": "El 63 % es una aproximación que sigue la regla de redondeo del gráfico."
+    }
+  },
+  "P0081": {
+    "title": "La comisión del pago",
+    "statement": "Una plataforma cobra una comisión del 0,5 % sobre un pago de 800 €. El contrato también la expresa como 1/200 del importe. En la hoja de cálculo alguien ha escrito 0,05 como factor.",
+    "question": "¿Qué factor decimal es correcto y qué comisión se tiene que cobrar?",
+    "solution": {
+      "unit": "€",
+      "response": "El factor correcto es 0,005 y la comisión es de 4 €.",
+      "steps": [
+        "Dividimos el porcentaje entre 100. 0,5 ÷ 100 = 0,005. La fracción 1/200 también vale 0,005.",
+        "Multiplicamos el importe por este factor."
+      ],
+      "note": "El factor 0,05 representa un 5 %."
+    }
+  },
+  "P0082": {
+    "title": "Más alumnado en el coro",
+    "statement": "El trimestre pasado, 2/5 del alumnado de un grupo cantaba en el coro. Este trimestre canta 0,50 del mismo grupo. En la revista de la escuela quieren escribir «La proporción de alumnos que cantan en el coro ha aumentado un 10 %».",
+    "question": "¿Cómo reescribirías la frase para distinguir el aumento en puntos porcentuales del aumento relativo?",
+    "solution": {
+      "response": "La participación ha pasado del 40 % al 50 %. Ha subido 10 puntos porcentuales, un 25 % respecto a la proporción anterior.",
+      "steps": [
+        "Dos quintos son 0,40, es decir, un 40 %. El decimal 0,50 equivale a un 50 %.",
+        "La diferencia es de 10 puntos porcentuales. Respecto al 40 % inicial, el cociente 10/40 es 0,25, es decir, 25 %."
+      ],
+      "note": "Para calcular el aumento relativo, la referencia es la proporción inicial."
+    }
+  },
+  "P0083": {
+    "title": "Las fichas de la tómbola",
+    "statement": "En una tómbola, todas las fichas de una bolsa tienen la misma probabilidad de salir. En la bolsa A, 9 de las 20 fichas tienen premio. En la bolsa B, la probabilidad de obtener premio es 0,40. La organización quiere elegir una bolsa que dé premio con una probabilidad mínima del 42 %.",
+    "question": "¿Qué bolsa cumple el requisito? Justifica la respuesta.",
+    "solution": {
+      "response": "Solo la bolsa A cumple el requisito.",
+      "steps": [
+        "En la bolsa A, la fracción 9/20 da 0,45, que equivale al 45 %.",
+        "En la bolsa B, 0,40 equivale al 40 %. Solo el 45 % alcanza el mínimo del 42 %."
+      ],
+      "note": "Para comparar las probabilidades, podemos expresarlas todas en porcentajes."
+    }
+  },
+  "P0084": {
+    "title": "Dos revisiones de las manzanas",
+    "statement": "En una cooperativa, 3/4 de las manzanas recogidas pasan una primera revisión. En la segunda, pasa el 80 % de las que habían pasado la primera. En el registro han escrito que 0,55 de todas las manzanas recogidas han superado las dos revisiones.",
+    "question": "¿Qué decimal y qué porcentaje del total recogido deberían constar en el registro?",
+    "solution": {
+      "unit": "del total recogido",
+      "response": "El registro debería indicar 0,60 del total, es decir, un 60 %.",
+      "steps": [
+        "Tres cuartas partes equivalen a 0,75. El 80 % es 0,80 y se aplica a la parte que ya había pasado la primera revisión.",
+        "Multiplicamos las dos proporciones."
+      ],
+      "note": "De cada 100 manzanas, 75 pasan la primera revisión y 60 pasan también la segunda."
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "P0097": {
+    "title": "Tarta y compota",
+    "statement": "Hay 3 cestas con 4 manzanas cada una. Usamos 2 para la tarta y, de las que quedan, la mitad para la compota. Después me como una y reparto las que quedan a partes iguales entre mi hermano y yo.",
+    "question": "¿Cuántas manzanas nos tocan a cada uno?",
+    "solution": {
+      "unit": "manzanas",
+      "response": "Nos tocan 2 manzanas a cada uno.",
+      "steps": [
+        "Hay 12 manzanas. Sacamos 2 para la tarta y quedan 10.",
+        "Para la compota se usa la mitad. Quedan 5. Me como una y quedan 4.",
+        "Repartimos las 4 manzanas entre 2 personas."
+      ],
+      "note": "La mitad se calcula después de quitar las manzanas de la tarta."
+    }
+  },
+  "P0098": {
+    "title": "Las pegatinas de los sobres",
+    "statement": "Queremos llenar 3 sobres con la misma cantidad de pegatinas. Tenemos 3 hojas con 3 pegatinas cada una y 5 pegatinas sueltas. Antes de llenar los sobres, apartamos 2 para decorar la caja.",
+    "question": "¿Cuántas pegatinas pondremos en cada sobre?",
+    "solution": {
+      "unit": "pegatinas",
+      "response": "Pondremos 4 pegatinas en cada sobre.",
+      "steps": [
+        "Las hojas tienen 9 pegatinas. Con las 5 sueltas, tenemos 14.",
+        "Apartamos 2 y repartimos las 12 restantes entre 3 sobres."
+      ],
+      "note": ""
+    }
+  },
+  "P0099": {
+    "title": "Los huevos de la vecina",
+    "statement": "La vecina nos trae 4 cajitas con 3 huevos cada una. En casa ya teníamos 2. Hacemos dos tortillas con 3 huevos por tortilla. Queremos repartir los huevos que quedan entre 4 hueveras, con la misma cantidad en cada una.",
+    "question": "¿Cuántos huevos pondremos en cada huevera?",
+    "solution": {
+      "unit": "huevos",
+      "response": "Pondremos 2 huevos en cada huevera.",
+      "steps": [
+        "Las cajitas traen 12 huevos. Con los 2 de casa, tenemos 14.",
+        "Las dos tortillas necesitan 6 huevos. Quedan 8 huevos para repartir entre 4 hueveras."
+      ],
+      "note": ""
+    }
+  },
+  "P0100": {
+    "title": "Antes de abrir la caja",
+    "statement": "Al final del juego, cada uno de los 3 jugadores tiene 2 fichas y aún quedan 3 en la caja. Antes de repartir las fichas, habíamos añadido 2 a la caja.",
+    "question": "¿Cuántas fichas había en la caja antes de que añadiéramos esas dos?",
+    "solution": {
+      "unit": "fichas",
+      "response": "En la caja había 7 fichas.",
+      "steps": [
+        "Los jugadores tienen 6 fichas en total. Con las 3 que quedan en la caja, contamos 9.",
+        "De esas 9, dos las habíamos añadido. Al principio había 7."
+      ],
+      "note": "Para recuperar la cantidad inicial, deshacemos el cambio que hicimos antes de repartir."
+    }
+  },
+  "P0101": {
+    "title": "Galletas para mañana",
+    "statement": "Las galletas que sobren irán en 2 cajas, con la misma cantidad en cada caja. En la merienda hay 2 bandejas con 6 galletas cada una y una tercera bandeja con 4. Tres niños comen 2 galletas cada uno.",
+    "question": "¿Cuántas galletas guardaremos en cada caja?",
+    "solution": {
+      "unit": "galletas",
+      "response": "Guardaremos 5 galletas en cada caja.",
+      "steps": [
+        "Hay 12 galletas en las dos primeras bandejas y 4 en la tercera.",
+        "Los niños comen 6 galletas. Quedan 10 para repartir entre 2 cajas."
+      ],
+      "note": ""
+    }
+  },
+  "P0102": {
+    "title": "El marcador del juego",
+    "statement": "El equipo Azul gana 3 rondas de 4 puntos cada una, suma 2 puntos de bonificación y pierde 3 por una falta. El Verde gana 2 rondas de 5 puntos cada una, suma 3 puntos de bonificación y pierde un punto por una falta.",
+    "question": "¿Qué equipo gana y por cuántos puntos?",
+    "solution": {
+      "unit": "punto",
+      "response": "Gana el equipo Verde por 1 punto.",
+      "steps": [
+        "El Azul acaba con 12 + 2 − 3 = 11 puntos.",
+        "El Verde acaba con 10 + 3 − 1 = 12 puntos. Comparamos los dos marcadores."
+      ],
+      "note": ""
+    }
+  },
+  "P0103": {
+    "title": "Los minutos de la gincana",
+    "statement": "Tenemos 20 minutos para hacer una gincana. Haremos 3 pruebas de 4 minutos cada una. Antes de empezar, tardaremos 3 minutos en preparar el material. Entre las pruebas haremos 2 pausas de un minuto cada una.",
+    "question": "¿Cuántos minutos nos sobrarán cuando terminemos la gincana?",
+    "solution": {
+      "unit": "minutos",
+      "response": "Nos sobrarán 3 minutos.",
+      "steps": [
+        "Las tres pruebas duran 12 minutos.",
+        "Añadimos los 3 minutos de preparación y los 2 de pausa. En total usamos 17 minutos.",
+        "De 20 a 17 hay 3 minutos de diferencia."
+      ],
+      "note": "La preparación se hace antes de las pruebas, aunque el texto la menciona después."
+    }
+  },
+  "P0104": {
+    "title": "Cordel para el huerto",
+    "statement": "Tenemos una bobina de 20 metros de cordel. Cortamos 4 trozos de 3 metros para el huerto. Con el cordel que sobra hacemos dos trozos de la misma longitud.",
+    "question": "¿Cuántos metros mide cada uno de los dos últimos trozos?",
+    "solution": {
+      "unit": "metros",
+      "response": "Cada uno de los dos últimos trozos mide 4 metros.",
+      "steps": [
+        "Los 4 trozos del huerto miden 12 metros en total.",
+        "Quedan 8 metros. Si los cortamos por la mitad, cada trozo mide 4 metros."
+      ],
+      "note": ""
+    }
+  },
+  "P0105": {
+    "title": "Los bancos de la plaza",
+    "statement": "En la plaza se sientan 7 niños de un grupo y 8 de otro. Hay 3 bancos de 4 plazas y 2 bancos de 2 plazas. Al principio todos los bancos estaban vacíos.",
+    "question": "¿Cuántas plazas quedan libres una vez que se ha sentado todo el mundo?",
+    "solution": {
+      "unit": "plaza",
+      "response": "Queda libre 1 plaza.",
+      "steps": [
+        "Los bancos grandes ofrecen 12 plazas y los pequeños, 4. En total hay 16.",
+        "Se sientan 15 niños. Restamos las plazas ocupadas de las 16 disponibles."
+      ],
+      "note": ""
+    }
+  },
+  "P0106": {
+    "title": "Los botes de rotuladores",
+    "statement": "En el bote azul hay 9 rotuladores y en el verde hay 5. Pasamos 3 rotuladores del bote azul al verde. A continuación, prestamos 2 rotuladores del bote verde a otra clase.",
+    "question": "Al terminar, ¿qué diferencia hay entre el número de rotuladores de los dos botes?",
+    "solution": {
+      "unit": "rotuladores de diferencia",
+      "response": "Los dos botes quedan con 6 rotuladores cada uno.",
+      "steps": [
+        "El bote azul pierde 3 rotuladores y se queda con 6.",
+        "El bote verde recibe esos 3 rotuladores y pasa a tener 8. Presta 2 a la otra clase y se queda con 6."
+      ],
+      "note": "Al pasar rotuladores de un bote a otro, hay que restarlos en un bote y sumarlos en el otro."
+    }
+  },
+  "P0107": {
+    "title": "El robot en la alfombra",
+    "statement": "Un robot está en la casilla 5 de una fila numerada. Da 3 saltos hacia delante de 4 casillas cada uno y después da 2 saltos hacia atrás de 3 casillas cada uno.",
+    "question": "¿En qué casilla termina el robot?",
+    "solution": {
+      "unit": "casilla",
+      "response": "El robot termina en la casilla 11.",
+      "steps": [
+        "Con los 3 saltos hacia delante avanza 12 casillas y llega a la 17.",
+        "Con los 2 saltos hacia atrás retrocede 6 casillas y llega a la 11."
+      ],
+      "note": "También puedes dibujar una recta numérica y marcar en ella cada salto."
+    }
+  },
+  "P0108": {
+    "title": "El precio de la entrada",
+    "statement": "Al comprar 3 entradas iguales para una exposición, nos devuelven 2 € de cambio. Habíamos pagado con 4 monedas de 2 € y 3 monedas de 1 €.",
+    "question": "¿Qué precio tenía cada entrada?",
+    "solution": {
+      "unit": "€",
+      "response": "Cada entrada costaba 3 €.",
+      "steps": [
+        "Las cuatro monedas de 2 € suman 8 €. Con las otras tres, dimos 11 €.",
+        "Como nos devuelven 2 €, las 3 entradas cuestan 9 € en total.",
+        "Dividimos los 9 € entre las 3 entradas."
+      ],
+      "note": ""
+    }
+  }
+}

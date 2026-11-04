@@ -113,6 +113,23 @@ check('El bloc de cicle mitjà combina tres operacions o més amb quantitats pet
 });
 check('Els dibuixos corresponen a les quantitats i les parts indicades',()=>all.forEach(e=>C.exerciseParts(e).forEach(({solution:s})=>{const v=s.visual;if(!v)return;if(v.type==='fraction'){assert(v.filled<=v.parts);assert.equal(v.total%v.parts,0);}if(v.type==='objects'){assert(v.removed<=v.groups*v.perGroup);assert.equal(v.groups*v.perGroup-v.removed,s.answer);}if(v.type==='grid'){assert(v.removed<=v.side**2);assert.equal(v.side**2-v.removed,s.answer);}})));
 check('La còpia per obrir el web sense servidor coincideix amb el JSON original',()=>{const context={};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(root,'catalog-data.js'),'utf8'),context);assert.equal(JSON.stringify(context.EXERCISE_CATALOG),JSON.stringify(data));});
+check('El catàleg castellà conserva el càlcul, l’ordre i les etiquetes de tots els problemes',()=>{
+  const context={};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'catalog-data-es.js'),'utf8'),context);
+  const spanish=JSON.parse(JSON.stringify(context.EXERCISE_CATALOG));
+  validate(spanish,schema);
+  assert.equal(spanish.pack.language,'es');
+  const math=exercise=>({
+    id:exercise.id,version:exercise.version,level:exercise.level,difficulty:exercise.difficulty,
+    status:exercise.status,context:exercise.context,structure:exercise.structure,features:exercise.features,numeric:exercise.numeric,
+    solutions:C.exerciseParts(exercise).map(({solution})=>({
+      expression:solution.expression&&/\p{L}/u.test(solution.expression)?undefined:solution.expression,
+      kind:solution.kind,calculation:solution.calculation,answer:solution.answer,evidence:solution.evidence,
+      visual:solution.visual&&{...solution.visual,caption:undefined}
+    }))
+  });
+  assert.deepEqual(spanish.exercises.map(math),all.map(math));
+});
 const excluded={...base,features:{fraccions:'exclude',decimals:'exclude',potencies:'exclude',arrels:'exclude'}};
 check('Raonament i continguts nous es combinen al banc i a la proposta de fitxa',()=>{
   const byId=id=>all.find(e=>e.id===id);

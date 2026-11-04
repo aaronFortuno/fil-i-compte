@@ -7,8 +7,66 @@ const exercises=packs.flatMap(({data})=>data.exercises);
 exercises.forEach(e=>assert.equal(e.id,core.normalizeId(e.id),'Cal un codi canònic positiu de quatre xifres o més: '+e.id));
 assert.equal(new Set(exercises.map(e=>e.id)).size,exercises.length,'Hi ha identificadors repetits entre blocs.');
 const data={schemaVersion:Math.max(...packs.map(p=>p.data.schemaVersion)),pack:{id:'fil-i-compte',title:'Banc de problemes contextualitzats',language:'ca',version:packs.reduce((sum,p)=>sum+p.data.pack.version,0),authorship:'Contingut original creat per a aquest projecte',review:packs.map(({file,data})=>`${file}: ${data.pack.review}`).join(' ')},exercises};
+
+const translations=path.join(root,'data','translations','es');
+function checkFields(value,required,where,optional=[]){
+  assert(value&&typeof value==='object'&&!Array.isArray(value),`${where}: cal un objecte.`);
+  for(const field of required)assert(Object.hasOwn(value,field),`${where}: falta el camp ${field}.`);
+  for(const field of Object.keys(value))assert(required.includes(field)||optional.includes(field),`${where}: camp inesperat ${field}.`);
+}
+function checkText(value,where,allowEmpty=false){
+  assert(typeof value==='string'&&(allowEmpty||value.trim()),`${where}: cal un text traduït.`);
+}
+function localizeSolution(original,translation,where){
+  const fields=['response','steps','note'];
+  if(Object.hasOwn(original,'unit'))fields.push('unit');
+  if(original.visual)fields.push('visual');
+  checkFields(translation,fields,where,original.expression?['expression']:[]);
+  for(const field of ['response','note','unit','expression']){
+    if(Object.hasOwn(translation,field))checkText(translation[field],`${where}.${field}`,field==='note'&&!original.note);
+  }
+  assert(Array.isArray(translation.steps)&&translation.steps.length===original.steps.length,`${where}: han de coincidir tots els passos.`);
+  translation.steps.forEach((step,index)=>checkText(step,`${where}.steps[${index}]`));
+  const result={...original,...translation};
+  if(original.visual){
+    checkFields(translation.visual,['caption'],`${where}.visual`);
+    checkText(translation.visual.caption,`${where}.visual.caption`);
+    result.visual={...original.visual,caption:translation.visual.caption};
+  }
+  return result;
+}
+function localizeExercise(exercise,translation){
+  const {id,parts}=exercise;
+  checkFields(translation,parts?['title','statement','parts']:['title','statement','question','solution'],id);
+  for(const field of ['title','statement'])checkText(translation[field],`${id}.${field}`);
+  const localized={...exercise,title:translation.title,statement:translation.statement};
+  if(parts){
+    assert(Array.isArray(translation.parts)&&translation.parts.length===parts.length,`${id}: han de coincidir tots els apartats.`);
+    localized.parts=parts.map((part,index)=>{
+      const translated=translation.parts[index],where=`${id}.parts[${index}]`;
+      checkFields(translated,['question','solution'],where);
+      checkText(translated.question,`${where}.question`);
+      return {...part,question:translated.question,solution:localizeSolution(part.solution,translated.solution,`${where}.solution`)};
+    });
+  }else{
+    checkText(translation.question,`${id}.question`);
+    localized.question=translation.question;
+    localized.solution=localizeSolution(exercise.solution,translation.solution,`${id}.solution`);
+  }
+  return localized;
+}
+const localizedExercises=packs.flatMap(({file,data:pack})=>{
+  const translationFile=path.join(translations,file);
+  assert(fs.existsSync(translationFile),`Falta la traducció castellana de ${file}.`);
+  const translated=JSON.parse(fs.readFileSync(translationFile,'utf8'));
+  checkFields(translated,pack.exercises.map(({id})=>id),file);
+  return pack.exercises.map(exercise=>localizeExercise(exercise,translated[exercise.id]));
+});
+const spanish={...data,pack:{...data.pack,language:'es',title:'Banco de problemas contextualizados',authorship:'Contenido original creado para este proyecto',review:'Traducción del catálogo catalán.'},exercises:localizedExercises};
 fs.writeFileSync(path.join(root,'data','catalog.json'),JSON.stringify(data,null,2)+'\n','utf8');
-fs.writeFileSync(path.join(root,'catalog-data.js'),'/* Generat des de data/packs/ amb node tools/build-data.cjs. */\nglobalThis.EXERCISE_CATALOG = '+JSON.stringify(data,null,2)+';\n','utf8');
+for(const [file,catalogue,sources] of [['catalog-data.js',data,'data/packs/'],['catalog-data-es.js',spanish,'data/packs/ i data/translations/es/']]){
+  fs.writeFileSync(path.join(root,file),`/* Generat des de ${sources} amb node tools/build-data.cjs. */\nglobalThis.EXERCISE_CATALOG = `+JSON.stringify(catalogue,null,2)+';\n','utf8');
+}
 for(const {file,data:pack} of packs){
   const number=file.match(/\d+/)[0];
   const review=[`# Bloc ${number} · ${pack.pack.title}`,'',`${pack.exercises.length} problemes estàtics amb una possible resolució. ${pack.pack.review}`,'',`Aquest document es genera a partir de data/packs/${file}; les correccions es fan al bloc original.`,'',...pack.exercises.flatMap(e=>[

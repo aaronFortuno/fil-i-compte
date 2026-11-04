@@ -1,0 +1,196 @@
+{
+  "P0001": {
+    "title": "Las manzanas del huerto",
+    "statement": "En el huerto de la escuela han llenado 4 cestas con 6 manzanas en cada una. Para preparar la merienda, sacan 7 en total.",
+    "question": "¿Cuántas manzanas quedan en las cestas?",
+    "solution": {
+      "unit": "manzanas",
+      "response": "Quedan 17 manzanas en las cestas.",
+      "steps": [
+        "Había 4 × 6 = 24 manzanas.",
+        "Sacamos 7. Quedan 24 − 7 = 17."
+      ],
+      "note": "También puedes dibujar las manzanas y contar las que quedan.",
+      "visual": {
+        "caption": "Cada círculo representa una manzana. Tachamos las 7 que hemos sacado y quedan 17."
+      }
+    }
+  },
+  "P0002": {
+    "title": "Libros que van y vienen",
+    "statement": "La biblioteca tiene 168 libros disponibles. Recibe 4 paquetes de 18 libros cada uno y después presta 57.",
+    "question": "¿Cuántos libros quedan disponibles?",
+    "solution": {
+      "unit": "libros",
+      "response": "Quedan 183 libros disponibles.",
+      "steps": [
+        "Llegan 4 × 18 = 72 libros.",
+        "168 + 72 = 240. Después, 240 − 57 = 183."
+      ],
+      "note": "Una línea con los cambios +72 y −57 también ayuda a seguir la cuenta."
+    }
+  },
+  "P0003": {
+    "title": "Autocares para la excursión",
+    "statement": "Se han apuntado 156 alumnos a una excursión. Al final, 24 no pueden ir. El resto se reparte a partes iguales entre 6 autocares. El trayecto dura 45 minutos.",
+    "question": "¿Cuántos alumnos viajan en cada autocar?",
+    "solution": {
+      "unit": "alumnos por autocar",
+      "response": "Viajan 22 alumnos en cada autocar.",
+      "steps": [
+        "Van 156 − 24 = 132 alumnos.",
+        "132 ÷ 6 = 22 alumnos por autocar."
+      ],
+      "note": "Los 45 minutos no intervienen en el reparto. Si escribimos el cálculo en una sola expresión, los paréntesis indican qué se calcula primero."
+    }
+  },
+  "P0004": {
+    "title": "Los tarros de la cooperativa",
+    "statement": "Una cooperativa prepara 18 cajas con 24 tarros de mermelada cada una. Reserva 36 tarros para una feria y reparte los demás a partes iguales entre 6 tiendas.",
+    "question": "¿Cuántos tarros recibe cada tienda?",
+    "solution": {
+      "unit": "tarros por tienda",
+      "response": "Cada tienda recibe 66 tarros.",
+      "steps": [
+        "En total hay 18 × 24 = 432 tarros.",
+        "Quedan 432 − 36 = 396 tarros para repartir.",
+        "396 ÷ 6 = 66 tarros por tienda."
+      ],
+      "note": "Podemos comprobarlo con 6 × 66 + 36 = 432 tarros."
+    }
+  },
+  "P0005": {
+    "title": "La merienda compartida",
+    "statement": "Para la merienda hay 32 bocadillos. Durante el primer turno se comen tres cuartas partes (3/4) de los bocadillos.",
+    "question": "¿Cuántos bocadillos quedan para el segundo turno?",
+    "solution": {
+      "unit": "bocadillos",
+      "response": "Quedan 8 bocadillos para el segundo turno.",
+      "steps": [
+        "Cada cuarto equivale a 32 ÷ 4 = 8 bocadillos.",
+        "Se comen 3 × 8 = 24 y quedan 32 − 24 = 8."
+      ],
+      "note": "También puedes calcular directamente el cuarto que queda con 32 ÷ 4 = 8.",
+      "visual": {
+        "caption": "La barra entera representa los 32 bocadillos. Se han comido 3 partes de 8 y queda una parte de 8."
+      }
+    }
+  },
+  "P0006": {
+    "title": "Agua para el semillero",
+    "statement": "Un depósito tiene una capacidad de 150 litros y está lleno hasta dos quintas partes (2/5) de su capacidad. Añadimos 45 litros de agua.",
+    "question": "¿Cuántos litros de agua hay ahora en el depósito?",
+    "solution": {
+      "unit": "litros",
+      "response": "Ahora hay 105 litros de agua en el depósito.",
+      "steps": [
+        "Cada quinta parte equivale a 150 ÷ 5 = 30 litros.",
+        "Al principio hay 2 × 30 = 60 litros.",
+        "Tras añadir el agua, hay 60 + 45 = 105 litros."
+      ],
+      "note": "105 litros es menos que la capacidad de 150 litros, así que el depósito no se desborda.",
+      "visual": {
+        "caption": "Al principio hay 2 partes llenas, de 30 litros cada una. Después añadimos 45 litros."
+      }
+    }
+  },
+  "P0007": {
+    "title": "La mochila rebajada",
+    "statement": "Una mochila cuesta 80 €. La tienda aplica un descuento del 25 %. Si la compramos por internet, el envío cuesta 6 € y no tiene descuento.",
+    "question": "¿Cuánto pagaremos en total por la mochila y el envío?",
+    "solution": {
+      "unit": "euros",
+      "response": "Pagaremos 66 € en total.",
+      "steps": [
+        "El descuento es de 80 × 25 ÷ 100 = 20 €.",
+        "La mochila rebajada cuesta 80 − 20 = 60 €.",
+        "Con el envío, el total es de 60 + 6 = 66 €."
+      ],
+      "note": "Podemos usar la barra o calcular el porcentaje.",
+      "visual": {
+        "caption": "El 25 % es una de cuatro partes iguales. Son 20 € de descuento. Las otras tres partes suman 60 €."
+      }
+    }
+  },
+  "P0008": {
+    "title": "Más inscripciones en el casal",
+    "statement": "El año pasado se inscribieron 240 niños en el casal. Este año, el número de inscripciones ha aumentado un 15 % respecto al año pasado.",
+    "question": "¿Cuántos niños se han inscrito este año?",
+    "solution": {
+      "unit": "niños",
+      "response": "Este año se han inscrito 276 niños.",
+      "steps": [
+        "El aumento es de 240 × 15 ÷ 100 = 36 niños.",
+        "240 + 36 = 276 niños."
+      ],
+      "note": "También puedes calcular el 10 % (24 niños) y el 5 % (12 niños). El aumento es 24 + 12 = 36."
+    }
+  },
+  "P0009": {
+    "title": "El cambio del mercado",
+    "statement": "En el mercado compramos 2,4 kg de manzanas a 3,50 €/kg y 1,5 kg de peras a 2,20 €/kg. Pagamos con un billete de 20 €.",
+    "question": "¿Cuánto nos tienen que devolver?",
+    "solution": {
+      "unit": "euros",
+      "response": "Nos tienen que devolver 8,30 €.",
+      "steps": [
+        "Las manzanas cuestan 2,4 × 3,50 = 8,40 €.",
+        "Las peras cuestan 1,5 × 2,20 = 3,30 €.",
+        "La compra cuesta 11,70 €. El cambio es de 20 − 11,70 = 8,30 €."
+      ],
+      "note": "En euros, expresamos la respuesta con dos cifras decimales."
+    }
+  },
+  "P0010": {
+    "title": "Una vuelta al circuito",
+    "statement": "Un circuito tiene forma rectangular. Mide 12,5 metros de largo y 7,5 metros de ancho. Jana da una vuelta completa con pasos de 0,8 metros, todos de la misma longitud.",
+    "question": "¿Cuántos pasos necesita para dar una vuelta completa?",
+    "solution": {
+      "unit": "pasos",
+      "response": "Necesita 50 pasos para dar una vuelta completa.",
+      "steps": [
+        "La vuelta mide 2 × (12,5 + 7,5) = 40 metros.",
+        "40 ÷ 0,8 = 50 pasos."
+      ],
+      "note": "Lo comprobamos multiplicando. 50 pasos de 0,8 m suman 40 m.",
+      "visual": {
+        "caption": "Recorremos los cuatro lados del rectángulo. Esquema orientativo."
+      }
+    }
+  },
+  "P0011": {
+    "title": "El mosaico del pasillo",
+    "statement": "Un mosaico cuadrado está formado por 8 filas de 8 baldosas cada una. Durante una reparación se retiran 12 baldosas.",
+    "question": "¿Cuántas baldosas quedan colocadas? Escribe el número inicial de baldosas como una potencia.",
+    "solution": {
+      "unit": "baldosas",
+      "response": "Quedan 52 baldosas colocadas. Al principio había 8² = 64.",
+      "steps": [
+        "El cuadrado tiene 8² = 8 × 8 = 64 baldosas.",
+        "Tras retirar 12, quedan 64 − 12 = 52."
+      ],
+      "note": "La potencia representa las 8 filas de 8 baldosas. Después hacemos la resta.",
+      "visual": {
+        "caption": "El cuadrado contiene 8 × 8 baldosas. Las 12 tachadas son las que se retiran."
+      }
+    }
+  },
+  "P0012": {
+    "title": "La valla del huerto cuadrado",
+    "statement": "Un huerto cuadrado tiene una superficie de 144 m². Queremos poner una valla alrededor, dejando un hueco de 3 metros para la puerta.",
+    "question": "¿Cuántos metros de valla necesitamos?",
+    "solution": {
+      "unit": "metros de valla",
+      "response": "Necesitamos 45 metros de valla.",
+      "steps": [
+        "El lado mide √144 = 12 m, porque 12 × 12 = 144.",
+        "El perímetro es de 4 × 12 = 48 m.",
+        "Descontamos la puerta. 48 − 3 = 45 m."
+      ],
+      "note": "La superficie se mide en m². El lado y la valla se miden en metros.",
+      "visual": {
+        "caption": "Primero calculamos el lado del cuadrado y después su perímetro. El hueco de la puerta queda sin valla."
+      }
+    }
+  }
+}

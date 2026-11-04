@@ -1,0 +1,226 @@
+{
+  "P0037": {
+    "title": "El programa de radio",
+    "statement": "Una clase de 24 alumnos prepara un programa de radio de una hora. Quieren incluir 5 entrevistas de 6 minutos, 4 piezas musicales de 3 minutos y una presentación de 8 minutos.",
+    "parts": [
+      {
+        "question": "¿Cuántos minutos ocupan los contenidos previstos?",
+        "solution": {
+          "unit": "minutos",
+          "response": "Los contenidos ocupan 50 minutos.",
+          "steps": [
+            "Las entrevistas ocupan 30 minutos y la música, 12. Añadimos los 8 de la presentación."
+          ],
+          "note": "El número de alumnos no determina la duración del programa."
+        }
+      },
+      {
+        "question": "¿Cuántos minutos quedan para añadir otros contenidos?",
+        "solution": {
+          "unit": "minutos",
+          "response": "Quedan 10 minutos disponibles.",
+          "steps": [
+            "Una hora son 60 minutos. Restamos los 50 que ya están previstos."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0038": {
+    "title": "La comida del refugio",
+    "statement": "En el refugio hay 18 perros. Cada uno come 0,35 kg de pienso al día. Hay que preparar la comida para 3 días. En el almacén quedan 2,1 kg y quieren comprar 5 sacos de 3 kg cada uno.",
+    "question": "Con la compra prevista, ¿tendrán suficiente pienso para los tres días? Justifica la respuesta.",
+    "solution": {
+      "response": "Necesitan 18,9 kg y tendrán 17,1 kg. Les faltarán 1,8 kg.",
+      "steps": [
+        "Los perros necesitan 18 × 0,35 × 3 = 18,9 kg.",
+        "Entre el almacén y los sacos hay 2,1 + 5 × 3 = 17,1 kg. Faltan 1,8 kg."
+      ],
+      "note": ""
+    }
+  },
+  "P0039": {
+    "title": "El ensayo del grupo",
+    "statement": "Un grupo de 14 músicos dispone de 90 minutos de ensayo. Dedica un tercio (1/3) del tiempo a calentar y después dos quintas partes (2/5) del tiempo que queda a trabajar la técnica. El resto lo dedica a tocar las piezas.",
+    "question": "¿Cuántos minutos pueden dedicar a tocar las piezas?",
+    "solution": {
+      "unit": "minutos",
+      "response": "Pueden tocar las piezas durante 36 minutos.",
+      "steps": [
+        "Calentar ocupa 30 minutos y quedan 60.",
+        "La técnica ocupa dos quintos del tiempo restante. Los otros tres quintos son 36 minutos."
+      ],
+      "note": "Los 2/5 se calculan sobre el tiempo que queda. Los 14 músicos no intervienen en el cálculo.",
+      "visual": {
+        "caption": "Quintos de 12 minutos. Dos se dedican a la técnica y tres a las piezas."
+      }
+    }
+  },
+  "P0040": {
+    "title": "El recambio de la bicicleta",
+    "statement": "Una tienda vende un recambio de bicicleta por 120 €, con un descuento del 20 %. El montaje cuesta 18 € más y no tiene descuento. Otra tienda ofrece el mismo recambio, con el montaje incluido, por 108 €.",
+    "question": "¿Qué oferta es más barata y cuánto ahorramos si la elegimos?",
+    "solution": {
+      "unit": "euros de ahorro",
+      "response": "La segunda tienda es más barata. Ahorramos 6 €.",
+      "steps": [
+        "La primera tienda cobra 96 € por el recambio y 18 € por el montaje. Son 114 € en total.",
+        "La segunda cobra 108 € con el montaje. La diferencia es de 6 €."
+      ],
+      "note": ""
+    }
+  },
+  "P0041": {
+    "title": "El archivo de fotografías",
+    "statement": "Un archivo tiene 4 álbumes, cada uno con 4 páginas y 4 fotografías por página. Hay 7 copias repetidas que deben retirarse. Después se incorporan 17 fotografías nuevas, todas diferentes de las que ya había.",
+    "question": "¿Cuántas fotografías tendrá el archivo después de los cambios? Expresa el cálculo con una potencia.",
+    "solution": {
+      "unit": "fotografías",
+      "response": "El archivo tendrá 74 fotografías.",
+      "steps": [
+        "Las tres agrupaciones de cuatro dan 4³ = 64 fotografías.",
+        "Retiramos siete copias e incorporamos diecisiete fotografías. 64 − 7 + 17 = 74."
+      ],
+      "note": ""
+    }
+  },
+  "P0042": {
+    "title": "El camino del jardín",
+    "statement": "Un jardín cuadrado de césped tiene una superficie de 64 m². Alrededor se construye un camino de 1 m de ancho por fuera, también en las esquinas. El contorno exterior del conjunto es cuadrado.",
+    "question": "¿Qué superficie ocupa solo el camino?",
+    "solution": {
+      "unit": "metros cuadrados",
+      "response": "El camino ocupa 36 m².",
+      "steps": [
+        "El lado exterior mide 8 + 1 + 1 = 10 m, porque añadimos camino en ambos extremos.",
+        "El conjunto ocupa 100 m². Restamos los 64 m² de césped."
+      ],
+      "note": "Un dibujo de dos cuadrados, uno dentro del otro, ayuda a contar también las esquinas."
+    }
+  },
+  "P0043": {
+    "title": "Las dos rebajas",
+    "statement": "Jana y Nil compran la misma chaqueta, de 80 €. A Jana le aplican un 10 % de descuento y después un 25 %. A Nil, primero un 25 % y después un 10 %. Cada descuento se aplica al precio ya rebajado.",
+    "question": "¿Quién ha pagado más por la chaqueta? Justifica la respuesta.",
+    "solution": {
+      "response": "Han pagado lo mismo, 54 € cada uno.",
+      "steps": [
+        "A Jana, el primer 10 % le deja el precio en 72 €. El 25 % de 72 € son 18 €, así que paga 54 €.",
+        "A Nil, el primer 25 % le deja el precio en 60 €. El 10 % de 60 € son 6 €, así que paga 54 €."
+      ],
+      "note": "Cambiar el orden de los dos descuentos no cambia el precio final."
+    }
+  },
+  "P0044": {
+    "title": "Las vueltas al parque",
+    "statement": "Un circuito de bicicleta tiene un primer tramo de 3,6 km y un segundo de 2,4 km, que vuelve al punto de salida. Jana da 3 vueltas completas. Entre vuelta y vuelta se para 8 minutos. Su objetivo es recorrer 20 km.",
+    "question": "¿Ha alcanzado el objetivo? Indica cuántos kilómetros le faltan o por cuánto lo ha superado.",
+    "solution": {
+      "unit": "kilómetros",
+      "response": "Aún le faltan 2 km para alcanzar el objetivo.",
+      "steps": [
+        "Cada vuelta mide 6 km. Con tres vueltas recorre 18 km.",
+        "Comparamos esta distancia con los 20 km del objetivo."
+      ],
+      "note": "Las pausas no añaden distancia al recorrido."
+    }
+  },
+  "P0045": {
+    "title": "El intercambio de cromos",
+    "statement": "Pol tiene 156 cromos. Un cuarto (1/4) son copias repetidas y los demás son todos diferentes. Va a un encuentro de 90 minutos donde puede cambiar cada grupo de 3 copias repetidas por 2 cromos que no tiene. Todos los que recibe son distintos entre sí.",
+    "question": "¿Cuántos cromos distintos tendrá después de hacer todos los intercambios posibles?",
+    "solution": {
+      "unit": "cromos distintos",
+      "response": "Después de los intercambios tendrá 143 cromos distintos.",
+      "steps": [
+        "Al separar las 39 copias repetidas, quedan 117 cromos distintos en la colección.",
+        "Puede hacer 13 intercambios y recibir 26 cromos nuevos. 117 + 26 = 143."
+      ],
+      "note": "Los 90 minutos no intervienen en el cálculo.",
+      "visual": {
+        "caption": "Un cuarto son 39 copias repetidas. Los otros 117 cromos se conservan."
+      }
+    }
+  },
+  "P0046": {
+    "title": "La sala de proyecciones",
+    "statement": "Una sala tiene 7 filas de 12 asientos. Reservan 9 para la organización y los demás son para el público. Quieren entrar 42 niños y 24 adultos. La película dura 52 minutos.",
+    "parts": [
+      {
+        "question": "¿Cuántos asientos hay disponibles para el público?",
+        "solution": {
+          "unit": "asientos",
+          "response": "Hay 75 asientos disponibles para el público.",
+          "steps": [
+            "La sala tiene 84 asientos. Restamos los nueve reservados."
+          ],
+          "note": "La duración de la película no cambia el número de asientos."
+        }
+      },
+      {
+        "question": "¿Cabrán todos? Indica cuántos asientos sobran o faltan.",
+        "solution": {
+          "unit": "asientos",
+          "response": "Caben las 66 personas del público y sobran 9 asientos.",
+          "steps": [
+            "Comparamos las 75 plazas disponibles con los 42 niños y 24 adultos."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0047": {
+    "title": "La pintura del mural",
+    "statement": "Tenemos 4 botes de 2,5 litros de pintura cada uno. Para pintar el fondo de un mural gastamos tres octavos (3/8) de toda la pintura. Para los detalles gastamos 1,25 litros más. Repartiremos lo que quede en 4 recipientes iguales.",
+    "question": "¿Cuántos litros de pintura pondremos en cada recipiente?",
+    "solution": {
+      "unit": "litros por recipiente",
+      "response": "Pondremos 1,25 litros en cada recipiente.",
+      "steps": [
+        "Tenemos 10 litros. Los 3/8 del fondo son 3,75 litros.",
+        "Con los detalles gastamos 5 litros y quedan 5. Al repartirlos entre cuatro, sale 1,25 litros por recipiente."
+      ],
+      "note": ""
+    }
+  },
+  "P0048": {
+    "title": "La liga del barrio",
+    "statement": "En una liga se dan 3 puntos por victoria, 1 por empate y ninguno por derrota. Después de 12 partidos, el equipo A tiene 7 victorias, 3 empates y 2 derrotas. El equipo B tiene 8 victorias, ningún empate y 4 derrotas.",
+    "parts": [
+      {
+        "question": "¿Cuántos puntos tiene el equipo A?",
+        "solution": {
+          "unit": "puntos",
+          "response": "El equipo A tiene 24 puntos.",
+          "steps": [
+            "Las victorias aportan 21 puntos y los empates, 3. Las derrotas no suman."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuál de los dos equipos tiene más puntos? Justifica la respuesta.",
+        "solution": {
+          "response": "Están empatados a 24 puntos, aunque tienen distinto número de victorias.",
+          "steps": [
+            "El equipo B suma 8 × 3 = 24 puntos, la misma puntuación que el A."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "Si el equipo A hubiera ganado uno de los partidos que empató, ¿cuántos puntos tendría?",
+        "solution": {
+          "unit": "puntos",
+          "response": "Tendría 26 puntos.",
+          "steps": [
+            "Quitamos el punto del empate y añadimos los tres de la victoria. Gana dos puntos, no tres."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

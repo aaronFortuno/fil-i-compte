@@ -1,0 +1,171 @@
+{
+  "P0109": {
+    "title": "Las pinzas del tendedero",
+    "statement": "Al final nos quedan 2 pinzas en cada uno de los 3 tendederos y ninguna en la cesta. Antes de colocarlas en los tendederos, habíamos prestado 3 pinzas a la vecina y después habíamos encontrado 2 en el cajón, que añadimos a la cesta.",
+    "question": "¿Cuántas pinzas había en la cesta antes de prestar las de la vecina?",
+    "solution": {
+      "unit": "pinzas",
+      "response": "Al principio había 7 pinzas en la cesta.",
+      "steps": [
+        "Ahora hay 6 pinzas en los tendederos.",
+        "Descontamos las 2 del cajón. Antes de añadirlas teníamos 4.",
+        "Volvemos a contar las 3 que prestamos a la vecina."
+      ],
+      "note": ""
+    }
+  },
+  "P0110": {
+    "title": "El monedero de la feria",
+    "statement": "Al final de la tarde, a Joana le quedan 6 € en el monedero. En la feria había comprado 2 tiques de 3 € cada uno. Después de la compra, su abuelo le había dado 4 €, que había guardado en el monedero.",
+    "question": "¿Cuánto dinero llevaba antes de comprar los tiques?",
+    "solution": {
+      "unit": "€",
+      "response": "Antes de comprar los tiques llevaba 8 €.",
+      "steps": [
+        "De los 6 € finales quitamos los 4 € que recibió. Justo después de comprar le quedaban 2 €.",
+        "Los dos tiques habían costado 6 €. Sumamos ese importe a los 2 € que le quedaban."
+      ],
+      "note": ""
+    }
+  },
+  "P0111": {
+    "title": "¿De dónde ha salido la rana?",
+    "statement": "Una rana de juguete termina en la casilla 13. Antes de llegar ahí, había dado 2 saltos hacia delante de 4 casillas cada uno y, justo después, había retrocedido 3 casillas.",
+    "question": "¿En qué casilla estaba antes del primer salto?",
+    "solution": {
+      "unit": "casilla",
+      "response": "La rana estaba en la casilla 8.",
+      "steps": [
+        "Deshacemos el retroceso. Antes de retroceder estaba en la casilla 16.",
+        "Los dos saltos hacia delante sumaban 8 casillas. Volvemos 8 casillas atrás desde la 16."
+      ],
+      "note": "También puedes dibujar la fila y marcar los saltos hacia atrás."
+    }
+  },
+  "P0112": {
+    "title": "Los libros de los estantes",
+    "statement": "Al principio había el mismo número de libros en cada uno de 3 estantes. Prestamos 3 y llevamos uno al taller de reparación. Pusimos los demás libros en 4 cajas, con 2 libros en cada una.",
+    "question": "¿Cuántos libros había en cada estante al principio?",
+    "solution": {
+      "unit": "libros",
+      "response": "Al principio había 4 libros en cada estante.",
+      "steps": [
+        "Ahora hay 8 libros en las cajas.",
+        "Volvemos a contar los 3 prestados y el del taller. Al principio había 12.",
+        "Repartimos esos 12 libros entre los 3 estantes."
+      ],
+      "note": ""
+    }
+  },
+  "P0113": {
+    "title": "Los claveles del jarrón",
+    "statement": "En un jarrón hay 5 claveles. Justo antes habíamos puesto 2 claveles nuevos. Antes de añadirlos, habíamos regalado la mitad de los claveles que había en el jarrón.",
+    "question": "¿Cuántos claveles había en el jarrón antes de hacer el regalo?",
+    "solution": {
+      "unit": "claveles",
+      "response": "Al principio había 6 claveles en el jarrón.",
+      "steps": [
+        "Antes de poner los 2 claveles nuevos, quedaban 3.",
+        "Esos 3 eran la mitad de los claveles que había antes del regalo. En la otra mitad también había 3."
+      ],
+      "note": "Para deshacer la retirada de la mitad, doblamos la cantidad que había quedado."
+    }
+  },
+  "P0114": {
+    "title": "Bandejas para el horno",
+    "statement": "Júlia prepara 3 cuencos con 4 panecillos cada uno y después hace 2 más. En cada bandeja del horno caben como máximo 4 panecillos.",
+    "question": "¿Cuántas bandejas hay que preparar como mínimo para poner todos los panecillos?",
+    "solution": {
+      "response": "Hacen falta 4 bandejas. Podemos llenar tres y poner 2 panecillos en la cuarta.",
+      "steps": [
+        "En total hay 14 panecillos.",
+        "En tres bandejas llenas caben 12. Como aún quedan 2, hace falta otra bandeja."
+      ],
+      "note": "La última bandeja puede quedar a medio llenar."
+    }
+  },
+  "P0115": {
+    "title": "Lotes para el puesto",
+    "statement": "Para hacer lotes para la feria tenemos 2 cajas de 6 postales y 5 postales sueltas. Separamos 2 para decorar el puesto. Con las que quedan, hacemos tantos lotes de 4 como podamos. Las postales que no completen un lote se guardan en un cajón.",
+    "question": "¿Cómo quedarán repartidas las postales entre los lotes y el cajón?",
+    "solution": {
+      "response": "Quedarán 3 lotes completos y 3 postales en el cajón.",
+      "steps": [
+        "De las 17 postales que teníamos, quedan 15 después de apartar las dos de la decoración.",
+        "Con 12 postales hacemos 3 lotes. Guardamos las 3 que quedan porque no alcanzan para un cuarto lote."
+      ],
+      "note": "Contamos solo los lotes completos."
+    }
+  },
+  "P0116": {
+    "title": "Completar los paquetes",
+    "statement": "Hay 3 cajas con 5 lápices cada una y un lápiz suelto. Sacamos 2 para la mesa de dibujo. Queremos preparar paquetes de 4 lápices con todos los que nos quedan, sin dejar ninguno suelto. Podemos ir a buscar más lápices al armario.",
+    "question": "¿Cuántos lápices tenemos que ir a buscar como mínimo?",
+    "solution": {
+      "unit": "lápices",
+      "response": "Tenemos que ir a buscar 2 lápices.",
+      "steps": [
+        "Tenemos 14 lápices después de sacar los dos para la mesa.",
+        "Podemos hacer 3 paquetes y nos quedan 2 lápices sueltos. Para completar el cuarto paquete, nos faltan 2."
+      ],
+      "note": "Si cogiéramos solo uno, todavía quedarían 3 lápices sin empaquetar."
+    }
+  },
+  "P0117": {
+    "title": "Cocas a partes iguales",
+    "statement": "Tenemos 2 bandejas con 3 cocas pequeñas cada una. Guardamos una entera para mañana. Repartimos todo lo demás a partes iguales entre 4 niños. Las cocas se pueden cortar.",
+    "question": "¿Cuánta coca le toca a cada niño?",
+    "solution": {
+      "unit": "cocas",
+      "response": "A cada niño le toca una coca entera y un cuarto de coca.",
+      "steps": [
+        "De las 6 cocas guardamos una. Quedan 5 para repartir.",
+        "Damos una coca entera a cada niño. Cortamos la coca que sobra en 4 partes iguales y damos una a cada uno."
+      ],
+      "note": "Podemos partir la coca que sobra para que todos reciban la misma cantidad.",
+      "visual": {
+        "caption": "De la quinta coca, cada niño recibe un cuarto, además de la coca entera."
+      }
+    }
+  },
+  "P0118": {
+    "title": "Las piezas de los equipos",
+    "statement": "En el taller hay 3 bolsas con 5 piezas cada una. Retiramos una pieza que está rota. Queremos repartir todas las demás entre 4 equipos. Primero damos a cada equipo tantas piezas como podamos, la misma cantidad para todos. Si sobran, damos una más a cada uno de los primeros equipos de la lista hasta que se acaben.",
+    "question": "¿Cómo quedará el reparto entre los cuatro equipos?",
+    "solution": {
+      "response": "Los equipos 1 y 2 recibirán 4 piezas cada uno. Los equipos 3 y 4 recibirán 3 cada uno.",
+      "steps": [
+        "Quitamos la pieza rota. Quedan 14 piezas.",
+        "Damos 3 piezas a cada equipo y usamos 12. Las 2 que sobran van, de una en una, a los dos primeros equipos."
+      ],
+      "note": "La regla indica a qué equipos van las piezas sobrantes."
+    }
+  },
+  "P0119": {
+    "title": "Las macetas del huerto",
+    "statement": "Ahora tenemos 3 bandejas llenas con 4 macetas en cada una y 2 macetas que no han cabido. Antes de llenarlas, habíamos regalado 4 macetas a la clase de al lado y habíamos recibido una nueva.",
+    "question": "¿Cuántas macetas teníamos antes del regalo y antes de recibir la nueva?",
+    "solution": {
+      "unit": "macetas",
+      "response": "Al principio teníamos 17 macetas.",
+      "steps": [
+        "Ahora tenemos 12 macetas en las bandejas y 2 fuera. En total, 14.",
+        "Descontamos la que hemos recibido y recuperamos las 4 que habíamos regalado."
+      ],
+      "note": "Las macetas que no han cabido en las bandejas también forman parte del total actual."
+    }
+  },
+  "P0120": {
+    "title": "Asientos para el ensayo",
+    "statement": "Al principio del ensayo había un grupo de niños. Más tarde se han incorporado 2. Después se han marchado dos grupos de 4 niños cada uno y solo han quedado 5 en la sala. Mañana volverán solo los niños que estaban al principio. Queremos sentarlos en bancos de 3 plazas.",
+    "question": "¿Cuántos bancos harán falta como mínimo para el ensayo de mañana?",
+    "solution": {
+      "response": "Harán falta 4 bancos. Habrá 11 niños y quedará una plaza libre en total.",
+      "steps": [
+        "Antes de que se marcharan los dos grupos había 5 + 8 = 13 niños. Quitamos los 2 que se habían incorporado. Mañana vendrán 11.",
+        "Tres bancos ofrecen 9 plazas. Los 2 niños que aún quedan por sentar necesitan un cuarto banco."
+      ],
+      "note": "Primero recuperamos el número inicial de niños. Después decidimos qué hacer con quienes no caben en tres bancos."
+    }
+  }
+}

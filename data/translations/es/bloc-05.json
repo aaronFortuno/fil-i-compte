@@ -1,0 +1,185 @@
+{
+  "P0049": {
+    "title": "Dos cajas de rotuladores",
+    "statement": "La caja A tiene 24 rotuladores y un tercio (1/3) son rojos. La caja B tiene 36 rotuladores y una cuarta parte (1/4) son rojos.",
+    "question": "¿Qué caja tiene más rotuladores rojos y cuántos más?",
+    "solution": {
+      "unit": "rotulador rojo de diferencia",
+      "response": "La caja B tiene un rotulador rojo más. Tiene nueve y la A tiene ocho.",
+      "steps": [
+        "Calculamos cada fracción sobre su propia caja. 1/3 de 24 son 8 y 1/4 de 36 son 9."
+      ],
+      "note": "Una fracción menor puede corresponder a una cantidad mayor si el total es distinto."
+    }
+  },
+  "P0050": {
+    "title": "El depósito del patio",
+    "statement": "Un depósito de 240 litros de capacidad está lleno hasta tres cuartas partes (3/4). Para regar, sacamos un tercio (1/3) del agua que contiene.",
+    "question": "¿Qué fracción de la capacidad del depósito queda ocupada por agua? Justifica la respuesta.",
+    "solution": {
+      "unit": "de la capacidad",
+      "response": "Queda ocupada la mitad (1/2) de la capacidad, es decir, 120 litros.",
+      "steps": [
+        "Había 180 litros. Sacamos un tercio, que son 60 litros.",
+        "Los 120 litros restantes son la mitad de los 240 litros de capacidad."
+      ],
+      "note": "El tercio se refiere al agua que había. La respuesta se refiere a la capacidad.",
+      "visual": {
+        "caption": "El total es la capacidad de 240 litros. Cada mitad representa 120 litros."
+      }
+    }
+  },
+  "P0051": {
+    "title": "La mitad de las entradas",
+    "statement": "Un auditorio tiene 180 localidades. Se reserva un tercio (1/3) para invitaciones. Se vende la mitad de las entradas que quedaban disponibles. Un organizador dice: «Hemos vendido la mitad del aforo».",
+    "question": "¿Tiene razón el organizador? Justifica la respuesta.",
+    "solution": {
+      "response": "Se han vendido 60 entradas, un tercio del aforo. La mitad del aforo serían 90.",
+      "steps": [
+        "Se reservan 60 localidades y quedan 120 disponibles. La mitad son 60.",
+        "La mitad de 180 son 90, una cantidad distinta."
+      ],
+      "note": "Hay que distinguir el total de localidades de las entradas disponibles para la venta."
+    }
+  },
+  "P0052": {
+    "title": "Porciones de pizza",
+    "statement": "Dos pizzas son del mismo tamaño. Una se corta en 8 porciones iguales y la otra, en 12. Jan come 3 porciones de la primera y Laia, 4 de la segunda.",
+    "question": "¿Quién ha comido más pizza? Justifica la respuesta con un dibujo o con números.",
+    "solution": {
+      "response": "Jan ha comido más. 3/8 equivalen a 9/24, mientras que 4/12 equivalen a 8/24.",
+      "steps": [
+        "Dividimos cada pizza en 24 partes. Cada octavo equivale a 3 partes y cada doceavo, a 2.",
+        "Jan come 9 y Laia, 8. La diferencia es 1/24 de pizza."
+      ],
+      "note": "Dibuja dos pizzas iguales. Las porciones de la primera son más grandes."
+    }
+  },
+  "P0053": {
+    "title": "La cosecha que queda",
+    "statement": "En una cosecha de tres horas se han recogido 120 kg de tomates. Se dona un cuarto (1/4) a un comedor y se venden dos quintas partes (2/5) de lo que queda. El resto se guarda.",
+    "question": "¿Cuántos kilogramos de tomates se guardan?",
+    "solution": {
+      "unit": "kilogramos",
+      "response": "Se guardan 54 kg de tomates.",
+      "steps": [
+        "Después de donar 30 kg, quedan 90.",
+        "Se venden dos quintos de 90. Los otros tres quintos son 54 kg."
+      ],
+      "note": "Los 2/5 se refieren a los 90 kg que quedan. Las tres horas no intervienen en el cálculo."
+    }
+  },
+  "P0054": {
+    "title": "El libro empezado",
+    "statement": "El lunes, Àlex lee tres quintas partes (3/5) de un libro. El martes lee la mitad de las páginas que le quedaban. Todavía le quedan 24 páginas por leer.",
+    "question": "¿Cuántas páginas tiene el libro?",
+    "solution": {
+      "unit": "páginas",
+      "response": "El libro tiene 120 páginas.",
+      "steps": [
+        "Antes de leer el martes quedaban 48 páginas, el doble de las 24 finales.",
+        "Estas 48 páginas son 2/5 del libro. Un quinto son 24 páginas y cinco quintos son 120."
+      ],
+      "note": ""
+    }
+  },
+  "P0055": {
+    "title": "Las clases que van en bicicleta",
+    "statement": "En la clase A hay 20 alumnos y tres quintas partes (3/5) vienen en bicicleta. En la clase B hay 30 alumnos y dos quintas partes (2/5) vienen en bicicleta.",
+    "question": "¿Qué porcentaje del conjunto de las dos clases viene en bicicleta?",
+    "solution": {
+      "unit": "porcentaje",
+      "response": "El 48 % del alumnado de las dos clases viene en bicicleta.",
+      "steps": [
+        "En cada clase vienen 12 alumnos en bicicleta. Son 24 de un total de 50.",
+        "24 × 100 ÷ 50 = 48 %."
+      ],
+      "note": "Las clases tienen tamaños distintos. No se puede hacer la media simple de las fracciones."
+    }
+  },
+  "P0056": {
+    "title": "La nota del taller",
+    "statement": "En un taller hay una cuerda de 18 m. Primero se corta un tercio (1/3). La nota de la siguiente tarea solo dice: «Corta una cuarta parte (1/4)», sin precisar de qué longitud.",
+    "question": "¿Podemos saber exactamente cuánta cuerda quedará? Calcula y explica las dos interpretaciones.",
+    "solution": {
+      "response": "Falta precisar la longitud de referencia. Quedarían 7,5 m si el cuarto se calcula sobre la cuerda inicial, o 9 m si se calcula sobre la que queda.",
+      "steps": [
+        "Después del primer corte quedan 12 m.",
+        "Un cuarto de 18 m son 4,5 m, así que quedarían 7,5 m. Un cuarto de 12 m son 3 m, así que quedarían 9 m."
+      ],
+      "note": "La ambigüedad forma parte de la pregunta. Hay que justificar las dos interpretaciones."
+    }
+  },
+  "P0057": {
+    "title": "La caja de piezas",
+    "statement": "De una caja de piezas de construcción retiramos una cuarta parte (1/4) y después añadimos 9 piezas. Ahora la caja contiene 45.",
+    "question": "¿Cuántas piezas había al principio?",
+    "solution": {
+      "unit": "piezas",
+      "response": "Al principio había 48 piezas.",
+      "steps": [
+        "Antes de añadir las nueve piezas había 36. Son los tres cuartos que habían quedado.",
+        "Cada cuarto son 12 piezas. Los cuatro cuartos suman 48."
+      ],
+      "note": "",
+      "visual": {
+        "caption": "Los tres cuartos sombreados son las 36 piezas que quedaban antes de añadir nueve."
+      }
+    }
+  },
+  "P0058": {
+    "title": "La receta ampliada",
+    "statement": "Una receta para 6 personas necesita 3/4 de litro de leche. La preparamos para 10 personas manteniendo las proporciones. Tenemos dos botellas llenas de 1 litro cada una.",
+    "question": "¿Cuánta leche quedará después de preparar la receta?",
+    "solution": {
+      "unit": "litros",
+      "response": "Quedarán 3/4 de litro de leche.",
+      "steps": [
+        "Por persona hace falta 1/8 de litro. Para diez personas hacen falta 10/8, es decir, 5/4 de litro.",
+        "Tenemos 2 litros, que son 8/4. Al restar 5/4, quedan 3/4."
+      ],
+      "note": ""
+    }
+  },
+  "P0059": {
+    "title": "La terraza compartida",
+    "statement": "En una terraza de 96 m² se reserva un tercio (1/3) para plantas y una cuarta parte (1/4) de la superficie que queda para un camino. El resto se destina a mesas.",
+    "parts": [
+      {
+        "question": "¿Qué superficie queda para las mesas?",
+        "solution": {
+          "unit": "metros cuadrados",
+          "response": "Quedan 48 m² para las mesas.",
+          "steps": [
+            "Las plantas ocupan 32 m². De los 64 m² restantes, el camino ocupa 16 y quedan 48 m²."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "Si reserváramos primero 1/4 de toda la terraza para el camino y después 1/3 de lo que queda para plantas, ¿el reparto sería el mismo? Justifica la respuesta.",
+        "solution": {
+          "response": "Las plantas y el camino ocuparían 24 m² cada uno, en vez de 32 y 16. Las mesas conservarían los 48 m².",
+          "steps": [
+            "El camino ocuparía 96 ÷ 4 = 24 m². Las plantas ocuparían un tercio de los 72 restantes, es decir, 24 m².",
+            "El espacio para las mesas sería el mismo, pero cambiarían los espacios de las plantas y del camino."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0060": {
+    "title": "Las dos campañas",
+    "statement": "La campaña A ha recaudado tres cuartas partes (3/4) de su objetivo económico. La campaña B ha recaudado dos terceras partes (2/3) del suyo. Los objetivos de las dos campañas son distintos y no conocemos los importes.",
+    "question": "¿Podemos saber qué campaña ha recaudado más euros? Justifica la respuesta con ejemplos.",
+    "solution": {
+      "response": "Para saberlo, además de las fracciones, necesitamos conocer los objetivos en euros.",
+      "steps": [
+        "Si los objetivos fueran 100 € para A y 180 € para B, habrían recaudado 75 € y 120 €, respectivamente. Ganaría B.",
+        "Si fueran 200 € para A y 180 € para B, habrían recaudado 150 € y 120 €, respectivamente. Ganaría A."
+      ],
+      "note": "Los importes de los ejemplos son posibles objetivos. El enunciado no da esos importes."
+    }
+  }
+}

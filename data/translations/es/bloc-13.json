@@ -1,0 +1,168 @@
+{
+  "P0145": {
+    "title": "Arroz para seis",
+    "statement": "Para hacer arroz con verduras para 4 personas usamos 240 g de arroz. Hoy seremos 6 y queremos servir raciones del mismo tamaño.",
+    "question": "¿Cuántos gramos de arroz tenemos que poner en la olla?",
+    "solution": {
+      "unit": "g",
+      "response": "Tenemos que poner 360 g de arroz.",
+      "steps": [
+        "Dos personas más necesitan la mitad de lo que necesitan cuatro. La mitad de 240 g son 120 g.",
+        "Añadimos los 120 g a los 240 g de la receta."
+      ],
+      "note": "Tabla de raciones. 2 personas → 120 g. 4 personas → 240 g. 6 personas → 360 g."
+    }
+  },
+  "P0146": {
+    "title": "Crepes para cuatro",
+    "statement": "Para hacer crepes para 8 personas, la receta dice que hacen falta 320 g de harina, 400 mL de leche y 4 huevos. Solo haremos crepes para 4 personas y queremos mantener la misma receta.",
+    "question": "¿Qué cantidades tenemos que preparar de cada ingrediente?",
+    "solution": {
+      "response": "Tenemos que preparar 160 g de harina, 200 mL de leche y 2 huevos.",
+      "steps": [
+        "Cuatro personas son la mitad de ocho. Dividimos entre dos cada una de las cantidades."
+      ],
+      "note": "Dibuja dos bandejas con cuatro platos cada una. Reparte la harina, la leche y los huevos de la receta entre las dos bandejas. Una bandeja representa la receta para cuatro."
+    }
+  },
+  "P0147": {
+    "title": "El hummus del encuentro",
+    "statement": "Para hacer hummus para 6 personas hacen falta 360 g de garbanzos cocidos y 3 cucharadas de aceite. Al final seremos 4 personas.",
+    "question": "¿Qué cantidad de cada ingrediente tenemos que usar para que el hummus quede igual y las raciones sean del mismo tamaño?",
+    "solution": {
+      "response": "Tenemos que usar 240 g de garbanzos y 2 cucharadas de aceite.",
+      "steps": [
+        "Separamos la receta de seis en tres grupos de dos raciones. Cada grupo necesita 120 g de garbanzos y una cucharada de aceite.",
+        "Para cuatro personas preparamos dos grupos iguales."
+      ],
+      "note": "Tabla de raciones. 2 personas → 120 g y 1 cucharada. 4 personas → 240 g y 2 cucharadas. 6 personas → 360 g y 3 cucharadas."
+    }
+  },
+  "P0148": {
+    "title": "Pan plano para diez",
+    "statement": "Una receta de pan plano para 4 personas lleva 200 g de harina. Tenemos que hacer pan para 10 personas.",
+    "question": "¿Cuánta harina hace falta si cada persona tiene que recibir la misma ración que en la receta original?",
+    "solution": {
+      "unit": "g",
+      "response": "Hacen falta 500 g de harina.",
+      "steps": [
+        "Contamos las diez raciones como cuatro, cuatro y dos.",
+        "Preparamos dos recetas enteras de 200 g y media receta de 100 g."
+      ],
+      "note": "Puedes dibujar una fila de diez platos y rodear cuatro, cuatro y dos. Así se ve qué cantidades hay que juntar."
+    }
+  },
+  "P0149": {
+    "title": "La tarta de nueve porciones",
+    "statement": "Una tarta de manzana para 12 personas lleva 240 g de harina y 4 huevos. Solo queremos hacer tarta para 9 personas, con porciones del mismo tamaño.",
+    "question": "¿Qué cantidades de harina y huevos tenemos que preparar?",
+    "solution": {
+      "response": "Tenemos que preparar 180 g de harina y 3 huevos.",
+      "steps": [
+        "Hacemos cuatro grupos de tres raciones. Cada grupo necesita 60 g de harina y un huevo.",
+        "Para nueve personas solo necesitamos tres grupos."
+      ],
+      "note": "También puedes pensar en los ingredientes que quitarías de la receta para doce. Restarías 60 g de harina y un huevo."
+    }
+  },
+  "P0150": {
+    "title": "Agua con limón para seis",
+    "statement": "Para hacer agua con limón para 10 personas, una receta usa 2 litros y medio de agua. Hoy la queremos hacer para 6 personas, con la misma cantidad de bebida por persona.",
+    "question": "¿Cuántos litros de agua necesitamos?",
+    "solution": {
+      "unit": "mL",
+      "response": "Necesitamos 1 litro y medio de agua.",
+      "steps": [
+        "Las seis raciones son tres quintos de las diez originales.",
+        "Dividimos los 2.500 mL en cinco grupos de 500 mL. Tomamos tres."
+      ],
+      "note": "Agrupa a las personas de dos en dos. Para diez personas hay cinco grupos. Para seis hacen falta tres.",
+      "visual": {
+        "caption": "Cada bloque de 500 mL sirve para dos personas. Los tres bloques sombreados son seis raciones."
+      }
+    }
+  },
+  "P0151": {
+    "title": "Ensalada para dos mesas",
+    "statement": "Para hacer ensalada de lentejas para 4 personas hacen falta 200 g de lentejas cocidas. Hoy tenemos una mesa de 3 personas y otra de 5. Ponemos en una bandeja para cada mesa las raciones que le corresponden.",
+    "question": "¿Cuántos gramos de lentejas tenemos que poner en cada bandeja para que todo el mundo reciba la misma ración?",
+    "solution": {
+      "response": "Tenemos que poner 150 g de lentejas en la bandeja de tres personas y 250 g en la de cinco.",
+      "steps": [
+        "Cuatro raciones son 200 g, así que una ración pesa 50 g.",
+        "Contamos tres raciones de 50 g para la primera mesa y cinco para la segunda."
+      ],
+      "note": "Tabla de raciones. 1 persona → 50 g. 3 personas → 150 g. 4 personas → 200 g. 5 personas → 250 g."
+    }
+  },
+  "P0152": {
+    "title": "La mezcla de avena y pasas",
+    "statement": "Para hacer una merienda para 4 personas hacen falta 240 g de avena y 120 g de pasas. Queremos prepararla para 10 personas con la misma receta. En el armario hay 600 g de avena y 250 g de pasas.",
+    "question": "¿Qué tenemos que añadir a la despensa para poder preparar las diez raciones?",
+    "solution": {
+      "response": "Solo hacen falta 50 g más de pasas. Ya tenemos toda la avena que necesitamos.",
+      "steps": [
+        "Para dos personas hacen falta 120 g de avena y 60 g de pasas. Para diez necesitamos cinco grupos como ese.",
+        "La receta adaptada pide 600 g de avena y 300 g de pasas. Comparamos estas cantidades con las que tenemos."
+      ],
+      "note": "Haz cinco tarjetas de dos raciones, cada una con 120 g de avena y 60 g de pasas. Llénalas con lo que tienes en la despensa para ver qué falta."
+    }
+  },
+  "P0153": {
+    "title": "¿Cuántos botes de yogur?",
+    "statement": "Para hacer un postre para 4 personas hacen falta 400 g de yogur. Hoy hacemos postre para 6 personas. En la tienda venden botes de 250 g y en casa no tenemos yogur.",
+    "question": "¿Cuántos botes tenemos que comprar como mínimo?",
+    "solution": {
+      "response": "Tenemos que comprar 3 botes. Usaremos 600 g y sobrarán 150 g.",
+      "steps": [
+        "Para pasar de cuatro a seis raciones añadimos 200 g a los 400 g de la receta.",
+        "Dos botes solo dan 500 g. Con tres tenemos 750 g, suficientes para las seis raciones."
+      ],
+      "note": "Compara una fila de seis raciones de 100 g con tres botes de 250 g. Los dos primeros cubren cinco raciones. El tercero permite completar la última."
+    }
+  },
+  "P0154": {
+    "title": "Batidos con la leche que queda",
+    "statement": "La receta de batido de plátano para 4 personas necesita 500 mL de leche. Tenemos 750 mL de leche y suficiente cantidad de los otros ingredientes.",
+    "question": "¿Para cuántas personas podemos hacer batido si mantenemos la misma cantidad de leche por ración y los demás ingredientes en proporción?",
+    "solution": {
+      "unit": "personas",
+      "response": "Podemos hacer batido para 6 personas.",
+      "steps": [
+        "Si cuatro raciones necesitan 500 mL de leche, una necesita 125 mL.",
+        "Dividimos los 750 mL en raciones de 125 mL."
+      ],
+      "note": "Tabla de raciones. 250 mL → 2 personas. 500 mL → 4 personas. 750 mL → 6 personas."
+    }
+  },
+  "P0155": {
+    "title": "Dos maneras de hacer la salsa",
+    "statement": "Una receta de salsa para 8 personas lleva 800 g de tomate. Para hacer salsa para 6, Bruna propone preparar salsa para cuatro y añadir la de dos personas. Roc propone calcular la cantidad para ocho y quitar la de dos raciones.",
+    "question": "¿Por qué los dos caminos dan la misma cantidad de tomate? Demuéstralo con los cálculos.",
+    "solution": {
+      "response": "Con los dos caminos hacen falta 600 g de tomate. En ambos casos contamos tres grupos de dos raciones.",
+      "steps": [
+        "Dos raciones necesitan 200 g de tomate. Bruna suma 400 g de cuatro raciones y 200 g de dos raciones.",
+        "Roc resta 200 g de dos raciones a los 800 g de la receta entera."
+      ],
+      "note": "Dibuja cuatro bloques de dos raciones. Bruna cuenta dos bloques y añade uno. Roc parte de los cuatro bloques y tacha uno.",
+      "visual": {
+        "caption": "Cada bloque representa dos raciones y 200 g de tomate. Los dos caminos llegan a los mismos tres bloques."
+      }
+    }
+  },
+  "P0156": {
+    "title": "El aceite de la coca y del molde",
+    "statement": "Para hacer una coca salada para 6 personas hacen falta 4 cucharadas de aceite para la masa y una más para untar el molde. Haremos coca para 3 personas. Mantendremos el tamaño de las porciones y untaremos el mismo molde con una cucharada entera.",
+    "question": "¿Cuántas cucharadas de aceite necesitamos en total?",
+    "solution": {
+      "unit": "cucharadas",
+      "response": "Necesitamos 3 cucharadas de aceite en total.",
+      "steps": [
+        "Para media masa usamos la mitad de las cuatro cucharadas, que son dos.",
+        "Sumamos la cucharada entera que hace falta para el molde."
+      ],
+      "note": "Dibuja dos columnas, una para la masa y otra para el molde. Tacha la mitad de las cucharadas de la masa y conserva la del molde."
+    }
+  }
+}

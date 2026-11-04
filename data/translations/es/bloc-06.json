@@ -1,0 +1,185 @@
+{
+  "P0061": {
+    "title": "Dos caminos a pie",
+    "statement": "En la escuela del Norte hay 48 alumnos de sexto y la mitad llega a pie. En la escuela del Sur hay 32 alumnos de sexto y una cuarta parte llega a pie.",
+    "question": "¿Qué fracción del alumnado de sexto de las dos escuelas juntas llega a pie? Exprésala en su forma irreducible.",
+    "solution": {
+      "unit": "del total de alumnos",
+      "response": "Dos quintos (2/5) del alumnado llega a pie.",
+      "steps": [
+        "En la escuela del Norte llegan a pie 24 alumnos y, en la del Sur, 8.",
+        "En total son 32 alumnos de 80. Simplificamos 32/80 dividiendo el numerador y el denominador entre 16."
+      ],
+      "note": "La mitad y la cuarta parte se calculan sobre escuelas distintas. La fracción final se calcula sobre 80 alumnos.",
+      "visual": {
+        "caption": "Cada quinta parte representa a 16 alumnos. Los 32 que llegan a pie ocupan dos partes."
+      }
+    }
+  },
+  "P0062": {
+    "title": "Los carteles de la feria",
+    "statement": "El lunes se cuelgan dos quintos (2/5) de los carteles de una feria. El martes se cuelga una cuarta parte de los que aún quedaban por colgar. Al final del martes quedan 27 por colgar.",
+    "question": "¿Cuántos carteles se habían impreso?",
+    "solution": {
+      "unit": "carteles",
+      "response": "Se habían impreso 60 carteles.",
+      "steps": [
+        "Los 27 carteles son tres cuartas partes de los que quedaban después del lunes. Una cuarta parte son 9, así que después del lunes quedaban 36.",
+        "Esos 36 son tres quintas partes de todos los carteles. Una quinta parte son 12 y las cinco partes suman 60."
+      ],
+      "note": "Si empezamos con 60, el lunes se cuelgan 24 y el martes 9. Quedan 27."
+    }
+  },
+  "P0063": {
+    "title": "La inscripción en los talleres",
+    "statement": "De las 48 personas inscritas en una jornada, la mitad se ha apuntado al taller de cocina y un tercio al de cerámica. Una sexta parte de todas las personas inscritas se ha apuntado a los dos talleres.",
+    "question": "¿Cuántas personas inscritas no se han apuntado a ninguno de los dos talleres?",
+    "solution": {
+      "unit": "personas",
+      "response": "16 personas no se han apuntado a ninguno de los dos talleres.",
+      "steps": [
+        "En cocina hay 24 personas, en cerámica 16 y en ambos talleres 8.",
+        "La suma 24 + 16 cuenta dos veces a las 8 personas que hacen ambos talleres. Hay 32 personas en al menos un taller y las otras 16 no hacen ninguno."
+      ],
+      "note": "Un diagrama de dos círculos superpuestos permite separar a las 16 personas que solo hacen cocina, las 8 que solo hacen cerámica y las 8 que hacen ambos talleres."
+    }
+  },
+  "P0064": {
+    "title": "Los libros del vestíbulo",
+    "statement": "El lunes llegan 138 libros a la biblioteca de la escuela y el martes llegan 76 más. De los que llegan el martes, 24 son cómics.",
+    "question": "¿Cuántos libros han llegado entre el lunes y el martes?",
+    "solution": {
+      "unit": "libros",
+      "response": "Han llegado 214 libros.",
+      "steps": [
+        "Sumamos los libros recibidos los dos días."
+      ],
+      "note": "Los 24 cómics ya están incluidos en los 76 libros del martes."
+    }
+  },
+  "P0065": {
+    "title": "Las mesas de la comida",
+    "statement": "A la comida de fin de curso asisten 53 personas. En cada mesa se pueden sentar como máximo 8 personas.",
+    "question": "¿Cuántas mesas hay que preparar como mínimo? Justifica la respuesta.",
+    "solution": {
+      "response": "Hacen falta al menos 7 mesas.",
+      "steps": [
+        "Con 6 mesas hay 48 plazas y todavía quedan personas de pie.",
+        "Con 7 mesas hay 56 plazas y se puede sentar todo el mundo."
+      ],
+      "note": "Al comparar las dos capacidades, comprobamos que siete mesas son suficientes y que seis se quedan cortas."
+    }
+  },
+  "P0066": {
+    "title": "La compra en la frutería",
+    "statement": "En la frutería compramos 3 kg de peras a 2,75 € el kilo y 2 kg de manzanas a 1,85 € el kilo. Pagamos con un billete de 20 €.",
+    "question": "¿Cuánto nos tienen que devolver?",
+    "solution": {
+      "unit": "€",
+      "response": "Nos tienen que devolver 8,05 €.",
+      "steps": [
+        "Las peras cuestan 8,25 € y las manzanas, 3,70 €. En total son 11,95 €.",
+        "Restamos el precio total de los 20 € que hemos dado."
+      ],
+      "note": ""
+    }
+  },
+  "P0067": {
+    "title": "El precio antes de las rebajas",
+    "statement": "En una tienda han rebajado un 20 % el precio de una mochila. El precio rebajado que aparece en la etiqueta es de 72 €.",
+    "question": "¿Qué precio tenía antes de las rebajas?",
+    "solution": {
+      "unit": "€",
+      "response": "Antes de las rebajas, la mochila costaba 90 €.",
+      "steps": [
+        "Después de la rebaja, pagamos el 80 % del precio inicial.",
+        "Si 72 € son el 80 %, el precio completo es 72 ÷ 0,8."
+      ],
+      "note": "Lo comprobamos calculando el 20 % de 90 €, que son 18 €. Al restar 18 € de 90 €, quedan 72 €."
+    }
+  },
+  "P0068": {
+    "title": "La valla del huerto",
+    "statement": "El huerto comunitario es cuadrado y tiene una superficie de 196 m². Se quiere delimitar todo el perímetro con cordel.",
+    "question": "¿Cuántos metros de cordel hacen falta si dejamos aparte lo que se usa en los nudos?",
+    "solution": {
+      "unit": "m",
+      "response": "Hacen falta 56 metros de cordel.",
+      "steps": [
+        "El lado mide 14 m porque 14 × 14 = 196.",
+        "El perímetro es la longitud de los cuatro lados."
+      ],
+      "note": ""
+    }
+  },
+  "P0069": {
+    "title": "Las baldosas alrededor de la fuente",
+    "statement": "El plano de un pavimento cuadrado tiene 9 filas de 9 casillas. Cada casilla representa una baldosa. La fuente ocupa en el centro un cuadrado de 5 filas de 5 casillas.",
+    "question": "¿Cuántas baldosas hacen falta para cubrir todo el pavimento fuera de la fuente? Escribe una expresión con potencias que represente el cálculo.",
+    "solution": {
+      "unit": "baldosas",
+      "response": "Hacen falta 56 baldosas.",
+      "steps": [
+        "El cuadrado completo tiene 81 casillas y la fuente ocupa 25.",
+        "Restamos las casillas de la fuente de las del cuadrado completo."
+      ],
+      "note": ""
+    }
+  },
+  "P0070": {
+    "title": "Llegada al planetario",
+    "statement": "La visita al planetario empieza a las 10:30 y dura 45 minutos. El grupo sale de la escuela a las 9:20, tarda 35 minutos en autobús y, una vez en la entrada, necesita 12 minutos para repartir las entradas y llegar a la sala.",
+    "question": "¿Con cuántos minutos de margen llegará el grupo a la sala antes de que empiece la visita?",
+    "solution": {
+      "unit": "minutos",
+      "response": "El grupo llegará a la sala con 23 minutos de margen.",
+      "steps": [
+        "De las 9:20 a las 10:30 hay 70 minutos.",
+        "El grupo necesita 47 minutos para llegar a la sala. Estará allí a las 10:07."
+      ],
+      "note": "Los 45 minutos son lo que dura la visita una vez que ha empezado."
+    }
+  },
+  "P0071": {
+    "title": "Material para los estuches",
+    "statement": "Para preparar estuches de préstamo, la escuela compra 36 pinceles a 0,75 € la unidad y 48 lápices a 0,25 € la unidad.",
+    "parts": [
+      {
+        "question": "¿Cuánto ha costado toda la compra?",
+        "solution": {
+          "unit": "€",
+          "response": "La compra ha costado 39 €.",
+          "steps": [
+            "Los 36 pinceles cuestan 27 € y los 48 lápices, 12 €. Sumamos los dos importes."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuál es el máximo número de estuches idénticos que se pueden preparar si se quiere usar todo el material? Justifica la respuesta.",
+        "solution": {
+          "response": "Se pueden preparar como máximo 12 estuches, con 3 pinceles y 4 lápices en cada uno.",
+          "steps": [
+            "El número de estuches debe ser divisor de 36 y de 48. Por tanto, también debe ser divisor de su diferencia, 12, y no puede superar 12.",
+            "Podemos hacer 12 estuches. En cada uno ponemos 3 pinceles y 4 lápices."
+          ],
+          "note": "También se puede buscar el máximo común divisor haciendo una lista de los divisores de 36 y de 48."
+        }
+      }
+    ]
+  },
+  "P0072": {
+    "title": "Volver al caudal de siempre",
+    "statement": "El sistema de riego de un invernadero vertía 60 litros de agua por hora. Después de un ajuste, ahora vierte 48 por hora.",
+    "question": "¿En qué porcentaje hay que aumentar el caudal actual para volver al caudal inicial? Justifica sobre qué cantidad calculas el porcentaje.",
+    "solution": {
+      "unit": "%",
+      "response": "Hay que aumentar el caudal actual un 25 %.",
+      "steps": [
+        "Tenemos que añadir 12 litros por hora a los 48 actuales.",
+        "Dividimos el aumento (12) entre el caudal actual (48) y multiplicamos por 100 para obtener el porcentaje."
+      ],
+      "note": "El aumento se calcula a partir del caudal actual. Los mismos 12 litros por hora serían el 20 % del caudal inicial."
+    }
+  }
+}

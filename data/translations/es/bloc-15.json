@@ -1,0 +1,158 @@
+{
+  "P0169": {
+    "title": "Con quince euros en el mercado",
+    "statement": "Llevas 15 €. En el mercado quieres comprar fruta por 4,60 €, un queso por 6,20 € y pan por 2,80 €. Mar propone contar 5 €, 7 € y 3 €.",
+    "question": "¿Es suficiente la estimación de Mar para saber si puedes comprarlo todo? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. Los precios estimados suman 15 € y cada uno es mayor que el precio real.",
+      "steps": [
+        "Mar ha redondeado cada precio hacia arriba. En total le salen 5 + 7 + 3 = 15 €.",
+        "El coste real queda por debajo de ese total, así que con 15 € tienes suficiente."
+      ],
+      "note": "La suma exacta solo haría falta si quisiéramos saber cuánto cambio nos tienen que devolver."
+    }
+  },
+  "P0170": {
+    "title": "La cuenta justa de la merienda",
+    "statement": "Para la merienda compramos tres cosas que cuestan 8,40 €, 6,40 € y 5,40 €. Llevamos 20 €. Jan redondea al euro más cercano y calcula que gastaremos 19 €.",
+    "question": "¿Nos podemos fiar de los 19 € para decidir si podemos pagar toda la compra? Justifica la respuesta.",
+    "solution": {
+      "response": "La compra cuesta 20,20 € y nos faltan 20 céntimos.",
+      "steps": [
+        "Los 19 € salen de redondear los tres precios hacia abajo. En cada precio se han dejado sin contar 40 céntimos.",
+        "Los céntimos que faltan suman 1,20 €, más que el euro de margen que parecía que teníamos."
+      ],
+      "note": "Cuando el margen es pequeño, contar los errores del redondeo puede ser más rápido que rehacer toda la suma."
+    }
+  },
+  "P0171": {
+    "title": "Con tiempo para llegar al ensayo",
+    "statement": "Quedan 35 minutos para que empiece el ensayo. El primer tramo a pie dura entre 12 y 15 minutos. El autobús tarda entre 8 y 10 minutos en hacer su recorrido. De la parada a la sala hay que caminar entre 5 y 7 minutos. Cogeremos el autobús sin esperar.",
+    "question": "Con estos intervalos, ¿podemos asegurar que estaremos en la sala antes del ensayo? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. Incluso si todos los tramos duran el máximo previsto, llegaremos con 3 minutos de margen.",
+      "steps": [
+        "Sumamos los tiempos más largos de los tres tramos, 15 + 10 + 7. Eso da 32 minutos.",
+        "Como tenemos 35 minutos, nos sobrarán al menos 3."
+      ],
+      "note": "Para asegurar que llegaremos a tiempo, nos interesa el caso más lento."
+    }
+  },
+  "P0172": {
+    "title": "¿A tiempo para la película?",
+    "statement": "Quedan 35 minutos para llegar al cine. La espera del autobús puede durar entre 18 y 22 minutos. Una vez que subamos, tardaremos entre 12 y 16 minutos en llegar a la puerta del cine.",
+    "question": "¿Basta esta información para asegurar que llegaremos a tiempo? Justifica la respuesta con dos casos posibles.",
+    "solution": {
+      "response": "En un caso podemos llegar en 30 minutos y en otro podemos tardar 38.",
+      "steps": [
+        "Si las dos duraciones son las más cortas, 18 + 12 = 30 minutos y llegamos a tiempo.",
+        "Si son las más largas, 22 + 16 = 38 minutos y llegamos tarde."
+      ],
+      "note": "Para asegurar la llegada haría falta más margen o reducir el tiempo máximo de algún tramo."
+    }
+  },
+  "P0173": {
+    "title": "La guirnalda del pasillo",
+    "statement": "Para hacer una guirnalda necesitamos tres trozos de cordel de 197 cm, 206 cm y 195 cm. Tenemos un rollo con 650 cm de cordel y al cortar no se desperdicia nada.",
+    "question": "Sin sumar las tres longitudes exactas, ¿cómo puedes justificar si el rollo es lo bastante largo?",
+    "solution": {
+      "response": "Sí es lo bastante largo. Incluso si contamos 210 cm por trozo, necesitamos como máximo 630 cm.",
+      "steps": [
+        "Los tres trozos miden menos de 210 cm cada uno. Podemos contar como si todos midieran 210 cm.",
+        "Tres trozos de 210 cm sumarían 630 cm, por debajo de los 650 cm del rollo."
+      ],
+      "note": "También puedes redondear cada medida a la decena de centímetros siguiente y comparar el resultado con 650 cm."
+    }
+  },
+  "P0174": {
+    "title": "Tres cajas en el estante",
+    "statement": "Queremos poner tres cajas una al lado de la otra en un estante de 59,5 cm de ancho. Cada caja mide 19,8 cm de ancho y no hace falta dejar espacio entre ellas. Pol cuenta 20 cm por caja y dice que no cabrán.",
+    "question": "¿Es suficiente la aproximación de Pol para descartar el estante? Justifica la decisión.",
+    "solution": {
+      "response": "Las tres cajas ocupan 59,4 cm y sí caben, con 1 mm de margen.",
+      "steps": [
+        "Con 20 cm por caja obtenemos 60 cm, una estimación por encima de la anchura real. Solo con eso no podemos saber si caben.",
+        "Cada caja mide 0,2 cm menos de 20 cm. Restamos 0,6 cm a los 60 cm y obtenemos 59,4 cm."
+      ],
+      "note": "Una estimación por encima permite asegurar que algo cabe si ya queda por debajo del límite. En este caso, el margen era demasiado pequeño para decidir con los 60 cm."
+    }
+  },
+  "P0175": {
+    "title": "Sillas para la función",
+    "statement": "A la función vendrán cinco grupos. Cada grupo tiene entre 11 y 13 personas. En la sala hay 70 sillas y cada persona necesita una.",
+    "question": "¿Podemos saber si habrá suficientes sillas antes de conocer la asistencia exacta? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. Como máximo vendrán 65 personas, así que sobrarán al menos 5 sillas.",
+      "steps": [
+        "Contamos como si los cinco grupos tuvieran 13 personas. En total serían 65.",
+        "Los grupos reales no pueden aumentar ese total. Las 70 sillas son suficientes."
+      ],
+      "note": "Contar 12 personas por grupo da una idea de la asistencia. Contar 13 permite asegurar que todo el mundo se podrá sentar."
+    }
+  },
+  "P0176": {
+    "title": "El bote de pintura",
+    "statement": "Tenemos que pintar dos paredes rectangulares sin puertas ni ventanas. Miden 2,9 m y 3,8 m de largo y ambas miden 2,4 m de alto. Según la etiqueta, con el bote podemos pintar como máximo 10 m².",
+    "question": "Sin calcular las dos superficies exactas, ¿puedes decidir si el bote será suficiente? Justifica la respuesta.",
+    "solution": {
+      "response": "El bote se quedará corto. Incluso con unas paredes más pequeñas, saldrían 12 m².",
+      "steps": [
+        "Para estimar por debajo, imaginamos paredes de 2,5 m y 3,5 m de largo y solo 2 m de alto.",
+        "Con esas medidas ya salen 5 + 7 = 12 m², más de los 10 m² que cubre el bote."
+      ],
+      "note": "Basta encontrar una superficie menor que la real y que ya supere los 10 m²."
+    }
+  },
+  "P0177": {
+    "title": "¿Una sola carga?",
+    "statement": "Queremos llevar cuatro cajas en una carretilla que admite como máximo 10 kg. Las cajas pesan 2,7 kg, 2,8 kg, 2,9 kg y 2,8 kg. Ivet propone contar 2,5 kg por caja y hacer un solo viaje.",
+    "question": "¿Es la estimación de 10 kg de Ivet suficiente para decidir hacer un solo viaje? Justifica la respuesta.",
+    "solution": {
+      "response": "Las cuatro cajas pesan más de 10 kg y hay que repartirlas en más de una carga.",
+      "steps": [
+        "Cuatro cajas de 2,5 kg sumarían justo 10 kg.",
+        "Cada caja real pesa más de 2,5 kg. Así podemos asegurar que el total supera el límite sin sumar los pesos exactos."
+      ],
+      "note": "Una estimación por debajo puede servir para descartar una carga aunque coincida con el límite, si sabemos que el peso real es estrictamente mayor."
+    }
+  },
+  "P0178": {
+    "title": "Bebida para veinticuatro",
+    "statement": "Hay que preparar 24 vasos de 125 mL de bebida. Tenemos cuatro jarras y cada una contiene entre 0,9 L y 1 L. Queremos llevar el menor número posible y asegurar que todos tendrán un vaso lleno.",
+    "question": "¿Basta con llevar tres jarras? Justifica mediante una estimación cuántas hay que llevar.",
+    "solution": {
+      "response": "Hay que llevar cuatro jarras. Con tres solo bastaría si las tres contuvieran exactamente un litro.",
+      "steps": [
+        "Los 24 vasos necesitan 3.000 mL, es decir, 3 litros.",
+        "Tres jarras pueden contener solo 2,7 L. Cuatro jarras aportan al menos 3,6 L y eso asegura los 24 vasos."
+      ],
+      "note": "Para garantizar que habrá suficiente, comparamos el volumen que hace falta con el mínimo que pueden contener las jarras."
+    }
+  },
+  "P0179": {
+    "title": "¿Cuántos libros quedan por contar?",
+    "statement": "Hay cinco cajas de libros. Abrimos la primera y contamos 20 libros. En cada una de las otras cuatro cajas puede haber entre 15 y 25 libros. Alguien calcula unos 100 libros y quiere preparar un espacio para exactamente 100.",
+    "question": "¿Es suficiente la estimación para asegurar que todos los libros cabrán en el espacio? Justifica la respuesta.",
+    "solution": {
+      "response": "El total podría ser de 80 libros, pero también podría llegar a 120.",
+      "steps": [
+        "Si las cuatro cajas pendientes tienen 15 libros cada una, el total es de 80. Si tienen 25 cada una, el total es de 120.",
+        "Los 100 son posibles, pero contar una sola caja no permite asegurar que las demás sean iguales."
+      ],
+      "note": "Se puede asegurar que cabrán todos si hay sitio para 120, o si se cuentan las otras cajas y el total no supera los 100."
+    }
+  },
+  "P0180": {
+    "title": "¿Qué camino es más corto?",
+    "statement": "Para ir al parque hay dos caminos. Por el camino A, el primer tramo mide entre 180 y 200 metros y el segundo entre 140 y 160 metros. El camino B mide entre 380 y 410 metros.",
+    "question": "Con estos datos, ¿se puede elegir con seguridad el camino más corto? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. El camino A es al menos 20 metros más corto.",
+      "steps": [
+        "Incluso contando las dos longitudes máximas, el camino A mide como máximo 360 metros.",
+        "El camino B mide al menos 380. Aunque el A sea tan largo como pueda y el B tan corto como pueda, el A sigue siendo más corto."
+      ],
+      "note": "Marca en una recta de 320 a 360 metros para el camino A y de 380 a 410 para el B. El espacio de 20 metros entre los intervalos muestra el margen mínimo."
+    }
+  }
+}

@@ -36,7 +36,7 @@
           "minLength": 1
         },
         "language": {
-          "const": "ca"
+          "enum": ["ca", "es"]
         },
         "version": {
           "type": "integer",

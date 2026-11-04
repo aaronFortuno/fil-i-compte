@@ -1,6 +1,7 @@
 /* V1: header (ID width and layout), ordered IDs, and a CRC-10. */
 ((root)=>{
   'use strict';
+  const {t}=typeof module==='object'&&module.exports?require('./i18n.js'):root.FilI18n;
   const alphabet='0123456789ABCDEFGHJKMNPQRSTVWXYZ';
   // These tables are part of the format; keep them stable across releases.
   const pages=[1,2,4,6], rows=[2,3,4];
@@ -15,10 +16,10 @@
   }
   function encode({pageCount,perPage,ids}){
     const page=pages.indexOf(pageCount),row=rows.indexOf(perPage);
-    if(page<0||row<0||ids.length!==pageCount*perPage||new Set(ids).size!==ids.length)throw Error('El lot no està complet.');
+    if(page<0||row<0||ids.length!==pageCount*perPage||new Set(ids).size!==ids.length)throw Error(t('El lot no està complet.'));
     const numbers=ids.map(id=>{
       const n=Number(id.slice(1));
-      if(!Number.isSafeInteger(n)||n<1||id!=='P'+String(n).padStart(4,'0'))throw Error('Identificador no vàlid.');
+      if(!Number.isSafeInteger(n)||n<1||id!=='P'+String(n).padStart(4,'0'))throw Error(t('Identificador no vàlid.'));
       return BigInt(n);
     });
     const width=Math.max(...numbers.map(n=>n.toString(2).length));
@@ -30,9 +31,9 @@
   }
   function decode(input){
     const code=input.toUpperCase().replace(/[\s-]/g,'').replace(/O/g,'0').replace(/[IL]/g,'1');
-    const invalid=()=>Error('El codi del lot no és vàlid. Comprova que l’has copiat sencer.');
+    const invalid=()=>Error(t('El codi del lot no és vàlid. Comprova que l’has copiat sencer.'));
     if(code.length<6||code.length>260||[...code].some(c=>!alphabet.includes(c)))throw invalid();
-    if(code[0]!=='1')throw Error('Aquesta versió del codi del lot no és compatible.');
+    if(code[0]!=='1')throw Error(t('Aquesta versió del codi del lot no és compatible.'));
     const body=code.slice(0,-2);
     if(checksum(body)!==code.slice(-2))throw invalid();
     const header=alphabet.indexOf(code[1])*32+alphabet.indexOf(code[2]);

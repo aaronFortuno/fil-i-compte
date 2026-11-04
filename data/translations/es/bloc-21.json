@@ -1,0 +1,158 @@
+{
+  "P0241": {
+    "title": "Más lotes, más manos",
+    "statement": "Tres voluntarios preparan 24 lotes en 12 minutos. Mañana habrá que preparar 36 lotes y habrá seis voluntarios. Todo el mundo trabaja al mismo ritmo y los lotes se pueden repartir sin esperas.",
+    "question": "¿Cuánto tardarán mañana? Explica qué mantienes constante al cambiar el número de lotes y al cambiar el número de voluntarios.",
+    "solution": {
+      "response": "Seis voluntarios prepararán los 36 lotes en 9 minutos.",
+      "steps": [
+        "Con los mismos tres voluntarios, hacer 36 lotes lleva una vez y media el tiempo de hacer 24. Tardarían 18 minutos.",
+        "Ahora mantenemos fijos los 36 lotes. Con el doble de voluntarios, el tiempo se reduce a la mitad y queda en 9 minutos."
+      ],
+      "note": "Tabla de pasos. 24 lotes con 3 voluntarios → 12 minutos. 36 con 3 → 18 minutos. 36 con 6 → 9 minutos."
+    }
+  },
+  "P0242": {
+    "title": "Una ruta más larga y más lenta",
+    "statement": "En una ruta de 12 km, Aina pedalea a 12 km/h y tarda 60 minutos. En otra ruta tendrá que hacer 18 km a 9 km/h. En las dos rutas va a la velocidad indicada y no se detiene.",
+    "question": "¿Cuánto tardará en hacer la segunda ruta? Justifica cómo afecta al tiempo cada cambio si mantienes fijo el otro dato.",
+    "solution": {
+      "response": "Tardará 120 minutos, es decir, 2 horas.",
+      "steps": [
+        "Primero mantenemos 12 km/h. Los 18 km son los 12 originales más 6 km. A la misma velocidad, a los 60 minutos les añadimos media hora y obtenemos 90 minutos.",
+        "Ahora mantenemos los 18 km. A 9 km/h se recorren 9 km en una hora. Para recorrer 18 hacen falta dos horas."
+      ],
+      "note": "Con la velocidad fija, una distancia mayor lleva más tiempo en la misma proporción. Con la distancia fija, bajar de 12 a 9 km/h aumenta el tiempo."
+    }
+  },
+  "P0243": {
+    "title": "El depósito y el tercer grifo",
+    "statement": "Dos grifos iguales llenan un depósito de 30 litros en 10 minutos. Ahora queremos recoger 45 litros con tres grifos iguales. De cada grifo sale siempre la misma cantidad de agua por minuto.",
+    "question": "¿Tardaremos más, menos o lo mismo? Justifica tu respuesta con los dos cambios y di qué mantienes fijo en cada caso.",
+    "solution": {
+      "response": "Tardaremos lo mismo, 10 minutos.",
+      "steps": [
+        "Si dejamos dos grifos abiertos, para pasar de 30 a 45 litros hay que añadir la mitad del volumen. El tiempo aumenta en la misma proporción y pasa de 10 a 15 minutos.",
+        "Para recoger los mismos 45 litros, los dos grifos necesitan un total de 30 minutos de funcionamiento, sumando el tiempo de ambos. Con tres grifos abiertos a la vez, son 10 minutos."
+      ],
+      "note": "En este caso, aumentar el volumen y el número de grifos en la misma proporción hace que el tiempo se mantenga."
+    }
+  },
+  "P0244": {
+    "title": "El nuevo álbum de fotos",
+    "statement": "Un álbum con 48 fotos ocupa 8 páginas llenas, con 6 fotos en cada una. En un álbum nuevo queremos poner 60 fotos y caben 10 en cada página.",
+    "question": "¿Cuántas páginas llenaremos en el álbum nuevo? Explica el efecto de cambiar el total de fotos y el de cambiar los huecos de cada página.",
+    "solution": {
+      "response": "Llenaremos 6 páginas.",
+      "steps": [
+        "Si mantenemos la capacidad de 6 fotos por página, al pasar de 48 a 60 pasamos de 8 a 10 páginas.",
+        "Ahora mantenemos las 60 fotos. Con páginas en las que caben 10, las mismas fotos ocupan 6 páginas."
+      ],
+      "note": "Para ver la relación inversa, compara diez páginas de seis con seis páginas de diez. Los dos productos dan 60."
+    }
+  },
+  "P0245": {
+    "title": "Un camino más largo en otro mapa",
+    "statement": "En un mapa, cada centímetro representa 100 metros. Una ruta de 400 metros mide 4 cm en ese mapa. Tendremos que dibujar una de 600 metros en otro mapa, donde cada centímetro representa 200 metros.",
+    "question": "¿Cuántos centímetros medirá el nuevo dibujo? Justifica qué mantienes constante al cambiar de mapa y al alargar la ruta.",
+    "solution": {
+      "response": "El nuevo dibujo medirá 3 cm.",
+      "steps": [
+        "Primero dejamos la ruta en 400 metros. En el nuevo mapa, cada centímetro representa el doble de metros, así que la ruta ocupa la mitad de centímetros, solo 2.",
+        "Ahora mantenemos el nuevo mapa. Los 200 metros de más ocupan 1 cm más. La ruta de 600 metros ocupa 3 cm."
+      ],
+      "note": "Con la ruta fija, si aumentan los metros que representa cada centímetro, disminuye la longitud dibujada. En un mismo mapa, la longitud dibujada crece con la distancia real."
+    }
+  },
+  "P0246": {
+    "title": "El alquiler de la pista",
+    "statement": "Alquilar una pista cuesta 12 € por hora, sin ningún otro cargo. Seis personas la alquilan dos horas y se reparten el coste a partes iguales. La semana siguiente, cuatro personas la alquilan tres horas.",
+    "question": "¿Cuánto pagará cada persona la segunda semana? Explica cómo cambia el precio por persona al alargar el alquiler y al cambiar el tamaño del grupo.",
+    "solution": {
+      "response": "La segunda semana cada persona pagará 9 €.",
+      "steps": [
+        "Con las mismas seis personas, dos horas cuestan 4 € por persona y tres horas cuestan 6 €. El precio por persona crece en la misma proporción que las horas.",
+        "Ahora fijamos el alquiler en tres horas. El gasto total es de 36 € y, con cuatro personas, toca dividirlo entre cuatro."
+      ],
+      "note": "Para un mismo alquiler, el producto de la cuota individual por el número de personas es el gasto total."
+    }
+  },
+  "P0247": {
+    "title": "Redibujamos el huerto",
+    "statement": "Un huerto rectangular mide 3 metros de ancho y 8 de largo. El nuevo huerto tendrá 4 metros de ancho y una superficie de 36 m².",
+    "question": "¿Qué longitud tendrá el nuevo huerto? Resuélvelo en dos pasos y explica qué medida mantienes fija en cada uno.",
+    "solution": {
+      "response": "El nuevo huerto medirá 9 metros de largo.",
+      "steps": [
+        "Primero conservamos los 24 m² del huerto original. Si la anchura pasa a ser de 4 metros, la longitud se reduce a 6 metros para que el producto siga siendo 24.",
+        "Ahora mantenemos los 4 metros de ancho y aumentamos la superficie de 24 a 36 m². La longitud crece en la misma proporción y pasa de 6 a 9 metros."
+      ],
+      "note": "En una cuadrícula de cuatro filas, pasar de 24 a 36 casillas añade tres columnas de cuatro casillas."
+    }
+  },
+  "P0248": {
+    "title": "Las baldosas del taller de arcilla",
+    "statement": "Con 6 kg de arcilla se hacen 24 baldosas iguales. Si se reparten entre tres equipos, les tocan 8 a cada uno. En la próxima sesión habrá 9 kg de arcilla y seis equipos. Cada baldosa necesita la misma cantidad de arcilla y se aprovecha todo el material.",
+    "question": "¿Cuántas baldosas le tocarán a cada equipo si las repartimos a partes iguales? Explica los dos cambios y qué mantienes constante en cada paso.",
+    "solution": {
+      "response": "Cada equipo recibirá 6 baldosas.",
+      "steps": [
+        "Primero mantenemos las 24 baldosas. Si duplicamos los equipos de tres a seis, a cada equipo le toca la mitad, 4 baldosas.",
+        "Con seis equipos fijos, los 9 kg dan una vez y media las baldosas que daban los 6 kg. A cada equipo le toca una vez y media su parte, es decir, 6."
+      ],
+      "note": "También puedes comprobar que con 9 kg salen 36 baldosas y que seis grupos de seis suman 36."
+    }
+  },
+  "P0249": {
+    "title": "Las diapositivas del recital",
+    "statement": "En un recital pasan 60 imágenes en 4 minutos, todas durante el mismo tiempo y sin pausas. Para la próxima actuación quieren pasar 72 imágenes en 6 minutos, también con el mismo tiempo por imagen.",
+    "question": "¿Cuántos segundos tendrá que durar cada imagen? Justifica qué dejas fijo al cambiar la duración total y al cambiar el número de imágenes.",
+    "solution": {
+      "response": "Cada imagen tendrá que durar 5 segundos.",
+      "steps": [
+        "Con las mismas 60 imágenes, pasar de 4 a 6 minutos hace que el tiempo por imagen aumente de 4 a 6 segundos.",
+        "Ahora mantenemos los 6 minutos, es decir, 360 segundos. Al poner 72 imágenes en vez de 60, el tiempo por imagen baja a 5 segundos."
+      ],
+      "note": "Tabla de pasos. 60 imágenes en 4 minutos → 4 segundos por imagen. 60 imágenes en 6 minutos → 6 segundos. 72 imágenes en 6 minutos → 5 segundos."
+    }
+  },
+  "P0250": {
+    "title": "Preparar los expositores a tiempo",
+    "statement": "Cuatro equipos montan 8 expositores en 4 minutos. Antes de abrir la feria habrá que montar 12 en solo 2 minutos. Todos los expositores son iguales y cada equipo tarda 2 minutos en montar uno.",
+    "question": "¿Cuántos equipos hacen falta para acabar en 2 minutos? Explica qué mantienes fijo al cambiar el número de expositores y al acortar el tiempo.",
+    "solution": {
+      "response": "Hacen falta 12 equipos.",
+      "steps": [
+        "Con los mismos 4 minutos, pasar de 8 a 12 expositores exige la mitad más de equipos. Harían falta 6.",
+        "Ahora mantenemos los 12 expositores. Seis equipos durante 4 minutos hacen lo mismo que doce equipos durante 2 minutos."
+      ],
+      "note": "En 4 minutos, cada equipo monta dos. En 2 minutos solo monta uno y por eso hacen falta el doble de equipos."
+    }
+  },
+  "P0251": {
+    "title": "La reserva de pienso",
+    "statement": "Una reserva de 24 kg de pienso dura 6 días para cuatro animales. Ahora habrá seis animales y tendremos 48 kg de pienso. Todos comen la misma cantidad cada día.",
+    "question": "¿Cuántos días durará la nueva reserva? Explica qué mantienes constante al cambiar la cantidad de pienso y al cambiar el número de animales.",
+    "solution": {
+      "response": "La reserva durará 8 días.",
+      "steps": [
+        "Con cuatro animales fijos, duplicar la reserva de 24 a 48 kg duplica la duración de 6 a 12 días.",
+        "Ahora mantenemos los 48 kg. Cuatro animales durante 12 días suman 48 días de alimentación para un solo animal. Si los repartimos entre seis animales, cada uno tiene pienso para 8 días."
+      ],
+      "note": "Con la misma reserva, el producto del número de animales por el número de días se mantiene constante si todos comen igual."
+    }
+  },
+  "P0252": {
+    "title": "Las tiras de tela para la feria",
+    "statement": "De una pieza de tela de 24 metros salen 8 tiras de 3 metros. Para la feria tenemos una pieza de 36 metros y queremos que cada tira mida 4 metros. Al cortar no perdemos tela.",
+    "question": "¿Cuántas tiras saldrán? Explica cómo varía el número de tiras al cambiar la longitud total y al cambiar el tamaño de cada tira.",
+    "solution": {
+      "response": "Saldrán 9 tiras.",
+      "steps": [
+        "Si seguimos cortando tiras de 3 metros, de una pieza de 36 metros salen 12 tiras. Cuanto más larga es la pieza, más tiras del mismo tamaño salen.",
+        "Ahora mantenemos los 36 metros totales. Como cada tira pasa a medir 4 metros, salen menos. Dividimos los 36 metros en 9 tiras de 4."
+      ],
+      "note": "A partir de 36 metros, doce tiras de tres y nueve tiras de cuatro representan la misma longitud."
+    }
+  }
+}

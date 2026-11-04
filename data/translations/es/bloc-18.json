@@ -1,0 +1,178 @@
+{
+  "P0205": {
+    "title": "Pedidos en bicicleta",
+    "statement": "Una tienda prepara 80 pedidos. Tres cuartas partes se recogen en la tienda. De los pedidos que hay que repartir a domicilio, el 20 % se entrega en bicicleta.",
+    "question": "¿Qué porcentaje de todos los pedidos se entrega en bicicleta? Justifica sobre qué cantidad haces cada cálculo.",
+    "solution": {
+      "response": "El 5 % de todos los pedidos se entrega en bicicleta.",
+      "steps": [
+        "El total de la fracción son los 80 pedidos. Si se recogen tres cuartas partes, quedan 20 para entregar a domicilio.",
+        "El 20 % se calcula sobre estos 20 pedidos. Son 4 entregas en bicicleta.",
+        "Para calcular el porcentaje final volvemos al total de 80. Cuatro de 80 equivale a cinco de cada 100."
+      ],
+      "note": "El 20 % se refiere a las entregas a domicilio y el 5 % se refiere al conjunto de pedidos.",
+      "visual": {
+        "caption": "Cada parte representa 20 pedidos. La parte coloreada es el grupo que se reparte a domicilio."
+      }
+    }
+  },
+  "P0206": {
+    "title": "Dos coros, dos totales",
+    "statement": "En el coro del barrio Norte hay 48 personas y una cuarta parte canta por primera vez. En el del barrio Sur hay 60 personas y el 20 % canta por primera vez. Pau dice que en el Norte hay más debutantes porque un cuarto es más que el 20 %.",
+    "question": "¿Tiene razón Pau? Justifica la comparación indicando cuál es el total de cada coro.",
+    "solution": {
+      "response": "Los dos coros tienen 12 debutantes.",
+      "steps": [
+        "Un cuarto es el 25 %. En el coro del Norte ese cuarto se calcula sobre 48 personas y da 12.",
+        "En el coro del Sur el 20 % se calcula sobre 60 personas y también da 12."
+      ],
+      "note": "Comparar solo las proporciones no permite comparar las cantidades cuando los totales son distintos."
+    }
+  },
+  "P0207": {
+    "title": "Las plantas que había por la mañana",
+    "statement": "Por la mañana se dona un cuarto de las plantas de un vivero a una escuela. Por la tarde se vende el 20 % de las que quedan después de la donación. A la hora de cerrar, en el vivero aún hay 24 plantas.",
+    "question": "¿Cuántas plantas había antes de la donación? Explica cuál es el total al deshacer cada uno de los dos cambios.",
+    "solution": {
+      "response": "Antes de la donación había 40 plantas.",
+      "steps": [
+        "Las 24 plantas son el 80 % de las que había justo antes de vender. Son cuatro quintas partes, de modo que cinco partes son 30 plantas.",
+        "Las 30 plantas son tres cuartas partes de la cantidad que había antes de la donación. Cada cuarto son 10 plantas. El total inicial es de 40."
+      ],
+      "note": "La venta toma como base las 30 plantas que quedan después de donar. La donación toma como base las 40 plantas iniciales."
+    }
+  },
+  "P0208": {
+    "title": "La votación del patio",
+    "statement": "Votan 40 alumnos de quinto y 60 de sexto. Tres cuartas partes de los de quinto votan a favor de poner una mesa de ping-pong en el patio. En sexto vota a favor el 20 % de quienes han votado.",
+    "question": "¿Qué porcentaje del conjunto de votantes ha votado a favor? Indica cuál es el total en cada cálculo.",
+    "solution": {
+      "response": "El 42 % del conjunto de votantes ha votado a favor.",
+      "steps": [
+        "Calculamos tres cuartas partes de los 40 alumnos de quinto y obtenemos 30 votos.",
+        "Calculamos el 20 % de los 60 alumnos de sexto y obtenemos 12 votos.",
+        "Sumamos los 42 votos favorables. El porcentaje conjunto se calcula sobre los 100 alumnos que han votado."
+      ],
+      "note": "Cada curso aporta un número distinto de votantes. Para calcular el resultado conjunto, sumamos los votos y también los votantes."
+    }
+  },
+  "P0209": {
+    "title": "Del bidón al depósito",
+    "statement": "Un depósito de 4 litros está lleno hasta tres cuartas partes de su capacidad. Un bidón de 2 litros contiene agua hasta el 25 % de su capacidad. Echamos toda el agua del bidón en el depósito.",
+    "question": "¿Qué fracción de la capacidad del depósito quedará llena? Justifica sobre qué capacidad haces cada cálculo.",
+    "solution": {
+      "response": "El depósito quedará lleno hasta siete octavos de su capacidad. Habrá 3 litros y medio de agua.",
+      "steps": [
+        "Tres cuartas partes del depósito de 4 litros son 3.000 mL.",
+        "El 25 % del bidón de 2 litros es un cuarto de 2.000 mL, es decir, 500 mL.",
+        "El depósito acaba con 3.500 mL. El total de la fracción final vuelve a ser la capacidad del depósito, 4.000 mL. Quedan llenos siete de sus ocho bloques de 500 mL."
+      ],
+      "note": "El cuarto del bidón son 500 mL. Un cuarto del depósito sería el doble.",
+      "visual": {
+        "caption": "El dibujo representa el depósito de 4 litros. Cada bloque son 500 mL y siete bloques quedan llenos."
+      }
+    }
+  },
+  "P0210": {
+    "title": "Presupuesto para el taller",
+    "statement": "Para un taller tenemos 120 €. Reservamos una quinta parte para imprimir carteles. El material del taller cuesta 100 € antes de una rebaja del 20 %.",
+    "question": "¿Cuánto dinero quedará para comprar más material después de pagar la compra? Justifica qué total sirve de referencia para la reserva y cuál para la rebaja.",
+    "solution": {
+      "response": "Quedarán 16 € para comprar más material.",
+      "steps": [
+        "La reserva es una quinta parte de los 120 € de presupuesto. Apartamos 24 € y quedan 96 para material.",
+        "El descuento se calcula sobre los 100 € del precio inicial del material. Descontamos 20 € y pagamos 80.",
+        "De los 96 € disponibles para material, quedan 16."
+      ],
+      "note": "Una quinta parte y un 20 % son equivalentes. Aquí dan importes distintos porque se aplican a cantidades distintas."
+    }
+  },
+  "P0211": {
+    "title": "El tenis entre los deportes",
+    "statement": "En un campamento urbano hay 60 niños. Dos tercios del total han elegido hacer deporte. El 25 % de todos los niños ha elegido tenis, que es una de las actividades deportivas. Jana afirma que una cuarta parte de los niños que han elegido deporte hace tenis.",
+    "question": "¿Es correcta la afirmación? Justifica qué fracción de quienes hacen deporte ha elegido tenis y cuál es el total en cada paso.",
+    "solution": {
+      "response": "Jana se equivoca. Hacen tenis 3/8 de los niños que han elegido deporte.",
+      "steps": [
+        "De los 60 niños del campamento, dos tercios son 40 niños que han elegido deporte. El 25 % de esos mismos 60 son 15 niños que han elegido tenis.",
+        "Ahora el total son los 40 niños que han elegido deporte. De esos, 15 hacen tenis. Simplificamos 15/40 agrupando de cinco en cinco y obtenemos 3/8."
+      ],
+      "note": "Un cuarto de todo el campamento son 15 niños. Un cuarto de quienes han elegido deporte serían 10.",
+      "visual": {
+        "caption": "La barra representa a los 40 niños que han elegido deporte. Los tres bloques coloreados representan a los 15 que hacen tenis."
+      }
+    }
+  },
+  "P0212": {
+    "title": "Dos jarras en el mismo bol",
+    "statement": "La primera jarra contiene 1 litro de bebida y un cuarto de su contenido es zumo de melocotón. La segunda contiene medio litro de bebida y el 50 % de su contenido es zumo de melocotón. Echamos las dos bebidas en un bol.",
+    "question": "¿Qué fracción de la mezcla final es zumo de melocotón? Justifica cuál es el total de cada una de las tres proporciones.",
+    "solution": {
+      "response": "Un tercio de la mezcla final es zumo de melocotón.",
+      "steps": [
+        "Un cuarto del litro de la primera jarra son 250 mL de zumo. El 50 % del medio litro de la segunda también son 250 mL de zumo.",
+        "En el bol hay 500 mL de zumo dentro de un total de 1.500 mL de mezcla. Podemos dividir la mezcla en tres partes de 500 mL, y solo una corresponde al zumo."
+      ],
+      "note": "En un dibujo, representa la mezcla final con tres vasos de medio litro. Un vaso entero equivale a la cantidad de zumo.",
+      "visual": {
+        "caption": "La mezcla completa tiene tres partes de 500 mL. La parte coloreada representa todo el zumo."
+      }
+    }
+  },
+  "P0213": {
+    "title": "Dos cupones, el mismo porcentaje",
+    "statement": "Una mochila cuesta 80 € y primero le aplican una rebaja de un cuarto del precio. Después hay que elegir un cupón. El cupón A descuenta el 20 % del precio original y el cupón B descuenta el 20 % del precio rebajado.",
+    "question": "¿Qué cupón deja el precio final más bajo y por cuántos euros? Justifica sobre qué precio se aplica cada porcentaje.",
+    "solution": {
+      "response": "El cupón A deja el precio 4 € más bajo. Con el A se pagan 44 € y con el B, 48 €.",
+      "steps": [
+        "La primera rebaja es un cuarto de los 80 € originales, o sea, 20 €. El precio rebajado es de 60 €.",
+        "El cupón A quita el 20 % de los 80 € originales, que son 16 €. El cupón B quita el 20 % de los 60 € rebajados, que son 12 €.",
+        "En los dos casos, el importe del cupón se resta de los 60 € que se pagaban antes de aplicarlo."
+      ],
+      "note": "Los cupones tienen el mismo porcentaje, pero toman como referencia precios distintos."
+    }
+  },
+  "P0214": {
+    "title": "El inventario de los plantones",
+    "statement": "En el vivero sembramos 120 semillas y tres cuartas partes germinan. De cada semilla que germina sale un plantón. Más adelante, algunos plantones se estropean. El registro dice que se han estropeado tantos plantones como el 15 % de las semillas sembradas.",
+    "question": "¿Qué porcentaje de los plantones que salieron sigue en buen estado? Justifica cuál es el total de cada cálculo.",
+    "solution": {
+      "response": "El 80 % de los plantones que salieron sigue en buen estado.",
+      "steps": [
+        "Tres cuartas partes de las 120 semillas son 90 semillas germinadas. Por tanto, salen 90 plantones.",
+        "El 15 % se calcula sobre las 120 semillas sembradas. Se estropean 18 plantones y quedan 72.",
+        "Para responder, comparamos los 72 que están bien con los 90 que habían salido. Es el 80 %."
+      ],
+      "note": "El registro toma como referencia las semillas sembradas. La pregunta toma como referencia los plantones que salieron."
+    }
+  },
+  "P0215": {
+    "title": "Los panes integrales de los dos días",
+    "statement": "El lunes, una panadería vende 18 panes integrales. Esos panes son el 30 % de todos los panes vendidos el lunes. El martes vende 40 panes en total y la mitad son integrales.",
+    "question": "¿Qué porcentaje de todos los panes vendidos entre el lunes y el martes eran integrales? Justifica cuál es el total en cada paso.",
+    "solution": {
+      "response": "El 38 % de los panes vendidos entre los dos días eran integrales.",
+      "steps": [
+        "El total del 30 % es la venta del lunes. Si tres décimas son 18 panes, una décima son 6 panes. El lunes se venden 60 en total.",
+        "El total de la mitad son los 40 panes del martes. Veinte son integrales.",
+        "Entre los dos días se venden 38 panes integrales sobre un total de 100 panes."
+      ],
+      "note": "Para el porcentaje conjunto, la referencia es la suma de los panes vendidos los dos días."
+    }
+  },
+  "P0216": {
+    "title": "Más votos para el coro",
+    "statement": "En una primera votación participan 80 alumnos y un cuarto vota por el coro. En una segunda votación, el número total de votantes aumenta un 25 % respecto a la primera. El número de votos por el coro también aumenta un 25 % respecto a la primera.",
+    "question": "¿Aumenta la fracción de votantes que elige el coro? Justifica a qué cantidad se aplica cada uno de los dos aumentos y con qué total comparas los votos al final.",
+    "solution": {
+      "response": "La fracción se mantiene en un cuarto. Los votos por el coro pasan de 20 a 25, pero el total pasa de 80 a 100.",
+      "steps": [
+        "En la primera votación, un cuarto de 80 son 20 votos por el coro.",
+        "El aumento de votantes se calcula sobre los 80 iniciales y añade 20. El aumento de votos por el coro se calcula sobre los 20 iniciales y añade 5.",
+        "En la segunda votación, los 25 votos por el coro se comparan con los 100 votantes. Veinticinco es un cuarto de 100."
+      ],
+      "note": "Si la parte y el total crecen en la misma proporción, la fracción se mantiene."
+    }
+  }
+}

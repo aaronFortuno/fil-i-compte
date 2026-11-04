@@ -42,11 +42,13 @@ SOFTWARE.
     'template-action': ['action']
   };
   const validProblemId = id => typeof id === 'string' && /^P\d{4,16}$/.test(id);
+  const reportLanguage = c => c.language ?? 'ca';
   function validReport(c) {
     return c && validProblemId(c.problem) &&
-      ['statement', 'solution'].includes(c.section) && Number.isSafeInteger(c.version) && c.version > 0;
+      ['statement', 'solution'].includes(c.section) && Number.isSafeInteger(c.version) && c.version > 0 &&
+      ['ca', 'es'].includes(reportLanguage(c));
   }
-  const reportKey = c => JSON.stringify([c.problem, c.section, c.version]);
+  const reportKey = c => JSON.stringify([c.problem, c.section, c.version, reportLanguage(c)]);
   function create(env, website = WEBSITE) {
     const timer = (env.setTimeout || setTimeout).bind(env), clear = (env.clearTimeout || clearTimeout).bind(env);
     const storage = (kind, operation, key, value) => {
@@ -61,8 +63,13 @@ SOFTWARE.
       const saved = raw && raw.length < 350000 ? JSON.parse(raw) : [];
       if (Array.isArray(saved)) for (const key of saved.slice(-1000)) {
         if (typeof key !== 'string') continue;
-        try { const a = JSON.parse(key), c = { problem: a[0], section: a[1], version: a[2] };
-          if (Array.isArray(a) && a.length === 3 && validReport(c)) sent.add(reportKey(c)); } catch {}
+        try {
+          const entry = JSON.parse(key);
+          if (!Array.isArray(entry) || ![3, 4].includes(entry.length)) continue;
+          const [problem, section, version, language] = entry;
+          const context = { problem, section, version, language };
+          if (validReport(context)) sent.add(reportKey(context));
+        } catch {}
       }
     } catch {}
     function production() { return env.location?.hostname === HOST && env.location?.protocol === 'https:'; }
@@ -195,7 +202,7 @@ SOFTWARE.
       const key = reportKey(context), token = generation;
       sending.add(key); notify();
       try {
-        const ok = await send('problem-reported', { problem_id: context.problem, section: context.section, version: context.version }, token);
+        const ok = await send('problem-reported', { problem_id: context.problem, section: context.section, version: context.version, language: reportLanguage(context) }, token);
         if (!ok || token !== generation || !permitted()) return false;
         sent.add(key); storage('sessionStorage', 'setItem', REPORTS, JSON.stringify([...sent].slice(-1000))); return true;
       } finally { sending.delete(key); notify(); }

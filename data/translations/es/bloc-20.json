@@ -1,0 +1,158 @@
+{
+  "P0229": {
+    "title": "Preparar el material del taller",
+    "statement": "Cuatro voluntarios tardan 12 minutos en preparar unos sobres. Para repetir el mismo trabajo habrá seis voluntarios. Todo el mundo trabaja al mismo ritmo y los sobres se pueden repartir sin que nadie tenga que esperar.",
+    "question": "¿Cuántos minutos tardarán seis voluntarios en preparar los mismos sobres? Justifica tu respuesta.",
+    "solution": {
+      "response": "Seis voluntarios tardarán 8 minutos.",
+      "steps": [
+        "Cuatro voluntarios que trabajan doce minutos hacen lo mismo que un voluntario que trabaja 48 minutos.",
+        "Con seis voluntarios, nos repartimos esos 48 minutos de trabajo. Cada uno trabaja 8 minutos."
+      ],
+      "note": "En una tabla, 4 personas durante 12 minutos y 6 personas durante 8 minutos dan el mismo producto, 48."
+    }
+  },
+  "P0230": {
+    "title": "La ruta en bicicleta",
+    "statement": "Dos personas hacen la misma ruta de 24 km en bicicleta, sin parar. Núria va a 12 km/h y Biel a 8 km/h. Cada uno mantiene su velocidad durante todo el recorrido.",
+    "question": "Si Núria tarda 2 horas, ¿cuánto tarda Biel? Justifica qué se mantiene igual.",
+    "solution": {
+      "response": "Biel tarda 3 horas.",
+      "steps": [
+        "La distancia es de 24 km en los dos casos. Núria hace 12 km cada hora y en dos horas ha hecho 24.",
+        "Biel hace 8 km cada hora. Necesita tres tramos de 8 km para completar el recorrido."
+      ],
+      "note": "Dibuja una tira de 24 km. Puedes dividirla en dos tramos de 12 o en tres de 8. Cada tramo representa una hora."
+    }
+  },
+  "P0231": {
+    "title": "Abrimos un grifo más",
+    "statement": "Tres grifos iguales llenan un depósito vacío en 8 minutos. Al día siguiente lo llenamos con cuatro grifos como estos. De cada grifo sale la misma cantidad de agua por minuto, tanto si está abierto solo como con los demás.",
+    "question": "¿Cuánto tardaremos en llenar el mismo depósito con cuatro grifos? Justifica tu respuesta.",
+    "solution": {
+      "response": "Con cuatro grifos tardaremos 6 minutos.",
+      "steps": [
+        "Tres grifos abiertos ocho minutos aportan tanta agua como un grifo abierto 24 minutos.",
+        "Repartimos esos 24 minutos entre los cuatro grifos que funcionan a la vez."
+      ],
+      "note": "El producto del número de grifos por los minutos tiene que ser el mismo porque el depósito recibe el mismo volumen."
+    }
+  },
+  "P0232": {
+    "title": "Un mural con la misma superficie",
+    "statement": "Una escuela tiene una lona rectangular de 4 m de alto y 9 m de ancho. Para otra pared quiere una lona rectangular de la misma superficie, pero de 6 m de alto.",
+    "question": "¿Qué anchura debe tener la nueva lona? Justifica cómo se compensa el cambio de altura.",
+    "solution": {
+      "response": "La nueva lona debe medir 6 m de ancho.",
+      "steps": [
+        "La primera lona tiene 4 × 9 = 36 m² de superficie.",
+        "En la nueva lona, la altura es de 6 metros. La anchura debe ser 36 ÷ 6 para que el producto siga siendo 36."
+      ],
+      "note": "En una cuadrícula, puedes dibujar 36 cuadrados como cuatro filas de nueve o como seis filas de seis."
+    }
+  },
+  "P0233": {
+    "title": "Las imágenes de la presentación",
+    "statement": "Una presentación debe durar exactamente un minuto. Si cada imagen se muestra durante 3 segundos, caben 20 imágenes. Ahora se quiere que cada imagen se muestre durante 5 segundos. No hay pausas entre imágenes.",
+    "question": "¿Cuántas imágenes cabrán ahora? Justifica por qué cambia el número de imágenes.",
+    "solution": {
+      "response": "Ahora cabrán 12 imágenes.",
+      "steps": [
+        "Las veinte imágenes de tres segundos ocupan los 60 segundos disponibles.",
+        "Si cada imagen ocupa cinco segundos, podemos poner doce porque 12 × 5 = 60."
+      ],
+      "note": "El total de segundos es el mismo. Dar más tiempo a cada imagen hace que quepan menos."
+    }
+  },
+  "P0234": {
+    "title": "Trozos de cordel sin sobrantes",
+    "statement": "Un rollo de cordel se puede cortar en 12 trozos de 2 metros sin que sobre nada. El taller prefiere cortar el mismo rollo en trozos de 3 metros.",
+    "question": "¿Cuántos trozos enteros de 3 metros saldrán? Explica qué cantidad se conserva.",
+    "solution": {
+      "response": "Saldrán 8 trozos enteros.",
+      "steps": [
+        "El rollo mide 12 × 2 = 24 metros.",
+        "Si cada trozo mide 3 metros, dividimos los 24 metros entre 3."
+      ],
+      "note": "Puedes agrupar de tres en tres los trozos de dos metros y de dos en dos los de tres metros. En los dos casos, cada grupo mide 6 metros."
+    }
+  },
+  "P0235": {
+    "title": "Dos preguntas sobre las máquinas",
+    "statement": "Dos máquinas iguales imprimen juntas 6 láminas cada minuto. Se añaden otras dos máquinas iguales. Todas funcionan al mismo ritmo y se reparten el trabajo. El pedido es de 48 láminas.",
+    "question": "¿Qué relación hay entre el número de máquinas y las láminas por minuto? ¿Y entre el número de máquinas y el tiempo para completar el pedido? Clasifica y justifica las dos relaciones.",
+    "solution": {
+      "response": "Las láminas por minuto son directamente proporcionales al número de máquinas. El tiempo para hacer las 48 láminas es inversamente proporcional al número de máquinas.",
+      "steps": [
+        "Al pasar de dos a cuatro máquinas, duplicamos la producción de 6 a 12 láminas por minuto.",
+        "Con dos máquinas hacen falta 8 minutos. Con cuatro hacen falta 4. Duplicamos el número de máquinas y el tiempo se reduce a la mitad."
+      ],
+      "note": "Para comparar el tiempo mantenemos fijas las 48 láminas del pedido."
+    }
+  },
+  "P0236": {
+    "title": "El precio del alquiler de patines",
+    "statement": "Para alquilar unos patines pagamos 3 € fijos y 2 € por hora. Comparamos alquilarlos durante 2 horas y durante 4 horas.",
+    "question": "¿La relación entre las horas y el precio total es directa, inversa o ninguna de las dos? Justifica tu respuesta con los dos importes.",
+    "solution": {
+      "response": "Ninguna de las dos. Dos horas cuestan 7 € y cuatro horas cuestan 11.",
+      "steps": [
+        "Si fuera directa, al duplicar las horas también se duplicaría el precio y pasaría de 7 € a 14 €.",
+        "Si fuera inversa, el precio se reduciría a la mitad al duplicar las horas. En realidad aumenta de 7 € a 11 €."
+      ],
+      "note": "Los 3 € fijos se pagan una vez en los dos alquileres."
+    }
+  },
+  "P0237": {
+    "title": "La tabla de los cromos",
+    "statement": "Repartimos el mismo lote de cromos a partes iguales. Con dos niños les tocan 18 a cada uno. Con tres les tocan 12 a cada uno. En la fila de seis niños, alguien ha apuntado que les tocarían 9.",
+    "question": "¿El número de cromos por niño varía de forma directamente proporcional, inversamente proporcional o de ninguna de las dos maneras? Corrige la fila de seis y justifica tu respuesta.",
+    "solution": {
+      "response": "La relación es inversa. Con seis niños les tocan 6 a cada uno.",
+      "steps": [
+        "Las dos primeras filas dan el mismo total de 36 cromos. Dos grupos de 18 y tres grupos de 12 suman lo mismo.",
+        "Con seis niños les toca la mitad de lo que les tocaba con tres. Si diéramos nueve a cada uno, necesitaríamos 54 cromos."
+      ],
+      "note": "Puedes comprobar cada fila multiplicando el número de niños por los cromos por niño. El producto siempre debe ser 36."
+    }
+  },
+  "P0238": {
+    "title": "Compartimos el alquiler de la sala",
+    "statement": "Un grupo alquila una sala por 36 € y reparte ese gasto a partes iguales. Cada persona también paga 2 € por una entrada individual. Comparamos qué paga cada persona cuando van 3 personas y cuando van 6.",
+    "question": "¿La relación entre el número de personas y lo que paga cada una en total es directa, inversa o ninguna de las dos? Justifica tu respuesta.",
+    "solution": {
+      "response": "Ninguna de las dos. Con tres personas, cada una paga 14 €. Con seis, paga 8.",
+      "steps": [
+        "La parte del alquiler baja de 12 € a 6 €. La entrada sigue costando 2 € por persona.",
+        "Al duplicar el grupo, el total por persona baja, por lo que no es directamente proporcional. Tampoco se reduce a la mitad. La mitad de 14 € serían 7 €."
+      ],
+      "note": "La parte del alquiler sí varía de forma inversamente proporcional. Al sumarle la entrada, el total por persona pierde esa relación."
+    }
+  },
+  "P0239": {
+    "title": "El mismo camino en dos mapas",
+    "statement": "Un camino mide 600 m en realidad. En un mapa, cada centímetro representa 100 m reales. En otro mapa, cada centímetro representa 200 m reales.",
+    "question": "¿La relación entre los metros que representa cada centímetro y la longitud dibujada del mismo camino es directa, inversa o ninguna de las dos? Justifica tu respuesta con los dos mapas.",
+    "solution": {
+      "response": "La relación es inversa. El camino mide 6 cm en el primer mapa y 3 cm en el segundo.",
+      "steps": [
+        "Con 100 metros por centímetro, los 600 metros reales ocupan 6 cm. Si cada centímetro representa 200, bastan 3 cm.",
+        "Cuando un centímetro representa el doble de metros, hace falta la mitad de centímetros para representar la misma distancia."
+      ],
+      "note": "Podemos recuperar la distancia real multiplicando los centímetros por los metros que representa cada uno."
+    }
+  },
+  "P0240": {
+    "title": "¿Cuántos días durará el pienso?",
+    "statement": "En el refugio tienen una reserva de 24 kg de pienso. Si gastan 3 kg cada día, les dura 8 días. En otra semana necesitan gastar 4 kg cada día. Empiezan con la misma reserva y no añaden más.",
+    "question": "¿Cuántos días durará ahora el pienso? Justifica tu respuesta con la cantidad que se conserva en los dos casos.",
+    "solution": {
+      "response": "La reserva durará 6 días.",
+      "steps": [
+        "La primera previsión usa los 24 kg, porque 3 kg al día durante 8 días son 24 kg.",
+        "Si ahora se gastan 4 kg cada día, dividimos los mismos 24 kg entre 4."
+      ],
+      "note": "En la tabla, 3 kg al día y 8 días dan el mismo producto que 4 kg al día y 6 días."
+    }
+  }
+}

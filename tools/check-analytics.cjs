@@ -37,7 +37,17 @@ function fixture({id=website,navigator={},protocol='https:',receive=accepted,loa
   assert.equal(await f.api.track('worksheet-proposed',{pages:2}),false);
   assert(await f.api.track('worksheet-proposed',{pages:2,per_page:3}));
   assert.deepEqual(await Promise.all([f.api.reportProblem(context),f.api.reportProblem(context)]),[true,false]);
-  assert.deepEqual(f.calls[3].data,{problem_id:'P0140',section:'solution',version:1});
+  assert.deepEqual(f.calls[3].data,{problem_id:'P0140',section:'solution',version:1,language:'ca'});
+  const spanishReport={...context,language:'es'};
+  assert(await f.api.reportProblem(spanishReport));
+  assert.deepEqual(f.calls.at(-1).data,{problem_id:'P0140',section:'solution',version:1,language:'es'});
+  assert.equal(await f.api.reportProblem(spanishReport),false);
+  assert.equal(await f.api.reportProblem({...context,language:'invalid'}),false);
+  const legacy=fixture();
+  legacy.env.sessionStorage.setItem('fil-problem-reports-v1',JSON.stringify([JSON.stringify(['P0140','solution',1])]));
+  const restored=create(legacy.env,website);
+  assert.equal(restored.reportState(context),'sent');
+  assert.equal(restored.reportState(spanishReport),'idle');
   assert(await f.api.reportProblem({...context,section:'statement'}));
   assert(await f.api.reportProblem({...context,version:2}));
   assert.equal(create(f.env,website).reportState(context),'sent');

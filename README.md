@@ -127,14 +127,17 @@ El model 2 afegeix l'alternativa `parts`, amb dos o tres elements `{question, so
 
 Representacions inicials: `objects` (grups de cercles i elements ratllats), `fraction` (barra de parts iguals), `grid` (quadrat de rajoles), `rectangle` i `square` (amb obertura per a una porta). Els límits de mida estan explicitats a l'esquema per mantenir la llegibilitat. Es poden afegir nous tipus quan un problema concret ho demani.
 
-Per ampliar: redacta un bloc de 10–15 problemes amb solucions en un fitxer nou `data/packs/bloc-XX.json`, amb identificadors nous. Revisa'l i registra'n l'estat editorial; publica abans de la validació docent només si l'usuari ho autoritza. Incrementa la versió d'un exercici i la del seu bloc quan canviïs el contingut. Després executa:
+Per ampliar, redacta un bloc de 10–15 problemes amb solucions en un fitxer nou `data/packs/bloc-XX.json`, amb identificadors nous. Afegeix els textos en castellà a `data/translations/es/bloc-XX.json`, indexats pels mateixos codis. Revisa el bloc i registra'n l'estat editorial. Publica abans de la validació docent només si l'usuari ho autoritza. Incrementa la versió d'un exercici i la del seu bloc quan canviïs el contingut. Després executa:
 
 ```text
 node tools/build-data.cjs
+node tools/build-ui.cjs
 node tools/check.cjs
 ```
 
-La preparació agrega els blocs, comprova identificadors duplicats i genera el catàleg del web, la còpia per a ús sense servidor i un document BLOC-XX.md per cada bateria. El comprovador valida l'esquema de tots els blocs i la coincidència del catàleg generat. També contrasta els resultats de tots els apartats i les evidències de les justificacions amb referències independents. Quan s'afegeixi un nou paquet caldrà ampliar aquestes referències, el recompte i l'estat editorial esperat; no només acceptar el resultat de l'arbre de càlcul.
+La preparació agrega els blocs, comprova identificadors duplicats i genera el catàleg, les còpies per al web en català i castellà i un document BLOC-XX.md per cada bateria. La versió castellana substitueix els camps de text i reutilitza els càlculs, els codis, les etiquetes i la geometria dels dibuixos. La generació exigeix que hi hagi una traducció per a cada problema i apartat. El comprovador també contrasta els resultats i les evidències amb referències independents. Quan s'afegeixi un nou paquet caldrà ampliar aquestes referències, el recompte i l'estat editorial esperat.
+
+La interfície catalana és a `/` i la castellana a `/es/`. El fitxer `es/index.html` es regenera a partir d’`index.html` i dels textos d’`i18n/es-page.json`. El selector de llengua obre l’altra versió al mateix domini, on es poden recuperar les tries i plantilles del mateix navegador.
 
 Abans de donar per bo un nou bloc: revisió numèrica, lingüística i docent, revisió de les etiquetes i comprovació local de les distribucions de 2, 3 i 4 problemes per pàgina. L'algorisme de selecció actual està pensat per al catàleg inicial; caldrà revisar-ne el rendiment quan hi hagi centenars de registres.
 
@@ -166,8 +169,8 @@ La integració s’activa amb l’identificador propi del web a `WEBSITE`, dins 
 | `problem-selected` | Quan es marca manualment un problema al banc | Identificador públic del problema |
 | `template-action` | Quan es crea, s’obre, es reanomena, s’actualitza o s’elimina una plantilla | Tipus d’acció |
 | `print-requested` | Quan un botó del web obre el diàleg d’impressió | Fitxa o solucionari, pàgines i problemes per pàgina |
-| `problem-reported` | Quan algú prem la bandera d’un enunciat o d’un solucionari | Identificador públic del problema, secció i versió |
+| `problem-reported` | Quan algú prem la bandera d’un enunciat o d’un solucionari | Identificador públic del problema, secció, versió i llengua |
 
-Es registra una visita quan el receptor està disponible. Les peticions d’impressió compten encara que després es cancel·li el diàleg. Els avisos es marquen com a enviats quan el receptor els accepta. La mateixa combinació de problema, secció i versió es pot notificar un cop per pestanya.
+Es registra una visita quan el receptor està disponible. Les peticions d’impressió compten encara que després es cancel·li el diàleg. Els avisos es marquen com a enviats quan el receptor els accepta. La mateixa combinació de problema, secció, versió i llengua es pot notificar un cop per pestanya.
 
 El web respecta GPC, DNT i l’opció local de desactivar l’analítica. Les comprovacions de privacitat i recepció es poden executar amb `node tools/check-analytics.cjs`, amb un receptor simulat.

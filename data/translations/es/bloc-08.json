@@ -1,0 +1,167 @@
+{
+  "P0085": {
+    "title": "Dos carteles de rebajas",
+    "statement": "Una mochila cuesta 100 € en las dos tiendas. La tienda A hace un 30 % de descuento. La tienda B hace un 20 % de descuento y aplica otro 10 % sobre el precio rebajado.",
+    "question": "¿En qué tienda sale más barata la mochila? Justifica la elección.",
+    "solution": {
+      "response": "En la tienda A cuesta 70 €, dos euros menos que en la tienda B.",
+      "steps": [
+        "En la tienda A pagamos el 70 % de 100 €, es decir, 70 €.",
+        "En la tienda B, el primer descuento deja el precio en 80 €. El 10 % de 80 € son 8 €, así que el precio final es 72 €."
+      ],
+      "note": "En la tienda B, los factores son 0,80 y 0,90. Al aplicarlos uno tras otro, el factor es 0,72, equivalente a un descuento total del 28 %."
+    }
+  },
+  "P0086": {
+    "title": "El pedido de plantones",
+    "statement": "El huerto escolar ha encargado 60 plantones. El lunes reduce el pedido un 20 %. El martes lo amplía un 25 % respecto a la cantidad que había encargado el lunes.",
+    "question": "¿Acabarán llegando tantos plantones como se habían encargado al principio? Justifica la respuesta.",
+    "solution": {
+      "response": "Sí. El pedido vuelve a ser de 60 plantones.",
+      "steps": [
+        "El 20 % es una quinta parte. El lunes se quitan 12 plantones del pedido y quedan 48.",
+        "El 25 % es una cuarta parte. Una cuarta parte de 48 también son 12 plantones. Al añadirlos, volvemos a 60."
+      ],
+      "note": "La disminución se calcula sobre 60 y el aumento sobre 48."
+    }
+  },
+  "P0087": {
+    "title": "La cuota del taller",
+    "statement": "Un taller de cerámica costaba 50 € al mes. En enero subieron la cuota un 20 %. En febrero la bajaron un 20 % respecto al precio de enero.",
+    "question": "¿Es la cuota de febrero igual a la de antes de la subida? Justifica la respuesta.",
+    "solution": {
+      "response": "En febrero la cuota es de 48 €, dos euros menos que al principio.",
+      "steps": [
+        "El 20 % es un quinto. En enero se suma un quinto de 50 €, que son 10 €, y la cuota sube a 60 €.",
+        "En febrero se resta un quinto de 60 €, que son 12 €, y la cuota queda en 48 €."
+      ],
+      "note": "El segundo 20 % se calcula sobre una cuota más alta."
+    }
+  },
+  "P0088": {
+    "title": "El vale y la rebaja",
+    "statement": "Unos zapatos cuestan 80 €. En una tienda se descuenta primero un vale de 20 € y después se aplica un 25 % de descuento sobre lo que queda. En otra, con el mismo precio inicial, primero se aplica el 25 % de descuento y luego se resta el vale de 20 €.",
+    "question": "¿Qué orden le conviene más a quien compra? Justifica la respuesta.",
+    "solution": {
+      "response": "Conviene aplicar primero el 25 % y después el vale. El precio final es de 40 € en vez de 45 €.",
+      "steps": [
+        "Con el vale primero, el descuento del 25 % es una cuarta parte de 60 €, es decir, 15 €. Se pagan 45 €.",
+        "Con el descuento primero, se resta una cuarta parte de 80 €, es decir, 20 €. Luego se resta el vale y se pagan 40 €."
+      ],
+      "note": "El vale siempre ahorra 20 €. El descuento del 25 % ahorra más euros cuando se aplica a la cantidad más alta."
+    }
+  },
+  "P0089": {
+    "title": "El descuento de la cesta",
+    "statement": "Una chaqueta de 80 € tiene un 25 % de descuento. En la misma compra hay unos calcetines de 10 € que no tienen su propio descuento. En caja se aplica un 10 % adicional sobre el total de los dos artículos después de rebajar la chaqueta.",
+    "question": "¿Qué importe se paga en caja?",
+    "solution": {
+      "unit": "€",
+      "response": "Se pagan 63 €.",
+      "steps": [
+        "Con el 25 % de descuento, se paga el 75 % del precio de la chaqueta, que son 60 €.",
+        "Con los calcetines, la cesta suma 70 €. El 10 % adicional deja el 90 % de ese total, que son 63 €."
+      ],
+      "note": "La primera base son los 80 € de la chaqueta. La segunda son los 70 € de toda la cesta."
+    }
+  },
+  "P0090": {
+    "title": "Las plazas de la jornada",
+    "statement": "Para una jornada hay 80 plazas en el gimnasio y 50 en el salón de actos. Con una nueva fila de sillas, las plazas del gimnasio aumentan un 25 %. Luego se reserva para invitados el 10 % del nuevo total de plazas de las dos salas.",
+    "question": "¿Cuántas plazas se pueden ofrecer a las familias?",
+    "solution": {
+      "unit": "plazas",
+      "response": "Se pueden ofrecer 135 plazas a las familias.",
+      "steps": [
+        "El gimnasio gana 20 plazas y pasa a tener 100. Con las 50 del salón de actos, hay 150.",
+        "La reserva es el 10 % de 150, que son 15 plazas. Las familias pueden ocupar las 135 restantes."
+      ],
+      "note": "El aumento solo afecta al gimnasio. La reserva se calcula sobre el total actualizado de las dos salas."
+    }
+  },
+  "P0091": {
+    "title": "La etiqueta tapada",
+    "statement": "En un puesto, primero se rebaja a la mitad el precio de una mochila. En caja se aplica otro 20 % de descuento sobre el precio ya rebajado. El tique final marca 24 €.",
+    "question": "¿Cuál era el precio de la mochila antes de las dos rebajas?",
+    "solution": {
+      "unit": "€",
+      "response": "El precio inicial era de 60 €.",
+      "steps": [
+        "Después de la segunda rebaja se pagan cuatro quintos del precio anterior. Si cuatro quintos son 24 €, un quinto son 6 € y el precio anterior era de 30 €.",
+        "Los 30 € ya eran la mitad del precio inicial. Doblamos esta cantidad."
+      ],
+      "note": "Lo comprobamos pasando de 60 € a 30 €. Un 20 % menos de 30 € son 24 €."
+    }
+  },
+  "P0092": {
+    "title": "La cosecha del banco de semillas",
+    "statement": "Se han recogido 200 sobres de semillas. Se guarda el 25 % del total inicial para sembrar y se dona un 10 %, también del total inicial, a la escuela. De los sobres que quedan después de esos dos repartos, un 20 % va a la biblioteca.",
+    "question": "¿Cuántos sobres quedan para el punto de intercambio después de los tres repartos?",
+    "solution": {
+      "unit": "sobres",
+      "response": "Quedan 104 sobres para el punto de intercambio.",
+      "steps": [
+        "Se guardan 50 sobres y se donan 20 a la escuela. Ambos porcentajes se calculan sobre los 200 iniciales. Quedan 130.",
+        "El 20 % de 130 son 26 sobres para la biblioteca. El punto de intercambio recibe los 104 restantes."
+      ],
+      "note": "Los dos primeros porcentajes tienen la misma base. El de la biblioteca toma como base los 130 sobres que quedan."
+    }
+  },
+  "P0093": {
+    "title": "El cupón de caja",
+    "statement": "Una sudadera cuesta 80 € y tiene una rebaja del 25 %. Un cupón da un 10 % adicional sobre el precio rebajado si, antes de aplicar el cupón, el importe es de 60 € o más.",
+    "question": "¿Qué precio final tendrá que pagar quien compre la sudadera? Justifica si se puede usar el cupón.",
+    "solution": {
+      "response": "Se pagan 54 €. El cupón se puede aplicar porque el importe rebajado es justo de 60 €.",
+      "steps": [
+        "El 25 % de 80 € es una cuarta parte, es decir, 20 €. Después de la rebaja, el importe es de 60 € y alcanza el mínimo del cupón.",
+        "El 10 % de 60 € es una décima parte, 6 €. Restamos esos 6 € del precio rebajado."
+      ],
+      "note": "El umbral se comprueba después de la primera rebaja y antes de aplicar el cupón."
+    }
+  },
+  "P0094": {
+    "title": "El depósito de la brigada",
+    "statement": "Un depósito contiene 200 litros de agua. Por la mañana, la brigada usa el 50 %. Al mediodía añade una cantidad igual al 20 % del agua que queda. Por la tarde usa el 25 % del contenido que hay después de añadir el agua.",
+    "question": "¿Qué porcentaje del agua inicial queda en el depósito al final del día?",
+    "solution": {
+      "unit": "%",
+      "response": "Al final del día queda el 45 % del agua inicial.",
+      "steps": [
+        "Por la mañana quedan 100 litros. Al mediodía se añade un quinto, 20 litros, y el depósito pasa a tener 120.",
+        "Por la tarde se usa una cuarta parte, 30 litros. Quedan 90, que son 45 de cada 100 litros iniciales."
+      ],
+      "note": "El 25 % de la tarde se calcula sobre 120 litros. El porcentaje de la respuesta, sobre 200."
+    }
+  },
+  "P0095": {
+    "title": "La segunda rebaja exacta",
+    "statement": "Un juego de mesa costaba 80 €. La tienda ya ha aplicado un 25 % de descuento. Quiere aplicar una segunda rebaja sobre el precio actual para que el descuento total sea del 40 % sobre el precio original.",
+    "question": "¿De qué porcentaje debe ser la segunda rebaja?",
+    "solution": {
+      "unit": "%",
+      "response": "La segunda rebaja debe ser del 20 %.",
+      "steps": [
+        "La primera rebaja quita una cuarta parte de 80 € y deja el precio en 60 €.",
+        "Con un 40 % de descuento total, se pagarían tres quintos de 80 €, que son 48 €. Hay que quitar 12 € más.",
+        "Esos 12 € son un quinto de los 60 € actuales."
+      ],
+      "note": "El 40 % toma como base el precio original. La segunda rebaja toma como base el precio de 60 €."
+    }
+  },
+  "P0096": {
+    "title": "Las entradas de la muestra",
+    "statement": "El año pasado se vendieron 80 entradas a 4 € cada una para una muestra. Este año se han vendido un 50 % más de entradas, pero el precio de cada entrada ha bajado un 25 % respecto al año pasado.",
+    "question": "¿En qué porcentaje ha variado la recaudación respecto al año pasado? Indica si ha subido o ha bajado.",
+    "solution": {
+      "unit": "%",
+      "response": "La recaudación ha subido un 12,5 %.",
+      "steps": [
+        "El año pasado se recaudaron 80 × 4 € = 320 €.",
+        "Este año se han vendido 120 entradas a 3 € y se han recaudado 360 €.",
+        "La recaudación ha subido 40 €, que son el 12,5 % de los 320 € del año pasado."
+      ],
+      "note": "El 50 % cambia el número de entradas y el 25 % cambia el precio unitario. Para comparar los ingresos, hay que multiplicar las entradas por su precio."
+    }
+  }
+}

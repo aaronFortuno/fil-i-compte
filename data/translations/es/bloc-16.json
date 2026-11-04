@@ -1,0 +1,158 @@
+{
+  "P0181": {
+    "title": "Seis entradas a diecinueve euros",
+    "statement": "Seis entradas de teatro cuestan 19 € cada una. Bruna descompone el precio de cada entrada en 10 € y 9 €. Nil calcula como si cada entrada costara 20 € y luego corrige el total.",
+    "question": "¿Qué precio total da cada método y cuál te parece más práctico para calcularlo de cabeza? Justifica tu respuesta.",
+    "solution": {
+      "response": "Los dos métodos dan 114 €. Redondear a 20 € facilita el cálculo mental porque solo hay que restar un euro por entrada.",
+      "steps": [
+        "Bruna calcula 6 × 10 = 60 y 6 × 9 = 54. Al sumarlos obtiene 114 €.",
+        "Nil calcula 6 × 20 = 120. Resta los 6 € que ha contado de más y obtiene 114 €."
+      ],
+      "note": "Separar las decenas de las unidades también es práctico si quieres aplicar el mismo método a cualquier precio de dos cifras."
+    }
+  },
+  "P0182": {
+    "title": "Los cuadernos de la estantería",
+    "statement": "En una estantería hay 48 cuadernos. Por la mañana se reparten 19 y por la tarde se colocan 9 nuevos. Jana sigue los cambios uno por uno. Pol calcula primero en cuántos cuadernos ha disminuido el total a lo largo del día.",
+    "question": "Compara los dos métodos y explica cuál te parece más práctico para saber cuántos cuadernos quedan.",
+    "solution": {
+      "response": "Quedan 38 cuadernos. Calcular el cambio del día facilita el cálculo, porque se reduce a restar 10.",
+      "steps": [
+        "Jana resta 19 de 48 y obtiene 29. Después suma 9 y llega a 38.",
+        "Pol ve que 9 de los 19 cuadernos que han salido se compensan con los que llegan. En total hay 10 menos y quedan 38."
+      ],
+      "note": "Si también queremos saber cuántos había al mediodía, seguir los cambios uno por uno nos da ese dato."
+    }
+  },
+  "P0183": {
+    "title": "El reparto de rotuladores",
+    "statement": "Tenemos que repartir 96 rotuladores entre 8 mesas a partes iguales. Aina separa 80 rotuladores y reparte por separado esos 80 y los 16 restantes. Biel divide el lote por la mitad tres veces hasta tener 8 grupos.",
+    "question": "¿Cuántos rotuladores le tocan a cada mesa con cada método? ¿Cuál te parece más práctico y por qué?",
+    "solution": {
+      "response": "Cada mesa recibe 12 rotuladores. Separar 80 y 16 permite usar dos múltiplos conocidos de 8.",
+      "steps": [
+        "Aina reparte los 80 y da 10 rotuladores a cada mesa. Con los 16 restantes da 2 más a cada una.",
+        "Biel hace dos partes de 48, después cuatro de 24 y, por último, ocho de 12."
+      ],
+      "note": "Las mitades pueden ser más fáciles de seguir si tienes los rotuladores delante y los vas separando en grupos."
+    }
+  },
+  "P0184": {
+    "title": "Baldosas alrededor de la jardinera",
+    "statement": "Un patio rectangular mide 8 m por 6 m. En una esquina hay una jardinera rectangular de 3 m por 2 m, con el lado de 3 m pegado al lado de 8 m del patio. Queremos poner baldosas en todo el patio que queda fuera de la jardinera. Laia calcula el área de todo el rectángulo y le resta la jardinera. Marc divide la zona que hay que cubrir en dos rectángulos.",
+    "question": "¿Qué superficie obtiene cada uno y qué método te parece más práctico con este plano? Justifica tu respuesta con un dibujo o con los cálculos.",
+    "solution": {
+      "response": "Hay que poner baldosas en 42 m². Restar la jardinera aprovecha las cuatro medidas que ya tenemos.",
+      "steps": [
+        "Laia calcula 8 × 6 = 48 m² y resta los 3 × 2 = 6 m² de la jardinera.",
+        "Marc separa una pieza de 8 m por 4 m y otra de 5 m por 2 m. Suma los 32 m² y los 10 m²."
+      ],
+      "note": "Si dibujas el patio, dividirlo en dos piezas te permite ver que has contado toda la zona que hay que cubrir una sola vez."
+    }
+  },
+  "P0185": {
+    "title": "Una valla para los dos huertos",
+    "statement": "Dos huertos rectangulares de 4 m por 3 m comparten un lado entero de 3 m. Solo queremos vallar el contorno exterior. Roc dibuja los dos huertos como un solo rectángulo. Núria suma los perímetros de los dos huertos y corrige la cuenta del lado compartido.",
+    "question": "¿Cuántos metros de valla da cada método? ¿Cuál te parece más práctico para evitar errores y por qué?",
+    "solution": {
+      "response": "Hacen falta 22 m de valla. Mirar el rectángulo exterior permite contar directamente los lados que hay que vallar.",
+      "steps": [
+        "Roc ve un rectángulo de 8 m por 3 m. Suma dos lados de 8 m y dos de 3 m.",
+        "Núria obtiene 14 m de perímetro por huerto. A los 28 m totales les resta 6, porque el lado interior de 3 m se ha contado dos veces."
+      ],
+      "note": "Si las piezas formaran un contorno difícil de describir, sumar los perímetros y marcar los lados interiores podría ser un método más fácil de comprobar."
+    }
+  },
+  "P0186": {
+    "title": "Avena para nueve",
+    "statement": "Un desayuno para 6 personas lleva 300 g de avena. Queremos hacerlo para 9 personas con raciones iguales. Berta calcula los gramos por persona. Karim prepara la cantidad para seis y añade la que hace falta para tres más.",
+    "question": "¿Cuánta avena calcula cada uno? ¿Cuál de los dos métodos te parece más práctico para adaptar esta receta y por qué?",
+    "solution": {
+      "response": "Hacen falta 450 g de avena. Añadir media receta es cómodo porque tres personas son la mitad de seis.",
+      "steps": [
+        "Berta divide 300 g entre seis y obtiene 50 g por persona. Multiplica 50 g por nueve y obtiene 450 g.",
+        "Karim añade 150 g, la mitad de la receta, a los 300 g de la receta entera."
+      ],
+      "note": "La cantidad por persona se puede reutilizar si queremos adaptar la misma receta a distintos números de comensales."
+    }
+  },
+  "P0187": {
+    "title": "Las macetas que irán al patio",
+    "statement": "De 24 macetas, tres cuartas partes irán al patio y el resto se quedará en el aula. Clara calcula cuánto es un cuarto y toma tres cuartos. Max calcula el cuarto que se queda en el aula y lo resta de las 24 macetas.",
+    "question": "¿Cuántas macetas van al patio según cada método? ¿Cuál te parece más práctico con esta fracción y por qué?",
+    "solution": {
+      "response": "Al patio van 18 macetas. Si ves enseguida que solo un cuarto se queda en el aula, puedes quitar 6 macetas de las 24.",
+      "steps": [
+        "Clara averigua que un cuarto son 6 macetas y calcula tres grupos de 6.",
+        "Max encuentra el mismo grupo de 6 y calcula cuántas macetas quedan al quitarlo."
+      ],
+      "note": "Dibuja cuatro grupos de seis. El primer método señala tres grupos. El segundo quita uno y cuenta los mismos tres."
+    }
+  },
+  "P0188": {
+    "title": "El descuento de la mochila",
+    "statement": "Una mochila de 45 € tiene un descuento del 20 %. Salma quiere calcular el 10 % y duplicarlo. Martí recuerda que el 20 % equivale a una quinta parte y calcula directamente esa parte.",
+    "question": "¿Qué descuento obtiene cada uno y qué método elegirías para hacer este cálculo de cabeza? Justifica tu respuesta.",
+    "solution": {
+      "response": "Los dos obtienen 9 € de descuento. Hacer 45 ÷ 5 es práctico si reconoces el 20 % como una quinta parte.",
+      "steps": [
+        "Salma divide 45 € entre 10 y obtiene 4,50 €. Al duplicarlo obtiene 9 €.",
+        "Martí divide 45 € entre 5 y obtiene 9 €."
+      ],
+      "note": "Calcular primero el 10 % también sirve para otros descuentos, como el 30 %, si luego lo multiplicas por tres."
+    }
+  },
+  "P0189": {
+    "title": "Juntamos el zumo",
+    "statement": "En cuatro botellas hay 1,25 L, 0,75 L, 1,5 L y 0,5 L de zumo. Joana hace parejas que sumen litros enteros. Pau pasa cada cantidad a mililitros antes de sumarlas.",
+    "question": "¿Cuánta bebida hay en total según cada método? ¿Cuál te parece más práctico con estas cantidades y por qué?",
+    "solution": {
+      "response": "Hay 4 litros. Hacer parejas es rápido porque cada pareja suma exactamente 2 litros.",
+      "steps": [
+        "Joana suma 1,25 L con 0,75 L y 1,5 L con 0,5 L. Obtiene 2 L + 2 L.",
+        "Pau suma 1.250, 750, 1.500 y 500 mL. Obtiene 4.000 mL y los convierte en 4 L."
+      ],
+      "note": "Pasar a mililitros puede facilitar la cuenta si luego tienes que llenar vasos graduados en mililitros."
+    }
+  },
+  "P0190": {
+    "title": "La duración de la visita",
+    "statement": "Una visita empieza a las 10:55 y acaba a las 11:25. Mar cuenta primero hasta las 11:00 y luego hasta el final. Ton desplaza las dos horas 5 minutos hacia delante y calcula la duración entre las horas nuevas.",
+    "question": "¿Qué duración obtiene cada persona y qué método te parece más práctico con estas horas? Explica por qué se puede desplazar la visita entera.",
+    "solution": {
+      "response": "La visita dura 30 minutos. Desplazarla 5 minutos permite leer la duración entre las 11:00 y las 11:30.",
+      "steps": [
+        "Mar cuenta 5 minutos hasta las 11:00 y 25 minutos más hasta las 11:25.",
+        "Ton pasa de 10:55 a 11:00 y de 11:25 a 11:30. Como desplaza el inicio y el final los mismos minutos, la duración se mantiene."
+      ],
+      "note": "Separar la visita en tramos puede ser más fácil de comprobar si marcas las horas en una línea del tiempo."
+    }
+  },
+  "P0191": {
+    "title": "Los días de la exposición",
+    "statement": "Una exposición abre cada día del 8 al 21 del mismo mes, incluidos el 8 y el 21. Ona resta el número del primer día al del último y hace un ajuste. Guim marca en el calendario los días del 8 al 14 y después los del 15 al 21.",
+    "question": "¿Cuántos días abre según cada método? ¿Cuál te parece más práctico para asegurarte de contar el primer y el último día? Explica por qué.",
+    "solution": {
+      "response": "La exposición abre 14 días. Marcar los dos grupos de siete en un calendario permite ver que se han contado el 8 y el 21.",
+      "steps": [
+        "Ona calcula 21 − 8 = 13 saltos entre días. Cuenta también el día 8 y obtiene 14.",
+        "Guim cuenta siete días del 8 al 14 y siete más del 15 al 21."
+      ],
+      "note": "Restar y añadir un día es rápido cuando no tienes el calendario, si recuerdas que la resta cuenta los saltos entre fechas."
+    }
+  },
+  "P0192": {
+    "title": "Las pegatinas de los sobres",
+    "statement": "Tenemos que poner 3 pegatinas en cada uno de 24 sobres. Las pegatinas se venden en hojas de 8. Rita calcula primero cuántas pegatinas necesita en total. Bernat hace grupos de ocho sobres y mira cuántas hojas necesita para cada grupo.",
+    "question": "¿Cuántas hojas hacen falta según cada método? ¿Cuál te parece más práctico para organizar el trabajo y por qué?",
+    "solution": {
+      "response": "Hacen falta 9 hojas. Hacer grupos de ocho sobres permite preparar tres lotes iguales de tres hojas.",
+      "steps": [
+        "Rita calcula 24 × 3 = 72 pegatinas. Como cada hoja tiene 8, necesita 9 hojas.",
+        "Bernat forma tres grupos de ocho sobres. Para cada grupo, una hoja da una pegatina por sobre y tres hojas dan las tres pegatinas que hacen falta."
+      ],
+      "note": "Calcular el total es un método directo para hacer la compra. Los grupos van bien si tres personas tienen que preparar los sobres a la vez."
+    }
+  }
+}

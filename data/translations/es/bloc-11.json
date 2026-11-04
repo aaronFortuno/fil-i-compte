@@ -1,0 +1,165 @@
+{
+  "P0121": {
+    "title": "El puesto de meriendas",
+    "statement": "En el puesto del mercado compramos 2 bocadillos a 3 € cada uno y una bolsa de fruta a 4 €. Pagamos con un billete de 20 €.",
+    "question": "¿Cuánto nos tienen que devolver?",
+    "solution": {
+      "unit": "€",
+      "response": "Nos tienen que devolver 10 €.",
+      "steps": [
+        "Los dos bocadillos cuestan 6 €. Con la fruta, el precio total es de 10 €.",
+        "Restamos el precio total de los 20 € que hemos dado."
+      ],
+      "note": ""
+    }
+  },
+  "P0122": {
+    "title": "El monedero y las monedas",
+    "statement": "Biel compra 2 cuadernos de 4 € cada uno y un estuche de 3 €. Para pagar da un billete de 10 € y dos monedas de 2 €.",
+    "question": "¿Cuántos euros le tienen que devolver?",
+    "solution": {
+      "unit": "€",
+      "response": "Le tienen que devolver 3 €.",
+      "steps": [
+        "Biel da 10 € más 4 €, es decir, 14 € en total.",
+        "Los cuadernos cuestan 8 € y el estuche 3 €. Restamos los 11 € de la compra de los 14 € que ha dado."
+      ],
+      "note": "El cambio es la diferencia entre lo que da y lo que cuesta la compra."
+    }
+  },
+  "P0123": {
+    "title": "El cambio del tique",
+    "statement": "Núria ha comprado 2 carpetas de 4 € cada una y un bloc de notas de 3 €. Ha pagado con un billete de 20 € y le han devuelto 7 €.",
+    "question": "¿Le han devuelto el cambio correcto? Si no, di de cuántos euros es la diferencia.",
+    "solution": {
+      "response": "Le tenían que devolver 9 € y le han devuelto 7 €. Le faltan 2 €.",
+      "steps": [
+        "Las dos carpetas cuestan 8 €. Con el bloc, la compra suma 11 €.",
+        "El cambio correcto es 20 − 11 = 9 €. Comparamos los 9 € con los 7 € que le han devuelto."
+      ],
+      "note": "La diferencia que buscamos es la que hay entre el cambio correcto y el cambio recibido."
+    }
+  },
+  "P0124": {
+    "title": "Cambio para todos",
+    "statement": "Tres amigos ponen 5 € cada uno para hacer una compra conjunta. Compran 2 bolsas de palomitas de 3 € cada una y una jarra de limonada de 3 €. Se reparten el cambio a partes iguales.",
+    "question": "¿Cuánto recibe cada uno del cambio?",
+    "solution": {
+      "unit": "€",
+      "response": "Cada uno recibe 2 €.",
+      "steps": [
+        "Entre todos dan 15 €. La compra cuesta 6 € de palomitas y 3 € de limonada.",
+        "Les devuelven 6 €. Reparten esos 6 € entre tres personas."
+      ],
+      "note": ""
+    }
+  },
+  "P0125": {
+    "title": "Restar o contar hasta veinte",
+    "statement": "Mar paga con 20 € por 2 tarros de miel de 5 € cada uno y un pan de 3 €. Ella calcula el cambio restando el precio total de los 20 € que ha dado. Pau parte del precio de la compra, cuenta hasta 15 € y después hasta 20 €.",
+    "question": "Compara los dos caminos. ¿Por qué dan el mismo cambio?",
+    "solution": {
+      "response": "Los dos dan 7 € porque calculan la diferencia entre los 13 € de la compra y los 20 € que ha dado.",
+      "steps": [
+        "La compra cuesta 2 × 5 + 3 = 13 €. Mar hace 20 − 13 y obtiene 7 €.",
+        "Pau añade 2 € para pasar de 13 € a 15 € y después 5 € más para llegar a 20 €. Suma los dos saltos, 2 € + 5 € = 7 €."
+      ],
+      "note": "Puedes marcar los saltos en una recta numérica."
+    }
+  },
+  "P0126": {
+    "title": "El precio del material del taller",
+    "statement": "Para 3 participantes de un taller hay que comprar un pincel de 2 € y un bote de pintura de 4 € por persona. Aina suma primero el precio del material de una persona. Jan calcula primero el precio de todos los pinceles y el de todos los botes por separado.",
+    "question": "¿Por qué los dos caminos dan el mismo precio total? Demuéstralo con los cálculos.",
+    "solution": {
+      "response": "Los dos obtienen 18 €. Cuentan los mismos 3 pinceles y 3 botes, agrupados de distinta manera.",
+      "steps": [
+        "Aina calcula 2 + 4 = 6 € de material por persona y hace 3 × 6 = 18 €.",
+        "Jan calcula 3 × 2 = 6 € de pinceles y 3 × 4 = 12 € de pintura. Suma 6 + 12 = 18 €."
+      ],
+      "note": "También puedes dibujar tres parejas de pincel y bote y después agruparlos por tipo."
+    }
+  },
+  "P0127": {
+    "title": "Del patio a la biblioteca",
+    "statement": "A las 10:50 la clase empieza a recoger el material del patio y tarda 5 minutos. Después camina 15 minutos hasta la biblioteca. Allí espera 5 minutos antes de entrar.",
+    "question": "¿A qué hora entra en la biblioteca?",
+    "solution": {
+      "unit": "minutos después de las 11",
+      "response": "La clase entra a las 11:15.",
+      "steps": [
+        "Acaban de recoger a las 10:55.",
+        "Con 15 minutos de camino llegan a las 11:10. Con los 5 minutos de espera, entran a las 11:15."
+      ],
+      "note": "De las 10:55 a las 11:00 pasan 5 minutos. Aún quedan 10 de camino."
+    }
+  },
+  "P0128": {
+    "title": "La hora de empezar el ensayo",
+    "statement": "El ensayo debe acabar a las 16:30. Hacen falta 3 minutos para preparar el espacio y después se ensaya dos veces, 5 minutos cada vez. Entre los dos ensayos hay una pausa de 4 minutos.",
+    "question": "¿A qué hora tienen que empezar a preparar el espacio, como muy tarde?",
+    "solution": {
+      "unit": "minutos después de las 16",
+      "response": "Tienen que empezar a las 16:13 como muy tarde.",
+      "steps": [
+        "Las dos veces que ensayan suman 10 minutos. Con la pausa y la preparación, se necesitan 17 minutos.",
+        "Contamos 17 minutos hacia atrás desde las 16:30."
+      ],
+      "note": ""
+    }
+  },
+  "P0129": {
+    "title": "La pista reservada",
+    "statement": "Tenemos la pista reservada de las 9:55 a las 10:20. Jugaremos 3 partidos de 5 minutos cada uno. Al final necesitamos 4 minutos para recoger el material.",
+    "question": "¿Cuántos minutos de la reserva quedarán libres después de recoger?",
+    "solution": {
+      "unit": "minutos",
+      "response": "Quedarán 6 minutos libres.",
+      "steps": [
+        "De las 9:55 a las 10:00 hay 5 minutos y hasta las 10:20 hay 20 más. La reserva dura 25 minutos.",
+        "Los partidos y la recogida ocupan 15 + 4 = 19 minutos. Restamos 19 de 25."
+      ],
+      "note": ""
+    }
+  },
+  "P0130": {
+    "title": "¿Qué autobús nos conviene?",
+    "statement": "Podemos coger dos autobuses para ir al museo. El primero sale a las 10:05, tarda 15 minutos y nos deja a 3 minutos a pie del museo. El segundo sale a las 10:10, tarda 8 minutos y nos deja a 4 minutos a pie.",
+    "question": "¿Con qué autobús llegaremos antes al museo y con cuántos minutos de diferencia?",
+    "solution": {
+      "unit": "minuto",
+      "response": "Con el segundo autobús llegaremos un minuto antes.",
+      "steps": [
+        "Con el primero llegamos a la parada a las 10:20 y al museo a las 10:23.",
+        "Con el segundo llegamos a la parada a las 10:18 y al museo a las 10:22. Comparamos las horas de llegada al museo."
+      ],
+      "note": ""
+    }
+  },
+  "P0131": {
+    "title": "Los minutos de lectura",
+    "statement": "Una sesión de lectura empieza a las 10:40 y acaba a las 11:05. Hacemos una pausa de las 10:50 a las 10:55. Laia suma los minutos de los dos tramos de lectura. Pol cuenta todos los minutos de la sesión y resta la pausa.",
+    "question": "¿Por qué los dos caminos dan el mismo tiempo de lectura?",
+    "solution": {
+      "response": "Los dos dan 20 minutos de lectura. Laia suma los tramos de lectura y Pol descuenta la pausa del tiempo total.",
+      "steps": [
+        "Laia cuenta 10 minutos de lectura antes de la pausa y 10 después, 5 hasta las 11:00 y 5 más hasta las 11:05.",
+        "Pol cuenta 25 minutos de sesión, 20 hasta las 11:00 y 5 más hasta las 11:05. Resta los 5 minutos de pausa."
+      ],
+      "note": "En una línea del tiempo, ambos métodos cuentan los mismos dos tramos."
+    }
+  },
+  "P0132": {
+    "title": "¿Una lectura más?",
+    "statement": "El club de lectura empieza a las 15:35 y tiene que dejar libre la sala a las 16:00. Cada lectura dura 6 minutos y entre dos lecturas seguidas hacemos una pausa de 3 minutos. Al acabar la última lectura necesitamos 5 minutos para recoger. Tenemos dos lecturas previstas y queremos añadir una tercera.",
+    "question": "¿Cabrá la tercera lectura en el horario? Justifica la respuesta.",
+    "solution": {
+      "response": "Con tres lecturas acabaríamos de recoger a las 16:04, cuatro minutos tarde.",
+      "steps": [
+        "De las 15:35 a las 16:00 tenemos 25 minutos.",
+        "Tres lecturas duran 18 minutos. Entre las tres hay dos pausas que suman 6 minutos. Con los 5 minutos de recogida necesitamos 29 minutos."
+      ],
+      "note": "La pausa va entre lecturas. Añadir una lectura también añade una pausa."
+    }
+  }
+}

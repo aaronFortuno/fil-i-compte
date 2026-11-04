@@ -1,0 +1,183 @@
+{
+  "P0157": {
+    "title": "El zumo de la jarra",
+    "statement": "Durante la merienda servimos un tercio del zumo de una jarra. Después llenamos un vaso de 250 mL con zumo de la misma jarra. Cuando terminamos, quedan 750 mL.",
+    "question": "¿Cuánto zumo había en la jarra antes de la merienda?",
+    "solution": {
+      "unit": "mL",
+      "response": "Al principio había 1 litro y medio de zumo.",
+      "steps": [
+        "Volvemos a contar el vaso de 250 mL. Antes de llenarlo había 1.000 mL.",
+        "Esos 1.000 mL son los dos tercios que habían quedado. Un tercio son 500 mL y tres tercios son 1.500 mL."
+      ],
+      "note": "Dibuja dos bloques que sumen 1 litro. Añade un tercer bloque igual para reconstruir la jarra inicial.",
+      "visual": {
+        "caption": "Los dos bloques sombreados son el litro que había antes de llenar el vaso."
+      }
+    }
+  },
+  "P0158": {
+    "title": "Las bolsas del puesto",
+    "statement": "Por la mañana, una familia trae 6 bolsas de ropa para el puesto solidario. Por la tarde se dona a una entidad una cuarta parte de todas las bolsas que hay en ese momento. Al final del día quedan 18.",
+    "question": "¿Cuántas bolsas había antes de que llegara la familia?",
+    "solution": {
+      "unit": "bolsas",
+      "response": "Al principio había 18 bolsas.",
+      "steps": [
+        "Las 18 bolsas finales son los tres cuartos que quedan después de la donación. Cada cuarto son 6 bolsas.",
+        "Antes de donar había 24. Quitamos las 6 que había traído la familia."
+      ],
+      "note": "La cantidad final y la inicial coinciden porque las 6 bolsas que llegan compensan las 6 que se donan."
+    }
+  },
+  "P0159": {
+    "title": "Los cromos del sobre grande",
+    "statement": "Martí regala una cuarta parte de sus cromos. Después le da a su prima un tercio de los que le quedan. Por último, pega 2 en el álbum y le quedan 10 cromos sin pegar.",
+    "question": "¿Cuántos cromos tenía antes de regalar ninguno?",
+    "solution": {
+      "unit": "cromos",
+      "response": "Al principio tenía 24 cromos.",
+      "steps": [
+        "Volvemos a contar los 2 del álbum. Antes de pegarlos le quedaban 12.",
+        "Los 12 son dos tercios de los que tenía antes de darle cromos a su prima. En aquel momento tenía 18.",
+        "Los 18 son tres cuartos de los iniciales. Un cuarto son 6 cromos y cuatro cuartos son 24."
+      ],
+      "note": "Dibuja dos barras, una en tercios y otra en cuartos. El total que recuperas con la primera llena tres partes de la segunda."
+    }
+  },
+  "P0160": {
+    "title": "La leche antes de rellenar la jarra",
+    "statement": "En una jarra hay un poco de leche. Añadimos 1/4 de litro y lo removemos. Vertemos la mitad de la leche de la jarra en un cuenco. Después de verterla, quedan 3/8 de litro en la jarra.",
+    "question": "¿Cuánta leche había en la jarra antes de añadir más?",
+    "solution": {
+      "unit": "mL",
+      "response": "Al principio había medio litro de leche.",
+      "steps": [
+        "Antes de verter la mitad en el cuenco había dos veces 3/8 de litro, es decir, 6/8.",
+        "Restamos el cuarto de litro que habíamos añadido. Un cuarto son 2/8, así que quedan 4/8, medio litro."
+      ],
+      "note": "Dibuja seis partes de 1/8 de litro. La mitad fue al cuenco. Antes de añadir leche, solo había cuatro.",
+      "visual": {
+        "caption": "Cada parte representa 125 mL. Las cuatro partes sombreadas son la leche inicial."
+      }
+    }
+  },
+  "P0161": {
+    "title": "El precio sin rebajas",
+    "statement": "En una tienda aplican un 25 % de descuento a una mochila. Después restan 5 € más con un vale. El precio del tique es de 25 €.",
+    "question": "¿Cuánto costaba la mochila antes de las dos rebajas?",
+    "solution": {
+      "unit": "€",
+      "response": "La mochila costaba 40 €.",
+      "steps": [
+        "Antes de aplicar el vale, la mochila costaba 30 €.",
+        "Con el descuento del 25 % se pagan tres cuartos del precio original. Si tres cuartos son 30 €, cada cuarto son 10 €."
+      ],
+      "note": "Dibuja cuatro tramos iguales. Los tres que se pagan antes del vale suman 30 €. Añade el tramo que quitó el descuento.",
+      "visual": {
+        "caption": "Los tres tramos sombreados suman los 30 € del precio rebajado antes de aplicar el vale."
+      }
+    }
+  },
+  "P0162": {
+    "title": "Las plazas del taller",
+    "statement": "Para un taller, la organización aumenta un 20 % las plazas previstas al principio. Después reserva 3 plazas para invitados. Quedan 21 plazas disponibles para las demás personas.",
+    "question": "¿Cuántas plazas había previstas antes del aumento?",
+    "solution": {
+      "unit": "plazas",
+      "response": "Al principio había 20 plazas previstas.",
+      "steps": [
+        "Antes de hacer la reserva, el taller tenía 24 plazas.",
+        "Un aumento del 20 % añade una quinta parte a las cinco partes iniciales. Si seis partes son 24 plazas, cinco partes son 20."
+      ],
+      "note": "Haz seis grupos de cuatro plazas. Un grupo corresponde al aumento. Los otros cinco son la previsión inicial."
+    }
+  },
+  "P0163": {
+    "title": "La harina de la receta original",
+    "statement": "Una receta de pizza es para 4 personas. Hacemos pizza para 6 con el mismo tamaño de ración. Además de la harina de la masa, usamos 40 g de harina para enharinar la encimera. En total hemos usado 400 g.",
+    "question": "¿Cuánta harina para la masa indicaba la receta de cuatro personas?",
+    "solution": {
+      "unit": "g",
+      "response": "La receta indicaba 240 g de harina para la masa.",
+      "steps": [
+        "De los 400 g quitamos los 40 de la encimera. La masa para seis personas lleva 360 g.",
+        "Seis raciones forman tres grupos de dos. Cada grupo lleva 120 g. Para cuatro personas hacen falta dos grupos."
+      ],
+      "note": "Tabla de raciones de masa. 2 personas → 120 g. 4 personas → 240 g. 6 personas → 360 g."
+    }
+  },
+  "P0164": {
+    "title": "¿Cuándo salimos de la escuela?",
+    "statement": "Un grupo entra en la sala de un museo a las 12:05. Justo antes ha esperado 10 minutos en el vestíbulo y ha tardado 5 minutos en dejar las mochilas en el guardarropa. Antes de eso había caminado 15 minutos desde la escuela.",
+    "question": "¿A qué hora salió el grupo de la escuela?",
+    "solution": {
+      "unit": "minutos después de las 11",
+      "response": "El grupo salió a las 11:35.",
+      "steps": [
+        "Descontamos la espera y llegamos a las 11:55. Descontamos los 5 minutos del guardarropa y llegamos a las 11:50.",
+        "Retrocedemos los 15 minutos de camino desde las 11:50."
+      ],
+      "note": "Dibuja una línea del tiempo y marca tres saltos hacia atrás desde las 12:05. En el primer salto pasarás por las 12:00."
+    }
+  },
+  "P0165": {
+    "title": "El material del taller",
+    "statement": "Ahora en el taller hay 3 estuches con 6 rotuladores cada uno y 2 rotuladores sueltos. Antes de llenarlos, otra clase nos había dado 4 rotuladores y, después, habíamos dejado 3 en la biblioteca.",
+    "question": "¿Cuántos rotuladores había en el taller antes de los dos cambios?",
+    "solution": {
+      "unit": "rotuladores",
+      "response": "Al principio había 19 rotuladores.",
+      "steps": [
+        "Los estuches y los sueltos suman 20 rotuladores. Antes de dejar algunos en la biblioteca, había 23.",
+        "De esos 23, cuatro los había traído la otra clase. Si los descontamos, quedan 19."
+      ],
+      "note": "Dibuja los tres estuches y los dos rotuladores sueltos. Añade los tres de la biblioteca y tacha los cuatro que llegaron de la otra clase."
+    }
+  },
+  "P0166": {
+    "title": "El huerto antes de la ampliación",
+    "statement": "Un huerto rectangular mide 6 metros de largo. Lo han ampliado 2 metros a lo ancho y han mantenido la longitud. Ahora tiene una superficie de 30 m².",
+    "question": "¿Qué superficie tenía el huerto antes de la ampliación?",
+    "solution": {
+      "unit": "m²",
+      "response": "El huerto tenía una superficie de 18 m².",
+      "steps": [
+        "Dividimos la superficie actual entre la longitud y obtenemos 5 metros de ancho.",
+        "Restamos los 2 metros que se han añadido. El huerto medía 6 metros de largo y 3 de ancho."
+      ],
+      "note": "También puedes dibujar el rectángulo actual y separar la franja añadida de 6 × 2 m. Sus 12 m² se restan de los 30 m²."
+    }
+  },
+  "P0167": {
+    "title": "El dinero de la tarde",
+    "statement": "En la feria, Salma se gasta un tercio del dinero que llevaba en el monedero en una manualidad. Después recibe 8 € de su abuela y se gasta 4 € en una merienda. Al final de la tarde le quedan 20 €.",
+    "question": "¿Cuánto dinero llevaba en el monedero cuando llegó a la feria?",
+    "solution": {
+      "unit": "€",
+      "response": "Cuando llegó llevaba 24 €.",
+      "steps": [
+        "Antes de comprar la merienda llevaba 24 €. Antes de que su abuela le diera dinero, llevaba 16.",
+        "Los 16 € son los dos tercios que le quedaron después de pagar la manualidad. Cada tercio son 8 €."
+      ],
+      "note": "Dibuja una flecha hacia atrás para cada cambio. Cuando llegues a los 16 €, ponlos en dos bloques de 8 € y dibuja el tercer bloque.",
+      "visual": {
+        "caption": "Los dos bloques sombreados son el dinero que le quedó después de pagar la manualidad."
+      }
+    }
+  },
+  "P0168": {
+    "title": "Las bandejas de plantones",
+    "statement": "Tenemos 3 bandejas con el mismo número de plantones en cada una. Sacamos 2 plantones de cada bandeja para trasplantarlos. Después regalamos una bandeja con todos los plantones que aún tiene. En las dos bandejas que nos quedan hay 12 plantones en total.",
+    "question": "¿Cuántos plantones había entre las tres bandejas al principio?",
+    "solution": {
+      "unit": "plantones",
+      "response": "Al principio había 24 plantones entre las tres bandejas.",
+      "steps": [
+        "Las dos bandejas finales tienen 6 plantones cada una. La bandeja regalada también tenía 6 en el momento de regalarla.",
+        "Antes de sacar plantones para trasplantar, cada bandeja tenía 2 más. Había 8 plantones en cada una de las tres bandejas."
+      ],
+      "note": "Dibuja las dos bandejas de seis. Dibuja la tercera con la misma cantidad y vuelve a poner dos plantones en cada bandeja."
+    }
+  }
+}

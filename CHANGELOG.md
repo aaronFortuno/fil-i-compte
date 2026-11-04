@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.36.0 · Fil i compte en català i castellà
+
+- Selector de llengua a la capçalera i versió castellana a `/es/`, amb els 252 problemes i tots els solucionaris.
+- Les dues llengües comparteixen codis i plantilles. Els avisos d’error indiquen la llengua del text que cal revisar.
+
 ## 0.35.1 · Bandera accessible al solucionari
 
 - Els controls de reordenació comencen sota el títol al solucionari i deixen lliure la bandera d’avís.

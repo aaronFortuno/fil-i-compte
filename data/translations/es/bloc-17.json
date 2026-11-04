@@ -1,0 +1,158 @@
+{
+  "P0193": {
+    "title": "Voluntarios para llevar las cajas",
+    "statement": "Hay que llevar 53 cajas de una sala a otra. En cada viaje caben 8 cajas en el carrito y cada voluntario puede hacer como máximo 3 viajes.",
+    "question": "¿Cuántos voluntarios hacen falta como mínimo? Justifica cómo organizarías el último viaje.",
+    "solution": {
+      "response": "Hacen falta 3 voluntarios. Dos pueden hacer tres viajes cada uno y el tercero puede llevar las 5 cajas que quedan en un solo viaje.",
+      "steps": [
+        "En seis viajes se pueden llevar 48 cajas. Con dos voluntarios es el máximo de viajes posible, pero aún quedan 5 cajas.",
+        "Las 5 cajas caben en otro viaje. Con un tercer voluntario se pueden llevar todas."
+      ],
+      "note": "En el último viaje no hace falta llenar el carrito."
+    }
+  },
+  "P0194": {
+    "title": "Plantones para el mercado",
+    "statement": "Hay 38 plantones para hacer lotes. Todos los lotes han de tener el mismo tamaño y podemos elegir entre hacerlos de 6 o de 7 plantones. Queremos dejar fuera de los lotes el menor número posible de plantones.",
+    "question": "¿Qué tamaño de lote conviene elegir? Justifica tu respuesta con lo que sobra en cada opción.",
+    "solution": {
+      "response": "Conviene hacer lotes de 6. Sobran 2, mientras que con lotes de 7 sobran 3.",
+      "steps": [
+        "Con lotes de 6 hacemos 6 lotes y colocamos 36 plantones. Quedan 2.",
+        "Con lotes de 7 hacemos 5 lotes y colocamos 35 plantones. Quedan 3."
+      ],
+      "note": "Con lotes de 6 también sale un lote más, pero la decisión se toma comparando lo que sobra en cada caso."
+    }
+  },
+  "P0195": {
+    "title": "El máximo de equipos posible",
+    "statement": "Hay 35 participantes en un torneo. Cada equipo debe tener 4 o 5 personas y todo el mundo tiene que jugar. La organización quiere formar tantos equipos como pueda.",
+    "question": "¿Cuántos equipos puede formar como máximo y cómo debe repartir a los participantes? Justifica tu respuesta.",
+    "solution": {
+      "response": "Se pueden formar 8 equipos. Cinco tendrán 4 personas y tres tendrán 5.",
+      "steps": [
+        "Con ocho equipos de cuatro hay 32 plazas ocupadas y quedan 3 personas. Ponemos a una de esas personas en cada uno de tres equipos.",
+        "Nueve equipos necesitarían como mínimo 36 personas, aunque todos fueran de cuatro."
+      ],
+      "note": "El resto puede incorporarse a los equipos porque el máximo permitido es cinco."
+    }
+  },
+  "P0196": {
+    "title": "Completar o deshacer el paquete",
+    "statement": "Tenemos 47 cuadernos para hacer paquetes de 8. Podemos añadir cuadernos del almacén o devolver allí los que sobren. Queremos que todos los cuadernos que queden formen paquetes completos y mover la menor cantidad posible.",
+    "question": "¿Qué decisión conviene tomar? Justifica tu respuesta comparando las dos opciones.",
+    "solution": {
+      "response": "Conviene ir a buscar un cuaderno. Así se pueden hacer seis paquetes completos.",
+      "steps": [
+        "Con cinco paquetes usamos 40 cuadernos y sobran 7. Podríamos devolverlos al almacén.",
+        "Para completar el sexto paquete hay que llegar a 48 cuadernos. Solo tenemos que añadir uno."
+      ],
+      "note": "La decisión sale de comparar lo que sobra con lo que falta para llenar el siguiente paquete."
+    }
+  },
+  "P0197": {
+    "title": "Dos trozos de coca para diez",
+    "statement": "Para una merienda hay 9 cocas pequeñas del mismo tamaño, cada una cortada en 8 trozos iguales. Queremos repartirlas todas entre 10 personas. Podemos volver a cortar los trozos que queden.",
+    "question": "¿Cómo podemos repartir toda la coca de modo que cada persona reciba la misma cantidad? Justifica qué haces con lo que sobra.",
+    "solution": {
+      "response": "Cada persona recibe 7 trozos enteros y un quinto de otro trozo.",
+      "steps": [
+        "Hay 72 trozos. Damos 7 a cada persona y sobran 2.",
+        "Cortamos cada uno de los 2 trozos sobrantes en 5 partes iguales. Ahora tenemos 10 partes pequeñas y podemos dar una a cada persona."
+      ],
+      "note": "Dibuja los dos trozos sobrantes y divide cada uno en cinco partes. Cada parte pequeña es un quinto de un trozo original. La coca entera sería una unidad distinta."
+    }
+  },
+  "P0198": {
+    "title": "Cordel para los siete farolillos",
+    "statement": "Hace falta un trozo entero de cordel de 3 metros para cada uno de 7 farolillos. En la tienda venden rollos de 8 metros. No podemos hacer nudos para unir trozos.",
+    "question": "¿Cuántos rollos tenemos que comprar como mínimo? Explica por qué sumar los metros disponibles puede llevar a otra respuesta.",
+    "solution": {
+      "response": "Hacen falta 4 rollos. Tres rollos suman suficientes metros, pero solo dan seis trozos enteros de la medida necesaria.",
+      "steps": [
+        "De cada rollo salen dos trozos de 3 metros y sobran 2. Los 2 metros que sobran de un rollo no alcanzan para un farolillo.",
+        "Con tres rollos tenemos seis trozos que sirven. De un cuarto rollo podemos cortar el séptimo."
+      ],
+      "note": "Los tres rollos suman 24 metros y los farolillos solo necesitan 21. Los sobrantes quedan separados y no se pueden contar como si fueran un trozo continuo."
+    }
+  },
+  "P0199": {
+    "title": "Grupos para los puestos del taller",
+    "statement": "En el taller participan 38 personas. En cada puesto debe haber entre 4 y 6 personas. Se pueden abrir tantos puestos como haga falta, pero queremos usar los menos posibles.",
+    "question": "¿Cuántos puestos hay que abrir y cómo podemos repartir a todo el mundo? Justifica tu respuesta.",
+    "solution": {
+      "response": "Hacen falta 7 puestos. Una manera es poner a 6 personas en cinco puestos y a 4 en cada uno de los otros dos.",
+      "steps": [
+        "En seis puestos llenos solo caben 36 personas. Sobran 2 y por sí solas no pueden formar un grupo de cuatro.",
+        "Sacamos a dos personas de un grupo de seis y las juntamos con las dos que sobraban. Ahora tenemos dos grupos de cuatro y quedan cinco de seis."
+      ],
+      "note": "Abrir un puesto más da sitio a todo el mundo. También hay que reorganizar los grupos para que todos tengan el tamaño mínimo."
+    }
+  },
+  "P0200": {
+    "title": "El álbum a medio llenar",
+    "statement": "Cada página del álbum de anillas tiene 8 huecos para fotos. En la última página hay 5 fotos y las demás están llenas. Ahora queremos poner 26 fotos más.",
+    "question": "¿Cuántas páginas nuevas hay que añadir como mínimo? Justifica tu respuesta teniendo en cuenta el espacio que ya queda.",
+    "solution": {
+      "response": "Hay que añadir 3 páginas. Podemos llenar dos y poner 7 fotos en la tercera.",
+      "steps": [
+        "En la página que ya hemos empezado caben 3 fotos más. Después de llenarla todavía tenemos que colocar 23.",
+        "En dos páginas nuevas caben 16. Las 7 restantes necesitan una tercera página."
+      ],
+      "note": "Si contáramos las 26 fotos sin aprovechar los tres huecos libres, parecería que hacen falta cuatro páginas nuevas."
+    }
+  },
+  "P0201": {
+    "title": "El fondo común de la excursión",
+    "statement": "En el fondo de la clase quedan 17,03 €. Queremos devolvérselos a cinco personas, a partes iguales y usando monedas. Si queda dinero que no se pueda repartir a partes iguales, lo guardaremos en el fondo.",
+    "question": "¿Cuál es la cantidad máxima que puede recibir cada persona? Justifica qué hay que hacer con los céntimos que sobran.",
+    "solution": {
+      "response": "Cada persona puede recibir 3,40 € y se guardan 3 céntimos en el fondo.",
+      "steps": [
+        "Pasamos a céntimos. Con 1.700 céntimos podemos dar 340 a cada una de las cinco personas.",
+        "Quedan 3 céntimos. Nos harían falta 5 para dar un céntimo más a cada persona."
+      ],
+      "note": "Un euro se puede dividir en céntimos. En este reparto, el céntimo es la unidad más pequeña que podemos dar."
+    }
+  },
+  "P0202": {
+    "title": "¿De qué color es el cartel?",
+    "statement": "Para decorar la feria colgamos un cartel azul, uno rojo, uno amarillo, uno verde, uno lila y uno blanco. Repetimos siempre este orden, empezando por el azul.",
+    "question": "¿De qué color es el cartel que ocupa el puesto 29? Justifica cómo usas el resto.",
+    "solution": {
+      "response": "El cartel del puesto 29 es lila.",
+      "steps": [
+        "Cuatro repeticiones de seis colores ocupan los primeros 24 puestos.",
+        "El puesto 29 es el quinto de la siguiente repetición. El quinto color de la lista es el lila."
+      ],
+      "note": "Aquí el resto indica cuántos puestos avanzamos dentro de la siguiente repetición."
+    }
+  },
+  "P0203": {
+    "title": "Cajas grandes y pequeñas",
+    "statement": "Tenemos que envasar 40 galletas. Tenemos cajas de 6 galletas y cajas de 4. Queremos envasarlas todas, llenar todas las cajas que usemos y usar las menos posibles.",
+    "question": "¿Qué combinación de cajas nos conviene? Justifica por qué no podemos usar menos.",
+    "solution": {
+      "response": "Hacen falta 7 cajas. Podemos llenar seis de 6 galletas y una de 4.",
+      "steps": [
+        "Llenamos seis cajas grandes con 36 galletas. Las 4 sobrantes llenan justo una caja pequeña.",
+        "En seis cajas cabrían como máximo 36 galletas, aunque todas fueran grandes."
+      ],
+      "note": "Lo que sobra al llenar las cajas grandes cabe justo en una caja pequeña."
+    }
+  },
+  "P0204": {
+    "title": "Los dípticos de tres días",
+    "statement": "El lunes, el martes y el miércoles imprimimos 22 dípticos cada día. Los distribuimos en paquetes completos de 6. Podemos guardar los dípticos que sobren un día y juntarlos con los de los otros días.",
+    "question": "¿Cuántos paquetes más conseguimos si guardamos y juntamos los sobrantes en vez de hacer los paquetes de cada día por separado? Justifica tu respuesta.",
+    "solution": {
+      "response": "Conseguimos 2 paquetes completos más.",
+      "steps": [
+        "Cada día podemos hacer tres paquetes con 18 dípticos y sobran 4.",
+        "En tres días los sobrantes suman 12 dípticos. Si los juntamos, hacemos dos paquetes más."
+      ],
+      "note": "Sin juntar los sobrantes salen nueve paquetes. Con los sobrantes juntos obtenemos once."
+    }
+  }
+}

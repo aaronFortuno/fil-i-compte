@@ -1,0 +1,171 @@
+<!-- Generat amb node tools/build-ui.cjs. Editeu index.html i i18n/es-page.json. -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fil i compte · Banco de problemas</title>
+  <meta name="description" content="Elige problemas de matemáticas, configura las páginas de la ficha e imprime solucionarios con estrategias visuales.">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="../assets/brand/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../catalog-data-es.js"></script><script defer src="../i18n.js"></script><script defer src="../core.js"></script><script defer src="../lot-code.js"></script><script defer src="../releases.js"></script><script defer src="../i18n/es-releases.js"></script><script defer src="../analytics.js"></script><script defer src="../privacy-help.js"></script><script defer src="../app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#catalogue">Saltar al banco de problemas</a>
+  <div class="app-shell">
+    <header class="masthead"><a class="brand" href="./index.html"><img class="brand-mark" src="../assets/brand/fil-i-compte.svg" width="36" height="36" alt=""><span>fil i compte</span></a><span class="edition" id="catalogue-motto"></span><div class="masthead-actions"><form id="lot-form" class="code-form"><label for="lot-input">Código</label><input id="lot-input" maxlength="400" spellcheck="false" autocapitalize="characters" autocomplete="off" placeholder="Pega un código" aria-describedby="code-status"><button class="footer-pill" type="submit">Recuperar</button><button class="footer-pill" type="button" id="lot-copy" aria-label="Copiar el código actual" title="Copiar el código actual"><img class="ui-icon" src="../assets/lucide/share-2.svg" alt="" width="16" height="16"></button><span id="code-status" role="status"></span></form><button class="footer-pill" aria-label="Cómo funciona" id="help-toggle" aria-haspopup="dialog" aria-controls="help-dialog"><img class="ui-icon" src="../assets/lucide/circle-question-mark.svg" alt="" width="16" height="16"> <span class="help-label">Cómo funciona</span></button><button type="button" class="footer-pill" id="privacy-open" aria-label="Privacidad y avisos" aria-haspopup="dialog" aria-controls="privacy-dialog" title="Privacidad y avisos"><img class="ui-icon" src="../assets/lucide/flag.svg" alt="" width="16" height="16"><span class="privacy-label">Privacidad</span></button><button class="footer-pill language-toggle" id="language-toggle" type="button" popovertarget="language-menu" aria-label="Idioma" title="Idioma" aria-controls="language-menu"><img class="ui-icon" src="../assets/lucide/languages.svg" alt="" width="16" height="16"><svg class="language-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></header>
+    <div class="step-viewport"><div class="step-track">
+    <main class="workspace" id="bank-step">
+      <aside class="filters" aria-labelledby="filter-title"><div class="panel-heading"><h2 id="filter-title">Prepara la ficha</h2><button id="reset" class="text-button">Borrar filtros</button></div>
+        <div id="filter-options" class="filter-scroll" role="region" aria-label="Opciones de configuración" tabindex="0"><div class="two-fields"><div class="field"><label for="page-count">Número de páginas</label><select id="page-count"><option value="1">1 página</option><option value="2" selected>2 páginas</option><option value="4">4 páginas</option><option value="6">6 páginas</option></select></div><div class="field"><label for="per-page">Problemas por página</label><select id="per-page"><option value="2">2 · en columna</option><option value="3">3 · en columna</option><option value="4">4 · 2 × 2</option></select></div></div>
+        <div class="two-fields"><div class="field"><label for="level">Nivel orientativo</label><select id="level" aria-describedby="orientation-instructions" title="Incluye combinaciones equivalentes de nivel y dificultad."><option value="">Todos</option><option value="mitja">Ciclo medio</option><option value="superior">Ciclo superior</option><option value="eso">Inicio de ESO</option></select></div><div class="field"><label for="difficulty">Dificultad orientativa</label><select id="difficulty" aria-describedby="orientation-instructions" title="El nivel intermedio de ciclo superior equivale a reto de ciclo medio y a accesible de inicio de ESO."><option value="">Todas</option><option value="1">Accesible</option><option value="2">Intermedio</option><option value="3">Reto</option></select></div></div><p id="orientation-instructions" class="sr-only">El nivel y la dificultad se interpretan juntos e incluyen combinaciones equivalentes entre ciclos. Por ejemplo, ciclo superior intermedio incluye ciclo medio reto e inicio de ESO accesible.</p>
+        <div class="filter-divider"></div><h3>Contenidos</h3><p class="filter-key"><span>· Permitido</span><span>✓ Obligatorio</span><span>× Excluido</span></p><p id="feature-instructions" class="sr-only">Pulsa para pasar de permitido a obligatorio, de obligatorio a excluido y de excluido a permitido. También puedes usar las flechas izquierda y derecha.</p><div id="feature-filters" class="feature-grid" role="group" aria-label="Filtros de contenido"></div>
+        <details class="reasoning-section"><summary id="reasoning-title">Razonamiento<span id="reasoning-count"></span></summary><div id="reasoning-filters" class="feature-grid" role="group" aria-labelledby="reasoning-title"></div></details>
+        <span id="feature-status" class="sr-only" role="status" aria-live="polite"></span>
+        <div class="field scope-field"><label for="scope">Filtros obligatorios…</label><select id="scope"><option value="sheet">En el conjunto de la ficha</option><option value="each">En cada problema</option></select><p class="hint">Los filtros de contenido y razonamiento se combinan. Las exclusiones se aplican a toda la ficha.</p></div>
+        </div><div class="filter-actions"><button class="primary compose-button" id="compose"><img class="ui-icon" src="../assets/lucide/refresh-cw.svg" alt="" width="16" height="16"> Proponer una ficha nueva</button><p id="bank-feedback" role="status"></p></div>
+      </aside>
+      <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
+        <div class="catalogue-heading"><div class="catalogue-title-group"><h1 id="catalogue-title" tabindex="-1">El banco de problemas</h1><button id="selection-toggle" class="selection-toggle" popovertarget="selection-popover" aria-haspopup="dialog"><span class="selection-toggle-label"><span class="selection-toggle-prefix">Ver la </span><span class="selection-toggle-noun">selección</span></span><span id="selection-badge" class="selection-badge">4</span></button></div><div class="search"><label class="sr-only" for="search">Buscar en el banco</label><span aria-hidden="true">⌕</span><input type="search" id="search" maxlength="200" placeholder="Tema, código o intervalo (13-)…" aria-describedby="search-instructions"><button id="search-help-toggle" class="search-help-toggle" popovertarget="search-help" aria-label="Cómo buscar por código o intervalo" title="Cómo buscar por código o intervalo">?</button><span id="search-instructions" class="sr-only">Busca por texto o filtra por códigos como en los intervalos de impresión (-4, 5-7,9-10 o 13-). Los códigos e intervalos también limitan la propuesta automática.</span><span id="search-status" class="sr-only" role="status" aria-live="polite"></span></div></div>
+        <div class="catalogue-scroll" id="catalogue-scroll" role="region" aria-label="Problemas disponibles" tabindex="0"><div class="cards" id="cards"></div><div id="empty" class="empty" hidden><span aria-hidden="true">∅</span><h2>Todavía no tenemos esta combinación.</h2><p>Amplía los filtros para encontrar más problemas del catálogo.</p></div></div>
+      </section>
+    </main>
+    <section id="preview" class="preview" inert aria-hidden="true" aria-labelledby="preview-title">
+      <aside class="filters preview-sidebar" aria-label="Configuración de la ficha">
+        <div class="panel-heading"><h2 id="preview-title" tabindex="-1">Revisa la ficha</h2></div>
+        <div class="filter-scroll" tabindex="0" role="region" aria-label="Opciones de la ficha">
+          <div class="field"><label for="sheet-title">Título (opcional)</label><input id="sheet-title" maxlength="65" value="Problemas para pensar" placeholder="Sin título"></div>
+          <div class="field"><label for="work-pattern">Zona de trabajo</label><select id="work-pattern"><option value="dots">Punteada</option><option value="grid">Cuadrícula de 6 mm</option><option value="lines">Líneas suaves</option><option value="blank">En blanco</option></select></div>
+          <label class="brand-option"><input id="show-brand" type="checkbox" checked> Incluir «fil i compte»</label>
+          <label class="brand-option"><input id="repeat-header" type="checkbox"> Repetir el encabezado en cada página</label>
+          <div class="field"><label for="sheet-group">Grupo (opcional)</label><input id="sheet-group" maxlength="30" placeholder="Por ejemplo, 6.º A"></div>
+          <h3>Documento</h3><div class="view-tabs" role="group" aria-label="Vista previa"><button id="view-exercises" aria-pressed="true">Ejercicios</button><button id="view-solutions" aria-pressed="false">Solucionario</button></div>
+          <p class="hint">Puedes cambiar el orden de los problemas con las flechas de la vista previa.</p>
+          <p id="order-status" class="sr-only" role="status"></p>
+          <p class="hint answer-note" id="answer-note" hidden>Una posible solución. Los dibujos, esquemas y otros procedimientos correctos también son válidos.</p>
+        </div>
+      </aside>
+      <div class="preview-viewer">
+        <div id="preview-canvas" class="preview-canvas" role="region" aria-label="Vista de la ficha" tabindex="0"><div id="pages" class="pages"></div></div>
+        <div class="viewer-controls" role="group" aria-label="Controles del visor">
+          <button id="zoom-in" aria-label="Ampliar el documento" title="Ampliar"><img class="ui-icon" src="../assets/lucide/zoom-in.svg" alt="" width="16" height="16"></button>
+          <output id="zoom-value" aria-live="polite">100 %</output>
+          <button id="zoom-out" aria-label="Alejar el documento" title="Alejar"><img class="ui-icon" src="../assets/lucide/zoom-out.svg" alt="" width="16" height="16"></button>
+          <button id="zoom-fit" aria-label="Ajustar las páginas" title="Ajustar las páginas"><img src="../assets/lucide/scan.svg" width="20" height="20" alt="" aria-hidden="true"></button>
+        </div>
+      </div>
+    </section>
+    </div></div>
+    <button id="templates-open" class="templates-tab" aria-haspopup="dialog" aria-controls="lot-dialog">Plantillas</button>
+    <footer class="selection-bar" aria-label="Navegación y acciones de la ficha">
+      <div class="footer-navigation">
+        <nav class="step-navigation" aria-label="Pasos de la ficha">
+          <button id="close-preview" class="step-button" aria-current="step"><span class="step-number" aria-hidden="true">1</span><span>Banco</span></button>
+          <div class="review-step"><button id="preview-button" class="step-button" aria-describedby="selection-status"><span class="step-number" aria-hidden="true">2</span><span>Revisa la ficha</span></button><p id="selection-status" class="selection-summary" role="status" aria-atomic="true"></p></div>
+        </nav>
+        <div class="footer-print" role="group" aria-label="Impresión y PDF">
+          <button id="print-exercises" class="primary" disabled aria-label="Imprimir ficha / PDF" title="Imprimir ficha / PDF"><img class="ui-icon" src="../assets/lucide/printer.svg" alt="" width="16" height="16"><span>Imprimir ficha</span></button>
+          <button id="print-options-toggle" class="primary" type="button" disabled popovertarget="print-options" aria-label="Más opciones de impresión" title="Más opciones de impresión"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+      </div>
+      <p class="umbrella-project">Un proyecto de <a href="https://ortogra.fi/" class="umbrella-brand"><svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><circle cx="22" cy="28" r="14" stroke="currentColor" stroke-width="5.5"/><path d="m27 9 7-6" stroke="var(--umbrella-accent)" stroke-width="4.5"/></svg><span>ortogra<span class="umbrella-dot">.</span>fi</span></a></p>
+      <div class="footer-version footer-project"><button id="version-history" class="version-button" aria-haspopup="dialog" aria-controls="history-dialog" aria-label="Historial de versiones">Historial de versiones</button><button id="v4v-open" class="footer-pill" aria-haspopup="dialog" aria-controls="v4v-dialog" aria-label="Sobre el proyecto · V4V"><img class="ui-icon" src="../assets/lucide/heart-handshake.svg" alt="" width="16" height="16"> V4V</button></div>
+    </footer>
+  </div>
+  <nav id="language-menu" class="selection-popover language-menu" popover aria-label="Idioma"><a href="../" hreflang="ca" lang="ca">Català</a><a href="./" hreflang="es" lang="es" aria-current="page">Castellano</a></nav>
+  <div id="print-options" class="selection-popover print-options" popover role="group" aria-label="Más opciones de impresión"><button id="print-solutions" type="button" disabled autofocus>Imprimir solucionario</button></div>
+  <div id="search-help" class="selection-popover search-help-popover" popover role="dialog" aria-labelledby="search-help-title">
+    <header class="selection-popover-heading"><h2 id="search-help-title">Buscar por código o intervalo</h2><button class="selection-close" popovertarget="search-help" popovertargetaction="hide" aria-label="Cerrar la ayuda de búsqueda" autofocus><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="search-help-content"><p>Funcionan como los intervalos de impresión. Pulsa un ejemplo.</p><dl><dt><button data-search-example="-4">-4</button></dt><dd>Del P0001 al P0004.</dd><dt><button data-search-example="5-7,9-10">5-7,9-10</button></dt><dd>Del 5 al 7 y del 9 al 10.</dd><dt><button data-search-example="13-">13-</button></dt><dd>Del P0013 al último.</dd><dt><button data-search-example="P0013">P0013</button></dt><dd>Solo este problema.</dd></dl><p>Puedes escribir los códigos con o sin la P. Los extremos están incluidos.</p><p><strong>Los códigos e intervalos también limitan la propuesta automática.</strong> El texto solo busca en el banco.</p><p id="search-error" class="search-error" hidden></p></div>
+  </div>
+  <div id="selection-popover" class="selection-popover" popover role="dialog" aria-labelledby="selection-title">
+    <header class="selection-popover-heading"><div><h2 id="selection-title">Tu selección</h2><p id="selection-total"></p></div><button id="close-selection" class="selection-close" popovertarget="selection-popover" popovertargetaction="hide" aria-label="Cerrar la selección" autofocus><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <ol id="selection-list" class="selection-list"></ol><p id="selection-empty" class="selection-empty" hidden>Todavía no has elegido ningún problema.</p>
+  </div>
+  <dialog id="help-dialog" class="history-dialog help-dialog" aria-labelledby="help-title">
+    <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="help-title">Cómo funciona</h2></div><button id="close-help" class="history-close" aria-label="Cerrar la ayuda" autofocus><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="history-scroll help-content" tabindex="0" role="region" aria-label="Seleccionar y filtrar">
+      <section class="help-section" aria-labelledby="help-select-title"><h3 id="help-select-title"><span class="help-step" aria-hidden="true">1</span> Elige los problemas</h3><p>Marca las casillas o pulsa «Proponer una ficha nueva».</p>
+        <article class="help-example" id="help-example"><header><h4 id="help-example-title"></h4><label class="help-select-hint"><span>Marca aquí →</span><input type="checkbox" id="help-example-select" aria-label="Seleccionar el problema de ejemplo"></label></header><p id="help-example-statement"></p><p id="help-example-question" class="help-example-question"></p></article>
+      </section>
+      <section class="help-section" aria-labelledby="help-filter-title"><h3 id="help-filter-title"><span class="help-step" aria-hidden="true">2</span> Filtra los contenidos y el razonamiento</h3><p>Cada clic cambia el estado. Pruébalo.</p>
+        <div id="help-filter-demo" class="help-filter-demo"><button type="button" id="help-filter" class="feature-chip" aria-describedby="help-filter-meaning"><span class="feature-name">Fracciones</span><span class="feature-state" aria-hidden="true">·</span></button><span id="help-demo-state" class="help-demo-state">Permitido</span><span class="help-demo-pointer" id="help-demo-pointer" aria-hidden="true"><span class="help-click-ring"></span><svg viewBox="0 0 24 26" width="24" height="26"><polygon points="3,2 3,18 8,14 12,23 16,21 12,13 20,12" fill="#fffefa" stroke="#315e4e" stroke-width="1.5" stroke-linejoin="round"/></svg></span></div>
+        <div class="help-filter-meaning" id="help-filter-meaning"><p><strong>· Permitido</strong><span>Puede aparecer</span></p><p><strong>✓ Obligatorio</strong><span>Debe aparecer</span></p><p><strong>× Excluido</strong><span>No puede aparecer</span></p></div>
+        <p class="help-scope">Los requisitos se pueden aplicar al conjunto de la ficha o a cada problema.</p>
+      </section>
+      <section class="help-section" aria-labelledby="help-orientation-title"><h3 id="help-orientation-title">Nivel y dificultad</h3><p>Son orientativos e incluyen combinaciones equivalentes. CM reto equivale a CS intermedio y a inicio de ESO accesible. CS reto equivale a inicio de ESO intermedio. Las exclusiones de contenidos se respetan siempre.</p></section>
+      <section class="help-section" aria-labelledby="help-search-title"><h3 id="help-search-title">Busca y evita repetir</h3><p>En el buscador, escribe <strong>13-</strong> para ver del P0013 al último, <strong>-4</strong> para ver los cuatro primeros, o <strong>5-7,9-10</strong> para combinar intervalos. Los extremos están incluidos y puedes añadir la P a los códigos. Los intervalos también limitan la propuesta automática. El botón ? del buscador ofrece ejemplos que puedes aplicar con un clic.</p></section>
+    </div>
+  </dialog>
+  <dialog id="history-dialog" class="history-dialog" aria-labelledby="history-title">
+    <header class="history-heading">
+      <div>
+        <p class="history-eyebrow">fil i compte</p>
+        <h2 id="history-title">Historial de versiones</h2>
+        <a class="history-source" href="https://github.com/aaronFortuno/fil-i-compte/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Historial completo en GitHub <img class="ui-icon" src="../assets/lucide/arrow-up-right.svg" alt="" width="12" height="12"></a>
+      </div>
+      <button id="close-history" class="history-close" aria-label="Cerrar el historial" autofocus><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button>
+    </header>
+    <div class="history-scroll" tabindex="0" role="region" aria-label="Cambios de cada versión"><ol id="release-list" class="release-list"></ol></div>
+  </dialog>
+  <dialog id="lot-dialog" class="history-dialog templates-drawer" aria-labelledby="template-title">
+    <header class="history-heading"><h2 id="template-title" tabindex="-1">Plantillas</h2><button id="lot-close" class="history-close" aria-label="Cerrar"><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="history-scroll utility-content">
+      <section class="utility-card" aria-labelledby="template-title">
+        <p>Guarda la ficha con los ejercicios en orden, la pauta, el encabezado y los filtros. Las plantillas solo están disponibles en este navegador.</p>
+        <form id="template-save" class="template-save">
+          <label for="template-name">Nombre de la plantilla</label>
+          <div class="template-save-row"><input id="template-name" maxlength="80" required placeholder="Por ejemplo, Cálculo de 5.º"><button class="primary" type="submit">Guardar</button></div>
+        </form>
+        <p id="template-incomplete" hidden>Completa la selección para guardarla como plantilla.</p>
+        <p id="template-empty">Todavía no tienes ninguna plantilla guardada.</p>
+        <ul id="template-list" class="template-list" aria-label="Plantillas guardadas"></ul>
+      </section>
+      <p id="lot-status" role="status"></p>
+    </div>
+  </dialog>
+  <dialog id="v4v-dialog" class="history-dialog" aria-labelledby="v4v-title">
+    <header class="history-heading"><h2 id="v4v-title">Sobre el proyecto</h2><button id="v4v-close" class="history-close" aria-label="Cerrar"><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="history-scroll v4v-content">
+      <section class="v4v-intro" aria-label="Apoyo al proyecto">
+        <div class="v4v-intro-copy">
+          <p>Fil i compte es un recurso gratuito para preparar fichas de matemáticas y sus solucionarios. Elige los problemas, ordénalos e imprímelos en una ficha a medida.</p>
+          <p>El proyecto sigue la filosofía Value for Value. Si te resulta útil, puedes apoyarlo recomendándolo o haciendo una aportación voluntaria por Lightning.</p>
+          <label for="v4v-address">Lightning Network</label>
+          <div class="v4v-address-row"><input id="v4v-address" value="aptswim903@walletofsatoshi.com" readonly><button id="v4v-copy" aria-label="Copiar la dirección Lightning" title="Copiar la dirección Lightning"><img class="ui-icon" src="../assets/lucide/copy.svg" alt="" width="16" height="16"></button></div>
+          <p id="v4v-status" role="status"></p>
+        </div>
+        <a class="v4v-qr" href="lightning:LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZAR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30D3H82UNVWQHKZUR5WDMKJMFEXQESLJTDDS" aria-label="Abrir la cartera Lightning"><img src="../assets/v4v/lightning.svg" alt="Código QR para hacer una aportación voluntaria con Lightning" width="128" height="128"></a>
+      </section>
+      <div class="project-grid">
+        <div>
+          <section><h3>Sobre el autor · Aarón Fortuño</h3><div class="project-author"><img src="../assets/author/aaron-fortuno.png" width="128" height="128" alt="Aarón Fortuño" loading="lazy"><div><p>Soy docente y creo recursos educativos para el aula. En mi portafolio encontrarás Fil i compte y otros proyectos.</p><p><a href="https://aaronfortuno.github.io/portfolio/">Mi portafolio <img class="ui-icon" src="../assets/lucide/arrow-up-right.svg" alt="" width="16" height="16"></a></p></div></div></section>
+        </div>
+        <section class="project-credits"><h3>Repositorio</h3><p><a href="https://github.com/aaronFortuno/fil-i-compte">GitHub · Fil i compte <img class="ui-icon" src="../assets/lucide/arrow-up-right.svg" alt="" width="16" height="16"></a></p><h3>Créditos y recursos</h3><ul class="credit-list">
+          <li><a href="https://lucide.dev/">Lucide</a> · Iconos distribuidos con la <a href="../assets/lucide/LICENSE">licencia ISC y los avisos MIT correspondientes</a>.</li>
+          <li><a href="../assets/brand/README.md">Logotipo e icono «Fil que emmarca»</a> · Diseño propio del proyecto.</li>
+          <li>Retrato del autor reutilizado de <a href="https://pentagrama.page/">Pentagrama</a> y QR de Lightning compartido con <a href="https://plec.ortogra.fi/">Plec</a>.</li>
+        </ul></section>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="history-dialog" id="privacy-dialog" aria-labelledby="privacy-title">
+    <header class="history-heading"><div><p class="history-eyebrow">fil i compte</p><h2 id="privacy-title">Privacidad y avisos</h2></div><button type="button" id="privacy-close" class="history-close" aria-label="Cerrar"><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button></header>
+    <div class="history-scroll privacy-content" tabindex="0">
+      <p>Usamos Umami para contar visitas, propuestas de fichas, selecciones manuales de problemas, acciones con plantillas y solicitudes de impresión. Excluimos los nombres, grupos, títulos, búsquedas y códigos de ficha.</p>
+      <p>Al notificar un error enviamos el código público del problema, la versión, el idioma y si el aviso se refiere al enunciado o al solucionario.</p>
+      <p id="privacy-state" class="privacy-state" role="status"></p>
+      <div class="utility-actions"><button type="button" class="secondary" id="privacy-disable">Desactivar la analítica</button><button type="button" class="primary" id="privacy-temporary">Permitir temporalmente</button></div>
+      <details id="privacy-browser-help" open hidden>
+        <summary>Cómo habilitar los avisos en mi navegador</summary>
+        <div class="field"><label for="privacy-browser">Navegador</label><select id="privacy-browser"><option value="brave">Brave</option><option value="chrome">Chrome</option><option value="firefox">Firefox</option><option value="edge">Edge</option><option value="safari">Safari</option><option value="other">Otro</option></select></div>
+        <p id="privacy-help-intro"></p><ol id="privacy-help-steps"></ol><p id="privacy-help-scope" class="hint"></p><a id="privacy-help-source" target="_blank" rel="noopener noreferrer">Ayuda oficial del navegador</a>
+      </details>
+      <p class="hint">El permiso temporal dura hasta que cierres la pestaña. Con la analítica desactivada puedes preparar e imprimir fichas. <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer">Privacidad de Umami</a>.</p>
+    </div>
+  </dialog>
+  <div id="report-tooltip" popover="manual" role="tooltip"></div>
+  <span id="report-status" class="sr-only" role="status"></span>
+  <div id="print-root"></div>
+  <noscript>Esta herramienta necesita JavaScript activado. El catálogo original está en data/catalog.json.</noscript>
+</body>
+</html>

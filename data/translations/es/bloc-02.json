@@ -1,0 +1,170 @@
+{
+  "P0013": {
+    "title": "Dos días de teatro",
+    "statement": "Para la obra de teatro de la escuela se han vendido 186 entradas para el viernes y 247 para el sábado.",
+    "question": "¿Cuántas entradas se han vendido entre los dos días?",
+    "solution": {
+      "unit": "entradas",
+      "response": "Se han vendido 433 entradas en total.",
+      "steps": [
+        "Sumamos las ventas de los dos días. 186 + 247 = 433 entradas."
+      ],
+      "note": "Puedes representar los dos días con dos barras y calcular el total."
+    }
+  },
+  "P0014": {
+    "title": "Asientos libres en el concierto",
+    "statement": "Una sala de conciertos tiene 525 asientos. Al comenzar el concierto, hay 378 asientos ocupados.",
+    "question": "¿Cuántos asientos quedan libres?",
+    "solution": {
+      "unit": "asientos",
+      "response": "Quedan 147 asientos libres.",
+      "steps": [
+        "Restamos los asientos ocupados del total de la sala. 525 − 378 = 147."
+      ],
+      "note": "También puedes calcular cuánto falta desde 378 hasta 525 en una recta numérica."
+    }
+  },
+  "P0015": {
+    "title": "Carteles para las escuelas",
+    "statement": "Una imprenta prepara 18 carteles para cada una de las 24 escuelas que participan en una campaña.",
+    "question": "¿Cuántos carteles tiene que preparar en total?",
+    "solution": {
+      "unit": "carteles",
+      "response": "Tiene que preparar 432 carteles.",
+      "steps": [
+        "Hay 24 grupos de 18 carteles. 24 × 18 = 432 carteles."
+      ],
+      "note": "Un esquema con 24 grupos iguales ayuda a identificar la multiplicación."
+    }
+  },
+  "P0016": {
+    "title": "Sobres de semillas",
+    "statement": "Tenemos 336 semillas y las repartimos a partes iguales en 8 sobres, sin que sobre ninguna. El paquete de semillas ha costado 12 €.",
+    "question": "¿Cuántas semillas ponemos en cada sobre?",
+    "solution": {
+      "unit": "semillas por sobre",
+      "response": "Ponemos 42 semillas en cada sobre.",
+      "steps": [
+        "Repartimos las 336 semillas entre los 8 sobres. 336 ÷ 8 = 42."
+      ],
+      "note": "El precio de 12 € no interviene en el reparto de las semillas."
+    }
+  },
+  "P0017": {
+    "title": "El camino hasta el mirador",
+    "statement": "Una ruta va de la escuela a la fuente y luego de la fuente al mirador. El primer tramo mide 2,75 km y el segundo mide 1,6 km.",
+    "question": "¿Cuántos kilómetros mide la ruta de la escuela al mirador?",
+    "solution": {
+      "unit": "kilómetros",
+      "response": "La ruta mide 4,35 km.",
+      "steps": [
+        "Sumamos los dos tramos. 2,75 + 1,60 = 4,35 km."
+      ],
+      "note": "En una suma en vertical, alinea las comas y las cifras que tienen el mismo valor posicional."
+    }
+  },
+  "P0018": {
+    "title": "Cintas para las medallas",
+    "statement": "Tenemos una cinta de 12,6 metros. Para cada medalla cortamos un trozo de 0,35 metros, sin desperdiciar cinta en los cortes.",
+    "question": "¿Cuántos trozos completos de 0,35 metros podemos obtener?",
+    "solution": {
+      "unit": "trozos",
+      "response": "Podemos obtener 36 trozos, sin que sobre cinta.",
+      "steps": [
+        "Buscamos cuántos trozos de 0,35 m caben en 12,6 m. 12,6 ÷ 0,35 = 36."
+      ],
+      "note": "También puedes pasar las medidas a centímetros. Repartir 1.260 cm en trozos de 35 cm da el mismo número de trozos."
+    }
+  },
+  "P0019": {
+    "title": "Ir a la escuela en bicicleta",
+    "statement": "En una encuesta han participado 240 alumnos. Tres quintas partes (3/5) dicen que van a la escuela en bicicleta.",
+    "question": "¿Cuántos de los alumnos encuestados van a la escuela en bicicleta?",
+    "solution": {
+      "unit": "alumnos",
+      "response": "144 de los alumnos encuestados van a la escuela en bicicleta.",
+      "steps": [
+        "Una quinta parte equivale a 240 ÷ 5 = 48 alumnos.",
+        "Tres quintas partes son 48 × 3 = 144 alumnos."
+      ],
+      "note": "Divide una barra en cinco partes iguales y señala tres.",
+      "visual": {
+        "caption": "La barra representa a los 240 alumnos. Cada parte equivale a 48 alumnos y las 3 partes sombreadas representan a 144."
+      }
+    }
+  },
+  "P0020": {
+    "title": "Los abonos del museo",
+    "statement": "Esta mañana han entrado 150 personas en el museo. El 30 % de estas personas tiene abono anual.",
+    "question": "¿Cuántas de las personas que han entrado esta mañana tienen abono anual?",
+    "solution": {
+      "unit": "personas",
+      "response": "45 personas tienen abono anual.",
+      "steps": [
+        "Calculamos el 30 % de 150. 150 × 30 ÷ 100 = 45 personas."
+      ],
+      "note": "Otra forma es calcular el 10 % (15 personas) y multiplicarlo por 3. La barra puede servir de apoyo.",
+      "visual": {
+        "caption": "Cada décima parte equivale al 10 %, es decir, 15 personas. Tres partes, el 30 %, representan a 45 personas."
+      }
+    }
+  },
+  "P0021": {
+    "title": "Entradas para las asociaciones",
+    "statement": "Un teatro ofrece 3 funciones de 96 plazas cada una. En cada función reserva 18 plazas para los intérpretes y sus familias. Las entradas restantes de las tres funciones se reparten a partes iguales entre 6 asociaciones.",
+    "question": "¿Cuántas entradas recibe cada asociación en total?",
+    "solution": {
+      "unit": "entradas por asociación",
+      "response": "Cada asociación recibe 39 entradas en total.",
+      "steps": [
+        "De cada función se pueden repartir 96 − 18 = 78 entradas.",
+        "Entre las tres funciones hay 3 × 78 = 234 entradas para repartir.",
+        "Cada asociación recibe 234 ÷ 6 = 39 entradas."
+      ],
+      "note": "Un esquema con tres grupos de 96 plazas permite separar las 18 reservadas de cada función."
+    }
+  },
+  "P0022": {
+    "title": "Material para el taller",
+    "statement": "Para un taller compramos 3 carpetas a 4,75 € cada una y 2 cajas de rotuladores a 6,40 € cada una. Pagamos con 40 €.",
+    "question": "¿Cuánto nos tienen que devolver?",
+    "solution": {
+      "unit": "euros",
+      "response": "Nos tienen que devolver 12,95 €.",
+      "steps": [
+        "Las carpetas cuestan 3 × 4,75 = 14,25 €.",
+        "Los rotuladores cuestan 2 × 6,40 = 12,80 €.",
+        "La compra cuesta 14,25 + 12,80 = 27,05 €.",
+        "El cambio es 40 − 27,05 = 12,95 €."
+      ],
+      "note": "Puedes organizar la compra en una tabla con el producto, la cantidad, el precio unitario y el subtotal."
+    }
+  },
+  "P0023": {
+    "title": "Una clave de colores",
+    "statement": "Una clave tiene 4 casillas ordenadas. En cada casilla podemos poner rojo, azul o amarillo. Un mismo color se puede repetir, y cambiar los colores de posición puede dar una clave distinta.",
+    "question": "¿Cuántas claves distintas podemos formar? Expresa el cálculo con una potencia.",
+    "solution": {
+      "unit": "claves",
+      "response": "Podemos formar 81 claves distintas, porque 3⁴ = 81.",
+      "steps": [
+        "Cada una de las 4 casillas tiene 3 opciones independientes. 3⁴ = 81 claves."
+      ],
+      "note": "Un árbol de posibilidades con cuatro niveles y tres ramas en cada paso representa todas las claves."
+    }
+  },
+  "P0024": {
+    "title": "El lado de la vela",
+    "statement": "En la maqueta de un barco, una vela es cuadrada y tiene una superficie de 196 cm².",
+    "question": "¿Cuántos centímetros mide cada lado de la vela?",
+    "solution": {
+      "unit": "centímetros",
+      "response": "Cada lado de la vela mide 14 cm.",
+      "steps": [
+        "El lado del cuadrado es la raíz cuadrada de la superficie. √196 = 14 cm."
+      ],
+      "note": "Dibuja un cuadrado y busca el número que, multiplicado por sí mismo, da 196. 14 × 14 = 196. La superficie se mide en cm² y el lado, en cm."
+    }
+  }
+}

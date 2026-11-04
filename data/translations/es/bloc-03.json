@@ -1,0 +1,393 @@
+{
+  "P0025": {
+    "title": "Vasos para la fiesta",
+    "statement": "Para una fiesta hay 6 paquetes de 12 vasos reutilizables. Participarán 65 personas y cada una necesitará un vaso.",
+    "parts": [
+      {
+        "question": "¿Cuántos vasos tenemos en total?",
+        "solution": {
+          "unit": "vasos",
+          "response": "Tenemos 72 vasos.",
+          "steps": [
+            "Hay 6 grupos de 12 vasos. 6 × 12 = 72."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Hace falta comprar más vasos? Justifica la respuesta.",
+        "solution": {
+          "response": "Hay un vaso para cada persona y sobran 7, así que tenemos suficientes.",
+          "steps": [
+            "Comparamos los vasos con las personas. Sobran 72 − 65 = 7 vasos."
+          ],
+          "note": "También puedes representar las personas y los vasos con dos barras."
+        }
+      }
+    ]
+  },
+  "P0026": {
+    "title": "Minibuses para el encuentro",
+    "statement": "A un encuentro irán 87 alumnos y 9 adultos. Cada minibús tiene 24 plazas para pasajeros, además de la del conductor.",
+    "parts": [
+      {
+        "question": "¿Cuántos minibuses necesitan al principio?",
+        "solution": {
+          "unit": "minibuses",
+          "response": "Al principio necesitan 4 minibuses.",
+          "steps": [
+            "Van 87 + 9 = 96 personas. 96 ÷ 24 = 4 minibuses."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "Si se apuntan 6 alumnos más, ¿siguen siendo suficientes los minibuses previstos? Explícalo.",
+        "solution": {
+          "response": "Haría falta un quinto minibús, porque habría 102 pasajeros y solo 96 plazas.",
+          "steps": [
+            "Con los nuevos alumnos son 96 + 6 = 102 personas. Cuatro minibuses ofrecen 4 × 24 = 96 plazas."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0027": {
+    "title": "Dos ofertas de cuadernos",
+    "statement": "Necesitamos 12 cuadernos. En la tienda A, un paquete de 4 cuesta 6,80 €. En la tienda B, cada cuaderno cuesta 1,90 €.",
+    "parts": [
+      {
+        "question": "¿Cuánto cuestan los 12 cuadernos en la tienda A?",
+        "solution": {
+          "unit": "euros",
+          "response": "En la tienda A cuestan 20,40 €.",
+          "steps": [
+            "Hacen falta 3 paquetes. 3 × 6,80 = 20,40 €."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuánto cuestan en la tienda B?",
+        "solution": {
+          "unit": "euros",
+          "response": "En la tienda B cuestan 22,80 €.",
+          "steps": [
+            "Multiplicamos el precio unitario por 12."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Qué tienda conviene más y cuánto dinero ahorramos?",
+        "solution": {
+          "unit": "euros de ahorro",
+          "response": "Conviene la tienda A. Ahorramos 2,40 €.",
+          "steps": [
+            "Para comparar el precio del paquete con el precio por unidad, calculamos el coste total de todos los cuadernos en cada tienda."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0028": {
+    "title": "El tramo de la carrera",
+    "statement": "Una carrera tiene un recorrido de 12 km. Laia ya ha completado tres cuartas partes (3/4) del recorrido.",
+    "parts": [
+      {
+        "question": "¿Cuántos kilómetros ha recorrido?",
+        "solution": {
+          "unit": "kilómetros",
+          "response": "Ha recorrido 9 km.",
+          "steps": [
+            "Cada cuarto mide 3 km y tres cuartos suman 9 km."
+          ],
+          "note": "",
+          "visual": {
+            "caption": "Cada parte representa 3 km. Las tres partes sombreadas son los 9 km recorridos."
+          }
+        }
+      },
+      {
+        "question": "¿Cuántos kilómetros le faltan para terminar?",
+        "solution": {
+          "unit": "kilómetros",
+          "response": "Le faltan 3 km.",
+          "steps": [
+            "Queda un cuarto del recorrido, que son 3 km."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0029": {
+    "title": "Entradas con descuento",
+    "statement": "Una entrada de cine cuesta 18 €. Hoy todas las entradas tienen un descuento del 25 %. Un grupo quiere comprar 3 entradas y dispone de 40 €.",
+    "parts": [
+      {
+        "question": "¿Qué descuento, en euros, tiene cada entrada?",
+        "solution": {
+          "unit": "euros",
+          "response": "Cada entrada tiene 4,50 € de descuento.",
+          "steps": [
+            "Calculamos el 25 % de 18 €."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuánto cuesta una entrada rebajada?",
+        "solution": {
+          "unit": "euros",
+          "response": "Una entrada rebajada cuesta 13,50 €.",
+          "steps": [
+            "Restamos el descuento al precio inicial."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Pueden comprar las 3 entradas? Justifica la respuesta.",
+        "solution": {
+          "response": "Les faltan 0,50 €, porque las tres entradas cuestan 40,50 €.",
+          "steps": [
+            "3 × 13,50 = 40,50 €, que supera los 40 € disponibles."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0030": {
+    "title": "El presupuesto de la biblioteca",
+    "statement": "La biblioteca tiene 450 € para comprar material. Compra 6 libros a 32 € cada uno y 8 cómics a 18 € cada uno.",
+    "parts": [
+      {
+        "question": "¿Cuánto ha gastado en total?",
+        "solution": {
+          "unit": "euros",
+          "response": "Ha gastado 336 €.",
+          "steps": [
+            "Los libros cuestan 192 € y los cómics, 144 €. Juntos suman 336 €."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuánto dinero le queda?",
+        "solution": {
+          "unit": "euros",
+          "response": "Le quedan 114 €.",
+          "steps": [
+            "Restamos el gasto total al presupuesto."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Puede comprar además 4 juegos de 28 € cada uno sin superar el presupuesto? Justifica la respuesta.",
+        "solution": {
+          "response": "Sí, porque los juegos cuestan 112 € y todavía sobrarán 2 €.",
+          "steps": [
+            "4 × 28 = 112 €. Los 114 € que quedan son suficientes."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0031": {
+    "title": "El mural de baldosas",
+    "statement": "Un mural cuadrado tiene 7 filas de 7 baldosas. Durante una reparación se retiran 12 baldosas.",
+    "parts": [
+      {
+        "question": "¿Cuántas baldosas tenía al principio? Escríbelo con una potencia.",
+        "solution": {
+          "unit": "baldosas",
+          "response": "Al principio tenía 7² = 49 baldosas.",
+          "steps": [
+            "La potencia representa las 7 filas de 7 baldosas."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuántas baldosas quedan colocadas?",
+        "solution": {
+          "unit": "baldosas",
+          "response": "Quedan 37 baldosas colocadas.",
+          "steps": [
+            "Restamos las 12 baldosas retiradas de las 49 iniciales."
+          ],
+          "note": "",
+          "visual": {
+            "caption": "Tachamos 12 de las 49 baldosas y quedan 37."
+          }
+        }
+      }
+    ]
+  },
+  "P0032": {
+    "title": "La alfombra cuadrada",
+    "statement": "Una alfombra cuadrada tiene una superficie de 2,25 m². Queremos coser una cinta a lo largo de todo el borde, sin añadir cinta para las uniones.",
+    "parts": [
+      {
+        "question": "¿Cuánto mide cada lado?",
+        "solution": {
+          "unit": "metros",
+          "response": "Cada lado mide 1,5 m.",
+          "steps": [
+            "1,5 × 1,5 = 2,25. Por lo tanto, √2,25 = 1,5 m."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuántos metros de cinta necesitamos?",
+        "solution": {
+          "unit": "metros",
+          "response": "Necesitamos 6 m de cinta.",
+          "steps": [
+            "Sumamos los cuatro lados iguales. 4 × 1,5 = 6 m."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Es suficiente un rollo de 5,5 m? Explica por qué.",
+        "solution": {
+          "response": "Faltan 0,5 m de cinta.",
+          "steps": [
+            "Necesitamos 6 m y solo tenemos 5,5. 6 − 5,5 = 0,5 m."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  },
+  "P0033": {
+    "title": "Las bolas de colores",
+    "statement": "En una piscina de juego hay 240 bolas. Del total, 2/5 son rojas y 3/8 son azules. Las demás son de otros colores.",
+    "parts": [
+      {
+        "question": "¿Cuántas bolas rojas hay?",
+        "solution": {
+          "unit": "bolas",
+          "response": "Hay 96 bolas rojas.",
+          "steps": [
+            "Cada quinta parte equivale a 48 bolas y dos partes suman 96."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Cuántas bolas hay de otros colores?",
+        "solution": {
+          "unit": "bolas",
+          "response": "Hay 54 bolas de otros colores.",
+          "steps": [
+            "Hay 240 ÷ 8 × 3 = 90 bolas azules.",
+            "Quitamos las rojas y las azules. 240 − 186 = 54."
+          ],
+          "note": "Las dos fracciones se refieren al total de 240 bolas."
+        }
+      }
+    ]
+  },
+  "P0034": {
+    "title": "Las fotografías del taller",
+    "statement": "Tenemos 156 fotografías para colocar en un álbum. En cada página caben 12 fotografías.",
+    "parts": [
+      {
+        "question": "¿Cuántas páginas llenamos con las 156 fotografías?",
+        "solution": {
+          "unit": "páginas",
+          "response": "Llenamos 13 páginas.",
+          "steps": [
+            "Repartimos las 156 fotografías en grupos de 12."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "Si llegan 18 fotografías más, ¿cabrán todas en 14 páginas? Justifica la respuesta.",
+        "solution": {
+          "response": "Necesitamos una decimoquinta página, porque seis fotografías se quedarían sin sitio.",
+          "steps": [
+            "Tendremos 174 fotografías y en 14 páginas solo caben 168. La diferencia es 6."
+          ],
+          "note": "Puedes dibujar las páginas como grupos de 12 espacios."
+        }
+      }
+    ]
+  },
+  "P0035": {
+    "title": "El agua de las cantimploras",
+    "statement": "Tenemos 7,2 litros de agua y queremos llenar por completo 8 cantimploras de 0,75 litros cada una. Después haremos una ruta de 5 km.",
+    "parts": [
+      {
+        "question": "¿Cuántos litros necesitamos para llenar todas las cantimploras?",
+        "solution": {
+          "unit": "litros",
+          "response": "Necesitamos 6 litros en total.",
+          "steps": [
+            "Multiplicamos la capacidad de una cantimplora por 8."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Sobrará o faltará agua? ¿Cuántos litros? Justifica la respuesta con un cálculo.",
+        "solution": {
+          "unit": "litros",
+          "response": "El agua es suficiente y sobran 1,2 litros.",
+          "steps": [
+            "Restamos los 6 litros necesarios de los 7,2 disponibles. El resultado positivo indica que sobra agua."
+          ],
+          "note": "Los 5 km de la ruta no intervienen en estos cálculos."
+        }
+      }
+    ]
+  },
+  "P0036": {
+    "title": "La venta de camisetas",
+    "statement": "Tenemos 150 camisetas para vender. El primer día vendemos el 40 % del total inicial y el segundo día vendemos 30 camisetas más.",
+    "parts": [
+      {
+        "question": "¿Cuántas camisetas vendemos el primer día?",
+        "solution": {
+          "unit": "camisetas",
+          "response": "El primer día vendemos 60 camisetas.",
+          "steps": [
+            "Calculamos el 40 % de las 150 camisetas iniciales."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Qué porcentaje del total inicial hemos vendido entre los dos días?",
+        "solution": {
+          "unit": "porcentaje",
+          "response": "Hemos vendido el 60 % del total inicial.",
+          "steps": [
+            "En total vendemos 90 camisetas. 90 de 150 equivalen al 60 %."
+          ],
+          "note": ""
+        }
+      },
+      {
+        "question": "¿Es correcto sumar 40 % + 30 % y decir que hemos vendido el 70 %? Justifica la respuesta.",
+        "solution": {
+          "response": "El 30 indica una cantidad de camisetas. Equivale al 20 % del total. 40 % + 20 % = 60 %.",
+          "steps": [
+            "Convertimos las 30 camisetas en porcentaje. 30 × 100 ÷ 150 = 20 %."
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

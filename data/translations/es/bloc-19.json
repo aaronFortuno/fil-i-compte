@@ -1,0 +1,158 @@
+{
+  "P0217": {
+    "title": "Etiquetas a ritmo constante",
+    "statement": "Una impresora que ya está en marcha hace 24 etiquetas en 4 minutos. Durante todo el trabajo imprime el mismo número de etiquetas cada minuto.",
+    "question": "¿Cuántas etiquetas hará en 10 minutos?",
+    "solution": {
+      "response": "Hará 60 etiquetas.",
+      "steps": [
+        "En un minuto hace 24 ÷ 4 = 6 etiquetas.",
+        "En diez minutos hace diez grupos de seis etiquetas."
+      ],
+      "note": "Tabla del ritmo de impresión. 1 minuto → 6 etiquetas. 4 minutos → 24 etiquetas. 10 minutos → 60 etiquetas."
+    }
+  },
+  "P0218": {
+    "title": "El camino en el plano",
+    "statement": "En un plano del pueblo, 2 cm representan 100 metros reales. El camino recto entre la escuela y el parque mide 7 cm en el plano.",
+    "question": "¿Cuántos metros mide el camino en realidad?",
+    "solution": {
+      "response": "Mide 350 metros.",
+      "steps": [
+        "Cada centímetro representa 50 metros, la mitad de 100.",
+        "Multiplicamos los 50 metros por los siete centímetros del camino."
+      ],
+      "note": "También podemos contar 2 + 2 + 2 + 1 cm. Son tres tramos de 100 metros y uno de 50."
+    }
+  },
+  "P0219": {
+    "title": "Los carteles de la fiesta",
+    "statement": "Una copistería cobra 3 € por preparar el pedido de carteles, con independencia de cuántos se hagan. Cada cartel cuesta 2 € más. Èric dice que encargar seis carteles costará el doble que encargar tres.",
+    "question": "¿Es el precio total directamente proporcional al número de carteles? Justifica tu respuesta con los dos pedidos.",
+    "solution": {
+      "response": "El precio total no es proporcional. Tres carteles cuestan 9 € y seis cuestan 15 €. El doble de 9 € serían 18 €.",
+      "steps": [
+        "Con tres carteles pagamos 6 € por los carteles y 3 € de preparación.",
+        "Con seis carteles pagamos 12 € por los carteles y los mismos 3 € de preparación."
+      ],
+      "note": "El importe de los carteles se duplica. La preparación se cobra una vez en cada pedido."
+    }
+  },
+  "P0220": {
+    "title": "El patrón del mosaico",
+    "statement": "Un patrón para un mosaico tiene 3 baldosas azules y 2 blancas. Queremos hacer un mosaico de 20 baldosas repitiendo el patrón completo.",
+    "question": "¿Cuántas baldosas azules y blancas necesitamos? Explica cómo mantienes la proporción.",
+    "solution": {
+      "response": "Necesitamos 12 baldosas azules y 8 blancas.",
+      "steps": [
+        "Cada patrón tiene 5 baldosas. Con 20 baldosas podemos hacer cuatro copias del patrón.",
+        "Multiplicamos por cuatro tanto las baldosas azules como las blancas."
+      ],
+      "note": "Dibuja cuatro tiras de cinco baldosas, con tres azules y dos blancas en cada una."
+    }
+  },
+  "P0221": {
+    "title": "Las cajas del almacén",
+    "statement": "En 6 cajas llenas hay 48 lápices. Todas las cajas son iguales. Queremos guardar 72 lápices en cajas como estas y llenarlas todas.",
+    "question": "¿Cuántas cajas necesitamos?",
+    "solution": {
+      "response": "Necesitamos 9 cajas.",
+      "steps": [
+        "Cada caja llena contiene 48 ÷ 6 = 8 lápices.",
+        "Dividimos los 72 lápices entre los 8 que van en cada caja."
+      ],
+      "note": "También puedes ver los 72 lápices como los 48 iniciales más 24. Los 24 son la mitad de 48 y llenan tres cajas más."
+    }
+  },
+  "P0222": {
+    "title": "Un ritmo distinto en la subida",
+    "statement": "Durante los primeros 4 minutos de una ruta en bicicleta, Laia recorre 400 metros. Durante los 4 minutos siguientes, cuesta arriba, recorre 200.",
+    "question": "Si contamos el tiempo y la distancia desde el inicio de la ruta, ¿son directamente proporcionales en estos dos momentos? Justifica tu respuesta comparando los 4 minutos con los 8.",
+    "solution": {
+      "response": "En estos dos momentos la distancia no es proporcional al tiempo. En 8 minutos Laia recorre 600 metros. Si mantuviera la proporción de los primeros 4 minutos, recorrería 800.",
+      "steps": [
+        "A los 4 minutos ha recorrido 400 metros. A los 8, sumamos los 400 metros del primer tramo y los 200 del segundo.",
+        "El tiempo se ha duplicado. La distancia solo llegaría a 800 metros si también se duplicara."
+      ],
+      "note": "En una relación proporcional, al duplicar el tiempo desde el inicio también se tiene que duplicar la distancia acumulada."
+    }
+  },
+  "P0223": {
+    "title": "La foto ampliada",
+    "statement": "Una foto rectangular mide 6 cm de ancho y 4 cm de alto. Una copia mide 9 cm de ancho y 6 cm de alto. Queremos saber si las dos medidas han crecido en la misma proporción.",
+    "question": "¿Mantienen las medidas de la copia la proporción de la foto original? Justifica tu respuesta.",
+    "solution": {
+      "response": "Sí. Tanto la anchura como la altura se han ampliado añadiendo la mitad de la medida original.",
+      "steps": [
+        "La anchura original es de 6 cm. Si añadimos la mitad, 3 cm, llegamos a los 9 de la copia.",
+        "La altura original es de 4 cm. Si añadimos la mitad, 2 cm, llegamos a los 6 de la copia."
+      ],
+      "note": "En una cuadrícula, los dos rectángulos tienen tres columnas por cada dos filas. El de 6 × 4 duplica esas dos medidas y el de 9 × 6 las triplica."
+    }
+  },
+  "P0224": {
+    "title": "El lado y la superficie",
+    "statement": "Un huerto cuadrado mide 3 metros de lado. Se quiere hacer otro, también cuadrado, con un lado de 6 metros. Pau dice que el nuevo huerto tendrá el doble de superficie porque el lado es el doble.",
+    "question": "¿Es la superficie de un cuadrado directamente proporcional a la longitud del lado? Justifica tu respuesta con los dos huertos.",
+    "solution": {
+      "response": "No. El lado se duplica, pero la superficie pasa de 9 a 36 m². La superficie se multiplica por cuatro.",
+      "steps": [
+        "El huerto de 3 metros tiene 3 × 3 = 9 m². El de 6 metros tiene 6 × 6 = 36 m².",
+        "Dividimos 36 entre 9 y obtenemos 4."
+      ],
+      "note": "Dibuja el cuadrado grande y divídelo por la mitad en los dos sentidos. Dentro caben cuatro cuadrados como el pequeño."
+    }
+  },
+  "P0225": {
+    "title": "La cinta para el taller",
+    "statement": "En la tienda A, 6 metros de cinta cuestan 18 €. En la tienda B, 4 metros cuestan 16 €. En cada tienda el precio por metro es fijo y no hay ningún cargo añadido. Necesitamos 8 metros.",
+    "question": "¿En qué tienda deberíamos comprarlos y cuántos euros ahorraríamos?",
+    "solution": {
+      "response": "En la tienda A. Pagaremos 24 €, ocho euros menos que en la tienda B.",
+      "steps": [
+        "En la tienda A cada metro cuesta 3 €. En la B cuesta 4.",
+        "Multiplicamos cada precio por metro por los 8 metros que necesitamos y comparamos los dos totales."
+      ],
+      "note": "Calcular el precio de un metro permite comparar las ofertas aunque los carteles anuncien longitudes distintas."
+    }
+  },
+  "P0226": {
+    "title": "El agua de las jardineras",
+    "statement": "Para regar 3 jardineras iguales usamos 12 litros de agua. Hoy queremos regar 7 jardineras, con la misma cantidad de agua en cada una. Tenemos un depósito con 30 litros.",
+    "question": "¿Habrá suficiente? Justifica cuánta agua sobrará o faltará.",
+    "solution": {
+      "response": "Sí. Necesitaremos 28 litros y sobrarán 2.",
+      "steps": [
+        "Si tres jardineras necesitan 12 litros, cada una necesita 4.",
+        "Siete jardineras necesitan 7 × 4 = 28 litros. Comparamos los 28 litros con los 30 del depósito."
+      ],
+      "note": "También puedes contar 3 + 3 + 1 jardineras y sumar 12 + 12 + 4 litros."
+    }
+  },
+  "P0227": {
+    "title": "Las cajas de la biblioteca",
+    "statement": "Tenemos 24 libros para repartir entre cajas. Con 3 cajas, cada una recibe 8 libros. Ahora queremos repartir los mismos 24 libros a partes iguales entre 6 cajas.",
+    "question": "¿Es el número de libros por caja directamente proporcional al número de cajas? Justifica tu respuesta con los dos repartos.",
+    "solution": {
+      "response": "No. Al duplicar las cajas de 3 a 6, los libros por caja pasan de 8 a 4. En cada caja hay la mitad.",
+      "steps": [
+        "Con tres cajas hacemos 24 ÷ 3 = 8 libros por caja. Con seis cajas hacemos 24 ÷ 6 = 4.",
+        "Si hubiera proporcionalidad directa, cada caja tendría que pasar de 8 a 16 libros al duplicar el número de cajas."
+      ],
+      "note": "Cuando el total de libros es fijo, puedes imaginar que divides cada caja de ocho libros en dos de cuatro."
+    }
+  },
+  "P0228": {
+    "title": "El ritmo de las vueltas",
+    "statement": "En una sesión de patinaje, el registro marca 12 minutos después de 2 vueltas, 24 minutos después de 4 vueltas y 30 minutos después de 5 vueltas. En los tres casos el tiempo se cuenta desde el inicio.",
+    "question": "¿Son compatibles los tres registros con una relación de proporcionalidad directa? Si se mantuviera esa relación, ¿cuánto se tardaría en dar 7 vueltas? Justifica tu respuesta.",
+    "solution": {
+      "response": "Sí. Los tres registros corresponden a 6 minutos por vuelta. Si se mantiene este ritmo, 7 vueltas durarán 42 minutos.",
+      "steps": [
+        "Dividimos cada tiempo por el número de vueltas. Los cálculos 12 ÷ 2, 24 ÷ 4 y 30 ÷ 5 dan el mismo resultado.",
+        "Si el ritmo de 6 minutos por vuelta se mantiene, multiplicamos 6 por 7."
+      ],
+      "note": "Los registros son compatibles con una misma proporción. Para predecir cuánto durarán las siete vueltas hay que suponer que el ritmo se mantiene."
+    }
+  }
+}

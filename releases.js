@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.0',title:'Fil i compte en català i castellà',
+    changes:['Selector de llengua i 252 problemes amb solucionaris en totes dues llengües.','Codis i plantilles compartits. Els avisos indiquen la llengua del problema.']
+  },
+  {
     version:'0.35.1',title:'Bandera accessible al solucionari',
     changes:['Els controls de reordenació deixen lliure la bandera d’avís del solucionari.']
   },

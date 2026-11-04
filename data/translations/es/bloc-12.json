@@ -1,0 +1,184 @@
+{
+  "P0133": {
+    "title": "Sopa para seis",
+    "statement": "Para hacer sopa para 4 personas hacen falta 3/4 de litro de caldo. Hoy haremos sopa para 6 personas, con la misma cantidad por persona. Tenemos un litro de caldo.",
+    "question": "¿Cuántos mililitros de caldo nos faltan?",
+    "solution": {
+      "unit": "mL",
+      "response": "Nos faltan 125 mL.",
+      "steps": [
+        "Para 2 personas hace falta la mitad de 750 mL, que son 375 mL. Para 6 hacen falta tres veces esa cantidad, 1.125 mL.",
+        "Restamos los 1.000 mL que tenemos."
+      ],
+      "note": "Dibuja un litro dividido en octavos. Para 4 personas hacen falta 6 y para 2 personas más, 3 octavos más. Hacen falta 9 y tenemos 8.",
+      "visual": {
+        "caption": "Cada parte son 125 mL. Las seis partes sombreadas suman los 750 mL de la receta para cuatro personas."
+      }
+    }
+  },
+  "P0134": {
+    "title": "El caldo para los dos platos",
+    "statement": "De una botella de un litro de caldo usaremos 3/8 de litro para cada una de dos sopas y 1/8 de litro para una salsa.",
+    "question": "¿Qué fracción de la botella quedará después de preparar los tres platos?",
+    "solution": {
+      "unit": "de la botella",
+      "response": "Quedará un octavo de la botella, que son 125 mL.",
+      "steps": [
+        "Las dos sopas necesitan seis octavos. La salsa añade uno, así que usamos siete.",
+        "Un litro tiene ocho octavos. Si gastamos siete, queda uno."
+      ],
+      "note": "Pinta tres casillas para la primera sopa, tres para la segunda y una para la salsa. La casilla vacía muestra lo que queda.",
+      "visual": {
+        "caption": "Se usan siete de las ocho partes. Queda una de 125 mL."
+      }
+    }
+  },
+  "P0135": {
+    "title": "Agua para el arroz y el pan",
+    "statement": "Una jarra contiene 2 litros de agua. Sacamos una cuarta parte para hacer arroz. De lo que queda, usamos un tercio para preparar la masa del pan.",
+    "question": "¿Cuánta agua quedará en la jarra?",
+    "solution": {
+      "unit": "mL",
+      "response": "Quedará 1 litro de agua.",
+      "steps": [
+        "Una cuarta parte de 2 litros son 500 mL. Después de hacer el arroz quedan 1.500 mL.",
+        "Un tercio de esa cantidad son otros 500 mL. Al final quedan 1.000 mL."
+      ],
+      "note": "Imagina cuatro vasos iguales. Uno se usa para el arroz. De los tres que quedan, uno se usa para el pan. Quedan dos, la mitad del agua inicial.",
+      "visual": {
+        "caption": "Cada parte representa un vaso de 500 mL. Los dos vasos sombreados representan el agua que queda."
+      }
+    }
+  },
+  "P0136": {
+    "title": "Vasos para la merienda",
+    "statement": "Para la merienda tenemos tres botellas de medio litro de batido y una botella de un cuarto de litro. Llenaremos vasos que contienen un octavo de litro cada uno.",
+    "question": "¿Cuántos vasos llenos podemos servir?",
+    "solution": {
+      "unit": "vasos",
+      "response": "Podemos servir 14 vasos llenos.",
+      "steps": [
+        "En medio litro caben cuatro octavos de litro. Cada botella grande llena cuatro vasos.",
+        "El cuarto de litro llena dos vasos más. En total son 12 + 2."
+      ],
+      "note": "Dibuja cuatro marcas debajo de cada una de las tres botellas grandes y dos debajo de la pequeña. Cada marca es un vaso."
+    }
+  },
+  "P0137": {
+    "title": "La limonada demasiado fuerte",
+    "statement": "La receta pide que el concentrado de limón sea una cuarta parte de la limonada terminada. En la jarra ya hemos puesto medio litro de concentrado y un litro de agua.",
+    "question": "¿Cuánta agua más tenemos que añadir para que quede como dice la receta?",
+    "solution": {
+      "unit": "mL",
+      "response": "Tenemos que añadir medio litro de agua.",
+      "steps": [
+        "Si el concentrado ocupa una de cuatro partes, cada parte tiene que ser de medio litro. La mezcla final tiene que ser de 2 litros.",
+        "Ahora hay 1.500 mL en la jarra. Faltan 500 mL."
+      ],
+      "note": "Piensa en vasos de medio litro. Ahora hay uno de concentrado y dos de agua. Falta el tercer vaso de agua.",
+      "visual": {
+        "caption": "La receta final lleva una parte de concentrado y tres de agua. Cada parte son 500 mL."
+      }
+    }
+  },
+  "P0138": {
+    "title": "¿Qué mezcla sabe más a manzana?",
+    "statement": "La jarra A lleva 1/4 de litro de zumo de manzana y 1/2 litro de agua. La jarra B lleva 3/8 de litro de zumo de manzana y 5/8 de litro de agua.",
+    "question": "¿En qué jarra representa el zumo de manzana una parte mayor de la mezcla? Justifica la respuesta.",
+    "solution": {
+      "response": "En la jarra B. Si hiciéramos 3 litros de cada mezcla, la B tendría más zumo de manzana.",
+      "steps": [
+        "Cuatro jarras A suman 3 litros de mezcla y contienen 1 litro de zumo.",
+        "Tres jarras B también suman 3 litros de mezcla y contienen 1 litro y 1/8 de zumo."
+      ],
+      "note": "Dibuja las dos jarras con bloques de 1/8 de litro. Repite el dibujo de A cuatro veces y el de B tres veces. Ahora las dos tiras tienen 24 bloques y puedes comparar los bloques de zumo."
+    }
+  },
+  "P0139": {
+    "title": "Medir sin marcas",
+    "statement": "Una receta necesita 1 litro y 1/4 de agua. Solo tenemos una medida de 1/3 de litro y otra de 1/4 de litro. Cada vez que usamos una, la llenamos hasta arriba y la vertemos en el cuenco.",
+    "question": "¿Cómo podemos obtener la cantidad exacta con el menor número de medidas llenas?",
+    "solution": {
+      "response": "Con cuatro medidas llenas, tres de 1/3 de litro y una de 1/4 de litro.",
+      "steps": [
+        "Tres medidas grandes hacen un litro entero. Añadimos la medida de un cuarto.",
+        "Con tres medidas solo podemos llegar a un litro, incluso si las tres son las más grandes."
+      ],
+      "note": "Dibuja una jarra dividida en tercios. Llénala con las tres medidas grandes y añade el cuarto de litro aparte."
+    }
+  },
+  "P0140": {
+    "title": "¿Cuánto caldo había?",
+    "statement": "De una jarra de caldo usamos la mitad para un estofado. Del caldo que queda sacamos 1/8 de litro para una salsa. Al final hay 3/8 de litro en la jarra.",
+    "question": "¿Cuántos litros de caldo había al principio?",
+    "solution": {
+      "unit": "litro",
+      "response": "Al principio había 1 litro de caldo.",
+      "steps": [
+        "Volvemos a contar el octavo de litro de la salsa. Antes de sacarlo quedaban cuatro octavos.",
+        "Esos cuatro octavos son la mitad del caldo inicial. Doblamos la cantidad."
+      ],
+      "note": "Dibuja tres partes iguales para el caldo final. Añade la parte de la salsa. Ahora tienes una mitad de la jarra inicial. Dibuja al lado otra mitad igual."
+    }
+  },
+  "P0141": {
+    "title": "¿Cuántos flanes podemos hacer?",
+    "statement": "Para hacer una tanda de flanes hacen falta 1/2 litro de leche y 1/4 de litro de nata. Tenemos 1 litro y medio de leche y medio litro de nata.",
+    "question": "¿Cuántas tandas completas podemos hacer? Justifica la respuesta.",
+    "solution": {
+      "response": "Podemos hacer dos tandas completas. Sobrará medio litro de leche y se acabará la nata.",
+      "steps": [
+        "La leche se puede repartir en tres raciones de 500 mL. La nata solo da para dos raciones de 250 mL.",
+        "Cada tanda necesita una ración de cada ingrediente. Solo podemos formar dos parejas."
+      ],
+      "note": "Haz tres tarjetas de leche y dos de nata. Cada pareja es una tanda. La tarjeta de leche sin pareja muestra por qué no podemos hacer tres."
+    }
+  },
+  "P0142": {
+    "title": "¿Un cuarto de qué?",
+    "statement": "Una jarra contiene 1 litro y medio de batido. Servimos dos tercios. La receta dice que después tenemos que reservar 1/4 de litro para hacer una capa de batido en el postre. Nil entiende que hay que reservar 1/4 del batido que queda en la jarra.",
+    "question": "Si seguimos la interpretación de Nil, ¿qué cantidad de más quedará en la jarra después de apartar la reserva?",
+    "solution": {
+      "unit": "mL",
+      "response": "Quedarán 125 mL más que si seguimos la receta.",
+      "steps": [
+        "Después de servir dos tercios, queda un tercio de la jarra, 500 mL.",
+        "La receta reserva 250 mL. Nil reserva solo una cuarta parte de 500 mL, que son 125 mL. Por eso quedan 125 mL más."
+      ],
+      "note": "Dibuja los 500 mL que quedan como cuatro partes iguales. La receta retira dos partes y Nil solo retira una. La diferencia es una parte.",
+      "visual": {
+        "caption": "Cada parte son 125 mL. La parte sombreada es lo que reserva Nil."
+      }
+    }
+  },
+  "P0143": {
+    "title": "Llenar dos jarras",
+    "statement": "Tenemos 2 litros y medio de agua en una olla. Vertemos agua en una jarra de 2 litros hasta llenar tres cuartas partes y en una jarra de 1 litro hasta llenar la mitad.",
+    "question": "¿Cuánta agua queda en la olla?",
+    "solution": {
+      "unit": "mL",
+      "response": "En la olla queda medio litro.",
+      "steps": [
+        "Tres cuartas partes de la jarra grande son 1.500 mL. La mitad de la pequeña son 500 mL.",
+        "En total vertemos 2 litros. De los 2 litros y medio iniciales queda medio litro."
+      ],
+      "note": "Cuenta en vasos de medio litro. En la olla había cinco. Pasamos tres a la jarra grande y uno a la pequeña. Queda uno."
+    }
+  },
+  "P0144": {
+    "title": "Mezclamos los dos zumos",
+    "statement": "Tenemos dos jarras con medio litro de bebida cada una. En la primera, un cuarto de la bebida es zumo de melocotón y el resto es agua. En la segunda, tres cuartos de la bebida son zumo de melocotón y el resto es agua. Vertemos todo el contenido en una jarra vacía.",
+    "question": "¿Qué fracción de la bebida final es zumo de melocotón?",
+    "solution": {
+      "unit": "de la mezcla",
+      "response": "La mitad de la bebida final es zumo de melocotón.",
+      "steps": [
+        "La primera jarra aporta 125 mL de zumo y la segunda, 375 mL. En total hay 500 mL de zumo en 1 litro de bebida."
+      ],
+      "note": "Dibuja dos barras de cuatro partes iguales. Pinta una parte de la primera y tres de la segunda. Al juntar las barras hay cuatro partes pintadas de ocho.",
+      "visual": {
+        "caption": "Las dos jarras juntas suman ocho partes de 125 mL. Cuatro son de zumo."
+      }
+    }
+  }
+}

@@ -263,6 +263,15 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
   .footer-print button{min-height:36px}
 }
 @media screen and (max-width:760px){.masthead .footer-pill{position:relative;min-height:34px}}
+.masthead .language-toggle{flex:none;gap:3px}
+.language-menu{width:max-content;min-width:136px;padding:4px}
+.language-menu a{display:block;padding:8px 11px;border-radius:6px;font-size:12px;text-decoration:none;color:var(--ink)}
+.language-menu a[aria-current]{background:#e5ecdc;color:var(--green);font-weight:650}
+.language-menu a:hover{background:#dfe9d5}
+@media screen and (max-width:760px){
+  .masthead{position:relative}
+  .masthead .language-toggle{position:absolute;inset:0 0 auto auto;min-height:30px}
+}
 @media screen and (max-width:560px){
   .masthead-actions .help-label{display:none}
   .selection-bar>.footer-project{align-self:center;flex-flow:row nowrap;align-items:center;gap:4px}
