@@ -28,8 +28,8 @@ SOFTWARE.
 })(typeof window === 'undefined' ? globalThis : window, function () {
   'use strict';
   const HOST = 'filicompte.ortogra.fi';
-  const WEBSITE = '248ef11d-7a5d-41c0-8001-96e6940e5322'; // Identificador propi de Fil i compte a Umami Cloud.
-  const SCRIPT = 'https://cloud.umami.is/script.js', COLLECTOR = 'https://gateway.umami.is/api/send';
+  const WEBSITE = '894633d6-ea2e-4c96-b050-d26b369f21b6';
+  const SCRIPT = 'https://maquestria.tail72bc84.ts.net:8443/script.js', COLLECTOR = 'https://maquestria.tail72bc84.ts.net:8443/api/send';
   const TEMP = 'fil-analytics-temporary-v1', REPORTS = 'fil-problem-reports-v1';
   const values = {
     pages: [1, 2, 4, 6], per_page: [2, 3, 4], document: ['exercises', 'solutions'],

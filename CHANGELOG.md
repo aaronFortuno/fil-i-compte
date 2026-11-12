@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.9 · Estadístiques en una instància pròpia
+
+- Les noves visites, accions i notificacions s’envien a l’Umami propi d’ortogra.fi. Es mantenen les preferències de privadesa i la confirmació del receptor en notificar un error.
+
 ## 0.36.8 · Llicència oberta
 
 - El codi i els exercicis originals es publiquen sota llicència MIT, amb un enllaç directe al quadre V4V.

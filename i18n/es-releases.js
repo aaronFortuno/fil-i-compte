@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.9": [
+    "Estadísticas en una instancia propia",
+    "Las estadísticas y los avisos nuevos se recogen en la instancia propia de Umami, con las mismas opciones de privacidad."
+  ],
   "0.36.8": [
     "Licencia abierta",
     "El código y los ejercicios originales se publican bajo licencia MIT, con un enlace directo en el cuadro V4V."

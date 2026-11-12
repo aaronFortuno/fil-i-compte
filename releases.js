@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.9',title:'Estadístiques en una instància pròpia',
+    changes:['Les estadístiques i els avisos nous es recullen a la instància pròpia d’Umami, amb les mateixes opcions de privadesa.']
+  },
+  {
     version:'0.36.8',title:'Llicència oberta',
     changes:['El codi i els exercicis originals es publiquen sota llicència MIT, amb un enllaç directe al quadre V4V.']
   },

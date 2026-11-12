@@ -167,7 +167,7 @@ Abans de pujar una iteració, comprova-la en local amb `node tools/check.cjs` i 
 
 ## Umami i avisos
 
-La integració s’activa amb l’identificador propi del web a `WEBSITE`, dins d’`analytics.js`. Només funciona a `https://filicompte.ortogra.fi`. El panell «Privacitat i avisos» és accessible des del botó «Privacitat» de la capçalera. Les banderes indiquen on trobar-lo.
+La integració amb l’Umami propi d’ortogra.fi s’activa amb l’identificador del web a `WEBSITE`, dins d’`analytics.js`. Només funciona a `https://filicompte.ortogra.fi`. El panell «Privacitat i avisos» és accessible des del botó «Privacitat» de la capçalera. Les banderes indiquen on trobar-lo.
 
 | Esdeveniment | Quan es compta | Dades de l’esdeveniment |
 | --- | --- | --- |
