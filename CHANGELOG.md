@@ -1,5 +1,10 @@
 # Historial de canvis
 
+## 0.36.10 · El banc funciona sense analítica
+
+- Els filtres, les propostes de fitxa i les plantilles funcionen encara que el navegador bloquegi l’analítica.
+- Quan el navegador descarta una pestanya, en reobrir-la es recuperen la cerca, la tria i el pas que hi havia obert.
+
 ## 0.36.9 · Estadístiques en una instància pròpia
 
 - Les noves visites, accions i notificacions s’envien a l’Umami propi d’ortogra.fi. Es mantenen les preferències de privadesa i la confirmació del receptor en notificar un error.

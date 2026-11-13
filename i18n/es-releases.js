@@ -1,5 +1,10 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.10": [
+    "El banco funciona sin analítica",
+    "Los filtros, las propuestas y las plantillas funcionan aunque el navegador bloquee la analítica.",
+    "Al reabrir una pestaña descartada, se recuperan la búsqueda, la selección y el paso."
+  ],
   "0.36.9": [
     "Estadísticas en una instancia propia",
     "Las estadísticas y los avisos nuevos se recogen en la instancia propia de Umami, con las mismas opciones de privacidad."

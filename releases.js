@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.10',title:'El banc funciona sense analítica',
+    changes:['Els filtres, les propostes i les plantilles funcionen encara que el navegador bloquegi l’analítica.','En reobrir una pestanya descartada, es recuperen la cerca, la tria i el pas.']
+  },
+  {
     version:'0.36.9',title:'Estadístiques en una instància pròpia',
     changes:['Les estadístiques i els avisos nous es recullen a la instància pròpia d’Umami, amb les mateixes opcions de privadesa.']
   },

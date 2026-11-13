@@ -65,6 +65,7 @@
     "Completa una tria que compleixi els filtres abans d’imprimir.": "Completa una selección que cumpla los filtros antes de imprimir.",
     "Umami està disponible. Pots notificar errors amb la bandera.": "Umami está disponible. Puedes notificar errores con la bandera.",
     "Connectant amb Umami…": "Conectando con Umami…",
+    "Els avisos no estan disponibles ara mateix.": "Los avisos no están disponibles en este momento.",
     "Umami no està disponible. Si el bloquejador ho permet, habilita Umami només en aquest web i prem «Permet temporalment» per reintentar-ho.": "Umami no está disponible. Si tu bloqueador lo permite, habilita Umami solo en este sitio y pulsa «Permitir temporalmente» para volver a intentarlo.",
     "Els avisos només es poden enviar des del web públic.": "Los avisos solo se pueden enviar desde el sitio público.",
     "Els avisos es podran enviar quan el domini tingui HTTPS.": "Los avisos se podrán enviar cuando el dominio tenga HTTPS.",

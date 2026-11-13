@@ -5,8 +5,11 @@
   const pageTitle=document.title;
   const assets=language==='es'?'../assets/':'assets/';
   const C=MatesCore, catalogue=EXERCISE_CATALOG.exercises, $=id=>document.getElementById(id);
+  const analytics=globalThis.FilAnalytics;
+  const analyticsState=()=>analytics?.getState()??{status:'unavailable',reason:'module'};
   const mobileLayout=matchMedia('screen and (max-width: 560px)');
   const STORAGE='fil-i-compte-v1';
+  const TAB_STORAGE='fil-i-compte-resume-v1';
   const LEVEL_SHORT={mitja:'CM',superior:'CS',eso:'ESO'};
   const FEATURE_MODES=[{id:'allow',label:t('Permès'),icon:'·'},{id:'require',label:t('Obligatori'),icon:'✓'},{id:'exclude',label:t('Exclòs'),icon:'×'}];
   const REASONING_HINTS={
@@ -24,6 +27,17 @@
   // Code ranges survive switching languages. Ordinary visits begin with an empty search.
   const languageView=/^#view=(bank|exercises|solutions)$/.exec(location.hash)?.[1];
   if(languageView)query=state.filters.codes||'';else delete state.filters.codes;
+  let resumedView;
+  if(document.wasDiscarded&&!languageView&&!new URLSearchParams(location.hash.slice(1)).has('lot')){
+    try {
+      const saved=JSON.parse(sessionStorage.getItem(TAB_STORAGE));
+      if(saved&&['bank','exercises','solutions'].includes(saved.view)&&typeof saved.query==='string'){
+        state=validateState(saved.state);
+        query=saved.query;
+        resumedView=saved.view;
+      }
+    }catch{}
+  }
   const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const selected=()=>state.ids.map(id=>catalogue.find(e=>e.id===id)).filter(Boolean);
   const capacity=()=>state.pageCount*state.perPage;
@@ -152,13 +166,13 @@
     if(!tooltip.matches(':popover-open'))tooltip.showPopover();
     positionPopover(tooltip,button);
   }
-  function refreshReports(root=document,analyticsState=FilAnalytics.getState()){
+  function refreshReports(root=document,{status}=analyticsState()){
     for(const control of root.querySelectorAll('.report-control')){
-      const state=FilAnalytics.reportState(reportContext(control)),flag=control.querySelector('[data-report]');
-      flag.setAttribute('aria-disabled',String(analyticsState.status!=='ready'||state!=='idle'));
+      const state=analytics?.reportState(reportContext(control))??'idle',flag=control.querySelector('[data-report]');
+      flag.setAttribute('aria-disabled',String(status!=='ready'||state!=='idle'));
       flag.querySelector('img').hidden=state==='sent';
       flag.querySelector('.report-sent').hidden=state!=='sent';
-      flag.dataset.tooltip=state==='sent'?t('Avís enviat.'):state==='sending'?t('Enviant l’avís…'):analyticsState.status==='ready'?t('Notifica un error. Més informació a «Privacitat» a la capçalera.'):t('Els avisos no estan disponibles. Obre «Privacitat» a la capçalera per saber-ne més.');
+      flag.dataset.tooltip=state==='sent'?t('Avís enviat.'):state==='sending'?t('Enviant l’avís…'):status==='ready'?t('Notifica un error. Més informació a «Privacitat» a la capçalera.'):t('Els avisos no estan disponibles. Obre «Privacitat» a la capçalera per saber-ne més.');
       if(flag===reportTooltipAnchor)showReportTooltip(flag);
     }
   }
@@ -275,7 +289,7 @@
     menu.addEventListener('toggle',event=>{
       if(event.newState!=='open')return;
       const next=menu.querySelector('a:not([aria-current])');
-      next.hash='view='+(!reviewStep?'bank':solutionView?'solutions':'exercises');
+      next.hash='view='+currentView();
       position();
     });
     window.addEventListener('resize',()=>{if(menu.matches(':popover-open'))position();});
@@ -365,6 +379,7 @@
     update();
     (review?$('preview-title'):$('catalogue-title')).focus({preventScroll:true});
   }
+  function currentView(){return !reviewStep?'bank':solutionView?'solutions':'exercises';}
   function motionDuration(){return matchMedia('(prefers-reduced-motion: reduce)').matches?0:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motion-duration'))||220;}
   function animateElements(elements,keyframes){const duration=motionDuration();if(duration)elements.forEach(el=>el.animate(keyframes,{duration,easing:'cubic-bezier(.22,.68,.25,1)'}));}
   function renderOrderControls(){
@@ -456,7 +471,7 @@
     printMode=solutions;
     $('print-root').innerHTML=pagesHTML(solutions);
     document.title=(state.title.trim()||t('Fitxa de matemàtiques'))+(solutions?t(' — solucionari'):t(' — exercicis'));
-    void FilAnalytics.track('print-requested',{document:solutions?'solutions':'exercises',pages:state.pageCount,per_page:state.perPage});
+    void analytics?.track('print-requested',{document:solutions?'solutions':'exercises',pages:state.pageCount,per_page:state.perPage});
     window.print();
   }
   const filterSections=['contents-title','reasoning-title'].map($);
@@ -502,7 +517,7 @@
   $('compose').addEventListener('click',()=>{
     const result=C.compose(catalogue,state.filters,capacity(),state.ids);
     if(result.error){message(result.error);return;}
-    void FilAnalytics.track('worksheet-proposed',{pages:state.pageCount,per_page:state.perPage});
+    void analytics?.track('worksheet-proposed',{pages:state.pageCount,per_page:state.perPage});
     state.ids=result.ids;query=state.filters.codes||'';$('search').value=query;message(t('Fitxa proposada. Pots canviar-la marcant i desmarcant problemes.'),'success');update();
   });
   $('cards').addEventListener('change',event=>{
@@ -511,7 +526,7 @@
     if(input.checked && state.ids.length>=capacity()){input.checked=false;message(t('Ja tens {0} problemes. Desmarca’n un abans d’afegir-ne un altre.',capacity()),'error');return;}
     if(input.checked){
       state.ids.push(id);
-      void FilAnalytics.track('problem-selected',{problem_id:id});
+      void analytics?.track('problem-selected',{problem_id:id});
     }else state.ids=state.ids.filter(x=>x!==id);
     message('');update();document.querySelector(`[data-select="${id}"]`)?.focus({preventScroll:true});
   });
@@ -566,7 +581,7 @@
   });
   window.addEventListener('afterprint',()=>{printMode=null;document.title=pageTitle;});
   function setupPrivacy() {
-    const analytics=FilAnalytics,help=FilPrivacyHelp,browser=$('privacy-browser');
+    const help=globalThis.FilPrivacyHelp,browser=$('privacy-browser');
     const trigger=$('privacy-open'),temporary=$('privacy-temporary'),disable=$('privacy-disable');
     let browserChosen=false;
     const messages={
@@ -580,10 +595,10 @@
     };
     const updatePrivacy=state=>{
       const browserSignal=['gpc','dnt'].includes(state.reason);
-      $('privacy-state').textContent=browserSignal?t('Els avisos estan desactivats pel senyal de privacitat del navegador.'):messages[state.status];
-      temporary.disabled=browserSignal||!['disabled','unavailable'].includes(state.status);
-      disable.disabled=!['ready','loading','unavailable'].includes(state.status);
-      const showHelp=browserSignal||state.status==='unavailable';
+      $('privacy-state').textContent=browserSignal?t('Els avisos estan desactivats pel senyal de privacitat del navegador.'):state.reason==='module'?t('Els avisos no estan disponibles ara mateix.'):messages[state.status];
+      temporary.disabled=!analytics||browserSignal||!['disabled','unavailable'].includes(state.status);
+      disable.disabled=!analytics||!['ready','loading','unavailable'].includes(state.status);
+      const showHelp=Boolean(help&&analytics&&(browserSignal||state.status==='unavailable'));
       $('privacy-browser-help').hidden=!showHelp;
       if(showHelp){
         const guide=help.guide(browser.value,state,navigator);
@@ -594,18 +609,18 @@
         if(guide.source)source.href=guide.source;
       }
     };
-    browser.value=help.browserFor(navigator);
-    browser.addEventListener('change',()=>{browserChosen=true;updatePrivacy(analytics.getState());});
+    if(help)browser.value=help.browserFor(navigator);
+    browser.addEventListener('change',()=>{browserChosen=true;updatePrivacy(analyticsState());});
     if(navigator.brave?.isBrave)navigator.brave.isBrave().then(isBrave=>{
-      if(isBrave&&!browserChosen){browser.value='brave';updatePrivacy(analytics.getState());}
+      if(isBrave&&!browserChosen){browser.value='brave';updatePrivacy(analyticsState());}
     }).catch(()=>{});
-    bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{hideReportTooltip();void analytics.refresh();updatePrivacy(analytics.getState());}});
-    analytics.subscribe(state=>{updatePrivacy(state);refreshReports(document,state);});
-    temporary.addEventListener('click',()=>{void analytics.allowTemporarily();});
-    disable.addEventListener('click',()=>analytics.disable());
-    window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics.refresh();});
-    window.addEventListener('focus',()=>{void analytics.refresh();});
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)void analytics.refresh();});
+    bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{hideReportTooltip();void analytics?.refresh();updatePrivacy(analyticsState());}});
+    analytics?.subscribe(state=>{updatePrivacy(state);refreshReports(document,state);});
+    temporary.addEventListener('click',()=>{void analytics?.allowTemporarily();});
+    disable.addEventListener('click',()=>analytics?.disable());
+    window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics?.refresh();});
+    window.addEventListener('focus',()=>{void analytics?.refresh();});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)void analytics?.refresh();});
     const tooltip=$('report-tooltip');
     const scheduleTooltipClose=()=>{
       clearTimeout(reportTooltipTimer);
@@ -638,7 +653,7 @@
       const context=reportContext(button.closest('.report-control'));
       const status=$('report-status');
       status.textContent='';
-      const sent=await analytics.reportProblem(context);
+      const sent=await analytics?.reportProblem(context);
       status.textContent=sent?t('Avís de {0} enviat.',context.problem):t('No s’ha pogut enviar l’avís. Consulta Privacitat i avisos.');
     });
   }
@@ -791,7 +806,7 @@
           status.textContent=t('Ja tens una plantilla amb aquest nom. Tria’n un altre.');return;
         }
         saveTemplates([...templates,snapshotTemplate(name)]);
-        void FilAnalytics.track('template-action',{action:'create'});
+        void analytics?.track('template-action',{action:'create'});
         $('template-name').value='';renderTemplates();status.textContent=t('Plantilla desada.');
         $('template-name').focus({preventScroll:true});
       }catch{status.textContent=t('No s’ha pogut desar la plantilla en aquest navegador.');}
@@ -806,7 +821,7 @@
         const template=templates[i];if(!template)return;
         if(action==='open'){
           restore(template.code,template.configuration);
-          void FilAnalytics.track('template-action',{action:'open'});
+          void analytics?.track('template-action',{action:'open'});
           dialog.close();$('preview-title').focus();
         }else if(action==='rename'||action==='replace'){
           status.textContent='';
@@ -817,7 +832,7 @@
           renderTemplates();focusTemplateAction(name,edit);
         }else if(confirm(t('Vols eliminar la plantilla «{0}»?',template.name))){
           saveTemplates(templates.filter((_,index)=>index!==i));
-          void FilAnalytics.track('template-action',{action:'delete'});
+          void analytics?.track('template-action',{action:'delete'});
           renderTemplates();
           $('template-title').focus();status.textContent=t('Plantilla eliminada.');
         }
@@ -843,7 +858,7 @@
         if(!rename&&issues().length)throw Error(t('Completa la tria abans d’actualitzar la plantilla.'));
         templates[index]=rename?{...templates[index],name}:snapshotTemplate(name);
         saveTemplates(templates);
-        void FilAnalytics.track('template-action',{action:rename?'rename':'update'});
+        void analytics?.track('template-action',{action:rename?'rename':'update'});
         renderTemplates();focusTemplateAction(name,action);
         status.textContent=rename?t('Nom actualitzat.'):t('Plantilla actualitzada amb la fitxa actual.');
       }catch(cause){error.textContent=t('No s’ha pogut modificar la plantilla. ')+cause.message;}
@@ -873,10 +888,15 @@
     catch{field.value=value;field.focus();field.select();status.textContent=t('Text seleccionat. Copia’l manualment.');}
   }
   setupHistory();setupHelp();setupLanguageMenu();setupSelectionPopover();setupSearchHelp();setupReasoningHints();makeFilters();update();setupLots();
+  const startingView=languageView||resumedView;
+  if(startingView&&startingView!=='bank'){solutionView=startingView==='solutions';setStep(true);}
   if(languageView){
-    if(languageView!=='bank'){solutionView=languageView==='solutions';setStep(true);}
     try{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);}catch{}
   }
   bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));setupPrivacy();
   $('v4v-copy').addEventListener('click',()=>copyLotText($('v4v-address').value,$('v4v-address'),$('v4v-status'),t('Adreça copiada.')));
+  document.addEventListener('visibilitychange',()=>{
+    if(!document.hidden)return;
+    try{sessionStorage.setItem(TAB_STORAGE,JSON.stringify({state,query,view:currentView()}));}catch{}
+  });
 })();
