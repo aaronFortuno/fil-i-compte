@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.12": [
+    "Varios motivos por aviso",
+    "El formulario de errores permite marcar varios motivos y enviarlos juntos en un solo aviso."
+  ],
   "0.36.11": [
     "Avisos de error con motivo",
     "La bandera abre un formulario para elegir el motivo y confirmar el envío."

@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.12 · Diversos motius per avís
+
+- El formulari d’errors permet marcar diversos motius i enviar-los junts en un sol avís.
+
 ## 0.36.11 · Avisos d’error amb motiu
 
 - La bandera obre un formulari per triar el motiu. L’avís s’envia quan es confirma i el motiu es pot consultar a Umami.

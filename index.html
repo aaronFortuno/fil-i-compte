@@ -184,7 +184,7 @@
     <div class="history-scroll privacy-content" tabindex="0">
       <div class="privacy-main">
         <p>Fem servir Umami per comptar visites, propostes de fitxa, seleccions manuals de problemes, accions amb plantilles i peticions d’impressió. Excloem els noms, els grups, els títols, les cerques i els codis de fitxa.</p>
-        <p>Quan envies un avís, Umami rep el motiu que has triat, el codi del problema, la versió, la llengua i si l’avís és sobre l’enunciat o el solucionari.</p>
+        <p>Quan envies un avís, Umami rep els motius que has marcat, el codi del problema, la versió, la llengua i si l’avís és sobre l’enunciat o el solucionari.</p>
         <p id="privacy-state" class="privacy-state" role="status"></p>
         <div class="utility-actions"><button type="button" class="secondary" id="privacy-disable">Desactiva l’analítica</button><button type="button" class="primary" id="privacy-temporary">Permet temporalment</button></div>
       </div>
@@ -203,12 +203,12 @@
     </header>
     <form id="report-form" class="history-scroll report-form">
       <fieldset id="report-reasons">
-        <legend>Què cal revisar?</legend>
-        <label><input type="radio" name="reason" value="calculation" required autofocus> Càlcul o resultat</label>
-        <label><input type="radio" name="reason" value="setup"> Dades o plantejament</label>
-        <label><input type="radio" name="reason" value="ambiguity"> Enunciat o explicació ambigus</label>
-        <label><input type="radio" name="reason" value="wording"> Errada de text o traducció</label>
-        <label><input type="radio" name="reason" value="other"> Un altre motiu</label>
+        <legend>Marca un motiu o més</legend>
+        <label><input type="checkbox" name="reason" value="calculation" autofocus> Càlcul o resultat</label>
+        <label><input type="checkbox" name="reason" value="setup"> Dades o plantejament</label>
+        <label><input type="checkbox" name="reason" value="ambiguity"> Enunciat o explicació ambigus</label>
+        <label><input type="checkbox" name="reason" value="wording"> Errada de text o traducció</label>
+        <label><input type="checkbox" name="reason" value="other"> Un altre motiu</label>
       </fieldset>
       <p id="report-feedback" role="status"></p>
       <div class="report-actions">

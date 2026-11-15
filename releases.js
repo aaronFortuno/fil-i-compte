@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.12',title:'Diversos motius per avís',
+    changes:['El formulari d’errors permet marcar diversos motius i enviar-los junts en un sol avís.']
+  },
+  {
     version:'0.36.11',title:'Avisos d’error amb motiu',
     changes:['La bandera obre un formulari per triar el motiu i confirmar l’enviament.']
   },

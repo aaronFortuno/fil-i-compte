@@ -198,12 +198,17 @@ SOFTWARE.
       if (!validReport(context)) return 'idle';
       const key = reportKey(context); return sent.has(key) ? 'sent' : sending.has(key) ? 'sending' : 'idle';
     }
-    async function reportProblem(context, reason) {
-      if (!validReport(context) || !reportReasons.includes(reason) || getState().status !== 'ready' || reportState(context) !== 'idle') return false;
+    async function reportProblem(context, reasons) {
+      if (!validReport(context) || !Array.isArray(reasons) || !reasons.length || reasons.length > reportReasons.length) return false;
+      const selected = reportReasons.filter(reason => reasons.includes(reason));
+      if (selected.length !== reasons.length || getState().status !== 'ready' || reportState(context) !== 'idle') return false;
       const key = reportKey(context), token = generation;
       sending.add(key); notify();
       try {
-        const ok = await send('problem-reported', { problem_id: context.problem, section: context.section, version: context.version, language: reportLanguage(context), reason }, token);
+        const ok = await send('problem-reported', {
+          problem_id: context.problem, section: context.section, version: context.version,
+          language: reportLanguage(context), reason: selected.join(',')
+        }, token);
         if (!ok || token !== generation || !permitted()) return false;
         sent.add(key); storage('sessionStorage', 'setItem', REPORTS, JSON.stringify([...sent].slice(-1000))); return true;
       } finally { sending.delete(key); notify(); }

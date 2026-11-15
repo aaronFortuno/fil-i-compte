@@ -185,7 +185,7 @@
     <div class="history-scroll privacy-content" tabindex="0">
       <div class="privacy-main">
         <p>Usamos Umami para contar visitas, propuestas de fichas, selecciones manuales de problemas, acciones con plantillas y solicitudes de impresión. Excluimos los nombres, grupos, títulos, búsquedas y códigos de ficha.</p>
-        <p>Al enviar un aviso, Umami recibe el motivo que has elegido, el código del problema, la versión, el idioma y si el aviso se refiere al enunciado o al solucionario.</p>
+        <p>Al enviar un aviso, Umami recibe los motivos que has marcado, el código del problema, la versión, el idioma y si el aviso se refiere al enunciado o al solucionario.</p>
         <p id="privacy-state" class="privacy-state" role="status"></p>
         <div class="utility-actions"><button type="button" class="secondary" id="privacy-disable">Desactivar la analítica</button><button type="button" class="primary" id="privacy-temporary">Permitir temporalmente</button></div>
       </div>
@@ -204,12 +204,12 @@
     </header>
     <form id="report-form" class="history-scroll report-form">
       <fieldset id="report-reasons">
-        <legend>¿Qué hay que revisar?</legend>
-        <label><input type="radio" name="reason" value="calculation" required autofocus> Cálculo o resultado</label>
-        <label><input type="radio" name="reason" value="setup"> Datos o planteamiento</label>
-        <label><input type="radio" name="reason" value="ambiguity"> Enunciado o explicación ambiguos</label>
-        <label><input type="radio" name="reason" value="wording"> Errata o problema de traducción</label>
-        <label><input type="radio" name="reason" value="other"> Otro motivo</label>
+        <legend>Marca uno o varios motivos</legend>
+        <label><input type="checkbox" name="reason" value="calculation" autofocus> Cálculo o resultado</label>
+        <label><input type="checkbox" name="reason" value="setup"> Datos o planteamiento</label>
+        <label><input type="checkbox" name="reason" value="ambiguity"> Enunciado o explicación ambiguos</label>
+        <label><input type="checkbox" name="reason" value="wording"> Errata o problema de traducción</label>
+        <label><input type="checkbox" name="reason" value="other"> Otro motivo</label>
       </fieldset>
       <p id="report-feedback" role="status"></p>
       <div class="report-actions">

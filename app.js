@@ -667,17 +667,17 @@
       hideReportTooltip();
       open();
     });
-    form.addEventListener('change',()=>{submit.disabled=false;});
+    form.addEventListener('change',()=>{submit.disabled=!reasons.querySelector('input:checked');});
     form.addEventListener('submit',async event=>{
       event.preventDefault();
-      const reason=new FormData(form).get('reason');
-      if(!reason||submit.disabled)return;
+      const selectedReasons=new FormData(form).getAll('reason');
+      if(!selectedReasons.length||submit.disabled)return;
       const report=context;
       reasons.disabled=true;
       submit.disabled=true;
       status.textContent='';
       feedback.textContent=t('Enviant l’avís…');
-      const sent=await analytics?.reportProblem(report,reason);
+      const sent=await analytics?.reportProblem(report,selectedReasons);
       if(sent)status.textContent=t('Avís de {0} enviat.',report.problem);
       if(context!==report||!dialog.open)return;
       if(sent){void close();return;}

@@ -36,26 +36,26 @@ function fixture({id=website,navigator={},protocol='https:',receive=accepted,loa
   assert.equal(await f.api.track('print-requested',{document:'solutions',pages:2,per_page:3,group:'PRIVATE'}),false);
   assert.equal(await f.api.track('worksheet-proposed',{pages:2}),false);
   assert(await f.api.track('worksheet-proposed',{pages:2,per_page:3}));
-  for(const reason of [undefined,'','text lliure',['calculation']]){
-    assert.equal(await f.api.reportProblem(context,reason),false);
+  for(const reasons of [undefined,[],['text lliure'],['setup','text lliure'],['setup','setup']]){
+    assert.equal(await f.api.reportProblem(context,reasons),false);
   }
   assert.equal(f.calls.length,3);
-  assert.deepEqual(await Promise.all([f.api.reportProblem(context,'calculation'),f.api.reportProblem(context,'setup')]),[true,false]);
-  assert.deepEqual(f.calls[3].data,{problem_id:'P0140',section:'solution',version:1,language:'ca',reason:'calculation'});
+  assert.deepEqual(await Promise.all([f.api.reportProblem(context,['ambiguity','calculation']),f.api.reportProblem(context,['setup'])]),[true,false]);
+  assert.deepEqual(f.calls[3].data,{problem_id:'P0140',section:'solution',version:1,language:'ca',reason:'calculation,ambiguity'});
   const spanishReport={...context,language:'es'};
-  assert(await f.api.reportProblem(spanishReport,'ambiguity'));
+  assert(await f.api.reportProblem(spanishReport,['ambiguity']));
   assert.deepEqual(f.calls.at(-1).data,{problem_id:'P0140',section:'solution',version:1,language:'es',reason:'ambiguity'});
-  assert.equal(await f.api.reportProblem(spanishReport,'other'),false);
-  assert.equal(await f.api.reportProblem({...context,language:'invalid'},'other'),false);
+  assert.equal(await f.api.reportProblem(spanishReport,['other']),false);
+  assert.equal(await f.api.reportProblem({...context,language:'invalid'},['other']),false);
   const legacy=fixture();
   legacy.env.sessionStorage.setItem('fil-problem-reports-v1',JSON.stringify([JSON.stringify(['P0140','solution',1])]));
   const restored=create(legacy.env,website);
   assert.equal(restored.reportState(context),'sent');
   assert.equal(restored.reportState(spanishReport),'idle');
-  assert(await f.api.reportProblem({...context,section:'statement'},'wording'));
-  assert(await f.api.reportProblem({...context,version:2},'other'));
+  assert(await f.api.reportProblem({...context,section:'statement'},['wording']));
+  assert(await f.api.reportProblem({...context,version:2},['other']));
   assert.equal(create(f.env,website).reportState(context),'sent');
-  assert.equal(await f.api.reportProblem({...context,problem:'PRIVATE'},'other'),false);
+  assert.equal(await f.api.reportProblem({...context,problem:'PRIVATE'},['other']),false);
   assert(await f.api.track('problem-selected',{problem_id:'P0140'}));
   assert.deepEqual(f.calls.at(-1).data,{problem_id:'P0140'});
   assert.equal(await f.api.track('problem-selected',{problem_id:'PRIVATE'}),false);
@@ -76,7 +76,7 @@ function fixture({id=website,navigator={},protocol='https:',receive=accepted,loa
   assert.equal(blocked.calls.length,0);
   const rejected=fixture({receive:n=>n===1?accepted():{ok:true,json:async()=>({disabled:true})}});
   assert(await rejected.api.start());
-  assert.equal(await rejected.api.reportProblem(context,'other'),false);
+  assert.equal(await rejected.api.reportProblem(context,['other']),false);
   assert.equal(rejected.api.reportState(context),'idle');
   assert.equal(rejected.api.getState().status,'unavailable');
   console.log('Analítica comprovada amb un receptor simulat. Privacitat, accions, errors i avisos duplicats.');

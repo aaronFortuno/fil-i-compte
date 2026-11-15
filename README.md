@@ -175,7 +175,7 @@ La integració amb l’Umami propi d’ortogra.fi s’activa amb l’identificad
 | `problem-selected` | Quan es marca manualment un problema al banc | Identificador públic del problema |
 | `template-action` | Quan es crea, s’obre, es reanomena, s’actualitza o s’elimina una plantilla | Tipus d’acció |
 | `print-requested` | Quan un botó del web obre el diàleg d’impressió | Fitxa o solucionari, pàgines i problemes per pàgina |
-| `problem-reported` | Quan algú tria un motiu i prem «Envia l’avís» | Identificador públic del problema, secció, versió, llengua i motiu (`reason`) |
+| `problem-reported` | Quan algú marca un motiu o més i prem «Envia l’avís» | Identificador públic del problema, secció, versió, llengua i motius (`reason`, separats per comes) |
 
 Es registra una visita quan el receptor està disponible. Les peticions d’impressió compten encara que després es cancel·li el diàleg. Els avisos es marquen com a enviats quan el receptor els accepta. La mateixa combinació de problema, secció, versió i llengua es pot notificar un cop per pestanya.
 
