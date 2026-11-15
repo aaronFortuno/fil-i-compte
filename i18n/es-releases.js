@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.11": [
+    "Avisos de error con motivo",
+    "La bandera abre un formulario para elegir el motivo y confirmar el envío."
+  ],
   "0.36.10": [
     "El banco funciona sin analítica",
     "Los filtros, las propuestas y las plantillas funcionan aunque el navegador bloquee la analítica.",

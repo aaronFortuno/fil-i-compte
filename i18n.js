@@ -19,6 +19,8 @@
     "Resposta:": "Respuesta:",
     "al solucionari": "en el solucionario",
     "a l’enunciat": "en el enunciado",
+    "Enunciat": "Enunciado",
+    "Solucionari": "Solucionario",
     "Notifica un error {0} de {1}": "Notificar un error {0} de {1}",
     "Avís enviat.": "Aviso enviado.",
     "Enviant l’avís…": "Enviando el aviso…",

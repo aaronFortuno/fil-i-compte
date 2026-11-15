@@ -147,7 +147,7 @@
   let reportTooltipAnchor=null,reportTooltipTimer;
   function reportHTML(e,section){
     const label=section==='solution'?t('al solucionari'):t('a l’enunciat');
-    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" aria-disabled="true" data-report aria-label="${t('Notifica un error {0} de {1}',label,e.id)}"><img class="ui-icon" src="${assets}lucide/flag.svg" alt="" width="16" height="16"><span class="report-sent" aria-hidden="true" hidden>✓</span></button></span>`;
+    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" aria-haspopup="dialog" aria-controls="report-dialog" aria-disabled="true" data-report aria-label="${t('Notifica un error {0} de {1}',label,e.id)}"><img class="ui-icon" src="${assets}lucide/flag.svg" alt="" width="16" height="16"><span class="report-sent" aria-hidden="true" hidden>✓</span></button></span>`;
   }
   function hideReportTooltip(){
     clearTimeout(reportTooltipTimer);
@@ -621,6 +621,8 @@
     window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics?.refresh();});
     window.addEventListener('focus',()=>{void analytics?.refresh();});
     document.addEventListener('visibilitychange',()=>{if(!document.hidden)void analytics?.refresh();});
+  }
+  function setupReports() {
     const tooltip=$('report-tooltip');
     const scheduleTooltipClose=()=>{
       clearTimeout(reportTooltipTimer);
@@ -646,15 +648,42 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape')hideReportTooltip();});
     document.addEventListener('scroll',hideReportTooltip,true);
     window.addEventListener('resize',hideReportTooltip);
-    document.addEventListener('click',async event=>{
+    const dialog=$('report-dialog'),form=$('report-form'),reasons=$('report-reasons');
+    const submit=$('report-submit'),feedback=$('report-feedback'),status=$('report-status');
+    const {open,close}=bindDialog(dialog,null,$('report-close'));
+    let context;
+    $('report-cancel').addEventListener('click',close);
+    document.addEventListener('click',event=>{
       const button=event.target.closest('[data-report]');
       if(!button)return;
       if(button.getAttribute('aria-disabled')==='true'){showReportTooltip(button);return;}
-      const context=reportContext(button.closest('.report-control'));
-      const status=$('report-status');
+      context=reportContext(button.closest('.report-control'));
+      const section=context.section==='solution'?t('Solucionari'):t('Enunciat');
+      $('report-context').textContent=`${context.problem} · ${section}`;
+      form.reset();
+      reasons.disabled=false;
+      submit.disabled=true;
+      feedback.textContent='';
+      hideReportTooltip();
+      open();
+    });
+    form.addEventListener('change',()=>{submit.disabled=false;});
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();
+      const reason=new FormData(form).get('reason');
+      if(!reason||submit.disabled)return;
+      const report=context;
+      reasons.disabled=true;
+      submit.disabled=true;
       status.textContent='';
-      const sent=await analytics?.reportProblem(context);
-      status.textContent=sent?t('Avís de {0} enviat.',context.problem):t('No s’ha pogut enviar l’avís. Consulta Privacitat i avisos.');
+      feedback.textContent=t('Enviant l’avís…');
+      const sent=await analytics?.reportProblem(report,reason);
+      if(sent)status.textContent=t('Avís de {0} enviat.',report.problem);
+      if(context!==report||!dialog.open)return;
+      if(sent){void close();return;}
+      reasons.disabled=false;
+      submit.disabled=false;
+      feedback.textContent=t('No s’ha pogut enviar l’avís. Consulta Privacitat i avisos.');
     });
   }
   function setupHistory() {
@@ -681,13 +710,14 @@
       if(motionDuration())await dialog.animate([{opacity:1,transform:'none'},{opacity:0,transform:offset}],{duration:motionDuration(),easing:'cubic-bezier(.22,.68,.25,1)'}).finished.catch(()=>{});
       dialog.close();closing=false;
     };
-    trigger.addEventListener('click',()=>{
+    const open=()=>{
       if(dialog.open)return;
       backdropPress=false;
       dialog.showModal();dialog.querySelector('.history-scroll').scrollTop=0;
       onOpen();
       animateElements([dialog],[{opacity:0,transform:offset},{opacity:1,transform:'none'}]);
-    });
+    };
+    trigger?.addEventListener('click',open);
     closeButton.addEventListener('click',close);
     dialog.addEventListener('close',onClose);
     dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
@@ -696,6 +726,7 @@
       if(backdropPress&&isBackdrop(event))close();
       backdropPress=false;
     });
+    return {open,close};
   }
   function setupHelp() {
     const example=catalogue[0],demo=$('help-filter-demo'),button=$('help-filter'),pointer=$('help-demo-pointer'),caption=$('help-demo-state');
@@ -893,7 +924,7 @@
   if(languageView){
     try{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);}catch{}
   }
-  bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));setupPrivacy();
+  bindDialog($('v4v-dialog'),$('v4v-open'),$('v4v-close'));setupPrivacy();setupReports();
   $('v4v-copy').addEventListener('click',()=>copyLotText($('v4v-address').value,$('v4v-address'),$('v4v-status'),t('Adreça copiada.')));
   document.addEventListener('visibilitychange',()=>{
     if(!document.hidden)return;

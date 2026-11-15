@@ -185,7 +185,7 @@
     <div class="history-scroll privacy-content" tabindex="0">
       <div class="privacy-main">
         <p>Usamos Umami para contar visitas, propuestas de fichas, selecciones manuales de problemas, acciones con plantillas y solicitudes de impresión. Excluimos los nombres, grupos, títulos, búsquedas y códigos de ficha.</p>
-        <p>Al notificar un error enviamos el código público del problema, la versión, el idioma y si el aviso se refiere al enunciado o al solucionario.</p>
+        <p>Al enviar un aviso, Umami recibe el motivo que has elegido, el código del problema, la versión, el idioma y si el aviso se refiere al enunciado o al solucionario.</p>
         <p id="privacy-state" class="privacy-state" role="status"></p>
         <div class="utility-actions"><button type="button" class="secondary" id="privacy-disable">Desactivar la analítica</button><button type="button" class="primary" id="privacy-temporary">Permitir temporalmente</button></div>
       </div>
@@ -196,6 +196,27 @@
       </details>
       <p class="hint">El permiso temporal dura hasta que cierres la pestaña. Con la analítica desactivada puedes preparar e imprimir fichas. <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer">Privacidad de Umami</a>.</p>
     </div>
+  </dialog>
+  <dialog id="report-dialog" class="history-dialog" aria-labelledby="report-title" aria-describedby="report-context">
+    <header class="history-heading">
+      <div><p id="report-context" class="history-eyebrow"></p><h2 id="report-title">Notificar un error</h2></div>
+      <button type="button" id="report-close" class="history-close" aria-label="Cerrar"><img class="ui-icon" src="../assets/lucide/x.svg" alt="" width="16" height="16"></button>
+    </header>
+    <form id="report-form" class="history-scroll report-form">
+      <fieldset id="report-reasons">
+        <legend>¿Qué hay que revisar?</legend>
+        <label><input type="radio" name="reason" value="calculation" required autofocus> Cálculo o resultado</label>
+        <label><input type="radio" name="reason" value="setup"> Datos o planteamiento</label>
+        <label><input type="radio" name="reason" value="ambiguity"> Enunciado o explicación ambiguos</label>
+        <label><input type="radio" name="reason" value="wording"> Errata o problema de traducción</label>
+        <label><input type="radio" name="reason" value="other"> Otro motivo</label>
+      </fieldset>
+      <p id="report-feedback" role="status"></p>
+      <div class="report-actions">
+        <button type="button" id="report-cancel" class="secondary">Cancelar</button>
+        <button type="submit" id="report-submit" class="primary" disabled>Enviar aviso</button>
+      </div>
+    </form>
   </dialog>
   <div id="report-tooltip" class="context-tooltip" popover="manual" role="tooltip"></div>
   <div id="reasoning-tooltip" class="context-tooltip" popover="manual" role="tooltip" aria-hidden="true"></div>

@@ -42,6 +42,7 @@ SOFTWARE.
     'template-action': ['action']
   };
   const validProblemId = id => typeof id === 'string' && /^P\d{4,16}$/.test(id);
+  const reportReasons = ['calculation', 'setup', 'ambiguity', 'wording', 'other'];
   const reportLanguage = c => c.language ?? 'ca';
   function validReport(c) {
     return c && validProblemId(c.problem) &&
@@ -197,12 +198,12 @@ SOFTWARE.
       if (!validReport(context)) return 'idle';
       const key = reportKey(context); return sent.has(key) ? 'sent' : sending.has(key) ? 'sending' : 'idle';
     }
-    async function reportProblem(context) {
-      if (!validReport(context) || getState().status !== 'ready' || reportState(context) !== 'idle') return false;
+    async function reportProblem(context, reason) {
+      if (!validReport(context) || !reportReasons.includes(reason) || getState().status !== 'ready' || reportState(context) !== 'idle') return false;
       const key = reportKey(context), token = generation;
       sending.add(key); notify();
       try {
-        const ok = await send('problem-reported', { problem_id: context.problem, section: context.section, version: context.version, language: reportLanguage(context) }, token);
+        const ok = await send('problem-reported', { problem_id: context.problem, section: context.section, version: context.version, language: reportLanguage(context), reason }, token);
         if (!ok || token !== generation || !permitted()) return false;
         sent.add(key); storage('sessionStorage', 'setItem', REPORTS, JSON.stringify([...sent].slice(-1000))); return true;
       } finally { sending.delete(key); notify(); }

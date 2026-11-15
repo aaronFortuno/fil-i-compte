@@ -172,6 +172,15 @@ button,a,input,select{transition:background-color var(--motion-duration) var(--m
 .report-flag[aria-disabled="true"]{cursor:default}
 .report-flag[aria-disabled="true"] .ui-icon{opacity:.48}
 .report-sent{font-size:14px;font-weight:700}
+#report-dialog{width:min(420px,calc(100vw - 32px))}
+.report-form{padding:16px 26px 22px}
+.report-form fieldset{margin:0;padding:0;border:0;min-width:0}
+.report-form legend{margin-bottom:6px;font-size:13px;font-weight:700}
+.report-form label{display:flex;align-items:center;gap:9px;min-height:36px;font-size:13px;cursor:pointer}
+.report-form input{margin:0;accent-color:var(--green)}
+.report-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-top:14px}
+#report-feedback{font-size:12px;margin:8px 0 0}
+#report-feedback:empty{margin:0}
 .context-tooltip{position:fixed;inset:auto;margin:0;width:max-content;max-width:min(260px,calc(100vw - 24px));padding:8px 11px;border:1px solid #cbd4c3;border-radius:8px;background:var(--white);color:var(--ink);font-size:11px;line-height:1.5;box-shadow:0 4px 12px #263d3420}
 @media print{.context-tooltip{display:none!important}}
 .privacy-content{padding-block:18px 23px}

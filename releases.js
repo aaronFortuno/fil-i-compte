@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.11',title:'Avisos d’error amb motiu',
+    changes:['La bandera obre un formulari per triar el motiu i confirmar l’enviament.']
+  },
+  {
     version:'0.36.10',title:'El banc funciona sense analítica',
     changes:['Els filtres, les propostes i les plantilles funcionen encara que el navegador bloquegi l’analítica.','En reobrir una pestanya descartada, es recuperen la cerca, la tria i el pas.']
   },

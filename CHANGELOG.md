@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.11 · Avisos d’error amb motiu
+
+- La bandera obre un formulari per triar el motiu. L’avís s’envia quan es confirma i el motiu es pot consultar a Umami.
+
 ## 0.36.10 · El banc funciona sense analítica
 
 - Els filtres, les propostes de fitxa i les plantilles funcionen encara que el navegador bloquegi l’analítica.
