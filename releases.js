@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.36.13',title:'Formulari d’avisos sempre accessible',
+    changes:['La bandera obre el formulari encara que l’enviament estigui desactivat. El quadre informa si es pot enviar l’avís.']
+  },
+  {
     version:'0.36.12',title:'Diversos motius per avís',
     changes:['El formulari d’errors permet marcar diversos motius i enviar-los junts en un sol avís.']
   },

@@ -1,5 +1,9 @@
 # Historial de canvis
 
+## 0.36.13 · Formulari d’avisos sempre accessible
+
+- La bandera obre el formulari encara que l’enviament estigui desactivat. Es poden marcar motius, i el quadre informa si es poden enviar.
+
 ## 0.36.12 · Diversos motius per avís
 
 - El formulari d’errors permet marcar diversos motius i enviar-los junts en un sol avís.

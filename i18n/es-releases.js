@@ -1,5 +1,9 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.36.13": [
+    "Formulario de avisos siempre accesible",
+    "La bandera abre el formulario aunque el envío esté desactivado. El cuadro informa si se puede enviar el aviso."
+  ],
   "0.36.12": [
     "Varios motivos por aviso",
     "El formulario de errores permite marcar varios motivos y enviarlos juntos en un solo aviso."

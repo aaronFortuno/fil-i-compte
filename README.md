@@ -179,4 +179,4 @@ La integració amb l’Umami propi d’ortogra.fi s’activa amb l’identificad
 
 Es registra una visita quan el receptor està disponible. Les peticions d’impressió compten encara que després es cancel·li el diàleg. Els avisos es marquen com a enviats quan el receptor els accepta. La mateixa combinació de problema, secció, versió i llengua es pot notificar un cop per pestanya.
 
-El web respecta GPC, DNT i l’opció local de desactivar l’analítica. Les comprovacions de privacitat i recepció es poden executar amb `node tools/check-analytics.cjs`, amb un receptor simulat.
+El web respecta GPC, DNT i l’opció local de desactivar l’analítica. La bandera permet obrir el formulari i marcar els motius en qualsevol cas. El botó d’enviament només s’activa quan es poden enviar avisos. Les comprovacions de privacitat i recepció es poden executar amb `node tools/check-analytics.cjs`, amb un receptor simulat.

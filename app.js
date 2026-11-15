@@ -147,7 +147,7 @@
   let reportTooltipAnchor=null,reportTooltipTimer;
   function reportHTML(e,section){
     const label=section==='solution'?t('al solucionari'):t('a l’enunciat');
-    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" aria-haspopup="dialog" aria-controls="report-dialog" aria-disabled="true" data-report aria-label="${t('Notifica un error {0} de {1}',label,e.id)}"><img class="ui-icon" src="${assets}lucide/flag.svg" alt="" width="16" height="16"><span class="report-sent" aria-hidden="true" hidden>✓</span></button></span>`;
+    return `<span class="report-control" data-problem="${e.id}" data-version="${e.version}" data-section="${section}"><button type="button" class="report-flag" aria-haspopup="dialog" aria-controls="report-dialog" data-report aria-label="${t('Notifica un error {0} de {1}',label,e.id)}"><img class="ui-icon" src="${assets}lucide/flag.svg" alt="" width="16" height="16"><span class="report-sent" aria-hidden="true" hidden>✓</span></button></span>`;
   }
   function hideReportTooltip(){
     clearTimeout(reportTooltipTimer);
@@ -166,13 +166,13 @@
     if(!tooltip.matches(':popover-open'))tooltip.showPopover();
     positionPopover(tooltip,button);
   }
-  function refreshReports(root=document,{status}=analyticsState()){
+  function refreshReports(root=document){
     for(const control of root.querySelectorAll('.report-control')){
       const state=analytics?.reportState(reportContext(control))??'idle',flag=control.querySelector('[data-report]');
-      flag.setAttribute('aria-disabled',String(status!=='ready'||state!=='idle'));
+      flag.setAttribute('aria-disabled',String(state!=='idle'));
       flag.querySelector('img').hidden=state==='sent';
       flag.querySelector('.report-sent').hidden=state!=='sent';
-      flag.dataset.tooltip=state==='sent'?t('Avís enviat.'):state==='sending'?t('Enviant l’avís…'):status==='ready'?t('Notifica un error. Més informació a «Privacitat» a la capçalera.'):t('Els avisos no estan disponibles. Obre «Privacitat» a la capçalera per saber-ne més.');
+      flag.dataset.tooltip=state==='sent'?t('Avís enviat.'):state==='sending'?t('Enviant l’avís…'):t('Obre el formulari per notificar un error.');
       if(flag===reportTooltipAnchor)showReportTooltip(flag);
     }
   }
@@ -615,7 +615,7 @@
       if(isBrave&&!browserChosen){browser.value='brave';updatePrivacy(analyticsState());}
     }).catch(()=>{});
     bindDialog($('privacy-dialog'),trigger,$('privacy-close'),{onOpen:()=>{hideReportTooltip();void analytics?.refresh();updatePrivacy(analyticsState());}});
-    analytics?.subscribe(state=>{updatePrivacy(state);refreshReports(document,state);});
+    analytics?.subscribe(updatePrivacy);
     temporary.addEventListener('click',()=>{void analytics?.allowTemporarily();});
     disable.addEventListener('click',()=>analytics?.disable());
     window.addEventListener('storage',event=>{if(event.key==='umami.disabled'||event.key===null)void analytics?.refresh();});
@@ -652,26 +652,40 @@
     const submit=$('report-submit'),feedback=$('report-feedback'),status=$('report-status');
     const {open,close}=bindDialog(dialog,null,$('report-close'));
     let context;
+    function updateAvailability({status,reason}=analyticsState()){
+      submit.disabled=reasons.disabled||status!=='ready'||!reasons.querySelector('input:checked');
+      let message='';
+      if(status==='loading')message=t('Connectant amb Umami…');
+      else if(status==='disabled'&&reason==='local')message=t('Has desactivat l’analítica. L’enviament d’avisos està inhabilitat.');
+      else if(status==='disabled')message=t('Els avisos estan desactivats pel senyal de privacitat del navegador.');
+      else if(status!=='ready')message=t('Ara mateix no es poden enviar avisos. Consulta «Privacitat» per saber-ne més.');
+      if(feedback.textContent!==message)feedback.textContent=message;
+    }
+    analytics?.subscribe(state=>{
+      refreshReports();
+      if(dialog.open&&!reasons.disabled)updateAvailability(state);
+    });
     $('report-cancel').addEventListener('click',close);
     document.addEventListener('click',event=>{
       const button=event.target.closest('[data-report]');
-      if(!button)return;
+      if(!button||dialog.open)return;
       if(button.getAttribute('aria-disabled')==='true'){showReportTooltip(button);return;}
       context=reportContext(button.closest('.report-control'));
       const section=context.section==='solution'?t('Solucionari'):t('Enunciat');
       $('report-context').textContent=`${context.problem} · ${section}`;
       form.reset();
       reasons.disabled=false;
-      submit.disabled=true;
-      feedback.textContent='';
+      updateAvailability();
       hideReportTooltip();
       open();
     });
-    form.addEventListener('change',()=>{submit.disabled=!reasons.querySelector('input:checked');});
+    form.addEventListener('change',()=>updateAvailability());
     form.addEventListener('submit',async event=>{
       event.preventDefault();
+      if(!dialog.open||reasons.disabled)return;
+      updateAvailability();
+      if(submit.disabled)return;
       const selectedReasons=new FormData(form).getAll('reason');
-      if(!selectedReasons.length||submit.disabled)return;
       const report=context;
       reasons.disabled=true;
       submit.disabled=true;
@@ -682,7 +696,7 @@
       if(context!==report||!dialog.open)return;
       if(sent){void close();return;}
       reasons.disabled=false;
-      submit.disabled=false;
+      updateAvailability();
       feedback.textContent=t('No s’ha pogut enviar l’avís. Consulta Privacitat i avisos.');
     });
   }
