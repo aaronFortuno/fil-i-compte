@@ -5,7 +5,7 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banco de problemas contextualizados",
     "language": "es",
-    "version": 26,
+    "version": 28,
     "authorship": "Contenido original creado para este proyecto",
     "review": "Traducción del catálogo catalán."
   },
@@ -15049,6 +15049,697 @@ globalThis.EXERCISE_CATALOG = {
               4
             ],
             "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0253",
+      "version": 1,
+      "title": "La jarra de la merienda",
+      "context": "begudes",
+      "structure": "sumar-i-restar-vuitens-equivalents",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En una jarra vertemos 1/2 litro de agua y después 1/4 de litro más. En la merienda servimos 1/8 de litro.",
+      "question": "¿Qué fracción de litro queda en la jarra?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1/2 + 1/4 − 1/8 = 4/8 + 2/8 − 1/8 = 5/8",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            0.5,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.625,
+        "unit": "litros",
+        "response": "Quedan 5/8 de litro en la jarra.",
+        "steps": [
+          "Expresamos las cantidades en octavos de litro. Medio litro son 4/8 y un cuarto son 2/8.",
+          "Juntamos 4 + 2 octavos y quitamos uno. Quedan 5 octavos."
+        ],
+        "note": "Puedes dibujar una barra de un litro dividida en ocho partes. Marca seis y tacha una."
+      }
+    },
+    {
+      "id": "P0254",
+      "version": 1,
+      "title": "Cinta para dos lazos",
+      "context": "manualitats",
+      "structure": "restar-dues-llargades-a-una-cinta",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Tenemos una cinta de 7/8 de metro. Para hacer un lazo cortamos 1/4 de metro y, para otro, 1/8 de metro. Al cortar no perdemos cinta.",
+      "question": "¿Qué longitud de cinta queda? Escríbela con una fracción lo más sencilla posible.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "7/8 − 1/4 − 1/8 = 7/8 − 2/8 − 1/8 = 4/8 = 1/2",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            0.875,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.5,
+        "unit": "metros",
+        "response": "Queda 1/2 metro de cinta.",
+        "steps": [
+          "Un cuarto de metro equivale a dos octavos. Quitamos dos octavos y después otro de los siete que teníamos.",
+          "Quedan cuatro octavos de metro, que equivalen a medio metro."
+        ],
+        "note": "En una tira dividida en ocho partes iguales, cuatro partes ocupan exactamente la mitad."
+      }
+    },
+    {
+      "id": "P0255",
+      "version": 1,
+      "title": "El mural a dos manos",
+      "context": "art",
+      "structure": "equivalencia-de-tercos-i-sisens-en-un-mural",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Júlia pinta 1/3 de un mural y Nil, 2/6 del mismo mural. Pintan zonas distintas y las dos fracciones se refieren al mural entero.",
+      "question": "¿Qué fracción del mural queda por pintar? Muestra cómo utilizas fracciones equivalentes.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Quedan 2/6 del mural por pintar, es decir, 1/3.",
+        "steps": [
+          "Un tercio equivale a dos sextos. Júlia y Nil pintan dos sextos cada uno, cuatro sextos en total.",
+          "De los seis sextos que forman el mural, quedan dos sin pintar."
+        ],
+        "note": "Dibuja seis casillas iguales. Marca dos para cada persona. Las dos que quedan forman un tercio del mural.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              6,
+              [
+                "add",
+                2,
+                2
+              ]
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0256",
+      "version": 1,
+      "title": "Una mañana de ensayo",
+      "context": "musica",
+      "structure": "sumar-quarts-i-sisens-dhora",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "El ensayo del coro dura 1/4 de hora. Después hacemos una pausa de 1/6 de hora antes de empezar el taller.",
+      "question": "¿Qué fracción de hora pasa desde que empieza el ensayo hasta que empieza el taller? Expresa las dos duraciones en partes del mismo tamaño.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Pasan 5/12 de hora.",
+        "steps": [
+          "Dividimos una hora en doce partes iguales. Un cuarto de hora son 3/12 y un sexto son 2/12.",
+          "Sumamos tres partes y dos partes. En total han pasado cinco doceavos de hora."
+        ],
+        "note": "En un reloj, cada doceavo de hora son cinco minutos. Tres saltos para el ensayo y dos para la pausa hacen cinco saltos.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              3,
+              2
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0257",
+      "version": 1,
+      "title": "El pan que guardamos",
+      "context": "alimentacio",
+      "structure": "restar-sisens-duna-barra",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Para hacer bocadillos tenemos 2/3 de una barra de pan. Utilizamos una cantidad equivalente a 1/6 de la barra entera.",
+      "question": "¿Qué fracción de la barra entera guardaremos para más tarde?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Guardaremos 3/6 de barra, es decir, media barra.",
+        "steps": [
+          "Dos tercios de barra son cuatro sextos.",
+          "Si quitamos un sexto, quedan tres. Tres sextos equivalen a un medio."
+        ],
+        "note": "Dibuja una barra con seis partes iguales. Tenemos cuatro y utilizamos una.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              4,
+              1
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0258",
+      "version": 1,
+      "title": "Un rincón libre en el huerto",
+      "context": "hort",
+      "structure": "completar-el-tot-amb-quarts-i-vuitens",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En un huerto, las lechugas ocupan 1/4 de toda la superficie y las zanahorias, 3/8. Las dos zonas no se superponen. El resto del huerto está libre.",
+      "question": "¿Qué fracción del huerto está libre?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1 − 1/4 − 3/8 = 8/8 − 2/8 − 3/8 = 3/8",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            1,
+            0.25
+          ],
+          0.375
+        ],
+        "answer": 0.375,
+        "unit": "del huerto",
+        "response": "Están libres 3/8 del huerto.",
+        "steps": [
+          "Todo el huerto son ocho octavos. Un cuarto equivale a dos octavos.",
+          "Restamos dos octavos de lechugas y tres de zanahorias. Quedan tres octavos libres."
+        ],
+        "note": "Puedes dibujar ocho parcelas iguales y reservar dos para lechugas y tres para zanahorias."
+      }
+    },
+    {
+      "id": "P0259",
+      "version": 1,
+      "title": "Dos jarras para la sopa",
+      "context": "receptes",
+      "structure": "reconeixer-equivalencies-abans-dajuntar",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Para hacer una sopa necesitamos 1 litro de caldo. Una jarra contiene 3/6 de litro y otra, 2/4 de litro. Vertemos todo el caldo de las dos jarras en la olla.",
+      "question": "¿Tendremos exactamente la cantidad que pide la receta? Justifícalo utilizando fracciones equivalentes.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Cada jarra contiene medio litro y, juntas, suman exactamente 1 litro.",
+        "steps": [
+          "Tres sextos de litro equivalen a medio litro. Dos cuartos de litro también equivalen a medio litro.",
+          "Sumamos las dos mitades y obtenemos un litro entero."
+        ],
+        "note": "Dibuja dos barras iguales que representen un litro. Divide una en seis partes y la otra en cuatro. En las dos tenemos la mitad.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              0.5,
+              0.5
+            ],
+            "answer": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0260",
+      "version": 1,
+      "title": "Pintar hasta la marca",
+      "context": "art",
+      "structure": "trobar-la-part-que-falta-fins-a-tres-quarts",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Queremos pintar de azul 3/4 de un panel. Ya hemos pintado 1/2. Las dos fracciones se refieren a todo el panel.",
+      "question": "¿Qué fracción del panel nos falta pintar de azul para llegar a la cantidad prevista?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 − 1/2 = 3/4 − 2/4 = 1/4",
+        "calculation": [
+          "sub",
+          0.75,
+          0.5
+        ],
+        "answer": 0.25,
+        "unit": "del panel",
+        "response": "Todavía tenemos que pintar de azul 1/4 del panel.",
+        "steps": [
+          "La mitad que ya hemos pintado equivale a dos cuartos.",
+          "Para llegar a los tres cuartos previstos, solo falta un cuarto."
+        ],
+        "note": "Divide el panel en cuatro franjas iguales. Dos ya son azules y añadimos una."
+      }
+    },
+    {
+      "id": "P0261",
+      "version": 1,
+      "title": "Una receta más pequeña",
+      "context": "receptes",
+      "structure": "dos-tercos-de-tres-quarts-de-litre",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una receta entera necesita 3/4 de litro de caldo. Hoy solo preparamos 2/3 de la receta, manteniendo la proporción de todos los ingredientes.",
+      "question": "¿Qué fracción de litro de caldo necesitamos?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "2/3 × 3/4 = 6/12 = 1/2",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            2,
+            3
+          ],
+          0.75
+        ],
+        "answer": 0.5,
+        "unit": "litros",
+        "response": "Necesitamos 1/2 litro de caldo.",
+        "steps": [
+          "Repartimos los tres cuartos de litro en tres cantidades iguales. Cada una es un cuarto de litro.",
+          "Necesitamos dos de esas cantidades. Dos cuartos de litro equivalen a medio litro."
+        ],
+        "note": "Con una barra dividida en cuartos, la receta entera utiliza tres. Para dos tercios de la receta, tomamos dos."
+      }
+    },
+    {
+      "id": "P0262",
+      "version": 1,
+      "title": "La parte del huerto que hemos regado",
+      "context": "hort",
+      "structure": "meitat-duna-zona-de-tres-quarts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tres cuartas partes de un huerto están plantadas. Esta mañana regamos la mitad de la zona plantada.",
+      "question": "¿Qué fracción de todo el huerto hemos regado? Indica cuál es el todo cuando hablamos de «la mitad».",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1/2 × 3/4 = 3/8",
+        "calculation": [
+          "mul",
+          0.5,
+          0.75
+        ],
+        "answer": 0.375,
+        "unit": "del huerto",
+        "response": "Hemos regado 3/8 de todo el huerto.",
+        "steps": [
+          "El todo de «la mitad» es la zona plantada, que ocupa tres cuartos del huerto.",
+          "Si dividimos cada cuarto en dos partes, los tres cuartos se convierten en seis octavos. Regamos la mitad, tres octavos."
+        ],
+        "note": "Dibuja ocho parcelas iguales. Seis están plantadas y tres de esas seis se han regado."
+      }
+    },
+    {
+      "id": "P0263",
+      "version": 1,
+      "title": "La tela para un banderín",
+      "context": "manualitats",
+      "structure": "area-rectangular-amb-costats-fraccionaris",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Un banderín rectangular de tela mide 3/4 de metro de largo y 2/3 de metro de ancho.",
+      "question": "¿Qué superficie de tela ocupa, expresada como fracción de metro cuadrado?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 × 2/3 = 6/12 = 1/2",
+        "calculation": [
+          "mul",
+          0.75,
+          [
+            "div",
+            2,
+            3
+          ]
+        ],
+        "answer": 0.5,
+        "unit": "m²",
+        "response": "El banderín ocupa 1/2 m² de tela.",
+        "steps": [
+          "Imaginamos un cuadrado de un metro de lado, dividido en cuatro columnas y tres filas iguales.",
+          "El banderín ocupa tres columnas y dos filas, seis de las doce casillas. Seis doceavos de metro cuadrado son medio metro cuadrado."
+        ],
+        "note": "También puedes multiplicar las dos medidas y simplificar la fracción. La superficie se mide en m².",
+        "visual": {
+          "type": "rectangle",
+          "widthLabel": "3/4 m",
+          "heightLabel": "2/3 m",
+          "caption": "La superficie del rectángulo es el producto de las dos medidas."
+        }
+      }
+    },
+    {
+      "id": "P0264",
+      "version": 1,
+      "title": "Dos aportaciones al mismo bol",
+      "context": "begudes",
+      "structure": "comparar-productes-de-fraccions-amb-referents-diferents",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La jarra A contiene 3/4 de litro de agua y vertemos 2/3 de su contenido en un bol. La jarra B contiene 2/3 de litro y vertemos 3/4 de su contenido en el mismo bol.",
+      "question": "¿Qué jarra aporta más agua al bol? Justifícalo teniendo en cuenta a qué se refiere cada fracción.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Las dos jarras aportan la misma cantidad, 1/2 litro cada una.",
+        "steps": [
+          "De la A vertemos 2/3 de 3/4 de litro. El producto es 6/12 de litro, medio litro.",
+          "De la B vertemos 3/4 de 2/3 de litro. El producto también es 6/12 de litro. Cambiar el orden de los factores mantiene el producto."
+        ],
+        "note": "Los dos tercios de la primera aportación se refieren al contenido de la A. Los tres cuartos de la segunda se refieren al contenido de la B.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                2,
+                3
+              ],
+              0.75
+            ],
+            "answer": 0.5
+          },
+          {
+            "calculation": [
+              "mul",
+              0.75,
+              [
+                "div",
+                2,
+                3
+              ]
+            ],
+            "answer": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0265",
+      "version": 1,
+      "title": "Vasos pequeños para la degustación",
+      "context": "berenar",
+      "structure": "comptar-vuitens-dins-de-tres-quarts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Para una degustación tenemos 3/4 de litro de zumo. Llenamos vasos pequeños con 1/8 de litro en cada uno.",
+      "question": "¿Cuántos vasos podemos llenar del todo con este zumo?",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "3/4 ÷ 1/8 = 6",
+        "calculation": [
+          "div",
+          0.75,
+          0.125
+        ],
+        "answer": 6,
+        "unit": "vasos",
+        "response": "Podemos llenar 6 vasos del todo.",
+        "steps": [
+          "Tres cuartos de litro equivalen a seis octavos de litro.",
+          "Cada vaso necesita un octavo. Podemos hacer seis grupos de un octavo, sin que sobre zumo."
+        ],
+        "note": "Puedes marcar seis octavos en una barra de un litro y rodear un octavo para cada vaso."
+      }
+    },
+    {
+      "id": "P0266",
+      "version": 1,
+      "title": "Tiras para colgar los dibujos",
+      "context": "manualitats",
+      "structure": "comptar-sisens-dins-de-dos-tercos",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenemos un cordel de 2/3 de metro y hacemos tiras de 1/6 de metro para colgar dibujos. Al cortar no se pierde cordel.",
+      "question": "¿Cuántas tiras enteras podemos hacer?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "2/3 ÷ 1/6 = 4",
+        "calculation": [
+          "div",
+          [
+            "div",
+            2,
+            3
+          ],
+          [
+            "div",
+            1,
+            6
+          ]
+        ],
+        "answer": 4,
+        "unit": "tiras",
+        "response": "Podemos hacer 4 tiras enteras.",
+        "steps": [
+          "Dos tercios de metro equivalen a cuatro sextos de metro.",
+          "Hay cuatro trozos de un sexto dentro del cordel. Por tanto, salen cuatro tiras."
+        ],
+        "note": "En una recta de un metro dividida en seis partes, marca los cuatro primeros sextos y sepáralos uno a uno."
+      }
+    },
+    {
+      "id": "P0267",
+      "version": 1,
+      "title": "Una coca para compartir",
+      "context": "berenar",
+      "structure": "repartir-una-fraccio-entre-sis-persones",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Quedan 3/4 de una coca. Seis niños se reparten toda la coca que queda a partes iguales.",
+      "question": "¿Qué fracción de la coca entera recibe cada niño?",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 ÷ 6 = 3/24 = 1/8",
+        "calculation": [
+          "div",
+          0.75,
+          6
+        ],
+        "answer": 0.125,
+        "unit": "de la coca entera",
+        "response": "Cada niño recibe 1/8 de la coca entera.",
+        "steps": [
+          "Cada niño recibe un sexto de los tres cuartos que quedan. Para calcular la parte de coca entera, dividimos 3/4 entre seis.",
+          "Tres cuartos son seis octavos. Si damos un octavo a cada uno de los seis niños, repartimos toda la coca que quedaba."
+        ],
+        "note": "Dibuja la coca dividida en ocho partes iguales. Seis partes se reparten entre los seis niños y dos partes ya no estaban."
+      }
+    },
+    {
+      "id": "P0268",
+      "version": 1,
+      "title": "Tarros llenos y un poco de mermelada",
+      "context": "cuina",
+      "structure": "interpretar-un-quocient-fraccionari-en-envasar",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenemos 3/4 de litro de mermelada y la envasamos en tarros de 1/5 de litro. Llenamos tantos tarros como podemos hasta arriba.",
+      "question": "¿Cuántos tarros podemos llenar del todo y qué fracción de litro queda sin envasar?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Podemos llenar 3 tarros del todo y quedan 3/20 de litro sin envasar.",
+        "steps": [
+          "Tres cuartos de litro son 15/20 de litro. En cada tarro caben 4/20 de litro.",
+          "Hacemos tres grupos de cuatro veinteavos y quedan tres. Para llenar el cuarto tarro harían falta cuatro veinteavos y solo tenemos tres."
+        ],
+        "note": "Dibuja quince partes de un veinteavo de litro. Rodea grupos de cuatro. El sobrante llenaría tres cuartas partes de un tarro, pero son 3/20 de litro.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              0.75,
+              0.2
+            ],
+            "answer": 3.75
+          },
+          {
+            "calculation": [
+              "sub",
+              0.75,
+              [
+                "mul",
+                3,
+                0.2
+              ]
+            ],
+            "answer": 0.15
           }
         ]
       }

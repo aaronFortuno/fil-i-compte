@@ -1,5 +1,11 @@
 /* Spanish titles and summaries for the local version history. */
 globalThis.FIL_I_COMPTE_RELEASES_ES = {
+  "0.37.0": [
+    "Fracciones para quinto",
+    "Ocho problemas accesibles de suma, resta y fracciones equivalentes, de P0253 a P0260.",
+    "Ocho problemas de multiplicación y división de fracciones, de nivel intermedio o reto, de P0261 a P0268.",
+    "Solucionarios en catalán y castellano con alternativas de resolución gráfica."
+  ],
   "0.36.13": [
     "Formulario de avisos siempre accesible",
     "La bandera abre el formulario aunque el envío esté desactivado. El cuadro informa si se puede enviar el aviso."

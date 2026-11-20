@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 2,
+  "pack": {
+    "id": "vint-i-dose-bloc",
+    "title": "Sumar, restar i trobar fraccions equivalents",
+    "language": "ca",
+    "version": 1,
+    "authorship": "Contingut original creat per a aquest projecte",
+    "review": "Càlculs i coherència comprovats. Validació docent pendent."
+  },
+  "exercises": [
+    {
+      "id": "P0253",
+      "version": 1,
+      "title": "La gerra del berenar",
+      "context": "begudes",
+      "structure": "sumar-i-restar-vuitens-equivalents",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En una gerra hi aboquem 1/2 litre d’aigua i després 1/4 de litre més. Al berenar en servim 1/8 de litre.",
+      "question": "Quina fracció de litre queda a la gerra?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1/2 + 1/4 − 1/8 = 4/8 + 2/8 − 1/8 = 5/8",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            0.5,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.625,
+        "unit": "litres",
+        "response": "Queden 5/8 de litre a la gerra.",
+        "steps": [
+          "Expressem les quantitats en vuitens de litre. Mig litre són 4/8 i un quart són 2/8.",
+          "Ajuntem 4 + 2 vuitens i en traiem un. Queden 5 vuitens."
+        ],
+        "note": "Pots dibuixar una barra d’un litre dividida en vuit parts. Marca’n sis i ratlla’n una."
+      }
+    },
+    {
+      "id": "P0254",
+      "version": 1,
+      "title": "Cinta per a dos llaços",
+      "context": "manualitats",
+      "structure": "restar-dues-llargades-a-una-cinta",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Tenim una cinta de 7/8 de metre. Per fer un llaç en tallem 1/4 de metre i, per a un altre, 1/8 de metre. En tallar no perdem cinta.",
+      "question": "Quina llargada de cinta queda? Escriu-la amb una fracció tan senzilla com puguis.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "7/8 − 1/4 − 1/8 = 7/8 − 2/8 − 1/8 = 4/8 = 1/2",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            0.875,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.5,
+        "unit": "metres",
+        "response": "Queda 1/2 metre de cinta.",
+        "steps": [
+          "Un quart de metre equival a dos vuitens. Traiem dos vuitens i després un altre dels set que teníem.",
+          "Queden quatre vuitens de metre, que equivalen a mig metre."
+        ],
+        "note": "Sobre una tira dividida en vuit parts iguals, quatre parts ocupen exactament la meitat."
+      }
+    },
+    {
+      "id": "P0255",
+      "version": 1,
+      "title": "El mural a dues mans",
+      "context": "art",
+      "structure": "equivalencia-de-tercos-i-sisens-en-un-mural",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "La Júlia pinta 1/3 d’un mural i en Nil, 2/6 del mateix mural. Pinten zones diferents i les dues fraccions es refereixen al mural sencer.",
+      "question": "Quina fracció del mural queda per pintar? Mostra com fas servir fraccions equivalents.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Queden 2/6 del mural per pintar, és a dir, 1/3.",
+        "steps": [
+          "Un terç equival a dos sisens. La Júlia i en Nil pinten dos sisens cadascun, quatre sisens en total.",
+          "Dels sis sisens que formen el mural, en queden dos sense pintar."
+        ],
+        "note": "Dibuixa sis caselles iguals. Marca’n dues per a cada persona. Les dues que queden formen un terç del mural.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              6,
+              [
+                "add",
+                2,
+                2
+              ]
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0256",
+      "version": 1,
+      "title": "Un matí d’assaig",
+      "context": "musica",
+      "structure": "sumar-quarts-i-sisens-dhora",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "L’assaig de la coral dura 1/4 d’hora. Després fem una pausa d’1/6 d’hora abans de començar el taller.",
+      "question": "Quina fracció d’hora passa des que comença l’assaig fins que comença el taller? Expressa les dues durades en parts de la mateixa mida.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Passen 5/12 d’hora.",
+        "steps": [
+          "Dividim una hora en dotze parts iguals. Un quart d’hora són 3/12 i un sisè són 2/12.",
+          "Sumem tres parts i dues parts. En total han passat cinc dotzens d’hora."
+        ],
+        "note": "En un rellotge, cada dotzè d’hora són cinc minuts. Tres salts per a l’assaig i dos per a la pausa fan cinc salts.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              3,
+              2
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0257",
+      "version": 1,
+      "title": "El pa que guardem",
+      "context": "alimentacio",
+      "structure": "restar-sisens-duna-barra",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer entrepans tenim 2/3 d’una barra de pa. En fem servir una quantitat equivalent a 1/6 de la barra sencera.",
+      "question": "Quina fracció de la barra sencera guardarem per a més tard?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Guardarem 3/6 de barra, és a dir, mitja barra.",
+        "steps": [
+          "Dos terços de barra són quatre sisens.",
+          "Si en traiem un sisè, en queden tres. Tres sisens equivalen a un mig."
+        ],
+        "note": "Dibuixa una barra amb sis parts iguals. En tenim quatre i en fem servir una.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              4,
+              1
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0258",
+      "version": 1,
+      "title": "Un racó lliure a l’hort",
+      "context": "hort",
+      "structure": "completar-el-tot-amb-quarts-i-vuitens",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En un hort, els enciams ocupen 1/4 de tota la superfície i les pastanagues, 3/8. Les dues zones no se superposen. La resta de l’hort està lliure.",
+      "question": "Quina fracció de l’hort està lliure?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1 − 1/4 − 3/8 = 8/8 − 2/8 − 3/8 = 3/8",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            1,
+            0.25
+          ],
+          0.375
+        ],
+        "answer": 0.375,
+        "unit": "de l’hort",
+        "response": "Estan lliures 3/8 de l’hort.",
+        "steps": [
+          "Tot l’hort són vuit vuitens. Un quart equival a dos vuitens.",
+          "Restem dos vuitens d’enciams i tres de pastanagues. Queden tres vuitens lliures."
+        ],
+        "note": "Pots dibuixar vuit parcel·les iguals i reservar-ne dues per a enciams i tres per a pastanagues."
+      }
+    },
+    {
+      "id": "P0259",
+      "version": 1,
+      "title": "Dues gerres per a la sopa",
+      "context": "receptes",
+      "structure": "reconeixer-equivalencies-abans-dajuntar",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer una sopa necessitem 1 litre de brou. Una gerra conté 3/6 de litre i una altra, 2/4 de litre. Aboquem tot el brou de totes dues gerres a l’olla.",
+      "question": "Tindrem exactament la quantitat que demana la recepta? Justifica-ho fent servir fraccions equivalents.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Cada gerra conté mig litre i, juntes, fan exactament 1 litre.",
+        "steps": [
+          "Tres sisens de litre equivalen a mig litre. Dos quarts de litre també equivalen a mig litre.",
+          "Sumem les dues meitats i obtenim un litre sencer."
+        ],
+        "note": "Dibuixa dues barres iguals que representin un litre. Divideix-ne una en sis parts i l’altra en quatre. En totes dues en tenim la meitat.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              0.5,
+              0.5
+            ],
+            "answer": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0260",
+      "version": 1,
+      "title": "Pintar fins a la marca",
+      "context": "art",
+      "structure": "trobar-la-part-que-falta-fins-a-tres-quarts",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Volem pintar de blau 3/4 d’un plafó. Ja n’hem pintat 1/2. Les dues fraccions es refereixen a tot el plafó.",
+      "question": "Quina fracció del plafó encara hem de pintar de blau per arribar a la quantitat prevista?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 − 1/2 = 3/4 − 2/4 = 1/4",
+        "calculation": [
+          "sub",
+          0.75,
+          0.5
+        ],
+        "answer": 0.25,
+        "unit": "del plafó",
+        "response": "Encara hem de pintar de blau 1/4 del plafó.",
+        "steps": [
+          "La meitat que ja hem pintat equival a dos quarts.",
+          "Per arribar als tres quarts previstos, només falta un quart."
+        ],
+        "note": "Divideix el plafó en quatre franges iguals. Dues ja són blaves i n’hi afegim una."
+      }
+    }
+  ]
+}

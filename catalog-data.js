@@ -5,9 +5,9 @@ globalThis.EXERCISE_CATALOG = {
     "id": "fil-i-compte",
     "title": "Banc de problemes contextualitzats",
     "language": "ca",
-    "version": 26,
+    "version": 28,
     "authorship": "Contingut original creat per a aquest projecte",
-    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-18.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-19.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-20.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-21.json: Càlculs i coherència comprovats. Validació docent pendent."
+    "review": "bloc-01.json: Càlculs comprovats i problemes validats en la revisió del projecte. bloc-02.json: Càlculs, etiquetes i coherència revisats abans de publicar. Validació docent de l'usuari pendent, prevista després de la publicació. bloc-03.json: Revisió docent de l'usuari incorporada amb les correccions de la versió 0.11.1. Càlculs i coherència comprovats. bloc-04.json: Revisió de l'usuari incorporada a la 0.13.0: preguntes sense passos intermedis a CS i ESO, comparació de descomptes i mides comercials habituals. Càlculs i coherència comprovats. bloc-05.json: Càlculs i coherència comprovats. Publicació autoritzada per revisar els problemes al web; validació docent pendent. bloc-06.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-07.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-08.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-09.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-10.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-11.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-12.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-13.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-14.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-15.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-16.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-17.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-18.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-19.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-20.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-21.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-22.json: Càlculs i coherència comprovats. Validació docent pendent. bloc-23.json: Càlculs i coherència comprovats. Validació docent pendent."
   },
   "exercises": [
     {
@@ -15049,6 +15049,697 @@ globalThis.EXERCISE_CATALOG = {
               4
             ],
             "answer": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0253",
+      "version": 1,
+      "title": "La gerra del berenar",
+      "context": "begudes",
+      "structure": "sumar-i-restar-vuitens-equivalents",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En una gerra hi aboquem 1/2 litre d’aigua i després 1/4 de litre més. Al berenar en servim 1/8 de litre.",
+      "question": "Quina fracció de litre queda a la gerra?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1/2 + 1/4 − 1/8 = 4/8 + 2/8 − 1/8 = 5/8",
+        "calculation": [
+          "sub",
+          [
+            "add",
+            0.5,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.625,
+        "unit": "litres",
+        "response": "Queden 5/8 de litre a la gerra.",
+        "steps": [
+          "Expressem les quantitats en vuitens de litre. Mig litre són 4/8 i un quart són 2/8.",
+          "Ajuntem 4 + 2 vuitens i en traiem un. Queden 5 vuitens."
+        ],
+        "note": "Pots dibuixar una barra d’un litre dividida en vuit parts. Marca’n sis i ratlla’n una."
+      }
+    },
+    {
+      "id": "P0254",
+      "version": 1,
+      "title": "Cinta per a dos llaços",
+      "context": "manualitats",
+      "structure": "restar-dues-llargades-a-una-cinta",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Tenim una cinta de 7/8 de metre. Per fer un llaç en tallem 1/4 de metre i, per a un altre, 1/8 de metre. En tallar no perdem cinta.",
+      "question": "Quina llargada de cinta queda? Escriu-la amb una fracció tan senzilla com puguis.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "7/8 − 1/4 − 1/8 = 7/8 − 2/8 − 1/8 = 4/8 = 1/2",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            0.875,
+            0.25
+          ],
+          0.125
+        ],
+        "answer": 0.5,
+        "unit": "metres",
+        "response": "Queda 1/2 metre de cinta.",
+        "steps": [
+          "Un quart de metre equival a dos vuitens. Traiem dos vuitens i després un altre dels set que teníem.",
+          "Queden quatre vuitens de metre, que equivalen a mig metre."
+        ],
+        "note": "Sobre una tira dividida en vuit parts iguals, quatre parts ocupen exactament la meitat."
+      }
+    },
+    {
+      "id": "P0255",
+      "version": 1,
+      "title": "El mural a dues mans",
+      "context": "art",
+      "structure": "equivalencia-de-tercos-i-sisens-en-un-mural",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "La Júlia pinta 1/3 d’un mural i en Nil, 2/6 del mateix mural. Pinten zones diferents i les dues fraccions es refereixen al mural sencer.",
+      "question": "Quina fracció del mural queda per pintar? Mostra com fas servir fraccions equivalents.",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Queden 2/6 del mural per pintar, és a dir, 1/3.",
+        "steps": [
+          "Un terç equival a dos sisens. La Júlia i en Nil pinten dos sisens cadascun, quatre sisens en total.",
+          "Dels sis sisens que formen el mural, en queden dos sense pintar."
+        ],
+        "note": "Dibuixa sis caselles iguals. Marca’n dues per a cada persona. Les dues que queden formen un terç del mural.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              6,
+              [
+                "add",
+                2,
+                2
+              ]
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0256",
+      "version": 1,
+      "title": "Un matí d’assaig",
+      "context": "musica",
+      "structure": "sumar-quarts-i-sisens-dhora",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "L’assaig de la coral dura 1/4 d’hora. Després fem una pausa d’1/6 d’hora abans de començar el taller.",
+      "question": "Quina fracció d’hora passa des que comença l’assaig fins que comença el taller? Expressa les dues durades en parts de la mateixa mida.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Passen 5/12 d’hora.",
+        "steps": [
+          "Dividim una hora en dotze parts iguals. Un quart d’hora són 3/12 i un sisè són 2/12.",
+          "Sumem tres parts i dues parts. En total han passat cinc dotzens d’hora."
+        ],
+        "note": "En un rellotge, cada dotzè d’hora són cinc minuts. Tres salts per a l’assaig i dos per a la pausa fan cinc salts.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              3,
+              2
+            ],
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0257",
+      "version": 1,
+      "title": "El pa que guardem",
+      "context": "alimentacio",
+      "structure": "restar-sisens-duna-barra",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer entrepans tenim 2/3 d’una barra de pa. En fem servir una quantitat equivalent a 1/6 de la barra sencera.",
+      "question": "Quina fracció de la barra sencera guardarem per a més tard?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "naturals",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Guardarem 3/6 de barra, és a dir, mitja barra.",
+        "steps": [
+          "Dos terços de barra són quatre sisens.",
+          "Si en traiem un sisè, en queden tres. Tres sisens equivalen a un mig."
+        ],
+        "note": "Dibuixa una barra amb sis parts iguals. En tenim quatre i en fem servir una.",
+        "evidence": [
+          {
+            "calculation": [
+              "sub",
+              4,
+              1
+            ],
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0258",
+      "version": 1,
+      "title": "Un racó lliure a l’hort",
+      "context": "hort",
+      "structure": "completar-el-tot-amb-quarts-i-vuitens",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "En un hort, els enciams ocupen 1/4 de tota la superfície i les pastanagues, 3/8. Les dues zones no se superposen. La resta de l’hort està lliure.",
+      "question": "Quina fracció de l’hort està lliure?",
+      "features": [
+        "suma-resta",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1 − 1/4 − 3/8 = 8/8 − 2/8 − 3/8 = 3/8",
+        "calculation": [
+          "sub",
+          [
+            "sub",
+            1,
+            0.25
+          ],
+          0.375
+        ],
+        "answer": 0.375,
+        "unit": "de l’hort",
+        "response": "Estan lliures 3/8 de l’hort.",
+        "steps": [
+          "Tot l’hort són vuit vuitens. Un quart equival a dos vuitens.",
+          "Restem dos vuitens d’enciams i tres de pastanagues. Queden tres vuitens lliures."
+        ],
+        "note": "Pots dibuixar vuit parcel·les iguals i reservar-ne dues per a enciams i tres per a pastanagues."
+      }
+    },
+    {
+      "id": "P0259",
+      "version": 1,
+      "title": "Dues gerres per a la sopa",
+      "context": "receptes",
+      "structure": "reconeixer-equivalencies-abans-dajuntar",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Per fer una sopa necessitem 1 litre de brou. Una gerra conté 3/6 de litre i una altra, 2/4 de litre. Aboquem tot el brou de totes dues gerres a l’olla.",
+      "question": "Tindrem exactament la quantitat que demana la recepta? Justifica-ho fent servir fraccions equivalents.",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Sí. Cada gerra conté mig litre i, juntes, fan exactament 1 litre.",
+        "steps": [
+          "Tres sisens de litre equivalen a mig litre. Dos quarts de litre també equivalen a mig litre.",
+          "Sumem les dues meitats i obtenim un litre sencer."
+        ],
+        "note": "Dibuixa dues barres iguals que representin un litre. Divideix-ne una en sis parts i l’altra en quatre. En totes dues en tenim la meitat.",
+        "evidence": [
+          {
+            "calculation": [
+              "add",
+              0.5,
+              0.5
+            ],
+            "answer": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0260",
+      "version": 1,
+      "title": "Pintar fins a la marca",
+      "context": "art",
+      "structure": "trobar-la-part-que-falta-fins-a-tres-quarts",
+      "level": "superior",
+      "difficulty": 1,
+      "status": "pendent-docent",
+      "statement": "Volem pintar de blau 3/4 d’un plafó. Ja n’hem pintat 1/2. Les dues fraccions es refereixen a tot el plafó.",
+      "question": "Quina fracció del plafó encara hem de pintar de blau per arribar a la quantitat prevista?",
+      "features": [
+        "suma-resta",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 − 1/2 = 3/4 − 2/4 = 1/4",
+        "calculation": [
+          "sub",
+          0.75,
+          0.5
+        ],
+        "answer": 0.25,
+        "unit": "del plafó",
+        "response": "Encara hem de pintar de blau 1/4 del plafó.",
+        "steps": [
+          "La meitat que ja hem pintat equival a dos quarts.",
+          "Per arribar als tres quarts previstos, només falta un quart."
+        ],
+        "note": "Divideix el plafó en quatre franges iguals. Dues ja són blaves i n’hi afegim una."
+      }
+    },
+    {
+      "id": "P0261",
+      "version": 1,
+      "title": "Una recepta més petita",
+      "context": "receptes",
+      "structure": "dos-tercos-de-tres-quarts-de-litre",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una recepta sencera necessita 3/4 de litre de brou. Avui només en preparem 2/3, mantenint la proporció de tots els ingredients.",
+      "question": "Quina fracció de litre de brou necessitem?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "proporcionalitat-directa"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "2/3 × 3/4 = 6/12 = 1/2",
+        "calculation": [
+          "mul",
+          [
+            "div",
+            2,
+            3
+          ],
+          0.75
+        ],
+        "answer": 0.5,
+        "unit": "litres",
+        "response": "Necessitem 1/2 litre de brou.",
+        "steps": [
+          "Repartim els tres quarts de litre en tres quantitats iguals. Cadascuna és un quart de litre.",
+          "Ens en calen dues. Dos quarts de litre equivalen a mig litre."
+        ],
+        "note": "Amb una barra dividida en quarts, la recepta sencera en fa servir tres. Per a dos terços de recepta, n’agafem dos."
+      }
+    },
+    {
+      "id": "P0262",
+      "version": 1,
+      "title": "La part de l’hort que hem regat",
+      "context": "hort",
+      "structure": "meitat-duna-zona-de-tres-quarts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tres quartes parts d’un hort estan plantades. Aquest matí reguem la meitat de la zona plantada.",
+      "question": "Quina fracció de tot l’hort hem regat? Indica quin és el tot quan parlem de «la meitat».",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "1/2 × 3/4 = 3/8",
+        "calculation": [
+          "mul",
+          0.5,
+          0.75
+        ],
+        "answer": 0.375,
+        "unit": "de l’hort",
+        "response": "Hem regat 3/8 de tot l’hort.",
+        "steps": [
+          "El tot de «la meitat» és la zona plantada, que ocupa tres quarts de l’hort.",
+          "Si dividim cada quart en dues parts, els tres quarts es converteixen en sis vuitens. En reguem la meitat, tres vuitens."
+        ],
+        "note": "Dibuixa vuit parcel·les iguals. Sis estan plantades i tres d’aquestes sis s’han regat."
+      }
+    },
+    {
+      "id": "P0263",
+      "version": 1,
+      "title": "La tela per a una banderola",
+      "context": "manualitats",
+      "structure": "area-rectangular-amb-costats-fraccionaris",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Una banderola rectangular de tela fa 3/4 de metre de llarg i 2/3 de metre d’ample.",
+      "question": "Quina superfície de tela ocupa, expressada com a fracció de metre quadrat?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 × 2/3 = 6/12 = 1/2",
+        "calculation": [
+          "mul",
+          0.75,
+          [
+            "div",
+            2,
+            3
+          ]
+        ],
+        "answer": 0.5,
+        "unit": "m²",
+        "response": "La banderola ocupa 1/2 m² de tela.",
+        "steps": [
+          "Imaginem un quadrat d’un metre de costat, dividit en quatre columnes i tres files iguals.",
+          "La banderola ocupa tres columnes i dues files, sis de les dotze caselles. Sis dotzens de metre quadrat són mig metre quadrat."
+        ],
+        "note": "També pots multiplicar les dues mesures i simplificar la fracció. La superfície es mesura en m².",
+        "visual": {
+          "type": "rectangle",
+          "widthLabel": "3/4 m",
+          "heightLabel": "2/3 m",
+          "caption": "La superfície del rectangle és el producte de les dues mesures."
+        }
+      }
+    },
+    {
+      "id": "P0264",
+      "version": 1,
+      "title": "Dues aportacions al mateix bol",
+      "context": "begudes",
+      "structure": "comparar-productes-de-fraccions-amb-referents-diferents",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "La gerra A conté 3/4 de litre d’aigua i n’aboquem 2/3 en un bol. La gerra B conté 2/3 de litre i n’aboquem 3/4 al mateix bol.",
+      "question": "Quina gerra aporta més aigua al bol? Justifica-ho tenint en compte a què es refereix cada fracció.",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Totes dues gerres aporten la mateixa quantitat, 1/2 litre cadascuna.",
+        "steps": [
+          "De l’A n’aboquem 2/3 de 3/4 de litre. El producte és 6/12 de litre, mig litre.",
+          "De la B n’aboquem 3/4 de 2/3 de litre. El producte també és 6/12 de litre. Canviar l’ordre dels factors manté el producte."
+        ],
+        "note": "Els dos terços de la primera aportació es refereixen al contingut de l’A. Els tres quarts de la segona es refereixen al contingut de la B.",
+        "evidence": [
+          {
+            "calculation": [
+              "mul",
+              [
+                "div",
+                2,
+                3
+              ],
+              0.75
+            ],
+            "answer": 0.5
+          },
+          {
+            "calculation": [
+              "mul",
+              0.75,
+              [
+                "div",
+                2,
+                3
+              ]
+            ],
+            "answer": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "P0265",
+      "version": 1,
+      "title": "Gots petits per al tast",
+      "context": "berenar",
+      "structure": "comptar-vuitens-dins-de-tres-quarts",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Per a un tast tenim 3/4 de litre de suc. Omplim gots petits amb 1/8 de litre a cadascun.",
+      "question": "Quants gots podem omplir del tot amb aquest suc?",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "3/4 ÷ 1/8 = 6",
+        "calculation": [
+          "div",
+          0.75,
+          0.125
+        ],
+        "answer": 6,
+        "unit": "gots",
+        "response": "Podem omplir 6 gots del tot.",
+        "steps": [
+          "Tres quarts de litre equivalen a sis vuitens de litre.",
+          "Cada got necessita un vuitè. Podem fer sis grups d’un vuitè, sense que sobri suc."
+        ],
+        "note": "Pots marcar sis vuitens en una barra d’un litre i encerclar un vuitè per a cada got."
+      }
+    },
+    {
+      "id": "P0266",
+      "version": 1,
+      "title": "Tires per penjar els dibuixos",
+      "context": "manualitats",
+      "structure": "comptar-sisens-dins-de-dos-tercos",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Tenim un cordill de 2/3 de metre i en fem tires d’1/6 de metre per penjar dibuixos. En tallar no es perd cordill.",
+      "question": "Quantes tires senceres podem fer?",
+      "features": [
+        "multiplicacio-divisio",
+        "combinades",
+        "fraccions"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "naturals"
+      },
+      "solution": {
+        "expression": "2/3 ÷ 1/6 = 4",
+        "calculation": [
+          "div",
+          [
+            "div",
+            2,
+            3
+          ],
+          [
+            "div",
+            1,
+            6
+          ]
+        ],
+        "answer": 4,
+        "unit": "tires",
+        "response": "Podem fer 4 tires senceres.",
+        "steps": [
+          "Dos terços de metre equivalen a quatre sisens de metre.",
+          "Hi ha quatre trossos d’un sisè dins del cordill. Per tant, en surten quatre tires."
+        ],
+        "note": "Sobre una recta d’un metre dividida en sis parts, marca els quatre primers sisens i separa’ls un per un."
+      }
+    },
+    {
+      "id": "P0267",
+      "version": 1,
+      "title": "Una coca per compartir",
+      "context": "berenar",
+      "structure": "repartir-una-fraccio-entre-sis-persones",
+      "level": "superior",
+      "difficulty": 2,
+      "status": "pendent-docent",
+      "statement": "Queden 3/4 d’una coca. Sis infants es reparteixen tota la coca que queda a parts iguals.",
+      "question": "Quina fracció de la coca sencera rep cada infant?",
+      "features": [
+        "multiplicacio-divisio",
+        "fraccions",
+        "identificar-tot"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "expression": "3/4 ÷ 6 = 3/24 = 1/8",
+        "calculation": [
+          "div",
+          0.75,
+          6
+        ],
+        "answer": 0.125,
+        "unit": "de la coca sencera",
+        "response": "Cada infant rep 1/8 de la coca sencera.",
+        "steps": [
+          "Cada infant rep un sisè dels tres quarts que queden. Per calcular la part de coca sencera, dividim 3/4 entre sis.",
+          "Tres quarts són sis vuitens. Si donem un vuitè a cadascun dels sis infants, repartim tota la coca que quedava."
+        ],
+        "note": "Dibuixa la coca dividida en vuit parts iguals. Sis parts es reparteixen entre els sis infants i dues parts ja no hi eren."
+      }
+    },
+    {
+      "id": "P0268",
+      "version": 1,
+      "title": "Pots plens i una mica de melmelada",
+      "context": "cuina",
+      "structure": "interpretar-un-quocient-fraccionari-en-envasar",
+      "level": "superior",
+      "difficulty": 3,
+      "status": "pendent-docent",
+      "statement": "Tenim 3/4 de litre de melmelada i l’envasem en pots d’1/5 de litre. Omplim tants pots com podem fins dalt.",
+      "question": "Quants pots podem omplir del tot i quina fracció de litre queda sense envasar?",
+      "features": [
+        "multiplicacio-divisio",
+        "suma-resta",
+        "combinades",
+        "fraccions",
+        "interpretar-residu"
+      ],
+      "numeric": {
+        "data": "fraccions",
+        "intermediate": "fraccions",
+        "result": "fraccions"
+      },
+      "solution": {
+        "kind": "justification",
+        "response": "Podem omplir 3 pots del tot i queden 3/20 de litre sense envasar.",
+        "steps": [
+          "Tres quarts de litre són 15/20 de litre. A cada pot hi caben 4/20 de litre.",
+          "Fem tres grups de quatre vintens i en queden tres. Per omplir el quart pot caldrien quatre vintens, i només en tenim tres."
+        ],
+        "note": "Dibuixa quinze parts d’un vintè de litre. Encercla grups de quatre. El sobrant ompliria tres quartes parts d’un pot, però és 3/20 de litre.",
+        "evidence": [
+          {
+            "calculation": [
+              "div",
+              0.75,
+              0.2
+            ],
+            "answer": 3.75
+          },
+          {
+            "calculation": [
+              "sub",
+              0.75,
+              [
+                "mul",
+                3,
+                0.2
+              ]
+            ],
+            "answer": 0.15
           }
         ]
       }

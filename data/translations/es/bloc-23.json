@@ -1,0 +1,115 @@
+{
+  "P0261": {
+    "title": "Una receta más pequeña",
+    "statement": "Una receta entera necesita 3/4 de litro de caldo. Hoy solo preparamos 2/3 de la receta, manteniendo la proporción de todos los ingredientes.",
+    "question": "¿Qué fracción de litro de caldo necesitamos?",
+    "solution": {
+      "unit": "litros",
+      "response": "Necesitamos 1/2 litro de caldo.",
+      "steps": [
+        "Repartimos los tres cuartos de litro en tres cantidades iguales. Cada una es un cuarto de litro.",
+        "Necesitamos dos de esas cantidades. Dos cuartos de litro equivalen a medio litro."
+      ],
+      "note": "Con una barra dividida en cuartos, la receta entera utiliza tres. Para dos tercios de la receta, tomamos dos."
+    }
+  },
+  "P0262": {
+    "title": "La parte del huerto que hemos regado",
+    "statement": "Tres cuartas partes de un huerto están plantadas. Esta mañana regamos la mitad de la zona plantada.",
+    "question": "¿Qué fracción de todo el huerto hemos regado? Indica cuál es el todo cuando hablamos de «la mitad».",
+    "solution": {
+      "unit": "del huerto",
+      "response": "Hemos regado 3/8 de todo el huerto.",
+      "steps": [
+        "El todo de «la mitad» es la zona plantada, que ocupa tres cuartos del huerto.",
+        "Si dividimos cada cuarto en dos partes, los tres cuartos se convierten en seis octavos. Regamos la mitad, tres octavos."
+      ],
+      "note": "Dibuja ocho parcelas iguales. Seis están plantadas y tres de esas seis se han regado."
+    }
+  },
+  "P0263": {
+    "title": "La tela para un banderín",
+    "statement": "Un banderín rectangular de tela mide 3/4 de metro de largo y 2/3 de metro de ancho.",
+    "question": "¿Qué superficie de tela ocupa, expresada como fracción de metro cuadrado?",
+    "solution": {
+      "unit": "m²",
+      "response": "El banderín ocupa 1/2 m² de tela.",
+      "steps": [
+        "Imaginamos un cuadrado de un metro de lado, dividido en cuatro columnas y tres filas iguales.",
+        "El banderín ocupa tres columnas y dos filas, seis de las doce casillas. Seis doceavos de metro cuadrado son medio metro cuadrado."
+      ],
+      "note": "También puedes multiplicar las dos medidas y simplificar la fracción. La superficie se mide en m².",
+      "visual": {
+        "caption": "La superficie del rectángulo es el producto de las dos medidas."
+      }
+    }
+  },
+  "P0264": {
+    "title": "Dos aportaciones al mismo bol",
+    "statement": "La jarra A contiene 3/4 de litro de agua y vertemos 2/3 de su contenido en un bol. La jarra B contiene 2/3 de litro y vertemos 3/4 de su contenido en el mismo bol.",
+    "question": "¿Qué jarra aporta más agua al bol? Justifícalo teniendo en cuenta a qué se refiere cada fracción.",
+    "solution": {
+      "response": "Las dos jarras aportan la misma cantidad, 1/2 litro cada una.",
+      "steps": [
+        "De la A vertemos 2/3 de 3/4 de litro. El producto es 6/12 de litro, medio litro.",
+        "De la B vertemos 3/4 de 2/3 de litro. El producto también es 6/12 de litro. Cambiar el orden de los factores mantiene el producto."
+      ],
+      "note": "Los dos tercios de la primera aportación se refieren al contenido de la A. Los tres cuartos de la segunda se refieren al contenido de la B."
+    }
+  },
+  "P0265": {
+    "title": "Vasos pequeños para la degustación",
+    "statement": "Para una degustación tenemos 3/4 de litro de zumo. Llenamos vasos pequeños con 1/8 de litro en cada uno.",
+    "question": "¿Cuántos vasos podemos llenar del todo con este zumo?",
+    "solution": {
+      "unit": "vasos",
+      "response": "Podemos llenar 6 vasos del todo.",
+      "steps": [
+        "Tres cuartos de litro equivalen a seis octavos de litro.",
+        "Cada vaso necesita un octavo. Podemos hacer seis grupos de un octavo, sin que sobre zumo."
+      ],
+      "note": "Puedes marcar seis octavos en una barra de un litro y rodear un octavo para cada vaso."
+    }
+  },
+  "P0266": {
+    "title": "Tiras para colgar los dibujos",
+    "statement": "Tenemos un cordel de 2/3 de metro y hacemos tiras de 1/6 de metro para colgar dibujos. Al cortar no se pierde cordel.",
+    "question": "¿Cuántas tiras enteras podemos hacer?",
+    "solution": {
+      "unit": "tiras",
+      "response": "Podemos hacer 4 tiras enteras.",
+      "steps": [
+        "Dos tercios de metro equivalen a cuatro sextos de metro.",
+        "Hay cuatro trozos de un sexto dentro del cordel. Por tanto, salen cuatro tiras."
+      ],
+      "note": "En una recta de un metro dividida en seis partes, marca los cuatro primeros sextos y sepáralos uno a uno."
+    }
+  },
+  "P0267": {
+    "title": "Una coca para compartir",
+    "statement": "Quedan 3/4 de una coca. Seis niños se reparten toda la coca que queda a partes iguales.",
+    "question": "¿Qué fracción de la coca entera recibe cada niño?",
+    "solution": {
+      "unit": "de la coca entera",
+      "response": "Cada niño recibe 1/8 de la coca entera.",
+      "steps": [
+        "Cada niño recibe un sexto de los tres cuartos que quedan. Para calcular la parte de coca entera, dividimos 3/4 entre seis.",
+        "Tres cuartos son seis octavos. Si damos un octavo a cada uno de los seis niños, repartimos toda la coca que quedaba."
+      ],
+      "note": "Dibuja la coca dividida en ocho partes iguales. Seis partes se reparten entre los seis niños y dos partes ya no estaban."
+    }
+  },
+  "P0268": {
+    "title": "Tarros llenos y un poco de mermelada",
+    "statement": "Tenemos 3/4 de litro de mermelada y la envasamos en tarros de 1/5 de litro. Llenamos tantos tarros como podemos hasta arriba.",
+    "question": "¿Cuántos tarros podemos llenar del todo y qué fracción de litro queda sin envasar?",
+    "solution": {
+      "response": "Podemos llenar 3 tarros del todo y quedan 3/20 de litro sin envasar.",
+      "steps": [
+        "Tres cuartos de litro son 15/20 de litro. En cada tarro caben 4/20 de litro.",
+        "Hacemos tres grupos de cuatro veinteavos y quedan tres. Para llenar el cuarto tarro harían falta cuatro veinteavos y solo tenemos tres."
+      ],
+      "note": "Dibuja quince partes de un veinteavo de litro. Rodea grupos de cuatro. El sobrante llenaría tres cuartas partes de un tarro, pero son 3/20 de litro."
+    }
+  }
+}

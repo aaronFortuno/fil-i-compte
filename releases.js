@@ -1,6 +1,10 @@
 /* Newest first. The first entry is the version displayed in the application. */
 globalThis.FIL_I_COMPTE_RELEASES = [
   {
+    version:'0.37.0',title:'Fraccions per a cinquè',
+    changes:['Vuit problemes accessibles de suma, resta i fraccions equivalents, de P0253 a P0260.','Vuit problemes de multiplicació i divisió de fraccions, de nivell intermedi o repte, de P0261 a P0268.','Solucionaris en català i castellà amb alternatives de resolució gràfica.']
+  },
+  {
     version:'0.36.13',title:'Formulari d’avisos sempre accessible',
     changes:['La bandera obre el formulari encara que l’enviament estigui desactivat. El quadre informa si es pot enviar l’avís.']
   },

@@ -1,5 +1,11 @@
 # Historial de canvis
 
+## 0.37.0 · Fraccions per a cinquè
+
+- Vuit problemes accessibles de suma, resta i fraccions equivalents, de P0253 a P0260.
+- Vuit problemes de multiplicació i divisió de fraccions, de nivell intermedi o repte, de P0261 a P0268.
+- Els dos blocs inclouen solucionaris en català i castellà, amb alternatives de resolució gràfica.
+
 ## 0.36.13 · Formulari d’avisos sempre accessible
 
 - La bandera obre el formulari encara que l’enviament estigui desactivat. Es poden marcar motius, i el quadre informa si es poden enviar.

@@ -1,0 +1,110 @@
+{
+  "P0253": {
+    "title": "La jarra de la merienda",
+    "statement": "En una jarra vertemos 1/2 litro de agua y después 1/4 de litro más. En la merienda servimos 1/8 de litro.",
+    "question": "¿Qué fracción de litro queda en la jarra?",
+    "solution": {
+      "unit": "litros",
+      "response": "Quedan 5/8 de litro en la jarra.",
+      "steps": [
+        "Expresamos las cantidades en octavos de litro. Medio litro son 4/8 y un cuarto son 2/8.",
+        "Juntamos 4 + 2 octavos y quitamos uno. Quedan 5 octavos."
+      ],
+      "note": "Puedes dibujar una barra de un litro dividida en ocho partes. Marca seis y tacha una."
+    }
+  },
+  "P0254": {
+    "title": "Cinta para dos lazos",
+    "statement": "Tenemos una cinta de 7/8 de metro. Para hacer un lazo cortamos 1/4 de metro y, para otro, 1/8 de metro. Al cortar no perdemos cinta.",
+    "question": "¿Qué longitud de cinta queda? Escríbela con una fracción lo más sencilla posible.",
+    "solution": {
+      "unit": "metros",
+      "response": "Queda 1/2 metro de cinta.",
+      "steps": [
+        "Un cuarto de metro equivale a dos octavos. Quitamos dos octavos y después otro de los siete que teníamos.",
+        "Quedan cuatro octavos de metro, que equivalen a medio metro."
+      ],
+      "note": "En una tira dividida en ocho partes iguales, cuatro partes ocupan exactamente la mitad."
+    }
+  },
+  "P0255": {
+    "title": "El mural a dos manos",
+    "statement": "Júlia pinta 1/3 de un mural y Nil, 2/6 del mismo mural. Pintan zonas distintas y las dos fracciones se refieren al mural entero.",
+    "question": "¿Qué fracción del mural queda por pintar? Muestra cómo utilizas fracciones equivalentes.",
+    "solution": {
+      "response": "Quedan 2/6 del mural por pintar, es decir, 1/3.",
+      "steps": [
+        "Un tercio equivale a dos sextos. Júlia y Nil pintan dos sextos cada uno, cuatro sextos en total.",
+        "De los seis sextos que forman el mural, quedan dos sin pintar."
+      ],
+      "note": "Dibuja seis casillas iguales. Marca dos para cada persona. Las dos que quedan forman un tercio del mural."
+    }
+  },
+  "P0256": {
+    "title": "Una mañana de ensayo",
+    "statement": "El ensayo del coro dura 1/4 de hora. Después hacemos una pausa de 1/6 de hora antes de empezar el taller.",
+    "question": "¿Qué fracción de hora pasa desde que empieza el ensayo hasta que empieza el taller? Expresa las dos duraciones en partes del mismo tamaño.",
+    "solution": {
+      "response": "Pasan 5/12 de hora.",
+      "steps": [
+        "Dividimos una hora en doce partes iguales. Un cuarto de hora son 3/12 y un sexto son 2/12.",
+        "Sumamos tres partes y dos partes. En total han pasado cinco doceavos de hora."
+      ],
+      "note": "En un reloj, cada doceavo de hora son cinco minutos. Tres saltos para el ensayo y dos para la pausa hacen cinco saltos."
+    }
+  },
+  "P0257": {
+    "title": "El pan que guardamos",
+    "statement": "Para hacer bocadillos tenemos 2/3 de una barra de pan. Utilizamos una cantidad equivalente a 1/6 de la barra entera.",
+    "question": "¿Qué fracción de la barra entera guardaremos para más tarde?",
+    "solution": {
+      "response": "Guardaremos 3/6 de barra, es decir, media barra.",
+      "steps": [
+        "Dos tercios de barra son cuatro sextos.",
+        "Si quitamos un sexto, quedan tres. Tres sextos equivalen a un medio."
+      ],
+      "note": "Dibuja una barra con seis partes iguales. Tenemos cuatro y utilizamos una."
+    }
+  },
+  "P0258": {
+    "title": "Un rincón libre en el huerto",
+    "statement": "En un huerto, las lechugas ocupan 1/4 de toda la superficie y las zanahorias, 3/8. Las dos zonas no se superponen. El resto del huerto está libre.",
+    "question": "¿Qué fracción del huerto está libre?",
+    "solution": {
+      "unit": "del huerto",
+      "response": "Están libres 3/8 del huerto.",
+      "steps": [
+        "Todo el huerto son ocho octavos. Un cuarto equivale a dos octavos.",
+        "Restamos dos octavos de lechugas y tres de zanahorias. Quedan tres octavos libres."
+      ],
+      "note": "Puedes dibujar ocho parcelas iguales y reservar dos para lechugas y tres para zanahorias."
+    }
+  },
+  "P0259": {
+    "title": "Dos jarras para la sopa",
+    "statement": "Para hacer una sopa necesitamos 1 litro de caldo. Una jarra contiene 3/6 de litro y otra, 2/4 de litro. Vertemos todo el caldo de las dos jarras en la olla.",
+    "question": "¿Tendremos exactamente la cantidad que pide la receta? Justifícalo utilizando fracciones equivalentes.",
+    "solution": {
+      "response": "Sí. Cada jarra contiene medio litro y, juntas, suman exactamente 1 litro.",
+      "steps": [
+        "Tres sextos de litro equivalen a medio litro. Dos cuartos de litro también equivalen a medio litro.",
+        "Sumamos las dos mitades y obtenemos un litro entero."
+      ],
+      "note": "Dibuja dos barras iguales que representen un litro. Divide una en seis partes y la otra en cuatro. En las dos tenemos la mitad."
+    }
+  },
+  "P0260": {
+    "title": "Pintar hasta la marca",
+    "statement": "Queremos pintar de azul 3/4 de un panel. Ya hemos pintado 1/2. Las dos fracciones se refieren a todo el panel.",
+    "question": "¿Qué fracción del panel nos falta pintar de azul para llegar a la cantidad prevista?",
+    "solution": {
+      "unit": "del panel",
+      "response": "Todavía tenemos que pintar de azul 1/4 del panel.",
+      "steps": [
+        "La mitad que ya hemos pintado equivale a dos cuartos.",
+        "Para llegar a los tres cuartos previstos, solo falta un cuarto."
+      ],
+      "note": "Divide el panel en cuatro franjas iguales. Dos ya son azules y añadimos una."
+    }
+  }
+}
